@@ -33,7 +33,7 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      * </p>
      */
@@ -88,12 +88,12 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     *        The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      *        <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      */
 
@@ -103,11 +103,11 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     * @return The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      *         <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      */
 
@@ -117,12 +117,12 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     * The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example
+     *        The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example,
      *        <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -82,6 +82,10 @@ public class LicenseConfigurationJsonUnmarshaller implements Unmarshaller<Licens
                     context.nextToken();
                     licenseConfiguration.setLicenseCountHardLimit(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DisassociateWhenNotFound", targetDepth)) {
+                    context.nextToken();
+                    licenseConfiguration.setDisassociateWhenNotFound(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ConsumedLicenses", targetDepth)) {
                     context.nextToken();
                     licenseConfiguration.setConsumedLicenses(context.getUnmarshaller(Long.class).unmarshall(context));

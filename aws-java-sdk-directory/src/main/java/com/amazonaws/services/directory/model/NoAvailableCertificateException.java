@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The LDAP activities could not be performed because at least one valid certificate must be registered with the system.
+ * Client authentication setup could not be completed because at least one valid certificate must be registered in the
+ * system.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

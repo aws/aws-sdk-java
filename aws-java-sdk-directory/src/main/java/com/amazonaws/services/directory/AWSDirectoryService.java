@@ -190,7 +190,7 @@ public interface AWSDirectoryService {
      * @throws RegionLimitExceededException
      *         You have reached the limit for maximum number of simultaneous Region replications per directory.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -653,7 +653,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -705,7 +705,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -893,7 +893,7 @@ public interface AWSDirectoryService {
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1002,7 +1002,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Disable client authentication for smart cards.
+     * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param disableClientAuthenticationRequest
@@ -1012,9 +1012,9 @@ public interface AWSDirectoryService {
      * @throws UnsupportedOperationException
      *         The operation is not supported.
      * @throws InvalidClientAuthStatusException
-     *         The client authorization was invalid.
+     *         Client authentication is already enabled.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1099,7 +1099,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Enable client authentication for smardtcards.
+     * Enables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param enableClientAuthenticationRequest
@@ -1109,12 +1109,12 @@ public interface AWSDirectoryService {
      * @throws UnsupportedOperationException
      *         The operation is not supported.
      * @throws InvalidClientAuthStatusException
-     *         The client authorization was invalid.
+     *         Client authentication is already enabled.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws NoAvailableCertificateException
-     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
-     *         the system.
+     *         Client authentication setup could not be completed because at least one valid certificate must be
+     *         registered in the system.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1137,8 +1137,8 @@ public interface AWSDirectoryService {
      * @throws DirectoryDoesNotExistException
      *         The specified directory does not exist in the system.
      * @throws NoAvailableCertificateException
-     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
-     *         the system.
+     *         Client authentication setup could not be completed because at least one valid certificate must be
+     *         registered in the system.
      * @throws InvalidLDAPSStatusException
      *         The LDAP activities could not be performed because they are limited by the LDAPS status.
      * @throws UnsupportedOperationException
@@ -1254,7 +1254,8 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1367,7 +1368,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest
@@ -1482,7 +1483,7 @@ public interface AWSDirectoryService {
      * @throws UnsupportedOperationException
      *         The operation is not supported.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1632,7 +1633,7 @@ public interface AWSDirectoryService {
      * @throws OrganizationsException
      *         Exception encountered while trying to access your AWS organization.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
      * @throws ServiceException

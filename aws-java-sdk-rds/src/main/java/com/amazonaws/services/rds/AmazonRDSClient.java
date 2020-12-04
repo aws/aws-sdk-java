@@ -1093,9 +1093,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot
-     * in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained
+     * in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -2230,7 +2231,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or
-     * <code>storage-optimization</code>state.
+     * <code>storage-optimization</code> state.
      * </p>
      * 
      * @param createDBSnapshotRequest
@@ -3022,8 +3023,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
-     * instance's resource ID.
+     * Deletes automated backups using the <code>DbiResourceId</code> value of the source DB instance or the Amazon
+     * Resource Name (ARN) of the automated backups.
      * </p>
      * 
      * @param deleteDBInstanceAutomatedBackupRequest
@@ -8756,18 +8757,17 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is created from the source database restore
-     * point with the most of original configuration with the default security group and the default DB parameter group.
-     * By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server
-     * instance that has an option group that is associated with mirroring; in this case, the instance becomes a
-     * mirrored AZ deployment and not a single-AZ deployment.
+     * point with most of the source's original configuration, including the default security group and DB parameter
+     * group. By default, the new DB instance is created as a Single-AZ deployment, except when the instance is a SQL
+     * Server instance that has an option group associated with mirroring. In this case, the instance becomes a Multi-AZ
+     * deployment, not a Single-AZ deployment.
      * </p>
      * <p>
-     * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
-     * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
-     * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
-     * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
-     * instance created from the snapshot.
+     * If you want to replace your original DB instance with the new, restored DB instance, then rename your original DB
+     * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB instances with the
+     * same name. After you have renamed your original DB instance with a different identifier, then you can pass the
+     * original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
+     * action. The result is that you replace the original DB instance with the DB instance created from the snapshot.
      * </p>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
@@ -9381,6 +9381,78 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Enables replication of automated backups to a different AWS Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param startDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StartDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @throws DBInstanceAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     * @throws StorageTypeNotSupportedException
+     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DBInstanceAutomatedBackup startDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDBInstanceAutomatedBackupsReplication(request);
+    }
+
+    @SdkInternalApi
+    final DBInstanceAutomatedBackup executeStartDBInstanceAutomatedBackupsReplication(
+            StartDBInstanceAutomatedBackupsReplicationRequest startDBInstanceAutomatedBackupsReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDBInstanceAutomatedBackupsReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDBInstanceAutomatedBackupsReplicationRequest> request = null;
+        Response<DBInstanceAutomatedBackup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller().marshall(super
+                        .beforeMarshalling(startDBInstanceAutomatedBackupsReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBInstanceAutomatedBackupsReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
+                    new DBInstanceAutomatedBackupStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an export of a snapshot to Amazon S3. The provided IAM role must have access to the S3 bucket.
      * </p>
      * 
@@ -9660,6 +9732,71 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops automated backup replication for a DB instance.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param stopDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StopDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.StopDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(StopDBInstanceAutomatedBackupsReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDBInstanceAutomatedBackupsReplication(request);
+    }
+
+    @SdkInternalApi
+    final DBInstanceAutomatedBackup executeStopDBInstanceAutomatedBackupsReplication(
+            StopDBInstanceAutomatedBackupsReplicationRequest stopDBInstanceAutomatedBackupsReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDBInstanceAutomatedBackupsReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDBInstanceAutomatedBackupsReplicationRequest> request = null;
+        Response<DBInstanceAutomatedBackup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopDBInstanceAutomatedBackupsReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBInstanceAutomatedBackupsReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
+                    new DBInstanceAutomatedBackupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

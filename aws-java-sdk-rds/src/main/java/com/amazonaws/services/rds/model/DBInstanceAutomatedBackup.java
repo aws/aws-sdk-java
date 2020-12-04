@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An automated backup of a DB instance. It it consists of system backups, transaction logs, and the database instance
+ * An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance
  * properties that existed at the time you deleted the source instance.
  * </p>
  * 
@@ -29,7 +29,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the automated backup.
+     * The Amazon Resource Name (ARN) for the automated backups.
      * </p>
      */
     private String dBInstanceArn;
@@ -176,8 +176,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String storageType;
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier,
-     * or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an automated backup.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      */
     private String kmsKeyId;
@@ -196,14 +199,32 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * The retention period for the automated backups.
+     * </p>
+     */
+    private Integer backupRetentionPeriod;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the replicated automated backups.
+     * </p>
+     */
+    private String dBInstanceAutomatedBackupsArn;
+    /**
+     * <p>
+     * The list of replications to different AWS Regions associated with the automated backup.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the automated backup.
+     * The Amazon Resource Name (ARN) for the automated backups.
      * </p>
      * 
      * @param dBInstanceArn
-     *        The Amazon Resource Name (ARN) for the automated backup.
+     *        The Amazon Resource Name (ARN) for the automated backups.
      */
 
     public void setDBInstanceArn(String dBInstanceArn) {
@@ -212,10 +233,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the automated backup.
+     * The Amazon Resource Name (ARN) for the automated backups.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the automated backup.
+     * @return The Amazon Resource Name (ARN) for the automated backups.
      */
 
     public String getDBInstanceArn() {
@@ -224,11 +245,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the automated backup.
+     * The Amazon Resource Name (ARN) for the automated backups.
      * </p>
      * 
      * @param dBInstanceArn
-     *        The Amazon Resource Name (ARN) for the automated backup.
+     *        The Amazon Resource Name (ARN) for the automated backups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1170,13 +1191,18 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier,
-     * or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an automated backup.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     *        identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key ID for an automated backup.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1185,12 +1211,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier,
-     * or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an automated backup.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
-     * @return The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     *         identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key ID for an automated backup.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1199,13 +1230,18 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier,
-     * or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an automated backup.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     *        identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key ID for an automated backup.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1327,6 +1363,163 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The retention period for the automated backups.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The retention period for the automated backups.
+     */
+
+    public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        this.backupRetentionPeriod = backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The retention period for the automated backups.
+     * </p>
+     * 
+     * @return The retention period for the automated backups.
+     */
+
+    public Integer getBackupRetentionPeriod() {
+        return this.backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The retention period for the automated backups.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The retention period for the automated backups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        setBackupRetentionPeriod(backupRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the replicated automated backups.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) for the replicated automated backups.
+     */
+
+    public void setDBInstanceAutomatedBackupsArn(String dBInstanceAutomatedBackupsArn) {
+        this.dBInstanceAutomatedBackupsArn = dBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the replicated automated backups.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the replicated automated backups.
+     */
+
+    public String getDBInstanceAutomatedBackupsArn() {
+        return this.dBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the replicated automated backups.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) for the replicated automated backups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withDBInstanceAutomatedBackupsArn(String dBInstanceAutomatedBackupsArn) {
+        setDBInstanceAutomatedBackupsArn(dBInstanceAutomatedBackupsArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of replications to different AWS Regions associated with the automated backup.
+     * </p>
+     * 
+     * @return The list of replications to different AWS Regions associated with the automated backup.
+     */
+
+    public java.util.List<DBInstanceAutomatedBackupsReplication> getDBInstanceAutomatedBackupsReplications() {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>();
+        }
+        return dBInstanceAutomatedBackupsReplications;
+    }
+
+    /**
+     * <p>
+     * The list of replications to different AWS Regions associated with the automated backup.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replications to different AWS Regions associated with the automated backup.
+     */
+
+    public void setDBInstanceAutomatedBackupsReplications(java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            this.dBInstanceAutomatedBackupsReplications = null;
+            return;
+        }
+
+        this.dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                dBInstanceAutomatedBackupsReplications);
+    }
+
+    /**
+     * <p>
+     * The list of replications to different AWS Regions associated with the automated backup.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBInstanceAutomatedBackupsReplications(java.util.Collection)} or
+     * {@link #withDBInstanceAutomatedBackupsReplications(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replications to different AWS Regions associated with the automated backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication... dBInstanceAutomatedBackupsReplications) {
+        if (this.dBInstanceAutomatedBackupsReplications == null) {
+            setDBInstanceAutomatedBackupsReplications(new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                    dBInstanceAutomatedBackupsReplications.length));
+        }
+        for (DBInstanceAutomatedBackupsReplication ele : dBInstanceAutomatedBackupsReplications) {
+            this.dBInstanceAutomatedBackupsReplications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of replications to different AWS Regions associated with the automated backup.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replications to different AWS Regions associated with the automated backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withDBInstanceAutomatedBackupsReplications(
+            java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        setDBInstanceAutomatedBackupsReplications(dBInstanceAutomatedBackupsReplications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1383,7 +1576,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
-            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getBackupRetentionPeriod() != null)
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
+        if (getDBInstanceAutomatedBackupsArn() != null)
+            sb.append("DBInstanceAutomatedBackupsArn: ").append(getDBInstanceAutomatedBackupsArn()).append(",");
+        if (getDBInstanceAutomatedBackupsReplications() != null)
+            sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications());
         sb.append("}");
         return sb.toString();
     }
@@ -1491,6 +1690,20 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getBackupRetentionPeriod() == null ^ this.getBackupRetentionPeriod() == null)
+            return false;
+        if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsArn() == null ^ this.getDBInstanceAutomatedBackupsArn() == null)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsArn() != null
+                && other.getDBInstanceAutomatedBackupsArn().equals(this.getDBInstanceAutomatedBackupsArn()) == false)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() == null ^ this.getDBInstanceAutomatedBackupsReplications() == null)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() != null
+                && other.getDBInstanceAutomatedBackupsReplications().equals(this.getDBInstanceAutomatedBackupsReplications()) == false)
+            return false;
         return true;
     }
 
@@ -1522,6 +1735,9 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsArn() == null) ? 0 : getDBInstanceAutomatedBackupsArn().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
         return hashCode;
     }
 

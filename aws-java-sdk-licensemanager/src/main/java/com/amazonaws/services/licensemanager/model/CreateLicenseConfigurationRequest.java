@@ -104,6 +104,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
     private java.util.List<Tag> tags;
     /**
      * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     */
+    private Boolean disassociateWhenNotFound;
+    /**
+     * <p>
      * Product information.
      * </p>
      */
@@ -758,6 +764,58 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     */
+
+    public void setDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        this.disassociateWhenNotFound = disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean getDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLicenseConfigurationRequest withDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        setDisassociateWhenNotFound(disassociateWhenNotFound);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean isDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
      * Product information.
      * </p>
      * 
@@ -852,6 +910,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
             sb.append("LicenseRules: ").append(getLicenseRules()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getDisassociateWhenNotFound() != null)
+            sb.append("DisassociateWhenNotFound: ").append(getDisassociateWhenNotFound()).append(",");
         if (getProductInformationList() != null)
             sb.append("ProductInformationList: ").append(getProductInformationList());
         sb.append("}");
@@ -896,6 +956,10 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDisassociateWhenNotFound() == null ^ this.getDisassociateWhenNotFound() == null)
+            return false;
+        if (other.getDisassociateWhenNotFound() != null && other.getDisassociateWhenNotFound().equals(this.getDisassociateWhenNotFound()) == false)
+            return false;
         if (other.getProductInformationList() == null ^ this.getProductInformationList() == null)
             return false;
         if (other.getProductInformationList() != null && other.getProductInformationList().equals(this.getProductInformationList()) == false)
@@ -915,6 +979,7 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getLicenseCountHardLimit() == null) ? 0 : getLicenseCountHardLimit().hashCode());
         hashCode = prime * hashCode + ((getLicenseRules() == null) ? 0 : getLicenseRules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateWhenNotFound() == null) ? 0 : getDisassociateWhenNotFound().hashCode());
         hashCode = prime * hashCode + ((getProductInformationList() == null) ? 0 : getProductInformationList().hashCode());
         return hashCode;
     }

@@ -33,8 +33,13 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     private String ec2ImageId;
     /**
      * <p>
-     * The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      */
     private String ingestionProcess;
@@ -113,13 +118,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     *        Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @see WorkspaceImageIngestionProcess
      */
 
@@ -129,12 +144,22 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
-     * @return The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other
-     *         than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * @return The ingestion process to be used when importing the image, depending on which protocol you want to use
+     *         for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *         value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     *         <code>_WSP</code>. </p>
+     *         <p>
+     *         For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *         <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @see WorkspaceImageIngestionProcess
      */
 
@@ -144,13 +169,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     *        Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
      */
@@ -162,13 +197,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image. For non-GPU-enabled bundles (bundles other than
-     *        Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
      */

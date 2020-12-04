@@ -36,7 +36,7 @@ public class GlobalCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS
-     * CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     * CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      * </p>
      */
     private String globalClusterResourceId;
@@ -138,12 +138,12 @@ public class GlobalCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS
-     * CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     * CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      * </p>
      * 
      * @param globalClusterResourceId
      *        The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
-     *        AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      */
 
     public void setGlobalClusterResourceId(String globalClusterResourceId) {
@@ -153,11 +153,11 @@ public class GlobalCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS
-     * CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     * CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      * </p>
      * 
      * @return The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
-     *         AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *         AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      */
 
     public String getGlobalClusterResourceId() {
@@ -167,12 +167,12 @@ public class GlobalCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS
-     * CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     * CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      * </p>
      * 
      * @param globalClusterResourceId
      *        The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
-     *        AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

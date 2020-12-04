@@ -28,7 +28,8 @@ public enum OperatingSystem {
     SUSE("SUSE"),
     CENTOS("CENTOS"),
     ORACLE_LINUX("ORACLE_LINUX"),
-    DEBIAN("DEBIAN");
+    DEBIAN("DEBIAN"),
+    MACOS("MACOS");
 
     private String value;
 

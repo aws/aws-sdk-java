@@ -189,7 +189,14 @@ public interface AmazonWorkspaces {
      * images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html"> Copy a
      * Custom WorkSpaces Image</a>.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * In the China (Ningxia) Region, you can copy images only within the same Region.
+     * </p>
+     * <p>
+     * In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions, contact AWS Support.
+     * </p>
+     * </note> <important>
      * <p>
      * Before copying a shared image, be sure to verify that it has been shared from the correct AWS account. To
      * determine if an image has been shared and to see the AWS account ID that owns an image, use the <a
@@ -433,6 +440,20 @@ public interface AmazonWorkspaces {
      * deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister
      * the directory.
      * </p>
+     * <note>
+     * <p>
+     * Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no
+     * WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will
+     * be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per
+     * the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services pricing terms</a>.
+     * </p>
+     * <p>
+     * To delete empty directories, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html"> Delete the
+     * Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create
+     * a new one when you want to start using WorkSpaces again.
+     * </p>
+     * </note>
      * 
      * @param deregisterWorkspaceDirectoryRequest
      * @return Result of the DeregisterWorkspaceDirectory operation returned by the service.
@@ -1224,6 +1245,20 @@ public interface AmazonWorkspaces {
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
      * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
      * </p>
+     * <note>
+     * <p>
+     * Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no
+     * WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will
+     * be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per
+     * the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services pricing terms</a>.
+     * </p>
+     * <p>
+     * To delete empty directories, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html"> Delete the
+     * Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create
+     * a new one when you want to start using WorkSpaces again.
+     * </p>
+     * </note>
      * 
      * @param terminateWorkspacesRequest
      * @return Result of the TerminateWorkspaces operation returned by the service.
@@ -1310,9 +1345,23 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Shares or unshares an image with one account by specifying whether that account has permission to copy the image.
-     * If the copy image permission is granted, the image is shared with that account. If the copy image permission is
-     * revoked, the image is unshared with the account. For more information about sharing images, see <a
+     * Shares or unshares an image with one account in the same AWS Region by specifying whether that account has
+     * permission to copy the image. If the copy image permission is granted, the image is shared with that account. If
+     * the copy image permission is revoked, the image is unshared with the account.
+     * </p>
+     * <p>
+     * After an image has been shared, the recipient account can copy the image to other AWS Regions as needed.
+     * </p>
+     * <note>
+     * <p>
+     * In the China (Ningxia) Region, you can copy images only within the same Region.
+     * </p>
+     * <p>
+     * In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions, contact AWS Support.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about sharing images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a
      * Custom WorkSpaces Image</a>.
      * </p>

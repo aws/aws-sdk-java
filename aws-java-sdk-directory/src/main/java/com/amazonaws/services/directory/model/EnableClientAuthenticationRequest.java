@@ -27,24 +27,26 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable client authentication in a specified directory for smart cards.
+     * The identifier of the specified directory.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * Enable the type of client authentication request.
+     * The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart
+     * card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User
+     * to the LDAP service in the on-premises AD.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * Enable client authentication in a specified directory for smart cards.
+     * The identifier of the specified directory.
      * </p>
      * 
      * @param directoryId
-     *        Enable client authentication in a specified directory for smart cards.
+     *        The identifier of the specified directory.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -53,10 +55,10 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable client authentication in a specified directory for smart cards.
+     * The identifier of the specified directory.
      * </p>
      * 
-     * @return Enable client authentication in a specified directory for smart cards.
+     * @return The identifier of the specified directory.
      */
 
     public String getDirectoryId() {
@@ -65,11 +67,11 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable client authentication in a specified directory for smart cards.
+     * The identifier of the specified directory.
      * </p>
      * 
      * @param directoryId
-     *        Enable client authentication in a specified directory for smart cards.
+     *        The identifier of the specified directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +82,15 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable the type of client authentication request.
+     * The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart
+     * card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User
+     * to the LDAP service in the on-premises AD.
      * </p>
      * 
      * @param type
-     *        Enable the type of client authentication request.
+     *        The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported.
+     *        Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the
+     *        Service User to the LDAP service in the on-premises AD.
      * @see ClientAuthenticationType
      */
 
@@ -94,10 +100,14 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable the type of client authentication request.
+     * The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart
+     * card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User
+     * to the LDAP service in the on-premises AD.
      * </p>
      * 
-     * @return Enable the type of client authentication request.
+     * @return The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
+     *         supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained
+     *         Delegation for the Service User to the LDAP service in the on-premises AD.
      * @see ClientAuthenticationType
      */
 
@@ -107,11 +117,15 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable the type of client authentication request.
+     * The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart
+     * card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User
+     * to the LDAP service in the on-premises AD.
      * </p>
      * 
      * @param type
-     *        Enable the type of client authentication request.
+     *        The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported.
+     *        Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the
+     *        Service User to the LDAP service in the on-premises AD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientAuthenticationType
      */
@@ -123,11 +137,15 @@ public class EnableClientAuthenticationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Enable the type of client authentication request.
+     * The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart
+     * card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User
+     * to the LDAP service in the on-premises AD.
      * </p>
      * 
      * @param type
-     *        Enable the type of client authentication request.
+     *        The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported.
+     *        Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the
+     *        Service User to the LDAP service in the on-premises AD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientAuthenticationType
      */

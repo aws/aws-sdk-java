@@ -100,13 +100,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private String targetDBSnapshotIdentifier;
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
-     * snapshot is encrypted with the same KMS key as the source DB snapshot.
+     * the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
@@ -116,9 +116,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      * </p>
      * <p>
-     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the destination
-     * AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region.
+     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key identifier for
+     * the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't
+     * use CMKs from one AWS Region in another AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -161,9 +161,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB snapshot in
-     * the destination AWS Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is
-     * called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained in the
+     * presigned URL.
      * </p>
      * </li>
      * <li>
@@ -660,13 +661,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
-     * snapshot is encrypted with the same KMS key as the source DB snapshot.
+     * the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
@@ -676,18 +677,18 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      * </p>
      * <p>
-     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the destination
-     * AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region.
+     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key identifier for
+     * the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't
+     * use CMKs from one AWS Region in another AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     *        identifier, or the KMS key alias for the KMS encryption key. </p>
+     *        The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key
+     *        ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). </p>
      *        <p>
      *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
-     *        encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
-     *        copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
+     *        encrypt the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of
+     *        the DB snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      *        </p>
      *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
@@ -697,9 +698,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      *        </p>
      *        <p>
-     *        If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -708,13 +709,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
-     * snapshot is encrypted with the same KMS key as the source DB snapshot.
+     * the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
@@ -724,17 +725,17 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      * </p>
      * <p>
-     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the destination
-     * AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region.
+     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key identifier for
+     * the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't
+     * use CMKs from one AWS Region in another AWS Region.
      * </p>
      * 
-     * @return The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *         key identifier, or the KMS key alias for the KMS encryption key. </p>
+     * @return The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key
+     *         ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). </p>
      *         <p>
      *         If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
-     *         encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
-     *         copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
+     *         encrypt the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy
+     *         of the DB snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      *         </p>
      *         <p>
      *         If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
@@ -744,9 +745,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      *         </p>
      *         <p>
-     *         If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the
-     *         destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *         you can't use encryption keys from one AWS Region in another AWS Region.
+     *         If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key
+     *         identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *         created in, and you can't use CMKs from one AWS Region in another AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -755,13 +756,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
-     * snapshot is encrypted with the same KMS key as the source DB snapshot.
+     * the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
@@ -771,18 +772,18 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      * </p>
      * <p>
-     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the destination
-     * AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region.
+     * If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key identifier for
+     * the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't
+     * use CMKs from one AWS Region in another AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     *        identifier, or the KMS key alias for the KMS encryption key. </p>
+     *        The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier is the key ARN, key
+     *        ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). </p>
      *        <p>
      *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
-     *        encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
-     *        copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
+     *        encrypt the copy with a new AWS KMS CMK. If you don't specify a value for this parameter, then the copy of
+     *        the DB snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
      *        </p>
      *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
@@ -792,9 +793,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
      *        </p>
      *        <p>
-     *        If you copy an encrypted snapshot to a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you copy an encrypted snapshot to a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -948,9 +949,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB snapshot in
-     * the destination AWS Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is
-     * called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained in the
+     * presigned URL.
      * </p>
      * </li>
      * <li>
@@ -1009,8 +1011,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        snapshot in the destination AWS Region. This is the same identifier for both the
+     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the
+     *        copy of the DB snapshot in the destination AWS Region. This is the same identifier for both the
      *        <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained
      *        in the presigned URL.
      *        </p>
@@ -1075,9 +1077,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB snapshot in
-     * the destination AWS Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is
-     * called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained in the
+     * presigned URL.
      * </p>
      * </li>
      * <li>
@@ -1135,8 +1138,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *         snapshot in the destination AWS Region. This is the same identifier for both the
+     *         <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt
+     *         the copy of the DB snapshot in the destination AWS Region. This is the same identifier for both the
      *         <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained
      *         in the presigned URL.
      *         </p>
@@ -1201,9 +1204,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB snapshot in
-     * the destination AWS Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is
-     * called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained in the
+     * presigned URL.
      * </p>
      * </li>
      * <li>
@@ -1262,8 +1266,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        snapshot in the destination AWS Region. This is the same identifier for both the
+     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the
+     *        copy of the DB snapshot in the destination AWS Region. This is the same identifier for both the
      *        <code>CopyDBSnapshot</code> action that is called in the destination AWS Region, and the action contained
      *        in the presigned URL.
      *        </p>

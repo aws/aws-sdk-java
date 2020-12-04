@@ -277,6 +277,8 @@ public enum RDSActions implements Action {
     StartDBCluster("rds:StartDBCluster"),
     /** Action for the StartDBInstance operation. */
     StartDBInstance("rds:StartDBInstance"),
+    /** Action for the StartDBInstanceAutomatedBackupsReplication operation. */
+    StartDBInstanceAutomatedBackupsReplication("rds:StartDBInstanceAutomatedBackupsReplication"),
     /** Action for the StartExportTask operation. */
     StartExportTask("rds:StartExportTask"),
     /** Action for the StopActivityStream operation. */
@@ -285,6 +287,8 @@ public enum RDSActions implements Action {
     StopDBCluster("rds:StopDBCluster"),
     /** Action for the StopDBInstance operation. */
     StopDBInstance("rds:StopDBInstance"),
+    /** Action for the StopDBInstanceAutomatedBackupsReplication operation. */
+    StopDBInstanceAutomatedBackupsReplication("rds:StopDBInstanceAutomatedBackupsReplication"),
 
     ;
 

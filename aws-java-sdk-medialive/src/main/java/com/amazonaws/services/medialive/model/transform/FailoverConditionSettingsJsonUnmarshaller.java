@@ -48,9 +48,17 @@ public class FailoverConditionSettingsJsonUnmarshaller implements Unmarshaller<F
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioSilenceSettings", targetDepth)) {
+                    context.nextToken();
+                    failoverConditionSettings.setAudioSilenceSettings(AudioSilenceFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputLossSettings", targetDepth)) {
                     context.nextToken();
                     failoverConditionSettings.setInputLossSettings(InputLossFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("videoBlackSettings", targetDepth)) {
+                    context.nextToken();
+                    failoverConditionSettings.setVideoBlackSettings(VideoBlackFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

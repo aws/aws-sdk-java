@@ -26,8 +26,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FailoverConditionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** MediaLive will perform a failover if the specified audio selector is silent for the specified period. */
+    private AudioSilenceFailoverSettings audioSilenceSettings;
     /** MediaLive will perform a failover if content is not detected in this input for the specified period. */
     private InputLossFailoverSettings inputLossSettings;
+    /** MediaLive will perform a failover if content is considered black for the specified period. */
+    private VideoBlackFailoverSettings videoBlackSettings;
+
+    /**
+     * MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     * 
+     * @param audioSilenceSettings
+     *        MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     */
+
+    public void setAudioSilenceSettings(AudioSilenceFailoverSettings audioSilenceSettings) {
+        this.audioSilenceSettings = audioSilenceSettings;
+    }
+
+    /**
+     * MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     * 
+     * @return MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     */
+
+    public AudioSilenceFailoverSettings getAudioSilenceSettings() {
+        return this.audioSilenceSettings;
+    }
+
+    /**
+     * MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     * 
+     * @param audioSilenceSettings
+     *        MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailoverConditionSettings withAudioSilenceSettings(AudioSilenceFailoverSettings audioSilenceSettings) {
+        setAudioSilenceSettings(audioSilenceSettings);
+        return this;
+    }
 
     /**
      * MediaLive will perform a failover if content is not detected in this input for the specified period.
@@ -64,6 +102,40 @@ public class FailoverConditionSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * MediaLive will perform a failover if content is considered black for the specified period.
+     * 
+     * @param videoBlackSettings
+     *        MediaLive will perform a failover if content is considered black for the specified period.
+     */
+
+    public void setVideoBlackSettings(VideoBlackFailoverSettings videoBlackSettings) {
+        this.videoBlackSettings = videoBlackSettings;
+    }
+
+    /**
+     * MediaLive will perform a failover if content is considered black for the specified period.
+     * 
+     * @return MediaLive will perform a failover if content is considered black for the specified period.
+     */
+
+    public VideoBlackFailoverSettings getVideoBlackSettings() {
+        return this.videoBlackSettings;
+    }
+
+    /**
+     * MediaLive will perform a failover if content is considered black for the specified period.
+     * 
+     * @param videoBlackSettings
+     *        MediaLive will perform a failover if content is considered black for the specified period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailoverConditionSettings withVideoBlackSettings(VideoBlackFailoverSettings videoBlackSettings) {
+        setVideoBlackSettings(videoBlackSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -75,8 +147,12 @@ public class FailoverConditionSettings implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioSilenceSettings() != null)
+            sb.append("AudioSilenceSettings: ").append(getAudioSilenceSettings()).append(",");
         if (getInputLossSettings() != null)
-            sb.append("InputLossSettings: ").append(getInputLossSettings());
+            sb.append("InputLossSettings: ").append(getInputLossSettings()).append(",");
+        if (getVideoBlackSettings() != null)
+            sb.append("VideoBlackSettings: ").append(getVideoBlackSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -91,9 +167,17 @@ public class FailoverConditionSettings implements Serializable, Cloneable, Struc
         if (obj instanceof FailoverConditionSettings == false)
             return false;
         FailoverConditionSettings other = (FailoverConditionSettings) obj;
+        if (other.getAudioSilenceSettings() == null ^ this.getAudioSilenceSettings() == null)
+            return false;
+        if (other.getAudioSilenceSettings() != null && other.getAudioSilenceSettings().equals(this.getAudioSilenceSettings()) == false)
+            return false;
         if (other.getInputLossSettings() == null ^ this.getInputLossSettings() == null)
             return false;
         if (other.getInputLossSettings() != null && other.getInputLossSettings().equals(this.getInputLossSettings()) == false)
+            return false;
+        if (other.getVideoBlackSettings() == null ^ this.getVideoBlackSettings() == null)
+            return false;
+        if (other.getVideoBlackSettings() != null && other.getVideoBlackSettings().equals(this.getVideoBlackSettings()) == false)
             return false;
         return true;
     }
@@ -103,7 +187,9 @@ public class FailoverConditionSettings implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioSilenceSettings() == null) ? 0 : getAudioSilenceSettings().hashCode());
         hashCode = prime * hashCode + ((getInputLossSettings() == null) ? 0 : getInputLossSettings().hashCode());
+        hashCode = prime * hashCode + ((getVideoBlackSettings() == null) ? 0 : getVideoBlackSettings().hashCode());
         return hashCode;
     }
 

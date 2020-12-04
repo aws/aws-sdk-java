@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You do not have sufficient access to perform this action.
+ * Client authentication is not available in this region at this time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

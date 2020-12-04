@@ -478,6 +478,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
+     * the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return A Java Future containing the result of the CreateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest createOpsMetadataRequest);
+
+    /**
+     * <p>
+     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
+     * the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest createOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOpsMetadataRequest, CreateOpsMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -786,6 +819,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return A Java Future containing the result of the DeleteOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest deleteOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest deleteOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOpsMetadataRequest, DeleteOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -2172,6 +2236,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, PRIORITY
      * </p>
      * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
      * <dt>ORACLE_LINUX</dt>
      * <dd>
      * <p>
@@ -2245,6 +2315,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
      * </p>
      * </dd>
      * <dt>ORACLE_LINUX</dt>
@@ -2865,6 +2941,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetOpsItemResult> getOpsItemAsync(GetOpsItemRequest getOpsItemRequest,
             com.amazonaws.handlers.AsyncHandler<GetOpsItemRequest, GetOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in AppManager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return A Java Future containing the result of the GetOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest getOpsMetadataRequest);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in AppManager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest getOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOpsMetadataRequest, GetOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -3614,6 +3721,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return A Java Future containing the result of the ListOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest listOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest listOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsMetadataRequest, ListOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -5094,6 +5232,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest updateOpsItemRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateOpsItemRequest, UpdateOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return A Java Future containing the result of the UpdateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest updateOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest updateOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOpsMetadataRequest, UpdateOpsMetadataResult> asyncHandler);
 
     /**
      * <p>

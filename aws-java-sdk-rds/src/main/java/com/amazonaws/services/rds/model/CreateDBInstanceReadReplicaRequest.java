@@ -336,18 +336,20 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String monitoringRoleArn;
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
      * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
+     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
      * instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
@@ -447,13 +449,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -2677,35 +2682,39 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
      * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
+     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
      * instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *        key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for an encrypted read replica.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     *        </p>
      *        <p>
      *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
+     *        have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the
      *        source DB instance.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2717,34 +2726,38 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
      * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
+     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
      * instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
-     * @return The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *         key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for an encrypted read replica.</p>
      *         <p>
-     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *         have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
-     *         source DB instance.
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *         </p>
      *         <p>
-     *         If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for
-     *         the destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in,
-     *         and you can't use encryption keys from one AWS Region in another AWS Region.
+     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
+     *         have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as
+     *         the source DB instance.
+     *         </p>
+     *         <p>
+     *         If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *         identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *         created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *         </p>
      *         <p>
      *         You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2756,35 +2769,39 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
      * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
+     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
      * instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *        key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for an encrypted read replica.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     *        </p>
      *        <p>
      *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
+     *        have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the
      *        source DB instance.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -3394,22 +3411,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3418,21 +3441,27 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
+     *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *         has a different default encryption key for each AWS Region.
+     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
+     *         for each AWS Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3441,22 +3470,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

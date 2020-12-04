@@ -126,6 +126,10 @@ public class GetLicenseConfigurationResultJsonUnmarshaller implements Unmarshall
                     getLicenseConfigurationResult.setAutomatedDiscoveryInformation(AutomatedDiscoveryInformationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("DisassociateWhenNotFound", targetDepth)) {
+                    context.nextToken();
+                    getLicenseConfigurationResult.setDisassociateWhenNotFound(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

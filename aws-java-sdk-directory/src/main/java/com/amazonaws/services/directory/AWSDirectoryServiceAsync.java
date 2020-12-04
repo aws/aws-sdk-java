@@ -817,7 +817,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -830,7 +830,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -881,7 +881,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -894,7 +894,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -1307,7 +1307,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Disable client authentication for smart cards.
+     * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param disableClientAuthenticationRequest
@@ -1321,7 +1321,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Disable client authentication for smart cards.
+     * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param disableClientAuthenticationRequest
@@ -1439,7 +1439,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Enable client authentication for smardtcards.
+     * Enables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param enableClientAuthenticationRequest
@@ -1453,7 +1453,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Enable client authentication for smardtcards.
+     * Enables alternative client authentication methods for the specified directory.
      * </p>
      * 
      * @param enableClientAuthenticationRequest
@@ -1654,7 +1654,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1667,7 +1668,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1809,7 +1811,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest
@@ -1822,7 +1824,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest

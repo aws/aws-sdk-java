@@ -73,6 +73,12 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * <code>NOT_EQUALS</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<InventoryFilter> filters;
@@ -193,6 +199,12 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * <code>NOT_EQUALS</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Filters to scope the results. The following filters and logical operators are supported:</p>
@@ -226,6 +238,13 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      *         <p>
      *         <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
      *         <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical
+     *         operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code>
+     *         (cross account).
      *         </p>
      *         </li>
      */
@@ -270,6 +289,12 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * <code>NOT_EQUALS</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -304,6 +329,13 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
      *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical
+     *        operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross
+     *        account).
      *        </p>
      *        </li>
      */
@@ -353,6 +385,12 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * <code>NOT_EQUALS</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -392,6 +430,13 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
      *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical
+     *        operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross
+     *        account).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -443,6 +488,12 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * <code>NOT_EQUALS</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -477,6 +528,13 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
      *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the resource. Logical
+     *        operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross
+     *        account).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

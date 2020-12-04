@@ -46,6 +46,11 @@ public class DeleteDBInstanceAutomatedBackupRequestMarshaller implements
             request.addParameter("DbiResourceId", StringUtils.fromString(deleteDBInstanceAutomatedBackupRequest.getDbiResourceId()));
         }
 
+        if (deleteDBInstanceAutomatedBackupRequest.getDBInstanceAutomatedBackupsArn() != null) {
+            request.addParameter("DBInstanceAutomatedBackupsArn",
+                    StringUtils.fromString(deleteDBInstanceAutomatedBackupRequest.getDBInstanceAutomatedBackupsArn()));
+        }
+
         return request;
     }
 

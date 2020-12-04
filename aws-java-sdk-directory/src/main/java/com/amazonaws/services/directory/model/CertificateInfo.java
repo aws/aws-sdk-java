@@ -54,7 +54,8 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date expiryDateTime;
     /**
      * <p>
-     * Displays the type of certificate.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      */
     private String type;
@@ -240,11 +241,13 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Displays the type of certificate.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Displays the type of certificate.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -254,10 +257,12 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Displays the type of certificate.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
-     * @return Displays the type of certificate.
+     * @return The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *         <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -267,11 +272,13 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Displays the type of certificate.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Displays the type of certificate.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -283,11 +290,13 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Displays the type of certificate.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Displays the type of certificate.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */

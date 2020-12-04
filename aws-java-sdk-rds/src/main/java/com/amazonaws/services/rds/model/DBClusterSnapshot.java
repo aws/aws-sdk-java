@@ -129,6 +129,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
@@ -843,10 +847,17 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
      *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.
+     *        snapshot.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -857,9 +868,16 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *         snapshot.
+     *         snapshot.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -870,10 +888,17 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
      *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.
+     *        snapshot.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

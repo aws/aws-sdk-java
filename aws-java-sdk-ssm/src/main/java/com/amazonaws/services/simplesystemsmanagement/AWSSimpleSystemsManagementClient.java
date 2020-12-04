@@ -169,6 +169,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataTooManyUpdatesException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataTooManyUpdatesExceptionUnmarshaller
+                                                    .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubTypeCountLimitExceededException")
                                     .withExceptionUnmarshaller(
                                             com.amazonaws.services.simplesystemsmanagement.model.transform.SubTypeCountLimitExceededExceptionUnmarshaller
@@ -245,6 +250,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AssociationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataKeyLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataKeyLimitExceededExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceDataSyncConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.ResourceDataSyncConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -257,6 +266,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidTargetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataInvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataInvalidArgumentExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AutomationStepNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationStepNotFoundExceptionUnmarshaller.getInstance()))
@@ -354,6 +367,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.UnsupportedOperatingSystemExceptionUnmarshaller
                                             .getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidOutputFolderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -393,11 +409,17 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("TotalSizeLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.TotalSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActivation").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidActivationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyUpdates").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.TooManyUpdatesExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentAlreadyExists").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.DocumentAlreadyExistsExceptionUnmarshaller.getInstance()))
@@ -1389,6 +1411,72 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
+     * the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return Result of the CreateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataAlreadyExistsException
+     *         An OpsMetadata object already exists for the selected resource.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataLimitExceededException
+     *         Your account reached the maximum number of OpsMetadata objects allowed by AppManager. The maximum is 200
+     *         OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateOpsMetadataResult createOpsMetadata(CreateOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final CreateOpsMetadataResult executeCreateOpsMetadata(CreateOpsMetadataRequest createOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOpsMetadataRequest> request = null;
+        Response<CreateOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOpsMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -1879,6 +1967,66 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteMaintenanceWindowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return Result of the DeleteOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOpsMetadataResult executeDeleteOpsMetadata(DeleteOpsMetadataRequest deleteOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOpsMetadataRequest> request = null;
+        Response<DeleteOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4405,6 +4553,12 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Valid properties: PRODUCT, PRIORITY
      * </p>
      * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
      * <dt>ORACLE_LINUX</dt>
      * <dd>
      * <p>
@@ -5524,6 +5678,66 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOpsItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpsItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * View operational metadata related to an application in AppManager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return Result of the GetOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetOpsMetadataResult getOpsMetadata(GetOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetOpsMetadataResult executeGetOpsMetadata(GetOpsMetadataRequest getOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOpsMetadataRequest> request = null;
+        Response<GetOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6772,6 +6986,64 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInventoryEntriesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInventoryEntriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return Result of the ListOpsMetadata operation returned by the service.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOpsMetadataResult listOpsMetadata(ListOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsMetadataResult executeListOpsMetadata(ListOpsMetadataRequest listOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsMetadataRequest> request = null;
+        Response<ListOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9160,6 +9432,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateOpsItemResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateOpsItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return Result of the UpdateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataKeyLimitExceededException
+     *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
+     *         application in AppManager.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateOpsMetadataResult updateOpsMetadata(UpdateOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOpsMetadataResult executeUpdateOpsMetadata(UpdateOpsMetadataRequest updateOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOpsMetadataRequest> request = null;
+        Response<UpdateOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

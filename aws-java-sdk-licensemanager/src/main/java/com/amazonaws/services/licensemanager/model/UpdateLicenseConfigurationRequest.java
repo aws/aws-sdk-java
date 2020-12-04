@@ -74,6 +74,12 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.List<ProductInformation> productInformationList;
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     */
+    private Boolean disassociateWhenNotFound;
 
     /**
      * <p>
@@ -495,6 +501,58 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     */
+
+    public void setDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        this.disassociateWhenNotFound = disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean getDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLicenseConfigurationRequest withDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        setDisassociateWhenNotFound(disassociateWhenNotFound);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean isDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +579,9 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getProductInformationList() != null)
-            sb.append("ProductInformationList: ").append(getProductInformationList());
+            sb.append("ProductInformationList: ").append(getProductInformationList()).append(",");
+        if (getDisassociateWhenNotFound() != null)
+            sb.append("DisassociateWhenNotFound: ").append(getDisassociateWhenNotFound());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +628,10 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getProductInformationList() != null && other.getProductInformationList().equals(this.getProductInformationList()) == false)
             return false;
+        if (other.getDisassociateWhenNotFound() == null ^ this.getDisassociateWhenNotFound() == null)
+            return false;
+        if (other.getDisassociateWhenNotFound() != null && other.getDisassociateWhenNotFound().equals(this.getDisassociateWhenNotFound()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +648,7 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getProductInformationList() == null) ? 0 : getProductInformationList().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateWhenNotFound() == null) ? 0 : getDisassociateWhenNotFound().hashCode());
         return hashCode;
     }
 

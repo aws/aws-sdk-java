@@ -455,6 +455,31 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
+     * the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return Result of the CreateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataAlreadyExistsException
+     *         An OpsMetadata object already exists for the selected resource.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataLimitExceededException
+     *         Your account reached the maximum number of OpsMetadata objects allowed by AppManager. The maximum is 200
+     *         OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateOpsMetadataResult createOpsMetadata(CreateOpsMetadataRequest createOpsMetadataRequest);
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -664,6 +689,25 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return Result of the DeleteOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest deleteOpsMetadataRequest);
 
     /**
      * <p>
@@ -1563,6 +1607,12 @@ public interface AWSSimpleSystemsManagement {
      * Valid properties: PRODUCT, PRIORITY
      * </p>
      * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
      * <dt>ORACLE_LINUX</dt>
      * <dd>
      * <p>
@@ -1977,6 +2027,25 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     GetOpsItemResult getOpsItem(GetOpsItemRequest getOpsItemRequest);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in AppManager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return Result of the GetOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetOpsMetadataResult getOpsMetadata(GetOpsMetadataRequest getOpsMetadataRequest);
 
     /**
      * <p>
@@ -2481,6 +2550,23 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return Result of the ListOpsMetadata operation returned by the service.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOpsMetadataResult listOpsMetadata(ListOpsMetadataRequest listOpsMetadataRequest);
 
     /**
      * <p>
@@ -3607,6 +3693,30 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest updateOpsItemRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return Result of the UpdateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataKeyLimitExceededException
+     *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
+     *         application in AppManager.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateOpsMetadataResult updateOpsMetadata(UpdateOpsMetadataRequest updateOpsMetadataRequest);
 
     /**
      * <p>

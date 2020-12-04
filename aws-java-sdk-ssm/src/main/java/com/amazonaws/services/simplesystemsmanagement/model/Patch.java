@@ -128,7 +128,7 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> bugzillaIds;
     /**
      * <p>
-     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies
      * to Linux-based instances only.
      * </p>
      */
@@ -905,11 +905,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies
      * to Linux-based instances only.
      * </p>
      * 
-     * @return The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     * @return The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
      *         Applies to Linux-based instances only.
      */
 
@@ -922,12 +922,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies
      * to Linux-based instances only.
      * </p>
      * 
      * @param cVEIds
-     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
      *        Applies to Linux-based instances only.
      */
 
@@ -942,7 +942,7 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies
      * to Linux-based instances only.
      * </p>
      * <p>
@@ -952,7 +952,7 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cVEIds
-     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
      *        Applies to Linux-based instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -969,12 +969,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies
      * to Linux-based instances only.
      * </p>
      * 
      * @param cVEIds
-     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
      *        Applies to Linux-based instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

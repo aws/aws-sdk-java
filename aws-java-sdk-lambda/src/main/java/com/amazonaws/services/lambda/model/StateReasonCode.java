@@ -31,7 +31,8 @@ public enum StateReasonCode {
     InvalidSubnet("InvalidSubnet"),
     InvalidSecurityGroup("InvalidSecurityGroup"),
     ImageDeleted("ImageDeleted"),
-    ImageAccessDenied("ImageAccessDenied");
+    ImageAccessDenied("ImageAccessDenied"),
+    InvalidImage("InvalidImage");
 
     private String value;
 

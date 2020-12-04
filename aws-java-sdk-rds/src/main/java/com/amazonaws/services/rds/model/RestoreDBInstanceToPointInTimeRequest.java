@@ -469,6 +469,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private Integer maxAllocatedStorage;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     */
+    private String sourceDBInstanceAutomatedBackupsArn;
 
     /**
      * Default constructor for RestoreDBInstanceToPointInTimeRequest object. Callers should use the setter or fluent
@@ -3559,6 +3566,52 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @param sourceDBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     *        <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     */
+
+    public void setSourceDBInstanceAutomatedBackupsArn(String sourceDBInstanceAutomatedBackupsArn) {
+        this.sourceDBInstanceAutomatedBackupsArn = sourceDBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     *         <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     */
+
+    public String getSourceDBInstanceAutomatedBackupsArn() {
+        return this.sourceDBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @param sourceDBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
+     *        <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withSourceDBInstanceAutomatedBackupsArn(String sourceDBInstanceAutomatedBackupsArn) {
+        setSourceDBInstanceAutomatedBackupsArn(sourceDBInstanceAutomatedBackupsArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3633,7 +3686,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         if (getSourceDbiResourceId() != null)
             sb.append("SourceDbiResourceId: ").append(getSourceDbiResourceId()).append(",");
         if (getMaxAllocatedStorage() != null)
-            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage());
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
+        if (getSourceDBInstanceAutomatedBackupsArn() != null)
+            sb.append("SourceDBInstanceAutomatedBackupsArn: ").append(getSourceDBInstanceAutomatedBackupsArn());
         sb.append("}");
         return sb.toString();
     }
@@ -3777,6 +3832,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
             return false;
+        if (other.getSourceDBInstanceAutomatedBackupsArn() == null ^ this.getSourceDBInstanceAutomatedBackupsArn() == null)
+            return false;
+        if (other.getSourceDBInstanceAutomatedBackupsArn() != null
+                && other.getSourceDBInstanceAutomatedBackupsArn().equals(this.getSourceDBInstanceAutomatedBackupsArn()) == false)
+            return false;
         return true;
     }
 
@@ -3817,6 +3877,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getSourceDbiResourceId() == null) ? 0 : getSourceDbiResourceId().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getSourceDBInstanceAutomatedBackupsArn() == null) ? 0 : getSourceDBInstanceAutomatedBackupsArn().hashCode());
         return hashCode;
     }
 

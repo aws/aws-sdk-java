@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The client authorization was invalid.
+ * Client authentication is already enabled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

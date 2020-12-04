@@ -167,7 +167,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you update an association, the system runs it immediately after it is updated and then according
      * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
-     * update it.
+     * update it. This parameter is not supported for rate expressions.
      * </p>
      * <p>
      * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
@@ -1177,7 +1177,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you update an association, the system runs it immediately after it is updated and then according
      * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
-     * update it.
+     * update it. This parameter is not supported for rate expressions.
      * </p>
      * <p>
      * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
@@ -1188,7 +1188,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param applyOnlyAtCronInterval
      *        By default, when you update an association, the system runs it immediately after it is updated and then
      *        according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you update it.</p>
+     *        immediately after you update it. This parameter is not supported for rate expressions.</p>
      *        <p>
      *        Also, if you specified this option when you created the association, you can reset it. To do so, specify
      *        the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command
@@ -1204,7 +1204,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you update an association, the system runs it immediately after it is updated and then according
      * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
-     * update it.
+     * update it. This parameter is not supported for rate expressions.
      * </p>
      * <p>
      * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
@@ -1214,7 +1214,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return By default, when you update an association, the system runs it immediately after it is updated and then
      *         according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you update it.</p>
+     *         immediately after you update it. This parameter is not supported for rate expressions.</p>
      *         <p>
      *         Also, if you specified this option when you created the association, you can reset it. To do so, specify
      *         the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the
@@ -1230,7 +1230,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you update an association, the system runs it immediately after it is updated and then according
      * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
-     * update it.
+     * update it. This parameter is not supported for rate expressions.
      * </p>
      * <p>
      * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
@@ -1241,7 +1241,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param applyOnlyAtCronInterval
      *        By default, when you update an association, the system runs it immediately after it is updated and then
      *        according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you update it.</p>
+     *        immediately after you update it. This parameter is not supported for rate expressions.</p>
      *        <p>
      *        Also, if you specified this option when you created the association, you can reset it. To do so, specify
      *        the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command
@@ -1259,7 +1259,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you update an association, the system runs it immediately after it is updated and then according
      * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
-     * update it.
+     * update it. This parameter is not supported for rate expressions.
      * </p>
      * <p>
      * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
@@ -1269,7 +1269,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return By default, when you update an association, the system runs it immediately after it is updated and then
      *         according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you update it.</p>
+     *         immediately after you update it. This parameter is not supported for rate expressions.</p>
      *         <p>
      *         Also, if you specified this option when you created the association, you can reset it. To do so, specify
      *         the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the

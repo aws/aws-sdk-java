@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the client certificate authentication settings, such as <code>ClientLDAPS</code> or
- * <code>ClientCertAuth</code>.
+ * Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code>
+ * and <code>DescribeCertificate</code> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ClientCertAuthSettings" target="_top">AWS API
@@ -31,18 +31,21 @@ public class ClientCertAuthSettings implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the URL of the default OCSP server used to check for revocation status.
+     * Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP
+     * address found in the AIA extension of the user certificate.
      * </p>
      */
     private String oCSPUrl;
 
     /**
      * <p>
-     * Specifies the URL of the default OCSP server used to check for revocation status.
+     * Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP
+     * address found in the AIA extension of the user certificate.
      * </p>
      * 
      * @param oCSPUrl
-     *        Specifies the URL of the default OCSP server used to check for revocation status.
+     *        Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any
+     *        OCSP address found in the AIA extension of the user certificate.
      */
 
     public void setOCSPUrl(String oCSPUrl) {
@@ -51,10 +54,12 @@ public class ClientCertAuthSettings implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the URL of the default OCSP server used to check for revocation status.
+     * Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP
+     * address found in the AIA extension of the user certificate.
      * </p>
      * 
-     * @return Specifies the URL of the default OCSP server used to check for revocation status.
+     * @return Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to
+     *         any OCSP address found in the AIA extension of the user certificate.
      */
 
     public String getOCSPUrl() {
@@ -63,11 +68,13 @@ public class ClientCertAuthSettings implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the URL of the default OCSP server used to check for revocation status.
+     * Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP
+     * address found in the AIA extension of the user certificate.
      * </p>
      * 
      * @param oCSPUrl
-     *        Specifies the URL of the default OCSP server used to check for revocation status.
+     *        Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any
+     *        OCSP address found in the AIA extension of the user certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

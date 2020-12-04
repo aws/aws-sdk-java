@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FailoverConditionSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AUDIOSILENCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioSilenceSettings").build();
     private static final MarshallingInfo<StructuredPojo> INPUTLOSSSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputLossSettings").build();
+    private static final MarshallingInfo<StructuredPojo> VIDEOBLACKSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoBlackSettings").build();
 
     private static final FailoverConditionSettingsMarshaller instance = new FailoverConditionSettingsMarshaller();
 
@@ -46,7 +50,9 @@ public class FailoverConditionSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(failoverConditionSettings.getAudioSilenceSettings(), AUDIOSILENCESETTINGS_BINDING);
             protocolMarshaller.marshall(failoverConditionSettings.getInputLossSettings(), INPUTLOSSSETTINGS_BINDING);
+            protocolMarshaller.marshall(failoverConditionSettings.getVideoBlackSettings(), VIDEOBLACKSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

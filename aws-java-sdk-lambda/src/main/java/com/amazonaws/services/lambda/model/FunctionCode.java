@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code for the Lambda function. You can specify either an object in Amazon S3, upload a ZIP archive deployment
- * package directly, or specify the URI of a container image.
+ * The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive
+ * deployment package directly, or specify the URI of a container image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode" target="_top">AWS API

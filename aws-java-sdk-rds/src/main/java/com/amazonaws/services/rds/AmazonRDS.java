@@ -427,9 +427,10 @@ public interface AmazonRDS {
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot
-     * in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained
+     * in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -1001,7 +1002,7 @@ public interface AmazonRDS {
     /**
      * <p>
      * Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or
-     * <code>storage-optimization</code>state.
+     * <code>storage-optimization</code> state.
      * </p>
      * 
      * @param createDBSnapshotRequest
@@ -1350,8 +1351,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
-     * instance's resource ID.
+     * Deletes automated backups using the <code>DbiResourceId</code> value of the source DB instance or the Amazon
+     * Resource Name (ARN) of the automated backups.
      * </p>
      * 
      * @param deleteDBInstanceAutomatedBackupRequest
@@ -3649,18 +3650,17 @@ public interface AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is created from the source database restore
-     * point with the most of original configuration with the default security group and the default DB parameter group.
-     * By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server
-     * instance that has an option group that is associated with mirroring; in this case, the instance becomes a
-     * mirrored AZ deployment and not a single-AZ deployment.
+     * point with most of the source's original configuration, including the default security group and DB parameter
+     * group. By default, the new DB instance is created as a Single-AZ deployment, except when the instance is a SQL
+     * Server instance that has an option group associated with mirroring. In this case, the instance becomes a Multi-AZ
+     * deployment, not a Single-AZ deployment.
      * </p>
      * <p>
-     * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
-     * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
-     * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
-     * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
-     * instance created from the snapshot.
+     * If you want to replace your original DB instance with the new, restored DB instance, then rename your original DB
+     * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB instances with the
+     * same name. After you have renamed your original DB instance with a different identifier, then you can pass the
+     * original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
+     * action. The result is that you replace the original DB instance with the DB instance created from the snapshot.
      * </p>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
@@ -3993,6 +3993,36 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Enables replication of automated backups to a different AWS Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param startDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StartDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @throws DBInstanceAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     * @throws StorageTypeNotSupportedException
+     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DBInstanceAutomatedBackup startDBInstanceAutomatedBackupsReplication(
+            StartDBInstanceAutomatedBackupsReplicationRequest startDBInstanceAutomatedBackupsReplicationRequest);
+
+    /**
+     * <p>
      * Starts an export of a snapshot to Amazon S3. The provided IAM role must have access to the S3 bucket.
      * </p>
      * 
@@ -4119,6 +4149,29 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBInstance stopDBInstance(StopDBInstanceRequest stopDBInstanceRequest);
+
+    /**
+     * <p>
+     * Stops automated backup replication for a DB instance.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param stopDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StopDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.StopDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(
+            StopDBInstanceAutomatedBackupsReplicationRequest stopDBInstanceAutomatedBackupsReplicationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

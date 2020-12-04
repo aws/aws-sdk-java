@@ -33,7 +33,7 @@ public class RemoveRoleFromDBInstanceRequest extends com.amazonaws.AmazonWebServ
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      * <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      * </p>
      */
@@ -88,12 +88,12 @@ public class RemoveRoleFromDBInstanceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      * <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     *        The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      *        <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      */
 
@@ -103,11 +103,11 @@ public class RemoveRoleFromDBInstanceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      * <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     * @return The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      *         <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      */
 
@@ -117,12 +117,12 @@ public class RemoveRoleFromDBInstanceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     * The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      * <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example
+     *        The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example,
      *        <code>arn:aws:iam::123456789012:role/AccessRole</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

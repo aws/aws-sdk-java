@@ -1,3 +1,40 @@
+# __1.11.913__ __2020-12-04__
+## __AWS Directory Service__
+  - ### Features
+    - Documentation updates for ds - updated descriptions
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports black video and audio silence as new conditions to trigger automatic input failover.
+
+## __AWS Lambda__
+  - ### Features
+    - Added the additional enum InvalidImage to StateReasonCode and LastUpdateStatusReasonCode fields.
+
+## __AWS License Manager__
+  - ### Features
+    - Automated Discovery now has support for custom tags, and detects software uninstalls.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces tag-on-create capability for the CreateImage API. A user can now specify tags that will be applied to the new resources (image, snapshots or both), during creation time.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for Amazon RDS Cross-Region Automated Backups, the ability to setup automatic replication of snapshots and transaction logs from a primary AWS Region to a secondary AWS Region.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Patch Manager MAC OS Support and OpsMetadata Store APIs to store operational metadata for an Application.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Update the import-workspace-image API to have "BYOL_REGULAR_WSP" as a valid input string for ingestion-process.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Adding HEALING to ClusterState.
+
 # __1.11.912__ __2020-12-03__
 ## __AWS Batch__
   - ### Features

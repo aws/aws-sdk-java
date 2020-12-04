@@ -167,6 +167,10 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
@@ -1118,9 +1122,16 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1131,8 +1142,15 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1143,9 +1161,16 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

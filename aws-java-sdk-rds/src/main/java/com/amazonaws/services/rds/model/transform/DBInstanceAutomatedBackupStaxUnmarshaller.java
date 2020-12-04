@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -157,6 +159,28 @@ public class DBInstanceAutomatedBackupStaxUnmarshaller implements Unmarshaller<D
                     dBInstanceAutomatedBackup.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("BackupRetentionPeriod", targetDepth)) {
+                    dBInstanceAutomatedBackup.setBackupRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsArn", targetDepth)) {
+                    dBInstanceAutomatedBackup.setDBInstanceAutomatedBackupsArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications", targetDepth)) {
+                    dBInstanceAutomatedBackup.withDBInstanceAutomatedBackupsReplications(new ArrayList<DBInstanceAutomatedBackupsReplication>());
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth)) {
+                    dBInstanceAutomatedBackup.withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstanceAutomatedBackup;

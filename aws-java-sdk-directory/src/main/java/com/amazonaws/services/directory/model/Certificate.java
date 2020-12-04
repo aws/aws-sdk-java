@@ -66,14 +66,14 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date expiryDateTime;
     /**
      * <p>
-     * Select <code>ClientCertAuth</code> for smart card integration.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Provides information about the client certificate authentication settings. The default value is
-     * <code>ClientLDAPS</code>.
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * </p>
      */
     private ClientCertAuthSettings clientCertAuthSettings;
@@ -339,11 +339,13 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Select <code>ClientCertAuth</code> for smart card integration.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Select <code>ClientCertAuth</code> for smart card integration.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -353,10 +355,12 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Select <code>ClientCertAuth</code> for smart card integration.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
-     * @return Select <code>ClientCertAuth</code> for smart card integration.
+     * @return The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *         <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -366,11 +370,13 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Select <code>ClientCertAuth</code> for smart card integration.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Select <code>ClientCertAuth</code> for smart card integration.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -382,11 +388,13 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Select <code>ClientCertAuth</code> for smart card integration.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        Select <code>ClientCertAuth</code> for smart card integration.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -398,13 +406,11 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the client certificate authentication settings. The default value is
-     * <code>ClientLDAPS</code>.
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * </p>
      * 
      * @param clientCertAuthSettings
-     *        Provides information about the client certificate authentication settings. The default value is
-     *        <code>ClientLDAPS</code>.
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      */
 
     public void setClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
@@ -413,12 +419,10 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the client certificate authentication settings. The default value is
-     * <code>ClientLDAPS</code>.
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * </p>
      * 
-     * @return Provides information about the client certificate authentication settings. The default value is
-     *         <code>ClientLDAPS</code>.
+     * @return A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      */
 
     public ClientCertAuthSettings getClientCertAuthSettings() {
@@ -427,13 +431,11 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the client certificate authentication settings. The default value is
-     * <code>ClientLDAPS</code>.
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * </p>
      * 
      * @param clientCertAuthSettings
-     *        Provides information about the client certificate authentication settings. The default value is
-     *        <code>ClientLDAPS</code>.
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

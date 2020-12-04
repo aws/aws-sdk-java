@@ -410,6 +410,17 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications", targetDepth)) {
+                    dBInstance.withDBInstanceAutomatedBackupsReplications(new ArrayList<DBInstanceAutomatedBackupsReplication>());
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth)) {
+                    dBInstance.withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

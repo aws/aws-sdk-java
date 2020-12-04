@@ -107,6 +107,13 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     */
+    private String dBInstanceAutomatedBackupsArn;
 
     /**
      * <p>
@@ -726,6 +733,52 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     *        <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     */
+
+    public void setDBInstanceAutomatedBackupsArn(String dBInstanceAutomatedBackupsArn) {
+        this.dBInstanceAutomatedBackupsArn = dBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     *         <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     */
+
+    public String getDBInstanceAutomatedBackupsArn() {
+        return this.dBInstanceAutomatedBackupsArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsArn
+     *        The Amazon Resource Name (ARN) of the replicated automated backups, for example,
+     *        <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDBInstanceAutomatedBackupsRequest withDBInstanceAutomatedBackupsArn(String dBInstanceAutomatedBackupsArn) {
+        setDBInstanceAutomatedBackupsArn(dBInstanceAutomatedBackupsArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -746,7 +799,9 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getDBInstanceAutomatedBackupsArn() != null)
+            sb.append("DBInstanceAutomatedBackupsArn: ").append(getDBInstanceAutomatedBackupsArn());
         sb.append("}");
         return sb.toString();
     }
@@ -781,6 +836,11 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getDBInstanceAutomatedBackupsArn() == null ^ this.getDBInstanceAutomatedBackupsArn() == null)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsArn() != null
+                && other.getDBInstanceAutomatedBackupsArn().equals(this.getDBInstanceAutomatedBackupsArn()) == false)
+            return false;
         return true;
     }
 
@@ -794,6 +854,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsArn() == null) ? 0 : getDBInstanceAutomatedBackupsArn().hashCode());
         return hashCode;
     }
 

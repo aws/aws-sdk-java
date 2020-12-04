@@ -147,6 +147,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest request) {
+
+        return createOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateOpsMetadataRequest, CreateOpsMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest request) {
 
         return createPatchBaselineAsync(request, null);
@@ -233,6 +246,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest request) {
+
+        return deleteOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOpsMetadataRequest, DeleteOpsMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -989,6 +1015,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest request) {
+
+        return getOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOpsMetadataRequest, GetOpsMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOpsSummaryResult> getOpsSummaryAsync(GetOpsSummaryRequest request) {
 
         return getOpsSummaryAsync(request, null);
@@ -1241,6 +1280,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest request) {
+
+        return listOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOpsMetadataRequest, ListOpsMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1639,6 +1691,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOpsItemRequest, UpdateOpsItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest request) {
+
+        return updateOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateOpsMetadataRequest, UpdateOpsMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

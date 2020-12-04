@@ -39,11 +39,16 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     private String certificateData;
     /**
      * <p>
-     * The certificate type to register for the request.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      */
     private String type;
-
+    /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     */
     private ClientCertAuthSettings clientCertAuthSettings;
 
     /**
@@ -128,11 +133,13 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The certificate type to register for the request.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        The certificate type to register for the request.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -142,10 +149,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The certificate type to register for the request.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
-     * @return The certificate type to register for the request.
+     * @return The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *         <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @see CertificateType
      */
 
@@ -155,11 +164,13 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The certificate type to register for the request.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        The certificate type to register for the request.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -171,11 +182,13 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The certificate type to register for the request.
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * </p>
      * 
      * @param type
-     *        The certificate type to register for the request.
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -186,7 +199,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
      * @param clientCertAuthSettings
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      */
 
     public void setClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
@@ -194,7 +212,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
+     * @return A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      */
 
     public ClientCertAuthSettings getClientCertAuthSettings() {
@@ -202,7 +224,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
      * @param clientCertAuthSettings
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

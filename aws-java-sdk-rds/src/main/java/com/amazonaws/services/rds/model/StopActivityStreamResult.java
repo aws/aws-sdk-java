@@ -27,6 +27,10 @@ public class StopActivityStreamResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
@@ -46,9 +50,16 @@ public class StopActivityStreamResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -59,8 +70,15 @@ public class StopActivityStreamResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -71,9 +89,16 @@ public class StopActivityStreamResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

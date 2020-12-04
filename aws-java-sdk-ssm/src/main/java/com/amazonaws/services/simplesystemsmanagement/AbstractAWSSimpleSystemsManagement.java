@@ -84,6 +84,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CreateOpsMetadataResult createOpsMetadata(CreateOpsMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -115,6 +120,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -396,6 +406,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public GetOpsMetadataResult getOpsMetadata(GetOpsMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetOpsSummaryResult getOpsSummary(GetOpsSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -487,6 +502,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOpsMetadataResult listOpsMetadata(ListOpsMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -637,6 +657,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOpsMetadataResult updateOpsMetadata(UpdateOpsMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

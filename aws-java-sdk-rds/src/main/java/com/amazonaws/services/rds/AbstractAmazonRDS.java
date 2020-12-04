@@ -769,6 +769,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBInstanceAutomatedBackup startDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -785,6 +790,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBInstance stopDBInstance(StopDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(StopDBInstanceAutomatedBackupsReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

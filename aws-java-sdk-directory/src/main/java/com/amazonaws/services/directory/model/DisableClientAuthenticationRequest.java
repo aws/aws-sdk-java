@@ -27,24 +27,24 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable client authentication in a specified directory for smart cards.
+     * The identifier of the directory
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * Disable the type of client authentication request.
+     * The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * Disable client authentication in a specified directory for smart cards.
+     * The identifier of the directory
      * </p>
      * 
      * @param directoryId
-     *        Disable client authentication in a specified directory for smart cards.
+     *        The identifier of the directory
      */
 
     public void setDirectoryId(String directoryId) {
@@ -53,10 +53,10 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable client authentication in a specified directory for smart cards.
+     * The identifier of the directory
      * </p>
      * 
-     * @return Disable client authentication in a specified directory for smart cards.
+     * @return The identifier of the directory
      */
 
     public String getDirectoryId() {
@@ -65,11 +65,11 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable client authentication in a specified directory for smart cards.
+     * The identifier of the directory
      * </p>
      * 
      * @param directoryId
-     *        Disable client authentication in a specified directory for smart cards.
+     *        The identifier of the directory
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,12 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable the type of client authentication request.
+     * The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.
      * </p>
      * 
      * @param type
-     *        Disable the type of client authentication request.
+     *        The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is
+     *        supported.
      * @see ClientAuthenticationType
      */
 
@@ -94,10 +95,11 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable the type of client authentication request.
+     * The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.
      * </p>
      * 
-     * @return Disable the type of client authentication request.
+     * @return The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is
+     *         supported.
      * @see ClientAuthenticationType
      */
 
@@ -107,11 +109,12 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable the type of client authentication request.
+     * The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.
      * </p>
      * 
      * @param type
-     *        Disable the type of client authentication request.
+     *        The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientAuthenticationType
      */
@@ -123,11 +126,12 @@ public class DisableClientAuthenticationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Disable the type of client authentication request.
+     * The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.
      * </p>
      * 
      * @param type
-     *        Disable the type of client authentication request.
+     *        The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientAuthenticationType
      */

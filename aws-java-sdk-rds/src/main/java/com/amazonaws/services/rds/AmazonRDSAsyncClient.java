@@ -4967,6 +4967,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DBInstanceAutomatedBackup> startDBInstanceAutomatedBackupsReplicationAsync(
+            StartDBInstanceAutomatedBackupsReplicationRequest request) {
+
+        return startDBInstanceAutomatedBackupsReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstanceAutomatedBackup> startDBInstanceAutomatedBackupsReplicationAsync(
+            final StartDBInstanceAutomatedBackupsReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDBInstanceAutomatedBackupsReplicationRequest, DBInstanceAutomatedBackup> asyncHandler) {
+        final StartDBInstanceAutomatedBackupsReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DBInstanceAutomatedBackup>() {
+            @Override
+            public DBInstanceAutomatedBackup call() throws Exception {
+                DBInstanceAutomatedBackup result = null;
+
+                try {
+                    result = executeStartDBInstanceAutomatedBackupsReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest request) {
 
         return startExportTaskAsync(request, null);
@@ -5083,6 +5118,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeStopDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstanceAutomatedBackup> stopDBInstanceAutomatedBackupsReplicationAsync(
+            StopDBInstanceAutomatedBackupsReplicationRequest request) {
+
+        return stopDBInstanceAutomatedBackupsReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstanceAutomatedBackup> stopDBInstanceAutomatedBackupsReplicationAsync(
+            final StopDBInstanceAutomatedBackupsReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopDBInstanceAutomatedBackupsReplicationRequest, DBInstanceAutomatedBackup> asyncHandler) {
+        final StopDBInstanceAutomatedBackupsReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DBInstanceAutomatedBackup>() {
+            @Override
+            public DBInstanceAutomatedBackup call() throws Exception {
+                DBInstanceAutomatedBackup result = null;
+
+                try {
+                    result = executeStopDBInstanceAutomatedBackupsReplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -87,6 +87,11 @@ public class DescribeDBInstanceAutomatedBackupsRequestMarshaller implements
             request.addParameter("Marker", StringUtils.fromString(describeDBInstanceAutomatedBackupsRequest.getMarker()));
         }
 
+        if (describeDBInstanceAutomatedBackupsRequest.getDBInstanceAutomatedBackupsArn() != null) {
+            request.addParameter("DBInstanceAutomatedBackupsArn",
+                    StringUtils.fromString(describeDBInstanceAutomatedBackupsRequest.getDBInstanceAutomatedBackupsArn()));
+        }
+
         return request;
     }
 

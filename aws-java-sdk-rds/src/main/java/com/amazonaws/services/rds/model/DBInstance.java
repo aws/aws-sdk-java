@@ -324,12 +324,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -435,8 +439,11 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean performanceInsightsEnabled;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -492,6 +499,12 @@ public class DBInstance implements Serializable, Cloneable {
     private Integer maxAllocatedStorage;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
 
     /**
      * <p>
@@ -2737,9 +2750,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2750,8 +2770,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -2762,9 +2789,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2776,12 +2810,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
      *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -2791,11 +2825,11 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @return The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *         CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -2805,12 +2839,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
      *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3585,13 +3619,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3600,12 +3639,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3614,13 +3658,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4136,6 +4185,83 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @return The list of replicated automated backups associated with the DB instance.
+     */
+
+    public java.util.List<DBInstanceAutomatedBackupsReplication> getDBInstanceAutomatedBackupsReplications() {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>();
+        }
+        return dBInstanceAutomatedBackupsReplications;
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     */
+
+    public void setDBInstanceAutomatedBackupsReplications(java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            this.dBInstanceAutomatedBackupsReplications = null;
+            return;
+        }
+
+        this.dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                dBInstanceAutomatedBackupsReplications);
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBInstanceAutomatedBackupsReplications(java.util.Collection)} or
+     * {@link #withDBInstanceAutomatedBackupsReplications(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication... dBInstanceAutomatedBackupsReplications) {
+        if (this.dBInstanceAutomatedBackupsReplications == null) {
+            setDBInstanceAutomatedBackupsReplications(new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                    dBInstanceAutomatedBackupsReplications.length));
+        }
+        for (DBInstanceAutomatedBackupsReplication ele : dBInstanceAutomatedBackupsReplications) {
+            this.dBInstanceAutomatedBackupsReplications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDBInstanceAutomatedBackupsReplications(
+            java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        setDBInstanceAutomatedBackupsReplications(dBInstanceAutomatedBackupsReplications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4268,7 +4394,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getMaxAllocatedStorage() != null)
             sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: ").append(getTagList());
+            sb.append("TagList: ").append(getTagList()).append(",");
+        if (getDBInstanceAutomatedBackupsReplications() != null)
+            sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications());
         sb.append("}");
         return sb.toString();
     }
@@ -4533,6 +4661,11 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
             return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() == null ^ this.getDBInstanceAutomatedBackupsReplications() == null)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() != null
+                && other.getDBInstanceAutomatedBackupsReplications().equals(this.getDBInstanceAutomatedBackupsReplications()) == false)
+            return false;
         return true;
     }
 
@@ -4602,6 +4735,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getListenerEndpoint() == null) ? 0 : getListenerEndpoint().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
         return hashCode;
     }
 

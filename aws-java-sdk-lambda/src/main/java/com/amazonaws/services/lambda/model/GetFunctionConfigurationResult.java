@@ -76,7 +76,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private Integer timeout;
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      */
     private Integer memorySize;
@@ -195,8 +195,8 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      */
     private String packageType;
@@ -574,11 +574,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The amount of memory available to the function at runtime.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -587,10 +587,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
-     * @return The memory that's allocated to the function.
+     * @return The amount of memory available to the function at runtime.
      */
 
     public Integer getMemorySize() {
@@ -599,11 +599,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The amount of memory available to the function at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1578,13 +1578,13 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      * 
      * @param packageType
      *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        .zip file archive.
      * @see PackageType
      */
 
@@ -1594,12 +1594,12 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      * 
      * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
-     *         for ZIP archive.
+     *         for .zip file archive.
      * @see PackageType
      */
 
@@ -1609,13 +1609,13 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      * 
      * @param packageType
      *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        .zip file archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -1627,13 +1627,13 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      * 
      * @param packageType
      *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        .zip file archive.
      * @see PackageType
      */
 
@@ -1643,13 +1643,13 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
      * </p>
      * 
      * @param packageType
      *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        .zip file archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */

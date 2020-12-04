@@ -161,7 +161,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it.
+     * after you create it. This parameter is not supported for rate expressions.
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
@@ -1108,13 +1108,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it.
+     * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it.
+     *        immediately after you create it. This parameter is not supported for rate expressions.
      */
 
     public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
@@ -1125,12 +1125,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it.
+     * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it.
+     *         immediately after you create it. This parameter is not supported for rate expressions.
      */
 
     public Boolean getApplyOnlyAtCronInterval() {
@@ -1141,13 +1141,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it.
+     * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it.
+     *        immediately after you create it. This parameter is not supported for rate expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1160,12 +1160,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it.
+     * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it.
+     *         immediately after you create it. This parameter is not supported for rate expressions.
      */
 
     public Boolean isApplyOnlyAtCronInterval() {

@@ -577,6 +577,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest request) {
+
+        return createOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(final CreateOpsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOpsMetadataRequest, CreateOpsMetadataResult> asyncHandler) {
+        final CreateOpsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOpsMetadataResult>() {
+            @Override
+            public CreateOpsMetadataResult call() throws Exception {
+                CreateOpsMetadataResult result = null;
+
+                try {
+                    result = executeCreateOpsMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest request) {
 
         return createPatchBaselineAsync(request, null);
@@ -792,6 +825,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeDeleteMaintenanceWindow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest request) {
+
+        return deleteOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(final DeleteOpsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOpsMetadataRequest, DeleteOpsMetadataResult> asyncHandler) {
+        final DeleteOpsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOpsMetadataResult>() {
+            @Override
+            public DeleteOpsMetadataResult call() throws Exception {
+                DeleteOpsMetadataResult result = null;
+
+                try {
+                    result = executeDeleteOpsMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2662,6 +2728,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest request) {
+
+        return getOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(final GetOpsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOpsMetadataRequest, GetOpsMetadataResult> asyncHandler) {
+        final GetOpsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOpsMetadataResult>() {
+            @Override
+            public GetOpsMetadataResult call() throws Exception {
+                GetOpsMetadataResult result = null;
+
+                try {
+                    result = executeGetOpsMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOpsSummaryResult> getOpsSummaryAsync(GetOpsSummaryRequest request) {
 
         return getOpsSummaryAsync(request, null);
@@ -3264,6 +3363,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeListInventoryEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest request) {
+
+        return listOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(final ListOpsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOpsMetadataRequest, ListOpsMetadataResult> asyncHandler) {
+        final ListOpsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOpsMetadataResult>() {
+            @Override
+            public ListOpsMetadataResult call() throws Exception {
+                ListOpsMetadataResult result = null;
+
+                try {
+                    result = executeListOpsMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4263,6 +4395,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeUpdateOpsItem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest request) {
+
+        return updateOpsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(final UpdateOpsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOpsMetadataRequest, UpdateOpsMetadataResult> asyncHandler) {
+        final UpdateOpsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOpsMetadataResult>() {
+            @Override
+            public UpdateOpsMetadataResult call() throws Exception {
+                UpdateOpsMetadataResult result = null;
+
+                try {
+                    result = executeUpdateOpsMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

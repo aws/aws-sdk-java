@@ -119,6 +119,12 @@ public class GetLicenseConfigurationResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private AutomatedDiscoveryInformation automatedDiscoveryInformation;
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     */
+    private Boolean disassociateWhenNotFound;
 
     /**
      * <p>
@@ -942,6 +948,58 @@ public class GetLicenseConfigurationResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     */
+
+    public void setDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        this.disassociateWhenNotFound = disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean getDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @param disassociateWhenNotFound
+     *        When true, disassociates a resource when software is uninstalled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLicenseConfigurationResult withDisassociateWhenNotFound(Boolean disassociateWhenNotFound) {
+        setDisassociateWhenNotFound(disassociateWhenNotFound);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, disassociates a resource when software is uninstalled.
+     * </p>
+     * 
+     * @return When true, disassociates a resource when software is uninstalled.
+     */
+
+    public Boolean isDisassociateWhenNotFound() {
+        return this.disassociateWhenNotFound;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -984,7 +1042,9 @@ public class GetLicenseConfigurationResult extends com.amazonaws.AmazonWebServic
         if (getProductInformationList() != null)
             sb.append("ProductInformationList: ").append(getProductInformationList()).append(",");
         if (getAutomatedDiscoveryInformation() != null)
-            sb.append("AutomatedDiscoveryInformation: ").append(getAutomatedDiscoveryInformation());
+            sb.append("AutomatedDiscoveryInformation: ").append(getAutomatedDiscoveryInformation()).append(",");
+        if (getDisassociateWhenNotFound() != null)
+            sb.append("DisassociateWhenNotFound: ").append(getDisassociateWhenNotFound());
         sb.append("}");
         return sb.toString();
     }
@@ -1064,6 +1124,10 @@ public class GetLicenseConfigurationResult extends com.amazonaws.AmazonWebServic
         if (other.getAutomatedDiscoveryInformation() != null
                 && other.getAutomatedDiscoveryInformation().equals(this.getAutomatedDiscoveryInformation()) == false)
             return false;
+        if (other.getDisassociateWhenNotFound() == null ^ this.getDisassociateWhenNotFound() == null)
+            return false;
+        if (other.getDisassociateWhenNotFound() != null && other.getDisassociateWhenNotFound().equals(this.getDisassociateWhenNotFound()) == false)
+            return false;
         return true;
     }
 
@@ -1088,6 +1152,7 @@ public class GetLicenseConfigurationResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getProductInformationList() == null) ? 0 : getProductInformationList().hashCode());
         hashCode = prime * hashCode + ((getAutomatedDiscoveryInformation() == null) ? 0 : getAutomatedDiscoveryInformation().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateWhenNotFound() == null) ? 0 : getDisassociateWhenNotFound().hashCode());
         return hashCode;
     }
 

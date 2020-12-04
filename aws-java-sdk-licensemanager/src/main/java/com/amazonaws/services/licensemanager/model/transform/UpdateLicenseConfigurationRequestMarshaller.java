@@ -44,6 +44,8 @@ public class UpdateLicenseConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> PRODUCTINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductInformationList").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATEWHENNOTFOUND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateWhenNotFound").build();
 
     private static final UpdateLicenseConfigurationRequestMarshaller instance = new UpdateLicenseConfigurationRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class UpdateLicenseConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateLicenseConfigurationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateLicenseConfigurationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateLicenseConfigurationRequest.getProductInformationList(), PRODUCTINFORMATIONLIST_BINDING);
+            protocolMarshaller.marshall(updateLicenseConfigurationRequest.getDisassociateWhenNotFound(), DISASSOCIATEWHENNOTFOUND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

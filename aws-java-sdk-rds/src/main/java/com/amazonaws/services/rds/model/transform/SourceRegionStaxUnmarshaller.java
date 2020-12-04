@@ -57,6 +57,11 @@ public class SourceRegionStaxUnmarshaller implements Unmarshaller<SourceRegion, 
                     sourceRegion.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsDBInstanceAutomatedBackupsReplication", targetDepth)) {
+                    sourceRegion.setSupportsDBInstanceAutomatedBackupsReplication(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return sourceRegion;

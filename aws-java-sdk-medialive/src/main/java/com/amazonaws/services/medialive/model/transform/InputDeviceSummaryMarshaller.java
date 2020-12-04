@@ -49,6 +49,8 @@ public class InputDeviceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serialNumber").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> UHDDEVICESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("uhdDeviceSettings").build();
 
     private static final InputDeviceSummaryMarshaller instance = new InputDeviceSummaryMarshaller();
 
@@ -77,6 +79,7 @@ public class InputDeviceSummaryMarshaller {
             protocolMarshaller.marshall(inputDeviceSummary.getNetworkSettings(), NETWORKSETTINGS_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getSerialNumber(), SERIALNUMBER_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(inputDeviceSummary.getUhdDeviceSettings(), UHDDEVICESETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

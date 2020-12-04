@@ -823,9 +823,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * Creates a Lambda function. To create a function, you need a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
-     * execution role</a>. The deployment package is a ZIP archive or image container that contains your function code.
-     * The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for log
-     * streaming and AWS X-Ray for request tracing.
+     * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
+     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
+     * log streaming and AWS X-Ray for request tracing.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -849,8 +849,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * concurrency limits (<a>PutFunctionConcurrency</a>).
      * </p>
      * <p>
-     * You can use code signing if your deployment package is a ZIP archive. To enable code signing for this function,
-     * specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
+     * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
+     * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
      * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
      * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
      * function.
@@ -4332,6 +4332,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * The function's code is locked when you publish a version. You can't modify the code of a published version, only
      * the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
+     * you update the image tag to a new image, Lambda does not automatically update the function.
+     * </p>
+     * </note>
      * 
      * @param updateFunctionCodeRequest
      * @return Result of the UpdateFunctionCode operation returned by the service.

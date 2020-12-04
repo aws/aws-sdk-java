@@ -1138,21 +1138,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -1268,13 +1267,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -8830,41 +8832,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *        <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *        account has a different default CMK for each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -8876,40 +8876,38 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted DB instance.</p>
      *         <p>
-     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
-     *         a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *         instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
      *         <p>
-     *         Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *         Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *         <code>CreateDBCluster</code>.
      *         </p>
      *         <p>
      *         If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *         parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *         key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *         parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *         account has a different default CMK for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -8921,41 +8919,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *        <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *        account has a different default CMK for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9720,22 +9716,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -9744,21 +9746,27 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
+     *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *         has a different default encryption key for each AWS Region.
+     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
+     *         for each AWS Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -9767,22 +9775,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

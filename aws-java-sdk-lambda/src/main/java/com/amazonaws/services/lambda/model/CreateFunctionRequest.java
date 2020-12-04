@@ -97,8 +97,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer timeout;
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      */
     private Integer memorySize;
@@ -670,13 +670,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -685,12 +685,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
-     * @return The amount of memory that your function has access to. Increasing the function's memory also increases
-     *         its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * @return The amount of memory available to the function at runtime. Increasing the function's memory also
+     *         increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public Integer getMemorySize() {
@@ -699,13 +699,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
