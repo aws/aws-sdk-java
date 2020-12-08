@@ -1,3 +1,12 @@
+# __1.11.914__ __2020-12-07__
+## __AWS Database Migration Service__
+  - ### Features
+    - Added PreserveTransaction setting to preserve order of CDC for S3 as target. Added CsvNoSupValue setting to replace empty value for columns not included in the supplemental log for S3 as target.
+
+## __AWS Service Catalog App Registry__
+  - ### Features
+    - AWS Service Catalog AppRegistry now supports adding, removing, and listing tags on resources after they are created.
+
 # __1.11.913__ __2020-12-04__
 ## __AWS Directory Service__
   - ### Features

@@ -326,6 +326,67 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
+     * Lists all of the tags on the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified resource.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
+     * resource, this action updates its value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates an existing application with new attributes.
      * </p>
      * 

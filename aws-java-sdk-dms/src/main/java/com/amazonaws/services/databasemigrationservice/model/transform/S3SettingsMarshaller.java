@@ -75,6 +75,14 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionSequence").build();
     private static final MarshallingInfo<String> DATEPARTITIONDELIMITER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionDelimiter").build();
+    private static final MarshallingInfo<Boolean> USECSVNOSUPVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseCsvNoSupValue").build();
+    private static final MarshallingInfo<String> CSVNOSUPVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CsvNoSupValue").build();
+    private static final MarshallingInfo<Boolean> PRESERVETRANSACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreserveTransactions").build();
+    private static final MarshallingInfo<String> CDCPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CdcPath").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -116,6 +124,10 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getDatePartitionEnabled(), DATEPARTITIONENABLED_BINDING);
             protocolMarshaller.marshall(s3Settings.getDatePartitionSequence(), DATEPARTITIONSEQUENCE_BINDING);
             protocolMarshaller.marshall(s3Settings.getDatePartitionDelimiter(), DATEPARTITIONDELIMITER_BINDING);
+            protocolMarshaller.marshall(s3Settings.getUseCsvNoSupValue(), USECSVNOSUPVALUE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getCsvNoSupValue(), CSVNOSUPVALUE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getPreserveTransactions(), PRESERVETRANSACTIONS_BINDING);
+            protocolMarshaller.marshall(s3Settings.getCdcPath(), CDCPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
