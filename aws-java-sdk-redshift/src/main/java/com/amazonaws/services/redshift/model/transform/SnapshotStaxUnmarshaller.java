@@ -90,6 +90,11 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("EngineFullVersion", targetDepth)) {
+                    snapshot.setEngineFullVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SnapshotType", targetDepth)) {
                     snapshot.setSnapshotType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

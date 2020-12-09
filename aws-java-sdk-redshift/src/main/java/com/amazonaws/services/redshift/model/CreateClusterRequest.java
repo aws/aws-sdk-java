@@ -135,8 +135,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -492,6 +492,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String snapshotScheduleIdentifier;
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     */
+    private Boolean availabilityZoneRelocation;
 
     /**
      * <p>
@@ -1113,8 +1120,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1123,8 +1130,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -1139,8 +1146,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @return The node type to be provisioned for the cluster. For information about node types, go to <a
@@ -1148,8 +1155,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *         <p>
      *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *         <code>ra3.16xlarge</code>
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *         <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public String getNodeType() {
@@ -1164,8 +1171,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1174,8 +1181,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3591,6 +3598,66 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is created.
+     */
+
+    public void setAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        this.availabilityZoneRelocation = availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is created.
+     */
+
+    public Boolean getAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        setAvailabilityZoneRelocation(availabilityZoneRelocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is created.
+     */
+
+    public Boolean isAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3661,7 +3728,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMaintenanceTrackName() != null)
             sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
         if (getSnapshotScheduleIdentifier() != null)
-            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier());
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
+        if (getAvailabilityZoneRelocation() != null)
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation());
         sb.append("}");
         return sb.toString();
     }
@@ -3799,6 +3868,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocation() == null ^ this.getAvailabilityZoneRelocation() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
+            return false;
         return true;
     }
 
@@ -3837,6 +3910,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         return hashCode;
     }
 

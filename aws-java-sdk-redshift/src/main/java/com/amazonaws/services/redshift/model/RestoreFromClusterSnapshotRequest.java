@@ -333,6 +333,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Integer numberOfNodes;
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     */
+    private Boolean availabilityZoneRelocation;
 
     /**
      * <p>
@@ -2432,6 +2439,66 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is restored.
+     */
+
+    public void setAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        this.availabilityZoneRelocation = availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is restored.
+     */
+
+    public Boolean getAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        setAvailabilityZoneRelocation(availabilityZoneRelocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is restored.
+     */
+
+    public Boolean isAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2494,7 +2561,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getSnapshotScheduleIdentifier() != null)
             sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
         if (getNumberOfNodes() != null)
-            sb.append("NumberOfNodes: ").append(getNumberOfNodes());
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
+        if (getAvailabilityZoneRelocation() != null)
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation());
         sb.append("}");
         return sb.toString();
     }
@@ -2616,6 +2685,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getNumberOfNodes() != null && other.getNumberOfNodes().equals(this.getNumberOfNodes()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocation() == null ^ this.getAvailabilityZoneRelocation() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
+            return false;
         return true;
     }
 
@@ -2650,6 +2723,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         return hashCode;
     }
 

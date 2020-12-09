@@ -100,6 +100,12 @@ public class Snapshot implements Serializable, Cloneable {
     private String clusterVersion;
     /**
      * <p>
+     * The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     * </p>
+     */
+    private String engineFullVersion;
+    /**
+     * <p>
      * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of
      * type "manual".
      * </p>
@@ -727,6 +733,46 @@ public class Snapshot implements Serializable, Cloneable {
 
     public Snapshot withClusterVersion(String clusterVersion) {
         setClusterVersion(clusterVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     * </p>
+     * 
+     * @param engineFullVersion
+     *        The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     */
+
+    public void setEngineFullVersion(String engineFullVersion) {
+        this.engineFullVersion = engineFullVersion;
+    }
+
+    /**
+     * <p>
+     * The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     * </p>
+     * 
+     * @return The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     */
+
+    public String getEngineFullVersion() {
+        return this.engineFullVersion;
+    }
+
+    /**
+     * <p>
+     * The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     * </p>
+     * 
+     * @param engineFullVersion
+     *        The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withEngineFullVersion(String engineFullVersion) {
+        setEngineFullVersion(engineFullVersion);
         return this;
     }
 
@@ -2005,6 +2051,8 @@ public class Snapshot implements Serializable, Cloneable {
             sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getClusterVersion() != null)
             sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
+        if (getEngineFullVersion() != null)
+            sb.append("EngineFullVersion: ").append(getEngineFullVersion()).append(",");
         if (getSnapshotType() != null)
             sb.append("SnapshotType: ").append(getSnapshotType()).append(",");
         if (getNodeType() != null)
@@ -2102,6 +2150,10 @@ public class Snapshot implements Serializable, Cloneable {
         if (other.getClusterVersion() == null ^ this.getClusterVersion() == null)
             return false;
         if (other.getClusterVersion() != null && other.getClusterVersion().equals(this.getClusterVersion()) == false)
+            return false;
+        if (other.getEngineFullVersion() == null ^ this.getEngineFullVersion() == null)
+            return false;
+        if (other.getEngineFullVersion() != null && other.getEngineFullVersion().equals(this.getEngineFullVersion()) == false)
             return false;
         if (other.getSnapshotType() == null ^ this.getSnapshotType() == null)
             return false;
@@ -2219,6 +2271,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode());
+        hashCode = prime * hashCode + ((getEngineFullVersion() == null) ? 0 : getEngineFullVersion().hashCode());
         hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode());
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());

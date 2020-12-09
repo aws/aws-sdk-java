@@ -204,6 +204,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("SnapshotScheduleIdentifier", StringUtils.fromString(createClusterRequest.getSnapshotScheduleIdentifier()));
         }
 
+        if (createClusterRequest.getAvailabilityZoneRelocation() != null) {
+            request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(createClusterRequest.getAvailabilityZoneRelocation()));
+        }
+
         return request;
     }
 

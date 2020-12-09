@@ -150,6 +150,18 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("KmsKeyId", StringUtils.fromString(modifyClusterRequest.getKmsKeyId()));
         }
 
+        if (modifyClusterRequest.getAvailabilityZoneRelocation() != null) {
+            request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(modifyClusterRequest.getAvailabilityZoneRelocation()));
+        }
+
+        if (modifyClusterRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(modifyClusterRequest.getAvailabilityZone()));
+        }
+
+        if (modifyClusterRequest.getPort() != null) {
+            request.addParameter("Port", StringUtils.fromInteger(modifyClusterRequest.getPort()));
+        }
+
         return request;
     }
 

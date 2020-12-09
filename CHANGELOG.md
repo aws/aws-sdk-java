@@ -1,3 +1,16 @@
+# __1.11.916__ __2020-12-09__
+## __AWS Global Accelerator__
+  - ### Features
+    - This release adds support for custom routing accelerators
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for G4ad instances powered by AMD Radeon Pro V520 GPUs and AMD 2nd Generation EPYC processors
+
+## __Amazon Redshift__
+  - ### Features
+    - Add support for availability zone relocation feature.
+
 # __1.11.915__ __2020-12-08__
 ## __AWS Audit Manager__
   - ### Features

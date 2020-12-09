@@ -179,6 +179,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("NumberOfNodes", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getNumberOfNodes()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getAvailabilityZoneRelocation() != null) {
+            request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getAvailabilityZoneRelocation()));
+        }
+
         return request;
     }
 

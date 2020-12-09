@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -52,6 +54,17 @@ public class EndpointStaxUnmarshaller implements Unmarshaller<Endpoint, StaxUnma
                     endpoint.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("VpcEndpoints", targetDepth)) {
+                    endpoint.withVpcEndpoints(new ArrayList<SpartaProxyVpcEndpoint>());
+                    continue;
+                }
+
+                if (context.testExpression("VpcEndpoints/SpartaProxyVpcEndpoint", targetDepth)) {
+                    endpoint.withVpcEndpoints(SpartaProxyVpcEndpointStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return endpoint;

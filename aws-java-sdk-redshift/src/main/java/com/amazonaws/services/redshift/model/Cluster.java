@@ -490,6 +490,12 @@ public class Cluster implements Serializable, Cloneable {
     private ResizeInfo resizeInfo;
     /**
      * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     */
+    private String availabilityZoneRelocationStatus;
+    /**
+     * <p>
      * The namespace Amazon Resource Name (ARN) of the cluster.
      * </p>
      */
@@ -3819,6 +3825,46 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @param availabilityZoneRelocationStatus
+     *        Describes the status of the Availability Zone relocation operation.
+     */
+
+    public void setAvailabilityZoneRelocationStatus(String availabilityZoneRelocationStatus) {
+        this.availabilityZoneRelocationStatus = availabilityZoneRelocationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @return Describes the status of the Availability Zone relocation operation.
+     */
+
+    public String getAvailabilityZoneRelocationStatus() {
+        return this.availabilityZoneRelocationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @param availabilityZoneRelocationStatus
+     *        Describes the status of the Availability Zone relocation operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAvailabilityZoneRelocationStatus(String availabilityZoneRelocationStatus) {
+        setAvailabilityZoneRelocationStatus(availabilityZoneRelocationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The namespace Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
@@ -3961,6 +4007,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("NextMaintenanceWindowStartTime: ").append(getNextMaintenanceWindowStartTime()).append(",");
         if (getResizeInfo() != null)
             sb.append("ResizeInfo: ").append(getResizeInfo()).append(",");
+        if (getAvailabilityZoneRelocationStatus() != null)
+            sb.append("AvailabilityZoneRelocationStatus: ").append(getAvailabilityZoneRelocationStatus()).append(",");
         if (getClusterNamespaceArn() != null)
             sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn());
         sb.append("}");
@@ -4167,6 +4215,11 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocationStatus() == null ^ this.getAvailabilityZoneRelocationStatus() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocationStatus() != null
+                && other.getAvailabilityZoneRelocationStatus().equals(this.getAvailabilityZoneRelocationStatus()) == false)
+            return false;
         if (other.getClusterNamespaceArn() == null ^ this.getClusterNamespaceArn() == null)
             return false;
         if (other.getClusterNamespaceArn() != null && other.getClusterNamespaceArn().equals(this.getClusterNamespaceArn()) == false)
@@ -4225,6 +4278,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTimeStatus() == null) ? 0 : getExpectedNextSnapshotScheduleTimeStatus().hashCode());
         hashCode = prime * hashCode + ((getNextMaintenanceWindowStartTime() == null) ? 0 : getNextMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocationStatus() == null) ? 0 : getAvailabilityZoneRelocationStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
         return hashCode;
     }

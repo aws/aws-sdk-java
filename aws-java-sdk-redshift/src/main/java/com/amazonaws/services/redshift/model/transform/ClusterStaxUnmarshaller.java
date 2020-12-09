@@ -315,6 +315,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZoneRelocationStatus", targetDepth)) {
+                    cluster.setAvailabilityZoneRelocationStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ClusterNamespaceArn", targetDepth)) {
                     cluster.setClusterNamespaceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

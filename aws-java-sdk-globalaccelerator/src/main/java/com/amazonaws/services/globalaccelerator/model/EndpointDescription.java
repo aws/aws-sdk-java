@@ -32,7 +32,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -58,40 +58,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     private String healthState;
     /**
      * <p>
-     * The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code
-     * is not provided.
+     * Returns a null result.
      * </p>
-     * <p>
-     * If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the
-     * endpoint that are required to determine its health status.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String healthReason;
     /**
@@ -115,7 +83,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -124,7 +92,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * @param endpointId
      *        An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *        the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *        Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *        Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
      *        <p>
      *        An Application Load Balancer can be either internal or internet-facing.
      */
@@ -137,7 +105,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -145,7 +113,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * 
      * @return An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *         the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *         Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *         Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
      *         <p>
      *         An Application Load Balancer can be either internal or internet-facing.
      */
@@ -158,7 +126,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -167,7 +135,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * @param endpointId
      *        An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *        the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *        Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *        Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
      *        <p>
      *        An Application Load Balancer can be either internal or internet-facing.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -312,74 +280,11 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code
-     * is not provided.
+     * Returns a null result.
      * </p>
-     * <p>
-     * If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the
-     * endpoint that are required to determine its health status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param healthReason
-     *        The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a
-     *        reason code is not provided.</p>
-     *        <p>
-     *        If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks
-     *        for the endpoint that are required to determine its health status.
-     *        </p>
-     *        </li>
+     *        Returns a null result.
      */
 
     public void setHealthReason(String healthReason) {
@@ -388,74 +293,10 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code
-     * is not provided.
+     * Returns a null result.
      * </p>
-     * <p>
-     * If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the
-     * endpoint that are required to determine its health status.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a
-     *         reason code is not provided.</p>
-     *         <p>
-     *         If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Failed</b>: The health check failed, for example because the endpoint response was invalid
-     *         (malformed).
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks
-     *         for the endpoint that are required to determine its health status.
-     *         </p>
-     *         </li>
+     * @return Returns a null result.
      */
 
     public String getHealthReason() {
@@ -464,74 +305,11 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code
-     * is not provided.
+     * Returns a null result.
      * </p>
-     * <p>
-     * If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the
-     * endpoint that are required to determine its health status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param healthReason
-     *        The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a
-     *        reason code is not provided.</p>
-     *        <p>
-     *        If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the endpoint state is <b>initial</b>, the reason code can be one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks
-     *        for the endpoint that are required to determine its health status.
-     *        </p>
-     *        </li>
+     *        Returns a null result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

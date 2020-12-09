@@ -4007,6 +4007,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </li>
      * <li>
      * <p>
+     * ra3.xlplus
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ra3.4xlarge
      * </p>
      * </li>
@@ -4077,6 +4082,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <li>
      * <p>
      * ds2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ra3.xlplus
      * </p>
      * </li>
      * <li>

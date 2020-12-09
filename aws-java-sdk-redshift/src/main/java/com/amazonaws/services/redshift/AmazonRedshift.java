@@ -725,6 +725,8 @@ public interface AmazonRedshift {
      *         You have exceeded the number of tags allowed.
      * @throws ScheduleDefinitionTypeUnsupportedException
      *         The definition you submitted is not supported.
+     * @throws InvalidTagException
+     *         The tag is invalid.
      * @sample AmazonRedshift.CreateSnapshotSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -753,6 +755,8 @@ public interface AmazonRedshift {
      *         The resource could not be found.
      * @throws InvalidTagException
      *         The tag is invalid.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
      * @sample AmazonRedshift.CreateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags" target="_top">AWS API
      *      Documentation</a>
@@ -2541,6 +2545,11 @@ public interface AmazonRedshift {
      * </li>
      * <li>
      * <p>
+     * ra3.xlplus
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ra3.4xlarge
      * </p>
      * </li>
@@ -2726,6 +2735,8 @@ public interface AmazonRedshift {
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
+     * @throws InsufficientClusterCapacityException
+     *         The number of nodes specified exceeds the allotted capacity of the cluster.
      * @sample AmazonRedshift.ResumeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
      *      Documentation</a>

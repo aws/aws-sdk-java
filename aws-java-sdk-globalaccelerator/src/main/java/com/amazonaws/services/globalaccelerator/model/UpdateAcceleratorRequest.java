@@ -40,7 +40,7 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type, which must be IPv4.
      * </p>
      */
     private String ipAddressType;
@@ -142,11 +142,11 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type, which must be IPv4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type, which must be IPv4.
      * @see IpAddressType
      */
 
@@ -156,10 +156,10 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type, which must be IPv4.
      * </p>
      * 
-     * @return The value for the address type must be IPv4.
+     * @return The IP address type, which must be IPv4.
      * @see IpAddressType
      */
 
@@ -169,11 +169,11 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type, which must be IPv4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type, which must be IPv4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -185,11 +185,11 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type, which must be IPv4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type, which must be IPv4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
