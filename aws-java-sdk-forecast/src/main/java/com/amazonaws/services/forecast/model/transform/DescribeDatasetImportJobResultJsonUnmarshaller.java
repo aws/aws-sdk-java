@@ -64,6 +64,18 @@ public class DescribeDatasetImportJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDatasetImportJobResult.setTimestampFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeZone", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setTimeZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UseGeolocationForTimeZone", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setUseGeolocationForTimeZone(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("GeolocationFormat", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setGeolocationFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DataSource", targetDepth)) {
                     context.nextToken();
                     describeDatasetImportJobResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));

@@ -46,6 +46,8 @@ public class QueryResultItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributes").build();
     private static final MarshallingInfo<StructuredPojo> SCOREATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScoreAttributes").build();
+    private static final MarshallingInfo<String> FEEDBACKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackToken").build();
 
     private static final QueryResultItemMarshaller instance = new QueryResultItemMarshaller();
 
@@ -72,6 +74,7 @@ public class QueryResultItemMarshaller {
             protocolMarshaller.marshall(queryResultItem.getDocumentURI(), DOCUMENTURI_BINDING);
             protocolMarshaller.marshall(queryResultItem.getDocumentAttributes(), DOCUMENTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryResultItem.getScoreAttributes(), SCOREATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(queryResultItem.getFeedbackToken(), FEEDBACKTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

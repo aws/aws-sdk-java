@@ -89,6 +89,10 @@ public class QueryResultItemJsonUnmarshaller implements Unmarshaller<QueryResult
                     context.nextToken();
                     queryResultItem.setScoreAttributes(ScoreAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FeedbackToken", targetDepth)) {
+                    context.nextToken();
+                    queryResultItem.setFeedbackToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

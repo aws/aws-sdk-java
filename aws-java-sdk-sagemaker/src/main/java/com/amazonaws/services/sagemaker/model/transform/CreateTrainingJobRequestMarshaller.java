@@ -65,6 +65,10 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TensorBoardOutputConfig").build();
     private static final MarshallingInfo<StructuredPojo> EXPERIMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperimentConfig").build();
+    private static final MarshallingInfo<StructuredPojo> PROFILERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerConfig").build();
+    private static final MarshallingInfo<List> PROFILERRULECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerRuleConfigurations").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -100,6 +104,8 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getDebugRuleConfigurations(), DEBUGRULECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getTensorBoardOutputConfig(), TENSORBOARDOUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getExperimentConfig(), EXPERIMENTCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getProfilerConfig(), PROFILERCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getProfilerRuleConfigurations(), PROFILERRULECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

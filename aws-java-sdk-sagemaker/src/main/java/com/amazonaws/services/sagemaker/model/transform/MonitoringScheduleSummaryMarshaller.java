@@ -39,6 +39,10 @@ public class MonitoringScheduleSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringScheduleStatus").build();
     private static final MarshallingInfo<String> ENDPOINTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointName").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringType").build();
 
     private static final MonitoringScheduleSummaryMarshaller instance = new MonitoringScheduleSummaryMarshaller();
 
@@ -62,6 +66,8 @@ public class MonitoringScheduleSummaryMarshaller {
             protocolMarshaller.marshall(monitoringScheduleSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(monitoringScheduleSummary.getMonitoringScheduleStatus(), MONITORINGSCHEDULESTATUS_BINDING);
             protocolMarshaller.marshall(monitoringScheduleSummary.getEndpointName(), ENDPOINTNAME_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleSummary.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleSummary.getMonitoringType(), MONITORINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

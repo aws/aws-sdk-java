@@ -94,6 +94,18 @@ public class ListMonitoringSchedulesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String statusEquals;
+    /**
+     * <p>
+     * Gets a list of the monitoring schedules for the specified monitoring job definition.
+     * </p>
+     */
+    private String monitoringJobDefinitionName;
+    /**
+     * <p>
+     * A filter that returns only the monitoring schedules for the specified monitoring type.
+     * </p>
+     */
+    private String monitoringTypeEquals;
 
     /**
      * <p>
@@ -615,6 +627,105 @@ public class ListMonitoringSchedulesRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Gets a list of the monitoring schedules for the specified monitoring job definition.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        Gets a list of the monitoring schedules for the specified monitoring job definition.
+     */
+
+    public void setMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        this.monitoringJobDefinitionName = monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * Gets a list of the monitoring schedules for the specified monitoring job definition.
+     * </p>
+     * 
+     * @return Gets a list of the monitoring schedules for the specified monitoring job definition.
+     */
+
+    public String getMonitoringJobDefinitionName() {
+        return this.monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * Gets a list of the monitoring schedules for the specified monitoring job definition.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        Gets a list of the monitoring schedules for the specified monitoring job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListMonitoringSchedulesRequest withMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        setMonitoringJobDefinitionName(monitoringJobDefinitionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring schedules for the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring schedules for the specified monitoring type.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringTypeEquals(String monitoringTypeEquals) {
+        this.monitoringTypeEquals = monitoringTypeEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring schedules for the specified monitoring type.
+     * </p>
+     * 
+     * @return A filter that returns only the monitoring schedules for the specified monitoring type.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringTypeEquals() {
+        return this.monitoringTypeEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring schedules for the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring schedules for the specified monitoring type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public ListMonitoringSchedulesRequest withMonitoringTypeEquals(String monitoringTypeEquals) {
+        setMonitoringTypeEquals(monitoringTypeEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring schedules for the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring schedules for the specified monitoring type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public ListMonitoringSchedulesRequest withMonitoringTypeEquals(MonitoringType monitoringTypeEquals) {
+        this.monitoringTypeEquals = monitoringTypeEquals.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -647,7 +758,11 @@ public class ListMonitoringSchedulesRequest extends com.amazonaws.AmazonWebServi
         if (getLastModifiedTimeAfter() != null)
             sb.append("LastModifiedTimeAfter: ").append(getLastModifiedTimeAfter()).append(",");
         if (getStatusEquals() != null)
-            sb.append("StatusEquals: ").append(getStatusEquals());
+            sb.append("StatusEquals: ").append(getStatusEquals()).append(",");
+        if (getMonitoringJobDefinitionName() != null)
+            sb.append("MonitoringJobDefinitionName: ").append(getMonitoringJobDefinitionName()).append(",");
+        if (getMonitoringTypeEquals() != null)
+            sb.append("MonitoringTypeEquals: ").append(getMonitoringTypeEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -706,6 +821,14 @@ public class ListMonitoringSchedulesRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getStatusEquals() != null && other.getStatusEquals().equals(this.getStatusEquals()) == false)
             return false;
+        if (other.getMonitoringJobDefinitionName() == null ^ this.getMonitoringJobDefinitionName() == null)
+            return false;
+        if (other.getMonitoringJobDefinitionName() != null && other.getMonitoringJobDefinitionName().equals(this.getMonitoringJobDefinitionName()) == false)
+            return false;
+        if (other.getMonitoringTypeEquals() == null ^ this.getMonitoringTypeEquals() == null)
+            return false;
+        if (other.getMonitoringTypeEquals() != null && other.getMonitoringTypeEquals().equals(this.getMonitoringTypeEquals()) == false)
+            return false;
         return true;
     }
 
@@ -725,6 +848,8 @@ public class ListMonitoringSchedulesRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getLastModifiedTimeBefore() == null) ? 0 : getLastModifiedTimeBefore().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTimeAfter() == null) ? 0 : getLastModifiedTimeAfter().hashCode());
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringJobDefinitionName() == null) ? 0 : getMonitoringJobDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringTypeEquals() == null) ? 0 : getMonitoringTypeEquals().hashCode());
         return hashCode;
     }
 

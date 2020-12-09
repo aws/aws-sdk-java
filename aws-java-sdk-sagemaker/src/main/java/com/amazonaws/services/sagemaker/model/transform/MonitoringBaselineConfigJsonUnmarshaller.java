@@ -48,6 +48,10 @@ public class MonitoringBaselineConfigJsonUnmarshaller implements Unmarshaller<Mo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("BaseliningJobName", targetDepth)) {
+                    context.nextToken();
+                    monitoringBaselineConfig.setBaseliningJobName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ConstraintsResource", targetDepth)) {
                     context.nextToken();
                     monitoringBaselineConfig.setConstraintsResource(MonitoringConstraintsResourceJsonUnmarshaller.getInstance().unmarshall(context));

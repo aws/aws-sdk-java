@@ -32,7 +32,7 @@ public class ListMonitoringSchedulesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent reques
+     * the subsequent request.
      * </p>
      */
     private String nextToken;
@@ -110,12 +110,12 @@ public class ListMonitoringSchedulesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent reques
+     * the subsequent request.
      * </p>
      * 
      * @param nextToken
      *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *        it in the subsequent reques
+     *        it in the subsequent request.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,11 +125,11 @@ public class ListMonitoringSchedulesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent reques
+     * the subsequent request.
      * </p>
      * 
      * @return If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *         it in the subsequent reques
+     *         it in the subsequent request.
      */
 
     public String getNextToken() {
@@ -139,12 +139,12 @@ public class ListMonitoringSchedulesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent reques
+     * the subsequent request.
      * </p>
      * 
      * @param nextToken
      *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *        it in the subsequent reques
+     *        it in the subsequent request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

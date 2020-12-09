@@ -30,7 +30,7 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      */
     private String tenantDomain;
@@ -87,11 +87,11 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
      * @param tenantDomain
-     *        Tha Azure Active Directory domain of the organization.
+     *        The Azure Active Directory domain of the organization.
      */
 
     public void setTenantDomain(String tenantDomain) {
@@ -100,10 +100,10 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
-     * @return Tha Azure Active Directory domain of the organization.
+     * @return The Azure Active Directory domain of the organization.
      */
 
     public String getTenantDomain() {
@@ -112,11 +112,11 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
      * @param tenantDomain
-     *        Tha Azure Active Directory domain of the organization.
+     *        The Azure Active Directory domain of the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

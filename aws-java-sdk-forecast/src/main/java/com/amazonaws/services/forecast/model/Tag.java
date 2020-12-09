@@ -194,9 +194,9 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: ").append(getKey()).append(",");
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

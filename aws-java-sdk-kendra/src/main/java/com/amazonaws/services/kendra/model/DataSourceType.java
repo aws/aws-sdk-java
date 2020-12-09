@@ -27,7 +27,8 @@ public enum DataSourceType {
     ONEDRIVE("ONEDRIVE"),
     SERVICENOW("SERVICENOW"),
     CUSTOM("CUSTOM"),
-    CONFLUENCE("CONFLUENCE");
+    CONFLUENCE("CONFLUENCE"),
+    GOOGLEDRIVE("GOOGLEDRIVE");
 
     private String value;
 

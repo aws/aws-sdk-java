@@ -31,6 +31,10 @@ public class MonitoringScheduleConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleConfig").build();
     private static final MarshallingInfo<StructuredPojo> MONITORINGJOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinition").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringType").build();
 
     private static final MonitoringScheduleConfigMarshaller instance = new MonitoringScheduleConfigMarshaller();
 
@@ -50,6 +54,8 @@ public class MonitoringScheduleConfigMarshaller {
         try {
             protocolMarshaller.marshall(monitoringScheduleConfig.getScheduleConfig(), SCHEDULECONFIG_BINDING);
             protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringJobDefinition(), MONITORINGJOBDEFINITION_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringType(), MONITORINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

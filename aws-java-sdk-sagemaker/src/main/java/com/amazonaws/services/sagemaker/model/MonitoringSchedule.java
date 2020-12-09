@@ -71,6 +71,12 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     private String monitoringScheduleStatus;
     /**
      * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     */
+    private String monitoringType;
+    /**
+     * <p>
      * If the monitoring schedule failed, the reason it failed.
      * </p>
      */
@@ -419,6 +425,65 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringType(String monitoringType) {
+        this.monitoringType = monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @return The type of the monitoring job definition to schedule.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringType() {
+        return this.monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringSchedule withMonitoringType(String monitoringType) {
+        setMonitoringType(monitoringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringSchedule withMonitoringType(MonitoringType monitoringType) {
+        this.monitoringType = monitoringType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * If the monitoring schedule failed, the reason it failed.
      * </p>
      * 
@@ -733,6 +798,8 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
             sb.append("MonitoringScheduleName: ").append(getMonitoringScheduleName()).append(",");
         if (getMonitoringScheduleStatus() != null)
             sb.append("MonitoringScheduleStatus: ").append(getMonitoringScheduleStatus()).append(",");
+        if (getMonitoringType() != null)
+            sb.append("MonitoringType: ").append(getMonitoringType()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getCreationTime() != null)
@@ -772,6 +839,10 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
         if (other.getMonitoringScheduleStatus() == null ^ this.getMonitoringScheduleStatus() == null)
             return false;
         if (other.getMonitoringScheduleStatus() != null && other.getMonitoringScheduleStatus().equals(this.getMonitoringScheduleStatus()) == false)
+            return false;
+        if (other.getMonitoringType() == null ^ this.getMonitoringType() == null)
+            return false;
+        if (other.getMonitoringType() != null && other.getMonitoringType().equals(this.getMonitoringType()) == false)
             return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
@@ -813,6 +884,7 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getMonitoringScheduleArn() == null) ? 0 : getMonitoringScheduleArn().hashCode());
         hashCode = prime * hashCode + ((getMonitoringScheduleName() == null) ? 0 : getMonitoringScheduleName().hashCode());
         hashCode = prime * hashCode + ((getMonitoringScheduleStatus() == null) ? 0 : getMonitoringScheduleStatus().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringType() == null) ? 0 : getMonitoringType().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());

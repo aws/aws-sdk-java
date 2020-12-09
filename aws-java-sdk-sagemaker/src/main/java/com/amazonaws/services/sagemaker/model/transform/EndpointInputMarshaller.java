@@ -35,6 +35,18 @@ public class EndpointInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3InputMode").build();
     private static final MarshallingInfo<String> S3DATADISTRIBUTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DataDistributionType").build();
+    private static final MarshallingInfo<String> FEATURESATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeaturesAttribute").build();
+    private static final MarshallingInfo<String> INFERENCEATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceAttribute").build();
+    private static final MarshallingInfo<String> PROBABILITYATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProbabilityAttribute").build();
+    private static final MarshallingInfo<Double> PROBABILITYTHRESHOLDATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProbabilityThresholdAttribute").build();
+    private static final MarshallingInfo<String> STARTTIMEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeOffset").build();
+    private static final MarshallingInfo<String> ENDTIMEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimeOffset").build();
 
     private static final EndpointInputMarshaller instance = new EndpointInputMarshaller();
 
@@ -56,6 +68,12 @@ public class EndpointInputMarshaller {
             protocolMarshaller.marshall(endpointInput.getLocalPath(), LOCALPATH_BINDING);
             protocolMarshaller.marshall(endpointInput.getS3InputMode(), S3INPUTMODE_BINDING);
             protocolMarshaller.marshall(endpointInput.getS3DataDistributionType(), S3DATADISTRIBUTIONTYPE_BINDING);
+            protocolMarshaller.marshall(endpointInput.getFeaturesAttribute(), FEATURESATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(endpointInput.getInferenceAttribute(), INFERENCEATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(endpointInput.getProbabilityAttribute(), PROBABILITYATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(endpointInput.getProbabilityThresholdAttribute(), PROBABILITYTHRESHOLDATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(endpointInput.getStartTimeOffset(), STARTTIMEOFFSET_BINDING);
+            protocolMarshaller.marshall(endpointInput.getEndTimeOffset(), ENDTIMEOFFSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

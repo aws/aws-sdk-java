@@ -68,6 +68,24 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private String timestampFormat;
     /**
      * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     */
+    private String timeZone;
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     */
+    private Boolean useGeolocationForTimeZone;
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     */
+    private String geolocationFormat;
+    /**
+     * <p>
      * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the data.
      * </p>
@@ -418,6 +436,141 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     public DescribeDatasetImportJobResult withTimestampFormat(String timestampFormat) {
         setTimestampFormat(timestampFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @param timeZone
+     *        The single time zone applied to every item in the dataset
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @return The single time zone applied to every item in the dataset
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @param timeZone
+     *        The single time zone applied to every item in the dataset
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public void setUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        this.useGeolocationForTimeZone = useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @return Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public Boolean getUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        setUseGeolocationForTimeZone(useGeolocationForTimeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @return Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public Boolean isUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *        <code>"CC_POSTALCODE"</code>.
+     */
+
+    public void setGeolocationFormat(String geolocationFormat) {
+        this.geolocationFormat = geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @return The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *         <code>"CC_POSTALCODE"</code>.
+     */
+
+    public String getGeolocationFormat() {
+        return this.geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *        <code>"CC_POSTALCODE"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withGeolocationFormat(String geolocationFormat) {
+        setGeolocationFormat(geolocationFormat);
         return this;
     }
 
@@ -980,6 +1133,12 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             sb.append("DatasetArn: ").append(getDatasetArn()).append(",");
         if (getTimestampFormat() != null)
             sb.append("TimestampFormat: ").append(getTimestampFormat()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone()).append(",");
+        if (getUseGeolocationForTimeZone() != null)
+            sb.append("UseGeolocationForTimeZone: ").append(getUseGeolocationForTimeZone()).append(",");
+        if (getGeolocationFormat() != null)
+            sb.append("GeolocationFormat: ").append(getGeolocationFormat()).append(",");
         if (getDataSource() != null)
             sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getFieldStatistics() != null)
@@ -1024,6 +1183,18 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTimestampFormat() != null && other.getTimestampFormat().equals(this.getTimestampFormat()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
+        if (other.getUseGeolocationForTimeZone() == null ^ this.getUseGeolocationForTimeZone() == null)
+            return false;
+        if (other.getUseGeolocationForTimeZone() != null && other.getUseGeolocationForTimeZone().equals(this.getUseGeolocationForTimeZone()) == false)
+            return false;
+        if (other.getGeolocationFormat() == null ^ this.getGeolocationFormat() == null)
+            return false;
+        if (other.getGeolocationFormat() != null && other.getGeolocationFormat().equals(this.getGeolocationFormat()) == false)
+            return false;
         if (other.getDataSource() == null ^ this.getDataSource() == null)
             return false;
         if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
@@ -1064,6 +1235,9 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDatasetImportJobArn() == null) ? 0 : getDatasetImportJobArn().hashCode());
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
         hashCode = prime * hashCode + ((getTimestampFormat() == null) ? 0 : getTimestampFormat().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getUseGeolocationForTimeZone() == null) ? 0 : getUseGeolocationForTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getFieldStatistics() == null) ? 0 : getFieldStatistics().hashCode());
         hashCode = prime * hashCode + ((getDataSize() == null) ? 0 : getDataSize().hashCode());

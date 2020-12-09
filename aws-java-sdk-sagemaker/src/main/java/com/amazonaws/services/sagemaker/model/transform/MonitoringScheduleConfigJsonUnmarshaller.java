@@ -56,6 +56,14 @@ public class MonitoringScheduleConfigJsonUnmarshaller implements Unmarshaller<Mo
                     context.nextToken();
                     monitoringScheduleConfig.setMonitoringJobDefinition(MonitoringJobDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MonitoringJobDefinitionName", targetDepth)) {
+                    context.nextToken();
+                    monitoringScheduleConfig.setMonitoringJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MonitoringType", targetDepth)) {
+                    context.nextToken();
+                    monitoringScheduleConfig.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

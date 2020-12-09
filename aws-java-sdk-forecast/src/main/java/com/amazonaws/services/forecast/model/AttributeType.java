@@ -23,7 +23,8 @@ public enum AttributeType {
     String("string"),
     Integer("integer"),
     Float("float"),
-    Timestamp("timestamp");
+    Timestamp("timestamp"),
+    Geolocation("geolocation");
 
     private String value;
 

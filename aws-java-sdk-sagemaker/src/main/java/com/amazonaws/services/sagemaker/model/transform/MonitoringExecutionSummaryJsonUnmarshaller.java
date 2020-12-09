@@ -80,6 +80,14 @@ public class MonitoringExecutionSummaryJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     monitoringExecutionSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MonitoringJobDefinitionName", targetDepth)) {
+                    context.nextToken();
+                    monitoringExecutionSummary.setMonitoringJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MonitoringType", targetDepth)) {
+                    context.nextToken();
+                    monitoringExecutionSummary.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

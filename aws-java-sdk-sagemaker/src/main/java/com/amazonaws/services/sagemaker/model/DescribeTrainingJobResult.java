@@ -376,7 +376,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ExperimentConfig experimentConfig;
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -384,10 +384,30 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private TensorBoardOutputConfig tensorBoardOutputConfig;
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      */
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
+
+    private ProfilerConfig profilerConfig;
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     */
+    private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     */
+    private java.util.List<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses;
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     */
+    private String profilingStatus;
 
     /**
      * <p>
@@ -3152,10 +3172,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for debugging rules.
+     * @return Configuration information for Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -3164,11 +3184,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -3182,7 +3202,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3191,7 +3211,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3207,11 +3227,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3248,10 +3268,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
-     * @return Status about the debug rule evaluation.
+     * @return Evaluation status of Debugger rules for debugging on a training job.
      */
 
     public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
@@ -3260,11 +3280,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      */
 
     public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
@@ -3278,7 +3298,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3287,7 +3307,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3303,16 +3323,241 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTrainingJobResult withDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
         setDebugRuleEvaluationStatuses(debugRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
+     * @param profilerConfig
+     */
+
+    public void setProfilerConfig(ProfilerConfig profilerConfig) {
+        this.profilerConfig = profilerConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ProfilerConfig getProfilerConfig() {
+        return this.profilerConfig;
+    }
+
+    /**
+     * @param profilerConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerConfig(ProfilerConfig profilerConfig) {
+        setProfilerConfig(profilerConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     */
+
+    public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
+        return profilerRuleConfigurations;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     */
+
+    public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
+        if (profilerRuleConfigurations == null) {
+            this.profilerRuleConfigurations = null;
+            return;
+        }
+
+        this.profilerRuleConfigurations = new java.util.ArrayList<ProfilerRuleConfiguration>(profilerRuleConfigurations);
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfilerRuleConfigurations(java.util.Collection)} or
+     * {@link #withProfilerRuleConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleConfigurations(ProfilerRuleConfiguration... profilerRuleConfigurations) {
+        if (this.profilerRuleConfigurations == null) {
+            setProfilerRuleConfigurations(new java.util.ArrayList<ProfilerRuleConfiguration>(profilerRuleConfigurations.length));
+        }
+        for (ProfilerRuleConfiguration ele : profilerRuleConfigurations) {
+            this.profilerRuleConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
+        setProfilerRuleConfigurations(profilerRuleConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @return Evaluation status of Debugger rules for profiling on a training job.
+     */
+
+    public java.util.List<ProfilerRuleEvaluationStatus> getProfilerRuleEvaluationStatuses() {
+        return profilerRuleEvaluationStatuses;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     */
+
+    public void setProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
+        if (profilerRuleEvaluationStatuses == null) {
+            this.profilerRuleEvaluationStatuses = null;
+            return;
+        }
+
+        this.profilerRuleEvaluationStatuses = new java.util.ArrayList<ProfilerRuleEvaluationStatus>(profilerRuleEvaluationStatuses);
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfilerRuleEvaluationStatuses(java.util.Collection)} or
+     * {@link #withProfilerRuleEvaluationStatuses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatus... profilerRuleEvaluationStatuses) {
+        if (this.profilerRuleEvaluationStatuses == null) {
+            setProfilerRuleEvaluationStatuses(new java.util.ArrayList<ProfilerRuleEvaluationStatus>(profilerRuleEvaluationStatuses.length));
+        }
+        for (ProfilerRuleEvaluationStatus ele : profilerRuleEvaluationStatuses) {
+            this.profilerRuleEvaluationStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
+        setProfilerRuleEvaluationStatuses(profilerRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @see ProfilingStatus
+     */
+
+    public void setProfilingStatus(String profilingStatus) {
+        this.profilingStatus = profilingStatus;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @return Profiling status of a training job.
+     * @see ProfilingStatus
+     */
+
+    public String getProfilingStatus() {
+        return this.profilingStatus;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProfilingStatus
+     */
+
+    public DescribeTrainingJobResult withProfilingStatus(String profilingStatus) {
+        setProfilingStatus(profilingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProfilingStatus
+     */
+
+    public DescribeTrainingJobResult withProfilingStatus(ProfilingStatus profilingStatus) {
+        this.profilingStatus = profilingStatus.toString();
         return this;
     }
 
@@ -3395,7 +3640,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getTensorBoardOutputConfig() != null)
             sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
         if (getDebugRuleEvaluationStatuses() != null)
-            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses());
+            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses()).append(",");
+        if (getProfilerConfig() != null)
+            sb.append("ProfilerConfig: ").append(getProfilerConfig()).append(",");
+        if (getProfilerRuleConfigurations() != null)
+            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations()).append(",");
+        if (getProfilerRuleEvaluationStatuses() != null)
+            sb.append("ProfilerRuleEvaluationStatuses: ").append(getProfilerRuleEvaluationStatuses()).append(",");
+        if (getProfilingStatus() != null)
+            sb.append("ProfilingStatus: ").append(getProfilingStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -3547,6 +3800,23 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
             return false;
+        if (other.getProfilerConfig() == null ^ this.getProfilerConfig() == null)
+            return false;
+        if (other.getProfilerConfig() != null && other.getProfilerConfig().equals(this.getProfilerConfig()) == false)
+            return false;
+        if (other.getProfilerRuleConfigurations() == null ^ this.getProfilerRuleConfigurations() == null)
+            return false;
+        if (other.getProfilerRuleConfigurations() != null && other.getProfilerRuleConfigurations().equals(this.getProfilerRuleConfigurations()) == false)
+            return false;
+        if (other.getProfilerRuleEvaluationStatuses() == null ^ this.getProfilerRuleEvaluationStatuses() == null)
+            return false;
+        if (other.getProfilerRuleEvaluationStatuses() != null
+                && other.getProfilerRuleEvaluationStatuses().equals(this.getProfilerRuleEvaluationStatuses()) == false)
+            return false;
+        if (other.getProfilingStatus() == null ^ this.getProfilingStatus() == null)
+            return false;
+        if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
+            return false;
         return true;
     }
 
@@ -3589,6 +3859,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getProfilerConfig() == null) ? 0 : getProfilerConfig().hashCode());
+        hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getProfilerRuleEvaluationStatuses() == null) ? 0 : getProfilerRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
         return hashCode;
     }
 

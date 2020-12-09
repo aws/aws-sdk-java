@@ -34,6 +34,8 @@ public class MonitoringScheduleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringScheduleName").build();
     private static final MarshallingInfo<String> MONITORINGSCHEDULESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringScheduleStatus").build();
+    private static final MarshallingInfo<String> MONITORINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringType").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -68,6 +70,7 @@ public class MonitoringScheduleMarshaller {
             protocolMarshaller.marshall(monitoringSchedule.getMonitoringScheduleArn(), MONITORINGSCHEDULEARN_BINDING);
             protocolMarshaller.marshall(monitoringSchedule.getMonitoringScheduleName(), MONITORINGSCHEDULENAME_BINDING);
             protocolMarshaller.marshall(monitoringSchedule.getMonitoringScheduleStatus(), MONITORINGSCHEDULESTATUS_BINDING);
+            protocolMarshaller.marshall(monitoringSchedule.getMonitoringType(), MONITORINGTYPE_BINDING);
             protocolMarshaller.marshall(monitoringSchedule.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(monitoringSchedule.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(monitoringSchedule.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);

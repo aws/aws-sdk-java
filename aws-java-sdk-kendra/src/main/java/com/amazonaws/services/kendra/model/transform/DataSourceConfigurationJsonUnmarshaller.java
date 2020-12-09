@@ -76,6 +76,10 @@ public class DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<Dat
                     context.nextToken();
                     dataSourceConfiguration.setConfluenceConfiguration(ConfluenceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GoogleDriveConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfiguration.setGoogleDriveConfiguration(GoogleDriveConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

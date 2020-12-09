@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Join instruction.
+ * The instructions associated with a join.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/JoinInstruction" target="_top">AWS API
@@ -30,36 +30,48 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Left operand.
+     * The operand on the left side of a join.
      * </p>
      */
     private String leftOperand;
     /**
      * <p>
-     * Right operand.
+     * The operand on the right side of a join.
      * </p>
      */
     private String rightOperand;
     /**
      * <p>
-     * Type.
+     * Join key properties of the left operand.
+     * </p>
+     */
+    private JoinKeyProperties leftJoinKeyProperties;
+    /**
+     * <p>
+     * Join key properties of the right operand.
+     * </p>
+     */
+    private JoinKeyProperties rightJoinKeyProperties;
+    /**
+     * <p>
+     * The type of join that it is.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * On Clause.
+     * The join instructions provided in the <code>ON</code> clause of a join.
      * </p>
      */
     private String onClause;
 
     /**
      * <p>
-     * Left operand.
+     * The operand on the left side of a join.
      * </p>
      * 
      * @param leftOperand
-     *        Left operand.
+     *        The operand on the left side of a join.
      */
 
     public void setLeftOperand(String leftOperand) {
@@ -68,10 +80,10 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Left operand.
+     * The operand on the left side of a join.
      * </p>
      * 
-     * @return Left operand.
+     * @return The operand on the left side of a join.
      */
 
     public String getLeftOperand() {
@@ -80,11 +92,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Left operand.
+     * The operand on the left side of a join.
      * </p>
      * 
      * @param leftOperand
-     *        Left operand.
+     *        The operand on the left side of a join.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +107,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Right operand.
+     * The operand on the right side of a join.
      * </p>
      * 
      * @param rightOperand
-     *        Right operand.
+     *        The operand on the right side of a join.
      */
 
     public void setRightOperand(String rightOperand) {
@@ -108,10 +120,10 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Right operand.
+     * The operand on the right side of a join.
      * </p>
      * 
-     * @return Right operand.
+     * @return The operand on the right side of a join.
      */
 
     public String getRightOperand() {
@@ -120,11 +132,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Right operand.
+     * The operand on the right side of a join.
      * </p>
      * 
      * @param rightOperand
-     *        Right operand.
+     *        The operand on the right side of a join.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +147,91 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type.
+     * Join key properties of the left operand.
+     * </p>
+     * 
+     * @param leftJoinKeyProperties
+     *        Join key properties of the left operand.
+     */
+
+    public void setLeftJoinKeyProperties(JoinKeyProperties leftJoinKeyProperties) {
+        this.leftJoinKeyProperties = leftJoinKeyProperties;
+    }
+
+    /**
+     * <p>
+     * Join key properties of the left operand.
+     * </p>
+     * 
+     * @return Join key properties of the left operand.
+     */
+
+    public JoinKeyProperties getLeftJoinKeyProperties() {
+        return this.leftJoinKeyProperties;
+    }
+
+    /**
+     * <p>
+     * Join key properties of the left operand.
+     * </p>
+     * 
+     * @param leftJoinKeyProperties
+     *        Join key properties of the left operand.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinInstruction withLeftJoinKeyProperties(JoinKeyProperties leftJoinKeyProperties) {
+        setLeftJoinKeyProperties(leftJoinKeyProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Join key properties of the right operand.
+     * </p>
+     * 
+     * @param rightJoinKeyProperties
+     *        Join key properties of the right operand.
+     */
+
+    public void setRightJoinKeyProperties(JoinKeyProperties rightJoinKeyProperties) {
+        this.rightJoinKeyProperties = rightJoinKeyProperties;
+    }
+
+    /**
+     * <p>
+     * Join key properties of the right operand.
+     * </p>
+     * 
+     * @return Join key properties of the right operand.
+     */
+
+    public JoinKeyProperties getRightJoinKeyProperties() {
+        return this.rightJoinKeyProperties;
+    }
+
+    /**
+     * <p>
+     * Join key properties of the right operand.
+     * </p>
+     * 
+     * @param rightJoinKeyProperties
+     *        Join key properties of the right operand.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinInstruction withRightJoinKeyProperties(JoinKeyProperties rightJoinKeyProperties) {
+        setRightJoinKeyProperties(rightJoinKeyProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of join that it is.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type of join that it is.
      * @see JoinType
      */
 
@@ -149,10 +241,10 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type.
+     * The type of join that it is.
      * </p>
      * 
-     * @return Type.
+     * @return The type of join that it is.
      * @see JoinType
      */
 
@@ -162,11 +254,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type.
+     * The type of join that it is.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type of join that it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinType
      */
@@ -178,11 +270,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type.
+     * The type of join that it is.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type of join that it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinType
      */
@@ -194,11 +286,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * On Clause.
+     * The join instructions provided in the <code>ON</code> clause of a join.
      * </p>
      * 
      * @param onClause
-     *        On Clause.
+     *        The join instructions provided in the <code>ON</code> clause of a join.
      */
 
     public void setOnClause(String onClause) {
@@ -207,10 +299,10 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * On Clause.
+     * The join instructions provided in the <code>ON</code> clause of a join.
      * </p>
      * 
-     * @return On Clause.
+     * @return The join instructions provided in the <code>ON</code> clause of a join.
      */
 
     public String getOnClause() {
@@ -219,11 +311,11 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * On Clause.
+     * The join instructions provided in the <code>ON</code> clause of a join.
      * </p>
      * 
      * @param onClause
-     *        On Clause.
+     *        The join instructions provided in the <code>ON</code> clause of a join.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,6 +340,10 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
             sb.append("LeftOperand: ").append(getLeftOperand()).append(",");
         if (getRightOperand() != null)
             sb.append("RightOperand: ").append(getRightOperand()).append(",");
+        if (getLeftJoinKeyProperties() != null)
+            sb.append("LeftJoinKeyProperties: ").append(getLeftJoinKeyProperties()).append(",");
+        if (getRightJoinKeyProperties() != null)
+            sb.append("RightJoinKeyProperties: ").append(getRightJoinKeyProperties()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getOnClause() != null)
@@ -274,6 +370,14 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getRightOperand() != null && other.getRightOperand().equals(this.getRightOperand()) == false)
             return false;
+        if (other.getLeftJoinKeyProperties() == null ^ this.getLeftJoinKeyProperties() == null)
+            return false;
+        if (other.getLeftJoinKeyProperties() != null && other.getLeftJoinKeyProperties().equals(this.getLeftJoinKeyProperties()) == false)
+            return false;
+        if (other.getRightJoinKeyProperties() == null ^ this.getRightJoinKeyProperties() == null)
+            return false;
+        if (other.getRightJoinKeyProperties() != null && other.getRightJoinKeyProperties().equals(this.getRightJoinKeyProperties()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -292,6 +396,8 @@ public class JoinInstruction implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getLeftOperand() == null) ? 0 : getLeftOperand().hashCode());
         hashCode = prime * hashCode + ((getRightOperand() == null) ? 0 : getRightOperand().hashCode());
+        hashCode = prime * hashCode + ((getLeftJoinKeyProperties() == null) ? 0 : getLeftJoinKeyProperties().hashCode());
+        hashCode = prime * hashCode + ((getRightJoinKeyProperties() == null) ? 0 : getRightJoinKeyProperties().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getOnClause() == null) ? 0 : getOnClause().hashCode());
         return hashCode;

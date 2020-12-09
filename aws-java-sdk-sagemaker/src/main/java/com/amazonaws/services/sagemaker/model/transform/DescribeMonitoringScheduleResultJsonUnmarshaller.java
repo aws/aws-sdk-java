@@ -60,6 +60,10 @@ public class DescribeMonitoringScheduleResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringScheduleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MonitoringType", targetDepth)) {
+                    context.nextToken();
+                    describeMonitoringScheduleResult.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     describeMonitoringScheduleResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));

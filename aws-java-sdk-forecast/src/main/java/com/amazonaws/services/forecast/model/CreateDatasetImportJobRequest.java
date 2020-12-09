@@ -81,6 +81,43 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     private String timestampFormat;
     /**
      * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     */
+    private String timeZone;
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     */
+    private Boolean useGeolocationForTimeZone;
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String geolocationFormat;
+    /**
+     * <p>
      * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
      * consists of a key and an optional value, both of which you define.
      * </p>
@@ -468,6 +505,251 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     public CreateDatasetImportJobRequest withTimestampFormat(String timestampFormat) {
         setTimestampFormat(timestampFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @param timeZone
+     *        A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *        within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *        <p>
+     *        Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *        list of valid time zone names.
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @return A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *         within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *         <p>
+     *         Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *         list of valid time zone names.
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @param timeZone
+     *        A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *        within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *        <p>
+     *        Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *        list of valid time zone names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *        datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public void setUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        this.useGeolocationForTimeZone = useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @return Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *         datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public Boolean getUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *        datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        setUseGeolocationForTimeZone(useGeolocationForTimeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @return Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *         datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public Boolean isUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *        ways:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *        US_98121).
+     *        </p>
+     *        </li>
+     */
+
+    public void setGeolocationFormat(String geolocationFormat) {
+        this.geolocationFormat = geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *         ways:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *         US_98121).
+     *         </p>
+     *         </li>
+     */
+
+    public String getGeolocationFormat() {
+        return this.geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *        ways:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *        US_98121).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withGeolocationFormat(String geolocationFormat) {
+        setGeolocationFormat(geolocationFormat);
         return this;
     }
 
@@ -933,6 +1215,12 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getTimestampFormat() != null)
             sb.append("TimestampFormat: ").append(getTimestampFormat()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone()).append(",");
+        if (getUseGeolocationForTimeZone() != null)
+            sb.append("UseGeolocationForTimeZone: ").append(getUseGeolocationForTimeZone()).append(",");
+        if (getGeolocationFormat() != null)
+            sb.append("GeolocationFormat: ").append(getGeolocationFormat()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -965,6 +1253,18 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTimestampFormat() != null && other.getTimestampFormat().equals(this.getTimestampFormat()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
+        if (other.getUseGeolocationForTimeZone() == null ^ this.getUseGeolocationForTimeZone() == null)
+            return false;
+        if (other.getUseGeolocationForTimeZone() != null && other.getUseGeolocationForTimeZone().equals(this.getUseGeolocationForTimeZone()) == false)
+            return false;
+        if (other.getGeolocationFormat() == null ^ this.getGeolocationFormat() == null)
+            return false;
+        if (other.getGeolocationFormat() != null && other.getGeolocationFormat().equals(this.getGeolocationFormat()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -981,6 +1281,9 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getTimestampFormat() == null) ? 0 : getTimestampFormat().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getUseGeolocationForTimeZone() == null) ? 0 : getUseGeolocationForTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

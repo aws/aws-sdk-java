@@ -937,6 +937,127 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createDataQualityJobDefinitionRequest
+     * @return Result of the CreateDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDataQualityJobDefinitionResult createDataQualityJobDefinition(CreateDataQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDataQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateDataQualityJobDefinitionResult executeCreateDataQualityJobDefinition(CreateDataQualityJobDefinitionRequest createDataQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDataQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDataQualityJobDefinitionRequest> request = null;
+        Response<CreateDataQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDataQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDataQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDataQualityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a device fleet.
+     * </p>
+     * 
+     * @param createDeviceFleetRequest
+     * @return Result of the CreateDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateDeviceFleetResult createDeviceFleet(CreateDeviceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeviceFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeviceFleetResult executeCreateDeviceFleet(CreateDeviceFleetRequest createDeviceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDeviceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDeviceFleetRequest> request = null;
+        Response<CreateDeviceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDeviceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeviceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceFleet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDeviceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDeviceFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
      * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
      * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one domain per region. Users within a
@@ -1033,6 +1154,66 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon
+     * Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the
+     * resulting artifacts to an S3 bucket that you specify.
+     * </p>
+     * 
+     * @param createEdgePackagingJobRequest
+     * @return Result of the CreateEdgePackagingJob operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEdgePackagingJobResult createEdgePackagingJob(CreateEdgePackagingJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEdgePackagingJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateEdgePackagingJobResult executeCreateEdgePackagingJob(CreateEdgePackagingJobRequest createEdgePackagingJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEdgePackagingJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEdgePackagingJobRequest> request = null;
+        Response<CreateEdgePackagingJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEdgePackagingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEdgePackagingJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEdgePackagingJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEdgePackagingJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateEdgePackagingJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1933,6 +2114,129 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates the definition for a model bias job.
+     * </p>
+     * 
+     * @param createModelBiasJobDefinitionRequest
+     * @return Result of the CreateModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateModelBiasJobDefinitionResult createModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateModelBiasJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateModelBiasJobDefinitionResult executeCreateModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createModelBiasJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateModelBiasJobDefinitionRequest> request = null;
+        Response<CreateModelBiasJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateModelBiasJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createModelBiasJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelBiasJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates the definition for a model explainability job.
+     * </p>
+     * 
+     * @param createModelExplainabilityJobDefinitionRequest
+     * @return Result of the CreateModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateModelExplainabilityJobDefinitionResult createModelExplainabilityJobDefinition(CreateModelExplainabilityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateModelExplainabilityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateModelExplainabilityJobDefinitionResult executeCreateModelExplainabilityJobDefinition(
+            CreateModelExplainabilityJobDefinitionRequest createModelExplainabilityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createModelExplainabilityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateModelExplainabilityJobDefinitionRequest> request = null;
+        Response<CreateModelExplainabilityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateModelExplainabilityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createModelExplainabilityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelExplainabilityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelExplainabilityJobDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateModelExplainabilityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a model package that you can use to create Amazon SageMaker models or list on AWS Marketplace, or a
      * versioned model that is part of a model group. Buyers can subscribe to model packages listed on AWS Marketplace
      * to create models in Amazon SageMaker.
@@ -2064,6 +2368,69 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<CreateModelPackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateModelPackageGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createModelQualityJobDefinitionRequest
+     * @return Result of the CreateModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateModelQualityJobDefinitionResult createModelQualityJobDefinition(CreateModelQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateModelQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateModelQualityJobDefinitionResult executeCreateModelQualityJobDefinition(
+            CreateModelQualityJobDefinitionRequest createModelQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createModelQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateModelQualityJobDefinitionRequest> request = null;
+        Response<CreateModelQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateModelQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createModelQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateModelQualityJobDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3678,6 +4045,120 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteDataQualityJobDefinitionRequest
+     * @return Result of the DeleteDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDataQualityJobDefinitionResult deleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataQualityJobDefinitionResult executeDeleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest deleteDataQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataQualityJobDefinitionRequest> request = null;
+        Response<DeleteDataQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDataQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDataQualityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a fleet.
+     * </p>
+     * 
+     * @param deleteDeviceFleetRequest
+     * @return Result of the DeleteDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.DeleteDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDeviceFleetResult deleteDeviceFleet(DeleteDeviceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeviceFleet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeviceFleetResult executeDeleteDeviceFleet(DeleteDeviceFleetRequest deleteDeviceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDeviceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDeviceFleetRequest> request = null;
+        Response<DeleteDeviceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDeviceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceFleet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDeviceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDeviceFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again
      * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
      * data, notebooks, and other artifacts.
@@ -4268,6 +4749,123 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes an Amazon SageMaker model bias job definition.
+     * </p>
+     * 
+     * @param deleteModelBiasJobDefinitionRequest
+     * @return Result of the DeleteModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteModelBiasJobDefinitionResult deleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModelBiasJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelBiasJobDefinitionResult executeDeleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelBiasJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelBiasJobDefinitionRequest> request = null;
+        Response<DeleteModelBiasJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelBiasJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteModelBiasJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelBiasJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker model explainability job definition.
+     * </p>
+     * 
+     * @param deleteModelExplainabilityJobDefinitionRequest
+     * @return Result of the DeleteModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteModelExplainabilityJobDefinitionResult deleteModelExplainabilityJobDefinition(DeleteModelExplainabilityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModelExplainabilityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelExplainabilityJobDefinitionResult executeDeleteModelExplainabilityJobDefinition(
+            DeleteModelExplainabilityJobDefinitionRequest deleteModelExplainabilityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelExplainabilityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelExplainabilityJobDefinitionRequest> request = null;
+        Response<DeleteModelExplainabilityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelExplainabilityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteModelExplainabilityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelExplainabilityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelExplainabilityJobDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteModelExplainabilityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a model package.
      * </p>
      * <p>
@@ -4428,6 +5026,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DeleteModelPackageGroupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteModelPackageGroupPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the secified model quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteModelQualityJobDefinitionRequest
+     * @return Result of the DeleteModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteModelQualityJobDefinitionResult deleteModelQualityJobDefinition(DeleteModelQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModelQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelQualityJobDefinitionResult executeDeleteModelQualityJobDefinition(
+            DeleteModelQualityJobDefinitionRequest deleteModelQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelQualityJobDefinitionRequest> request = null;
+        Response<DeleteModelQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteModelQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteModelQualityJobDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4618,7 +5275,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Deletes a pipeline.
+     * Deletes a pipeline if there are no in-progress executions.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -5075,6 +5732,60 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkteamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkteamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.
+     * </p>
+     * 
+     * @param deregisterDevicesRequest
+     * @return Result of the DeregisterDevices operation returned by the service.
+     * @sample AmazonSageMaker.DeregisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeregisterDevicesResult deregisterDevices(DeregisterDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterDevices(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterDevicesResult executeDeregisterDevices(DeregisterDevicesRequest deregisterDevicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterDevicesRequest> request = null;
+        Response<DeregisterDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5594,6 +6305,177 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets the details of a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param describeDataQualityJobDefinitionRequest
+     * @return Result of the DescribeDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDataQualityJobDefinitionResult describeDataQualityJobDefinition(DescribeDataQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDataQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDataQualityJobDefinitionResult executeDescribeDataQualityJobDefinition(
+            DescribeDataQualityJobDefinitionRequest describeDataQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDataQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDataQualityJobDefinitionRequest> request = null;
+        Response<DescribeDataQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDataQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDataQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDataQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDataQualityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the device.
+     * </p>
+     * 
+     * @param describeDeviceRequest
+     * @return Result of the DescribeDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeDeviceResult describeDevice(DescribeDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDevice(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeviceResult executeDescribeDevice(DescribeDeviceRequest describeDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDeviceRequest> request = null;
+        Response<DescribeDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A description of the fleet the device belongs to.
+     * </p>
+     * 
+     * @param describeDeviceFleetRequest
+     * @return Result of the DescribeDeviceFleet operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeDeviceFleetResult describeDeviceFleet(DescribeDeviceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDeviceFleet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeviceFleetResult executeDescribeDeviceFleet(DescribeDeviceFleetRequest describeDeviceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDeviceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDeviceFleetRequest> request = null;
+        Response<DescribeDeviceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDeviceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeviceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeviceFleet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDeviceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDeviceFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The description of the domain.
      * </p>
      * 
@@ -5638,6 +6520,64 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A description of edge packaging jobs.
+     * </p>
+     * 
+     * @param describeEdgePackagingJobRequest
+     * @return Result of the DescribeEdgePackagingJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEdgePackagingJobResult describeEdgePackagingJob(DescribeEdgePackagingJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEdgePackagingJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEdgePackagingJobResult executeDescribeEdgePackagingJob(DescribeEdgePackagingJobRequest describeEdgePackagingJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEdgePackagingJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEdgePackagingJobRequest> request = null;
+        Response<DescribeEdgePackagingJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEdgePackagingJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEdgePackagingJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEdgePackagingJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEdgePackagingJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEdgePackagingJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6266,6 +7206,124 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns a description of a model bias job definition.
+     * </p>
+     * 
+     * @param describeModelBiasJobDefinitionRequest
+     * @return Result of the DescribeModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeModelBiasJobDefinitionResult describeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelBiasJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelBiasJobDefinitionResult executeDescribeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelBiasJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelBiasJobDefinitionRequest> request = null;
+        Response<DescribeModelBiasJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelBiasJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeModelBiasJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelBiasJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a description of a model explainability job definition.
+     * </p>
+     * 
+     * @param describeModelExplainabilityJobDefinitionRequest
+     * @return Result of the DescribeModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelExplainabilityJobDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeModelExplainabilityJobDefinitionResult describeModelExplainabilityJobDefinition(DescribeModelExplainabilityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelExplainabilityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelExplainabilityJobDefinitionResult executeDescribeModelExplainabilityJobDefinition(
+            DescribeModelExplainabilityJobDefinitionRequest describeModelExplainabilityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelExplainabilityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelExplainabilityJobDefinitionRequest> request = null;
+        Response<DescribeModelExplainabilityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelExplainabilityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeModelExplainabilityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelExplainabilityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelExplainabilityJobDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeModelExplainabilityJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a description of the specified model package, which is used to create Amazon SageMaker models or list
      * them on AWS Marketplace.
      * </p>
@@ -6368,6 +7426,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DescribeModelPackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeModelPackageGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a description of a model quality job definition.
+     * </p>
+     * 
+     * @param describeModelQualityJobDefinitionRequest
+     * @return Result of the DescribeModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeModelQualityJobDefinitionResult describeModelQualityJobDefinition(DescribeModelQualityJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelQualityJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelQualityJobDefinitionResult executeDescribeModelQualityJobDefinition(
+            DescribeModelQualityJobDefinitionRequest describeModelQualityJobDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelQualityJobDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelQualityJobDefinitionRequest> request = null;
+        Response<DescribeModelQualityJobDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelQualityJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeModelQualityJobDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelQualityJobDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelQualityJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeModelQualityJobDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7476,6 +8593,60 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Describes a fleet.
+     * </p>
+     * 
+     * @param getDeviceFleetReportRequest
+     * @return Result of the GetDeviceFleetReport operation returned by the service.
+     * @sample AmazonSageMaker.GetDeviceFleetReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetDeviceFleetReportResult getDeviceFleetReport(GetDeviceFleetReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeviceFleetReport(request);
+    }
+
+    @SdkInternalApi
+    final GetDeviceFleetReportResult executeGetDeviceFleetReport(GetDeviceFleetReportRequest getDeviceFleetReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeviceFleetReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeviceFleetReportRequest> request = null;
+        Response<GetDeviceFleetReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeviceFleetReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceFleetReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceFleetReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeviceFleetReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceFleetReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a resource policy that manages access for a model group. For information about resource policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
      * policies and resource-based policies</a> in the <i>AWS Identity and Access Management User Guide.</i>.
@@ -8259,6 +9430,170 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Lists the data quality job definitions in your account.
+     * </p>
+     * 
+     * @param listDataQualityJobDefinitionsRequest
+     * @return Result of the ListDataQualityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListDataQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDataQualityJobDefinitionsResult listDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataQualityJobDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListDataQualityJobDefinitionsResult executeListDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest listDataQualityJobDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataQualityJobDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataQualityJobDefinitionsRequest> request = null;
+        Response<ListDataQualityJobDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataQualityJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDataQualityJobDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataQualityJobDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataQualityJobDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDataQualityJobDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of devices in the fleet.
+     * </p>
+     * 
+     * @param listDeviceFleetsRequest
+     * @return Result of the ListDeviceFleets operation returned by the service.
+     * @sample AmazonSageMaker.ListDeviceFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDeviceFleetsResult listDeviceFleets(ListDeviceFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeviceFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListDeviceFleetsResult executeListDeviceFleets(ListDeviceFleetsRequest listDeviceFleetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDeviceFleetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeviceFleetsRequest> request = null;
+        Response<ListDeviceFleetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeviceFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceFleetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceFleets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDeviceFleetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDeviceFleetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A list of devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     * @return Result of the ListDevices operation returned by the service.
+     * @sample AmazonSageMaker.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDevicesResult listDevices(ListDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevices(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicesResult executeListDevices(ListDevicesRequest listDevicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDevicesRequest> request = null;
+        Response<ListDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the domains.
      * </p>
      * 
@@ -8301,6 +9636,61 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of edge packaging jobs.
+     * </p>
+     * 
+     * @param listEdgePackagingJobsRequest
+     * @return Result of the ListEdgePackagingJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListEdgePackagingJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEdgePackagingJobsResult listEdgePackagingJobs(ListEdgePackagingJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEdgePackagingJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListEdgePackagingJobsResult executeListEdgePackagingJobs(ListEdgePackagingJobsRequest listEdgePackagingJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEdgePackagingJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEdgePackagingJobsRequest> request = null;
+        Response<ListEdgePackagingJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEdgePackagingJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEdgePackagingJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEdgePackagingJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEdgePackagingJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListEdgePackagingJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8919,6 +10309,119 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Lists model bias jobs definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelBiasJobDefinitionsRequest
+     * @return Result of the ListModelBiasJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelBiasJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelBiasJobDefinitionsResult listModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelBiasJobDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListModelBiasJobDefinitionsResult executeListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelBiasJobDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelBiasJobDefinitionsRequest> request = null;
+        Response<ListModelBiasJobDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelBiasJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listModelBiasJobDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelBiasJobDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelBiasJobDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListModelBiasJobDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists model explainability job definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelExplainabilityJobDefinitionsRequest
+     * @return Result of the ListModelExplainabilityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelExplainabilityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelExplainabilityJobDefinitionsResult listModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelExplainabilityJobDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListModelExplainabilityJobDefinitionsResult executeListModelExplainabilityJobDefinitions(
+            ListModelExplainabilityJobDefinitionsRequest listModelExplainabilityJobDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelExplainabilityJobDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelExplainabilityJobDefinitionsRequest> request = null;
+        Response<ListModelExplainabilityJobDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelExplainabilityJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listModelExplainabilityJobDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelExplainabilityJobDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelExplainabilityJobDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListModelExplainabilityJobDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the model groups in your AWS account.
      * </p>
      * 
@@ -9016,6 +10519,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListModelPackagesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelPackagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of model quality monitoring job definitions in your account.
+     * </p>
+     * 
+     * @param listModelQualityJobDefinitionsRequest
+     * @return Result of the ListModelQualityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelQualityJobDefinitionsResult listModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelQualityJobDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListModelQualityJobDefinitionsResult executeListModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest listModelQualityJobDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelQualityJobDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelQualityJobDefinitionsRequest> request = null;
+        Response<ListModelQualityJobDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelQualityJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listModelQualityJobDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelQualityJobDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelQualityJobDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListModelQualityJobDefinitionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10279,6 +11838,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Register devices.
+     * </p>
+     * 
+     * @param registerDevicesRequest
+     * @return Result of the RegisterDevices operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.RegisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RegisterDevicesResult registerDevices(RegisterDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDevices(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDevicesResult executeRegisterDevices(RegisterDevicesRequest registerDevicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterDevicesRequest> request = null;
+        Response<RegisterDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Renders the UI template so that you can preview the worker's experience.
      * </p>
      * 
@@ -10398,7 +12014,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <note>
      * <p>
-     * New monitoring schedules are immediately started after creation.
+     * By default, when you successfully create a new schedule, the status of a monitoring schedule is
+     * <code>scheduled</code>.
      * </p>
      * </note>
      * 
@@ -10687,6 +12304,60 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<StopCompilationJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopCompilationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Request to stop an edge packaging job.
+     * </p>
+     * 
+     * @param stopEdgePackagingJobRequest
+     * @return Result of the StopEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMaker.StopEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopEdgePackagingJobResult stopEdgePackagingJob(StopEdgePackagingJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopEdgePackagingJob(request);
+    }
+
+    @SdkInternalApi
+    final StopEdgePackagingJobResult executeStopEdgePackagingJob(StopEdgePackagingJobRequest stopEdgePackagingJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopEdgePackagingJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopEdgePackagingJobRequest> request = null;
+        Response<StopEdgePackagingJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopEdgePackagingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopEdgePackagingJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopEdgePackagingJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopEdgePackagingJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopEdgePackagingJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11457,6 +13128,116 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Updates a fleet of devices.
+     * </p>
+     * 
+     * @param updateDeviceFleetRequest
+     * @return Result of the UpdateDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.UpdateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDeviceFleetResult updateDeviceFleet(UpdateDeviceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDeviceFleet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDeviceFleetResult executeUpdateDeviceFleet(UpdateDeviceFleetRequest updateDeviceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDeviceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDeviceFleetRequest> request = null;
+        Response<UpdateDeviceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDeviceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceFleet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDeviceFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates one or more devices in a fleet.
+     * </p>
+     * 
+     * @param updateDevicesRequest
+     * @return Result of the UpdateDevices operation returned by the service.
+     * @sample AmazonSageMaker.UpdateDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDevicesResult updateDevices(UpdateDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDevices(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDevicesResult executeUpdateDevices(UpdateDevicesRequest updateDevicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDevicesRequest> request = null;
+        Response<UpdateDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the default settings for new user profiles in the domain.
      * </p>
      * 
@@ -12111,6 +13892,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePipelineExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdatePipelineExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a model training job to request a new Debugger profiling configuration.
+     * </p>
+     * 
+     * @param updateTrainingJobRequest
+     * @return Result of the UpdateTrainingJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateTrainingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateTrainingJobResult updateTrainingJob(UpdateTrainingJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrainingJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrainingJobResult executeUpdateTrainingJob(UpdateTrainingJobRequest updateTrainingJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTrainingJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrainingJobRequest> request = null;
+        Response<UpdateTrainingJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrainingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrainingJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrainingJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrainingJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTrainingJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

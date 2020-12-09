@@ -198,6 +198,28 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ProfilerConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setProfilerConfig(ProfilerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ProfilerRuleConfigurations", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setProfilerRuleConfigurations(new ListUnmarshaller<ProfilerRuleConfiguration>(
+                            ProfilerRuleConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ProfilerRuleEvaluationStatuses", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setProfilerRuleEvaluationStatuses(new ListUnmarshaller<ProfilerRuleEvaluationStatus>(
+                            ProfilerRuleEvaluationStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ProfilingStatus", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setProfilingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

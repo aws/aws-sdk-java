@@ -609,6 +609,74 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createDataQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the CreateDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.CreateDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataQualityJobDefinitionResult> createDataQualityJobDefinitionAsync(
+            CreateDataQualityJobDefinitionRequest createDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createDataQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.CreateDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataQualityJobDefinitionResult> createDataQualityJobDefinitionAsync(
+            CreateDataQualityJobDefinitionRequest createDataQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataQualityJobDefinitionRequest, CreateDataQualityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a device fleet.
+     * </p>
+     * 
+     * @param createDeviceFleetRequest
+     * @return A Java Future containing the result of the CreateDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeviceFleetResult> createDeviceFleetAsync(CreateDeviceFleetRequest createDeviceFleetRequest);
+
+    /**
+     * <p>
+     * Creates a device fleet.
+     * </p>
+     * 
+     * @param createDeviceFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeviceFleetResult> createDeviceFleetAsync(CreateDeviceFleetRequest createDeviceFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDeviceFleetRequest, CreateDeviceFleetResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
      * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
      * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one domain per region. Users within a
@@ -735,6 +803,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon
+     * Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the
+     * resulting artifacts to an S3 bucket that you specify.
+     * </p>
+     * 
+     * @param createEdgePackagingJobRequest
+     * @return A Java Future containing the result of the CreateEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgePackagingJobResult> createEdgePackagingJobAsync(CreateEdgePackagingJobRequest createEdgePackagingJobRequest);
+
+    /**
+     * <p>
+     * Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon
+     * Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the
+     * resulting artifacts to an S3 bucket that you specify.
+     * </p>
+     * 
+     * @param createEdgePackagingJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgePackagingJobResult> createEdgePackagingJobAsync(CreateEdgePackagingJobRequest createEdgePackagingJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEdgePackagingJobRequest, CreateEdgePackagingJobResult> asyncHandler);
 
     /**
      * <p>
@@ -1569,6 +1672,76 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Creates the definition for a model bias job.
+     * </p>
+     * 
+     * @param createModelBiasJobDefinitionRequest
+     * @return A Java Future containing the result of the CreateModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.CreateModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelBiasJobDefinitionResult> createModelBiasJobDefinitionAsync(
+            CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates the definition for a model bias job.
+     * </p>
+     * 
+     * @param createModelBiasJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.CreateModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelBiasJobDefinitionResult> createModelBiasJobDefinitionAsync(
+            CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelBiasJobDefinitionRequest, CreateModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the definition for a model explainability job.
+     * </p>
+     * 
+     * @param createModelExplainabilityJobDefinitionRequest
+     * @return A Java Future containing the result of the CreateModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.CreateModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelExplainabilityJobDefinitionResult> createModelExplainabilityJobDefinitionAsync(
+            CreateModelExplainabilityJobDefinitionRequest createModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates the definition for a model explainability job.
+     * </p>
+     * 
+     * @param createModelExplainabilityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelExplainabilityJobDefinitionResult> createModelExplainabilityJobDefinitionAsync(
+            CreateModelExplainabilityJobDefinitionRequest createModelExplainabilityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelExplainabilityJobDefinitionRequest, CreateModelExplainabilityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a model package that you can use to create Amazon SageMaker models or list on AWS Marketplace, or a
      * versioned model that is part of a model group. Buyers can subscribe to model packages listed on AWS Marketplace
      * to create models in Amazon SageMaker.
@@ -1678,6 +1851,43 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateModelPackageGroupResult> createModelPackageGroupAsync(CreateModelPackageGroupRequest createModelPackageGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateModelPackageGroupRequest, CreateModelPackageGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createModelQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the CreateModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.CreateModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelQualityJobDefinitionResult> createModelQualityJobDefinitionAsync(
+            CreateModelQualityJobDefinitionRequest createModelQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createModelQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.CreateModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelQualityJobDefinitionResult> createModelQualityJobDefinitionAsync(
+            CreateModelQualityJobDefinitionRequest createModelQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelQualityJobDefinitionRequest, CreateModelQualityJobDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -2952,6 +3162,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteDataQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the DeleteDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DeleteDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataQualityJobDefinitionResult> deleteDataQualityJobDefinitionAsync(
+            DeleteDataQualityJobDefinitionRequest deleteDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteDataQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataQualityJobDefinitionResult> deleteDataQualityJobDefinitionAsync(
+            DeleteDataQualityJobDefinitionRequest deleteDataQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataQualityJobDefinitionRequest, DeleteDataQualityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a fleet.
+     * </p>
+     * 
+     * @param deleteDeviceFleetRequest
+     * @return A Java Future containing the result of the DeleteDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceFleetResult> deleteDeviceFleetAsync(DeleteDeviceFleetRequest deleteDeviceFleetRequest);
+
+    /**
+     * <p>
+     * Deletes a fleet.
+     * </p>
+     * 
+     * @param deleteDeviceFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceFleetResult> deleteDeviceFleetAsync(DeleteDeviceFleetRequest deleteDeviceFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeviceFleetRequest, DeleteDeviceFleetResult> asyncHandler);
+
+    /**
+     * <p>
      * Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again
      * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
      * data, notebooks, and other artifacts.
@@ -3318,6 +3594,76 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an Amazon SageMaker model bias job definition.
+     * </p>
+     * 
+     * @param deleteModelBiasJobDefinitionRequest
+     * @return A Java Future containing the result of the DeleteModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DeleteModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelBiasJobDefinitionResult> deleteModelBiasJobDefinitionAsync(
+            DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker model bias job definition.
+     * </p>
+     * 
+     * @param deleteModelBiasJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelBiasJobDefinitionResult> deleteModelBiasJobDefinitionAsync(
+            DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelBiasJobDefinitionRequest, DeleteModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker model explainability job definition.
+     * </p>
+     * 
+     * @param deleteModelExplainabilityJobDefinitionRequest
+     * @return A Java Future containing the result of the DeleteModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.DeleteModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelExplainabilityJobDefinitionResult> deleteModelExplainabilityJobDefinitionAsync(
+            DeleteModelExplainabilityJobDefinitionRequest deleteModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker model explainability job definition.
+     * </p>
+     * 
+     * @param deleteModelExplainabilityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelExplainabilityJobDefinitionResult> deleteModelExplainabilityJobDefinitionAsync(
+            DeleteModelExplainabilityJobDefinitionRequest deleteModelExplainabilityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelExplainabilityJobDefinitionRequest, DeleteModelExplainabilityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a model package.
      * </p>
      * <p>
@@ -3420,6 +3766,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<DeleteModelPackageGroupPolicyResult> deleteModelPackageGroupPolicyAsync(
             DeleteModelPackageGroupPolicyRequest deleteModelPackageGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteModelPackageGroupPolicyRequest, DeleteModelPackageGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the secified model quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteModelQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the DeleteModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DeleteModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelQualityJobDefinitionResult> deleteModelQualityJobDefinitionAsync(
+            DeleteModelQualityJobDefinitionRequest deleteModelQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes the secified model quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteModelQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelQualityJobDefinitionResult> deleteModelQualityJobDefinitionAsync(
+            DeleteModelQualityJobDefinitionRequest deleteModelQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelQualityJobDefinitionRequest, DeleteModelQualityJobDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -3536,7 +3917,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline.
+     * Deletes a pipeline if there are no in-progress executions.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -3549,7 +3930,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline.
+     * Deletes a pipeline if there are no in-progress executions.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -3829,6 +4210,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteWorkteamResult> deleteWorkteamAsync(DeleteWorkteamRequest deleteWorkteamRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkteamRequest, DeleteWorkteamResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.
+     * </p>
+     * 
+     * @param deregisterDevicesRequest
+     * @return A Java Future containing the result of the DeregisterDevices operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeregisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterDevicesResult> deregisterDevicesAsync(DeregisterDevicesRequest deregisterDevicesRequest);
+
+    /**
+     * <p>
+     * Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.
+     * </p>
+     * 
+     * @param deregisterDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterDevices operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeregisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterDevicesResult> deregisterDevicesAsync(DeregisterDevicesRequest deregisterDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterDevicesRequest, DeregisterDevicesResult> asyncHandler);
 
     /**
      * <p>
@@ -4119,6 +4531,103 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Gets the details of a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param describeDataQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the DescribeDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DescribeDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataQualityJobDefinitionResult> describeDataQualityJobDefinitionAsync(
+            DescribeDataQualityJobDefinitionRequest describeDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Gets the details of a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param describeDataQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDataQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataQualityJobDefinitionResult> describeDataQualityJobDefinitionAsync(
+            DescribeDataQualityJobDefinitionRequest describeDataQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataQualityJobDefinitionRequest, DescribeDataQualityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the device.
+     * </p>
+     * 
+     * @param describeDeviceRequest
+     * @return A Java Future containing the result of the DescribeDevice operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDeviceResult> describeDeviceAsync(DescribeDeviceRequest describeDeviceRequest);
+
+    /**
+     * <p>
+     * Describes the device.
+     * </p>
+     * 
+     * @param describeDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDevice operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDeviceResult> describeDeviceAsync(DescribeDeviceRequest describeDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDeviceRequest, DescribeDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * A description of the fleet the device belongs to.
+     * </p>
+     * 
+     * @param describeDeviceFleetRequest
+     * @return A Java Future containing the result of the DescribeDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDeviceFleetResult> describeDeviceFleetAsync(DescribeDeviceFleetRequest describeDeviceFleetRequest);
+
+    /**
+     * <p>
+     * A description of the fleet the device belongs to.
+     * </p>
+     * 
+     * @param describeDeviceFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDeviceFleetResult> describeDeviceFleetAsync(DescribeDeviceFleetRequest describeDeviceFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDeviceFleetRequest, DescribeDeviceFleetResult> asyncHandler);
+
+    /**
+     * <p>
      * The description of the domain.
      * </p>
      * 
@@ -4147,6 +4656,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest describeDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DescribeDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * A description of edge packaging jobs.
+     * </p>
+     * 
+     * @param describeEdgePackagingJobRequest
+     * @return A Java Future containing the result of the DescribeEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgePackagingJobResult> describeEdgePackagingJobAsync(DescribeEdgePackagingJobRequest describeEdgePackagingJobRequest);
+
+    /**
+     * <p>
+     * A description of edge packaging jobs.
+     * </p>
+     * 
+     * @param describeEdgePackagingJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgePackagingJobResult> describeEdgePackagingJobAsync(DescribeEdgePackagingJobRequest describeEdgePackagingJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgePackagingJobRequest, DescribeEdgePackagingJobResult> asyncHandler);
 
     /**
      * <p>
@@ -4497,6 +5037,78 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a description of a model bias job definition.
+     * </p>
+     * 
+     * @param describeModelBiasJobDefinitionRequest
+     * @return A Java Future containing the result of the DescribeModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DescribeModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelBiasJobDefinitionResult> describeModelBiasJobDefinitionAsync(
+            DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Returns a description of a model bias job definition.
+     * </p>
+     * 
+     * @param describeModelBiasJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelBiasJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelBiasJobDefinitionResult> describeModelBiasJobDefinitionAsync(
+            DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelBiasJobDefinitionRequest, DescribeModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a description of a model explainability job definition.
+     * </p>
+     * 
+     * @param describeModelExplainabilityJobDefinitionRequest
+     * @return A Java Future containing the result of the DescribeModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.DescribeModelExplainabilityJobDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelExplainabilityJobDefinitionResult> describeModelExplainabilityJobDefinitionAsync(
+            DescribeModelExplainabilityJobDefinitionRequest describeModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Returns a description of a model explainability job definition.
+     * </p>
+     * 
+     * @param describeModelExplainabilityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelExplainabilityJobDefinition operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeModelExplainabilityJobDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelExplainabilityJobDefinitionResult> describeModelExplainabilityJobDefinitionAsync(
+            DescribeModelExplainabilityJobDefinitionRequest describeModelExplainabilityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelExplainabilityJobDefinitionRequest, DescribeModelExplainabilityJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a description of the specified model package, which is used to create Amazon SageMaker models or list
      * them on AWS Marketplace.
      * </p>
@@ -4566,6 +5178,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<DescribeModelPackageGroupResult> describeModelPackageGroupAsync(
             DescribeModelPackageGroupRequest describeModelPackageGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeModelPackageGroupRequest, DescribeModelPackageGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a description of a model quality job definition.
+     * </p>
+     * 
+     * @param describeModelQualityJobDefinitionRequest
+     * @return A Java Future containing the result of the DescribeModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DescribeModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelQualityJobDefinitionResult> describeModelQualityJobDefinitionAsync(
+            DescribeModelQualityJobDefinitionRequest describeModelQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Returns a description of a model quality job definition.
+     * </p>
+     * 
+     * @param describeModelQualityJobDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelQualityJobDefinition operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelQualityJobDefinitionResult> describeModelQualityJobDefinitionAsync(
+            DescribeModelQualityJobDefinitionRequest describeModelQualityJobDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelQualityJobDefinitionRequest, DescribeModelQualityJobDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -5230,6 +5877,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Describes a fleet.
+     * </p>
+     * 
+     * @param getDeviceFleetReportRequest
+     * @return A Java Future containing the result of the GetDeviceFleetReport operation returned by the service.
+     * @sample AmazonSageMakerAsync.GetDeviceFleetReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeviceFleetReportResult> getDeviceFleetReportAsync(GetDeviceFleetReportRequest getDeviceFleetReportRequest);
+
+    /**
+     * <p>
+     * Describes a fleet.
+     * </p>
+     * 
+     * @param getDeviceFleetReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeviceFleetReport operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.GetDeviceFleetReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeviceFleetReportResult> getDeviceFleetReportAsync(GetDeviceFleetReportRequest getDeviceFleetReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeviceFleetReportRequest, GetDeviceFleetReportResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a resource policy that manages access for a model group. For information about resource policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
      * policies and resource-based policies</a> in the <i>AWS Identity and Access Management User Guide.</i>.
@@ -5692,6 +6370,103 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists the data quality job definitions in your account.
+     * </p>
+     * 
+     * @param listDataQualityJobDefinitionsRequest
+     * @return A Java Future containing the result of the ListDataQualityJobDefinitions operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListDataQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityJobDefinitionsResult> listDataQualityJobDefinitionsAsync(
+            ListDataQualityJobDefinitionsRequest listDataQualityJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Lists the data quality job definitions in your account.
+     * </p>
+     * 
+     * @param listDataQualityJobDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataQualityJobDefinitions operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListDataQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityJobDefinitionsResult> listDataQualityJobDefinitionsAsync(
+            ListDataQualityJobDefinitionsRequest listDataQualityJobDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityJobDefinitionsRequest, ListDataQualityJobDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of devices in the fleet.
+     * </p>
+     * 
+     * @param listDeviceFleetsRequest
+     * @return A Java Future containing the result of the ListDeviceFleets operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListDeviceFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceFleetsResult> listDeviceFleetsAsync(ListDeviceFleetsRequest listDeviceFleetsRequest);
+
+    /**
+     * <p>
+     * Returns a list of devices in the fleet.
+     * </p>
+     * 
+     * @param listDeviceFleetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeviceFleets operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListDeviceFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceFleetsResult> listDeviceFleetsAsync(ListDeviceFleetsRequest listDeviceFleetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeviceFleetsRequest, ListDeviceFleetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     * @return A Java Future containing the result of the ListDevices operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest listDevicesRequest);
+
+    /**
+     * <p>
+     * A list of devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDevices operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest listDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the domains.
      * </p>
      * 
@@ -5720,6 +6495,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of edge packaging jobs.
+     * </p>
+     * 
+     * @param listEdgePackagingJobsRequest
+     * @return A Java Future containing the result of the ListEdgePackagingJobs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListEdgePackagingJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEdgePackagingJobsResult> listEdgePackagingJobsAsync(ListEdgePackagingJobsRequest listEdgePackagingJobsRequest);
+
+    /**
+     * <p>
+     * Returns a list of edge packaging jobs.
+     * </p>
+     * 
+     * @param listEdgePackagingJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEdgePackagingJobs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListEdgePackagingJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEdgePackagingJobsResult> listEdgePackagingJobsAsync(ListEdgePackagingJobsRequest listEdgePackagingJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEdgePackagingJobsRequest, ListEdgePackagingJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -6078,6 +6884,74 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists model bias jobs definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelBiasJobDefinitionsRequest
+     * @return A Java Future containing the result of the ListModelBiasJobDefinitions operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListModelBiasJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelBiasJobDefinitionsResult> listModelBiasJobDefinitionsAsync(
+            ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Lists model bias jobs definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelBiasJobDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelBiasJobDefinitions operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelBiasJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelBiasJobDefinitionsResult> listModelBiasJobDefinitionsAsync(
+            ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelBiasJobDefinitionsRequest, ListModelBiasJobDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists model explainability job definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelExplainabilityJobDefinitionsRequest
+     * @return A Java Future containing the result of the ListModelExplainabilityJobDefinitions operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.ListModelExplainabilityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelExplainabilityJobDefinitionsResult> listModelExplainabilityJobDefinitionsAsync(
+            ListModelExplainabilityJobDefinitionsRequest listModelExplainabilityJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Lists model explainability job definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelExplainabilityJobDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelExplainabilityJobDefinitions operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelExplainabilityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelExplainabilityJobDefinitionsResult> listModelExplainabilityJobDefinitionsAsync(
+            ListModelExplainabilityJobDefinitionsRequest listModelExplainabilityJobDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelExplainabilityJobDefinitionsRequest, ListModelExplainabilityJobDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of the model groups in your AWS account.
      * </p>
      * 
@@ -6137,6 +7011,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListModelPackagesResult> listModelPackagesAsync(ListModelPackagesRequest listModelPackagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListModelPackagesRequest, ListModelPackagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of model quality monitoring job definitions in your account.
+     * </p>
+     * 
+     * @param listModelQualityJobDefinitionsRequest
+     * @return A Java Future containing the result of the ListModelQualityJobDefinitions operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListModelQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelQualityJobDefinitionsResult> listModelQualityJobDefinitionsAsync(
+            ListModelQualityJobDefinitionsRequest listModelQualityJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Gets a list of model quality monitoring job definitions in your account.
+     * </p>
+     * 
+     * @param listModelQualityJobDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelQualityJobDefinitions operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelQualityJobDefinitionsResult> listModelQualityJobDefinitionsAsync(
+            ListModelQualityJobDefinitionsRequest listModelQualityJobDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelQualityJobDefinitionsRequest, ListModelQualityJobDefinitionsResult> asyncHandler);
 
     /**
      * <p>
@@ -6898,6 +7807,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Register devices.
+     * </p>
+     * 
+     * @param registerDevicesRequest
+     * @return A Java Future containing the result of the RegisterDevices operation returned by the service.
+     * @sample AmazonSageMakerAsync.RegisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterDevicesResult> registerDevicesAsync(RegisterDevicesRequest registerDevicesRequest);
+
+    /**
+     * <p>
+     * Register devices.
+     * </p>
+     * 
+     * @param registerDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterDevices operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.RegisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterDevicesResult> registerDevicesAsync(RegisterDevicesRequest registerDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterDevicesRequest, RegisterDevicesResult> asyncHandler);
+
+    /**
+     * <p>
      * Renders the UI template so that you can preview the worker's experience.
      * </p>
      * 
@@ -6974,7 +7914,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * New monitoring schedules are immediately started after creation.
+     * By default, when you successfully create a new schedule, the status of a monitoring schedule is
+     * <code>scheduled</code>.
      * </p>
      * </note>
      * 
@@ -6992,7 +7933,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * New monitoring schedules are immediately started after creation.
+     * By default, when you successfully create a new schedule, the status of a monitoring schedule is
+     * <code>scheduled</code>.
      * </p>
      * </note>
      * 
@@ -7156,6 +8098,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<StopCompilationJobResult> stopCompilationJobAsync(StopCompilationJobRequest stopCompilationJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopCompilationJobRequest, StopCompilationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Request to stop an edge packaging job.
+     * </p>
+     * 
+     * @param stopEdgePackagingJobRequest
+     * @return A Java Future containing the result of the StopEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.StopEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEdgePackagingJobResult> stopEdgePackagingJobAsync(StopEdgePackagingJobRequest stopEdgePackagingJobRequest);
+
+    /**
+     * <p>
+     * Request to stop an edge packaging job.
+     * </p>
+     * 
+     * @param stopEdgePackagingJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StopEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEdgePackagingJobResult> stopEdgePackagingJobAsync(StopEdgePackagingJobRequest stopEdgePackagingJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEdgePackagingJobRequest, StopEdgePackagingJobResult> asyncHandler);
 
     /**
      * <p>
@@ -7612,6 +8585,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Updates a fleet of devices.
+     * </p>
+     * 
+     * @param updateDeviceFleetRequest
+     * @return A Java Future containing the result of the UpdateDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDeviceFleetResult> updateDeviceFleetAsync(UpdateDeviceFleetRequest updateDeviceFleetRequest);
+
+    /**
+     * <p>
+     * Updates a fleet of devices.
+     * </p>
+     * 
+     * @param updateDeviceFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDeviceFleet operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDeviceFleetResult> updateDeviceFleetAsync(UpdateDeviceFleetRequest updateDeviceFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDeviceFleetRequest, UpdateDeviceFleetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates one or more devices in a fleet.
+     * </p>
+     * 
+     * @param updateDevicesRequest
+     * @return A Java Future containing the result of the UpdateDevices operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDevicesResult> updateDevicesAsync(UpdateDevicesRequest updateDevicesRequest);
+
+    /**
+     * <p>
+     * Updates one or more devices in a fleet.
+     * </p>
+     * 
+     * @param updateDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDevices operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDevicesResult> updateDevicesAsync(UpdateDevicesRequest updateDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDevicesRequest, UpdateDevicesResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the default settings for new user profiles in the domain.
      * </p>
      * 
@@ -8008,6 +9043,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdatePipelineExecutionResult> updatePipelineExecutionAsync(UpdatePipelineExecutionRequest updatePipelineExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePipelineExecutionRequest, UpdatePipelineExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a model training job to request a new Debugger profiling configuration.
+     * </p>
+     * 
+     * @param updateTrainingJobRequest
+     * @return A Java Future containing the result of the UpdateTrainingJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateTrainingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrainingJobResult> updateTrainingJobAsync(UpdateTrainingJobRequest updateTrainingJobRequest);
+
+    /**
+     * <p>
+     * Update a model training job to request a new Debugger profiling configuration.
+     * </p>
+     * 
+     * @param updateTrainingJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTrainingJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateTrainingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrainingJobResult> updateTrainingJobAsync(UpdateTrainingJobRequest updateTrainingJobRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrainingJobRequest, UpdateTrainingJobResult> asyncHandler);
 
     /**
      * <p>

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MonitoringBaselineConfigMarshaller {
 
+    private static final MarshallingInfo<String> BASELININGJOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaseliningJobName").build();
     private static final MarshallingInfo<StructuredPojo> CONSTRAINTSRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConstraintsResource").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICSRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class MonitoringBaselineConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(monitoringBaselineConfig.getBaseliningJobName(), BASELININGJOBNAME_BINDING);
             protocolMarshaller.marshall(monitoringBaselineConfig.getConstraintsResource(), CONSTRAINTSRESOURCE_BINDING);
             protocolMarshaller.marshall(monitoringBaselineConfig.getStatisticsResource(), STATISTICSRESOURCE_BINDING);
         } catch (Exception e) {

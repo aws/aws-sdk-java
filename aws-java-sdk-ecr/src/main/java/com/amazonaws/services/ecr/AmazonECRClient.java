@@ -145,8 +145,14 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.LifecyclePolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ImageDigestDoesNotMatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.ImageDigestDoesNotMatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RegistryPolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.RegistryPolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.InvalidTagParameterExceptionUnmarshaller.getInstance()))
@@ -804,6 +810,66 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
+     * Deletes the registry permissions policy.
+     * </p>
+     * 
+     * @param deleteRegistryPolicyRequest
+     * @return Result of the DeleteRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RegistryPolicyNotFoundException
+     *         The registry doesn't have an associated registry policy.
+     * @sample AmazonECR.DeleteRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteRegistryPolicyResult deleteRegistryPolicy(DeleteRegistryPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRegistryPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRegistryPolicyResult executeDeleteRegistryPolicy(DeleteRegistryPolicyRequest deleteRegistryPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRegistryPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRegistryPolicyRequest> request = null;
+        Response<DeleteRegistryPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRegistryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegistryPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistryPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRegistryPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRegistryPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
      * use the <code>force</code> option to delete the repository.
      * </p>
@@ -1061,6 +1127,67 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeImagesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the settings for a registry. The replication configuration for a repository can be created or updated
+     * with the <a>PutReplicationConfiguration</a> API action.
+     * </p>
+     * 
+     * @param describeRegistryRequest
+     * @return Result of the DescribeRegistry operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @sample AmazonECR.DescribeRegistry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeRegistryResult describeRegistry(DescribeRegistryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistry(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistryResult executeDescribeRegistry(DescribeRegistryRequest describeRegistryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistryRequest> request = null;
+        Response<DescribeRegistryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegistryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistry");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRegistryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1396,6 +1523,66 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
             HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLifecyclePolicyPreviewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the permissions policy for a registry.
+     * </p>
+     * 
+     * @param getRegistryPolicyRequest
+     * @return Result of the GetRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RegistryPolicyNotFoundException
+     *         The registry doesn't have an associated registry policy.
+     * @sample AmazonECR.GetRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetRegistryPolicyResult getRegistryPolicy(GetRegistryPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRegistryPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetRegistryPolicyResult executeGetRegistryPolicy(GetRegistryPolicyRequest getRegistryPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRegistryPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRegistryPolicyRequest> request = null;
+        Response<GetRegistryPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRegistryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegistryPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegistryPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRegistryPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRegistryPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1942,6 +2129,144 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<PutLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates the permissions policy for your registry.
+     * </p>
+     * <p>
+     * A registry policy is used to specify permissions for another AWS account and is used when configuring
+     * cross-account replication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a>
+     * in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * </p>
+     * 
+     * @param putRegistryPolicyRequest
+     * @return Result of the PutRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECR.PutRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutRegistryPolicyResult putRegistryPolicy(PutRegistryPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRegistryPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutRegistryPolicyResult executePutRegistryPolicy(PutRegistryPolicyRequest putRegistryPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRegistryPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRegistryPolicyRequest> request = null;
+        Response<PutRegistryPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRegistryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRegistryPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRegistryPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRegistryPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutRegistryPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates the replication configuration for a registry. The existing replication configuration for a
+     * repository can be retrieved with the <a>DescribeRegistry</a> API action. The first time the
+     * PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the
+     * replication process. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * When configuring cross-account replication, the destination account must grant the source account permission to
+     * replicate. This permission is controlled using a registry permissions policy. For more information, see
+     * <a>PutRegistryPolicy</a>.
+     * </p>
+     * </note>
+     * 
+     * @param putReplicationConfigurationRequest
+     * @return Result of the PutReplicationConfiguration operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @sample AmazonECR.PutReplicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutReplicationConfigurationResult putReplicationConfiguration(PutReplicationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutReplicationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutReplicationConfigurationResult executePutReplicationConfiguration(PutReplicationConfigurationRequest putReplicationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putReplicationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutReplicationConfigurationRequest> request = null;
+        Response<PutReplicationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutReplicationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putReplicationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutReplicationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutReplicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutReplicationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

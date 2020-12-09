@@ -55,6 +55,48 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String s3DataDistributionType;
+    /**
+     * <p>
+     * The attributes of the input data that are the input features.
+     * </p>
+     */
+    private String featuresAttribute;
+    /**
+     * <p>
+     * The attribute of the input data that represents the ground truth label.
+     * </p>
+     */
+    private String inferenceAttribute;
+    /**
+     * <p>
+     * In a classification problem, the attribute that represents the class probability.
+     * </p>
+     */
+    private String probabilityAttribute;
+    /**
+     * <p>
+     * The threshold for the class probability to be evaluated as a positive result.
+     * </p>
+     */
+    private Double probabilityThresholdAttribute;
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the start time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     */
+    private String startTimeOffset;
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     */
+    private String endTimeOffset;
 
     /**
      * <p>
@@ -279,6 +321,282 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The attributes of the input data that are the input features.
+     * </p>
+     * 
+     * @param featuresAttribute
+     *        The attributes of the input data that are the input features.
+     */
+
+    public void setFeaturesAttribute(String featuresAttribute) {
+        this.featuresAttribute = featuresAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data that are the input features.
+     * </p>
+     * 
+     * @return The attributes of the input data that are the input features.
+     */
+
+    public String getFeaturesAttribute() {
+        return this.featuresAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data that are the input features.
+     * </p>
+     * 
+     * @param featuresAttribute
+     *        The attributes of the input data that are the input features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withFeaturesAttribute(String featuresAttribute) {
+        setFeaturesAttribute(featuresAttribute);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attribute of the input data that represents the ground truth label.
+     * </p>
+     * 
+     * @param inferenceAttribute
+     *        The attribute of the input data that represents the ground truth label.
+     */
+
+    public void setInferenceAttribute(String inferenceAttribute) {
+        this.inferenceAttribute = inferenceAttribute;
+    }
+
+    /**
+     * <p>
+     * The attribute of the input data that represents the ground truth label.
+     * </p>
+     * 
+     * @return The attribute of the input data that represents the ground truth label.
+     */
+
+    public String getInferenceAttribute() {
+        return this.inferenceAttribute;
+    }
+
+    /**
+     * <p>
+     * The attribute of the input data that represents the ground truth label.
+     * </p>
+     * 
+     * @param inferenceAttribute
+     *        The attribute of the input data that represents the ground truth label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withInferenceAttribute(String inferenceAttribute) {
+        setInferenceAttribute(inferenceAttribute);
+        return this;
+    }
+
+    /**
+     * <p>
+     * In a classification problem, the attribute that represents the class probability.
+     * </p>
+     * 
+     * @param probabilityAttribute
+     *        In a classification problem, the attribute that represents the class probability.
+     */
+
+    public void setProbabilityAttribute(String probabilityAttribute) {
+        this.probabilityAttribute = probabilityAttribute;
+    }
+
+    /**
+     * <p>
+     * In a classification problem, the attribute that represents the class probability.
+     * </p>
+     * 
+     * @return In a classification problem, the attribute that represents the class probability.
+     */
+
+    public String getProbabilityAttribute() {
+        return this.probabilityAttribute;
+    }
+
+    /**
+     * <p>
+     * In a classification problem, the attribute that represents the class probability.
+     * </p>
+     * 
+     * @param probabilityAttribute
+     *        In a classification problem, the attribute that represents the class probability.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withProbabilityAttribute(String probabilityAttribute) {
+        setProbabilityAttribute(probabilityAttribute);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The threshold for the class probability to be evaluated as a positive result.
+     * </p>
+     * 
+     * @param probabilityThresholdAttribute
+     *        The threshold for the class probability to be evaluated as a positive result.
+     */
+
+    public void setProbabilityThresholdAttribute(Double probabilityThresholdAttribute) {
+        this.probabilityThresholdAttribute = probabilityThresholdAttribute;
+    }
+
+    /**
+     * <p>
+     * The threshold for the class probability to be evaluated as a positive result.
+     * </p>
+     * 
+     * @return The threshold for the class probability to be evaluated as a positive result.
+     */
+
+    public Double getProbabilityThresholdAttribute() {
+        return this.probabilityThresholdAttribute;
+    }
+
+    /**
+     * <p>
+     * The threshold for the class probability to be evaluated as a positive result.
+     * </p>
+     * 
+     * @param probabilityThresholdAttribute
+     *        The threshold for the class probability to be evaluated as a positive result.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withProbabilityThresholdAttribute(Double probabilityThresholdAttribute) {
+        setProbabilityThresholdAttribute(probabilityThresholdAttribute);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the start time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @param startTimeOffset
+     *        If specified, monitoring jobs substract this time from the start time. For information about using offsets
+     *        for scheduling monitoring jobs, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *        Model Quality Monitoring Jobs</a>.
+     */
+
+    public void setStartTimeOffset(String startTimeOffset) {
+        this.startTimeOffset = startTimeOffset;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the start time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @return If specified, monitoring jobs substract this time from the start time. For information about using
+     *         offsets for scheduling monitoring jobs, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *         Model Quality Monitoring Jobs</a>.
+     */
+
+    public String getStartTimeOffset() {
+        return this.startTimeOffset;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the start time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @param startTimeOffset
+     *        If specified, monitoring jobs substract this time from the start time. For information about using offsets
+     *        for scheduling monitoring jobs, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *        Model Quality Monitoring Jobs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withStartTimeOffset(String startTimeOffset) {
+        setStartTimeOffset(startTimeOffset);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @param endTimeOffset
+     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        for scheduling monitoring jobs, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *        Model Quality Monitoring Jobs</a>.
+     */
+
+    public void setEndTimeOffset(String endTimeOffset) {
+        this.endTimeOffset = endTimeOffset;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @return If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *         for scheduling monitoring jobs, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *         Model Quality Monitoring Jobs</a>.
+     */
+
+    public String getEndTimeOffset() {
+        return this.endTimeOffset;
+    }
+
+    /**
+     * <p>
+     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * scheduling monitoring jobs, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
+     * Quality Monitoring Jobs</a>.
+     * </p>
+     * 
+     * @param endTimeOffset
+     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        for scheduling monitoring jobs, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+     *        Model Quality Monitoring Jobs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withEndTimeOffset(String endTimeOffset) {
+        setEndTimeOffset(endTimeOffset);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +615,19 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
         if (getS3InputMode() != null)
             sb.append("S3InputMode: ").append(getS3InputMode()).append(",");
         if (getS3DataDistributionType() != null)
-            sb.append("S3DataDistributionType: ").append(getS3DataDistributionType());
+            sb.append("S3DataDistributionType: ").append(getS3DataDistributionType()).append(",");
+        if (getFeaturesAttribute() != null)
+            sb.append("FeaturesAttribute: ").append(getFeaturesAttribute()).append(",");
+        if (getInferenceAttribute() != null)
+            sb.append("InferenceAttribute: ").append(getInferenceAttribute()).append(",");
+        if (getProbabilityAttribute() != null)
+            sb.append("ProbabilityAttribute: ").append(getProbabilityAttribute()).append(",");
+        if (getProbabilityThresholdAttribute() != null)
+            sb.append("ProbabilityThresholdAttribute: ").append(getProbabilityThresholdAttribute()).append(",");
+        if (getStartTimeOffset() != null)
+            sb.append("StartTimeOffset: ").append(getStartTimeOffset()).append(",");
+        if (getEndTimeOffset() != null)
+            sb.append("EndTimeOffset: ").append(getEndTimeOffset());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +658,31 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getS3DataDistributionType() != null && other.getS3DataDistributionType().equals(this.getS3DataDistributionType()) == false)
             return false;
+        if (other.getFeaturesAttribute() == null ^ this.getFeaturesAttribute() == null)
+            return false;
+        if (other.getFeaturesAttribute() != null && other.getFeaturesAttribute().equals(this.getFeaturesAttribute()) == false)
+            return false;
+        if (other.getInferenceAttribute() == null ^ this.getInferenceAttribute() == null)
+            return false;
+        if (other.getInferenceAttribute() != null && other.getInferenceAttribute().equals(this.getInferenceAttribute()) == false)
+            return false;
+        if (other.getProbabilityAttribute() == null ^ this.getProbabilityAttribute() == null)
+            return false;
+        if (other.getProbabilityAttribute() != null && other.getProbabilityAttribute().equals(this.getProbabilityAttribute()) == false)
+            return false;
+        if (other.getProbabilityThresholdAttribute() == null ^ this.getProbabilityThresholdAttribute() == null)
+            return false;
+        if (other.getProbabilityThresholdAttribute() != null
+                && other.getProbabilityThresholdAttribute().equals(this.getProbabilityThresholdAttribute()) == false)
+            return false;
+        if (other.getStartTimeOffset() == null ^ this.getStartTimeOffset() == null)
+            return false;
+        if (other.getStartTimeOffset() != null && other.getStartTimeOffset().equals(this.getStartTimeOffset()) == false)
+            return false;
+        if (other.getEndTimeOffset() == null ^ this.getEndTimeOffset() == null)
+            return false;
+        if (other.getEndTimeOffset() != null && other.getEndTimeOffset().equals(this.getEndTimeOffset()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +695,12 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocalPath() == null) ? 0 : getLocalPath().hashCode());
         hashCode = prime * hashCode + ((getS3InputMode() == null) ? 0 : getS3InputMode().hashCode());
         hashCode = prime * hashCode + ((getS3DataDistributionType() == null) ? 0 : getS3DataDistributionType().hashCode());
+        hashCode = prime * hashCode + ((getFeaturesAttribute() == null) ? 0 : getFeaturesAttribute().hashCode());
+        hashCode = prime * hashCode + ((getInferenceAttribute() == null) ? 0 : getInferenceAttribute().hashCode());
+        hashCode = prime * hashCode + ((getProbabilityAttribute() == null) ? 0 : getProbabilityAttribute().hashCode());
+        hashCode = prime * hashCode + ((getProbabilityThresholdAttribute() == null) ? 0 : getProbabilityThresholdAttribute().hashCode());
+        hashCode = prime * hashCode + ((getStartTimeOffset() == null) ? 0 : getStartTimeOffset().hashCode());
+        hashCode = prime * hashCode + ((getEndTimeOffset() == null) ? 0 : getEndTimeOffset().hashCode());
         return hashCode;
     }
 

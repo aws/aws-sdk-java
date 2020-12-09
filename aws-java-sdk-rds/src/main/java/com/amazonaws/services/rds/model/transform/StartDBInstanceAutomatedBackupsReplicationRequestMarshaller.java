@@ -59,6 +59,10 @@ public class StartDBInstanceAutomatedBackupsReplicationRequestMarshaller impleme
             request.addParameter("PreSignedUrl", StringUtils.fromString(startDBInstanceAutomatedBackupsReplicationRequest.getPreSignedUrl()));
         }
 
+        if (startDBInstanceAutomatedBackupsReplicationRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(startDBInstanceAutomatedBackupsReplicationRequest.getSourceRegion()));
+        }
+
         return request;
     }
 

@@ -62,8 +62,16 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
      * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
-     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
-     * but not in the Amazon SageMaker Python SDK.
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p>
+     * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      */
     private String customAttributes;
@@ -79,8 +87,20 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
      * the invocation traffic based on the variant weights.
      * </p>
+     * <p>
+     * For information about how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
+     * </p>
      */
     private String targetVariant;
+    /**
+     * <p>
+     * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     * information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     * </p>
+     */
+    private String inferenceId;
 
     /**
      * <p>
@@ -312,8 +332,16 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
      * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
-     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
-     * but not in the Amazon SageMaker Python SDK.
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p>
+     * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
      * @param customAttributes
@@ -322,8 +350,15 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
      *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently
-     *        supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
+     *        <p>
+     *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public void setCustomAttributes(String customAttributes) {
@@ -337,8 +372,16 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
      * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
-     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
-     * but not in the Amazon SageMaker Python SDK.
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p>
+     * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
      * @return Provides additional information about a request for an inference submitted to a model hosted at an Amazon
@@ -346,8 +389,15 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         value, for example, to provide an ID that you can use to track a request or to provide other metadata
      *         that a service endpoint was programmed to process. The value must consist of no more than 1024 visible
      *         US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
-     *         3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is
-     *         currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     *         3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *         <p>
+     *         The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *         your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *         attribute represents the trace ID, your model can prepend the custom attribute with
+     *         <code>Trace ID:</code> in your post-processing function.
+     *         </p>
+     *         <p>
+     *         This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public String getCustomAttributes() {
@@ -361,8 +411,16 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
      * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
-     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
-     * but not in the Amazon SageMaker Python SDK.
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p>
+     * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
      * @param customAttributes
@@ -371,8 +429,15 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
      *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently
-     *        supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
+     *        <p>
+     *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,11 +492,18 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
      * the invocation traffic based on the variant weights.
      * </p>
+     * <p>
+     * For information about how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
+     * </p>
      * 
      * @param targetVariant
      *        Specify the production variant to send the inference request to when invoking an endpoint that is running
      *        two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
-     *        to distribute the invocation traffic based on the variant weights.
+     *        to distribute the invocation traffic based on the variant weights.</p>
+     *        <p>
+     *        For information about how to use variant targeting to perform a/b testing, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
      */
 
     public void setTargetVariant(String targetVariant) {
@@ -444,10 +516,18 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
      * the invocation traffic based on the variant weights.
      * </p>
+     * <p>
+     * For information about how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
+     * </p>
      * 
      * @return Specify the production variant to send the inference request to when invoking an endpoint that is running
      *         two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
-     *         to distribute the invocation traffic based on the variant weights.
+     *         to distribute the invocation traffic based on the variant weights.</p>
+     *         <p>
+     *         For information about how to use variant targeting to perform a/b testing, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in
+     *         production</a>
      */
 
     public String getTargetVariant() {
@@ -460,16 +540,75 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
      * the invocation traffic based on the variant weights.
      * </p>
+     * <p>
+     * For information about how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
+     * </p>
      * 
      * @param targetVariant
      *        Specify the production variant to send the inference request to when invoking an endpoint that is running
      *        two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
-     *        to distribute the invocation traffic based on the variant weights.
+     *        to distribute the invocation traffic based on the variant weights.</p>
+     *        <p>
+     *        For information about how to use variant targeting to perform a/b testing, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeEndpointRequest withTargetVariant(String targetVariant) {
         setTargetVariant(targetVariant);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     * information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     * </p>
+     * 
+     * @param inferenceId
+     *        If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     *        information about data capture, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     */
+
+    public void setInferenceId(String inferenceId) {
+        this.inferenceId = inferenceId;
+    }
+
+    /**
+     * <p>
+     * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     * information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     * </p>
+     * 
+     * @return If you provide a value, it is added to the captured data when you enable data capture on the endpoint.
+     *         For information about data capture, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     */
+
+    public String getInferenceId() {
+        return this.inferenceId;
+    }
+
+    /**
+     * <p>
+     * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     * information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     * </p>
+     * 
+     * @param inferenceId
+     *        If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
+     *        information about data capture, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withInferenceId(String inferenceId) {
+        setInferenceId(inferenceId);
         return this;
     }
 
@@ -498,7 +637,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTargetModel() != null)
             sb.append("TargetModel: ").append(getTargetModel()).append(",");
         if (getTargetVariant() != null)
-            sb.append("TargetVariant: ").append(getTargetVariant());
+            sb.append("TargetVariant: ").append(getTargetVariant()).append(",");
+        if (getInferenceId() != null)
+            sb.append("InferenceId: ").append(getInferenceId());
         sb.append("}");
         return sb.toString();
     }
@@ -541,6 +682,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTargetVariant() != null && other.getTargetVariant().equals(this.getTargetVariant()) == false)
             return false;
+        if (other.getInferenceId() == null ^ this.getInferenceId() == null)
+            return false;
+        if (other.getInferenceId() != null && other.getInferenceId().equals(this.getInferenceId()) == false)
+            return false;
         return true;
     }
 
@@ -556,6 +701,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
         hashCode = prime * hashCode + ((getTargetModel() == null) ? 0 : getTargetModel().hashCode());
         hashCode = prime * hashCode + ((getTargetVariant() == null) ? 0 : getTargetVariant().hashCode());
+        hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         return hashCode;
     }
 

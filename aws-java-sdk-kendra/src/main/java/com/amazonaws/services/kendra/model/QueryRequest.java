@@ -100,6 +100,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      */
     private UserContext userContext;
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     */
+    private String visitorId;
 
     /**
      * <p>
@@ -678,6 +686,58 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @param visitorId
+     *        Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such
+     *        as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *        <code>VisitorId</code>.
+     */
+
+    public void setVisitorId(String visitorId) {
+        this.visitorId = visitorId;
+    }
+
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @return Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier,
+     *         such as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *         <code>VisitorId</code>.
+     */
+
+    public String getVisitorId() {
+        return this.visitorId;
+    }
+
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @param visitorId
+     *        Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such
+     *        as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *        <code>VisitorId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withVisitorId(String visitorId) {
+        setVisitorId(visitorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -708,7 +768,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         if (getSortingConfiguration() != null)
             sb.append("SortingConfiguration: ").append(getSortingConfiguration()).append(",");
         if (getUserContext() != null)
-            sb.append("UserContext: ").append(getUserContext());
+            sb.append("UserContext: ").append(getUserContext()).append(",");
+        if (getVisitorId() != null)
+            sb.append("VisitorId: ").append(getVisitorId());
         sb.append("}");
         return sb.toString();
     }
@@ -763,6 +825,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             return false;
         if (other.getUserContext() != null && other.getUserContext().equals(this.getUserContext()) == false)
             return false;
+        if (other.getVisitorId() == null ^ this.getVisitorId() == null)
+            return false;
+        if (other.getVisitorId() != null && other.getVisitorId().equals(this.getVisitorId()) == false)
+            return false;
         return true;
     }
 
@@ -781,6 +847,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode + ((getSortingConfiguration() == null) ? 0 : getSortingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUserContext() == null) ? 0 : getUserContext().hashCode());
+        hashCode = prime * hashCode + ((getVisitorId() == null) ? 0 : getVisitorId().hashCode());
         return hashCode;
     }
 

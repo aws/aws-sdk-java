@@ -1,3 +1,44 @@
+# __1.11.915__ __2020-12-08__
+## __AWS Audit Manager__
+  - ### Features
+    - AWS Audit Manager helps you continuously audit your AWS usage to simplify how you manage risk and compliance. This update releases the first version of the AWS Audit Manager APIs and SDK.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - 1. Amazon Kendra connector for Google Drive repositories 2. Amazon Kendra's relevance ranking models are regularly tuned for each customer by capturing end-user search patterns and feedback.
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release adds support for configuring cross-region and cross-account replication of your Amazon ECR images.
+
+## __Amazon EMR Containers__
+  - ### Features
+    - This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - This release adds support for the Amazon Forecast Weather Index which can increase forecasting accuracy by automatically including weather forecasts in demand forecasts.
+
+## __Amazon HealthLake__
+  - ### Features
+    - This release introduces Amazon HealthLake (preview), a HIPAA-eligible service that enables healthcare and life sciences customers to store, transform, query, and analyze health data in the AWS Cloud.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added new parameters for join optimization.
+
+## __Amazon SageMaker Runtime__
+  - ### Features
+    - This feature allows customers to invoke their endpoint with an inference ID. If used and data capture for the endpoint is enabled, this ID will be captured along with request data.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This feature helps you monitor model performance characteristics such as accuracy, identify undesired bias in your ML models, and explain model decisions better with explainability drift detection.
+
+## __Amazon Sagemaker Edge Manager__
+  - ### Features
+    - Amazon SageMaker Edge Manager makes it easy to optimize, secure, monitor, and maintain  machine learning (ML) models across fleets of edge devices such as smart cameras, smart speakers, and robots.
+
 # __1.11.914__ __2020-12-07__
 ## __AWS Database Migration Service__
   - ### Features

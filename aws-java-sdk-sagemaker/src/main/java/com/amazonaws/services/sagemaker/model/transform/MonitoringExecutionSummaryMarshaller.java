@@ -43,6 +43,10 @@ public class MonitoringExecutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointName").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringType").build();
 
     private static final MonitoringExecutionSummaryMarshaller instance = new MonitoringExecutionSummaryMarshaller();
 
@@ -68,6 +72,8 @@ public class MonitoringExecutionSummaryMarshaller {
             protocolMarshaller.marshall(monitoringExecutionSummary.getProcessingJobArn(), PROCESSINGJOBARN_BINDING);
             protocolMarshaller.marshall(monitoringExecutionSummary.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(monitoringExecutionSummary.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(monitoringExecutionSummary.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(monitoringExecutionSummary.getMonitoringType(), MONITORINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

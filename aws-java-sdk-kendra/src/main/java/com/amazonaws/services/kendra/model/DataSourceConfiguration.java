@@ -54,7 +54,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     private SalesforceConfiguration salesforceConfiguration;
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      */
     private OneDriveConfiguration oneDriveConfiguration;
@@ -70,6 +70,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ConfluenceConfiguration confluenceConfiguration;
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     */
+    private GoogleDriveConfiguration googleDriveConfiguration;
 
     /**
      * <p>
@@ -233,11 +239,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
      * @param oneDriveConfiguration
-     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     *        Provides configuration for data sources that connect to Microsoft OneDrive.
      */
 
     public void setOneDriveConfiguration(OneDriveConfiguration oneDriveConfiguration) {
@@ -246,10 +252,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
-     * @return Provided configuration for data sources that connect to Microsoft OneDrive.
+     * @return Provides configuration for data sources that connect to Microsoft OneDrive.
      */
 
     public OneDriveConfiguration getOneDriveConfiguration() {
@@ -258,11 +264,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
      * @param oneDriveConfiguration
-     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     *        Provides configuration for data sources that connect to Microsoft OneDrive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,6 +358,46 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @param googleDriveConfiguration
+     *        Provides configuration for data sources that connect to Google Drive.
+     */
+
+    public void setGoogleDriveConfiguration(GoogleDriveConfiguration googleDriveConfiguration) {
+        this.googleDriveConfiguration = googleDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @return Provides configuration for data sources that connect to Google Drive.
+     */
+
+    public GoogleDriveConfiguration getGoogleDriveConfiguration() {
+        return this.googleDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @param googleDriveConfiguration
+     *        Provides configuration for data sources that connect to Google Drive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withGoogleDriveConfiguration(GoogleDriveConfiguration googleDriveConfiguration) {
+        setGoogleDriveConfiguration(googleDriveConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +422,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getServiceNowConfiguration() != null)
             sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration()).append(",");
         if (getConfluenceConfiguration() != null)
-            sb.append("ConfluenceConfiguration: ").append(getConfluenceConfiguration());
+            sb.append("ConfluenceConfiguration: ").append(getConfluenceConfiguration()).append(",");
+        if (getGoogleDriveConfiguration() != null)
+            sb.append("GoogleDriveConfiguration: ").append(getGoogleDriveConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +467,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getConfluenceConfiguration() != null && other.getConfluenceConfiguration().equals(this.getConfluenceConfiguration()) == false)
             return false;
+        if (other.getGoogleDriveConfiguration() == null ^ this.getGoogleDriveConfiguration() == null)
+            return false;
+        if (other.getGoogleDriveConfiguration() != null && other.getGoogleDriveConfiguration().equals(this.getGoogleDriveConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +486,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getOneDriveConfiguration() == null) ? 0 : getOneDriveConfiguration().hashCode());
         hashCode = prime * hashCode + ((getServiceNowConfiguration() == null) ? 0 : getServiceNowConfiguration().hashCode());
         hashCode = prime * hashCode + ((getConfluenceConfiguration() == null) ? 0 : getConfluenceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGoogleDriveConfiguration() == null) ? 0 : getGoogleDriveConfiguration().hashCode());
         return hashCode;
     }
 

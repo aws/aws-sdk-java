@@ -36,6 +36,12 @@ public class CreateDatasetImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<String> TIMESTAMPFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestampFormat").build();
+    private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TimeZone").build();
+    private static final MarshallingInfo<Boolean> USEGEOLOCATIONFORTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseGeolocationForTimeZone").build();
+    private static final MarshallingInfo<String> GEOLOCATIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeolocationFormat").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -59,6 +65,9 @@ public class CreateDatasetImportJobRequestMarshaller {
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDatasetArn(), DATASETARN_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getTimestampFormat(), TIMESTAMPFORMAT_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getTimeZone(), TIMEZONE_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getUseGeolocationForTimeZone(), USEGEOLOCATIONFORTIMEZONE_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getGeolocationFormat(), GEOLOCATIONFORMAT_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -20,11 +20,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
+ * Forecast supports the Weather Index and Holidays built-in featurizations.
  * </p>
  * <p>
- * The only supported feature is Holidays. If you use the calendar, all data in the datasets should belong to the same
- * country as the calendar. For the holiday calendar data, see the <a
- * href="http://jollyday.sourceforge.net/data.html">Jollyday</a> website.
+ * <b>Weather Index</b>
+ * </p>
+ * <p>
+ * The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather
+ * information into your model. The Weather Index supplements your datasets with over two years of historical weather
+ * data and up to 14 days of projected weather data. For more information, see <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather Index</a>.
+ * </p>
+ * <p>
+ * <b>Holidays</b>
+ * </p>
+ * <p>
+ * Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information
+ * into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars,
+ * refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SupplementaryFeature" target="_top">AWS API
@@ -35,13 +49,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the feature. This must be "holiday".
+     * The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * One of the following 2 letter country codes:
+     * <b>Weather Index</b>
+     * </p>
+     * <p>
+     * To enable the Weather Index, set the value to <code>"true"</code>
+     * </p>
+     * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
+     * To enable Holidays, specify a country with one of the following two-letter country codes:
      * </p>
      * <ul>
      * <li>
@@ -380,11 +403,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the feature. This must be "holiday".
+     * The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the feature. This must be "holiday".
+     *        The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      */
 
     public void setName(String name) {
@@ -393,10 +416,10 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the feature. This must be "holiday".
+     * The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      * </p>
      * 
-     * @return The name of the feature. This must be "holiday".
+     * @return The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      */
 
     public String getName() {
@@ -405,11 +428,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the feature. This must be "holiday".
+     * The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the feature. This must be "holiday".
+     *        The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,7 +443,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * One of the following 2 letter country codes:
+     * <b>Weather Index</b>
+     * </p>
+     * <p>
+     * To enable the Weather Index, set the value to <code>"true"</code>
+     * </p>
+     * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
+     * To enable Holidays, specify a country with one of the following two-letter country codes:
      * </p>
      * <ul>
      * <li>
@@ -756,7 +788,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param value
-     *        One of the following 2 letter country codes:</p>
+     *        <b>Weather Index</b> </p>
+     *        <p>
+     *        To enable the Weather Index, set the value to <code>"true"</code>
+     *        </p>
+     *        <p>
+     *        <b>Holidays</b>
+     *        </p>
+     *        <p>
+     *        To enable Holidays, specify a country with one of the following two-letter country codes:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1096,7 +1137,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * One of the following 2 letter country codes:
+     * <b>Weather Index</b>
+     * </p>
+     * <p>
+     * To enable the Weather Index, set the value to <code>"true"</code>
+     * </p>
+     * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
+     * To enable Holidays, specify a country with one of the following two-letter country codes:
      * </p>
      * <ul>
      * <li>
@@ -1431,7 +1481,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * </ul>
      * 
-     * @return One of the following 2 letter country codes:</p>
+     * @return <b>Weather Index</b> </p>
+     *         <p>
+     *         To enable the Weather Index, set the value to <code>"true"</code>
+     *         </p>
+     *         <p>
+     *         <b>Holidays</b>
+     *         </p>
+     *         <p>
+     *         To enable Holidays, specify a country with one of the following two-letter country codes:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1771,7 +1830,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * One of the following 2 letter country codes:
+     * <b>Weather Index</b>
+     * </p>
+     * <p>
+     * To enable the Weather Index, set the value to <code>"true"</code>
+     * </p>
+     * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
+     * To enable Holidays, specify a country with one of the following two-letter country codes:
      * </p>
      * <ul>
      * <li>
@@ -2107,7 +2175,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param value
-     *        One of the following 2 letter country codes:</p>
+     *        <b>Weather Index</b> </p>
+     *        <p>
+     *        To enable the Weather Index, set the value to <code>"true"</code>
+     *        </p>
+     *        <p>
+     *        <b>Holidays</b>
+     *        </p>
+     *        <p>
+     *        To enable Holidays, specify a country with one of the following two-letter country codes:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>

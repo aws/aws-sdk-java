@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for the debug hook parameters, collection configuration, and storage paths.
+ * Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To
+ * learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+ * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DebugHookConfig" target="_top">AWS API
@@ -30,36 +33,39 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     * Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      * </p>
      */
     private String localPath;
     /**
      * <p>
-     * Path to Amazon S3 storage location for tensors.
+     * Path to Amazon S3 storage location for metrics and tensors.
      * </p>
      */
     private String s3OutputPath;
     /**
      * <p>
-     * Configuration information for the debug hook parameters.
+     * Configuration information for the Debugger hook parameters.
      * </p>
      */
     private java.util.Map<String, String> hookParameters;
     /**
      * <p>
-     * Configuration information for tensor collections.
+     * Configuration information for Debugger tensor collections. To learn more about how to configure the
+     * <code>CollectionConfiguration</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+     * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      */
     private java.util.List<CollectionConfiguration> collectionConfigurations;
 
     /**
      * <p>
-     * Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     * Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      * </p>
      * 
      * @param localPath
-     *        Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     *        Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      */
 
     public void setLocalPath(String localPath) {
@@ -68,10 +74,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     * Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      * </p>
      * 
-     * @return Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     * @return Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      */
 
     public String getLocalPath() {
@@ -80,11 +86,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     * Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      * </p>
      * 
      * @param localPath
-     *        Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+     *        Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +101,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to Amazon S3 storage location for tensors.
+     * Path to Amazon S3 storage location for metrics and tensors.
      * </p>
      * 
      * @param s3OutputPath
-     *        Path to Amazon S3 storage location for tensors.
+     *        Path to Amazon S3 storage location for metrics and tensors.
      */
 
     public void setS3OutputPath(String s3OutputPath) {
@@ -108,10 +114,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to Amazon S3 storage location for tensors.
+     * Path to Amazon S3 storage location for metrics and tensors.
      * </p>
      * 
-     * @return Path to Amazon S3 storage location for tensors.
+     * @return Path to Amazon S3 storage location for metrics and tensors.
      */
 
     public String getS3OutputPath() {
@@ -120,11 +126,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Path to Amazon S3 storage location for tensors.
+     * Path to Amazon S3 storage location for metrics and tensors.
      * </p>
      * 
      * @param s3OutputPath
-     *        Path to Amazon S3 storage location for tensors.
+     *        Path to Amazon S3 storage location for metrics and tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,10 +141,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the debug hook parameters.
+     * Configuration information for the Debugger hook parameters.
      * </p>
      * 
-     * @return Configuration information for the debug hook parameters.
+     * @return Configuration information for the Debugger hook parameters.
      */
 
     public java.util.Map<String, String> getHookParameters() {
@@ -147,11 +153,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the debug hook parameters.
+     * Configuration information for the Debugger hook parameters.
      * </p>
      * 
      * @param hookParameters
-     *        Configuration information for the debug hook parameters.
+     *        Configuration information for the Debugger hook parameters.
      */
 
     public void setHookParameters(java.util.Map<String, String> hookParameters) {
@@ -160,11 +166,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the debug hook parameters.
+     * Configuration information for the Debugger hook parameters.
      * </p>
      * 
      * @param hookParameters
-     *        Configuration information for the debug hook parameters.
+     *        Configuration information for the Debugger hook parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,10 +209,16 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for tensor collections.
+     * Configuration information for Debugger tensor collections. To learn more about how to configure the
+     * <code>CollectionConfiguration</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+     * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
-     * @return Configuration information for tensor collections.
+     * @return Configuration information for Debugger tensor collections. To learn more about how to configure the
+     *         <code>CollectionConfiguration</code> parameter, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
+     *         SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      */
 
     public java.util.List<CollectionConfiguration> getCollectionConfigurations() {
@@ -215,11 +227,17 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for tensor collections.
+     * Configuration information for Debugger tensor collections. To learn more about how to configure the
+     * <code>CollectionConfiguration</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+     * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for tensor collections.
+     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
+     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
+     *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      */
 
     public void setCollectionConfigurations(java.util.Collection<CollectionConfiguration> collectionConfigurations) {
@@ -233,7 +251,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for tensor collections.
+     * Configuration information for Debugger tensor collections. To learn more about how to configure the
+     * <code>CollectionConfiguration</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+     * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -242,7 +263,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for tensor collections.
+     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
+     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
+     *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +282,17 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for tensor collections.
+     * Configuration information for Debugger tensor collections. To learn more about how to configure the
+     * <code>CollectionConfiguration</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
+     * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for tensor collections.
+     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
+     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
+     *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

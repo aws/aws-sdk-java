@@ -285,6 +285,25 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * Deletes the registry permissions policy.
+     * </p>
+     * 
+     * @param deleteRegistryPolicyRequest
+     * @return Result of the DeleteRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RegistryPolicyNotFoundException
+     *         The registry doesn't have an associated registry policy.
+     * @sample AmazonECR.DeleteRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteRegistryPolicyResult deleteRegistryPolicy(DeleteRegistryPolicyRequest deleteRegistryPolicyRequest);
+
+    /**
+     * <p>
      * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
      * use the <code>force</code> option to delete the repository.
      * </p>
@@ -384,6 +403,26 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest);
+
+    /**
+     * <p>
+     * Describes the settings for a registry. The replication configuration for a repository can be created or updated
+     * with the <a>PutReplicationConfiguration</a> API action.
+     * </p>
+     * 
+     * @param describeRegistryRequest
+     * @return Result of the DescribeRegistry operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @sample AmazonECR.DescribeRegistry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeRegistryResult describeRegistry(DescribeRegistryRequest describeRegistryRequest);
 
     /**
      * <p>
@@ -510,6 +549,25 @@ public interface AmazonECR {
      *      API Documentation</a>
      */
     GetLifecyclePolicyPreviewResult getLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest getLifecyclePolicyPreviewRequest);
+
+    /**
+     * <p>
+     * Retrieves the permissions policy for a registry.
+     * </p>
+     * 
+     * @param getRegistryPolicyRequest
+     * @return Result of the GetRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RegistryPolicyNotFoundException
+     *         The registry doesn't have an associated registry policy.
+     * @sample AmazonECR.GetRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRegistryPolicyResult getRegistryPolicy(GetRegistryPolicyRequest getRegistryPolicyRequest);
 
     /**
      * <p>
@@ -725,6 +783,60 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates the permissions policy for your registry.
+     * </p>
+     * <p>
+     * A registry policy is used to specify permissions for another AWS account and is used when configuring
+     * cross-account replication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a>
+     * in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * </p>
+     * 
+     * @param putRegistryPolicyRequest
+     * @return Result of the PutRegistryPolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECR.PutRegistryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutRegistryPolicyResult putRegistryPolicy(PutRegistryPolicyRequest putRegistryPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates the replication configuration for a registry. The existing replication configuration for a
+     * repository can be retrieved with the <a>DescribeRegistry</a> API action. The first time the
+     * PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the
+     * replication process. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * When configuring cross-account replication, the destination account must grant the source account permission to
+     * replicate. This permission is controlled using a registry permissions policy. For more information, see
+     * <a>PutRegistryPolicy</a>.
+     * </p>
+     * </note>
+     * 
+     * @param putReplicationConfigurationRequest
+     * @return Result of the PutReplicationConfiguration operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @sample AmazonECR.PutReplicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutReplicationConfigurationResult putReplicationConfiguration(PutReplicationConfigurationRequest putReplicationConfigurationRequest);
 
     /**
      * <p>

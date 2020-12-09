@@ -56,6 +56,14 @@ public class JoinInstructionJsonUnmarshaller implements Unmarshaller<JoinInstruc
                     context.nextToken();
                     joinInstruction.setRightOperand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LeftJoinKeyProperties", targetDepth)) {
+                    context.nextToken();
+                    joinInstruction.setLeftJoinKeyProperties(JoinKeyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RightJoinKeyProperties", targetDepth)) {
+                    context.nextToken();
+                    joinInstruction.setRightJoinKeyProperties(JoinKeyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     joinInstruction.setType(context.getUnmarshaller(String.class).unmarshall(context));

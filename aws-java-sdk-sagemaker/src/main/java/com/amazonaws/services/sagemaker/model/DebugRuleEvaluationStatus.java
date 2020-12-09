@@ -30,7 +30,7 @@ public class DebugRuleEvaluationStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the rule configuration
+     * The name of the rule configuration.
      * </p>
      */
     private String ruleConfigurationName;
@@ -61,11 +61,11 @@ public class DebugRuleEvaluationStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the rule configuration
+     * The name of the rule configuration.
      * </p>
      * 
      * @param ruleConfigurationName
-     *        The name of the rule configuration
+     *        The name of the rule configuration.
      */
 
     public void setRuleConfigurationName(String ruleConfigurationName) {
@@ -74,10 +74,10 @@ public class DebugRuleEvaluationStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the rule configuration
+     * The name of the rule configuration.
      * </p>
      * 
-     * @return The name of the rule configuration
+     * @return The name of the rule configuration.
      */
 
     public String getRuleConfigurationName() {
@@ -86,11 +86,11 @@ public class DebugRuleEvaluationStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the rule configuration
+     * The name of the rule configuration.
      * </p>
      * 
      * @param ruleConfigurationName
-     *        The name of the rule configuration
+     *        The name of the rule configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

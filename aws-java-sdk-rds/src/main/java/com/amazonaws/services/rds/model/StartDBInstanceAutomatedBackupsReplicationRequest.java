@@ -55,6 +55,8 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
      * </p>
      */
     private String preSignedUrl;
+    /** The region where the source instance is located. */
+    private String sourceRegion;
 
     /**
      * <p>
@@ -253,6 +255,40 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
     }
 
     /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @return The region where the source instance is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDBInstanceAutomatedBackupsReplicationRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -271,7 +307,9 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPreSignedUrl() != null)
-            sb.append("PreSignedUrl: ").append(getPreSignedUrl());
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +340,10 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
             return false;
         if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
             return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +356,7 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

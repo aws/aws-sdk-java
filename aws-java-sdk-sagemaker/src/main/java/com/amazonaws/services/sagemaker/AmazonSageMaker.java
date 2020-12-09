@@ -346,6 +346,43 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createDataQualityJobDefinitionRequest
+     * @return Result of the CreateDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDataQualityJobDefinitionResult createDataQualityJobDefinition(CreateDataQualityJobDefinitionRequest createDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates a device fleet.
+     * </p>
+     * 
+     * @param createDeviceFleetRequest
+     * @return Result of the CreateDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateDeviceFleetResult createDeviceFleet(CreateDeviceFleetRequest createDeviceFleetRequest);
+
+    /**
+     * <p>
      * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
      * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
      * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one domain per region. Users within a
@@ -410,6 +447,24 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     CreateDomainResult createDomain(CreateDomainRequest createDomainRequest);
+
+    /**
+     * <p>
+     * Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon
+     * Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the
+     * resulting artifacts to an S3 bucket that you specify.
+     * </p>
+     * 
+     * @param createEdgePackagingJobRequest
+     * @return Result of the CreateEdgePackagingJob operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateEdgePackagingJobResult createEdgePackagingJob(CreateEdgePackagingJobRequest createEdgePackagingJobRequest);
 
     /**
      * <p>
@@ -848,6 +903,43 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates the definition for a model bias job.
+     * </p>
+     * 
+     * @param createModelBiasJobDefinitionRequest
+     * @return Result of the CreateModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateModelBiasJobDefinitionResult createModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates the definition for a model explainability job.
+     * </p>
+     * 
+     * @param createModelExplainabilityJobDefinitionRequest
+     * @return Result of the CreateModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateModelExplainabilityJobDefinitionResult createModelExplainabilityJobDefinition(
+            CreateModelExplainabilityJobDefinitionRequest createModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
      * Creates a model package that you can use to create Amazon SageMaker models or list on AWS Marketplace, or a
      * versioned model that is part of a model group. Buyers can subscribe to model packages listed on AWS Marketplace
      * to create models in Amazon SageMaker.
@@ -904,6 +996,25 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     CreateModelPackageGroupResult createModelPackageGroup(CreateModelPackageGroupRequest createModelPackageGroupRequest);
+
+    /**
+     * <p>
+     * Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.
+     * </p>
+     * 
+     * @param createModelQualityJobDefinitionRequest
+     * @return Result of the CreateModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateModelQualityJobDefinitionResult createModelQualityJobDefinition(CreateModelQualityJobDefinitionRequest createModelQualityJobDefinitionRequest);
 
     /**
      * <p>
@@ -1557,6 +1668,36 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteDataQualityJobDefinitionRequest
+     * @return Result of the DeleteDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDataQualityJobDefinitionResult deleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest deleteDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes a fleet.
+     * </p>
+     * 
+     * @param deleteDeviceFleetRequest
+     * @return Result of the DeleteDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.DeleteDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDeviceFleetResult deleteDeviceFleet(DeleteDeviceFleetRequest deleteDeviceFleetRequest);
+
+    /**
+     * <p>
      * Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again
      * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
      * data, notebooks, and other artifacts.
@@ -1737,6 +1878,37 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an Amazon SageMaker model bias job definition.
+     * </p>
+     * 
+     * @param deleteModelBiasJobDefinitionRequest
+     * @return Result of the DeleteModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteModelBiasJobDefinitionResult deleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker model explainability job definition.
+     * </p>
+     * 
+     * @param deleteModelExplainabilityJobDefinitionRequest
+     * @return Result of the DeleteModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelExplainabilityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteModelExplainabilityJobDefinitionResult deleteModelExplainabilityJobDefinition(
+            DeleteModelExplainabilityJobDefinitionRequest deleteModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
      * Deletes a model package.
      * </p>
      * <p>
@@ -1779,6 +1951,21 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteModelPackageGroupPolicyResult deleteModelPackageGroupPolicy(DeleteModelPackageGroupPolicyRequest deleteModelPackageGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the secified model quality monitoring job definition.
+     * </p>
+     * 
+     * @param deleteModelQualityJobDefinitionRequest
+     * @return Result of the DeleteModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteModelQualityJobDefinitionResult deleteModelQualityJobDefinition(DeleteModelQualityJobDefinitionRequest deleteModelQualityJobDefinitionRequest);
 
     /**
      * <p>
@@ -1832,7 +2019,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline.
+     * Deletes a pipeline if there are no in-progress executions.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -1973,6 +2160,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.
+     * </p>
+     * 
+     * @param deregisterDevicesRequest
+     * @return Result of the DeregisterDevices operation returned by the service.
+     * @sample AmazonSageMaker.DeregisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeregisterDevicesResult deregisterDevices(DeregisterDevicesRequest deregisterDevicesRequest);
+
+    /**
+     * <p>
      * Describes an action.
      * </p>
      * 
@@ -2108,6 +2308,51 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets the details of a data quality monitoring job definition.
+     * </p>
+     * 
+     * @param describeDataQualityJobDefinitionRequest
+     * @return Result of the DescribeDataQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDataQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDataQualityJobDefinitionResult describeDataQualityJobDefinition(DescribeDataQualityJobDefinitionRequest describeDataQualityJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Describes the device.
+     * </p>
+     * 
+     * @param describeDeviceRequest
+     * @return Result of the DescribeDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDeviceResult describeDevice(DescribeDeviceRequest describeDeviceRequest);
+
+    /**
+     * <p>
+     * A description of the fleet the device belongs to.
+     * </p>
+     * 
+     * @param describeDeviceFleetRequest
+     * @return Result of the DescribeDeviceFleet operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeDeviceFleetResult describeDeviceFleet(DescribeDeviceFleetRequest describeDeviceFleetRequest);
+
+    /**
+     * <p>
      * The description of the domain.
      * </p>
      * 
@@ -2120,6 +2365,21 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     DescribeDomainResult describeDomain(DescribeDomainRequest describeDomainRequest);
+
+    /**
+     * <p>
+     * A description of edge packaging jobs.
+     * </p>
+     * 
+     * @param describeEdgePackagingJobRequest
+     * @return Result of the DescribeEdgePackagingJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEdgePackagingJobResult describeEdgePackagingJob(DescribeEdgePackagingJobRequest describeEdgePackagingJobRequest);
 
     /**
      * <p>
@@ -2283,6 +2543,38 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a description of a model bias job definition.
+     * </p>
+     * 
+     * @param describeModelBiasJobDefinitionRequest
+     * @return Result of the DescribeModelBiasJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelBiasJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeModelBiasJobDefinitionResult describeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Returns a description of a model explainability job definition.
+     * </p>
+     * 
+     * @param describeModelExplainabilityJobDefinitionRequest
+     * @return Result of the DescribeModelExplainabilityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelExplainabilityJobDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeModelExplainabilityJobDefinitionResult describeModelExplainabilityJobDefinition(
+            DescribeModelExplainabilityJobDefinitionRequest describeModelExplainabilityJobDefinitionRequest);
+
+    /**
+     * <p>
      * Returns a description of the specified model package, which is used to create Amazon SageMaker models or list
      * them on AWS Marketplace.
      * </p>
@@ -2310,6 +2602,21 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeModelPackageGroupResult describeModelPackageGroup(DescribeModelPackageGroupRequest describeModelPackageGroupRequest);
+
+    /**
+     * <p>
+     * Returns a description of a model quality job definition.
+     * </p>
+     * 
+     * @param describeModelQualityJobDefinitionRequest
+     * @return Result of the DescribeModelQualityJobDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelQualityJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeModelQualityJobDefinitionResult describeModelQualityJobDefinition(DescribeModelQualityJobDefinitionRequest describeModelQualityJobDefinitionRequest);
 
     /**
      * <p>
@@ -2610,6 +2917,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Describes a fleet.
+     * </p>
+     * 
+     * @param getDeviceFleetReportRequest
+     * @return Result of the GetDeviceFleetReport operation returned by the service.
+     * @sample AmazonSageMaker.GetDeviceFleetReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetDeviceFleetReportResult getDeviceFleetReport(GetDeviceFleetReportRequest getDeviceFleetReportRequest);
+
+    /**
+     * <p>
      * Gets a resource policy that manages access for a model group. For information about resource policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
      * policies and resource-based policies</a> in the <i>AWS Identity and Access Management User Guide.</i>.
@@ -2813,6 +3133,45 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Lists the data quality job definitions in your account.
+     * </p>
+     * 
+     * @param listDataQualityJobDefinitionsRequest
+     * @return Result of the ListDataQualityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListDataQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDataQualityJobDefinitionsResult listDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest listDataQualityJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of devices in the fleet.
+     * </p>
+     * 
+     * @param listDeviceFleetsRequest
+     * @return Result of the ListDeviceFleets operation returned by the service.
+     * @sample AmazonSageMaker.ListDeviceFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDeviceFleetsResult listDeviceFleets(ListDeviceFleetsRequest listDeviceFleetsRequest);
+
+    /**
+     * <p>
+     * A list of devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     * @return Result of the ListDevices operation returned by the service.
+     * @sample AmazonSageMaker.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest);
+
+    /**
+     * <p>
      * Lists the domains.
      * </p>
      * 
@@ -2823,6 +3182,19 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
+
+    /**
+     * <p>
+     * Returns a list of edge packaging jobs.
+     * </p>
+     * 
+     * @param listEdgePackagingJobsRequest
+     * @return Result of the ListEdgePackagingJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListEdgePackagingJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEdgePackagingJobsResult listEdgePackagingJobs(ListEdgePackagingJobsRequest listEdgePackagingJobsRequest);
 
     /**
      * <p>
@@ -2977,6 +3349,33 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Lists model bias jobs definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelBiasJobDefinitionsRequest
+     * @return Result of the ListModelBiasJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelBiasJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelBiasJobDefinitionsResult listModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * Lists model explainability job definitions that satisfy various filters.
+     * </p>
+     * 
+     * @param listModelExplainabilityJobDefinitionsRequest
+     * @return Result of the ListModelExplainabilityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelExplainabilityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelExplainabilityJobDefinitionsResult listModelExplainabilityJobDefinitions(
+            ListModelExplainabilityJobDefinitionsRequest listModelExplainabilityJobDefinitionsRequest);
+
+    /**
+     * <p>
      * Gets a list of the model groups in your AWS account.
      * </p>
      * 
@@ -3000,6 +3399,19 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     ListModelPackagesResult listModelPackages(ListModelPackagesRequest listModelPackagesRequest);
+
+    /**
+     * <p>
+     * Gets a list of model quality monitoring job definitions in your account.
+     * </p>
+     * 
+     * @param listModelQualityJobDefinitionsRequest
+     * @return Result of the ListModelQualityJobDefinitions operation returned by the service.
+     * @sample AmazonSageMaker.ListModelQualityJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelQualityJobDefinitionsResult listModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest listModelQualityJobDefinitionsRequest);
 
     /**
      * <p>
@@ -3334,6 +3746,22 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Register devices.
+     * </p>
+     * 
+     * @param registerDevicesRequest
+     * @return Result of the RegisterDevices operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.RegisterDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RegisterDevicesResult registerDevices(RegisterDevicesRequest registerDevicesRequest);
+
+    /**
+     * <p>
      * Renders the UI template so that you can preview the worker's experience.
      * </p>
      * 
@@ -3371,7 +3799,8 @@ public interface AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * New monitoring schedules are immediately started after creation.
+     * By default, when you successfully create a new schedule, the status of a monitoring schedule is
+     * <code>scheduled</code>.
      * </p>
      * </note>
      * 
@@ -3460,6 +3889,19 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     StopCompilationJobResult stopCompilationJob(StopCompilationJobRequest stopCompilationJobRequest);
+
+    /**
+     * <p>
+     * Request to stop an edge packaging job.
+     * </p>
+     * 
+     * @param stopEdgePackagingJobRequest
+     * @return Result of the StopEdgePackagingJob operation returned by the service.
+     * @sample AmazonSageMaker.StopEdgePackagingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopEdgePackagingJobResult stopEdgePackagingJob(StopEdgePackagingJobRequest stopEdgePackagingJobRequest);
 
     /**
      * <p>
@@ -3684,6 +4126,34 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates a fleet of devices.
+     * </p>
+     * 
+     * @param updateDeviceFleetRequest
+     * @return Result of the UpdateDeviceFleet operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.UpdateDeviceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateDeviceFleetResult updateDeviceFleet(UpdateDeviceFleetRequest updateDeviceFleetRequest);
+
+    /**
+     * <p>
+     * Updates one or more devices in a fleet.
+     * </p>
+     * 
+     * @param updateDevicesRequest
+     * @return Result of the UpdateDevices operation returned by the service.
+     * @sample AmazonSageMaker.UpdateDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDevicesResult updateDevices(UpdateDevicesRequest updateDevicesRequest);
+
+    /**
+     * <p>
      * Updates the default settings for new user profiles in the domain.
      * </p>
      * 
@@ -3887,6 +4357,21 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePipelineExecutionResult updatePipelineExecution(UpdatePipelineExecutionRequest updatePipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Update a model training job to request a new Debugger profiling configuration.
+     * </p>
+     * 
+     * @param updateTrainingJobRequest
+     * @return Result of the UpdateTrainingJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateTrainingJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateTrainingJobResult updateTrainingJob(UpdateTrainingJobRequest updateTrainingJobRequest);
 
     /**
      * <p>

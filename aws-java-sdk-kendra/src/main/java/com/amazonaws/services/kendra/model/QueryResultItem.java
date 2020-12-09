@@ -97,6 +97,14 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ScoreAttributes scoreAttributes;
+    /**
+     * <p>
+     * A token that identifies a particular result from a particular query. Use this token to provide click-through
+     * feedback for the result. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * </p>
+     */
+    private String feedbackToken;
 
     /**
      * <p>
@@ -597,6 +605,58 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A token that identifies a particular result from a particular query. Use this token to provide click-through
+     * feedback for the result. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * </p>
+     * 
+     * @param feedbackToken
+     *        A token that identifies a particular result from a particular query. Use this token to provide
+     *        click-through feedback for the result. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     */
+
+    public void setFeedbackToken(String feedbackToken) {
+        this.feedbackToken = feedbackToken;
+    }
+
+    /**
+     * <p>
+     * A token that identifies a particular result from a particular query. Use this token to provide click-through
+     * feedback for the result. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * </p>
+     * 
+     * @return A token that identifies a particular result from a particular query. Use this token to provide
+     *         click-through feedback for the result. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     */
+
+    public String getFeedbackToken() {
+        return this.feedbackToken;
+    }
+
+    /**
+     * <p>
+     * A token that identifies a particular result from a particular query. Use this token to provide click-through
+     * feedback for the result. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * </p>
+     * 
+     * @param feedbackToken
+     *        A token that identifies a particular result from a particular query. Use this token to provide
+     *        click-through feedback for the result. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResultItem withFeedbackToken(String feedbackToken) {
+        setFeedbackToken(feedbackToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -625,7 +685,9 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         if (getDocumentAttributes() != null)
             sb.append("DocumentAttributes: ").append(getDocumentAttributes()).append(",");
         if (getScoreAttributes() != null)
-            sb.append("ScoreAttributes: ").append(getScoreAttributes());
+            sb.append("ScoreAttributes: ").append(getScoreAttributes()).append(",");
+        if (getFeedbackToken() != null)
+            sb.append("FeedbackToken: ").append(getFeedbackToken());
         sb.append("}");
         return sb.toString();
     }
@@ -676,6 +738,10 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getScoreAttributes() != null && other.getScoreAttributes().equals(this.getScoreAttributes()) == false)
             return false;
+        if (other.getFeedbackToken() == null ^ this.getFeedbackToken() == null)
+            return false;
+        if (other.getFeedbackToken() != null && other.getFeedbackToken().equals(this.getFeedbackToken()) == false)
+            return false;
         return true;
     }
 
@@ -693,6 +759,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDocumentURI() == null) ? 0 : getDocumentURI().hashCode());
         hashCode = prime * hashCode + ((getDocumentAttributes() == null) ? 0 : getDocumentAttributes().hashCode());
         hashCode = prime * hashCode + ((getScoreAttributes() == null) ? 0 : getScoreAttributes().hashCode());
+        hashCode = prime * hashCode + ((getFeedbackToken() == null) ? 0 : getFeedbackToken().hashCode());
         return hashCode;
     }
 

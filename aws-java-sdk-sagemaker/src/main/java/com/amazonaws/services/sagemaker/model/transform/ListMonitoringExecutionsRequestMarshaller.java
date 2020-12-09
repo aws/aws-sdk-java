@@ -53,6 +53,10 @@ public class ListMonitoringExecutionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusEquals").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPEEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringTypeEquals").build();
 
     private static final ListMonitoringExecutionsRequestMarshaller instance = new ListMonitoringExecutionsRequestMarshaller();
 
@@ -83,6 +87,8 @@ public class ListMonitoringExecutionsRequestMarshaller {
             protocolMarshaller.marshall(listMonitoringExecutionsRequest.getLastModifiedTimeBefore(), LASTMODIFIEDTIMEBEFORE_BINDING);
             protocolMarshaller.marshall(listMonitoringExecutionsRequest.getLastModifiedTimeAfter(), LASTMODIFIEDTIMEAFTER_BINDING);
             protocolMarshaller.marshall(listMonitoringExecutionsRequest.getStatusEquals(), STATUSEQUALS_BINDING);
+            protocolMarshaller.marshall(listMonitoringExecutionsRequest.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(listMonitoringExecutionsRequest.getMonitoringTypeEquals(), MONITORINGTYPEEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -40,6 +40,18 @@ public class MonitoringScheduleConfig implements Serializable, Cloneable, Struct
      * </p>
      */
     private MonitoringJobDefinition monitoringJobDefinition;
+    /**
+     * <p>
+     * The name of the monitoring job definition to schedule.
+     * </p>
+     */
+    private String monitoringJobDefinitionName;
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     */
+    private String monitoringType;
 
     /**
      * <p>
@@ -122,6 +134,105 @@ public class MonitoringScheduleConfig implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The name of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job definition to schedule.
+     */
+
+    public void setMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        this.monitoringJobDefinitionName = monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @return The name of the monitoring job definition to schedule.
+     */
+
+    public String getMonitoringJobDefinitionName() {
+        return this.monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job definition to schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringScheduleConfig withMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        setMonitoringJobDefinitionName(monitoringJobDefinitionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringType(String monitoringType) {
+        this.monitoringType = monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @return The type of the monitoring job definition to schedule.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringType() {
+        return this.monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringScheduleConfig withMonitoringType(String monitoringType) {
+        setMonitoringType(monitoringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition to schedule.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition to schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringScheduleConfig withMonitoringType(MonitoringType monitoringType) {
+        this.monitoringType = monitoringType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +247,11 @@ public class MonitoringScheduleConfig implements Serializable, Cloneable, Struct
         if (getScheduleConfig() != null)
             sb.append("ScheduleConfig: ").append(getScheduleConfig()).append(",");
         if (getMonitoringJobDefinition() != null)
-            sb.append("MonitoringJobDefinition: ").append(getMonitoringJobDefinition());
+            sb.append("MonitoringJobDefinition: ").append(getMonitoringJobDefinition()).append(",");
+        if (getMonitoringJobDefinitionName() != null)
+            sb.append("MonitoringJobDefinitionName: ").append(getMonitoringJobDefinitionName()).append(",");
+        if (getMonitoringType() != null)
+            sb.append("MonitoringType: ").append(getMonitoringType());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +274,14 @@ public class MonitoringScheduleConfig implements Serializable, Cloneable, Struct
             return false;
         if (other.getMonitoringJobDefinition() != null && other.getMonitoringJobDefinition().equals(this.getMonitoringJobDefinition()) == false)
             return false;
+        if (other.getMonitoringJobDefinitionName() == null ^ this.getMonitoringJobDefinitionName() == null)
+            return false;
+        if (other.getMonitoringJobDefinitionName() != null && other.getMonitoringJobDefinitionName().equals(this.getMonitoringJobDefinitionName()) == false)
+            return false;
+        if (other.getMonitoringType() == null ^ this.getMonitoringType() == null)
+            return false;
+        if (other.getMonitoringType() != null && other.getMonitoringType().equals(this.getMonitoringType()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +292,8 @@ public class MonitoringScheduleConfig implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getScheduleConfig() == null) ? 0 : getScheduleConfig().hashCode());
         hashCode = prime * hashCode + ((getMonitoringJobDefinition() == null) ? 0 : getMonitoringJobDefinition().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringJobDefinitionName() == null) ? 0 : getMonitoringJobDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringType() == null) ? 0 : getMonitoringType().hashCode());
         return hashCode;
     }
 

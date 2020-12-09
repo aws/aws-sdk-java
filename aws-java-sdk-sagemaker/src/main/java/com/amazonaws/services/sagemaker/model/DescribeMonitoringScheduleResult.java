@@ -43,6 +43,34 @@ public class DescribeMonitoringScheduleResult extends com.amazonaws.AmazonWebSer
     private String monitoringScheduleStatus;
     /**
      * <p>
+     * The type of the monitoring job that this schedule runs. This is one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String monitoringType;
+    /**
+     * <p>
      * A string, up to one KB in size, that contains the reason a monitoring job failed, if it failed.
      * </p>
      */
@@ -214,6 +242,237 @@ public class DescribeMonitoringScheduleResult extends com.amazonaws.AmazonWebSer
 
     public DescribeMonitoringScheduleResult withMonitoringScheduleStatus(ScheduleStatus monitoringScheduleStatus) {
         this.monitoringScheduleStatus = monitoringScheduleStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job that this schedule runs. This is one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job that this schedule runs. This is one of the following values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     *        </p>
+     *        </li>
+     * @see MonitoringType
+     */
+
+    public void setMonitoringType(String monitoringType) {
+        this.monitoringType = monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job that this schedule runs. This is one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of the monitoring job that this schedule runs. This is one of the following values.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     *         </p>
+     *         </li>
+     * @see MonitoringType
+     */
+
+    public String getMonitoringType() {
+        return this.monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job that this schedule runs. This is one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job that this schedule runs. This is one of the following values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public DescribeMonitoringScheduleResult withMonitoringType(String monitoringType) {
+        setMonitoringType(monitoringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job that this schedule runs. This is one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job that this schedule runs. This is one of the following values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public DescribeMonitoringScheduleResult withMonitoringType(MonitoringType monitoringType) {
+        this.monitoringType = monitoringType.toString();
         return this;
     }
 
@@ -475,6 +734,8 @@ public class DescribeMonitoringScheduleResult extends com.amazonaws.AmazonWebSer
             sb.append("MonitoringScheduleName: ").append(getMonitoringScheduleName()).append(",");
         if (getMonitoringScheduleStatus() != null)
             sb.append("MonitoringScheduleStatus: ").append(getMonitoringScheduleStatus()).append(",");
+        if (getMonitoringType() != null)
+            sb.append("MonitoringType: ").append(getMonitoringType()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getCreationTime() != null)
@@ -513,6 +774,10 @@ public class DescribeMonitoringScheduleResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getMonitoringScheduleStatus() != null && other.getMonitoringScheduleStatus().equals(this.getMonitoringScheduleStatus()) == false)
             return false;
+        if (other.getMonitoringType() == null ^ this.getMonitoringType() == null)
+            return false;
+        if (other.getMonitoringType() != null && other.getMonitoringType().equals(this.getMonitoringType()) == false)
+            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -549,6 +814,7 @@ public class DescribeMonitoringScheduleResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getMonitoringScheduleArn() == null) ? 0 : getMonitoringScheduleArn().hashCode());
         hashCode = prime * hashCode + ((getMonitoringScheduleName() == null) ? 0 : getMonitoringScheduleName().hashCode());
         hashCode = prime * hashCode + ((getMonitoringScheduleStatus() == null) ? 0 : getMonitoringScheduleStatus().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringType() == null) ? 0 : getMonitoringType().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());

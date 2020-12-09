@@ -48,6 +48,8 @@ public class QueryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortingConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> USERCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContext").build();
+    private static final MarshallingInfo<String> VISITORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VisitorId").build();
 
     private static final QueryRequestMarshaller instance = new QueryRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class QueryRequestMarshaller {
             protocolMarshaller.marshall(queryRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(queryRequest.getSortingConfiguration(), SORTINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(queryRequest.getUserContext(), USERCONTEXT_BINDING);
+            protocolMarshaller.marshall(queryRequest.getVisitorId(), VISITORID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

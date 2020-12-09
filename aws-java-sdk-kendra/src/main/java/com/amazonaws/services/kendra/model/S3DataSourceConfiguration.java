@@ -66,7 +66,9 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     private DocumentsMetadataConfiguration documentsMetadataConfiguration;
     /**
      * <p>
-     * Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     * Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the
+     * format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3
+     * data sources</a>.
      * </p>
      */
     private AccessControlListConfiguration accessControlListConfiguration;
@@ -421,11 +423,15 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     * Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the
+     * format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3
+     * data sources</a>.
      * </p>
      * 
      * @param accessControlListConfiguration
-     *        Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     *        Provides the path to the S3 bucket that contains the user context filtering files for the data source. For
+     *        the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
+     *        control for S3 data sources</a>.
      */
 
     public void setAccessControlListConfiguration(AccessControlListConfiguration accessControlListConfiguration) {
@@ -434,10 +440,14 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     * Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the
+     * format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3
+     * data sources</a>.
      * </p>
      * 
      * @return Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     *         For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
+     *         control for S3 data sources</a>.
      */
 
     public AccessControlListConfiguration getAccessControlListConfiguration() {
@@ -446,11 +456,15 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     * Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the
+     * format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3
+     * data sources</a>.
      * </p>
      * 
      * @param accessControlListConfiguration
-     *        Provides the path to the S3 bucket that contains the user context filtering files for the data source.
+     *        Provides the path to the S3 bucket that contains the user context filtering files for the data source. For
+     *        the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
+     *        control for S3 data sources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

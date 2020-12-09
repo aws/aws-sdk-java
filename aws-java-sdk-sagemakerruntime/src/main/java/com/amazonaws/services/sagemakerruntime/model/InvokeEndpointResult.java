@@ -56,6 +56,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      */
@@ -243,6 +249,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -255,6 +267,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
      *        <p>
      *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
@@ -274,6 +292,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -285,6 +309,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *         href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *         Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *         must set the custom attribute to be included on the way back. </p>
+     *         <p>
+     *         The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *         your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *         attribute represents the trace ID, your model can prepend the custom attribute with
+     *         <code>Trace ID:</code> in your post-processing function.
+     *         </p>
      *         <p>
      *         This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
@@ -304,6 +334,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -316,6 +352,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
      *        <p>
      *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
