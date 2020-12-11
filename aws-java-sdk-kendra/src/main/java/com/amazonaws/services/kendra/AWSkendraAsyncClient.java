@@ -239,6 +239,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request) {
+
+        return createThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(final CreateThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler) {
+        final CreateThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThesaurusResult>() {
+            @Override
+            public CreateThesaurusResult call() throws Exception {
+                CreateThesaurusResult result = null;
+
+                try {
+                    result = executeCreateThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
 
         return deleteDataSourceAsync(request, null);
@@ -338,6 +371,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request) {
+
+        return deleteThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(final DeleteThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler) {
+        final DeleteThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThesaurusResult>() {
+            @Override
+            public DeleteThesaurusResult call() throws Exception {
+                DeleteThesaurusResult result = null;
+
+                try {
+                    result = executeDeleteThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataSourceResult> describeDataSourceAsync(DescribeDataSourceRequest request) {
 
         return describeDataSourceAsync(request, null);
@@ -421,6 +487,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeDescribeIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request) {
+
+        return describeThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(final DescribeThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler) {
+        final DescribeThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThesaurusResult>() {
+            @Override
+            public DescribeThesaurusResult call() throws Exception {
+                DescribeThesaurusResult result = null;
+
+                try {
+                    result = executeDescribeThesaurus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,6 +685,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request) {
+
+        return listThesauriAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(final ListThesauriRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler) {
+        final ListThesauriRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThesauriResult>() {
+            @Override
+            public ListThesauriResult call() throws Exception {
+                ListThesauriResult result = null;
+
+                try {
+                    result = executeListThesauri(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -850,6 +982,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeUpdateIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request) {
+
+        return updateThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(final UpdateThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler) {
+        final UpdateThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThesaurusResult>() {
+            @Override
+            public UpdateThesaurusResult call() throws Exception {
+                UpdateThesaurusResult result = null;
+
+                try {
+                    result = executeUpdateThesaurus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

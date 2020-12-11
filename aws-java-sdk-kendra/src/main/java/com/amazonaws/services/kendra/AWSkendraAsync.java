@@ -245,6 +245,37 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @return A Java Future containing the result of the CreateThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest createThesaurusRequest);
+
+    /**
+     * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest createThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
      * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
      * to <code>DELETING</code>. For more information, see <a
@@ -348,6 +379,37 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @return A Java Future containing the result of the DeleteThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest deleteThesaurusRequest);
+
+    /**
+     * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest deleteThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a Amazon Kendra data source.
      * </p>
      * 
@@ -438,6 +500,37 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest describeIndexRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @return A Java Future containing the result of the DescribeThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest describeThesaurusRequest);
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest describeThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler);
 
     /**
      * <p>
@@ -595,6 +688,37 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @return A Java Future containing the result of the ListThesauri operation returned by the service.
+     * @sample AWSkendraAsync.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest listThesauriRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThesauri operation returned by the service.
+     * @sample AWSkendraAsyncHandler.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest listThesauriRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler);
 
     /**
      * <p>
@@ -912,5 +1036,36 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<UpdateIndexResult> updateIndexAsync(UpdateIndexRequest updateIndexRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIndexRequest, UpdateIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @return A Java Future containing the result of the UpdateThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest updateThesaurusRequest);
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest updateThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler);
 
 }

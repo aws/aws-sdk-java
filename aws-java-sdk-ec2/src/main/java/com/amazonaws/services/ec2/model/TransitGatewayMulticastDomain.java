@@ -40,6 +40,24 @@ public class TransitGatewayMulticastDomain implements Serializable, Cloneable {
     private String transitGatewayId;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     * </p>
+     */
+    private String transitGatewayMulticastDomainArn;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multiicast domain.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     */
+    private TransitGatewayMulticastDomainOptions options;
+    /**
+     * <p>
      * The state of the transit gateway multicast domain.
      * </p>
      */
@@ -134,6 +152,126 @@ public class TransitGatewayMulticastDomain implements Serializable, Cloneable {
 
     public TransitGatewayMulticastDomain withTransitGatewayId(String transitGatewayId) {
         setTransitGatewayId(transitGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param transitGatewayMulticastDomainArn
+     *        The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     */
+
+    public void setTransitGatewayMulticastDomainArn(String transitGatewayMulticastDomainArn) {
+        this.transitGatewayMulticastDomainArn = transitGatewayMulticastDomainArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     */
+
+    public String getTransitGatewayMulticastDomainArn() {
+        return this.transitGatewayMulticastDomainArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param transitGatewayMulticastDomainArn
+     *        The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastDomain withTransitGatewayMulticastDomainArn(String transitGatewayMulticastDomainArn) {
+        setTransitGatewayMulticastDomainArn(transitGatewayMulticastDomainArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multiicast domain.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the transit gateway multiicast domain.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multiicast domain.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the transit gateway multiicast domain.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multiicast domain.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the transit gateway multiicast domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastDomain withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param options
+     *        The options for the transit gateway multicast domain.
+     */
+
+    public void setOptions(TransitGatewayMulticastDomainOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @return The options for the transit gateway multicast domain.
+     */
+
+    public TransitGatewayMulticastDomainOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param options
+     *        The options for the transit gateway multicast domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastDomain withOptions(TransitGatewayMulticastDomainOptions options) {
+        setOptions(options);
         return this;
     }
 
@@ -325,6 +463,12 @@ public class TransitGatewayMulticastDomain implements Serializable, Cloneable {
             sb.append("TransitGatewayMulticastDomainId: ").append(getTransitGatewayMulticastDomainId()).append(",");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getTransitGatewayMulticastDomainArn() != null)
+            sb.append("TransitGatewayMulticastDomainArn: ").append(getTransitGatewayMulticastDomainArn()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getCreationTime() != null)
@@ -354,6 +498,19 @@ public class TransitGatewayMulticastDomain implements Serializable, Cloneable {
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
+        if (other.getTransitGatewayMulticastDomainArn() == null ^ this.getTransitGatewayMulticastDomainArn() == null)
+            return false;
+        if (other.getTransitGatewayMulticastDomainArn() != null
+                && other.getTransitGatewayMulticastDomainArn().equals(this.getTransitGatewayMulticastDomainArn()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -376,6 +533,9 @@ public class TransitGatewayMulticastDomain implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTransitGatewayMulticastDomainId() == null) ? 0 : getTransitGatewayMulticastDomainId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayMulticastDomainArn() == null) ? 0 : getTransitGatewayMulticastDomainArn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

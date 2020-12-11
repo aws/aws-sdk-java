@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -45,6 +47,16 @@ public class TransitGatewayOptionsStaxUnmarshaller implements Unmarshaller<Trans
 
                 if (context.testExpression("amazonSideAsn", targetDepth)) {
                     transitGatewayOptions.setAmazonSideAsn(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("transitGatewayCidrBlocks", targetDepth)) {
+                    transitGatewayOptions.withTransitGatewayCidrBlocks(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("transitGatewayCidrBlocks/item", targetDepth)) {
+                    transitGatewayOptions.withTransitGatewayCidrBlocks(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

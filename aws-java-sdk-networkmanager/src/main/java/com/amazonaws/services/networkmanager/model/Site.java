@@ -467,7 +467,7 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation()).append(",");
+            sb.append("Location: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getState() != null)

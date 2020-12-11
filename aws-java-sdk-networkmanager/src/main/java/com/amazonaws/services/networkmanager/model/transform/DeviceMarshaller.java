@@ -34,6 +34,8 @@ public class DeviceMarshaller {
             .marshallLocationName("DeviceArn").build();
     private static final MarshallingInfo<String> GLOBALNETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalNetworkId").build();
+    private static final MarshallingInfo<StructuredPojo> AWSLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSLocation").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,6 +76,7 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getDeviceId(), DEVICEID_BINDING);
             protocolMarshaller.marshall(device.getDeviceArn(), DEVICEARN_BINDING);
             protocolMarshaller.marshall(device.getGlobalNetworkId(), GLOBALNETWORKID_BINDING);
+            protocolMarshaller.marshall(device.getAWSLocation(), AWSLOCATION_BINDING);
             protocolMarshaller.marshall(device.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(device.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(device.getVendor(), VENDOR_BINDING);

@@ -68,6 +68,11 @@ public class TransitGatewayMulticastGroupStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("resourceOwnerId", targetDepth)) {
+                    transitGatewayMulticastGroup.setResourceOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
                     transitGatewayMulticastGroup.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

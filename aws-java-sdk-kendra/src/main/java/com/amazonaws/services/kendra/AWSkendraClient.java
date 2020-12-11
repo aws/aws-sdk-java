@@ -489,6 +489,67 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @return Result of the CreateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateThesaurusResult createThesaurus(CreateThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final CreateThesaurusResult executeCreateThesaurus(CreateThesaurusRequest createThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThesaurusRequest> request = null;
+        Response<CreateThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThesaurusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
      * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
      * to <code>DELETING</code>. For more information, see <a
@@ -674,6 +735,66 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @return Result of the DeleteThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThesaurusResult executeDeleteThesaurus(DeleteThesaurusRequest deleteThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThesaurusRequest> request = null;
+        Response<DeleteThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThesaurusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a Amazon Kendra data source.
      * </p>
      * 
@@ -839,6 +960,65 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @return Result of the DescribeThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThesaurusResult executeDescribeThesaurus(DescribeThesaurusRequest describeThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThesaurusRequest> request = null;
+        Response<DescribeThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThesaurusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1136,6 +1316,65 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @return Result of the ListThesauri operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListThesauriResult listThesauri(ListThesauriRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThesauri(request);
+    }
+
+    @SdkInternalApi
+    final ListThesauriResult executeListThesauri(ListThesauriRequest listThesauriRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThesauriRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThesauriRequest> request = null;
+        Response<ListThesauriResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThesauriRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThesauriRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThesauri");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThesauriResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThesauriResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1653,6 +1892,66 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @return Result of the UpdateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateThesaurusResult updateThesaurus(UpdateThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThesaurusResult executeUpdateThesaurus(UpdateThesaurusRequest updateThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThesaurusRequest> request = null;
+        Response<UpdateThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThesaurusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

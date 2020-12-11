@@ -31,7 +31,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String name;
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      */
     private String id;
@@ -163,11 +163,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
      * @param id
-     *        the name of the index.
+     *        The name of the index.
      */
 
     public void setId(String id) {
@@ -176,10 +176,10 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
-     * @return the name of the index.
+     * @return The name of the index.
      */
 
     public String getId() {
@@ -188,11 +188,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
      * @param id
-     *        the name of the index.
+     *        The name of the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

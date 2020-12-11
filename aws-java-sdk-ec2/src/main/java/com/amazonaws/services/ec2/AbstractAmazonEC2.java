@@ -44,6 +44,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AcceptTransitGatewayMulticastDomainAssociationsResult acceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AcceptTransitGatewayPeeringAttachmentResult acceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -390,6 +396,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateNetworkInsightsPathResult createNetworkInsightsPath(CreateNetworkInsightsPathRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNetworkInterfaceResult createNetworkInterface(CreateNetworkInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -471,6 +482,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateTransitGatewayResult createTransitGateway(CreateTransitGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitGatewayConnectResult createTransitGatewayConnect(CreateTransitGatewayConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitGatewayConnectPeerResult createTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -650,6 +671,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeleteNetworkInsightsAnalysisResult deleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkInsightsPathResult deleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNetworkInterfaceResult deleteNetworkInterface(DeleteNetworkInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -731,6 +762,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteTransitGatewayResult deleteTransitGateway(DeleteTransitGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTransitGatewayConnectResult deleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTransitGatewayConnectPeerResult deleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1251,6 +1292,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeNetworkInsightsAnalysesResult describeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeNetworkInsightsPathsResult describeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeNetworkInterfaceAttributeResult describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1492,6 +1543,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeTransitGatewayAttachmentsResult describeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTransitGatewayConnectPeersResult describeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTransitGatewayConnectsResult describeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2228,6 +2289,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public RejectTransitGatewayMulticastDomainAssociationsResult rejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RejectTransitGatewayPeeringAttachmentResult rejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2395,6 +2462,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public StartInstancesResult startInstances(StartInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartNetworkInsightsAnalysisResult startNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

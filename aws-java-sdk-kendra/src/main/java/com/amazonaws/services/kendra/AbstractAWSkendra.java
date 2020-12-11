@@ -53,6 +53,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public CreateThesaurusResult createThesaurus(CreateThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,6 +73,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDataSourceResult describeDataSource(DescribeDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public DescribeIndexResult describeIndex(DescribeIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +119,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThesauriResult listThesauri(ListThesauriRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +164,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public UpdateIndexResult updateIndex(UpdateIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThesaurusResult updateThesaurus(UpdateThesaurusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

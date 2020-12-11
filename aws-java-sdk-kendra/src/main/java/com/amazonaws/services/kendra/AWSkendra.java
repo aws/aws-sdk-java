@@ -171,6 +171,26 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @return Result of the CreateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateThesaurusResult createThesaurus(CreateThesaurusRequest createThesaurusRequest);
+
+    /**
+     * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
      * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
      * to <code>DELETING</code>. For more information, see <a
@@ -233,6 +253,25 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @return Result of the DeleteThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest deleteThesaurusRequest);
+
+    /**
+     * <p>
      * Gets information about a Amazon Kendra data source.
      * </p>
      * 
@@ -284,6 +323,24 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     DescribeIndexResult describeIndex(DescribeIndexRequest describeIndexRequest);
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @return Result of the DescribeThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest describeThesaurusRequest);
 
     /**
      * <p>
@@ -375,6 +432,24 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @return Result of the ListThesauri operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListThesauriResult listThesauri(ListThesauriRequest listThesauriRequest);
 
     /**
      * <p>
@@ -562,6 +637,25 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     UpdateIndexResult updateIndex(UpdateIndexRequest updateIndexRequest);
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @return Result of the UpdateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateThesaurusResult updateThesaurus(UpdateThesaurusRequest updateThesaurusRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

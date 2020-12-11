@@ -29,6 +29,10 @@ import com.amazonaws.services.networkmanager.model.*;
  * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
  * your AWS and on-premises networks that are built around transit gateways.
  * </p>
+ * <p>
+ * The Network Manager APIs are supported in the US West (Oregon) Region only. You must specify the
+ * <code>us-west-2</code> Region in all requests made to Network Manager.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSNetworkManagerAsync extends AWSNetworkManager {
@@ -120,6 +124,94 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<AssociateLinkResult> associateLinkAsync(AssociateLinkRequest associateLinkRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateLinkRequest, AssociateLinkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it
+     * must be associated with the specified device.
+     * </p>
+     * <p>
+     * You can only associate transit gateway Connect peers that have been created on a transit gateway that's
+     * registered in your global network.
+     * </p>
+     * <p>
+     * You cannot associate a transit gateway Connect peer with more than one device and link.
+     * </p>
+     * 
+     * @param associateTransitGatewayConnectPeerRequest
+     * @return A Java Future containing the result of the AssociateTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.AssociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            AssociateTransitGatewayConnectPeerRequest associateTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it
+     * must be associated with the specified device.
+     * </p>
+     * <p>
+     * You can only associate transit gateway Connect peers that have been created on a transit gateway that's
+     * registered in your global network.
+     * </p>
+     * <p>
+     * You cannot associate a transit gateway Connect peer with more than one device and link.
+     * </p>
+     * 
+     * @param associateTransitGatewayConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.AssociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            AssociateTransitGatewayConnectPeerRequest associateTransitGatewayConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayConnectPeerRequest, AssociateTransitGatewayConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
+     * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
+     * on-premises network.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsync.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
+     * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
+     * on-premises network.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -246,6 +338,37 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<CreateSiteResult> createSiteAsync(CreateSiteRequest createSiteRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSiteRequest, CreateSiteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified connection in your global network.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified connection in your global network.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -509,6 +632,74 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Disassociates a transit gateway Connect peer from a device and link.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayConnectPeerRequest
+     * @return A Java Future containing the result of the DisassociateTransitGatewayConnectPeer operation returned by
+     *         the service.
+     * @sample AWSNetworkManagerAsync.DisassociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            DisassociateTransitGatewayConnectPeerRequest disassociateTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Disassociates a transit gateway Connect peer from a device and link.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateTransitGatewayConnectPeer operation returned by
+     *         the service.
+     * @sample AWSNetworkManagerAsyncHandler.DisassociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            DisassociateTransitGatewayConnectPeerRequest disassociateTransitGatewayConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayConnectPeerRequest, DisassociateTransitGatewayConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about one or more of your connections in a global network.
+     * </p>
+     * 
+     * @param getConnectionsRequest
+     * @return A Java Future containing the result of the GetConnections operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest getConnectionsRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more of your connections in a global network.
+     * </p>
+     * 
+     * @param getConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnections operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest getConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionsRequest, GetConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the association information for customer gateways that are associated with devices and links in your global
      * network.
      * </p>
@@ -678,6 +869,43 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Gets information about one or more of your transit gateway Connect peer associations in a global network.
+     * </p>
+     * 
+     * @param getTransitGatewayConnectPeerAssociationsRequest
+     * @return A Java Future containing the result of the GetTransitGatewayConnectPeerAssociations operation returned by
+     *         the service.
+     * @sample AWSNetworkManagerAsync.GetTransitGatewayConnectPeerAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            GetTransitGatewayConnectPeerAssociationsRequest getTransitGatewayConnectPeerAssociationsRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more of your transit gateway Connect peer associations in a global network.
+     * </p>
+     * 
+     * @param getTransitGatewayConnectPeerAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTransitGatewayConnectPeerAssociations operation returned by
+     *         the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetTransitGatewayConnectPeerAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            GetTransitGatewayConnectPeerAssociationsRequest getTransitGatewayConnectPeerAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayConnectPeerAssociationsRequest, GetTransitGatewayConnectPeerAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the transit gateway registrations in a specified global network.
      * </p>
      * 
@@ -838,6 +1066,39 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the information for an existing connection. To remove information for any of the parameters, specify an
+     * empty string.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsync.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest);
+
+    /**
+     * <p>
+     * Updates the information for an existing connection. To remove information for any of the parameters, specify an
+     * empty string.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler);
 
     /**
      * <p>

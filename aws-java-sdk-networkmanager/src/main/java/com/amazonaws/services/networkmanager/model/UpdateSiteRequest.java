@@ -363,7 +363,7 @@ public class UpdateSiteRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

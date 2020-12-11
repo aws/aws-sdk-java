@@ -60,6 +60,10 @@ public class HighlightJsonUnmarshaller implements Unmarshaller<Highlight, JsonUn
                     context.nextToken();
                     highlight.setTopAnswer(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    highlight.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

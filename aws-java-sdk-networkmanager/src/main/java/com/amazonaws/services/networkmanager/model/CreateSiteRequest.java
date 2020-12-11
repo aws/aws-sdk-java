@@ -398,7 +398,7 @@ public class CreateSiteRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation()).append(",");
+            sb.append("Location: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

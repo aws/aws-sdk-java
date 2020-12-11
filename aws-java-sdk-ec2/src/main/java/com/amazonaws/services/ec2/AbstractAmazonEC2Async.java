@@ -42,6 +42,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptTransitGatewayMulticastDomainAssociationsResult> acceptTransitGatewayMulticastDomainAssociationsAsync(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request) {
+
+        return acceptTransitGatewayMulticastDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptTransitGatewayMulticastDomainAssociationsResult> acceptTransitGatewayMulticastDomainAssociationsAsync(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptTransitGatewayMulticastDomainAssociationsRequest, AcceptTransitGatewayMulticastDomainAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AcceptTransitGatewayPeeringAttachmentResult> acceptTransitGatewayPeeringAttachmentAsync(
             AcceptTransitGatewayPeeringAttachmentRequest request) {
 
@@ -997,6 +1012,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkInsightsPathResult> createNetworkInsightsPathAsync(CreateNetworkInsightsPathRequest request) {
+
+        return createNetworkInsightsPathAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkInsightsPathResult> createNetworkInsightsPathAsync(CreateNetworkInsightsPathRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkInsightsPathRequest, CreateNetworkInsightsPathResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNetworkInterfaceResult> createNetworkInterfaceAsync(CreateNetworkInterfaceRequest request) {
 
         return createNetworkInterfaceAsync(request, null);
@@ -1215,6 +1243,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRequest, CreateTransitGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayConnectResult> createTransitGatewayConnectAsync(CreateTransitGatewayConnectRequest request) {
+
+        return createTransitGatewayConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayConnectResult> createTransitGatewayConnectAsync(CreateTransitGatewayConnectRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayConnectRequest, CreateTransitGatewayConnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayConnectPeerResult> createTransitGatewayConnectPeerAsync(
+            CreateTransitGatewayConnectPeerRequest request) {
+
+        return createTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayConnectPeerResult> createTransitGatewayConnectPeerAsync(
+            CreateTransitGatewayConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayConnectPeerRequest, CreateTransitGatewayConnectPeerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1701,6 +1757,32 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNetworkInsightsAnalysisResult> deleteNetworkInsightsAnalysisAsync(DeleteNetworkInsightsAnalysisRequest request) {
+
+        return deleteNetworkInsightsAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkInsightsAnalysisResult> deleteNetworkInsightsAnalysisAsync(DeleteNetworkInsightsAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInsightsAnalysisRequest, DeleteNetworkInsightsAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkInsightsPathResult> deleteNetworkInsightsPathAsync(DeleteNetworkInsightsPathRequest request) {
+
+        return deleteNetworkInsightsPathAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkInsightsPathResult> deleteNetworkInsightsPathAsync(DeleteNetworkInsightsPathRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInsightsPathRequest, DeleteNetworkInsightsPathResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest request) {
 
         return deleteNetworkInterfaceAsync(request, null);
@@ -1930,6 +2012,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DeleteTransitGatewayResult> deleteTransitGatewayAsync(DeleteTransitGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayRequest, DeleteTransitGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayConnectResult> deleteTransitGatewayConnectAsync(DeleteTransitGatewayConnectRequest request) {
+
+        return deleteTransitGatewayConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayConnectResult> deleteTransitGatewayConnectAsync(DeleteTransitGatewayConnectRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayConnectRequest, DeleteTransitGatewayConnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayConnectPeerResult> deleteTransitGatewayConnectPeerAsync(
+            DeleteTransitGatewayConnectPeerRequest request) {
+
+        return deleteTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayConnectPeerResult> deleteTransitGatewayConnectPeerAsync(
+            DeleteTransitGatewayConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayConnectPeerRequest, DeleteTransitGatewayConnectPeerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3513,6 +3623,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNetworkInsightsAnalysesResult> describeNetworkInsightsAnalysesAsync(
+            DescribeNetworkInsightsAnalysesRequest request) {
+
+        return describeNetworkInsightsAnalysesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNetworkInsightsAnalysesResult> describeNetworkInsightsAnalysesAsync(
+            DescribeNetworkInsightsAnalysesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeNetworkInsightsAnalysesRequest, DescribeNetworkInsightsAnalysesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNetworkInsightsPathsResult> describeNetworkInsightsPathsAsync(DescribeNetworkInsightsPathsRequest request) {
+
+        return describeNetworkInsightsPathsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNetworkInsightsPathsResult> describeNetworkInsightsPathsAsync(DescribeNetworkInsightsPathsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeNetworkInsightsPathsRequest, DescribeNetworkInsightsPathsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeNetworkInterfaceAttributeResult> describeNetworkInterfaceAttributeAsync(
             DescribeNetworkInterfaceAttributeRequest request) {
 
@@ -4339,6 +4477,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
             DescribeTransitGatewayAttachmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayAttachmentsRequest, DescribeTransitGatewayAttachmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTransitGatewayConnectPeersResult> describeTransitGatewayConnectPeersAsync(
+            DescribeTransitGatewayConnectPeersRequest request) {
+
+        return describeTransitGatewayConnectPeersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTransitGatewayConnectPeersResult> describeTransitGatewayConnectPeersAsync(
+            DescribeTransitGatewayConnectPeersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayConnectPeersRequest, DescribeTransitGatewayConnectPeersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTransitGatewayConnectsResult> describeTransitGatewayConnectsAsync(DescribeTransitGatewayConnectsRequest request) {
+
+        return describeTransitGatewayConnectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTransitGatewayConnectsResult> describeTransitGatewayConnectsAsync(DescribeTransitGatewayConnectsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayConnectsRequest, DescribeTransitGatewayConnectsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -6426,6 +6592,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<RejectTransitGatewayMulticastDomainAssociationsResult> rejectTransitGatewayMulticastDomainAssociationsAsync(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request) {
+
+        return rejectTransitGatewayMulticastDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectTransitGatewayMulticastDomainAssociationsResult> rejectTransitGatewayMulticastDomainAssociationsAsync(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectTransitGatewayMulticastDomainAssociationsRequest, RejectTransitGatewayMulticastDomainAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RejectTransitGatewayPeeringAttachmentResult> rejectTransitGatewayPeeringAttachmentAsync(
             RejectTransitGatewayPeeringAttachmentRequest request) {
 
@@ -6885,6 +7066,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<StartInstancesResult> startInstancesAsync(StartInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<StartInstancesRequest, StartInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkInsightsAnalysisResult> startNetworkInsightsAnalysisAsync(StartNetworkInsightsAnalysisRequest request) {
+
+        return startNetworkInsightsAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkInsightsAnalysisResult> startNetworkInsightsAnalysisAsync(StartNetworkInsightsAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartNetworkInsightsAnalysisRequest, StartNetworkInsightsAnalysisResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

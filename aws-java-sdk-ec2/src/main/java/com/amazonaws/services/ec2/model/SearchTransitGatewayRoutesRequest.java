@@ -50,7 +50,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -158,7 +158,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -215,7 +215,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     *         <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     *         <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -283,7 +283,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -341,7 +341,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -410,7 +410,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -473,7 +473,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -544,7 +544,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -602,7 +602,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
-     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>

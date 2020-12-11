@@ -28,6 +28,19 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a
+     * size /64 CIDR block or larger for IPv6.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> addTransitGatewayCidrBlocks;
+    /**
+     * <p>
+     * Removes CIDR blocks for the transit gateway.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> removeTransitGatewayCidrBlocks;
+    /**
+     * <p>
      * Enable or disable Equal Cost Multipath Protocol support.
      * </p>
      */
@@ -68,6 +81,160 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
      * </p>
      */
     private String propagationDefaultRouteTableId;
+
+    /**
+     * <p>
+     * Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a
+     * size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @return Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     *         or a size /64 CIDR block or larger for IPv6.
+     */
+
+    public java.util.List<String> getAddTransitGatewayCidrBlocks() {
+        if (addTransitGatewayCidrBlocks == null) {
+            addTransitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return addTransitGatewayCidrBlocks;
+    }
+
+    /**
+     * <p>
+     * Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a
+     * size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @param addTransitGatewayCidrBlocks
+     *        Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     *        or a size /64 CIDR block or larger for IPv6.
+     */
+
+    public void setAddTransitGatewayCidrBlocks(java.util.Collection<String> addTransitGatewayCidrBlocks) {
+        if (addTransitGatewayCidrBlocks == null) {
+            this.addTransitGatewayCidrBlocks = null;
+            return;
+        }
+
+        this.addTransitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>(addTransitGatewayCidrBlocks);
+    }
+
+    /**
+     * <p>
+     * Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a
+     * size /64 CIDR block or larger for IPv6.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddTransitGatewayCidrBlocks(java.util.Collection)} or
+     * {@link #withAddTransitGatewayCidrBlocks(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param addTransitGatewayCidrBlocks
+     *        Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     *        or a size /64 CIDR block or larger for IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTransitGatewayOptions withAddTransitGatewayCidrBlocks(String... addTransitGatewayCidrBlocks) {
+        if (this.addTransitGatewayCidrBlocks == null) {
+            setAddTransitGatewayCidrBlocks(new com.amazonaws.internal.SdkInternalList<String>(addTransitGatewayCidrBlocks.length));
+        }
+        for (String ele : addTransitGatewayCidrBlocks) {
+            this.addTransitGatewayCidrBlocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a
+     * size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @param addTransitGatewayCidrBlocks
+     *        Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     *        or a size /64 CIDR block or larger for IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTransitGatewayOptions withAddTransitGatewayCidrBlocks(java.util.Collection<String> addTransitGatewayCidrBlocks) {
+        setAddTransitGatewayCidrBlocks(addTransitGatewayCidrBlocks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes CIDR blocks for the transit gateway.
+     * </p>
+     * 
+     * @return Removes CIDR blocks for the transit gateway.
+     */
+
+    public java.util.List<String> getRemoveTransitGatewayCidrBlocks() {
+        if (removeTransitGatewayCidrBlocks == null) {
+            removeTransitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return removeTransitGatewayCidrBlocks;
+    }
+
+    /**
+     * <p>
+     * Removes CIDR blocks for the transit gateway.
+     * </p>
+     * 
+     * @param removeTransitGatewayCidrBlocks
+     *        Removes CIDR blocks for the transit gateway.
+     */
+
+    public void setRemoveTransitGatewayCidrBlocks(java.util.Collection<String> removeTransitGatewayCidrBlocks) {
+        if (removeTransitGatewayCidrBlocks == null) {
+            this.removeTransitGatewayCidrBlocks = null;
+            return;
+        }
+
+        this.removeTransitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>(removeTransitGatewayCidrBlocks);
+    }
+
+    /**
+     * <p>
+     * Removes CIDR blocks for the transit gateway.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRemoveTransitGatewayCidrBlocks(java.util.Collection)} or
+     * {@link #withRemoveTransitGatewayCidrBlocks(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param removeTransitGatewayCidrBlocks
+     *        Removes CIDR blocks for the transit gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTransitGatewayOptions withRemoveTransitGatewayCidrBlocks(String... removeTransitGatewayCidrBlocks) {
+        if (this.removeTransitGatewayCidrBlocks == null) {
+            setRemoveTransitGatewayCidrBlocks(new com.amazonaws.internal.SdkInternalList<String>(removeTransitGatewayCidrBlocks.length));
+        }
+        for (String ele : removeTransitGatewayCidrBlocks) {
+            this.removeTransitGatewayCidrBlocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes CIDR blocks for the transit gateway.
+     * </p>
+     * 
+     * @param removeTransitGatewayCidrBlocks
+     *        Removes CIDR blocks for the transit gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTransitGatewayOptions withRemoveTransitGatewayCidrBlocks(java.util.Collection<String> removeTransitGatewayCidrBlocks) {
+        setRemoveTransitGatewayCidrBlocks(removeTransitGatewayCidrBlocks);
+        return this;
+    }
 
     /**
      * <p>
@@ -456,6 +623,10 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAddTransitGatewayCidrBlocks() != null)
+            sb.append("AddTransitGatewayCidrBlocks: ").append(getAddTransitGatewayCidrBlocks()).append(",");
+        if (getRemoveTransitGatewayCidrBlocks() != null)
+            sb.append("RemoveTransitGatewayCidrBlocks: ").append(getRemoveTransitGatewayCidrBlocks()).append(",");
         if (getVpnEcmpSupport() != null)
             sb.append("VpnEcmpSupport: ").append(getVpnEcmpSupport()).append(",");
         if (getDnsSupport() != null)
@@ -484,6 +655,15 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
         if (obj instanceof ModifyTransitGatewayOptions == false)
             return false;
         ModifyTransitGatewayOptions other = (ModifyTransitGatewayOptions) obj;
+        if (other.getAddTransitGatewayCidrBlocks() == null ^ this.getAddTransitGatewayCidrBlocks() == null)
+            return false;
+        if (other.getAddTransitGatewayCidrBlocks() != null && other.getAddTransitGatewayCidrBlocks().equals(this.getAddTransitGatewayCidrBlocks()) == false)
+            return false;
+        if (other.getRemoveTransitGatewayCidrBlocks() == null ^ this.getRemoveTransitGatewayCidrBlocks() == null)
+            return false;
+        if (other.getRemoveTransitGatewayCidrBlocks() != null
+                && other.getRemoveTransitGatewayCidrBlocks().equals(this.getRemoveTransitGatewayCidrBlocks()) == false)
+            return false;
         if (other.getVpnEcmpSupport() == null ^ this.getVpnEcmpSupport() == null)
             return false;
         if (other.getVpnEcmpSupport() != null && other.getVpnEcmpSupport().equals(this.getVpnEcmpSupport()) == false)
@@ -522,6 +702,8 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAddTransitGatewayCidrBlocks() == null) ? 0 : getAddTransitGatewayCidrBlocks().hashCode());
+        hashCode = prime * hashCode + ((getRemoveTransitGatewayCidrBlocks() == null) ? 0 : getRemoveTransitGatewayCidrBlocks().hashCode());
         hashCode = prime * hashCode + ((getVpnEcmpSupport() == null) ? 0 : getVpnEcmpSupport().hashCode());
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getAutoAcceptSharedAttachments() == null) ? 0 : getAutoAcceptSharedAttachments().hashCode());

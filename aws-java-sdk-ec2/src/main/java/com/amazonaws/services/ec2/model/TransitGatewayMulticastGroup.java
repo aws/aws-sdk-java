@@ -58,6 +58,12 @@ public class TransitGatewayMulticastGroup implements Serializable, Cloneable {
     private String resourceType;
     /**
      * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     * </p>
+     */
+    private String resourceOwnerId;
+    /**
+     * <p>
      * The ID of the transit gateway attachment.
      * </p>
      */
@@ -303,6 +309,46 @@ public class TransitGatewayMulticastGroup implements Serializable, Cloneable {
 
     public TransitGatewayMulticastGroup withResourceType(TransitGatewayAttachmentResourceType resourceType) {
         this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     */
+
+    public void setResourceOwnerId(String resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     */
+
+    public String getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the transit gateway multicast domain group resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastGroup withResourceOwnerId(String resourceOwnerId) {
+        setResourceOwnerId(resourceOwnerId);
         return this;
     }
 
@@ -590,6 +636,8 @@ public class TransitGatewayMulticastGroup implements Serializable, Cloneable {
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getResourceOwnerId() != null)
+            sb.append("ResourceOwnerId: ").append(getResourceOwnerId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getGroupMember() != null)
@@ -634,6 +682,10 @@ public class TransitGatewayMulticastGroup implements Serializable, Cloneable {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getResourceOwnerId() == null ^ this.getResourceOwnerId() == null)
+            return false;
+        if (other.getResourceOwnerId() != null && other.getResourceOwnerId().equals(this.getResourceOwnerId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -667,6 +719,7 @@ public class TransitGatewayMulticastGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerId() == null) ? 0 : getResourceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getGroupMember() == null) ? 0 : getGroupMember().hashCode());
         hashCode = prime * hashCode + ((getGroupSource() == null) ? 0 : getGroupSource().hashCode());

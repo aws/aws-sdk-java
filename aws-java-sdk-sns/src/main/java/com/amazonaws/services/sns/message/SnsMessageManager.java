@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sns.message;
 
+import static com.amazonaws.regions.Regions.AP_EAST_1;
+
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.regions.DefaultAwsRegionProviderChain;
@@ -113,31 +115,30 @@ public class SnsMessageManager {
     }
 
     //TODO SNS team will use a consistent pattern for certificate naming. Then remove the special handling based on region
-    private String resolveCertCommonName(String region) {
-        if (Regions.CN_NORTH_1.getName().equals(region)) {
-            return "sns-cn-north-1.amazonaws.com.cn";
+    @SdkTestInternalApi
+    String resolveCertCommonName(String regionStr) {
+        Regions region;
+        try {
+            region = Regions.fromName(regionStr);
+        } catch (IllegalArgumentException exception) {
+            return "sns." + RegionUtils.getRegion(regionStr).getDomain();
         }
 
-        if (Regions.CN_NORTHWEST_1.getName().equals(region)) {
-            return "sns-cn-northwest-1.amazonaws.com.cn";
+        switch (region) {
+            case CN_NORTH_1:
+                return "sns-cn-north-1.amazonaws.com.cn";
+            case CN_NORTHWEST_1:
+                return "sns-cn-northwest-1.amazonaws.com.cn";
+            case GovCloud:
+            case US_GOV_EAST_1:
+                return "sns-us-gov-west-1.amazonaws.com";
+            case AP_EAST_1:
+            case ME_SOUTH_1:
+            case EU_SOUTH_1:
+            case AF_SOUTH_1:
+                return "sns-signing." + regionStr + ".amazonaws.com";
+            default:
+                return "sns.amazonaws.com";
         }
-
-        if (Regions.GovCloud.getName().equals(region)) {
-            return "sns-us-gov-west-1.amazonaws.com";
-        }
-
-        if (Regions.US_GOV_EAST_1.getName().equals(region)) {
-            return "sns-us-gov-west-1.amazonaws.com";
-        }
-
-        if (Regions.AP_EAST_1.getName().equals(region)) {
-            return "sns-ap-east-1.amazonaws.com";
-        }
-
-        if (Regions.ME_SOUTH_1.getName().equals(region)) {
-            return "sns-me-south-1.amazonaws.com";
-        }
-
-        return "sns." + RegionUtils.getRegion(region).getDomain();
     }
 }

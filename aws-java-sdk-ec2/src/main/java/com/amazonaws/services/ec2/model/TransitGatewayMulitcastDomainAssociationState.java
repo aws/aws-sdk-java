@@ -20,10 +20,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TransitGatewayMulitcastDomainAssociationState {
 
+    PendingAcceptance("pendingAcceptance"),
     Associating("associating"),
     Associated("associated"),
     Disassociating("disassociating"),
-    Disassociated("disassociated");
+    Disassociated("disassociated"),
+    Rejected("rejected"),
+    Failed("failed");
 
     private String value;
 

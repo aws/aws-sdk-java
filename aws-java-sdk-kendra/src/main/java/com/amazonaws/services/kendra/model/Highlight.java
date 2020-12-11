@@ -47,6 +47,12 @@ public class Highlight implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean topAnswer;
+    /**
+     * <p>
+     * The highlight type.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -181,6 +187,65 @@ public class Highlight implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The highlight type.
+     * </p>
+     * 
+     * @param type
+     *        The highlight type.
+     * @see HighlightType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The highlight type.
+     * </p>
+     * 
+     * @return The highlight type.
+     * @see HighlightType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The highlight type.
+     * </p>
+     * 
+     * @param type
+     *        The highlight type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HighlightType
+     */
+
+    public Highlight withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The highlight type.
+     * </p>
+     * 
+     * @param type
+     *        The highlight type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HighlightType
+     */
+
+    public Highlight withType(HighlightType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -197,7 +262,9 @@ public class Highlight implements Serializable, Cloneable, StructuredPojo {
         if (getEndOffset() != null)
             sb.append("EndOffset: ").append(getEndOffset()).append(",");
         if (getTopAnswer() != null)
-            sb.append("TopAnswer: ").append(getTopAnswer());
+            sb.append("TopAnswer: ").append(getTopAnswer()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +291,10 @@ public class Highlight implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTopAnswer() != null && other.getTopAnswer().equals(this.getTopAnswer()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -235,6 +306,7 @@ public class Highlight implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBeginOffset() == null) ? 0 : getBeginOffset().hashCode());
         hashCode = prime * hashCode + ((getEndOffset() == null) ? 0 : getEndOffset().hashCode());
         hashCode = prime * hashCode + ((getTopAnswer() == null) ? 0 : getTopAnswer().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

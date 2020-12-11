@@ -370,6 +370,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Accepts a request to associate subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param acceptTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the AcceptTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.AcceptTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptTransitGatewayMulticastDomainAssociationsResult acceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptTransitGatewayMulticastDomainAssociations(request);
+    }
+
+    @SdkInternalApi
+    final AcceptTransitGatewayMulticastDomainAssociationsResult executeAcceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest acceptTransitGatewayMulticastDomainAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptTransitGatewayMulticastDomainAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptTransitGatewayMulticastDomainAssociationsRequest> request = null;
+        Response<AcceptTransitGatewayMulticastDomainAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(acceptTransitGatewayMulticastDomainAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptTransitGatewayMulticastDomainAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult>(
+                    new AcceptTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Accepts a transit gateway peering attachment request. The peering attachment must be in the
      * <code>pendingAcceptance</code> state.
      * </p>
@@ -4524,6 +4582,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Creates a path to analyze for reachability.
+     * </p>
+     * <p>
+     * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
+     * private cloud (VPC). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * </p>
+     * 
+     * @param createNetworkInsightsPathRequest
+     * @return Result of the CreateNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.CreateNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateNetworkInsightsPathResult createNetworkInsightsPath(CreateNetworkInsightsPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkInsightsPath(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkInsightsPathResult executeCreateNetworkInsightsPath(CreateNetworkInsightsPathRequest createNetworkInsightsPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkInsightsPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkInsightsPathRequest> request = null;
+        Response<CreateNetworkInsightsPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkInsightsPathRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInsightsPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkInsightsPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<CreateNetworkInsightsPathResult>(
+                    new CreateNetworkInsightsPathResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
@@ -5680,6 +5797,128 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayResult>(
                     new CreateTransitGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based
+     * tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.
+     * </p>
+     * <p>
+     * A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectRequest
+     * @return Result of the CreateTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitGatewayConnectResult createTransitGatewayConnect(CreateTransitGatewayConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitGatewayConnect(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitGatewayConnectResult executeCreateTransitGatewayConnect(CreateTransitGatewayConnectRequest createTransitGatewayConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitGatewayConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitGatewayConnectRequest> request = null;
+        Response<CreateTransitGatewayConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitGatewayConnectRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectResult>(
+                    new CreateTransitGatewayConnectResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an
+     * appliance.
+     * </p>
+     * <p>
+     * The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the
+     * <i>Transit Gateways Guide</i>.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectPeerRequest
+     * @return Result of the CreateTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitGatewayConnectPeerResult createTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitGatewayConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitGatewayConnectPeerResult executeCreateTransitGatewayConnectPeer(
+            CreateTransitGatewayConnectPeerRequest createTransitGatewayConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitGatewayConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitGatewayConnectPeerRequest> request = null;
+        Response<CreateTransitGatewayConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitGatewayConnectPeerRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectPeerResult>(
+                    new CreateTransitGatewayConnectPeerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7766,6 +8005,114 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deletes the specified network insights analysis.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsAnalysisRequest
+     * @return Result of the DeleteNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkInsightsAnalysisResult deleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkInsightsAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkInsightsAnalysisResult executeDeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest deleteNetworkInsightsAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkInsightsAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkInsightsAnalysisRequest> request = null;
+        Response<DeleteNetworkInsightsAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkInsightsAnalysisRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInsightsAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInsightsAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsAnalysisResult>(
+                    new DeleteNetworkInsightsAnalysisResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified path.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsPathRequest
+     * @return Result of the DeleteNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkInsightsPathResult deleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkInsightsPath(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkInsightsPathResult executeDeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest deleteNetworkInsightsPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkInsightsPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkInsightsPathRequest> request = null;
+        Response<DeleteNetworkInsightsPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkInsightsPathRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInsightsPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInsightsPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsPathResult>(
+                    new DeleteNetworkInsightsPathResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified network interface. You must detach the network interface before you can delete it.
      * </p>
      * 
@@ -8662,6 +9009,115 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayResult>(
                     new DeleteTransitGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectRequest
+     * @return Result of the DeleteTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTransitGatewayConnectResult deleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTransitGatewayConnect(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTransitGatewayConnectResult executeDeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest deleteTransitGatewayConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTransitGatewayConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTransitGatewayConnectRequest> request = null;
+        Response<DeleteTransitGatewayConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTransitGatewayConnectRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectResult>(
+                    new DeleteTransitGatewayConnectResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Connect peer.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectPeerRequest
+     * @return Result of the DeleteTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTransitGatewayConnectPeerResult deleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTransitGatewayConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTransitGatewayConnectPeerResult executeDeleteTransitGatewayConnectPeer(
+            DeleteTransitGatewayConnectPeerRequest deleteTransitGatewayConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTransitGatewayConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTransitGatewayConnectPeerRequest> request = null;
+        Response<DeleteTransitGatewayConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTransitGatewayConnectPeerRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectPeerResult>(
+                    new DeleteTransitGatewayConnectPeerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13524,6 +13980,115 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes one or more of your network insights analyses.
+     * </p>
+     * 
+     * @param describeNetworkInsightsAnalysesRequest
+     * @return Result of the DescribeNetworkInsightsAnalyses operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNetworkInsightsAnalysesResult describeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNetworkInsightsAnalyses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNetworkInsightsAnalysesResult executeDescribeNetworkInsightsAnalyses(
+            DescribeNetworkInsightsAnalysesRequest describeNetworkInsightsAnalysesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInsightsAnalysesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInsightsAnalysesRequest> request = null;
+        Response<DescribeNetworkInsightsAnalysesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInsightsAnalysesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInsightsAnalysesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInsightsAnalyses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNetworkInsightsAnalysesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsAnalysesResult>(
+                    new DescribeNetworkInsightsAnalysesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your paths.
+     * </p>
+     * 
+     * @param describeNetworkInsightsPathsRequest
+     * @return Result of the DescribeNetworkInsightsPaths operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNetworkInsightsPathsResult describeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNetworkInsightsPaths(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNetworkInsightsPathsResult executeDescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest describeNetworkInsightsPathsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInsightsPathsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInsightsPathsRequest> request = null;
+        Response<DescribeNetworkInsightsPathsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInsightsPathsRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInsightsPathsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInsightsPaths");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNetworkInsightsPathsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsPathsResult>(
+                    new DescribeNetworkInsightsPathsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a network interface attribute. You can specify only one attribute at a time.
      * </p>
      * 
@@ -15569,6 +16134,116 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayAttachmentsResult>(
                     new DescribeTransitGatewayAttachmentsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Connect peers.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectPeersRequest
+     * @return Result of the DescribeTransitGatewayConnectPeers operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTransitGatewayConnectPeersResult describeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTransitGatewayConnectPeers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTransitGatewayConnectPeersResult executeDescribeTransitGatewayConnectPeers(
+            DescribeTransitGatewayConnectPeersRequest describeTransitGatewayConnectPeersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTransitGatewayConnectPeersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTransitGatewayConnectPeersRequest> request = null;
+        Response<DescribeTransitGatewayConnectPeersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTransitGatewayConnectPeersRequestMarshaller()
+                        .marshall(super.beforeMarshalling(describeTransitGatewayConnectPeersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayConnectPeers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTransitGatewayConnectPeersResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectPeersResult>(
+                    new DescribeTransitGatewayConnectPeersResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Connect attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectsRequest
+     * @return Result of the DescribeTransitGatewayConnects operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTransitGatewayConnectsResult describeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTransitGatewayConnects(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTransitGatewayConnectsResult executeDescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest describeTransitGatewayConnectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTransitGatewayConnectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTransitGatewayConnectsRequest> request = null;
+        Response<DescribeTransitGatewayConnectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTransitGatewayConnectsRequestMarshaller().marshall(super.beforeMarshalling(describeTransitGatewayConnectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayConnects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTransitGatewayConnectsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectsResult>(
+                    new DescribeTransitGatewayConnectsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23869,6 +24544,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Rejects a request to associate cross-account subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param rejectTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the RejectTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.RejectTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectTransitGatewayMulticastDomainAssociationsResult rejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectTransitGatewayMulticastDomainAssociations(request);
+    }
+
+    @SdkInternalApi
+    final RejectTransitGatewayMulticastDomainAssociationsResult executeRejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest rejectTransitGatewayMulticastDomainAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectTransitGatewayMulticastDomainAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectTransitGatewayMulticastDomainAssociationsRequest> request = null;
+        Response<RejectTransitGatewayMulticastDomainAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(rejectTransitGatewayMulticastDomainAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectTransitGatewayMulticastDomainAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult>(
+                    new RejectTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Rejects a transit gateway peering attachment request.
      * </p>
      * 
@@ -25951,6 +26684,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartInstancesResult> responseHandler = new StaxResponseHandler<StartInstancesResult>(
                     new StartInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
+     * </p>
+     * 
+     * @param startNetworkInsightsAnalysisRequest
+     * @return Result of the StartNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.StartNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartNetworkInsightsAnalysisResult startNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartNetworkInsightsAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final StartNetworkInsightsAnalysisResult executeStartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest startNetworkInsightsAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startNetworkInsightsAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartNetworkInsightsAnalysisRequest> request = null;
+        Response<StartNetworkInsightsAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartNetworkInsightsAnalysisRequestMarshaller().marshall(super.beforeMarshalling(startNetworkInsightsAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNetworkInsightsAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<StartNetworkInsightsAnalysisResult>(
+                    new StartNetworkInsightsAnalysisResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

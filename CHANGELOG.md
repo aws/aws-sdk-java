@@ -1,3 +1,16 @@
+# __1.11.917__ __2020-12-10__
+## __AWS Network Manager__
+  - ### Features
+    - This release adds API support for Transit Gateway Connect integration into AWS Network Manager.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now supports adding synonyms to an index through the new Thesaurus resource.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - TGW connect simplifies connectivity of SD-WAN appliances; IGMP support for TGW multicast; VPC Reachability Analyzer for VPC resources connectivity analysis.
+
 # __1.11.916__ __2020-12-09__
 ## __AWS Global Accelerator__
   - ### Features

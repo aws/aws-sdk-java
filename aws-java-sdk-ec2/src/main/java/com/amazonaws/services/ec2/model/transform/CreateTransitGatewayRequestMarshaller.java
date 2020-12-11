@@ -74,6 +74,21 @@ public class CreateTransitGatewayRequestMarshaller implements Marshaller<Request
             if (options.getMulticastSupport() != null) {
                 request.addParameter("Options.MulticastSupport", StringUtils.fromString(options.getMulticastSupport()));
             }
+
+            com.amazonaws.internal.SdkInternalList<String> transitGatewayRequestOptionsTransitGatewayCidrBlocksList = (com.amazonaws.internal.SdkInternalList<String>) options
+                    .getTransitGatewayCidrBlocks();
+            if (!transitGatewayRequestOptionsTransitGatewayCidrBlocksList.isEmpty()
+                    || !transitGatewayRequestOptionsTransitGatewayCidrBlocksList.isAutoConstruct()) {
+                int transitGatewayCidrBlocksListIndex = 1;
+
+                for (String transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue : transitGatewayRequestOptionsTransitGatewayCidrBlocksList) {
+                    if (transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue != null) {
+                        request.addParameter("Options.TransitGatewayCidrBlocks." + transitGatewayCidrBlocksListIndex,
+                                StringUtils.fromString(transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue));
+                    }
+                    transitGatewayCidrBlocksListIndex++;
+                }
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayRequest

@@ -33,6 +33,8 @@ public class HighlightMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndOffset").build();
     private static final MarshallingInfo<Boolean> TOPANSWER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TopAnswer").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final HighlightMarshaller instance = new HighlightMarshaller();
 
@@ -53,6 +55,7 @@ public class HighlightMarshaller {
             protocolMarshaller.marshall(highlight.getBeginOffset(), BEGINOFFSET_BINDING);
             protocolMarshaller.marshall(highlight.getEndOffset(), ENDOFFSET_BINDING);
             protocolMarshaller.marshall(highlight.getTopAnswer(), TOPANSWER_BINDING);
+            protocolMarshaller.marshall(highlight.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

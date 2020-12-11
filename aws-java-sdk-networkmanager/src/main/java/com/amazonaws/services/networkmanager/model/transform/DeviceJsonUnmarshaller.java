@@ -60,6 +60,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AWSLocation", targetDepth)) {
+                    context.nextToken();
+                    device.setAWSLocation(AWSLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     device.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

@@ -92,6 +92,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request) {
+
+        return createThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
 
         return deleteDataSourceAsync(request, null);
@@ -131,6 +144,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request) {
+
+        return deleteThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataSourceResult> describeDataSourceAsync(DescribeDataSourceRequest request) {
 
         return describeDataSourceAsync(request, null);
@@ -165,6 +191,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request) {
+
+        return describeThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +269,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request) {
+
+        return listThesauriAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -333,6 +385,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<UpdateIndexResult> updateIndexAsync(UpdateIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIndexRequest, UpdateIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request) {
+
+        return updateThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

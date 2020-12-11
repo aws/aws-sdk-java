@@ -55,6 +55,21 @@ public class TransitGatewayMulticastDomainStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("transitGatewayMulticastDomainArn", targetDepth)) {
+                    transitGatewayMulticastDomain.setTransitGatewayMulticastDomainArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    transitGatewayMulticastDomain.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("options", targetDepth)) {
+                    transitGatewayMulticastDomain.setOptions(TransitGatewayMulticastDomainOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("state", targetDepth)) {
                     transitGatewayMulticastDomain.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

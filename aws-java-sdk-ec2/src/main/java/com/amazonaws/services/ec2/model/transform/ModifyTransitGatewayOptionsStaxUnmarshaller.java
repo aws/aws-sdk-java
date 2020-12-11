@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -42,6 +44,26 @@ public class ModifyTransitGatewayOptionsStaxUnmarshaller implements Unmarshaller
                 return modifyTransitGatewayOptions;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("AddTransitGatewayCidrBlocks", targetDepth)) {
+                    modifyTransitGatewayOptions.withAddTransitGatewayCidrBlocks(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("AddTransitGatewayCidrBlocks/item", targetDepth)) {
+                    modifyTransitGatewayOptions.withAddTransitGatewayCidrBlocks(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RemoveTransitGatewayCidrBlocks", targetDepth)) {
+                    modifyTransitGatewayOptions.withRemoveTransitGatewayCidrBlocks(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("RemoveTransitGatewayCidrBlocks/item", targetDepth)) {
+                    modifyTransitGatewayOptions.withRemoveTransitGatewayCidrBlocks(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
 
                 if (context.testExpression("VpnEcmpSupport", targetDepth)) {
                     modifyTransitGatewayOptions.setVpnEcmpSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));

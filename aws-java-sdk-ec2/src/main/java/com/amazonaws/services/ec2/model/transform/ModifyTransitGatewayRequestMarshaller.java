@@ -51,6 +51,36 @@ public class ModifyTransitGatewayRequestMarshaller implements Marshaller<Request
         ModifyTransitGatewayOptions options = modifyTransitGatewayRequest.getOptions();
         if (options != null) {
 
+            com.amazonaws.internal.SdkInternalList<String> modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksList = (com.amazonaws.internal.SdkInternalList<String>) options
+                    .getAddTransitGatewayCidrBlocks();
+            if (!modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksList.isEmpty()
+                    || !modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksList.isAutoConstruct()) {
+                int addTransitGatewayCidrBlocksListIndex = 1;
+
+                for (String modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksListValue : modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksList) {
+                    if (modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksListValue != null) {
+                        request.addParameter("Options.AddTransitGatewayCidrBlocks." + addTransitGatewayCidrBlocksListIndex,
+                                StringUtils.fromString(modifyTransitGatewayOptionsAddTransitGatewayCidrBlocksListValue));
+                    }
+                    addTransitGatewayCidrBlocksListIndex++;
+                }
+            }
+
+            com.amazonaws.internal.SdkInternalList<String> modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksList = (com.amazonaws.internal.SdkInternalList<String>) options
+                    .getRemoveTransitGatewayCidrBlocks();
+            if (!modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksList.isEmpty()
+                    || !modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksList.isAutoConstruct()) {
+                int removeTransitGatewayCidrBlocksListIndex = 1;
+
+                for (String modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksListValue : modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksList) {
+                    if (modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksListValue != null) {
+                        request.addParameter("Options.RemoveTransitGatewayCidrBlocks." + removeTransitGatewayCidrBlocksListIndex,
+                                StringUtils.fromString(modifyTransitGatewayOptionsRemoveTransitGatewayCidrBlocksListValue));
+                    }
+                    removeTransitGatewayCidrBlocksListIndex++;
+                }
+            }
+
             if (options.getVpnEcmpSupport() != null) {
                 request.addParameter("Options.VpnEcmpSupport", StringUtils.fromString(options.getVpnEcmpSupport()));
             }

@@ -31,6 +31,8 @@ public class UpdateDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("globalNetworkId").build();
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("deviceId").build();
+    private static final MarshallingInfo<StructuredPojo> AWSLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSLocation").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class UpdateDeviceRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateDeviceRequest.getGlobalNetworkId(), GLOBALNETWORKID_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getDeviceId(), DEVICEID_BINDING);
+            protocolMarshaller.marshall(updateDeviceRequest.getAWSLocation(), AWSLOCATION_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getVendor(), VENDOR_BINDING);

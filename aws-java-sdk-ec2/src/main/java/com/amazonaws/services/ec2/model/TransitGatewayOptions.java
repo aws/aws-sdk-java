@@ -35,6 +35,12 @@ public class TransitGatewayOptions implements Serializable, Cloneable {
     private Long amazonSideAsn;
     /**
      * <p>
+     * The transit gateway CIDR blocks.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> transitGatewayCidrBlocks;
+    /**
+     * <p>
      * Indicates whether attachment requests are automatically accepted.
      * </p>
      */
@@ -125,6 +131,79 @@ public class TransitGatewayOptions implements Serializable, Cloneable {
 
     public TransitGatewayOptions withAmazonSideAsn(Long amazonSideAsn) {
         setAmazonSideAsn(amazonSideAsn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The transit gateway CIDR blocks.
+     * </p>
+     * 
+     * @return The transit gateway CIDR blocks.
+     */
+
+    public java.util.List<String> getTransitGatewayCidrBlocks() {
+        if (transitGatewayCidrBlocks == null) {
+            transitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return transitGatewayCidrBlocks;
+    }
+
+    /**
+     * <p>
+     * The transit gateway CIDR blocks.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        The transit gateway CIDR blocks.
+     */
+
+    public void setTransitGatewayCidrBlocks(java.util.Collection<String> transitGatewayCidrBlocks) {
+        if (transitGatewayCidrBlocks == null) {
+            this.transitGatewayCidrBlocks = null;
+            return;
+        }
+
+        this.transitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>(transitGatewayCidrBlocks);
+    }
+
+    /**
+     * <p>
+     * The transit gateway CIDR blocks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTransitGatewayCidrBlocks(java.util.Collection)} or
+     * {@link #withTransitGatewayCidrBlocks(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        The transit gateway CIDR blocks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayOptions withTransitGatewayCidrBlocks(String... transitGatewayCidrBlocks) {
+        if (this.transitGatewayCidrBlocks == null) {
+            setTransitGatewayCidrBlocks(new com.amazonaws.internal.SdkInternalList<String>(transitGatewayCidrBlocks.length));
+        }
+        for (String ele : transitGatewayCidrBlocks) {
+            this.transitGatewayCidrBlocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The transit gateway CIDR blocks.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        The transit gateway CIDR blocks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayOptions withTransitGatewayCidrBlocks(java.util.Collection<String> transitGatewayCidrBlocks) {
+        setTransitGatewayCidrBlocks(transitGatewayCidrBlocks);
         return this;
     }
 
@@ -584,6 +663,8 @@ public class TransitGatewayOptions implements Serializable, Cloneable {
         sb.append("{");
         if (getAmazonSideAsn() != null)
             sb.append("AmazonSideAsn: ").append(getAmazonSideAsn()).append(",");
+        if (getTransitGatewayCidrBlocks() != null)
+            sb.append("TransitGatewayCidrBlocks: ").append(getTransitGatewayCidrBlocks()).append(",");
         if (getAutoAcceptSharedAttachments() != null)
             sb.append("AutoAcceptSharedAttachments: ").append(getAutoAcceptSharedAttachments()).append(",");
         if (getDefaultRouteTableAssociation() != null)
@@ -617,6 +698,10 @@ public class TransitGatewayOptions implements Serializable, Cloneable {
         if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
             return false;
         if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
+            return false;
+        if (other.getTransitGatewayCidrBlocks() == null ^ this.getTransitGatewayCidrBlocks() == null)
+            return false;
+        if (other.getTransitGatewayCidrBlocks() != null && other.getTransitGatewayCidrBlocks().equals(this.getTransitGatewayCidrBlocks()) == false)
             return false;
         if (other.getAutoAcceptSharedAttachments() == null ^ this.getAutoAcceptSharedAttachments() == null)
             return false;
@@ -661,6 +746,7 @@ public class TransitGatewayOptions implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayCidrBlocks() == null) ? 0 : getTransitGatewayCidrBlocks().hashCode());
         hashCode = prime * hashCode + ((getAutoAcceptSharedAttachments() == null) ? 0 : getAutoAcceptSharedAttachments().hashCode());
         hashCode = prime * hashCode + ((getDefaultRouteTableAssociation() == null) ? 0 : getDefaultRouteTableAssociation().hashCode());
         hashCode = prime * hashCode + ((getAssociationDefaultRouteTableId() == null) ? 0 : getAssociationDefaultRouteTableId().hashCode());

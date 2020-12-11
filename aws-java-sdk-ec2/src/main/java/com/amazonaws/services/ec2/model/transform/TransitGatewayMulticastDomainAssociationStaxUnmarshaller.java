@@ -59,6 +59,11 @@ public class TransitGatewayMulticastDomainAssociationStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("resourceOwnerId", targetDepth)) {
+                    transitGatewayMulticastDomainAssociation.setResourceOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("subnet", targetDepth)) {
                     transitGatewayMulticastDomainAssociation.setSubnet(SubnetAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

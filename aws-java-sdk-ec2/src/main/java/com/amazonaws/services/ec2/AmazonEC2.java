@@ -144,6 +144,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Accepts a request to associate subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param acceptTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the AcceptTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.AcceptTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptTransitGatewayMulticastDomainAssociationsResult acceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest acceptTransitGatewayMulticastDomainAssociationsRequest);
+
+    /**
+     * <p>
      * Accepts a transit gateway peering attachment request. The peering attachment must be in the
      * <code>pendingAcceptance</code> state.
      * </p>
@@ -1639,6 +1654,24 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Creates a path to analyze for reachability.
+     * </p>
+     * <p>
+     * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
+     * private cloud (VPC). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * </p>
+     * 
+     * @param createNetworkInsightsPathRequest
+     * @return Result of the CreateNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.CreateNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateNetworkInsightsPathResult createNetworkInsightsPath(CreateNetworkInsightsPathRequest createNetworkInsightsPathRequest);
+
+    /**
+     * <p>
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
@@ -2109,6 +2142,45 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreateTransitGatewayResult createTransitGateway(CreateTransitGatewayRequest createTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based
+     * tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.
+     * </p>
+     * <p>
+     * A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectRequest
+     * @return Result of the CreateTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitGatewayConnectResult createTransitGatewayConnect(CreateTransitGatewayConnectRequest createTransitGatewayConnectRequest);
+
+    /**
+     * <p>
+     * Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an
+     * appliance.
+     * </p>
+     * <p>
+     * The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the
+     * <i>Transit Gateways Guide</i>.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectPeerRequest
+     * @return Result of the CreateTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitGatewayConnectPeerResult createTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest createTransitGatewayConnectPeerRequest);
 
     /**
      * <p>
@@ -2790,6 +2862,32 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified network insights analysis.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsAnalysisRequest
+     * @return Result of the DeleteNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkInsightsAnalysisResult deleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest deleteNetworkInsightsAnalysisRequest);
+
+    /**
+     * <p>
+     * Deletes the specified path.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsPathRequest
+     * @return Result of the DeleteNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteNetworkInsightsPathResult deleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest deleteNetworkInsightsPathRequest);
+
+    /**
+     * <p>
      * Deletes the specified network interface. You must detach the network interface before you can delete it.
      * </p>
      * 
@@ -3043,6 +3141,32 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     DeleteTransitGatewayResult deleteTransitGateway(DeleteTransitGatewayRequest deleteTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectRequest
+     * @return Result of the DeleteTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTransitGatewayConnectResult deleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest deleteTransitGatewayConnectRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Connect peer.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectPeerRequest
+     * @return Result of the DeleteTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTransitGatewayConnectPeerResult deleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest deleteTransitGatewayConnectPeerRequest);
 
     /**
      * <p>
@@ -4593,6 +4717,32 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more of your network insights analyses.
+     * </p>
+     * 
+     * @param describeNetworkInsightsAnalysesRequest
+     * @return Result of the DescribeNetworkInsightsAnalyses operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNetworkInsightsAnalysesResult describeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest describeNetworkInsightsAnalysesRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your paths.
+     * </p>
+     * 
+     * @param describeNetworkInsightsPathsRequest
+     * @return Result of the DescribeNetworkInsightsPaths operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNetworkInsightsPathsResult describeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest describeNetworkInsightsPathsRequest);
+
+    /**
+     * <p>
      * Describes a network interface attribute. You can specify only one attribute at a time.
      * </p>
      * 
@@ -5360,6 +5510,33 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeTransitGatewayAttachmentsResult describeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest describeTransitGatewayAttachmentsRequest);
+
+    /**
+     * <p>
+     * Describes one or more Connect peers.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectPeersRequest
+     * @return Result of the DescribeTransitGatewayConnectPeers operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTransitGatewayConnectPeersResult describeTransitGatewayConnectPeers(
+            DescribeTransitGatewayConnectPeersRequest describeTransitGatewayConnectPeersRequest);
+
+    /**
+     * <p>
+     * Describes one or more Connect attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectsRequest
+     * @return Result of the DescribeTransitGatewayConnects operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTransitGatewayConnectsResult describeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest describeTransitGatewayConnectsRequest);
 
     /**
      * <p>
@@ -8139,6 +8316,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Rejects a request to associate cross-account subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param rejectTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the RejectTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.RejectTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RejectTransitGatewayMulticastDomainAssociationsResult rejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest rejectTransitGatewayMulticastDomainAssociationsRequest);
+
+    /**
+     * <p>
      * Rejects a transit gateway peering attachment request.
      * </p>
      * 
@@ -8877,6 +9069,19 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     StartInstancesResult startInstances(StartInstancesRequest startInstancesRequest);
+
+    /**
+     * <p>
+     * Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
+     * </p>
+     * 
+     * @param startNetworkInsightsAnalysisRequest
+     * @return Result of the StartNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.StartNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartNetworkInsightsAnalysisResult startNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest startNetworkInsightsAnalysisRequest);
 
     /**
      * <p>

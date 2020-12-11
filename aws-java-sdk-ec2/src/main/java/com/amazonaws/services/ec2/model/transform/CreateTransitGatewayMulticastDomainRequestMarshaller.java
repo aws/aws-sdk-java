@@ -46,6 +46,22 @@ public class CreateTransitGatewayMulticastDomainRequestMarshaller implements
             request.addParameter("TransitGatewayId", StringUtils.fromString(createTransitGatewayMulticastDomainRequest.getTransitGatewayId()));
         }
 
+        CreateTransitGatewayMulticastDomainRequestOptions options = createTransitGatewayMulticastDomainRequest.getOptions();
+        if (options != null) {
+
+            if (options.getIgmpv2Support() != null) {
+                request.addParameter("Options.Igmpv2Support", StringUtils.fromString(options.getIgmpv2Support()));
+            }
+
+            if (options.getStaticSourcesSupport() != null) {
+                request.addParameter("Options.StaticSourcesSupport", StringUtils.fromString(options.getStaticSourcesSupport()));
+            }
+
+            if (options.getAutoAcceptSharedAssociations() != null) {
+                request.addParameter("Options.AutoAcceptSharedAssociations", StringUtils.fromString(options.getAutoAcceptSharedAssociations()));
+            }
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayMulticastDomainRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayMulticastDomainRequest
                 .getTagSpecifications();
         if (!createTransitGatewayMulticastDomainRequestTagSpecificationsList.isEmpty()

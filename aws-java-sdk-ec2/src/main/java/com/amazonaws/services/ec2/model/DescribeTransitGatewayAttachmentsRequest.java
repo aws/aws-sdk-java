@@ -61,7 +61,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -206,7 +206,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -261,7 +261,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     *         <code>direct-connect-gateway</code> | <code>peering</code>.
+     *         <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -325,7 +325,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -381,7 +381,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -447,7 +447,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -508,7 +508,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -576,7 +576,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>peering</code>.
+     * <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      * </p>
      * </li>
      * <li>
@@ -632,7 +632,7 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>peering</code>.
+     *        <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
      *        </p>
      *        </li>
      *        <li>

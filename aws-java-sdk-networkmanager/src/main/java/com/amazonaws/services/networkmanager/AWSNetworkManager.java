@@ -30,6 +30,10 @@ import com.amazonaws.services.networkmanager.model.*;
  * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
  * your AWS and on-premises networks that are built around transit gateways.
  * </p>
+ * <p>
+ * The Network Manager APIs are supported in the US West (Oregon) Region only. You must specify the
+ * <code>us-west-2</code> Region in all requests made to Network Manager.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSNetworkManager {
@@ -110,6 +114,72 @@ public interface AWSNetworkManager {
      *      API Documentation</a>
      */
     AssociateLinkResult associateLink(AssociateLinkRequest associateLinkRequest);
+
+    /**
+     * <p>
+     * Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it
+     * must be associated with the specified device.
+     * </p>
+     * <p>
+     * You can only associate transit gateway Connect peers that have been created on a transit gateway that's
+     * registered in your global network.
+     * </p>
+     * <p>
+     * You cannot associate a transit gateway Connect peer with more than one device and link.
+     * </p>
+     * 
+     * @param associateTransitGatewayConnectPeerRequest
+     * @return Result of the AssociateTransitGatewayConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.AssociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateTransitGatewayConnectPeerResult associateTransitGatewayConnectPeer(
+            AssociateTransitGatewayConnectPeerRequest associateTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
+     * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
+     * on-premises network.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return Result of the CreateConnection operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
 
     /**
      * <p>
@@ -221,6 +291,32 @@ public interface AWSNetworkManager {
      *      Documentation</a>
      */
     CreateSiteResult createSite(CreateSiteRequest createSiteRequest);
+
+    /**
+     * <p>
+     * Deletes the specified connection in your global network.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return Result of the DeleteConnection operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest);
 
     /**
      * <p>
@@ -434,6 +530,57 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Disassociates a transit gateway Connect peer from a device and link.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayConnectPeerRequest
+     * @return Result of the DisassociateTransitGatewayConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DisassociateTransitGatewayConnectPeer
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateTransitGatewayConnectPeerResult disassociateTransitGatewayConnectPeer(
+            DisassociateTransitGatewayConnectPeerRequest disassociateTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more of your connections in a global network.
+     * </p>
+     * 
+     * @param getConnectionsRequest
+     * @return Result of the GetConnections operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetConnectionsResult getConnections(GetConnectionsRequest getConnectionsRequest);
+
+    /**
+     * <p>
      * Gets the association information for customer gateways that are associated with devices and links in your global
      * network.
      * </p>
@@ -554,6 +701,34 @@ public interface AWSNetworkManager {
      *      Documentation</a>
      */
     GetSitesResult getSites(GetSitesRequest getSitesRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more of your transit gateway Connect peer associations in a global network.
+     * </p>
+     * 
+     * @param getTransitGatewayConnectPeerAssociationsRequest
+     * @return Result of the GetTransitGatewayConnectPeerAssociations operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetTransitGatewayConnectPeerAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTransitGatewayConnectPeerAssociationsResult getTransitGatewayConnectPeerAssociations(
+            GetTransitGatewayConnectPeerAssociationsRequest getTransitGatewayConnectPeerAssociationsRequest);
 
     /**
      * <p>
@@ -682,6 +857,33 @@ public interface AWSNetworkManager {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the information for an existing connection. To remove information for any of the parameters, specify an
+     * empty string.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConnectionResult updateConnection(UpdateConnectionRequest updateConnectionRequest);
 
     /**
      * <p>

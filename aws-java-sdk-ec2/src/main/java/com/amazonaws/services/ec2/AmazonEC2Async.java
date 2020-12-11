@@ -104,6 +104,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Accepts a request to associate subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param acceptTransitGatewayMulticastDomainAssociationsRequest
+     * @return A Java Future containing the result of the AcceptTransitGatewayMulticastDomainAssociations operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.AcceptTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptTransitGatewayMulticastDomainAssociationsResult> acceptTransitGatewayMulticastDomainAssociationsAsync(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest acceptTransitGatewayMulticastDomainAssociationsRequest);
+
+    /**
+     * <p>
+     * Accepts a request to associate subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param acceptTransitGatewayMulticastDomainAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptTransitGatewayMulticastDomainAssociations operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.AcceptTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptTransitGatewayMulticastDomainAssociationsResult> acceptTransitGatewayMulticastDomainAssociationsAsync(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest acceptTransitGatewayMulticastDomainAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptTransitGatewayMulticastDomainAssociationsRequest, AcceptTransitGatewayMulticastDomainAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Accepts a transit gateway peering attachment request. The peering attachment must be in the
      * <code>pendingAcceptance</code> state.
      * </p>
@@ -3479,6 +3516,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Creates a path to analyze for reachability.
+     * </p>
+     * <p>
+     * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
+     * private cloud (VPC). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * </p>
+     * 
+     * @param createNetworkInsightsPathRequest
+     * @return A Java Future containing the result of the CreateNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2Async.CreateNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkInsightsPathResult> createNetworkInsightsPathAsync(
+            CreateNetworkInsightsPathRequest createNetworkInsightsPathRequest);
+
+    /**
+     * <p>
+     * Creates a path to analyze for reachability.
+     * </p>
+     * <p>
+     * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
+     * private cloud (VPC). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * </p>
+     * 
+     * @param createNetworkInsightsPathRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkInsightsPathResult> createNetworkInsightsPathAsync(
+            CreateNetworkInsightsPathRequest createNetworkInsightsPathRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkInsightsPathRequest, CreateNetworkInsightsPathResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
@@ -4529,6 +4609,100 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest createTransitGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRequest, CreateTransitGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based
+     * tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.
+     * </p>
+     * <p>
+     * A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectRequest
+     * @return A Java Future containing the result of the CreateTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2Async.CreateTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayConnectResult> createTransitGatewayConnectAsync(
+            CreateTransitGatewayConnectRequest createTransitGatewayConnectRequest);
+
+    /**
+     * <p>
+     * Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based
+     * tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.
+     * </p>
+     * <p>
+     * A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayConnectResult> createTransitGatewayConnectAsync(
+            CreateTransitGatewayConnectRequest createTransitGatewayConnectRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayConnectRequest, CreateTransitGatewayConnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an
+     * appliance.
+     * </p>
+     * <p>
+     * The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the
+     * <i>Transit Gateways Guide</i>.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectPeerRequest
+     * @return A Java Future containing the result of the CreateTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayConnectPeerResult> createTransitGatewayConnectPeerAsync(
+            CreateTransitGatewayConnectPeerRequest createTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an
+     * appliance.
+     * </p>
+     * <p>
+     * The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the
+     * <i>Transit Gateways Guide</i>.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayConnectPeerResult> createTransitGatewayConnectPeerAsync(
+            CreateTransitGatewayConnectPeerRequest createTransitGatewayConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayConnectPeerRequest, CreateTransitGatewayConnectPeerResult> asyncHandler);
 
     /**
      * <p>
@@ -6091,6 +6265,74 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified network insights analysis.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsAnalysisRequest
+     * @return A Java Future containing the result of the DeleteNetworkInsightsAnalysis operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInsightsAnalysisResult> deleteNetworkInsightsAnalysisAsync(
+            DeleteNetworkInsightsAnalysisRequest deleteNetworkInsightsAnalysisRequest);
+
+    /**
+     * <p>
+     * Deletes the specified network insights analysis.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkInsightsAnalysis operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInsightsAnalysisResult> deleteNetworkInsightsAnalysisAsync(
+            DeleteNetworkInsightsAnalysisRequest deleteNetworkInsightsAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInsightsAnalysisRequest, DeleteNetworkInsightsAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified path.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsPathRequest
+     * @return A Java Future containing the result of the DeleteNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2Async.DeleteNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInsightsPathResult> deleteNetworkInsightsPathAsync(
+            DeleteNetworkInsightsPathRequest deleteNetworkInsightsPathRequest);
+
+    /**
+     * <p>
+     * Deletes the specified path.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsPathRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInsightsPathResult> deleteNetworkInsightsPathAsync(
+            DeleteNetworkInsightsPathRequest deleteNetworkInsightsPathRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInsightsPathRequest, DeleteNetworkInsightsPathResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified network interface. You must detach the network interface before you can delete it.
      * </p>
      * 
@@ -6704,6 +6946,74 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DeleteTransitGatewayResult> deleteTransitGatewayAsync(DeleteTransitGatewayRequest deleteTransitGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayRequest, DeleteTransitGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectRequest
+     * @return A Java Future containing the result of the DeleteTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayConnectResult> deleteTransitGatewayConnectAsync(
+            DeleteTransitGatewayConnectRequest deleteTransitGatewayConnectRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayConnectResult> deleteTransitGatewayConnectAsync(
+            DeleteTransitGatewayConnectRequest deleteTransitGatewayConnectRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayConnectRequest, DeleteTransitGatewayConnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Connect peer.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectPeerRequest
+     * @return A Java Future containing the result of the DeleteTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayConnectPeerResult> deleteTransitGatewayConnectPeerAsync(
+            DeleteTransitGatewayConnectPeerRequest deleteTransitGatewayConnectPeerRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Connect peer.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGatewayConnectPeer operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayConnectPeerResult> deleteTransitGatewayConnectPeerAsync(
+            DeleteTransitGatewayConnectPeerRequest deleteTransitGatewayConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayConnectPeerRequest, DeleteTransitGatewayConnectPeerResult> asyncHandler);
 
     /**
      * <p>
@@ -10323,6 +10633,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more of your network insights analyses.
+     * </p>
+     * 
+     * @param describeNetworkInsightsAnalysesRequest
+     * @return A Java Future containing the result of the DescribeNetworkInsightsAnalyses operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeNetworkInsightsAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInsightsAnalysesResult> describeNetworkInsightsAnalysesAsync(
+            DescribeNetworkInsightsAnalysesRequest describeNetworkInsightsAnalysesRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your network insights analyses.
+     * </p>
+     * 
+     * @param describeNetworkInsightsAnalysesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNetworkInsightsAnalyses operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeNetworkInsightsAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInsightsAnalysesResult> describeNetworkInsightsAnalysesAsync(
+            DescribeNetworkInsightsAnalysesRequest describeNetworkInsightsAnalysesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNetworkInsightsAnalysesRequest, DescribeNetworkInsightsAnalysesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your paths.
+     * </p>
+     * 
+     * @param describeNetworkInsightsPathsRequest
+     * @return A Java Future containing the result of the DescribeNetworkInsightsPaths operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeNetworkInsightsPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInsightsPathsResult> describeNetworkInsightsPathsAsync(
+            DescribeNetworkInsightsPathsRequest describeNetworkInsightsPathsRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your paths.
+     * </p>
+     * 
+     * @param describeNetworkInsightsPathsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNetworkInsightsPaths operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeNetworkInsightsPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInsightsPathsResult> describeNetworkInsightsPathsAsync(
+            DescribeNetworkInsightsPathsRequest describeNetworkInsightsPathsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNetworkInsightsPathsRequest, DescribeNetworkInsightsPathsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a network interface attribute. You can specify only one attribute at a time.
      * </p>
      * 
@@ -12104,6 +12484,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
             DescribeTransitGatewayAttachmentsRequest describeTransitGatewayAttachmentsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayAttachmentsRequest, DescribeTransitGatewayAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more Connect peers.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectPeersRequest
+     * @return A Java Future containing the result of the DescribeTransitGatewayConnectPeers operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTransitGatewayConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayConnectPeersResult> describeTransitGatewayConnectPeersAsync(
+            DescribeTransitGatewayConnectPeersRequest describeTransitGatewayConnectPeersRequest);
+
+    /**
+     * <p>
+     * Describes one or more Connect peers.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectPeersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGatewayConnectPeers operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGatewayConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayConnectPeersResult> describeTransitGatewayConnectPeersAsync(
+            DescribeTransitGatewayConnectPeersRequest describeTransitGatewayConnectPeersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayConnectPeersRequest, DescribeTransitGatewayConnectPeersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more Connect attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectsRequest
+     * @return A Java Future containing the result of the DescribeTransitGatewayConnects operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTransitGatewayConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayConnectsResult> describeTransitGatewayConnectsAsync(
+            DescribeTransitGatewayConnectsRequest describeTransitGatewayConnectsRequest);
+
+    /**
+     * <p>
+     * Describes one or more Connect attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGatewayConnects operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGatewayConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayConnectsResult> describeTransitGatewayConnectsAsync(
+            DescribeTransitGatewayConnectsRequest describeTransitGatewayConnectsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayConnectsRequest, DescribeTransitGatewayConnectsResult> asyncHandler);
 
     /**
      * <p>
@@ -18529,6 +18979,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Rejects a request to associate cross-account subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param rejectTransitGatewayMulticastDomainAssociationsRequest
+     * @return A Java Future containing the result of the RejectTransitGatewayMulticastDomainAssociations operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.RejectTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectTransitGatewayMulticastDomainAssociationsResult> rejectTransitGatewayMulticastDomainAssociationsAsync(
+            RejectTransitGatewayMulticastDomainAssociationsRequest rejectTransitGatewayMulticastDomainAssociationsRequest);
+
+    /**
+     * <p>
+     * Rejects a request to associate cross-account subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param rejectTransitGatewayMulticastDomainAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectTransitGatewayMulticastDomainAssociations operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.RejectTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectTransitGatewayMulticastDomainAssociationsResult> rejectTransitGatewayMulticastDomainAssociationsAsync(
+            RejectTransitGatewayMulticastDomainAssociationsRequest rejectTransitGatewayMulticastDomainAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectTransitGatewayMulticastDomainAssociationsRequest, RejectTransitGatewayMulticastDomainAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Rejects a transit gateway peering attachment request.
      * </p>
      * 
@@ -20214,6 +20701,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<StartInstancesResult> startInstancesAsync(StartInstancesRequest startInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<StartInstancesRequest, StartInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
+     * </p>
+     * 
+     * @param startNetworkInsightsAnalysisRequest
+     * @return A Java Future containing the result of the StartNetworkInsightsAnalysis operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.StartNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartNetworkInsightsAnalysisResult> startNetworkInsightsAnalysisAsync(
+            StartNetworkInsightsAnalysisRequest startNetworkInsightsAnalysisRequest);
+
+    /**
+     * <p>
+     * Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
+     * </p>
+     * 
+     * @param startNetworkInsightsAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartNetworkInsightsAnalysis operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.StartNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartNetworkInsightsAnalysisResult> startNetworkInsightsAnalysisAsync(
+            StartNetworkInsightsAnalysisRequest startNetworkInsightsAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<StartNetworkInsightsAnalysisRequest, StartNetworkInsightsAnalysisResult> asyncHandler);
 
     /**
      * <p>
