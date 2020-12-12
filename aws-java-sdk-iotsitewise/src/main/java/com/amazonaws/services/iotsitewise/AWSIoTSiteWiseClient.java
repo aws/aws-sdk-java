@@ -105,6 +105,9 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -447,9 +450,9 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 15
-     * minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-15, +5] minutes and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
+     * in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
+     * inclusive range of [-7 days, +5 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
      * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
@@ -1087,85 +1090,6 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePortalResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortalResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @return Result of the CreatePresignedPortalUrl operation returned by the service.
-     * @throws InvalidRequestException
-     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
-     *         characters. Check your request and try again.
-     * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
-     * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
-     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
-     * @sample AWSIoTSiteWise.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest request) {
-        request = beforeClientExecution(request);
-        return executeCreatePresignedPortalUrl(request);
-    }
-
-    @SdkInternalApi
-    final CreatePresignedPortalUrlResult executeCreatePresignedPortalUrl(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(createPresignedPortalUrlRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreatePresignedPortalUrlRequest> request = null;
-        Response<CreatePresignedPortalUrlResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreatePresignedPortalUrlRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createPresignedPortalUrlRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedPortalUrl");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            URI endpointTraitHost = null;
-            if (!clientConfiguration.isDisableHostPrefixInjection()) {
-
-                String hostPrefix = "monitor.";
-                String resolvedHostPrefix = String.format("monitor.");
-
-                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<CreatePresignedPortalUrlResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new CreatePresignedPortalUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -3227,6 +3151,85 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's
+     * root asset and all associated assets between that asset and its root.
+     * </p>
+     * 
+     * @param listAssetRelationshipsRequest
+     * @return Result of the ListAssetRelationships operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetRelationshipsResult listAssetRelationships(ListAssetRelationshipsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetRelationships(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetRelationshipsResult executeListAssetRelationships(ListAssetRelationshipsRequest listAssetRelationshipsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetRelationshipsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetRelationshipsRequest> request = null;
+        Response<ListAssetRelationshipsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetRelationshipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetRelationshipsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetRelationships");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "model.";
+                String resolvedHostPrefix = String.format("model.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetRelationshipsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssetRelationshipsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a paginated list of asset summaries.
      * </p>
      * <p>
@@ -3810,6 +3813,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -4042,6 +4059,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @throws TooManyTagsException
      *         You've reached the limit for the number of tags allowed for a resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits
@@ -4114,6 +4145,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource" target="_top">AWS API
      *      Documentation</a>

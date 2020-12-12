@@ -180,9 +180,9 @@ public interface AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 15
-     * minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-15, +5] minutes and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
+     * in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
+     * inclusive range of [-7 days, +5 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
      * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
@@ -477,33 +477,6 @@ public interface AWSIoTSiteWise {
      *      Documentation</a>
      */
     CreatePortalResult createPortal(CreatePortalRequest createPortalRequest);
-
-    /**
-     * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @return Result of the CreatePresignedPortalUrl operation returned by the service.
-     * @throws InvalidRequestException
-     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
-     *         characters. Check your request and try again.
-     * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
-     * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
-     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
-     * @sample AWSIoTSiteWise.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest);
 
     /**
      * <p>
@@ -1304,6 +1277,34 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's
+     * root asset and all associated assets between that asset and its root.
+     * </p>
+     * 
+     * @param listAssetRelationshipsRequest
+     * @return Result of the ListAssetRelationships operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetRelationshipsResult listAssetRelationships(ListAssetRelationshipsRequest listAssetRelationshipsRequest);
+
+    /**
+     * <p>
      * Retrieves a paginated list of asset summaries.
      * </p>
      * <p>
@@ -1537,6 +1538,20 @@ public interface AWSIoTSiteWise {
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -1634,6 +1649,20 @@ public interface AWSIoTSiteWise {
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @throws TooManyTagsException
      *         You've reached the limit for the number of tags allowed for a resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits
@@ -1665,6 +1694,20 @@ public interface AWSIoTSiteWise {
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource" target="_top">AWS API
      *      Documentation</a>

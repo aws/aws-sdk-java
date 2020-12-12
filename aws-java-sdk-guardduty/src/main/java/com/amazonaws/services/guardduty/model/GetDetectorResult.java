@@ -55,7 +55,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String updatedAt;
     /**
      * <p>
-     * An object that describes which data sources are enabled for the detector.
+     * Describes which data sources are enabled for the detector.
      * </p>
      */
     private DataSourceConfigurationsResult dataSources;
@@ -306,11 +306,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An object that describes which data sources are enabled for the detector.
+     * Describes which data sources are enabled for the detector.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources are enabled for the detector.
+     *        Describes which data sources are enabled for the detector.
      */
 
     public void setDataSources(DataSourceConfigurationsResult dataSources) {
@@ -319,10 +319,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An object that describes which data sources are enabled for the detector.
+     * Describes which data sources are enabled for the detector.
      * </p>
      * 
-     * @return An object that describes which data sources are enabled for the detector.
+     * @return Describes which data sources are enabled for the detector.
      */
 
     public DataSourceConfigurationsResult getDataSources() {
@@ -331,11 +331,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An object that describes which data sources are enabled for the detector.
+     * Describes which data sources are enabled for the detector.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources are enabled for the detector.
+     *        Describes which data sources are enabled for the detector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

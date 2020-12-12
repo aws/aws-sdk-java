@@ -33,13 +33,13 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      */
     private Boolean memberAccountLimitReached;
     /**
      * <p>
-     * An object that describes which data sources are enabled automatically for member accounts.
+     * Describes which data sources are enabled automatically for member accounts.
      * </p>
      */
     private OrganizationDataSourceConfigurationsResult dataSources;
@@ -99,12 +99,12 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @param memberAccountLimitReached
      *        Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *        administrator master account.
+     *        administrator account for your organization.
      */
 
     public void setMemberAccountLimitReached(Boolean memberAccountLimitReached) {
@@ -114,11 +114,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @return Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *         administrator master account.
+     *         administrator account for your organization.
      */
 
     public Boolean getMemberAccountLimitReached() {
@@ -128,12 +128,12 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @param memberAccountLimitReached
      *        Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *        administrator master account.
+     *        administrator account for your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @return Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *         administrator master account.
+     *         administrator account for your organization.
      */
 
     public Boolean isMemberAccountLimitReached() {
@@ -158,11 +158,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * An object that describes which data sources are enabled automatically for member accounts.
+     * Describes which data sources are enabled automatically for member accounts.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources are enabled automatically for member accounts.
+     *        Describes which data sources are enabled automatically for member accounts.
      */
 
     public void setDataSources(OrganizationDataSourceConfigurationsResult dataSources) {
@@ -171,10 +171,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * An object that describes which data sources are enabled automatically for member accounts.
+     * Describes which data sources are enabled automatically for member accounts.
      * </p>
      * 
-     * @return An object that describes which data sources are enabled automatically for member accounts.
+     * @return Describes which data sources are enabled automatically for member accounts.
      */
 
     public OrganizationDataSourceConfigurationsResult getDataSources() {
@@ -183,11 +183,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * An object that describes which data sources are enabled automatically for member accounts.
+     * Describes which data sources are enabled automatically for member accounts.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources are enabled automatically for member accounts.
+     *        Describes which data sources are enabled automatically for member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

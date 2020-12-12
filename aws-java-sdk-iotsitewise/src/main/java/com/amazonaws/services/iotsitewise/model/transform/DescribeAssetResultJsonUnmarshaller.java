@@ -76,6 +76,12 @@ public class DescribeAssetResultJsonUnmarshaller implements Unmarshaller<Describ
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("assetCompositeModels", targetDepth)) {
+                    context.nextToken();
+                    describeAssetResult.setAssetCompositeModels(new ListUnmarshaller<AssetCompositeModel>(AssetCompositeModelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("assetCreationDate", targetDepth)) {
                     context.nextToken();
                     describeAssetResult.setAssetCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

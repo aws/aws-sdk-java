@@ -45,7 +45,7 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private String findingPublishingFrequency;
     /**
      * <p>
-     * An object that describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      */
     private DataSourceConfigurations dataSources;
@@ -203,11 +203,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      */
 
     public void setDataSources(DataSourceConfigurations dataSources) {
@@ -216,10 +216,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
-     * @return An object that describes which data sources will be updated.
+     * @return Describes which data sources will be updated.
      */
 
     public DataSourceConfigurations getDataSources() {
@@ -228,11 +228,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

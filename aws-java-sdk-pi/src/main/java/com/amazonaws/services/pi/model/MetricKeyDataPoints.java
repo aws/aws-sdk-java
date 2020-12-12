@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
+ * A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricKeyDataPoints" target="_top">AWS API

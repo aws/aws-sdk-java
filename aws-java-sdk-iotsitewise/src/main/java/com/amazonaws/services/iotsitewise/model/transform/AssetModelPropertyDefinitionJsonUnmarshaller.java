@@ -56,6 +56,10 @@ public class AssetModelPropertyDefinitionJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     assetModelPropertyDefinition.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dataTypeSpec", targetDepth)) {
+                    context.nextToken();
+                    assetModelPropertyDefinition.setDataTypeSpec(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("unit", targetDepth)) {
                     context.nextToken();
                     assetModelPropertyDefinition.setUnit(context.getUnmarshaller(String.class).unmarshall(context));

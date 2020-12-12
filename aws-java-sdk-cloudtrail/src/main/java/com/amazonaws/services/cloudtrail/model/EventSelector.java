@@ -28,6 +28,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * You can configure up to five event selectors for a trail.
  * </p>
+ * <p>
+ * You cannot apply both event selectors and advanced event selectors to a trail.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector" target="_top">AWS API
  *      Documentation</a>

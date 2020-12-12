@@ -39,7 +39,7 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
     private Boolean autoEnable;
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      */
     private OrganizationDataSourceConfigurations dataSources;
@@ -138,11 +138,11 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      */
 
     public void setDataSources(OrganizationDataSourceConfigurations dataSources) {
@@ -151,10 +151,10 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
-     * @return An object describes which data sources will be updated.
+     * @return Describes which data sources will be updated.
      */
 
     public OrganizationDataSourceConfigurations getDataSources() {
@@ -163,11 +163,11 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

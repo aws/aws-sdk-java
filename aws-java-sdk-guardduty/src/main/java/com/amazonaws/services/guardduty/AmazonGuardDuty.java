@@ -58,7 +58,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Accepts the invitation to be monitored by a master GuardDuty account.
+     * Accepts the invitation to be monitored by a GuardDuty administrator account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -79,8 +79,8 @@ public interface AmazonGuardDuty {
      * </p>
      * <note>
      * <p>
-     * Only the master account can archive findings. Member accounts don't have permission to archive findings from
-     * their accounts.
+     * Only the administrator account can archive findings. Member accounts don't have permission to archive findings
+     * from their accounts.
      * </p>
      * </note>
      * 
@@ -136,8 +136,8 @@ public interface AmazonGuardDuty {
      * <p>
      * Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP
      * addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't
-     * generate findings for IP addresses that are included in IPSets. Only users from the master account can use this
-     * operation.
+     * generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use
+     * this operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -159,8 +159,8 @@ public interface AmazonGuardDuty {
      * </p>
      * <p>
      * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
-     * GuardDuty in the added member accounts, with the exception of the organization master account, which must enable
-     * GuardDuty prior to being added as a member.
+     * GuardDuty in the added member accounts, with the exception of the organization delegated administrator account,
+     * which must enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
      * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
@@ -220,7 +220,7 @@ public interface AmazonGuardDuty {
     /**
      * <p>
      * Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
-     * findings based on ThreatIntelSets. Only users of the master account can use this operation.
+     * findings based on ThreatIntelSets. Only users of the administrator account can use this operation.
      * </p>
      * 
      * @param createThreatIntelSetRequest
@@ -323,7 +323,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.
      * </p>
      * 
      * @param deleteMembersRequest
@@ -425,7 +425,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Disassociates the current GuardDuty member account from its master account.
+     * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -442,7 +442,8 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account
+     * IDs.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -579,7 +580,8 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Provides the details for the GuardDuty master account associated with the current GuardDuty member account.
+     * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
+     * account.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -613,7 +615,8 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account
+     * IDs.
      * </p>
      * 
      * @param getMembersRequest
@@ -670,8 +673,8 @@ public interface AmazonGuardDuty {
     /**
      * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty,
-     * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
-     * master account.
+     * and allow the current AWS account to view and manage these accounts' findings on their behalf as the GuardDuty
+     * administrator account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -740,7 +743,7 @@ public interface AmazonGuardDuty {
     /**
      * <p>
      * Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member
-     * account, the IPSets returned are the IPSets from the associated master account.
+     * account, the IPSets returned are the IPSets from the associated administrator account.
      * </p>
      * 
      * @param listIPSetsRequest
@@ -774,7 +777,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about all member accounts for the current GuardDuty administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -845,7 +848,7 @@ public interface AmazonGuardDuty {
     /**
      * <p>
      * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a
-     * member account, the ThreatIntelSets associated with the master account are returned.
+     * member account, the ThreatIntelSets associated with the administrator account are returned.
      * </p>
      * 
      * @param listThreatIntelSetsRequest

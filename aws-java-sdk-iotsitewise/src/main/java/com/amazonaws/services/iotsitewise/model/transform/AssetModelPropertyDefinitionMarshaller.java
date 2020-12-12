@@ -31,6 +31,8 @@ public class AssetModelPropertyDefinitionMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dataType").build();
+    private static final MarshallingInfo<String> DATATYPESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTypeSpec").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("unit").build();
     private static final MarshallingInfo<StructuredPojo> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class AssetModelPropertyDefinitionMarshaller {
         try {
             protocolMarshaller.marshall(assetModelPropertyDefinition.getName(), NAME_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getDataType(), DATATYPE_BINDING);
+            protocolMarshaller.marshall(assetModelPropertyDefinition.getDataTypeSpec(), DATATYPESPEC_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getUnit(), UNIT_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getType(), TYPE_BINDING);
         } catch (Exception e) {

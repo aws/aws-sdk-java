@@ -25,18 +25,18 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The master account details.
+     * The administrator account details.
      * </p>
      */
     private Master master;
 
     /**
      * <p>
-     * The master account details.
+     * The administrator account details.
      * </p>
      * 
      * @param master
-     *        The master account details.
+     *        The administrator account details.
      */
 
     public void setMaster(Master master) {
@@ -45,10 +45,10 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The master account details.
+     * The administrator account details.
      * </p>
      * 
-     * @return The master account details.
+     * @return The administrator account details.
      */
 
     public Master getMaster() {
@@ -57,11 +57,11 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The master account details.
+     * The administrator account details.
      * </p>
      * 
      * @param master
-     *        The master account details.
+     *        The administrator account details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

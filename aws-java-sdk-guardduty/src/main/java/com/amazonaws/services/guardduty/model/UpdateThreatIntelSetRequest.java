@@ -45,8 +45,7 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      */
     private String location;
@@ -179,13 +178,11 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the ThreateIntelSet. For example:
-     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     *        The updated URI of the file that contains the ThreateIntelSet.
      */
 
     public void setLocation(String location) {
@@ -194,12 +191,10 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
-     * @return The updated URI of the file that contains the ThreateIntelSet. For example:
-     *         https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * @return The updated URI of the file that contains the ThreateIntelSet.
      */
 
     public String getLocation() {
@@ -208,13 +203,11 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the ThreateIntelSet. For example:
-     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     *        The updated URI of the file that contains the ThreateIntelSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

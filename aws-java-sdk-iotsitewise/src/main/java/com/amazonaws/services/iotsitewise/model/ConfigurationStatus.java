@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Contains current status information for the configuration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationStatus" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationStatus implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The current state of the configuration.
+     * </p>
+     */
     private String state;
-    /** <p/> */
+    /**
+     * <p>
+     * Contains associated error information, if any.
+     * </p>
+     */
     private ConfigurationErrorDetails error;
 
     /**
-     * <p/>
+     * <p>
+     * The current state of the configuration.
+     * </p>
      * 
      * @param state
+     *        The current state of the configuration.
      * @see ConfigurationState
      */
 
@@ -43,9 +56,11 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * The current state of the configuration.
+     * </p>
      * 
-     * @return
+     * @return The current state of the configuration.
      * @see ConfigurationState
      */
 
@@ -54,9 +69,12 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * The current state of the configuration.
+     * </p>
      * 
      * @param state
+     *        The current state of the configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationState
      */
@@ -67,9 +85,12 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * The current state of the configuration.
+     * </p>
      * 
      * @param state
+     *        The current state of the configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationState
      */
@@ -80,9 +101,12 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains associated error information, if any.
+     * </p>
      * 
      * @param error
+     *        Contains associated error information, if any.
      */
 
     public void setError(ConfigurationErrorDetails error) {
@@ -90,9 +114,11 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains associated error information, if any.
+     * </p>
      * 
-     * @return
+     * @return Contains associated error information, if any.
      */
 
     public ConfigurationErrorDetails getError() {
@@ -100,9 +126,12 @@ public class ConfigurationStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains associated error information, if any.
+     * </p>
      * 
      * @param error
+     *        Contains associated error information, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

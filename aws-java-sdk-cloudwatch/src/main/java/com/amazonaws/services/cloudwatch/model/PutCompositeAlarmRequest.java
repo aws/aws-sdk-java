@@ -38,7 +38,8 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmActions;
@@ -232,13 +233,15 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
      * @return The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *         Each action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      */
 
     public java.util.List<String> getAlarmActions() {
@@ -254,14 +257,16 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
      * @param alarmActions
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      */
 
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
@@ -279,7 +284,8 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -291,7 +297,8 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,14 +318,16 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
      * @param alarmActions
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

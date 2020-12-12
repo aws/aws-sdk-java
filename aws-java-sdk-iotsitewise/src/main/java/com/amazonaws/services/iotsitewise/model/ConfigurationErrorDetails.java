@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Contains the details of an AWS IoT SiteWise configuration error.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationErrorDetails"
  *      target="_top">AWS API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The error code.
+     * </p>
+     */
     private String code;
-    /** <p/> */
+    /**
+     * <p>
+     * The error message.
+     * </p>
+     */
     private String message;
 
     /**
-     * <p/>
+     * <p>
+     * The error code.
+     * </p>
      * 
      * @param code
+     *        The error code.
      * @see ErrorCode
      */
 
@@ -43,9 +56,11 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error code.
+     * </p>
      * 
-     * @return
+     * @return The error code.
      * @see ErrorCode
      */
 
@@ -54,9 +69,12 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error code.
+     * </p>
      * 
      * @param code
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -67,9 +85,12 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error code.
+     * </p>
      * 
      * @param code
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -80,9 +101,12 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error message.
+     * </p>
      * 
      * @param message
+     *        The error message.
      */
 
     public void setMessage(String message) {
@@ -90,9 +114,11 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error message.
+     * </p>
      * 
-     * @return
+     * @return The error message.
      */
 
     public String getMessage() {
@@ -100,9 +126,12 @@ public class ConfigurationErrorDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The error message.
+     * </p>
      * 
      * @param message
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

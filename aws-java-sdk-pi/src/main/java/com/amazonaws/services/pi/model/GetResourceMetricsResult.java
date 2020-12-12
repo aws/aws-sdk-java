@@ -45,7 +45,7 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * source.
      * </p>
      * <p>
-     * To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     * To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
      * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      * </p>
      */
@@ -174,7 +174,7 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * source.
      * </p>
      * <p>
-     * To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     * To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
      * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      * </p>
      * 
@@ -182,8 +182,8 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      *        An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
      *        this data source.</p>
      *        <p>
-     *        To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for
-     *        example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+     *        To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     *        <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      */
 
     public void setIdentifier(String identifier) {
@@ -196,15 +196,15 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * source.
      * </p>
      * <p>
-     * To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     * To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
      * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      * </p>
      * 
      * @return An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
      *         this data source.</p>
      *         <p>
-     *         To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for
-     *         example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+     *         To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     *         <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      */
 
     public String getIdentifier() {
@@ -217,7 +217,7 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * source.
      * </p>
      * <p>
-     * To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     * To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
      * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      * </p>
      * 
@@ -225,8 +225,8 @@ public class GetResourceMetricsResult extends com.amazonaws.AmazonWebServiceResu
      *        An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
      *        this data source.</p>
      *        <p>
-     *        To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value - for
-     *        example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+     *        To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example:
+     *        <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

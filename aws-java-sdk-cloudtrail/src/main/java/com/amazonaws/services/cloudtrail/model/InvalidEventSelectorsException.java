@@ -16,10 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors
- * or data resources that is not valid. The combination of event selectors and data resources is not valid. A trail can
- * have up to 5 event selectors. A trail is limited to 250 data resources. These data resources can be distributed
- * across event selectors, but the overall total cannot exceed 250.
+ * This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
+ * selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or
+ * advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses
+ * advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is
+ * allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors,
+ * but the overall total cannot exceed 250.
  * </p>
  * <p>
  * You can:
@@ -35,6 +37,11 @@ import javax.annotation.Generated;
  * Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an
  * individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of
  * data resources does not exceed 250 across all event selectors for a trail.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Specify up to 500 values for all conditions in all advanced event selectors for a trail.
  * </p>
  * </li>
  * <li>

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A single selector statement in an advanced event selector.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedFieldSelector" target="_top">AWS
  *      API Documentation</a>
@@ -25,22 +28,268 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdvancedFieldSelector implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>,
+     * <code>resources.type</code>, and <code>resources.ARN</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
+     * <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     * <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event
+     * logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld, separated by
+     * commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must
+     * be <code>Management</code> or <code>Data</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
+     * data events on more than one resource type, add another selector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     * <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the
+     * type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash is intentional;
+     * do not exclude it.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     */
     private String field;
-
+    /**
+     * <p>
+     * An operator that includes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>,
+     * <code>eventCategory</code>, and <code>resources.type</code> fields.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> equals;
-
+    /**
+     * <p>
+     * An operator that includes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> startsWith;
-
+    /**
+     * <p>
+     * An operator that includes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> endsWith;
-
+    /**
+     * <p>
+     * An operator that excludes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> notEquals;
-
+    /**
+     * <p>
+     * An operator that excludes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> notStartsWith;
-
+    /**
+     * <p>
+     * An operator that excludes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> notEndsWith;
 
     /**
+     * <p>
+     * A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>,
+     * <code>resources.type</code>, and <code>resources.ARN</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
+     * <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     * <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event
+     * logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld, separated by
+     * commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must
+     * be <code>Management</code> or <code>Data</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
+     * data events on more than one resource type, add another selector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     * <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the
+     * type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash is intentional;
+     * do not exclude it.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
      * @param field
+     *        A field in an event record on which to filter events to be logged. Supported fields include
+     *        <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events),
+     *        <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
+     *        or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code>
+     *        events.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     *        <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data
+     *        event logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld,
+     *        separated by commas.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the
+     *        value must be <code>Management</code> or <code>Data</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     *        <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector.
+     *        To log data events on more than one resource type, add another selector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     *        <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of
+     *        the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type
+     *        equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash
+     *        is intentional; do not exclude it.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3:::bucket_name/</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to
+     *        <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setField(String field) {
@@ -48,7 +297,148 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>,
+     * <code>resources.type</code>, and <code>resources.ARN</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
+     * <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     * <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event
+     * logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld, separated by
+     * commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must
+     * be <code>Management</code> or <code>Data</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
+     * data events on more than one resource type, add another selector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     * <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the
+     * type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash is intentional;
+     * do not exclude it.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
+     * @return A field in an event record on which to filter events to be logged. Supported fields include
+     *         <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events),
+     *         <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
+     *         or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code>
+     *         events.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     *         <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data
+     *         event logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld,
+     *         separated by commas.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the
+     *         value must be <code>Management</code> or <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use
+     *         the <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>
+     *         or <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per
+     *         selector. To log data events on more than one resource type, add another selector.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     *         <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
+     *         of the type you've speciﬁed in the template as the value of resources.type. For example, if
+     *         resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The
+     *         trailing slash is intentional; do not exclude it.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:partition:s3:::bucket_name/</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to
+     *         <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public String getField() {
@@ -56,7 +446,149 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>,
+     * <code>resources.type</code>, and <code>resources.ARN</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
+     * <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     * <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event
+     * logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld, separated by
+     * commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must
+     * be <code>Management</code> or <code>Data</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
+     * data events on more than one resource type, add another selector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     * <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the
+     * type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash is intentional;
+     * do not exclude it.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
      * @param field
+     *        A field in an event record on which to filter events to be logged. Supported fields include
+     *        <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events),
+     *        <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
+     *        or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code>
+     *        events.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to
+     *        <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data
+     *        event logged to CloudTrail, such as <code>PutBucket</code>. You can have multiple values for this ﬁeld,
+     *        separated by commas.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the
+     *        value must be <code>Management</code> or <code>Data</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
+     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
+     *        <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector.
+     *        To log data events on more than one resource type, add another selector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN, but if you use
+     *        <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of
+     *        the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type
+     *        equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. The trailing slash
+     *        is intentional; do not exclude it.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3:::bucket_name/</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3:::bucket_name/object_or_file_name/</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to
+     *        <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +598,15 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that includes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>,
+     * <code>eventCategory</code>, and <code>resources.type</code> fields.
+     * </p>
+     * 
+     * @return An operator that includes events that match the exact value of the event record field specified as the
+     *         value of <code>Field</code>. This is the only valid operator that you can use with the
+     *         <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.
      */
 
     public java.util.List<String> getEquals() {
@@ -77,7 +617,16 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>,
+     * <code>eventCategory</code>, and <code>resources.type</code> fields.
+     * </p>
+     * 
      * @param equals
+     *        An operator that includes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>. This is the only valid operator that you can use with the
+     *        <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.
      */
 
     public void setEquals(java.util.Collection<String> equals) {
@@ -91,12 +640,20 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that includes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>,
+     * <code>eventCategory</code>, and <code>resources.type</code> fields.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEquals(java.util.Collection)} or {@link #withEquals(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param equals
+     *        An operator that includes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>. This is the only valid operator that you can use with the
+     *        <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +668,16 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>,
+     * <code>eventCategory</code>, and <code>resources.type</code> fields.
+     * </p>
+     * 
      * @param equals
+     *        An operator that includes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>. This is the only valid operator that you can use with the
+     *        <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +687,13 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that includes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
+     * @return An operator that includes events that match the first few characters of the event record field specified
+     *         as the value of <code>Field</code>.
      */
 
     public java.util.List<String> getStartsWith() {
@@ -132,7 +704,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param startsWith
+     *        An operator that includes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      */
 
     public void setStartsWith(java.util.Collection<String> startsWith) {
@@ -146,12 +725,18 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that includes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStartsWith(java.util.Collection)} or {@link #withStartsWith(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param startsWith
+     *        An operator that includes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +751,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param startsWith
+     *        An operator that includes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,7 +768,13 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that includes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
+     * @return An operator that includes events that match the last few characters of the event record field specified
+     *         as the value of <code>Field</code>.
      */
 
     public java.util.List<String> getEndsWith() {
@@ -187,7 +785,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param endsWith
+     *        An operator that includes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      */
 
     public void setEndsWith(java.util.Collection<String> endsWith) {
@@ -201,12 +806,18 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that includes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEndsWith(java.util.Collection)} or {@link #withEndsWith(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param endsWith
+     *        An operator that includes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,7 +832,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that includes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param endsWith
+     *        An operator that includes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +849,13 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that excludes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>.
+     * </p>
+     * 
+     * @return An operator that excludes events that match the exact value of the event record field specified as the
+     *         value of <code>Field</code>.
      */
 
     public java.util.List<String> getNotEquals() {
@@ -242,7 +866,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>.
+     * </p>
+     * 
      * @param notEquals
+     *        An operator that excludes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>.
      */
 
     public void setNotEquals(java.util.Collection<String> notEquals) {
@@ -256,12 +887,18 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that excludes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNotEquals(java.util.Collection)} or {@link #withNotEquals(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param notEquals
+     *        An operator that excludes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,7 +913,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the exact value of the event record field specified as the value of
+     * <code>Field</code>.
+     * </p>
+     * 
      * @param notEquals
+     *        An operator that excludes events that match the exact value of the event record field specified as the
+     *        value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,7 +930,13 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that excludes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
+     * @return An operator that excludes events that match the first few characters of the event record field specified
+     *         as the value of <code>Field</code>.
      */
 
     public java.util.List<String> getNotStartsWith() {
@@ -297,7 +947,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param notStartsWith
+     *        An operator that excludes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      */
 
     public void setNotStartsWith(java.util.Collection<String> notStartsWith) {
@@ -311,12 +968,18 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that excludes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNotStartsWith(java.util.Collection)} or {@link #withNotStartsWith(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param notStartsWith
+     *        An operator that excludes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,7 +994,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the first few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param notStartsWith
+     *        An operator that excludes events that match the first few characters of the event record field specified
+     *        as the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,7 +1011,13 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * An operator that excludes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
+     * @return An operator that excludes events that match the last few characters of the event record field specified
+     *         as the value of <code>Field</code>.
      */
 
     public java.util.List<String> getNotEndsWith() {
@@ -352,7 +1028,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param notEndsWith
+     *        An operator that excludes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      */
 
     public void setNotEndsWith(java.util.Collection<String> notEndsWith) {
@@ -366,12 +1049,18 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An operator that excludes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNotEndsWith(java.util.Collection)} or {@link #withNotEndsWith(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param notEndsWith
+     *        An operator that excludes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,7 +1075,14 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An operator that excludes events that match the last few characters of the event record field specified as the
+     * value of <code>Field</code>.
+     * </p>
+     * 
      * @param notEndsWith
+     *        An operator that excludes events that match the last few characters of the event record field specified as
+     *        the value of <code>Field</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

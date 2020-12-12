@@ -92,8 +92,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
-     * permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to
-     * the portal. This option is only available in the China Regions.
+     * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
      * </ul>
@@ -479,8 +478,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
-     * permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to
-     * the portal. This option is only available in the China Regions.
+     * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
      * </ul>
@@ -507,8 +505,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-     *        permission to sign in to the portal. This option is only available in the China Regions.
+     *        manage user permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>
@@ -541,8 +538,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
-     * permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to
-     * the portal. This option is only available in the China Regions.
+     * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
      * </ul>
@@ -567,8 +563,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *         manage user permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-     *         permission to sign in to the portal. This option is only available in the China Regions.
+     *         manage user permissions. This option is only available in the China Regions.
      *         </p>
      *         </li>
      *         </ul>
@@ -601,8 +596,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
-     * permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to
-     * the portal. This option is only available in the China Regions.
+     * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
      * </ul>
@@ -629,8 +623,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-     *        permission to sign in to the portal. This option is only available in the China Regions.
+     *        manage user permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>
@@ -665,8 +658,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
-     * permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to
-     * the portal. This option is only available in the China Regions.
+     * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
      * </ul>
@@ -693,8 +685,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-     *        permission to sign in to the portal. This option is only available in the China Regions.
+     *        manage user permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>

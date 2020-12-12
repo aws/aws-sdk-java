@@ -39,13 +39,13 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private String clientToken;
     /**
      * <p>
-     * An enum value that specifies how frequently updated findings are exported.
+     * A value that specifies how frequently updated findings are exported.
      * </p>
      */
     private String findingPublishingFrequency;
     /**
      * <p>
-     * An object that describes which data sources will be enabled for the detector.
+     * Describes which data sources will be enabled for the detector.
      * </p>
      */
     private DataSourceConfigurations dataSources;
@@ -150,11 +150,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enum value that specifies how frequently updated findings are exported.
+     * A value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        An enum value that specifies how frequently updated findings are exported.
+     *        A value that specifies how frequently updated findings are exported.
      * @see FindingPublishingFrequency
      */
 
@@ -164,10 +164,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enum value that specifies how frequently updated findings are exported.
+     * A value that specifies how frequently updated findings are exported.
      * </p>
      * 
-     * @return An enum value that specifies how frequently updated findings are exported.
+     * @return A value that specifies how frequently updated findings are exported.
      * @see FindingPublishingFrequency
      */
 
@@ -177,11 +177,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enum value that specifies how frequently updated findings are exported.
+     * A value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        An enum value that specifies how frequently updated findings are exported.
+     *        A value that specifies how frequently updated findings are exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -193,11 +193,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enum value that specifies how frequently updated findings are exported.
+     * A value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        An enum value that specifies how frequently updated findings are exported.
+     *        A value that specifies how frequently updated findings are exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -209,11 +209,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be enabled for the detector.
+     * Describes which data sources will be enabled for the detector.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources will be enabled for the detector.
+     *        Describes which data sources will be enabled for the detector.
      */
 
     public void setDataSources(DataSourceConfigurations dataSources) {
@@ -222,10 +222,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be enabled for the detector.
+     * Describes which data sources will be enabled for the detector.
      * </p>
      * 
-     * @return An object that describes which data sources will be enabled for the detector.
+     * @return Describes which data sources will be enabled for the detector.
      */
 
     public DataSourceConfigurations getDataSources() {
@@ -234,11 +234,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that describes which data sources will be enabled for the detector.
+     * Describes which data sources will be enabled for the detector.
      * </p>
      * 
      * @param dataSources
-     *        An object that describes which data sources will be enabled for the detector.
+     *        Describes which data sources will be enabled for the detector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

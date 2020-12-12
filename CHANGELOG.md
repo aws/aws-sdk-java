@@ -1,3 +1,28 @@
+# __1.11.918__ __2020-12-11__
+## __AWS CloudTrail__
+  - ### Features
+    - CloudTrailInvalidClientTokenIdException is now thrown when a call results in the InvalidClientTokenId error code. The Name parameter of the AdvancedEventSelector data type is now optional.
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Added the ListAssetRelationships operation and support for composite asset models, which represent structured sets of properties within asset models.
+
+## __AWS Performance Insights__
+  - ### Features
+    - You can group DB load according to the dimension groups for database, application, and session type. Amazon RDS also supports the dimensions db.name, db.application.name, and db.session_type.name.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Documentation updates for GuardDuty
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+
 # __1.11.917__ __2020-12-10__
 ## __AWS Network Manager__
   - ### Features

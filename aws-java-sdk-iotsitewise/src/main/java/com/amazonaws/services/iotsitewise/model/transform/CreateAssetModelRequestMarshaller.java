@@ -39,6 +39,8 @@ public class CreateAssetModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelProperties").build();
     private static final MarshallingInfo<List> ASSETMODELHIERARCHIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelHierarchies").build();
+    private static final MarshallingInfo<List> ASSETMODELCOMPOSITEMODELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelCompositeModels").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -65,6 +67,7 @@ public class CreateAssetModelRequestMarshaller {
             protocolMarshaller.marshall(createAssetModelRequest.getAssetModelDescription(), ASSETMODELDESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAssetModelRequest.getAssetModelProperties(), ASSETMODELPROPERTIES_BINDING);
             protocolMarshaller.marshall(createAssetModelRequest.getAssetModelHierarchies(), ASSETMODELHIERARCHIES_BINDING);
+            protocolMarshaller.marshall(createAssetModelRequest.getAssetModelCompositeModels(), ASSETMODELCOMPOSITEMODELS_BINDING);
             protocolMarshaller.marshall(createAssetModelRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAssetModelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

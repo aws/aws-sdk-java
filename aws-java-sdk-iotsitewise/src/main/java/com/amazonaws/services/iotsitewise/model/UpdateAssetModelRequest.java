@@ -72,6 +72,14 @@ public class UpdateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<AssetModelHierarchy> assetModelHierarchies;
     /**
      * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelCompositeModel> assetModelCompositeModels;
+    /**
+     * <p>
      * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse
      * this client token if a new idempotent request is required.
      * </p>
@@ -452,6 +460,92 @@ public class UpdateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @return The composite asset models that are part of this asset model. Composite asset models are asset models
+     *         that contain specific properties. Each composite model has a type that defines the properties that the
+     *         composite model supports. Use composite asset models to define alarms on this asset model.
+     */
+
+    public java.util.List<AssetModelCompositeModel> getAssetModelCompositeModels() {
+        return assetModelCompositeModels;
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     */
+
+    public void setAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModel> assetModelCompositeModels) {
+        if (assetModelCompositeModels == null) {
+            this.assetModelCompositeModels = null;
+            return;
+        }
+
+        this.assetModelCompositeModels = new java.util.ArrayList<AssetModelCompositeModel>(assetModelCompositeModels);
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetModelCompositeModels(java.util.Collection)} or
+     * {@link #withAssetModelCompositeModels(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssetModelRequest withAssetModelCompositeModels(AssetModelCompositeModel... assetModelCompositeModels) {
+        if (this.assetModelCompositeModels == null) {
+            setAssetModelCompositeModels(new java.util.ArrayList<AssetModelCompositeModel>(assetModelCompositeModels.length));
+        }
+        for (AssetModelCompositeModel ele : assetModelCompositeModels) {
+            this.assetModelCompositeModels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssetModelRequest withAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModel> assetModelCompositeModels) {
+        setAssetModelCompositeModels(assetModelCompositeModels);
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse
      * this client token if a new idempotent request is required.
      * </p>
@@ -518,6 +612,8 @@ public class UpdateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("AssetModelProperties: ").append(getAssetModelProperties()).append(",");
         if (getAssetModelHierarchies() != null)
             sb.append("AssetModelHierarchies: ").append(getAssetModelHierarchies()).append(",");
+        if (getAssetModelCompositeModels() != null)
+            sb.append("AssetModelCompositeModels: ").append(getAssetModelCompositeModels()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -554,6 +650,10 @@ public class UpdateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAssetModelHierarchies() != null && other.getAssetModelHierarchies().equals(this.getAssetModelHierarchies()) == false)
             return false;
+        if (other.getAssetModelCompositeModels() == null ^ this.getAssetModelCompositeModels() == null)
+            return false;
+        if (other.getAssetModelCompositeModels() != null && other.getAssetModelCompositeModels().equals(this.getAssetModelCompositeModels()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -571,6 +671,7 @@ public class UpdateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAssetModelDescription() == null) ? 0 : getAssetModelDescription().hashCode());
         hashCode = prime * hashCode + ((getAssetModelProperties() == null) ? 0 : getAssetModelProperties().hashCode());
         hashCode = prime * hashCode + ((getAssetModelHierarchies() == null) ? 0 : getAssetModelHierarchies().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelCompositeModels() == null) ? 0 : getAssetModelCompositeModels().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

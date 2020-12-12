@@ -65,6 +65,13 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
     private String dataType;
     /**
      * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     */
+    private String dataTypeSpec;
+    /**
+     * <p>
      * The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
      * </p>
      */
@@ -321,6 +328,52 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @param dataTypeSpec
+     *        The data type of the structure for this property. This parameter exists on properties that have the
+     *        <code>STRUCT</code> data type.
+     */
+
+    public void setDataTypeSpec(String dataTypeSpec) {
+        this.dataTypeSpec = dataTypeSpec;
+    }
+
+    /**
+     * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @return The data type of the structure for this property. This parameter exists on properties that have the
+     *         <code>STRUCT</code> data type.
+     */
+
+    public String getDataTypeSpec() {
+        return this.dataTypeSpec;
+    }
+
+    /**
+     * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @param dataTypeSpec
+     *        The data type of the structure for this property. This parameter exists on properties that have the
+     *        <code>STRUCT</code> data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetProperty withDataTypeSpec(String dataTypeSpec) {
+        setDataTypeSpec(dataTypeSpec);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
      * </p>
      * 
@@ -381,6 +434,8 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
             sb.append("Notification: ").append(getNotification()).append(",");
         if (getDataType() != null)
             sb.append("DataType: ").append(getDataType()).append(",");
+        if (getDataTypeSpec() != null)
+            sb.append("DataTypeSpec: ").append(getDataTypeSpec()).append(",");
         if (getUnit() != null)
             sb.append("Unit: ").append(getUnit());
         sb.append("}");
@@ -417,6 +472,10 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
+        if (other.getDataTypeSpec() == null ^ this.getDataTypeSpec() == null)
+            return false;
+        if (other.getDataTypeSpec() != null && other.getDataTypeSpec().equals(this.getDataTypeSpec()) == false)
+            return false;
         if (other.getUnit() == null ^ this.getUnit() == null)
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
@@ -434,6 +493,7 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
         hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getDataTypeSpec() == null) ? 0 : getDataTypeSpec().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         return hashCode;
     }

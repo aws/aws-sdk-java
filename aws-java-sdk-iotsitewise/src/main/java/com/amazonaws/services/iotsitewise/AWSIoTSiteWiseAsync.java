@@ -170,9 +170,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 15
-     * minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-15, +5] minutes and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
+     * in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
+     * inclusive range of [-7 days, +5 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
      * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
@@ -223,9 +223,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 15
-     * minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-15, +5] minutes and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
+     * in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
+     * inclusive range of [-7 days, +5 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
      * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
@@ -477,41 +477,6 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<CreatePortalResult> createPortalAsync(CreatePortalRequest createPortalRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePortalRequest, CreatePortalResult> asyncHandler);
-
-    /**
-     * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @return A Java Future containing the result of the CreatePresignedPortalUrl operation returned by the service.
-     * @sample AWSIoTSiteWiseAsync.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest);
-
-    /**
-     * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreatePresignedPortalUrl operation returned by the service.
-     * @sample AWSIoTSiteWiseAsyncHandler.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest,
-            com.amazonaws.handlers.AsyncHandler<CreatePresignedPortalUrlRequest, CreatePresignedPortalUrlResult> asyncHandler);
 
     /**
      * <p>
@@ -1499,6 +1464,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest listAssetModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's
+     * root asset and all associated assets between that asset and its root.
+     * </p>
+     * 
+     * @param listAssetRelationshipsRequest
+     * @return A Java Future containing the result of the ListAssetRelationships operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest listAssetRelationshipsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's
+     * root asset and all associated assets between that asset and its root.
+     * </p>
+     * 
+     * @param listAssetRelationshipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetRelationships operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest listAssetRelationshipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetRelationshipsRequest, ListAssetRelationshipsResult> asyncHandler);
 
     /**
      * <p>

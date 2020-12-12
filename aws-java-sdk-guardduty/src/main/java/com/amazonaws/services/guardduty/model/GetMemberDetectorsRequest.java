@@ -27,7 +27,7 @@ public class GetMemberDetectorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The detector ID for the master account.
+     * The detector ID for the administrator account.
      * </p>
      */
     private String detectorId;
@@ -40,11 +40,11 @@ public class GetMemberDetectorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The detector ID for the master account.
+     * The detector ID for the administrator account.
      * </p>
      * 
      * @param detectorId
-     *        The detector ID for the master account.
+     *        The detector ID for the administrator account.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class GetMemberDetectorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The detector ID for the master account.
+     * The detector ID for the administrator account.
      * </p>
      * 
-     * @return The detector ID for the master account.
+     * @return The detector ID for the administrator account.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class GetMemberDetectorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The detector ID for the master account.
+     * The detector ID for the administrator account.
      * </p>
      * 
      * @param detectorId
-     *        The detector ID for the master account.
+     *        The detector ID for the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

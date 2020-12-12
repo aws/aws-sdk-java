@@ -61,9 +61,8 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the <a
-     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      */
     private String portalStartUrl;
@@ -344,16 +343,14 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the <a
-     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
      *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the <a
-     *        href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     *        >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
+     *        to get a URL that you can use to access the portal.
      */
 
     public void setPortalStartUrl(String portalStartUrl) {
@@ -363,15 +360,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the <a
-     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @return The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *         for authentication. For portals that use IAM for authentication, you must use the <a
-     *         href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     *         >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     *         for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise
+     *         console to get a URL that you can use to access the portal.
      */
 
     public String getPortalStartUrl() {
@@ -381,16 +376,14 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the <a
-     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
      *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the <a
-     *        href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
-     *        >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
+     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
+     *        to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

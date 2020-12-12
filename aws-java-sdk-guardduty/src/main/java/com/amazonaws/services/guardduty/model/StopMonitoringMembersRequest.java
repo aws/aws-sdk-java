@@ -27,7 +27,8 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique ID of the detector associated with the GuardDuty master account that is monitoring member accounts.
+     * The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member
+     * accounts.
      * </p>
      */
     private String detectorId;
@@ -40,12 +41,13 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique ID of the detector associated with the GuardDuty master account that is monitoring member accounts.
+     * The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member
+     * accounts.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector associated with the GuardDuty master account that is monitoring member
-     *        accounts.
+     *        The unique ID of the detector associated with the GuardDuty administrator account that is monitoring
+     *        member accounts.
      */
 
     public void setDetectorId(String detectorId) {
@@ -54,11 +56,12 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique ID of the detector associated with the GuardDuty master account that is monitoring member accounts.
+     * The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member
+     * accounts.
      * </p>
      * 
-     * @return The unique ID of the detector associated with the GuardDuty master account that is monitoring member
-     *         accounts.
+     * @return The unique ID of the detector associated with the GuardDuty administrator account that is monitoring
+     *         member accounts.
      */
 
     public String getDetectorId() {
@@ -67,12 +70,13 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique ID of the detector associated with the GuardDuty master account that is monitoring member accounts.
+     * The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member
+     * accounts.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector associated with the GuardDuty master account that is monitoring member
-     *        accounts.
+     *        The unique ID of the detector associated with the GuardDuty administrator account that is monitoring
+     *        member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,10 @@ public class DescribeAssetPropertyResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeAssetPropertyResult.setAssetProperty(PropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("compositeModel", targetDepth)) {
+                    context.nextToken();
+                    describeAssetPropertyResult.setCompositeModel(CompositeModelPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

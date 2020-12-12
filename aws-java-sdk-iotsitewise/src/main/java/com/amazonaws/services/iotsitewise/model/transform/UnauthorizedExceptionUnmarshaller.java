@@ -24,13 +24,18 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * CreatePresignedPortalUrlResult JSON Unmarshaller
+ * UnauthorizedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshaller<CreatePresignedPortalUrlResult, JsonUnmarshallerContext> {
+public class UnauthorizedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private UnauthorizedExceptionUnmarshaller() {
+        super(com.amazonaws.services.iotsitewise.model.UnauthorizedException.class, "UnauthorizedException");
+    }
 
-    public CreatePresignedPortalUrlResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        CreatePresignedPortalUrlResult createPresignedPortalUrlResult = new CreatePresignedPortalUrlResult();
+    @Override
+    public com.amazonaws.services.iotsitewise.model.UnauthorizedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.iotsitewise.model.UnauthorizedException unauthorizedException = new com.amazonaws.services.iotsitewise.model.UnauthorizedException(
+                null);
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +45,7 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return createPresignedPortalUrlResult;
+            return null;
         }
 
         while (true) {
@@ -48,10 +53,6 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("presignedPortalUrl", targetDepth)) {
-                    context.nextToken();
-                    createPresignedPortalUrlResult.setPresignedPortalUrl(context.getUnmarshaller(String.class).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
@@ -60,15 +61,14 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
             }
             token = context.nextToken();
         }
-
-        return createPresignedPortalUrlResult;
+        return unauthorizedException;
     }
 
-    private static CreatePresignedPortalUrlResultJsonUnmarshaller instance;
+    private static UnauthorizedExceptionUnmarshaller instance;
 
-    public static CreatePresignedPortalUrlResultJsonUnmarshaller getInstance() {
+    public static UnauthorizedExceptionUnmarshaller getInstance() {
         if (instance == null)
-            instance = new CreatePresignedPortalUrlResultJsonUnmarshaller();
+            instance = new UnauthorizedExceptionUnmarshaller();
         return instance;
     }
 }

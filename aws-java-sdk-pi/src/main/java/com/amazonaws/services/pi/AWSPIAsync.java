@@ -25,22 +25,38 @@ import com.amazonaws.services.pi.model.*;
  * {@link com.amazonaws.services.pi.AbstractAWSPIAsync} instead.
  * </p>
  * <p>
+ * <fullname>Amazon RDS Performance Insights</fullname>
  * <p>
- * AWS Performance Insights enables you to monitor and explore different dimensions of database load based on data
- * captured from a running RDS instance. The guide provides detailed information about Performance Insights data types,
- * parameters and errors. For more information about Performance Insights capabilities see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon RDS Performance
- * Insights </a> in the <i>Amazon RDS User Guide</i>.
+ * Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on
+ * data captured from a running DB instance. The guide provides detailed information about Performance Insights data
+ * types, parameters and errors.
  * </p>
  * <p>
- * The AWS Performance Insights API provides visibility into the performance of your RDS instance, when Performance
- * Insights is enabled for supported engine types. While Amazon CloudWatch provides the authoritative source for AWS
- * service vended monitoring metrics, AWS Performance Insights offers a domain-specific view of database load measured
- * as Average Active Sessions and provided to API consumers as a 2-dimensional time-series dataset. The time dimension
- * of the data provides DB load data for each time point in the queried time range, and each time point decomposes
- * overall load in relation to the requested dimensions, such as SQL, Wait-event, User or Host, measured at that time
- * point.
+ * When Performance Insights is enabled, the Amazon RDS Performance Insights API provides visibility into the
+ * performance of your DB instance. Amazon CloudWatch provides the authoritative source for AWS service-vended
+ * monitoring metrics. Performance Insights offers a domain-specific view of DB load.
  * </p>
+ * <p>
+ * DB load is measured as Average Active Sessions. Performance Insights provides the data to API consumers as a
+ * two-dimensional time-series dataset. The time dimension provides DB load data for each time point in the queried time
+ * range. Each time point decomposes overall load in relation to the requested dimensions, measured at that time point.
+ * Examples include SQL, Wait event, User, and Host.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * To learn more about Performance Insights and Amazon Aurora DB instances, go to the <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">Amazon Aurora User
+ * Guide</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * To learn more about Performance Insights and Amazon RDS DB instances, go to the <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Amazon RDS User Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSPIAsync extends AWSPI {
@@ -49,6 +65,12 @@ public interface AWSPIAsync extends AWSPI {
      * <p>
      * For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param describeDimensionKeysRequest
      * @return A Java Future containing the result of the DescribeDimensionKeys operation returned by the service.
@@ -62,6 +84,12 @@ public interface AWSPIAsync extends AWSPI {
      * <p>
      * For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param describeDimensionKeysRequest
      * @param asyncHandler
@@ -81,6 +109,12 @@ public interface AWSPIAsync extends AWSPI {
      * Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific
      * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param getResourceMetricsRequest
      * @return A Java Future containing the result of the GetResourceMetrics operation returned by the service.
@@ -95,6 +129,12 @@ public interface AWSPIAsync extends AWSPI {
      * Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific
      * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param getResourceMetricsRequest
      * @param asyncHandler

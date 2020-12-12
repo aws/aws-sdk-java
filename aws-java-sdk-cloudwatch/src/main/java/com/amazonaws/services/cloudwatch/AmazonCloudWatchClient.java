@@ -632,7 +632,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the specified alarms. You can filter the results by specifying a a prefix for the alarm name, the alarm
+     * Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm name, the alarm
      * state, or a prefix for any action.
      * </p>
      * 
@@ -1913,6 +1913,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
      * configuration of the alarm.
      * </p>
+     * <p>
+     * If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create a composite alarm that
+     * has Systems Manager OpsItem actions.
+     * </p>
      * 
      * @param putCompositeAlarmRequest
      * @return Result of the PutCompositeAlarm operation returned by the service.
@@ -2129,49 +2133,20 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <ul>
      * <li>
      * <p>
-     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
-     * status metrics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ec2:StopInstances</code> for alarms with stop actions
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ec2:TerminateInstances</code> for alarms with terminate actions
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * No specific permissions are needed for alarms with recover actions
+     * The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager OpsItem actions.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm,
-     * but the stop or terminate actions are not performed. However, if you are later granted the required permissions,
-     * the alarm actions that you created earlier are performed.
-     * </p>
-     * <p>
-     * If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance
-     * using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS
-     * notifications or Auto Scaling policies.
-     * </p>
-     * <p>
-     * If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2
-     * instance using alarm actions.
-     * </p>
-     * <p>
      * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
-     * CloudWatch creates the necessary service-linked role for you. The service-linked role is called
-     * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a href=
+     * CloudWatch creates the necessary service-linked rolea for you. The service-linked roles are called
+     * <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For
+     * more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >AWS service-linked role</a>.
      * </p>

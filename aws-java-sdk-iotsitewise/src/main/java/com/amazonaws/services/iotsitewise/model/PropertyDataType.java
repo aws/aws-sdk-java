@@ -23,7 +23,8 @@ public enum PropertyDataType {
     STRING("STRING"),
     INTEGER("INTEGER"),
     DOUBLE("DOUBLE"),
-    BOOLEAN("BOOLEAN");
+    BOOLEAN("BOOLEAN"),
+    STRUCT("STRUCT");
 
     private String value;
 

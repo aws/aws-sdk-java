@@ -27,7 +27,7 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The detector ID of the master account.
+     * The detector ID of the administrator account.
      * </p>
      */
     private String detectorId;
@@ -39,18 +39,18 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> accountIds;
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      */
     private DataSourceConfigurations dataSources;
 
     /**
      * <p>
-     * The detector ID of the master account.
+     * The detector ID of the administrator account.
      * </p>
      * 
      * @param detectorId
-     *        The detector ID of the master account.
+     *        The detector ID of the administrator account.
      */
 
     public void setDetectorId(String detectorId) {
@@ -59,10 +59,10 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The detector ID of the master account.
+     * The detector ID of the administrator account.
      * </p>
      * 
-     * @return The detector ID of the master account.
+     * @return The detector ID of the administrator account.
      */
 
     public String getDetectorId() {
@@ -71,11 +71,11 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The detector ID of the master account.
+     * The detector ID of the administrator account.
      * </p>
      * 
      * @param detectorId
-     *        The detector ID of the master account.
+     *        The detector ID of the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      */
 
     public void setDataSources(DataSourceConfigurations dataSources) {
@@ -169,10 +169,10 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
-     * @return An object describes which data sources will be updated.
+     * @return Describes which data sources will be updated.
      */
 
     public DataSourceConfigurations getDataSources() {
@@ -181,11 +181,11 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object describes which data sources will be updated.
+     * Describes which data sources will be updated.
      * </p>
      * 
      * @param dataSources
-     *        An object describes which data sources will be updated.
+     *        Describes which data sources will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,35 +21,35 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreatePresignedPortalUrlRequestMarshaller
+ * AssetRelationshipSummaryMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class CreatePresignedPortalUrlRequestMarshaller {
+public class AssetRelationshipSummaryMarshaller {
 
-    private static final MarshallingInfo<String> PORTALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("portalId").build();
-    private static final MarshallingInfo<Integer> SESSIONDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("sessionDurationSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> HIERARCHYINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hierarchyInfo").build();
+    private static final MarshallingInfo<String> RELATIONSHIPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationshipType").build();
 
-    private static final CreatePresignedPortalUrlRequestMarshaller instance = new CreatePresignedPortalUrlRequestMarshaller();
+    private static final AssetRelationshipSummaryMarshaller instance = new AssetRelationshipSummaryMarshaller();
 
-    public static CreatePresignedPortalUrlRequestMarshaller getInstance() {
+    public static AssetRelationshipSummaryMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(AssetRelationshipSummary assetRelationshipSummary, ProtocolMarshaller protocolMarshaller) {
 
-        if (createPresignedPortalUrlRequest == null) {
+        if (assetRelationshipSummary == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(createPresignedPortalUrlRequest.getPortalId(), PORTALID_BINDING);
-            protocolMarshaller.marshall(createPresignedPortalUrlRequest.getSessionDurationSeconds(), SESSIONDURATIONSECONDS_BINDING);
+            protocolMarshaller.marshall(assetRelationshipSummary.getHierarchyInfo(), HIERARCHYINFO_BINDING);
+            protocolMarshaller.marshall(assetRelationshipSummary.getRelationshipType(), RELATIONSHIPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

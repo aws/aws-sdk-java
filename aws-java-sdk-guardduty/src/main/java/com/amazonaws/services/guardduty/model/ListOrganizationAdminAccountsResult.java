@@ -26,7 +26,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     * A list of accounts configured as GuardDuty delegated administrators.
      * </p>
      */
     private java.util.List<AdminAccount> adminAccounts;
@@ -39,11 +39,10 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     * A list of accounts configured as GuardDuty delegated administrators.
      * </p>
      * 
-     * @return An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated
-     *         administrators.
+     * @return A list of accounts configured as GuardDuty delegated administrators.
      */
 
     public java.util.List<AdminAccount> getAdminAccounts() {
@@ -52,11 +51,11 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     * A list of accounts configured as GuardDuty delegated administrators.
      * </p>
      * 
      * @param adminAccounts
-     *        An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     *        A list of accounts configured as GuardDuty delegated administrators.
      */
 
     public void setAdminAccounts(java.util.Collection<AdminAccount> adminAccounts) {
@@ -70,7 +69,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     * A list of accounts configured as GuardDuty delegated administrators.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +78,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param adminAccounts
-     *        An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     *        A list of accounts configured as GuardDuty delegated administrators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +94,11 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     * A list of accounts configured as GuardDuty delegated administrators.
      * </p>
      * 
      * @param adminAccounts
-     *        An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated administrators.
+     *        A list of accounts configured as GuardDuty delegated administrators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

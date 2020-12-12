@@ -35,7 +35,11 @@ public class GetEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EventSelector> eventSelectors;
-
+    /**
+     * <p>
+     * The advanced event selectors that are configured for the trail.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
 
     /**
@@ -152,7 +156,11 @@ public class GetEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @return
+     * <p>
+     * The advanced event selectors that are configured for the trail.
+     * </p>
+     * 
+     * @return The advanced event selectors that are configured for the trail.
      */
 
     public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
@@ -163,7 +171,12 @@ public class GetEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The advanced event selectors that are configured for the trail.
+     * </p>
+     * 
      * @param advancedEventSelectors
+     *        The advanced event selectors that are configured for the trail.
      */
 
     public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
@@ -177,12 +190,16 @@ public class GetEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The advanced event selectors that are configured for the trail.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdvancedEventSelectors(java.util.Collection)} or
      * {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param advancedEventSelectors
+     *        The advanced event selectors that are configured for the trail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +214,12 @@ public class GetEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The advanced event selectors that are configured for the trail.
+     * </p>
+     * 
      * @param advancedEventSelectors
+     *        The advanced event selectors that are configured for the trail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

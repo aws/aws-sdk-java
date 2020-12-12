@@ -26,34 +26,34 @@ import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreatePresignedPortalUrlRequest Marshaller
+ * ListAssetRelationshipsRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class CreatePresignedPortalUrlRequestProtocolMarshaller implements Marshaller<Request<CreatePresignedPortalUrlRequest>, CreatePresignedPortalUrlRequest> {
+public class ListAssetRelationshipsRequestProtocolMarshaller implements Marshaller<Request<ListAssetRelationshipsRequest>, ListAssetRelationshipsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/portals/{portalId}/presigned-url").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/assets/{assetId}/assetRelationships").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSIoTSiteWise").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public CreatePresignedPortalUrlRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public ListAssetRelationshipsRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreatePresignedPortalUrlRequest> marshall(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest) {
+    public Request<ListAssetRelationshipsRequest> marshall(ListAssetRelationshipsRequest listAssetRelationshipsRequest) {
 
-        if (createPresignedPortalUrlRequest == null) {
+        if (listAssetRelationshipsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<CreatePresignedPortalUrlRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(
-                    SDK_OPERATION_BINDING, createPresignedPortalUrlRequest);
+            final ProtocolRequestMarshaller<ListAssetRelationshipsRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    listAssetRelationshipsRequest);
 
             protocolMarshaller.startMarshalling();
-            CreatePresignedPortalUrlRequestMarshaller.getInstance().marshall(createPresignedPortalUrlRequest, protocolMarshaller);
+            ListAssetRelationshipsRequestMarshaller.getInstance().marshall(listAssetRelationshipsRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -55,6 +55,10 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The list of asset properties for the asset model.
      * </p>
+     * <p>
+     * This object doesn't include properties that you define in composite models. You can find composite model
+     * properties in the <code>assetModelCompositeModels</code> object.
+     * </p>
      */
     private java.util.List<AssetModelProperty> assetModelProperties;
     /**
@@ -65,6 +69,12 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<AssetModelHierarchy> assetModelHierarchies;
+    /**
+     * <p>
+     * The list of composite asset models for the asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelCompositeModel> assetModelCompositeModels;
     /**
      * <p>
      * The date the asset model was created, in Unix epoch time.
@@ -269,8 +279,15 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The list of asset properties for the asset model.
      * </p>
+     * <p>
+     * This object doesn't include properties that you define in composite models. You can find composite model
+     * properties in the <code>assetModelCompositeModels</code> object.
+     * </p>
      * 
-     * @return The list of asset properties for the asset model.
+     * @return The list of asset properties for the asset model.</p>
+     *         <p>
+     *         This object doesn't include properties that you define in composite models. You can find composite model
+     *         properties in the <code>assetModelCompositeModels</code> object.
      */
 
     public java.util.List<AssetModelProperty> getAssetModelProperties() {
@@ -281,9 +298,16 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The list of asset properties for the asset model.
      * </p>
+     * <p>
+     * This object doesn't include properties that you define in composite models. You can find composite model
+     * properties in the <code>assetModelCompositeModels</code> object.
+     * </p>
      * 
      * @param assetModelProperties
-     *        The list of asset properties for the asset model.
+     *        The list of asset properties for the asset model.</p>
+     *        <p>
+     *        This object doesn't include properties that you define in composite models. You can find composite model
+     *        properties in the <code>assetModelCompositeModels</code> object.
      */
 
     public void setAssetModelProperties(java.util.Collection<AssetModelProperty> assetModelProperties) {
@@ -300,13 +324,20 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * The list of asset properties for the asset model.
      * </p>
      * <p>
+     * This object doesn't include properties that you define in composite models. You can find composite model
+     * properties in the <code>assetModelCompositeModels</code> object.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssetModelProperties(java.util.Collection)} or {@link #withAssetModelProperties(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param assetModelProperties
-     *        The list of asset properties for the asset model.
+     *        The list of asset properties for the asset model.</p>
+     *        <p>
+     *        This object doesn't include properties that you define in composite models. You can find composite model
+     *        properties in the <code>assetModelCompositeModels</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,9 +355,16 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The list of asset properties for the asset model.
      * </p>
+     * <p>
+     * This object doesn't include properties that you define in composite models. You can find composite model
+     * properties in the <code>assetModelCompositeModels</code> object.
+     * </p>
      * 
      * @param assetModelProperties
-     *        The list of asset properties for the asset model.
+     *        The list of asset properties for the asset model.</p>
+     *        <p>
+     *        This object doesn't include properties that you define in composite models. You can find composite model
+     *        properties in the <code>assetModelCompositeModels</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,6 +456,76 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     public DescribeAssetModelResult withAssetModelHierarchies(java.util.Collection<AssetModelHierarchy> assetModelHierarchies) {
         setAssetModelHierarchies(assetModelHierarchies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of composite asset models for the asset model.
+     * </p>
+     * 
+     * @return The list of composite asset models for the asset model.
+     */
+
+    public java.util.List<AssetModelCompositeModel> getAssetModelCompositeModels() {
+        return assetModelCompositeModels;
+    }
+
+    /**
+     * <p>
+     * The list of composite asset models for the asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The list of composite asset models for the asset model.
+     */
+
+    public void setAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModel> assetModelCompositeModels) {
+        if (assetModelCompositeModels == null) {
+            this.assetModelCompositeModels = null;
+            return;
+        }
+
+        this.assetModelCompositeModels = new java.util.ArrayList<AssetModelCompositeModel>(assetModelCompositeModels);
+    }
+
+    /**
+     * <p>
+     * The list of composite asset models for the asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetModelCompositeModels(java.util.Collection)} or
+     * {@link #withAssetModelCompositeModels(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The list of composite asset models for the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelResult withAssetModelCompositeModels(AssetModelCompositeModel... assetModelCompositeModels) {
+        if (this.assetModelCompositeModels == null) {
+            setAssetModelCompositeModels(new java.util.ArrayList<AssetModelCompositeModel>(assetModelCompositeModels.length));
+        }
+        for (AssetModelCompositeModel ele : assetModelCompositeModels) {
+            this.assetModelCompositeModels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of composite asset models for the asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The list of composite asset models for the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelResult withAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModel> assetModelCompositeModels) {
+        setAssetModelCompositeModels(assetModelCompositeModels);
         return this;
     }
 
@@ -565,6 +673,8 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("AssetModelProperties: ").append(getAssetModelProperties()).append(",");
         if (getAssetModelHierarchies() != null)
             sb.append("AssetModelHierarchies: ").append(getAssetModelHierarchies()).append(",");
+        if (getAssetModelCompositeModels() != null)
+            sb.append("AssetModelCompositeModels: ").append(getAssetModelCompositeModels()).append(",");
         if (getAssetModelCreationDate() != null)
             sb.append("AssetModelCreationDate: ").append(getAssetModelCreationDate()).append(",");
         if (getAssetModelLastUpdateDate() != null)
@@ -609,6 +719,10 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getAssetModelHierarchies() != null && other.getAssetModelHierarchies().equals(this.getAssetModelHierarchies()) == false)
             return false;
+        if (other.getAssetModelCompositeModels() == null ^ this.getAssetModelCompositeModels() == null)
+            return false;
+        if (other.getAssetModelCompositeModels() != null && other.getAssetModelCompositeModels().equals(this.getAssetModelCompositeModels()) == false)
+            return false;
         if (other.getAssetModelCreationDate() == null ^ this.getAssetModelCreationDate() == null)
             return false;
         if (other.getAssetModelCreationDate() != null && other.getAssetModelCreationDate().equals(this.getAssetModelCreationDate()) == false)
@@ -635,6 +749,7 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getAssetModelDescription() == null) ? 0 : getAssetModelDescription().hashCode());
         hashCode = prime * hashCode + ((getAssetModelProperties() == null) ? 0 : getAssetModelProperties().hashCode());
         hashCode = prime * hashCode + ((getAssetModelHierarchies() == null) ? 0 : getAssetModelHierarchies().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelCompositeModels() == null) ? 0 : getAssetModelCompositeModels().hashCode());
         hashCode = prime * hashCode + ((getAssetModelCreationDate() == null) ? 0 : getAssetModelCreationDate().hashCode());
         hashCode = prime * hashCode + ((getAssetModelLastUpdateDate() == null) ? 0 : getAssetModelLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getAssetModelStatus() == null) ? 0 : getAssetModelStatus().hashCode());

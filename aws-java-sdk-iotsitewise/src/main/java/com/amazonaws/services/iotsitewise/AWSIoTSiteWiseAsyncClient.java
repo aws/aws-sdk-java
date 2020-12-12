@@ -413,39 +413,6 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
-    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest request) {
-
-        return createPresignedPortalUrlAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(final CreatePresignedPortalUrlRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreatePresignedPortalUrlRequest, CreatePresignedPortalUrlResult> asyncHandler) {
-        final CreatePresignedPortalUrlRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<CreatePresignedPortalUrlResult>() {
-            @Override
-            public CreatePresignedPortalUrlResult call() throws Exception {
-                CreatePresignedPortalUrlResult result = null;
-
-                try {
-                    result = executeCreatePresignedPortalUrl(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);
@@ -1259,6 +1226,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListAssetModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest request) {
+
+        return listAssetRelationshipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(final ListAssetRelationshipsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssetRelationshipsRequest, ListAssetRelationshipsResult> asyncHandler) {
+        final ListAssetRelationshipsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssetRelationshipsResult>() {
+            @Override
+            public ListAssetRelationshipsResult call() throws Exception {
+                ListAssetRelationshipsResult result = null;
+
+                try {
+                    result = executeListAssetRelationships(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
