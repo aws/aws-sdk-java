@@ -23,7 +23,8 @@ public enum TopicRuleDestinationStatus {
     ENABLED("ENABLED"),
     IN_PROGRESS("IN_PROGRESS"),
     DISABLED("DISABLED"),
-    ERROR("ERROR");
+    ERROR("ERROR"),
+    DELETING("DELETING");
 
     private String value;
 

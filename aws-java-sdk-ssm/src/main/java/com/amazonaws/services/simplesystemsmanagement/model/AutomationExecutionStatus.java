@@ -27,7 +27,17 @@ public enum AutomationExecutionStatus {
     TimedOut("TimedOut"),
     Cancelling("Cancelling"),
     Cancelled("Cancelled"),
-    Failed("Failed");
+    Failed("Failed"),
+    PendingApproval("PendingApproval"),
+    Approved("Approved"),
+    Rejected("Rejected"),
+    Scheduled("Scheduled"),
+    RunbookInProgress("RunbookInProgress"),
+    PendingChangeCalendarOverride("PendingChangeCalendarOverride"),
+    ChangeCalendarOverrideApproved("ChangeCalendarOverrideApproved"),
+    ChangeCalendarOverrideRejected("ChangeCalendarOverrideRejected"),
+    CompletedWithSuccess("CompletedWithSuccess"),
+    CompletedWithFailure("CompletedWithFailure");
 
     private String value;
 

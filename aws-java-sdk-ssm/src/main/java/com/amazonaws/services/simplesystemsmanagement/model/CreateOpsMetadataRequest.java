@@ -27,24 +27,24 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A resource ID for a new AppManager application.
+     * A resource ID for a new Application Manager application.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Metadata for a new AppManager application.
+     * Metadata for a new Application Manager application.
      * </p>
      */
     private java.util.Map<String, MetadataValue> metadata;
 
     /**
      * <p>
-     * A resource ID for a new AppManager application.
+     * A resource ID for a new Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        A resource ID for a new AppManager application.
+     *        A resource ID for a new Application Manager application.
      */
 
     public void setResourceId(String resourceId) {
@@ -53,10 +53,10 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A resource ID for a new AppManager application.
+     * A resource ID for a new Application Manager application.
      * </p>
      * 
-     * @return A resource ID for a new AppManager application.
+     * @return A resource ID for a new Application Manager application.
      */
 
     public String getResourceId() {
@@ -65,11 +65,11 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A resource ID for a new AppManager application.
+     * A resource ID for a new Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        A resource ID for a new AppManager application.
+     *        A resource ID for a new Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Metadata for a new AppManager application.
+     * Metadata for a new Application Manager application.
      * </p>
      * 
-     * @return Metadata for a new AppManager application.
+     * @return Metadata for a new Application Manager application.
      */
 
     public java.util.Map<String, MetadataValue> getMetadata() {
@@ -92,11 +92,11 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Metadata for a new AppManager application.
+     * Metadata for a new Application Manager application.
      * </p>
      * 
      * @param metadata
-     *        Metadata for a new AppManager application.
+     *        Metadata for a new Application Manager application.
      */
 
     public void setMetadata(java.util.Map<String, MetadataValue> metadata) {
@@ -105,11 +105,11 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Metadata for a new AppManager application.
+     * Metadata for a new Application Manager application.
      * </p>
      * 
      * @param metadata
-     *        Metadata for a new AppManager application.
+     *        Metadata for a new Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

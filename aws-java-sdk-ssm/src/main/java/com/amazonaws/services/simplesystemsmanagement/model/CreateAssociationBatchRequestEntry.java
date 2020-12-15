@@ -165,6 +165,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
+    /**
+     * <p>
+     * Use this action to create an association in multiple Regions and multiple accounts.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
 
     /**
      * <p>
@@ -1173,6 +1179,79 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Use this action to create an association in multiple Regions and multiple accounts.
+     * </p>
+     * 
+     * @return Use this action to create an association in multiple Regions and multiple accounts.
+     */
+
+    public java.util.List<TargetLocation> getTargetLocations() {
+        if (targetLocations == null) {
+            targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>();
+        }
+        return targetLocations;
+    }
+
+    /**
+     * <p>
+     * Use this action to create an association in multiple Regions and multiple accounts.
+     * </p>
+     * 
+     * @param targetLocations
+     *        Use this action to create an association in multiple Regions and multiple accounts.
+     */
+
+    public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        if (targetLocations == null) {
+            this.targetLocations = null;
+            return;
+        }
+
+        this.targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations);
+    }
+
+    /**
+     * <p>
+     * Use this action to create an association in multiple Regions and multiple accounts.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetLocations(java.util.Collection)} or {@link #withTargetLocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetLocations
+     *        Use this action to create an association in multiple Regions and multiple accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withTargetLocations(TargetLocation... targetLocations) {
+        if (this.targetLocations == null) {
+            setTargetLocations(new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations.length));
+        }
+        for (TargetLocation ele : targetLocations) {
+            this.targetLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this action to create an association in multiple Regions and multiple accounts.
+     * </p>
+     * 
+     * @param targetLocations
+     *        Use this action to create an association in multiple Regions and multiple accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        setTargetLocations(targetLocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1211,7 +1290,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         if (getSyncCompliance() != null)
             sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
         if (getApplyOnlyAtCronInterval() != null)
-            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval());
+            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval()).append(",");
+        if (getTargetLocations() != null)
+            sb.append("TargetLocations: ").append(getTargetLocations());
         sb.append("}");
         return sb.toString();
     }
@@ -1283,6 +1364,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             return false;
         if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
             return false;
+        if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
+            return false;
+        if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
+            return false;
         return true;
     }
 
@@ -1305,6 +1390,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         return hashCode;
     }
 

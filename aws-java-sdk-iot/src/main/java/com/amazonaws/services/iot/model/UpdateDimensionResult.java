@@ -26,7 +26,7 @@ public class UpdateDimensionResult extends com.amazonaws.AmazonWebServiceResult<
     private String name;
     /**
      * <p>
-     * The ARN (Amazon resource name) of the created dimension.
+     * The Amazon Resource Name (ARN)of the created dimension.
      * </p>
      */
     private String arn;
@@ -98,11 +98,11 @@ public class UpdateDimensionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN (Amazon resource name) of the created dimension.
+     * The Amazon Resource Name (ARN)of the created dimension.
      * </p>
      * 
      * @param arn
-     *        The ARN (Amazon resource name) of the created dimension.
+     *        The Amazon Resource Name (ARN)of the created dimension.
      */
 
     public void setArn(String arn) {
@@ -111,10 +111,10 @@ public class UpdateDimensionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN (Amazon resource name) of the created dimension.
+     * The Amazon Resource Name (ARN)of the created dimension.
      * </p>
      * 
-     * @return The ARN (Amazon resource name) of the created dimension.
+     * @return The Amazon Resource Name (ARN)of the created dimension.
      */
 
     public String getArn() {
@@ -123,11 +123,11 @@ public class UpdateDimensionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN (Amazon resource name) of the created dimension.
+     * The Amazon Resource Name (ARN)of the created dimension.
      * </p>
      * 
      * @param arn
-     *        The ARN (Amazon resource name) of the created dimension.
+     *        The Amazon Resource Name (ARN)of the created dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

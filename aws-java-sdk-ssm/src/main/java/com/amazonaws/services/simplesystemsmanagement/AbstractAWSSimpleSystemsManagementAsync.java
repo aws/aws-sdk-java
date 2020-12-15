@@ -1223,6 +1223,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(ListDocumentMetadataHistoryRequest request) {
+
+        return listDocumentMetadataHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(ListDocumentMetadataHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDocumentMetadataHistoryRequest, ListDocumentMetadataHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest request) {
 
         return listDocumentVersionsAsync(request, null);
@@ -1280,6 +1293,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest request) {
+
+        return listOpsItemEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1540,6 +1566,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(StartChangeRequestExecutionRequest request) {
+
+        return startChangeRequestExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(StartChangeRequestExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartChangeRequestExecutionRequest, StartChangeRequestExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest request) {
 
         return startSessionAsync(request, null);
@@ -1626,6 +1665,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest request) {
+
+        return updateDocumentMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDocumentMetadataRequest, UpdateDocumentMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

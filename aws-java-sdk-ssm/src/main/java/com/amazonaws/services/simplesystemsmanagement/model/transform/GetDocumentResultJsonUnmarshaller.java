@@ -92,6 +92,10 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ReviewStatus", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

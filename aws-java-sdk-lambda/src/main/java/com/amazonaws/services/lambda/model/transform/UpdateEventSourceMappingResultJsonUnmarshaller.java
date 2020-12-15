@@ -119,6 +119,10 @@ public class UpdateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SelfManagedEventSource", targetDepth)) {
+                    context.nextToken();
+                    updateEventSourceMappingResult.setSelfManagedEventSource(SelfManagedEventSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
                     context.nextToken();
                     updateEventSourceMappingResult.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -130,6 +134,16 @@ public class UpdateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
                     context.nextToken();
                     updateEventSourceMappingResult.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TumblingWindowInSeconds", targetDepth)) {
+                    context.nextToken();
+                    updateEventSourceMappingResult.setTumblingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FunctionResponseTypes", targetDepth)) {
+                    context.nextToken();
+                    updateEventSourceMappingResult.setFunctionResponseTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

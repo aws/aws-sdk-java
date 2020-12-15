@@ -20,22 +20,23 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
-     * each audit is determined by the system.
+     * How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     * <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * </p>
      */
     private String frequency;
     /**
      * <p>
-     * The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days 29-31
-     * are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+     * The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     * <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does
+     * not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      * </p>
      */
     private String dayOfMonth;
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
-     * "SAT".
+     * The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>,
+     * <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.
      * </p>
      */
     private String dayOfWeek;
@@ -62,13 +63,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
-     * each audit is determined by the system.
+     * How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     * <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
-     *        time of each audit is determined by the system.
+     *        How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     *        <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -78,12 +79,12 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
-     * each audit is determined by the system.
+     * How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     * <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * </p>
      * 
-     * @return How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
-     *         time of each audit is determined by the system.
+     * @return How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     *         <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -93,13 +94,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
-     * each audit is determined by the system.
+     * How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     * <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
-     *        time of each audit is determined by the system.
+     *        How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     *        <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -111,13 +112,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
-     * each audit is determined by the system.
+     * How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     * <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
-     *        time of each audit is determined by the system.
+     *        How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+     *        <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -129,14 +130,15 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days 29-31
-     * are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+     * The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     * <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does
+     * not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      * </p>
      * 
      * @param dayOfMonth
-     *        The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days
-     *        29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day
-     *        of the month.
+     *        The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     *        <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month
+     *        does not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      */
 
     public void setDayOfMonth(String dayOfMonth) {
@@ -145,13 +147,14 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days 29-31
-     * are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+     * The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     * <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does
+     * not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      * </p>
      * 
-     * @return The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If
-     *         days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST"
-     *         day of the month.
+     * @return The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     *         <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the
+     *         month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      */
 
     public String getDayOfMonth() {
@@ -160,14 +163,15 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days 29-31
-     * are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+     * The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     * <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does
+     * not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      * </p>
      * 
      * @param dayOfMonth
-     *        The day of the month on which the scheduled audit takes place. Will be "1" through "31" or "LAST". If days
-     *        29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day
-     *        of the month.
+     *        The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through
+     *        <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month
+     *        does not have that many days, the audit takes place on the <code>LAST</code> day of the month.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,13 +182,14 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
-     * "SAT".
+     * The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>,
+     * <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.
      * </p>
      * 
      * @param dayOfWeek
-     *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI", or "SAT".
+     *        The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>,
+     *        <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or
+     *        <code>SAT</code>.
      * @see DayOfWeek
      */
 
@@ -194,12 +199,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
-     * "SAT".
+     * The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>,
+     * <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.
      * </p>
      * 
-     * @return The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *         "FRI", or "SAT".
+     * @return The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>,
+     *         <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or
+     *         <code>SAT</code>.
      * @see DayOfWeek
      */
 
@@ -209,13 +215,14 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
-     * "SAT".
+     * The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>,
+     * <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.
      * </p>
      * 
      * @param dayOfWeek
-     *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI", or "SAT".
+     *        The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>,
+     *        <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or
+     *        <code>SAT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */
@@ -227,13 +234,14 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
-     * "SAT".
+     * The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>,
+     * <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.
      * </p>
      * 
      * @param dayOfWeek
-     *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI", or "SAT".
+     *        The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>,
+     *        <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or
+     *        <code>SAT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */

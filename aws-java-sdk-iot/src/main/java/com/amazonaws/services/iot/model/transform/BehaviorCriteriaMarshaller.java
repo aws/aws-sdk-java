@@ -39,6 +39,8 @@ public class BehaviorCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("consecutiveDatapointsToClear").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICALTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statisticalThreshold").build();
+    private static final MarshallingInfo<StructuredPojo> MLDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mlDetectionConfig").build();
 
     private static final BehaviorCriteriaMarshaller instance = new BehaviorCriteriaMarshaller();
 
@@ -62,6 +64,7 @@ public class BehaviorCriteriaMarshaller {
             protocolMarshaller.marshall(behaviorCriteria.getConsecutiveDatapointsToAlarm(), CONSECUTIVEDATAPOINTSTOALARM_BINDING);
             protocolMarshaller.marshall(behaviorCriteria.getConsecutiveDatapointsToClear(), CONSECUTIVEDATAPOINTSTOCLEAR_BINDING);
             protocolMarshaller.marshall(behaviorCriteria.getStatisticalThreshold(), STATISTICALTHRESHOLD_BINDING);
+            protocolMarshaller.marshall(behaviorCriteria.getMlDetectionConfig(), MLDETECTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

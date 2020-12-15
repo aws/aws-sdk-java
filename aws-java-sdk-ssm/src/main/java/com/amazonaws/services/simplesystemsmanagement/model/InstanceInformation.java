@@ -47,7 +47,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     private String pingStatus;
     /**
      * <p>
-     * The date and time when agent last pinged Systems Manager service.
+     * The date and time when the agent last pinged the Systems Manager service.
      * </p>
      */
     private java.util.Date lastPingDateTime;
@@ -323,11 +323,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date and time when agent last pinged Systems Manager service.
+     * The date and time when the agent last pinged the Systems Manager service.
      * </p>
      * 
      * @param lastPingDateTime
-     *        The date and time when agent last pinged Systems Manager service.
+     *        The date and time when the agent last pinged the Systems Manager service.
      */
 
     public void setLastPingDateTime(java.util.Date lastPingDateTime) {
@@ -336,10 +336,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date and time when agent last pinged Systems Manager service.
+     * The date and time when the agent last pinged the Systems Manager service.
      * </p>
      * 
-     * @return The date and time when agent last pinged Systems Manager service.
+     * @return The date and time when the agent last pinged the Systems Manager service.
      */
 
     public java.util.Date getLastPingDateTime() {
@@ -348,11 +348,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date and time when agent last pinged Systems Manager service.
+     * The date and time when the agent last pinged the Systems Manager service.
      * </p>
      * 
      * @param lastPingDateTime
-     *        The date and time when agent last pinged Systems Manager service.
+     *        The date and time when the agent last pinged the Systems Manager service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

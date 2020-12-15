@@ -28,8 +28,31 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code> or <code>statisticalThreshold</code>).
+     * <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     * <code>greater-than-equals</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String comparisonOperator;
     /**
@@ -40,11 +63,11 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     private MetricValue value;
     /**
      * <p>
-     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
      * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
      * percentiles, and later, measurements from an individual device are also accumulated over this time duration
-     * before being given a percentile rank.
+     * before being given a percentile rank. Cannot be used with list-based metric datatypes.
      * </p>
      */
     private Integer durationSeconds;
@@ -64,21 +87,72 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     private Integer consecutiveDatapointsToClear;
     /**
      * <p>
-     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in
      * compliance or in violation of the behavior.
      * </p>
      */
     private StatisticalThreshold statisticalThreshold;
+    /**
+     * <p>
+     * The configuration of an ML Detect
+     * </p>
+     */
+    private MachineLearningDetectionConfig mlDetectionConfig;
 
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code> or <code>statisticalThreshold</code>).
+     * <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     * <code>greater-than-equals</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code> or <code>statisticalThreshold</code>).
+     *        <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     *        <code>greater-than-equals</code>
+     *        </p>
+     *        </li>
      * @see ComparisonOperator
      */
 
@@ -89,11 +163,56 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code> or <code>statisticalThreshold</code>).
+     * <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     * <code>greater-than-equals</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *         <code>value</code> or <code>statisticalThreshold</code>).
+     *         <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>,
+     *         and <code>greater-than-equals</code>
+     *         </p>
+     *         </li>
      * @see ComparisonOperator
      */
 
@@ -104,12 +223,57 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code> or <code>statisticalThreshold</code>).
+     * <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     * <code>greater-than-equals</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code> or <code>statisticalThreshold</code>).
+     *        <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     *        <code>greater-than-equals</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -122,12 +286,57 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code> or <code>statisticalThreshold</code>).
+     * <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     * <code>greater-than-equals</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code> or <code>statisticalThreshold</code>).
+     *        <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and
+     *        <code>greater-than-equals</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -179,19 +388,19 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
      * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
      * percentiles, and later, measurements from an individual device are also accumulated over this time duration
-     * before being given a percentile rank.
+     * before being given a percentile rank. Cannot be used with list-based metric datatypes.
      * </p>
      * 
      * @param durationSeconds
-     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
-     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
+     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a
+     *        time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
      *        metric comparison, measurements from all devices are accumulated over this time duration before being used
      *        to calculate percentiles, and later, measurements from an individual device are also accumulated over this
-     *        time duration before being given a percentile rank.
+     *        time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -200,18 +409,19 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
      * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
      * percentiles, and later, measurements from an individual device are also accumulated over this time duration
-     * before being given a percentile rank.
+     * before being given a percentile rank. Cannot be used with list-based metric datatypes.
      * </p>
      * 
-     * @return Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
+     * @return Use this to specify the time duration over which the behavior is evaluated, for those criteria that have
      *         a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
      *         metric comparison, measurements from all devices are accumulated over this time duration before being
      *         used to calculate percentiles, and later, measurements from an individual device are also accumulated
-     *         over this time duration before being given a percentile rank.
+     *         over this time duration before being given a percentile rank. Cannot be used with list-based metric
+     *         datatypes.
      */
 
     public Integer getDurationSeconds() {
@@ -220,19 +430,19 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
      * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
      * percentiles, and later, measurements from an individual device are also accumulated over this time duration
-     * before being given a percentile rank.
+     * before being given a percentile rank. Cannot be used with list-based metric datatypes.
      * </p>
      * 
      * @param durationSeconds
-     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
-     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
+     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a
+     *        time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
      *        metric comparison, measurements from all devices are accumulated over this time duration before being used
      *        to calculate percentiles, and later, measurements from an individual device are also accumulated over this
-     *        time duration before being given a percentile rank.
+     *        time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +545,13 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in
      * compliance or in violation of the behavior.
      * </p>
      * 
      * @param statisticalThreshold
-     *        A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
-     *        be in compliance or in violation of the behavior.
+     *        A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be
+     *        in compliance or in violation of the behavior.
      */
 
     public void setStatisticalThreshold(StatisticalThreshold statisticalThreshold) {
@@ -350,11 +560,11 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in
      * compliance or in violation of the behavior.
      * </p>
      * 
-     * @return A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
+     * @return A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to
      *         be in compliance or in violation of the behavior.
      */
 
@@ -364,18 +574,58 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in
      * compliance or in violation of the behavior.
      * </p>
      * 
      * @param statisticalThreshold
-     *        A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
-     *        be in compliance or in violation of the behavior.
+     *        A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be
+     *        in compliance or in violation of the behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BehaviorCriteria withStatisticalThreshold(StatisticalThreshold statisticalThreshold) {
         setStatisticalThreshold(statisticalThreshold);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of an ML Detect
+     * </p>
+     * 
+     * @param mlDetectionConfig
+     *        The configuration of an ML Detect
+     */
+
+    public void setMlDetectionConfig(MachineLearningDetectionConfig mlDetectionConfig) {
+        this.mlDetectionConfig = mlDetectionConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an ML Detect
+     * </p>
+     * 
+     * @return The configuration of an ML Detect
+     */
+
+    public MachineLearningDetectionConfig getMlDetectionConfig() {
+        return this.mlDetectionConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an ML Detect
+     * </p>
+     * 
+     * @param mlDetectionConfig
+     *        The configuration of an ML Detect
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BehaviorCriteria withMlDetectionConfig(MachineLearningDetectionConfig mlDetectionConfig) {
+        setMlDetectionConfig(mlDetectionConfig);
         return this;
     }
 
@@ -402,7 +652,9 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
         if (getConsecutiveDatapointsToClear() != null)
             sb.append("ConsecutiveDatapointsToClear: ").append(getConsecutiveDatapointsToClear()).append(",");
         if (getStatisticalThreshold() != null)
-            sb.append("StatisticalThreshold: ").append(getStatisticalThreshold());
+            sb.append("StatisticalThreshold: ").append(getStatisticalThreshold()).append(",");
+        if (getMlDetectionConfig() != null)
+            sb.append("MlDetectionConfig: ").append(getMlDetectionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -441,6 +693,10 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatisticalThreshold() != null && other.getStatisticalThreshold().equals(this.getStatisticalThreshold()) == false)
             return false;
+        if (other.getMlDetectionConfig() == null ^ this.getMlDetectionConfig() == null)
+            return false;
+        if (other.getMlDetectionConfig() != null && other.getMlDetectionConfig().equals(this.getMlDetectionConfig()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +711,7 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getConsecutiveDatapointsToAlarm() == null) ? 0 : getConsecutiveDatapointsToAlarm().hashCode());
         hashCode = prime * hashCode + ((getConsecutiveDatapointsToClear() == null) ? 0 : getConsecutiveDatapointsToClear().hashCode());
         hashCode = prime * hashCode + ((getStatisticalThreshold() == null) ? 0 : getStatisticalThreshold().hashCode());
+        hashCode = prime * hashCode + ((getMlDetectionConfig() == null) ? 0 : getMlDetectionConfig().hashCode());
         return hashCode;
     }
 

@@ -79,6 +79,18 @@ public class AutomationExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
     private static final MarshallingInfo<StructuredPojo> PROGRESSCOUNTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgressCounters").build();
+    private static final MarshallingInfo<String> AUTOMATIONSUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationSubtype").build();
+    private static final MarshallingInfo<java.util.Date> SCHEDULEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduledTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> RUNBOOKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Runbooks").build();
+    private static final MarshallingInfo<String> OPSITEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OpsItemId").build();
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationId").build();
+    private static final MarshallingInfo<String> CHANGEREQUESTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeRequestName").build();
 
     private static final AutomationExecutionMarshaller instance = new AutomationExecutionMarshaller();
 
@@ -121,6 +133,12 @@ public class AutomationExecutionMarshaller {
             protocolMarshaller.marshall(automationExecution.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(automationExecution.getTargetLocations(), TARGETLOCATIONS_BINDING);
             protocolMarshaller.marshall(automationExecution.getProgressCounters(), PROGRESSCOUNTERS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getAutomationSubtype(), AUTOMATIONSUBTYPE_BINDING);
+            protocolMarshaller.marshall(automationExecution.getScheduledTime(), SCHEDULEDTIME_BINDING);
+            protocolMarshaller.marshall(automationExecution.getRunbooks(), RUNBOOKS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getOpsItemId(), OPSITEMID_BINDING);
+            protocolMarshaller.marshall(automationExecution.getAssociationId(), ASSOCIATIONID_BINDING);
+            protocolMarshaller.marshall(automationExecution.getChangeRequestName(), CHANGEREQUESTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

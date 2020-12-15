@@ -50,7 +50,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      */
     @Deprecated
@@ -58,7 +59,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's behaviors, but it is also retained for any metric specified here.
+     * profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics;
+     * cannot be used with dimensions.
      * </p>
      */
     private java.util.List<MetricToRetain> additionalMetricsToRetainV2;
@@ -316,13 +318,15 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @return <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *         <p>
      *         A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used
+     *         with custom metrics; cannot be used with dimensions.
      */
     @Deprecated
     public java.util.List<String> getAdditionalMetricsToRetain() {
@@ -335,14 +339,16 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetain
      *        <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      */
     @Deprecated
     public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
@@ -360,7 +366,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,7 +379,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      *        <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -392,14 +400,16 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetain
      *        <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -411,11 +421,13 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's behaviors, but it is also retained for any metric specified here.
+     * profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics;
+     * cannot be used with dimensions.
      * </p>
      * 
      * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's behaviors, but it is also retained for any metric specified here.
+     *         the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom
+     *         metrics; cannot be used with dimensions.
      */
 
     public java.util.List<MetricToRetain> getAdditionalMetricsToRetainV2() {
@@ -425,12 +437,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's behaviors, but it is also retained for any metric specified here.
+     * profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics;
+     * cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's behaviors, but it is also retained for any metric specified here.
+     *        profile's behaviors, but it is also retained for any metric specified here. Can be used with custom
+     *        metrics; cannot be used with dimensions.
      */
 
     public void setAdditionalMetricsToRetainV2(java.util.Collection<MetricToRetain> additionalMetricsToRetainV2) {
@@ -445,7 +459,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's behaviors, but it is also retained for any metric specified here.
+     * profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics;
+     * cannot be used with dimensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -455,7 +470,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's behaviors, but it is also retained for any metric specified here.
+     *        profile's behaviors, but it is also retained for any metric specified here. Can be used with custom
+     *        metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,12 +488,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's behaviors, but it is also retained for any metric specified here.
+     * profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics;
+     * cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's behaviors, but it is also retained for any metric specified here.
+     *        profile's behaviors, but it is also retained for any metric specified here. Can be used with custom
+     *        metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

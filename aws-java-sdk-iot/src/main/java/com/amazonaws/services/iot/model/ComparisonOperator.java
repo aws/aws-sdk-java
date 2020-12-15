@@ -27,7 +27,9 @@ public enum ComparisonOperator {
     InCidrSet("in-cidr-set"),
     NotInCidrSet("not-in-cidr-set"),
     InPortSet("in-port-set"),
-    NotInPortSet("not-in-port-set");
+    NotInPortSet("not-in-port-set"),
+    InSet("in-set"),
+    NotInSet("not-in-set");
 
     private String value;
 

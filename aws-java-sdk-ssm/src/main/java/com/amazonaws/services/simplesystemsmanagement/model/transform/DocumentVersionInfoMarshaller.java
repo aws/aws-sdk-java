@@ -43,6 +43,8 @@ public class DocumentVersionInfoMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusInformation").build();
+    private static final MarshallingInfo<String> REVIEWSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReviewStatus").build();
 
     private static final DocumentVersionInfoMarshaller instance = new DocumentVersionInfoMarshaller();
 
@@ -68,6 +70,7 @@ public class DocumentVersionInfoMarshaller {
             protocolMarshaller.marshall(documentVersionInfo.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getStatusInformation(), STATUSINFORMATION_BINDING);
+            protocolMarshaller.marshall(documentVersionInfo.getReviewStatus(), REVIEWSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

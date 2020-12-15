@@ -29,6 +29,8 @@ public class TopicRuleDestinationConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> HTTPURLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpUrlConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
 
     private static final TopicRuleDestinationConfigurationMarshaller instance = new TopicRuleDestinationConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class TopicRuleDestinationConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(topicRuleDestinationConfiguration.getHttpUrlConfiguration(), HTTPURLCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(topicRuleDestinationConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

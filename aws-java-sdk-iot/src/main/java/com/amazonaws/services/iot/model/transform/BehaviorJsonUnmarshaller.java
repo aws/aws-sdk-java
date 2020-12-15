@@ -64,6 +64,10 @@ public class BehaviorJsonUnmarshaller implements Unmarshaller<Behavior, JsonUnma
                     context.nextToken();
                     behavior.setCriteria(BehaviorCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("suppressAlerts", targetDepth)) {
+                    context.nextToken();
+                    behavior.setSuppressAlerts(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,7 +27,7 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you have given to the behavior.
+     * The name you've given to the behavior.
      * </p>
      */
     private String name;
@@ -40,7 +40,8 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
-     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.
      * </p>
      */
     private MetricDimension metricDimension;
@@ -50,14 +51,20 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private BehaviorCriteria criteria;
+    /**
+     * <p>
+     * Suppresses alerts.
+     * </p>
+     */
+    private Boolean suppressAlerts;
 
     /**
      * <p>
-     * The name you have given to the behavior.
+     * The name you've given to the behavior.
      * </p>
      * 
      * @param name
-     *        The name you have given to the behavior.
+     *        The name you've given to the behavior.
      */
 
     public void setName(String name) {
@@ -66,10 +73,10 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you have given to the behavior.
+     * The name you've given to the behavior.
      * </p>
      * 
-     * @return The name you have given to the behavior.
+     * @return The name you've given to the behavior.
      */
 
     public String getName() {
@@ -78,11 +85,11 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you have given to the behavior.
+     * The name you've given to the behavior.
      * </p>
      * 
      * @param name
-     *        The name you have given to the behavior.
+     *        The name you've given to the behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +141,14 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
-     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.
      * </p>
      * 
      * @param metricDimension
      *        The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you
-     *        can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the
-     *        dimension.
+     *        can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified
+     *        in the dimension. This can't be used with custom metrics.
      */
 
     public void setMetricDimension(MetricDimension metricDimension) {
@@ -150,12 +158,13 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
-     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.
      * </p>
      * 
      * @return The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension,
-     *         you can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in
-     *         the dimension.
+     *         you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern
+     *         specified in the dimension. This can't be used with custom metrics.
      */
 
     public MetricDimension getMetricDimension() {
@@ -165,13 +174,14 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
-     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.
      * </p>
      * 
      * @param metricDimension
      *        The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you
-     *        can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the
-     *        dimension.
+     *        can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified
+     *        in the dimension. This can't be used with custom metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,6 +231,58 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Suppresses alerts.
+     * </p>
+     * 
+     * @param suppressAlerts
+     *        Suppresses alerts.
+     */
+
+    public void setSuppressAlerts(Boolean suppressAlerts) {
+        this.suppressAlerts = suppressAlerts;
+    }
+
+    /**
+     * <p>
+     * Suppresses alerts.
+     * </p>
+     * 
+     * @return Suppresses alerts.
+     */
+
+    public Boolean getSuppressAlerts() {
+        return this.suppressAlerts;
+    }
+
+    /**
+     * <p>
+     * Suppresses alerts.
+     * </p>
+     * 
+     * @param suppressAlerts
+     *        Suppresses alerts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Behavior withSuppressAlerts(Boolean suppressAlerts) {
+        setSuppressAlerts(suppressAlerts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Suppresses alerts.
+     * </p>
+     * 
+     * @return Suppresses alerts.
+     */
+
+    public Boolean isSuppressAlerts() {
+        return this.suppressAlerts;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +301,9 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
         if (getMetricDimension() != null)
             sb.append("MetricDimension: ").append(getMetricDimension()).append(",");
         if (getCriteria() != null)
-            sb.append("Criteria: ").append(getCriteria());
+            sb.append("Criteria: ").append(getCriteria()).append(",");
+        if (getSuppressAlerts() != null)
+            sb.append("SuppressAlerts: ").append(getSuppressAlerts());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +334,10 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCriteria() != null && other.getCriteria().equals(this.getCriteria()) == false)
             return false;
+        if (other.getSuppressAlerts() == null ^ this.getSuppressAlerts() == null)
+            return false;
+        if (other.getSuppressAlerts() != null && other.getSuppressAlerts().equals(this.getSuppressAlerts()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +350,7 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMetric() == null) ? 0 : getMetric().hashCode());
         hashCode = prime * hashCode + ((getMetricDimension() == null) ? 0 : getMetricDimension().hashCode());
         hashCode = prime * hashCode + ((getCriteria() == null) ? 0 : getCriteria().hashCode());
+        hashCode = prime * hashCode + ((getSuppressAlerts() == null) ? 0 : getSuppressAlerts().hashCode());
         return hashCode;
     }
 

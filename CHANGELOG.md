@@ -1,3 +1,40 @@
+# __1.11.920__ __2020-12-15__
+## __AWS IoT__
+  - ### Features
+    - AWS IoT Rules Engine adds Kafka Action that allows sending data to Apache Kafka clusters inside a VPC. AWS IoT Device Defender adds custom metrics and machine-learning based anomaly detection.
+
+## __AWS IoT Analytics__
+  - ### Features
+    - FileFormatConfiguration enables data store to save data in JSON or Parquet format. S3Paths enables you to specify the S3 objects that save your channel messages when you reprocess the pipeline.
+
+## __AWS IoT Core Device Advisor__
+  - ### Features
+    - AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.
+
+## __AWS IoT Fleet Hub__
+  - ### Features
+    - AWS IoT Fleet Hub, a new feature of AWS IoT Device Management that provides a web application for monitoring and managing device fleets connected to AWS IoT at scale.
+
+## __AWS IoT Greengrass V2__
+  - ### Features
+    - AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.
+
+## __AWS IoT Wireless__
+  - ### Features
+    - AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.
+
+## __AWS Lambda__
+  - ### Features
+    - Added support for Apache Kafka as a event source. Added support for TumblingWindowInSeconds for streams event source mappings. Added support for FunctionResponseTypes for streams event source mappings
+
+## __Amazon Prometheus Service__
+  - ### Features
+    - (New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adding support for Change Manager API content
+
 # __1.11.919__ __2020-12-14__
 ## __AWS Global Accelerator__
   - ### Features

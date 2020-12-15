@@ -262,6 +262,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -336,6 +342,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
      * </p>
      * </li>
      * </ul>

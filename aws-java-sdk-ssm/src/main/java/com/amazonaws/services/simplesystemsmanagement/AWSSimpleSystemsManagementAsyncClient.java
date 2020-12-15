@@ -3257,6 +3257,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(ListDocumentMetadataHistoryRequest request) {
+
+        return listDocumentMetadataHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(final ListDocumentMetadataHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDocumentMetadataHistoryRequest, ListDocumentMetadataHistoryResult> asyncHandler) {
+        final ListDocumentMetadataHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDocumentMetadataHistoryResult>() {
+            @Override
+            public ListDocumentMetadataHistoryResult call() throws Exception {
+                ListDocumentMetadataHistoryResult result = null;
+
+                try {
+                    result = executeListDocumentMetadataHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest request) {
 
         return listDocumentVersionsAsync(request, null);
@@ -3363,6 +3396,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeListInventoryEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest request) {
+
+        return listOpsItemEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(final ListOpsItemEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler) {
+        final ListOpsItemEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOpsItemEventsResult>() {
+            @Override
+            public ListOpsItemEventsResult call() throws Exception {
+                ListOpsItemEventsResult result = null;
+
+                try {
+                    result = executeListOpsItemEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4014,6 +4080,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(StartChangeRequestExecutionRequest request) {
+
+        return startChangeRequestExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(final StartChangeRequestExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartChangeRequestExecutionRequest, StartChangeRequestExecutionResult> asyncHandler) {
+        final StartChangeRequestExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartChangeRequestExecutionResult>() {
+            @Override
+            public StartChangeRequestExecutionResult call() throws Exception {
+                StartChangeRequestExecutionResult result = null;
+
+                try {
+                    result = executeStartChangeRequestExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest request) {
 
         return startSessionAsync(request, null);
@@ -4229,6 +4328,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeUpdateDocumentDefaultVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest request) {
+
+        return updateDocumentMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(final UpdateDocumentMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDocumentMetadataRequest, UpdateDocumentMetadataResult> asyncHandler) {
+        final UpdateDocumentMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentMetadataResult>() {
+            @Override
+            public UpdateDocumentMetadataResult call() throws Exception {
+                UpdateDocumentMetadataResult result = null;
+
+                try {
+                    result = executeUpdateDocumentMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

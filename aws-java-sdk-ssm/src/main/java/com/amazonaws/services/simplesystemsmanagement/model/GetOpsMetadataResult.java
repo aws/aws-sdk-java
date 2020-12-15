@@ -25,13 +25,13 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resource ID of the AppManager application.
+     * The resource ID of the Application Manager application.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * OpsMetadata for an AppManager application.
+     * OpsMetadata for an Application Manager application.
      * </p>
      */
     private java.util.Map<String, MetadataValue> metadata;
@@ -44,11 +44,11 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resource ID of the AppManager application.
+     * The resource ID of the Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the AppManager application.
+     *        The resource ID of the Application Manager application.
      */
 
     public void setResourceId(String resourceId) {
@@ -57,10 +57,10 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resource ID of the AppManager application.
+     * The resource ID of the Application Manager application.
      * </p>
      * 
-     * @return The resource ID of the AppManager application.
+     * @return The resource ID of the Application Manager application.
      */
 
     public String getResourceId() {
@@ -69,11 +69,11 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resource ID of the AppManager application.
+     * The resource ID of the Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the AppManager application.
+     *        The resource ID of the Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * OpsMetadata for an AppManager application.
+     * OpsMetadata for an Application Manager application.
      * </p>
      * 
-     * @return OpsMetadata for an AppManager application.
+     * @return OpsMetadata for an Application Manager application.
      */
 
     public java.util.Map<String, MetadataValue> getMetadata() {
@@ -96,11 +96,11 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * OpsMetadata for an AppManager application.
+     * OpsMetadata for an Application Manager application.
      * </p>
      * 
      * @param metadata
-     *        OpsMetadata for an AppManager application.
+     *        OpsMetadata for an Application Manager application.
      */
 
     public void setMetadata(java.util.Map<String, MetadataValue> metadata) {
@@ -109,11 +109,11 @@ public class GetOpsMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * OpsMetadata for an AppManager application.
+     * OpsMetadata for an Application Manager application.
      * </p>
      * 
      * @param metadata
-     *        OpsMetadata for an AppManager application.
+     *        OpsMetadata for an Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

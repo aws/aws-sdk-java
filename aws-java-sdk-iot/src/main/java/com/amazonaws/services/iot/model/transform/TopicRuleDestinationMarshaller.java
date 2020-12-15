@@ -31,10 +31,16 @@ public class TopicRuleDestinationMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<StructuredPojo> HTTPURLPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpUrlProperties").build();
+    private static final MarshallingInfo<StructuredPojo> VPCPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcProperties").build();
 
     private static final TopicRuleDestinationMarshaller instance = new TopicRuleDestinationMarshaller();
 
@@ -54,8 +60,11 @@ public class TopicRuleDestinationMarshaller {
         try {
             protocolMarshaller.marshall(topicRuleDestination.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(topicRuleDestination.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(topicRuleDestination.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(topicRuleDestination.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(topicRuleDestination.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(topicRuleDestination.getHttpUrlProperties(), HTTPURLPROPERTIES_BINDING);
+            protocolMarshaller.marshall(topicRuleDestination.getVpcProperties(), VPCPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

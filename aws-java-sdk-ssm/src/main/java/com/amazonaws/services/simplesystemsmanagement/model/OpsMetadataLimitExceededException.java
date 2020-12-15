@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your account reached the maximum number of OpsMetadata objects allowed by AppManager. The maximum is 200 OpsMetadata
- * objects. Delete one or more OpsMetadata object and try again.
+ * Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200
+ * OpsMetadata objects. Delete one or more OpsMetadata object and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

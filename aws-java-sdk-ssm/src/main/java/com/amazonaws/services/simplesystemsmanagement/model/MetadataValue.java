@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Metadata to assign to an AppManager application.
+ * Metadata to assign to an Application Manager application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MetadataValue" target="_top">AWS API
@@ -30,18 +30,18 @@ public class MetadataValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Metadata value to assign to an AppManager application.
+     * Metadata value to assign to an Application Manager application.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Metadata value to assign to an AppManager application.
+     * Metadata value to assign to an Application Manager application.
      * </p>
      * 
      * @param value
-     *        Metadata value to assign to an AppManager application.
+     *        Metadata value to assign to an Application Manager application.
      */
 
     public void setValue(String value) {
@@ -50,10 +50,10 @@ public class MetadataValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Metadata value to assign to an AppManager application.
+     * Metadata value to assign to an Application Manager application.
      * </p>
      * 
-     * @return Metadata value to assign to an AppManager application.
+     * @return Metadata value to assign to an Application Manager application.
      */
 
     public String getValue() {
@@ -62,11 +62,11 @@ public class MetadataValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Metadata value to assign to an AppManager application.
+     * Metadata value to assign to an Application Manager application.
      * </p>
      * 
      * @param value
-     *        Metadata value to assign to an AppManager application.
+     *        Metadata value to assign to an Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

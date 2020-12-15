@@ -64,8 +64,8 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      */
     private String scheduleTimezone;
@@ -356,14 +356,14 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @param scheduleTimezone
      *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
-     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information,
+     *        see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      */
 
     public void setScheduleTimezone(String scheduleTimezone) {
@@ -373,12 +373,12 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @return The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *         Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *         Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more
      *         information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      *         website.
      */
@@ -390,14 +390,14 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @param scheduleTimezone
      *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
-     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information,
+     *        see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

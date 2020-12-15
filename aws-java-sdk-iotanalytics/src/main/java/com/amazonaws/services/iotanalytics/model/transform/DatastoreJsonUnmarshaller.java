@@ -80,6 +80,10 @@ public class DatastoreJsonUnmarshaller implements Unmarshaller<Datastore, JsonUn
                     context.nextToken();
                     datastore.setLastMessageArrivalTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("fileFormatConfiguration", targetDepth)) {
+                    context.nextToken();
+                    datastore.setFileFormatConfiguration(FileFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

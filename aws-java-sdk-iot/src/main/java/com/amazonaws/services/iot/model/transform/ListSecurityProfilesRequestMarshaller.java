@@ -33,6 +33,8 @@ public class ListSecurityProfilesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> DIMENSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dimensionName").build();
+    private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("metricName").build();
 
     private static final ListSecurityProfilesRequestMarshaller instance = new ListSecurityProfilesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListSecurityProfilesRequestMarshaller {
             protocolMarshaller.marshall(listSecurityProfilesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listSecurityProfilesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSecurityProfilesRequest.getDimensionName(), DIMENSIONNAME_BINDING);
+            protocolMarshaller.marshall(listSecurityProfilesRequest.getMetricName(), METRICNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

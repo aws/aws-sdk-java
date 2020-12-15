@@ -478,8 +478,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
-     * the new application, including the application type.
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
      * </p>
      * 
      * @param createOpsMetadataRequest
@@ -492,8 +492,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
-     * the new application, including the application type.
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
      * </p>
      * 
      * @param createOpsMetadataRequest
@@ -2944,7 +2944,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * View operational metadata related to an application in AppManager.
+     * View operational metadata related to an application in Application Manager.
      * </p>
      * 
      * @param getOpsMetadataRequest
@@ -2957,7 +2957,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * View operational metadata related to an application in AppManager.
+     * View operational metadata related to an application in Application Manager.
      * </p>
      * 
      * @param getOpsMetadataRequest
@@ -3614,6 +3614,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return A Java Future containing the result of the ListDocumentMetadataHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(
+            ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest);
+
+    /**
+     * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDocumentMetadataHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(
+            ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDocumentMetadataHistoryRequest, ListDocumentMetadataHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -3724,7 +3757,40 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return A Java Future containing the result of the ListOpsItemEvents operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest listOpsItemEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsItemEvents operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest listOpsItemEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
      * </p>
      * 
      * @param listOpsMetadataRequest
@@ -3737,7 +3803,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
      * </p>
      * 
      * @param listOpsMetadataRequest
@@ -4583,6 +4649,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return A Java Future containing the result of the StartChangeRequestExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(
+            StartChangeRequestExecutionRequest startChangeRequestExecutionRequest);
+
+    /**
+     * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartChangeRequestExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(
+            StartChangeRequestExecutionRequest startChangeRequestExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartChangeRequestExecutionRequest, StartChangeRequestExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
      * token that can be used to open a WebSocket connection for sending input and receiving outputs.
      * </p>
@@ -4853,6 +4954,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
             UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return A Java Future containing the result of the UpdateDocumentMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest updateDocumentMetadataRequest);
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDocumentMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest updateDocumentMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDocumentMetadataRequest, UpdateDocumentMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -5235,7 +5367,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
      * </p>
      * 
      * @param updateOpsMetadataRequest
@@ -5248,7 +5380,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
      * </p>
      * 
      * @param updateOpsMetadataRequest

@@ -147,6 +147,28 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Author", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReviewInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setReviewInformation(new ListUnmarshaller<ReviewInformation>(ReviewInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ApprovedVersion", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setApprovedVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PendingReviewVersion", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setPendingReviewVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReviewStatus", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -33,7 +33,7 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
     private String metric;
     /**
      * <p>
-     * The dimension of a metric.
+     * The dimension of a metric. This can't be used with custom metrics.
      * </p>
      */
     private MetricDimension metricDimension;
@@ -80,11 +80,11 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension of a metric.
+     * The dimension of a metric. This can't be used with custom metrics.
      * </p>
      * 
      * @param metricDimension
-     *        The dimension of a metric.
+     *        The dimension of a metric. This can't be used with custom metrics.
      */
 
     public void setMetricDimension(MetricDimension metricDimension) {
@@ -93,10 +93,10 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension of a metric.
+     * The dimension of a metric. This can't be used with custom metrics.
      * </p>
      * 
-     * @return The dimension of a metric.
+     * @return The dimension of a metric. This can't be used with custom metrics.
      */
 
     public MetricDimension getMetricDimension() {
@@ -105,11 +105,11 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension of a metric.
+     * The dimension of a metric. This can't be used with custom metrics.
      * </p>
      * 
      * @param metricDimension
-     *        The dimension of a metric.
+     *        The dimension of a metric. This can't be used with custom metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,12 +60,18 @@ public class EventSourceMappingConfigurationMarshaller {
             .marshallLocationName("Queues").build();
     private static final MarshallingInfo<List> SOURCEACCESSCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceAccessConfigurations").build();
+    private static final MarshallingInfo<StructuredPojo> SELFMANAGEDEVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedEventSource").build();
     private static final MarshallingInfo<Integer> MAXIMUMRECORDAGEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRecordAgeInSeconds").build();
     private static final MarshallingInfo<Boolean> BISECTBATCHONFUNCTIONERROR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BisectBatchOnFunctionError").build();
     private static final MarshallingInfo<Integer> MAXIMUMRETRYATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRetryAttempts").build();
+    private static final MarshallingInfo<Integer> TUMBLINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TumblingWindowInSeconds").build();
+    private static final MarshallingInfo<List> FUNCTIONRESPONSETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionResponseTypes").build();
 
     private static final EventSourceMappingConfigurationMarshaller instance = new EventSourceMappingConfigurationMarshaller();
 
@@ -99,9 +105,12 @@ public class EventSourceMappingConfigurationMarshaller {
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getTopics(), TOPICS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getQueues(), QUEUES_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getSourceAccessConfigurations(), SOURCEACCESSCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getSelfManagedEventSource(), SELFMANAGEDEVENTSOURCE_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getMaximumRecordAgeInSeconds(), MAXIMUMRECORDAGEINSECONDS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getBisectBatchOnFunctionError(), BISECTBATCHONFUNCTIONERROR_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getMaximumRetryAttempts(), MAXIMUMRETRYATTEMPTS_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getTumblingWindowInSeconds(), TUMBLINGWINDOWINSECONDS_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getFunctionResponseTypes(), FUNCTIONRESPONSETYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

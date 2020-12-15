@@ -64,6 +64,22 @@ public class MetricValueJsonUnmarshaller implements Unmarshaller<MetricValue, Js
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("number", targetDepth)) {
+                    context.nextToken();
+                    metricValue.setNumber(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("numbers", targetDepth)) {
+                    context.nextToken();
+                    metricValue.setNumbers(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("strings", targetDepth)) {
+                    context.nextToken();
+                    metricValue.setStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

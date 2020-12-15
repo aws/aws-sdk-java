@@ -59,8 +59,8 @@ public class MitigationActionParams implements Serializable, Cloneable, Structur
     private EnableIoTLoggingParams enableIoTLoggingParams;
     /**
      * <p>
-     * Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom
-     * actions in response to the Amazon SNS messages.
+     * Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon
+     * SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      * </p>
      */
     private PublishFindingToSnsParams publishFindingToSnsParams;
@@ -273,13 +273,13 @@ public class MitigationActionParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom
-     * actions in response to the Amazon SNS messages.
+     * Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon
+     * SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      * </p>
      * 
      * @param publishFindingToSnsParams
-     *        Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own
-     *        custom actions in response to the Amazon SNS messages.
+     *        Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service
+     *        (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      */
 
     public void setPublishFindingToSnsParams(PublishFindingToSnsParams publishFindingToSnsParams) {
@@ -288,12 +288,12 @@ public class MitigationActionParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom
-     * actions in response to the Amazon SNS messages.
+     * Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon
+     * SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      * </p>
      * 
-     * @return Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your
-     *         own custom actions in response to the Amazon SNS messages.
+     * @return Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service
+     *         (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      */
 
     public PublishFindingToSnsParams getPublishFindingToSnsParams() {
@@ -302,13 +302,13 @@ public class MitigationActionParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom
-     * actions in response to the Amazon SNS messages.
+     * Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon
+     * SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      * </p>
      * 
      * @param publishFindingToSnsParams
-     *        Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own
-     *        custom actions in response to the Amazon SNS messages.
+     *        Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service
+     *        (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

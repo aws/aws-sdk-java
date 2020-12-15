@@ -68,6 +68,10 @@ public class ViolationEventJsonUnmarshaller implements Unmarshaller<ViolationEve
                     context.nextToken();
                     violationEvent.setMetricValue(MetricValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("violationEventAdditionalInfo", targetDepth)) {
+                    context.nextToken();
+                    violationEvent.setViolationEventAdditionalInfo(ViolationEventAdditionalInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("violationEventType", targetDepth)) {
                     context.nextToken();
                     violationEvent.setViolationEventType(context.getUnmarshaller(String.class).unmarshall(context));

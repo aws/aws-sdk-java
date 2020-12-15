@@ -149,6 +149,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HttpAction http;
+    /**
+     * <p>
+     * Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.
+     * </p>
+     */
+    private KafkaAction kafka;
 
     /**
      * <p>
@@ -975,6 +981,49 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.
+     * </p>
+     * 
+     * @param kafka
+     *        Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka
+     *        cluster.
+     */
+
+    public void setKafka(KafkaAction kafka) {
+        this.kafka = kafka;
+    }
+
+    /**
+     * <p>
+     * Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.
+     * </p>
+     * 
+     * @return Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka
+     *         cluster.
+     */
+
+    public KafkaAction getKafka() {
+        return this.kafka;
+    }
+
+    /**
+     * <p>
+     * Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.
+     * </p>
+     * 
+     * @param kafka
+     *        Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka
+     *        cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withKafka(KafkaAction kafka) {
+        setKafka(kafka);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1025,7 +1074,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getTimestream() != null)
             sb.append("Timestream: ").append(getTimestream()).append(",");
         if (getHttp() != null)
-            sb.append("Http: ").append(getHttp());
+            sb.append("Http: ").append(getHttp()).append(",");
+        if (getKafka() != null)
+            sb.append("Kafka: ").append(getKafka());
         sb.append("}");
         return sb.toString();
     }
@@ -1120,6 +1171,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHttp() != null && other.getHttp().equals(this.getHttp()) == false)
             return false;
+        if (other.getKafka() == null ^ this.getKafka() == null)
+            return false;
+        if (other.getKafka() != null && other.getKafka().equals(this.getKafka()) == false)
+            return false;
         return true;
     }
 
@@ -1148,6 +1203,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
         hashCode = prime * hashCode + ((getTimestream() == null) ? 0 : getTimestream().hashCode());
         hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
+        hashCode = prime * hashCode + ((getKafka() == null) ? 0 : getKafka().hashCode());
         return hashCode;
     }
 

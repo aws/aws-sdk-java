@@ -27,7 +27,7 @@ public class AlertTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the notification target to which alerts are sent.
+     * The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      * </p>
      */
     private String alertTargetArn;
@@ -40,11 +40,11 @@ public class AlertTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the notification target to which alerts are sent.
+     * The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      * </p>
      * 
      * @param alertTargetArn
-     *        The ARN of the notification target to which alerts are sent.
+     *        The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      */
 
     public void setAlertTargetArn(String alertTargetArn) {
@@ -53,10 +53,10 @@ public class AlertTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the notification target to which alerts are sent.
+     * The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      * </p>
      * 
-     * @return The ARN of the notification target to which alerts are sent.
+     * @return The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      */
 
     public String getAlertTargetArn() {
@@ -65,11 +65,11 @@ public class AlertTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the notification target to which alerts are sent.
+     * The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      * </p>
      * 
      * @param alertTargetArn
-     *        The ARN of the notification target to which alerts are sent.
+     *        The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,8 @@ public enum DocumentType {
     ApplicationConfiguration("ApplicationConfiguration"),
     ApplicationConfigurationSchema("ApplicationConfigurationSchema"),
     DeploymentStrategy("DeploymentStrategy"),
-    ChangeCalendar("ChangeCalendar");
+    ChangeCalendar("ChangeCalendar"),
+    AutomationChangeTemplate("Automation.ChangeTemplate");
 
     private String value;
 

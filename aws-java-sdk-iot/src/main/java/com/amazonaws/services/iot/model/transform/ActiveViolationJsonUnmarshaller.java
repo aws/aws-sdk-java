@@ -68,6 +68,10 @@ public class ActiveViolationJsonUnmarshaller implements Unmarshaller<ActiveViola
                     context.nextToken();
                     activeViolation.setLastViolationValue(MetricValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("violationEventAdditionalInfo", targetDepth)) {
+                    context.nextToken();
+                    activeViolation.setViolationEventAdditionalInfo(ViolationEventAdditionalInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("lastViolationTime", targetDepth)) {
                     context.nextToken();
                     activeViolation.setLastViolationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

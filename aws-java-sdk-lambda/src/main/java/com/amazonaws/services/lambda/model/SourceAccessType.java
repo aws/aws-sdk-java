@@ -20,7 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SourceAccessType {
 
-    BASIC_AUTH("BASIC_AUTH");
+    BASIC_AUTH("BASIC_AUTH"),
+    VPC_SUBNET("VPC_SUBNET"),
+    VPC_SECURITY_GROUP("VPC_SECURITY_GROUP"),
+    SASL_SCRAM_512_AUTH("SASL_SCRAM_512_AUTH"),
+    SASL_SCRAM_256_AUTH("SASL_SCRAM_256_AUTH");
 
     private String value;
 

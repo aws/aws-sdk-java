@@ -97,6 +97,26 @@ public class OpsItemSummaryJsonUnmarshaller implements Unmarshaller<OpsItemSumma
                     context.nextToken();
                     opsItemSummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OpsItemType", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setOpsItemType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ActualStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setActualStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ActualEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setActualEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setPlannedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setPlannedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

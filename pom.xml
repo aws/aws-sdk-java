@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.919</version>
+  <version>1.11.920</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,11 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-iotdeviceadvisor</module>
+    <module>aws-java-sdk-iotfleethub</module>
+    <module>aws-java-sdk-iotwireless</module>
+    <module>aws-java-sdk-greengrassv2</module>
+    <module>aws-java-sdk-prometheus</module>
     <module>aws-java-sdk-auditmanager</module>
     <module>aws-java-sdk-healthlake</module>
     <module>aws-java-sdk-sagemakeredgemanager</module>

@@ -28,13 +28,24 @@ public enum OpsItemFilterKey {
     OpsItemId("OpsItemId"),
     CreatedTime("CreatedTime"),
     LastModifiedTime("LastModifiedTime"),
+    ActualStartTime("ActualStartTime"),
+    ActualEndTime("ActualEndTime"),
+    PlannedStartTime("PlannedStartTime"),
+    PlannedEndTime("PlannedEndTime"),
     OperationalData("OperationalData"),
     OperationalDataKey("OperationalDataKey"),
     OperationalDataValue("OperationalDataValue"),
     ResourceId("ResourceId"),
     AutomationId("AutomationId"),
     Category("Category"),
-    Severity("Severity");
+    Severity("Severity"),
+    OpsItemType("OpsItemType"),
+    ChangeRequestByRequesterArn("ChangeRequestByRequesterArn"),
+    ChangeRequestByRequesterName("ChangeRequestByRequesterName"),
+    ChangeRequestByApproverArn("ChangeRequestByApproverArn"),
+    ChangeRequestByApproverName("ChangeRequestByApproverName"),
+    ChangeRequestByTemplate("ChangeRequestByTemplate"),
+    ChangeRequestByTargetsResourceGroup("ChangeRequestByTargetsResourceGroup");
 
     private String value;
 

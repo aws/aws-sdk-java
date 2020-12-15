@@ -34,6 +34,12 @@ public class MetricValueMarshaller {
             .marshallLocationName("cidrs").build();
     private static final MarshallingInfo<List> PORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ports").build();
+    private static final MarshallingInfo<Double> NUMBER_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("number").build();
+    private static final MarshallingInfo<List> NUMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("numbers").build();
+    private static final MarshallingInfo<List> STRINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("strings").build();
 
     private static final MetricValueMarshaller instance = new MetricValueMarshaller();
 
@@ -54,6 +60,9 @@ public class MetricValueMarshaller {
             protocolMarshaller.marshall(metricValue.getCount(), COUNT_BINDING);
             protocolMarshaller.marshall(metricValue.getCidrs(), CIDRS_BINDING);
             protocolMarshaller.marshall(metricValue.getPorts(), PORTS_BINDING);
+            protocolMarshaller.marshall(metricValue.getNumber(), NUMBER_BINDING);
+            protocolMarshaller.marshall(metricValue.getNumbers(), NUMBERS_BINDING);
+            protocolMarshaller.marshall(metricValue.getStrings(), STRINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

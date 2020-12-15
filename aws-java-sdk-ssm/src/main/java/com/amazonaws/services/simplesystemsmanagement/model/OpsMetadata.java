@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Operational metadata for an application in AppManager.
+ * Operational metadata for an application in Application Manager.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsMetadata" target="_top">AWS API
@@ -30,7 +30,7 @@ public class OpsMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AppManager application.
+     * The ID of the Application Manager application.
      * </p>
      */
     private String resourceId;
@@ -61,11 +61,11 @@ public class OpsMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AppManager application.
+     * The ID of the Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AppManager application.
+     *        The ID of the Application Manager application.
      */
 
     public void setResourceId(String resourceId) {
@@ -74,10 +74,10 @@ public class OpsMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AppManager application.
+     * The ID of the Application Manager application.
      * </p>
      * 
-     * @return The ID of the AppManager application.
+     * @return The ID of the Application Manager application.
      */
 
     public String getResourceId() {
@@ -86,11 +86,11 @@ public class OpsMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AppManager application.
+     * The ID of the Application Manager application.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AppManager application.
+     *        The ID of the Application Manager application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

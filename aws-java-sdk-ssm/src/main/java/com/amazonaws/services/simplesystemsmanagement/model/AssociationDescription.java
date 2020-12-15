@@ -191,6 +191,12 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
+    /**
+     * <p>
+     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
 
     /**
      * <p>
@@ -1390,6 +1396,79 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * </p>
+     * 
+     * @return The combination of AWS Regions and AWS accounts where you want to run the association.
+     */
+
+    public java.util.List<TargetLocation> getTargetLocations() {
+        if (targetLocations == null) {
+            targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>();
+        }
+        return targetLocations;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     */
+
+    public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        if (targetLocations == null) {
+            this.targetLocations = null;
+            return;
+        }
+
+        this.targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations);
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetLocations(java.util.Collection)} or {@link #withTargetLocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withTargetLocations(TargetLocation... targetLocations) {
+        if (this.targetLocations == null) {
+            setTargetLocations(new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations.length));
+        }
+        for (TargetLocation ele : targetLocations) {
+            this.targetLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        setTargetLocations(targetLocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1444,7 +1523,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         if (getSyncCompliance() != null)
             sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
         if (getApplyOnlyAtCronInterval() != null)
-            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval());
+            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval()).append(",");
+        if (getTargetLocations() != null)
+            sb.append("TargetLocations: ").append(getTargetLocations());
         sb.append("}");
         return sb.toString();
     }
@@ -1548,6 +1629,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
             return false;
+        if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
+            return false;
+        if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
+            return false;
         return true;
     }
 
@@ -1578,6 +1663,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         return hashCode;
     }
 

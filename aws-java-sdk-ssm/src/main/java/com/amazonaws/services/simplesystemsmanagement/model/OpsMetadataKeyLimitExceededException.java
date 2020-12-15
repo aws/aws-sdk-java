@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in
- * AppManager.
+ * Application Manager.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

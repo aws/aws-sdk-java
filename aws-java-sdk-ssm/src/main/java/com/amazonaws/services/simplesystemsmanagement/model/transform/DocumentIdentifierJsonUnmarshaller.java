@@ -98,6 +98,14 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ReviewStatus", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Author", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

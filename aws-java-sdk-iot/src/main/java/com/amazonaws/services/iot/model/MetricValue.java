@@ -46,6 +46,24 @@ public class MetricValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Integer> ports;
+    /**
+     * <p>
+     * The numeral value of a metric.
+     * </p>
+     */
+    private Double number;
+    /**
+     * <p>
+     * The numeral values of a metric.
+     * </p>
+     */
+    private java.util.List<Double> numbers;
+    /**
+     * <p>
+     * The string values of a metric.
+     * </p>
+     */
+    private java.util.List<String> strings;
 
     /**
      * <p>
@@ -250,6 +268,186 @@ public class MetricValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The numeral value of a metric.
+     * </p>
+     * 
+     * @param number
+     *        The numeral value of a metric.
+     */
+
+    public void setNumber(Double number) {
+        this.number = number;
+    }
+
+    /**
+     * <p>
+     * The numeral value of a metric.
+     * </p>
+     * 
+     * @return The numeral value of a metric.
+     */
+
+    public Double getNumber() {
+        return this.number;
+    }
+
+    /**
+     * <p>
+     * The numeral value of a metric.
+     * </p>
+     * 
+     * @param number
+     *        The numeral value of a metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricValue withNumber(Double number) {
+        setNumber(number);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The numeral values of a metric.
+     * </p>
+     * 
+     * @return The numeral values of a metric.
+     */
+
+    public java.util.List<Double> getNumbers() {
+        return numbers;
+    }
+
+    /**
+     * <p>
+     * The numeral values of a metric.
+     * </p>
+     * 
+     * @param numbers
+     *        The numeral values of a metric.
+     */
+
+    public void setNumbers(java.util.Collection<Double> numbers) {
+        if (numbers == null) {
+            this.numbers = null;
+            return;
+        }
+
+        this.numbers = new java.util.ArrayList<Double>(numbers);
+    }
+
+    /**
+     * <p>
+     * The numeral values of a metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNumbers(java.util.Collection)} or {@link #withNumbers(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param numbers
+     *        The numeral values of a metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricValue withNumbers(Double... numbers) {
+        if (this.numbers == null) {
+            setNumbers(new java.util.ArrayList<Double>(numbers.length));
+        }
+        for (Double ele : numbers) {
+            this.numbers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The numeral values of a metric.
+     * </p>
+     * 
+     * @param numbers
+     *        The numeral values of a metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricValue withNumbers(java.util.Collection<Double> numbers) {
+        setNumbers(numbers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The string values of a metric.
+     * </p>
+     * 
+     * @return The string values of a metric.
+     */
+
+    public java.util.List<String> getStrings() {
+        return strings;
+    }
+
+    /**
+     * <p>
+     * The string values of a metric.
+     * </p>
+     * 
+     * @param strings
+     *        The string values of a metric.
+     */
+
+    public void setStrings(java.util.Collection<String> strings) {
+        if (strings == null) {
+            this.strings = null;
+            return;
+        }
+
+        this.strings = new java.util.ArrayList<String>(strings);
+    }
+
+    /**
+     * <p>
+     * The string values of a metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStrings(java.util.Collection)} or {@link #withStrings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param strings
+     *        The string values of a metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricValue withStrings(String... strings) {
+        if (this.strings == null) {
+            setStrings(new java.util.ArrayList<String>(strings.length));
+        }
+        for (String ele : strings) {
+            this.strings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The string values of a metric.
+     * </p>
+     * 
+     * @param strings
+     *        The string values of a metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricValue withStrings(java.util.Collection<String> strings) {
+        setStrings(strings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +464,13 @@ public class MetricValue implements Serializable, Cloneable, StructuredPojo {
         if (getCidrs() != null)
             sb.append("Cidrs: ").append(getCidrs()).append(",");
         if (getPorts() != null)
-            sb.append("Ports: ").append(getPorts());
+            sb.append("Ports: ").append(getPorts()).append(",");
+        if (getNumber() != null)
+            sb.append("Number: ").append(getNumber()).append(",");
+        if (getNumbers() != null)
+            sb.append("Numbers: ").append(getNumbers()).append(",");
+        if (getStrings() != null)
+            sb.append("Strings: ").append(getStrings());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +497,18 @@ public class MetricValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPorts() != null && other.getPorts().equals(this.getPorts()) == false)
             return false;
+        if (other.getNumber() == null ^ this.getNumber() == null)
+            return false;
+        if (other.getNumber() != null && other.getNumber().equals(this.getNumber()) == false)
+            return false;
+        if (other.getNumbers() == null ^ this.getNumbers() == null)
+            return false;
+        if (other.getNumbers() != null && other.getNumbers().equals(this.getNumbers()) == false)
+            return false;
+        if (other.getStrings() == null ^ this.getStrings() == null)
+            return false;
+        if (other.getStrings() != null && other.getStrings().equals(this.getStrings()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +520,9 @@ public class MetricValue implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
         hashCode = prime * hashCode + ((getPorts() == null) ? 0 : getPorts().hashCode());
+        hashCode = prime * hashCode + ((getNumber() == null) ? 0 : getNumber().hashCode());
+        hashCode = prime * hashCode + ((getNumbers() == null) ? 0 : getNumbers().hashCode());
+        hashCode = prime * hashCode + ((getStrings() == null) ? 0 : getStrings().hashCode());
         return hashCode;
     }
 

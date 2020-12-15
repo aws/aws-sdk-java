@@ -455,8 +455,8 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
-     * the new application, including the application type.
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
      * </p>
      * 
      * @param createOpsMetadataRequest
@@ -468,8 +468,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsMetadataInvalidArgumentException
      *         One of the arguments passed is invalid.
      * @throws OpsMetadataLimitExceededException
-     *         Your account reached the maximum number of OpsMetadata objects allowed by AppManager. The maximum is 200
-     *         OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     *         Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
+     *         maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
@@ -2030,7 +2030,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * View operational metadata related to an application in AppManager.
+     * View operational metadata related to an application in Application Manager.
      * </p>
      * 
      * @param getOpsMetadataRequest
@@ -2472,6 +2472,27 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return Result of the ListDocumentMetadataHistory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDocumentMetadataHistoryResult listDocumentMetadataHistory(ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest);
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -2553,7 +2574,32 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return Result of the ListOpsItemEvents operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest listOpsItemEventsRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
      * </p>
      * 
      * @param listOpsMetadataRequest
@@ -3240,6 +3286,37 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return Result of the StartChangeRequestExecution operation returned by the service.
+     * @throws AutomationDefinitionNotFoundException
+     *         An Automation document with the specified name could not be found.
+     * @throws InvalidAutomationExecutionParametersException
+     *         The supplied parameters for invoking the specified Automation document are incorrect. For example, they
+     *         may not match the set of parameters permitted for the specified Automation document.
+     * @throws AutomationExecutionLimitExceededException
+     *         The number of simultaneously running Automation executions exceeded the allowable limit.
+     * @throws AutomationDefinitionVersionNotFoundException
+     *         An Automation document with the specified name and version could not be found.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
+     *         to the API with the same idempotency token.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AutomationDefinitionNotApprovedException
+     *         Indicates that the Change Manager change template used in the change request was rejected or is still in
+     *         a pending state.
+     * @sample AWSSimpleSystemsManagement.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartChangeRequestExecutionResult startChangeRequestExecution(StartChangeRequestExecutionRequest startChangeRequestExecutionRequest);
+
+    /**
+     * <p>
      * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
      * token that can be used to open a WebSocket connection for sending input and receiving outputs.
      * </p>
@@ -3464,6 +3541,28 @@ public interface AWSSimpleSystemsManagement {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest);
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return Result of the UpdateDocumentMetadata operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @sample AWSSimpleSystemsManagement.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDocumentMetadataResult updateDocumentMetadata(UpdateDocumentMetadataRequest updateDocumentMetadataRequest);
 
     /**
      * <p>
@@ -3696,7 +3795,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
      * </p>
      * 
      * @param updateOpsMetadataRequest
@@ -3707,7 +3806,7 @@ public interface AWSSimpleSystemsManagement {
      *         One of the arguments passed is invalid.
      * @throws OpsMetadataKeyLimitExceededException
      *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
-     *         application in AppManager.
+     *         application in Application Manager.
      * @throws OpsMetadataTooManyUpdatesException
      *         The system is processing too many concurrent updates. Wait a few moments and try again.
      * @throws InternalServerErrorException

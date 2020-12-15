@@ -94,6 +94,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CancelDetectMitigationActionsTaskResult cancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelJobResult cancelJob(CancelJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +135,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,6 +275,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCustomMetricResult deleteCustomMetric(DeleteCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -429,7 +444,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DescribeCustomMetricResult describeCustomMetric(DescribeCustomMetricRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDetectMitigationActionsTaskResult describeDetectMitigationActionsTask(DescribeDetectMitigationActionsTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -551,6 +576,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public EnableTopicRuleResult enableTopicRule(EnableTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBehaviorModelTrainingSummariesResult getBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -681,6 +711,21 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListCertificatesByCAResult listCertificatesByCA(ListCertificatesByCARequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCustomMetricsResult listCustomMetrics(ListCustomMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDetectMitigationActionsExecutionsResult listDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDetectMitigationActionsTasksResult listDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -947,6 +992,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public StartDetectMitigationActionsTaskResult startDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartOnDemandAuditTaskResult startOnDemandAuditTask(StartOnDemandAuditTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1013,6 +1063,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateCertificateResult updateCertificate(UpdateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCustomMetricResult updateCustomMetric(UpdateCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

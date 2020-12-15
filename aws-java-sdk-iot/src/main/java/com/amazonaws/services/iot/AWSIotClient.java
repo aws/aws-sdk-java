@@ -998,7 +998,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in
+     * Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn't in
      * progress, an "InvalidRequestException" occurs.
      * </p>
      * 
@@ -1126,6 +1126,69 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<CancelCertificateTransferResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CancelCertificateTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param cancelDetectMitigationActionsTaskRequest
+     * @return Result of the CancelDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CancelDetectMitigationActionsTask
+     */
+    @Override
+    public CancelDetectMitigationActionsTaskResult cancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDetectMitigationActionsTask(request);
+    }
+
+    @SdkInternalApi
+    final CancelDetectMitigationActionsTaskResult executeCancelDetectMitigationActionsTask(
+            CancelDetectMitigationActionsTaskRequest cancelDetectMitigationActionsTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDetectMitigationActionsTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDetectMitigationActionsTaskRequest> request = null;
+        Response<CancelDetectMitigationActionsTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDetectMitigationActionsTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelDetectMitigationActionsTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDetectMitigationActionsTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDetectMitigationActionsTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelDetectMitigationActionsTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1686,6 +1749,68 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<CreateCertificateFromCsrResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateCertificateFromCsrResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this API to define a Custom Metric published by your devices to Device Defender.
+     * </p>
+     * 
+     * @param createCustomMetricRequest
+     * @return Result of the CreateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCustomMetric
+     */
+    @Override
+    public CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCustomMetric(request);
+    }
+
+    @SdkInternalApi
+    final CreateCustomMetricResult executeCreateCustomMetric(CreateCustomMetricRequest createCustomMetricRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCustomMetricRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCustomMetricRequest> request = null;
+        Response<CreateCustomMetricResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCustomMetricRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCustomMetricRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomMetric");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCustomMetricResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCustomMetricResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3512,6 +3637,72 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     /**
+     * <note>
+     * <p>
+     * Before you can delete a custom metric, you must first remove the custom metric from all security profiles it's a
+     * part of. The security profile associated with the custom metric can be found using the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
+     * API with <code>metricName</code> set to your custom metric name.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param deleteCustomMetricRequest
+     * @return Result of the DeleteCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCustomMetric
+     */
+    @Override
+    public DeleteCustomMetricResult deleteCustomMetric(DeleteCustomMetricRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCustomMetric(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCustomMetricResult executeDeleteCustomMetric(DeleteCustomMetricRequest deleteCustomMetricRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCustomMetricRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCustomMetricRequest> request = null;
+        Response<DeleteCustomMetricResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCustomMetricRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCustomMetricRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomMetric");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCustomMetricResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCustomMetricResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Removes the specified dimension from your AWS account.
      * </p>
@@ -5082,7 +5273,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /**
      * <p>
      * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
-     * the issue, and when the audit that returned the finding was started.
+     * the issue, and the start time when the audit that returned the finding.
      * </p>
      * 
      * @param describeAuditFindingRequest
@@ -5584,6 +5775,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Gets information about a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param describeCustomMetricRequest
+     * @return Result of the DescribeCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCustomMetric
+     */
+    @Override
+    public DescribeCustomMetricResult describeCustomMetric(DescribeCustomMetricRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCustomMetric(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCustomMetricResult executeDescribeCustomMetric(DescribeCustomMetricRequest describeCustomMetricRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCustomMetricRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCustomMetricRequest> request = null;
+        Response<DescribeCustomMetricResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCustomMetricRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCustomMetricRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCustomMetric");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCustomMetricResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCustomMetricResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the default authorizer.
      * </p>
      * 
@@ -5638,6 +5889,69 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDefaultAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeDefaultAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param describeDetectMitigationActionsTaskRequest
+     * @return Result of the DescribeDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeDetectMitigationActionsTask
+     */
+    @Override
+    public DescribeDetectMitigationActionsTaskResult describeDetectMitigationActionsTask(DescribeDetectMitigationActionsTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDetectMitigationActionsTask(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDetectMitigationActionsTaskResult executeDescribeDetectMitigationActionsTask(
+            DescribeDetectMitigationActionsTaskRequest describeDetectMitigationActionsTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDetectMitigationActionsTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDetectMitigationActionsTaskRequest> request = null;
+        Response<DescribeDetectMitigationActionsTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDetectMitigationActionsTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDetectMitigationActionsTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDetectMitigationActionsTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDetectMitigationActionsTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDetectMitigationActionsTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7162,6 +7476,69 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a Device Defender's ML Detect Security Profile training model's status.
+     * </p>
+     * 
+     * @param getBehaviorModelTrainingSummariesRequest
+     * @return Result of the GetBehaviorModelTrainingSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetBehaviorModelTrainingSummaries
+     */
+    @Override
+    public GetBehaviorModelTrainingSummariesResult getBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBehaviorModelTrainingSummaries(request);
+    }
+
+    @SdkInternalApi
+    final GetBehaviorModelTrainingSummariesResult executeGetBehaviorModelTrainingSummaries(
+            GetBehaviorModelTrainingSummariesRequest getBehaviorModelTrainingSummariesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBehaviorModelTrainingSummariesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBehaviorModelTrainingSummariesRequest> request = null;
+        Response<GetBehaviorModelTrainingSummariesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBehaviorModelTrainingSummariesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getBehaviorModelTrainingSummariesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBehaviorModelTrainingSummaries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBehaviorModelTrainingSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetBehaviorModelTrainingSummariesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8826,6 +9203,186 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender detect custom metrics.
+     * </p>
+     * 
+     * @param listCustomMetricsRequest
+     * @return Result of the ListCustomMetrics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCustomMetrics
+     */
+    @Override
+    public ListCustomMetricsResult listCustomMetrics(ListCustomMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCustomMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListCustomMetricsResult executeListCustomMetrics(ListCustomMetricsRequest listCustomMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCustomMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCustomMetricsRequest> request = null;
+        Response<ListCustomMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCustomMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCustomMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCustomMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCustomMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsExecutionsRequest
+     * @return Result of the ListDetectMitigationActionsExecutions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsExecutions
+     */
+    @Override
+    public ListDetectMitigationActionsExecutionsResult listDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDetectMitigationActionsExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListDetectMitigationActionsExecutionsResult executeListDetectMitigationActionsExecutions(
+            ListDetectMitigationActionsExecutionsRequest listDetectMitigationActionsExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDetectMitigationActionsExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDetectMitigationActionsExecutionsRequest> request = null;
+        Response<ListDetectMitigationActionsExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDetectMitigationActionsExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDetectMitigationActionsExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectMitigationActionsExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDetectMitigationActionsExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDetectMitigationActionsExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List of Device Defender ML Detect mitigation actions tasks.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsTasksRequest
+     * @return Result of the ListDetectMitigationActionsTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsTasks
+     */
+    @Override
+    public ListDetectMitigationActionsTasksResult listDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDetectMitigationActionsTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListDetectMitigationActionsTasksResult executeListDetectMitigationActionsTasks(
+            ListDetectMitigationActionsTasksRequest listDetectMitigationActionsTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDetectMitigationActionsTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDetectMitigationActionsTasksRequest> request = null;
+        Response<ListDetectMitigationActionsTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDetectMitigationActionsTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDetectMitigationActionsTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectMitigationActionsTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDetectMitigationActionsTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDetectMitigationActionsTasksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the set of dimensions that are defined for your AWS account.
      * </p>
      * 
@@ -9969,9 +10526,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists the Device Defender security profiles you have created. You can use filters to list only those security
-     * profiles associated with a thing group or only those associated with your account.
+     * Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or
+     * custom metric.
      * </p>
+     * <note>
+     * <p>
+     * <code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.
+     * </p>
+     * </note>
      * 
      * @param listSecurityProfilesRequest
      * @return Result of the ListSecurityProfiles operation returned by the service.
@@ -12170,6 +12732,72 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Starts a Device Defender ML Detect mitigation actions task.
+     * </p>
+     * 
+     * @param startDetectMitigationActionsTaskRequest
+     * @return Result of the StartDetectMitigationActionsTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TaskAlreadyExistsException
+     *         This exception occurs if you attempt to start a task with the same task-id as an existing task but with a
+     *         different clientRequestToken.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.StartDetectMitigationActionsTask
+     */
+    @Override
+    public StartDetectMitigationActionsTaskResult startDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDetectMitigationActionsTask(request);
+    }
+
+    @SdkInternalApi
+    final StartDetectMitigationActionsTaskResult executeStartDetectMitigationActionsTask(
+            StartDetectMitigationActionsTaskRequest startDetectMitigationActionsTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDetectMitigationActionsTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDetectMitigationActionsTaskRequest> request = null;
+        Response<StartDetectMitigationActionsTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDetectMitigationActionsTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDetectMitigationActionsTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDetectMitigationActionsTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDetectMitigationActionsTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDetectMitigationActionsTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an on-demand Device Defender audit.
      * </p>
      * 
@@ -13089,8 +13717,68 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param updateCustomMetricRequest
+     * @return Result of the UpdateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCustomMetric
+     */
+    @Override
+    public UpdateCustomMetricResult updateCustomMetric(UpdateCustomMetricRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCustomMetric(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCustomMetricResult executeUpdateCustomMetric(UpdateCustomMetricRequest updateCustomMetricRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCustomMetricRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCustomMetricRequest> request = null;
+        Response<UpdateCustomMetricResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCustomMetricRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCustomMetricRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCustomMetric");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCustomMetricResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCustomMetricResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
-     * delete it and re-create it).
+     * delete it and recreate it).
      * </p>
      * 
      * @param updateDimensionRequest

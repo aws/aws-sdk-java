@@ -31,6 +31,10 @@ public class ListActiveViolationsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("thingName").build();
     private static final MarshallingInfo<String> SECURITYPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("securityProfileName").build();
+    private static final MarshallingInfo<String> BEHAVIORCRITERIATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("behaviorCriteriaType").build();
+    private static final MarshallingInfo<Boolean> LISTSUPPRESSEDALERTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("listSuppressedAlerts").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -54,6 +58,8 @@ public class ListActiveViolationsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listActiveViolationsRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(listActiveViolationsRequest.getSecurityProfileName(), SECURITYPROFILENAME_BINDING);
+            protocolMarshaller.marshall(listActiveViolationsRequest.getBehaviorCriteriaType(), BEHAVIORCRITERIATYPE_BINDING);
+            protocolMarshaller.marshall(listActiveViolationsRequest.getListSuppressedAlerts(), LISTSUPPRESSEDALERTS_BINDING);
             protocolMarshaller.marshall(listActiveViolationsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listActiveViolationsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

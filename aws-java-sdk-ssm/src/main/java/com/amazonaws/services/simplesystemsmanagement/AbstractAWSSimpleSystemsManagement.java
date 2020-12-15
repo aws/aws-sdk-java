@@ -486,6 +486,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public ListDocumentMetadataHistoryResult listDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -502,6 +507,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -601,6 +611,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public StartChangeRequestExecutionResult startChangeRequestExecution(StartChangeRequestExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartSessionResult startSession(StartSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -632,6 +647,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDocumentMetadataResult updateDocumentMetadata(UpdateDocumentMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

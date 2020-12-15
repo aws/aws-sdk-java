@@ -424,6 +424,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("DocumentAlreadyExists").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.DocumentAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionNotApprovedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationDefinitionNotApprovedExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceInformationFilterValue").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidInstanceInformationFilterValueExceptionUnmarshaller
                                             .getInstance()))
@@ -1411,8 +1415,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * If you create a new application in AppManager, Systems Manager calls this API action to specify information about
-     * the new application, including the application type.
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
      * </p>
      * 
      * @param createOpsMetadataRequest
@@ -1424,8 +1428,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws OpsMetadataInvalidArgumentException
      *         One of the arguments passed is invalid.
      * @throws OpsMetadataLimitExceededException
-     *         Your account reached the maximum number of OpsMetadata objects allowed by AppManager. The maximum is 200
-     *         OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     *         Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
+     *         maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
@@ -5690,7 +5694,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * View operational metadata related to an application in AppManager.
+     * View operational metadata related to an application in Application Manager.
      * </p>
      * 
      * @param getOpsMetadataRequest
@@ -6796,6 +6800,70 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return Result of the ListDocumentMetadataHistory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDocumentMetadataHistoryResult listDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentMetadataHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentMetadataHistoryResult executeListDocumentMetadataHistory(ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDocumentMetadataHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDocumentMetadataHistoryRequest> request = null;
+        Response<ListDocumentMetadataHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDocumentMetadataHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDocumentMetadataHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentMetadataHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDocumentMetadataHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDocumentMetadataHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -6998,7 +7066,73 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Systems Manager calls this API action when displaying all AppManager OpsMetadata objects or blobs.
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return Result of the ListOpsItemEvents operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsItemEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsItemEventsResult executeListOpsItemEvents(ListOpsItemEventsRequest listOpsItemEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsItemEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsItemEventsRequest> request = null;
+        Response<ListOpsItemEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsItemEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOpsItemEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsItemEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsItemEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOpsItemEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
      * </p>
      * 
      * @param listOpsMetadataRequest
@@ -8482,6 +8616,80 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return Result of the StartChangeRequestExecution operation returned by the service.
+     * @throws AutomationDefinitionNotFoundException
+     *         An Automation document with the specified name could not be found.
+     * @throws InvalidAutomationExecutionParametersException
+     *         The supplied parameters for invoking the specified Automation document are incorrect. For example, they
+     *         may not match the set of parameters permitted for the specified Automation document.
+     * @throws AutomationExecutionLimitExceededException
+     *         The number of simultaneously running Automation executions exceeded the allowable limit.
+     * @throws AutomationDefinitionVersionNotFoundException
+     *         An Automation document with the specified name and version could not be found.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
+     *         to the API with the same idempotency token.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AutomationDefinitionNotApprovedException
+     *         Indicates that the Change Manager change template used in the change request was rejected or is still in
+     *         a pending state.
+     * @sample AWSSimpleSystemsManagement.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartChangeRequestExecutionResult startChangeRequestExecution(StartChangeRequestExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartChangeRequestExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartChangeRequestExecutionResult executeStartChangeRequestExecution(StartChangeRequestExecutionRequest startChangeRequestExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startChangeRequestExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartChangeRequestExecutionRequest> request = null;
+        Response<StartChangeRequestExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartChangeRequestExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startChangeRequestExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChangeRequestExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartChangeRequestExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartChangeRequestExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
      * token that can be used to open a WebSocket connection for sending input and receiving outputs.
      * </p>
@@ -9002,6 +9210,70 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return Result of the UpdateDocumentMetadata operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @sample AWSSimpleSystemsManagement.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDocumentMetadataResult updateDocumentMetadata(UpdateDocumentMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentMetadataResult executeUpdateDocumentMetadata(UpdateDocumentMetadataRequest updateDocumentMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDocumentMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentMetadataRequest> request = null;
+        Response<UpdateDocumentMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDocumentMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing maintenance window. Only specified parameters are modified.
      * </p>
      * <note>
@@ -9444,7 +9716,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
      * </p>
      * 
      * @param updateOpsMetadataRequest
@@ -9455,7 +9727,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         One of the arguments passed is invalid.
      * @throws OpsMetadataKeyLimitExceededException
      *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
-     *         application in AppManager.
+     *         application in Application Manager.
      * @throws OpsMetadataTooManyUpdatesException
      *         The system is processing too many concurrent updates. Wait a few moments and try again.
      * @throws InternalServerErrorException

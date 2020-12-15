@@ -67,6 +67,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timestream").build();
     private static final MarshallingInfo<StructuredPojo> HTTP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("http").build();
+    private static final MarshallingInfo<StructuredPojo> KAFKA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafka").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -104,6 +106,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getStepFunctions(), STEPFUNCTIONS_BINDING);
             protocolMarshaller.marshall(action.getTimestream(), TIMESTREAM_BINDING);
             protocolMarshaller.marshall(action.getHttp(), HTTP_BINDING);
+            protocolMarshaller.marshall(action.getKafka(), KAFKA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

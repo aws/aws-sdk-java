@@ -111,7 +111,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * is 10.
      * </p>
      * </li>
      * <li>
@@ -119,12 +120,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer batchSize;
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
@@ -174,7 +181,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * </p>
+     */
+    private Integer tumblingWindowInSeconds;
+    /**
+     * <p>
+     * The name of the Kafka topic.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> topics;
@@ -186,19 +199,22 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<String> queues;
     /**
      * <p>
-     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
-     * format: <code> { "username": "your username", "password": "your password" }</code>
-     * </p>
-     * <p>
-     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     * </p>
-     * <p>
-     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
-     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
-     * <code>kms:Decrypt</code> permissions.
+     * An array of the authentication protocol, or the VPC components to secure your event source.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster to send records.
+     * </p>
+     */
+    private SelfManagedEventSource selfManagedEventSource;
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
 
     /**
      * <p>
@@ -650,12 +666,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -675,12 +697,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *        the max is 10.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      */
@@ -706,12 +734,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -730,12 +764,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *         <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *         the max is 10.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      */
@@ -761,12 +801,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -786,12 +832,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *        the max is 10.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -804,11 +856,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *        function, in seconds.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -817,10 +871,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds.
      * </p>
      * 
-     * @return (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * @return (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *         function, in seconds.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -829,11 +885,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *        function, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1186,10 +1244,50 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
      * </p>
      * 
-     * @return (MSK) The name of the Kafka topic.
+     * @param tumblingWindowInSeconds
+     *        (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     */
+
+    public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
+        this.tumblingWindowInSeconds = tumblingWindowInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * </p>
+     * 
+     * @return (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     */
+
+    public Integer getTumblingWindowInSeconds() {
+        return this.tumblingWindowInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * </p>
+     * 
+     * @param tumblingWindowInSeconds
+     *        (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
+        setTumblingWindowInSeconds(tumblingWindowInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Kafka topic.
+     * </p>
+     * 
+     * @return The name of the Kafka topic.
      */
 
     public java.util.List<String> getTopics() {
@@ -1201,11 +1299,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * The name of the Kafka topic.
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        The name of the Kafka topic.
      */
 
     public void setTopics(java.util.Collection<String> topics) {
@@ -1219,7 +1317,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * The name of the Kafka topic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1228,7 +1326,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        The name of the Kafka topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1244,11 +1342,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * The name of the Kafka topic.
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        The name of the Kafka topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1332,28 +1430,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
-     * format: <code> { "username": "your username", "password": "your password" }</code>
-     * </p>
-     * <p>
-     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     * </p>
-     * <p>
-     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
-     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
-     * <code>kms:Decrypt</code> permissions.
+     * An array of the authentication protocol, or the VPC components to secure your event source.
      * </p>
      * 
-     * @return (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
-     *         following format: <code> { "username": "your username", "password": "your password" }</code> </p>
-     *         <p>
-     *         To reference the secret, use the following format:
-     *         <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     *         </p>
-     *         <p>
-     *         The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
-     *         customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
-     *         requires <code>kms:Decrypt</code> permissions.
+     * @return An array of the authentication protocol, or the VPC components to secure your event source.
      */
 
     public java.util.List<SourceAccessConfiguration> getSourceAccessConfigurations() {
@@ -1365,29 +1445,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
-     * format: <code> { "username": "your username", "password": "your password" }</code>
-     * </p>
-     * <p>
-     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     * </p>
-     * <p>
-     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
-     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
-     * <code>kms:Decrypt</code> permissions.
+     * An array of the authentication protocol, or the VPC components to secure your event source.
      * </p>
      * 
      * @param sourceAccessConfigurations
-     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
-     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
-     *        <p>
-     *        To reference the secret, use the following format:
-     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     *        </p>
-     *        <p>
-     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
-     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
-     *        requires <code>kms:Decrypt</code> permissions.
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
      */
 
     public void setSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
@@ -1401,16 +1463,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
-     * format: <code> { "username": "your username", "password": "your password" }</code>
-     * </p>
-     * <p>
-     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     * </p>
-     * <p>
-     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
-     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
-     * <code>kms:Decrypt</code> permissions.
+     * An array of the authentication protocol, or the VPC components to secure your event source.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1419,16 +1472,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sourceAccessConfigurations
-     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
-     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
-     *        <p>
-     *        To reference the secret, use the following format:
-     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     *        </p>
-     *        <p>
-     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
-     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
-     *        requires <code>kms:Decrypt</code> permissions.
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1444,34 +1488,158 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
-     * format: <code> { "username": "your username", "password": "your password" }</code>
-     * </p>
-     * <p>
-     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     * </p>
-     * <p>
-     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
-     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
-     * <code>kms:Decrypt</code> permissions.
+     * An array of the authentication protocol, or the VPC components to secure your event source.
      * </p>
      * 
      * @param sourceAccessConfigurations
-     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
-     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
-     *        <p>
-     *        To reference the secret, use the following format:
-     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
-     *        </p>
-     *        <p>
-     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
-     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
-     *        requires <code>kms:Decrypt</code> permissions.
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateEventSourceMappingRequest withSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
         setSourceAccessConfigurations(sourceAccessConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster to send records.
+     * </p>
+     * 
+     * @param selfManagedEventSource
+     *        The Self-Managed Apache Kafka cluster to send records.
+     */
+
+    public void setSelfManagedEventSource(SelfManagedEventSource selfManagedEventSource) {
+        this.selfManagedEventSource = selfManagedEventSource;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster to send records.
+     * </p>
+     * 
+     * @return The Self-Managed Apache Kafka cluster to send records.
+     */
+
+    public SelfManagedEventSource getSelfManagedEventSource() {
+        return this.selfManagedEventSource;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster to send records.
+     * </p>
+     * 
+     * @param selfManagedEventSource
+     *        The Self-Managed Apache Kafka cluster to send records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withSelfManagedEventSource(SelfManagedEventSource selfManagedEventSource) {
+        setSelfManagedEventSource(selfManagedEventSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @return (Streams) A list of current response type enums applied to the event source mapping.
+     * @see FunctionResponseType
+     */
+
+    public java.util.List<String> getFunctionResponseTypes() {
+        if (functionResponseTypes == null) {
+            functionResponseTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return functionResponseTypes;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @see FunctionResponseType
+     */
+
+    public void setFunctionResponseTypes(java.util.Collection<String> functionResponseTypes) {
+        if (functionResponseTypes == null) {
+            this.functionResponseTypes = null;
+            return;
+        }
+
+        this.functionResponseTypes = new com.amazonaws.internal.SdkInternalList<String>(functionResponseTypes);
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFunctionResponseTypes(java.util.Collection)} or
+     * {@link #withFunctionResponseTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public CreateEventSourceMappingRequest withFunctionResponseTypes(String... functionResponseTypes) {
+        if (this.functionResponseTypes == null) {
+            setFunctionResponseTypes(new com.amazonaws.internal.SdkInternalList<String>(functionResponseTypes.length));
+        }
+        for (String ele : functionResponseTypes) {
+            this.functionResponseTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public CreateEventSourceMappingRequest withFunctionResponseTypes(java.util.Collection<String> functionResponseTypes) {
+        setFunctionResponseTypes(functionResponseTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public CreateEventSourceMappingRequest withFunctionResponseTypes(FunctionResponseType... functionResponseTypes) {
+        com.amazonaws.internal.SdkInternalList<String> functionResponseTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                functionResponseTypes.length);
+        for (FunctionResponseType value : functionResponseTypes) {
+            functionResponseTypesCopy.add(value.toString());
+        }
+        if (getFunctionResponseTypes() == null) {
+            setFunctionResponseTypes(functionResponseTypesCopy);
+        } else {
+            getFunctionResponseTypes().addAll(functionResponseTypesCopy);
+        }
         return this;
     }
 
@@ -1511,12 +1679,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             sb.append("BisectBatchOnFunctionError: ").append(getBisectBatchOnFunctionError()).append(",");
         if (getMaximumRetryAttempts() != null)
             sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts()).append(",");
+        if (getTumblingWindowInSeconds() != null)
+            sb.append("TumblingWindowInSeconds: ").append(getTumblingWindowInSeconds()).append(",");
         if (getTopics() != null)
             sb.append("Topics: ").append(getTopics()).append(",");
         if (getQueues() != null)
             sb.append("Queues: ").append(getQueues()).append(",");
         if (getSourceAccessConfigurations() != null)
-            sb.append("SourceAccessConfigurations: ").append(getSourceAccessConfigurations());
+            sb.append("SourceAccessConfigurations: ").append(getSourceAccessConfigurations()).append(",");
+        if (getSelfManagedEventSource() != null)
+            sb.append("SelfManagedEventSource: ").append(getSelfManagedEventSource()).append(",");
+        if (getFunctionResponseTypes() != null)
+            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -1580,6 +1754,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getMaximumRetryAttempts() != null && other.getMaximumRetryAttempts().equals(this.getMaximumRetryAttempts()) == false)
             return false;
+        if (other.getTumblingWindowInSeconds() == null ^ this.getTumblingWindowInSeconds() == null)
+            return false;
+        if (other.getTumblingWindowInSeconds() != null && other.getTumblingWindowInSeconds().equals(this.getTumblingWindowInSeconds()) == false)
+            return false;
         if (other.getTopics() == null ^ this.getTopics() == null)
             return false;
         if (other.getTopics() != null && other.getTopics().equals(this.getTopics()) == false)
@@ -1591,6 +1769,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (other.getSourceAccessConfigurations() == null ^ this.getSourceAccessConfigurations() == null)
             return false;
         if (other.getSourceAccessConfigurations() != null && other.getSourceAccessConfigurations().equals(this.getSourceAccessConfigurations()) == false)
+            return false;
+        if (other.getSelfManagedEventSource() == null ^ this.getSelfManagedEventSource() == null)
+            return false;
+        if (other.getSelfManagedEventSource() != null && other.getSelfManagedEventSource().equals(this.getSelfManagedEventSource()) == false)
+            return false;
+        if (other.getFunctionResponseTypes() == null ^ this.getFunctionResponseTypes() == null)
+            return false;
+        if (other.getFunctionResponseTypes() != null && other.getFunctionResponseTypes().equals(this.getFunctionResponseTypes()) == false)
             return false;
         return true;
     }
@@ -1612,9 +1798,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
+        hashCode = prime * hashCode + ((getTumblingWindowInSeconds() == null) ? 0 : getTumblingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getTopics() == null) ? 0 : getTopics().hashCode());
         hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode());
         hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedEventSource() == null) ? 0 : getSelfManagedEventSource().hashCode());
+        hashCode = prime * hashCode + ((getFunctionResponseTypes() == null) ? 0 : getFunctionResponseTypes().hashCode());
         return hashCode;
     }
 

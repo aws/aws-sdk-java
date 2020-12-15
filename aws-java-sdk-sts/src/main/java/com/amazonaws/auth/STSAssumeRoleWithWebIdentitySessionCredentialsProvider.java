@@ -227,7 +227,7 @@ public class STSAssumeRoleWithWebIdentitySessionCredentialsProvider implements A
         }
     }
 
-    private static class StsRetryCondition implements com.amazonaws.retry.RetryPolicy.RetryCondition {
+    static class StsRetryCondition implements com.amazonaws.retry.RetryPolicy.RetryCondition {
 
         @Override
         public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
@@ -236,9 +236,11 @@ public class STSAssumeRoleWithWebIdentitySessionCredentialsProvider implements A
             // Always retry on client exceptions caused by IOException
             if (exception.getCause() instanceof IOException) return true;
 
-            if (exception.getCause() instanceof InvalidIdentityTokenException) return true;
+            if (exception instanceof InvalidIdentityTokenException || 
+                    exception.getCause() instanceof InvalidIdentityTokenException) return true;
 
-            if (exception.getCause() instanceof IDPCommunicationErrorException) return true;
+            if (exception instanceof IDPCommunicationErrorException || 
+                    exception.getCause() instanceof IDPCommunicationErrorException) return true;
 
             // Only retry on a subset of service exceptions
             if (exception instanceof AmazonServiceException) {

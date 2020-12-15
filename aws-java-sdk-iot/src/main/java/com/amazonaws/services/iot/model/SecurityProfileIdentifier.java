@@ -27,7 +27,7 @@ public class SecurityProfileIdentifier implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name you have given to the security profile.
+     * The name you've given to the security profile.
      * </p>
      */
     private String name;
@@ -40,11 +40,11 @@ public class SecurityProfileIdentifier implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name you have given to the security profile.
+     * The name you've given to the security profile.
      * </p>
      * 
      * @param name
-     *        The name you have given to the security profile.
+     *        The name you've given to the security profile.
      */
 
     public void setName(String name) {
@@ -53,10 +53,10 @@ public class SecurityProfileIdentifier implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name you have given to the security profile.
+     * The name you've given to the security profile.
      * </p>
      * 
-     * @return The name you have given to the security profile.
+     * @return The name you've given to the security profile.
      */
 
     public String getName() {
@@ -65,11 +65,11 @@ public class SecurityProfileIdentifier implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name you have given to the security profile.
+     * The name you've given to the security profile.
      * </p>
      * 
      * @param name
-     *        The name you have given to the security profile.
+     *        The name you've given to the security profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

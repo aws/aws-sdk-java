@@ -29,7 +29,7 @@ public class StartAuditMitigationActionsTaskRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit
-     * check, to all findings from an audit, or to a speecific set of findings.
+     * check, to all findings from an audit, or to a specific set of findings.
      * </p>
      */
     private AuditMitigationActionsTaskTarget target;
@@ -95,12 +95,12 @@ public class StartAuditMitigationActionsTaskRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit
-     * check, to all findings from an audit, or to a speecific set of findings.
+     * check, to all findings from an audit, or to a specific set of findings.
      * </p>
      * 
      * @param target
      *        Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of
-     *        audit check, to all findings from an audit, or to a speecific set of findings.
+     *        audit check, to all findings from an audit, or to a specific set of findings.
      */
 
     public void setTarget(AuditMitigationActionsTaskTarget target) {
@@ -110,11 +110,11 @@ public class StartAuditMitigationActionsTaskRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit
-     * check, to all findings from an audit, or to a speecific set of findings.
+     * check, to all findings from an audit, or to a specific set of findings.
      * </p>
      * 
      * @return Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of
-     *         audit check, to all findings from an audit, or to a speecific set of findings.
+     *         audit check, to all findings from an audit, or to a specific set of findings.
      */
 
     public AuditMitigationActionsTaskTarget getTarget() {
@@ -124,12 +124,12 @@ public class StartAuditMitigationActionsTaskRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit
-     * check, to all findings from an audit, or to a speecific set of findings.
+     * check, to all findings from an audit, or to a specific set of findings.
      * </p>
      * 
      * @param target
      *        Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of
-     *        audit check, to all findings from an audit, or to a speecific set of findings.
+     *        audit check, to all findings from an audit, or to a specific set of findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

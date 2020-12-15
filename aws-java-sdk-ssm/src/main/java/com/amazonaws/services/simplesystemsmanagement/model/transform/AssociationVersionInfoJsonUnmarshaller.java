@@ -113,6 +113,12 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationVersionInfo.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("TargetLocations", targetDepth)) {
+                    context.nextToken();
+                    associationVersionInfo.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

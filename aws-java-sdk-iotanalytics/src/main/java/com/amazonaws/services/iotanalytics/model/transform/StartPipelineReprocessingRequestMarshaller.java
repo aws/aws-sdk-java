@@ -33,6 +33,8 @@ public class StartPipelineReprocessingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> CHANNELMESSAGES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelMessages").build();
 
     private static final StartPipelineReprocessingRequestMarshaller instance = new StartPipelineReprocessingRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class StartPipelineReprocessingRequestMarshaller {
             protocolMarshaller.marshall(startPipelineReprocessingRequest.getPipelineName(), PIPELINENAME_BINDING);
             protocolMarshaller.marshall(startPipelineReprocessingRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(startPipelineReprocessingRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(startPipelineReprocessingRequest.getChannelMessages(), CHANNELMESSAGES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

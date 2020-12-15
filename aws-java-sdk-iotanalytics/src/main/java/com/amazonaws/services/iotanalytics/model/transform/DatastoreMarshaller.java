@@ -43,6 +43,8 @@ public class DatastoreMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMESSAGEARRIVALTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastMessageArrivalTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> FILEFORMATCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileFormatConfiguration").build();
 
     private static final DatastoreMarshaller instance = new DatastoreMarshaller();
 
@@ -68,6 +70,7 @@ public class DatastoreMarshaller {
             protocolMarshaller.marshall(datastore.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(datastore.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(datastore.getLastMessageArrivalTime(), LASTMESSAGEARRIVALTIME_BINDING);
+            protocolMarshaller.marshall(datastore.getFileFormatConfiguration(), FILEFORMATCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

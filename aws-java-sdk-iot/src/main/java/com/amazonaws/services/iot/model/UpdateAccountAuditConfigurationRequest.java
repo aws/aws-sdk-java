@@ -22,8 +22,8 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as required when performing an audit.
+     * The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about your
+     * devices, policies, certificates, and other items as required when performing an audit.
      * </p>
      */
     private String roleArn;
@@ -44,7 +44,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      * collected so far in relation to the check is deleted.
      * </p>
      * <p>
-     * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     * You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
@@ -56,13 +56,13 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as required when performing an audit.
+     * The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about your
+     * devices, policies, certificates, and other items as required when performing an audit.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as required when performing an audit.
+     *        The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about
+     *        your devices, policies, certificates, and other items as required when performing an audit.
      */
 
     public void setRoleArn(String roleArn) {
@@ -71,12 +71,12 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as required when performing an audit.
+     * The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about your
+     * devices, policies, certificates, and other items as required when performing an audit.
      * </p>
      * 
-     * @return The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *         certificates and other items as required when performing an audit.
+     * @return The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about
+     *         your devices, policies, certificates, and other items as required when performing an audit.
      */
 
     public String getRoleArn() {
@@ -85,13 +85,13 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as required when performing an audit.
+     * The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about your
+     * devices, policies, certificates, and other items as required when performing an audit.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as required when performing an audit.
+     *        The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access information about
+     *        your devices, policies, certificates, and other items as required when performing an audit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,7 +180,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      * collected so far in relation to the check is deleted.
      * </p>
      * <p>
-     * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     * You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
@@ -196,7 +196,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      *         any data collected so far in relation to the check is deleted.
      *         </p>
      *         <p>
-     *         You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     *         You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      *         scheduled audit or delete the scheduled audit itself.
      *         </p>
      *         <p>
@@ -219,7 +219,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      * collected so far in relation to the check is deleted.
      * </p>
      * <p>
-     * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     * You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
@@ -236,7 +236,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      *        any data collected so far in relation to the check is deleted.
      *        </p>
      *        <p>
-     *        You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     *        You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      *        scheduled audit or delete the scheduled audit itself.
      *        </p>
      *        <p>
@@ -259,7 +259,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      * collected so far in relation to the check is deleted.
      * </p>
      * <p>
-     * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     * You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
@@ -276,7 +276,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
      *        any data collected so far in relation to the check is deleted.
      *        </p>
      *        <p>
-     *        You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
+     *        You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the
      *        scheduled audit or delete the scheduled audit itself.
      *        </p>
      *        <p>

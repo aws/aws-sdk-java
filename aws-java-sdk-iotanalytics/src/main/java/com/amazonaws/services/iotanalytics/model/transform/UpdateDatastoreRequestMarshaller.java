@@ -33,6 +33,8 @@ public class UpdateDatastoreRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<StructuredPojo> DATASTORESTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreStorage").build();
+    private static final MarshallingInfo<StructuredPojo> FILEFORMATCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileFormatConfiguration").build();
 
     private static final UpdateDatastoreRequestMarshaller instance = new UpdateDatastoreRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateDatastoreRequestMarshaller {
             protocolMarshaller.marshall(updateDatastoreRequest.getDatastoreName(), DATASTORENAME_BINDING);
             protocolMarshaller.marshall(updateDatastoreRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(updateDatastoreRequest.getDatastoreStorage(), DATASTORESTORAGE_BINDING);
+            protocolMarshaller.marshall(updateDatastoreRequest.getFileFormatConfiguration(), FILEFORMATCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

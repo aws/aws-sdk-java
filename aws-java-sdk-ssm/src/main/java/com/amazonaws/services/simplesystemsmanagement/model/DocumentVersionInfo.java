@@ -80,6 +80,12 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String statusInformation;
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     */
+    private String reviewStatus;
 
     /**
      * <p>
@@ -478,6 +484,65 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @return The current status of the approval review for the latest version of the document.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentVersionInfo withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentVersionInfo withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -504,7 +569,9 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusInformation() != null)
-            sb.append("StatusInformation: ").append(getStatusInformation());
+            sb.append("StatusInformation: ").append(getStatusInformation()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -551,6 +618,10 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getStatusInformation() != null && other.getStatusInformation().equals(this.getStatusInformation()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
         return true;
     }
 
@@ -567,6 +638,7 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusInformation() == null) ? 0 : getStatusInformation().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
         return hashCode;
     }
 

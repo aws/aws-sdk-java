@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration values that override the container image Dockerfile. See <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images-settings.html">Override Container
- * settings</a>.
+ * Configuration values that override the container image Dockerfile settings. See <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container settings</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ImageConfig" target="_top">AWS API

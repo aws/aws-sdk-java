@@ -88,6 +88,20 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AttachmentContent> attachmentsContent;
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     */
+    private String reviewStatus;
 
     /**
      * <p>
@@ -691,6 +705,154 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @return The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *         your organization, or of the latest version of an existing SSM document.</p>
+     *         <p>
+     *         Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *         approved, the status of the previous version changes to REJECTED.
+     *         </p>
+     *         <p>
+     *         Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public GetDocumentResult withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(ReviewStatus reviewStatus) {
+        withReviewStatus(reviewStatus);
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public GetDocumentResult withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -721,7 +883,9 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getRequires() != null)
             sb.append("Requires: ").append(getRequires()).append(",");
         if (getAttachmentsContent() != null)
-            sb.append("AttachmentsContent: ").append(getAttachmentsContent());
+            sb.append("AttachmentsContent: ").append(getAttachmentsContent()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -776,6 +940,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getAttachmentsContent() != null && other.getAttachmentsContent().equals(this.getAttachmentsContent()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
         return true;
     }
 
@@ -794,6 +962,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsContent() == null) ? 0 : getAttachmentsContent().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
         return hashCode;
     }
 

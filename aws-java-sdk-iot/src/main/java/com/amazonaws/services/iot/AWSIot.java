@@ -348,7 +348,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in
+     * Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn't in
      * progress, an "InvalidRequestException" occurs.
      * </p>
      * 
@@ -401,6 +401,25 @@ public interface AWSIot {
      * @sample AWSIot.CancelCertificateTransfer
      */
     CancelCertificateTransferResult cancelCertificateTransfer(CancelCertificateTransferRequest cancelCertificateTransferRequest);
+
+    /**
+     * <p>
+     * Cancels a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param cancelDetectMitigationActionsTaskRequest
+     * @return Result of the CancelDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CancelDetectMitigationActionsTask
+     */
+    CancelDetectMitigationActionsTaskResult cancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest cancelDetectMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -627,6 +646,27 @@ public interface AWSIot {
      * @sample AWSIot.CreateCertificateFromCsr
      */
     CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest createCertificateFromCsrRequest);
+
+    /**
+     * <p>
+     * Use this API to define a Custom Metric published by your devices to Device Defender.
+     * </p>
+     * 
+     * @param createCustomMetricRequest
+     * @return Result of the CreateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCustomMetric
+     */
+    CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest createCustomMetricRequest);
 
     /**
      * <p>
@@ -1316,6 +1356,31 @@ public interface AWSIot {
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
 
     /**
+     * <note>
+     * <p>
+     * Before you can delete a custom metric, you must first remove the custom metric from all security profiles it's a
+     * part of. The security profile associated with the custom metric can be found using the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
+     * API with <code>metricName</code> set to your custom metric name.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param deleteCustomMetricRequest
+     * @return Result of the DeleteCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCustomMetric
+     */
+    DeleteCustomMetricResult deleteCustomMetric(DeleteCustomMetricRequest deleteCustomMetricRequest);
+
+    /**
      * <p>
      * Removes the specified dimension from your AWS account.
      * </p>
@@ -1885,7 +1950,7 @@ public interface AWSIot {
     /**
      * <p>
      * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
-     * the issue, and when the audit that returned the finding was started.
+     * the issue, and the start time when the audit that returned the finding.
      * </p>
      * 
      * @param describeAuditFindingRequest
@@ -2054,6 +2119,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param describeCustomMetricRequest
+     * @return Result of the DescribeCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCustomMetric
+     */
+    DescribeCustomMetricResult describeCustomMetric(DescribeCustomMetricRequest describeCustomMetricRequest);
+
+    /**
+     * <p>
      * Describes the default authorizer.
      * </p>
      * 
@@ -2074,6 +2158,26 @@ public interface AWSIot {
      * @sample AWSIot.DescribeDefaultAuthorizer
      */
     DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param describeDetectMitigationActionsTaskRequest
+     * @return Result of the DescribeDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeDetectMitigationActionsTask
+     */
+    DescribeDetectMitigationActionsTaskResult describeDetectMitigationActionsTask(
+            DescribeDetectMitigationActionsTaskRequest describeDetectMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -2597,6 +2701,25 @@ public interface AWSIot {
      * @sample AWSIot.EnableTopicRule
      */
     EnableTopicRuleResult enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest);
+
+    /**
+     * <p>
+     * Returns a Device Defender's ML Detect Security Profile training model's status.
+     * </p>
+     * 
+     * @param getBehaviorModelTrainingSummariesRequest
+     * @return Result of the GetBehaviorModelTrainingSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetBehaviorModelTrainingSummaries
+     */
+    GetBehaviorModelTrainingSummariesResult getBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest getBehaviorModelTrainingSummariesRequest);
 
     /**
      * <p>
@@ -3176,6 +3299,58 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender detect custom metrics.
+     * </p>
+     * 
+     * @param listCustomMetricsRequest
+     * @return Result of the ListCustomMetrics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCustomMetrics
+     */
+    ListCustomMetricsResult listCustomMetrics(ListCustomMetricsRequest listCustomMetricsRequest);
+
+    /**
+     * <p>
+     * Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsExecutionsRequest
+     * @return Result of the ListDetectMitigationActionsExecutions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsExecutions
+     */
+    ListDetectMitigationActionsExecutionsResult listDetectMitigationActionsExecutions(
+            ListDetectMitigationActionsExecutionsRequest listDetectMitigationActionsExecutionsRequest);
+
+    /**
+     * <p>
+     * List of Device Defender ML Detect mitigation actions tasks.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsTasksRequest
+     * @return Result of the ListDetectMitigationActionsTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsTasks
+     */
+    ListDetectMitigationActionsTasksResult listDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest listDetectMitigationActionsTasksRequest);
+
+    /**
+     * <p>
      * List the set of dimensions that are defined for your AWS account.
      * </p>
      * 
@@ -3566,9 +3741,14 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists the Device Defender security profiles you have created. You can use filters to list only those security
-     * profiles associated with a thing group or only those associated with your account.
+     * Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or
+     * custom metric.
      * </p>
+     * <note>
+     * <p>
+     * <code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.
+     * </p>
+     * </note>
      * 
      * @param listSecurityProfilesRequest
      * @return Result of the ListSecurityProfiles operation returned by the service.
@@ -4343,6 +4523,28 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Starts a Device Defender ML Detect mitigation actions task.
+     * </p>
+     * 
+     * @param startDetectMitigationActionsTaskRequest
+     * @return Result of the StartDetectMitigationActionsTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TaskAlreadyExistsException
+     *         This exception occurs if you attempt to start a task with the same task-id as an existing task but with a
+     *         different clientRequestToken.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.StartDetectMitigationActionsTask
+     */
+    StartDetectMitigationActionsTaskResult startDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest startDetectMitigationActionsTaskRequest);
+
+    /**
+     * <p>
      * Starts an on-demand Device Defender audit.
      * </p>
      * 
@@ -4679,8 +4881,27 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param updateCustomMetricRequest
+     * @return Result of the UpdateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCustomMetric
+     */
+    UpdateCustomMetricResult updateCustomMetric(UpdateCustomMetricRequest updateCustomMetricRequest);
+
+    /**
+     * <p>
      * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
-     * delete it and re-create it).
+     * delete it and recreate it).
      * </p>
      * 
      * @param updateDimensionRequest

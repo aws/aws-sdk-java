@@ -99,6 +99,18 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     */
+    private String reviewStatus;
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     */
+    private String author;
 
     /**
      * <p>
@@ -766,6 +778,119 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @return The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentIdentifier withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(ReviewStatus reviewStatus) {
+        withReviewStatus(reviewStatus);
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentIdentifier withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     */
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @return The user in your organization who created the document.
+     */
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withAuthor(String author) {
+        setAuthor(author);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -798,7 +923,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getRequires() != null)
-            sb.append("Requires: ").append(getRequires());
+            sb.append("Requires: ").append(getRequires()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus()).append(",");
+        if (getAuthor() != null)
+            sb.append("Author: ").append(getAuthor());
         sb.append("}");
         return sb.toString();
     }
@@ -857,6 +986,14 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRequires() != null && other.getRequires().equals(this.getRequires()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
+        if (other.getAuthor() == null ^ this.getAuthor() == null)
+            return false;
+        if (other.getAuthor() != null && other.getAuthor().equals(this.getAuthor()) == false)
+            return false;
         return true;
     }
 
@@ -876,6 +1013,8 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
+        hashCode = prime * hashCode + ((getAuthor() == null) ? 0 : getAuthor().hashCode());
         return hashCode;
     }
 

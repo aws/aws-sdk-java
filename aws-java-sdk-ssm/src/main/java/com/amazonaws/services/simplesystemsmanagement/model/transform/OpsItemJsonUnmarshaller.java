@@ -52,6 +52,10 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                     context.nextToken();
                     opsItem.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OpsItemType", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setOpsItemType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     opsItem.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -116,6 +120,22 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
                     opsItem.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ActualStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setActualStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ActualEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setActualEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setPlannedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setPlannedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
