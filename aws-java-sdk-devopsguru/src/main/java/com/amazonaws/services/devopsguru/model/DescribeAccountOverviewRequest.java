@@ -25,12 +25,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The start of the time range passed in. The start time granularity is at the day level. The floor of the start
+     * time is used. Returned information occurred after this day.
+     * </p>
+     */
     private java.util.Date fromTime;
-
+    /**
+     * <p>
+     * The end of the time range passed in. The start time granularity is at the day level. The floor of the start time
+     * is used. Returned information occurred before this day. If this is not specified, then the current day is used.
+     * </p>
+     */
     private java.util.Date toTime;
 
     /**
+     * <p>
+     * The start of the time range passed in. The start time granularity is at the day level. The floor of the start
+     * time is used. Returned information occurred after this day.
+     * </p>
+     * 
      * @param fromTime
+     *        The start of the time range passed in. The start time granularity is at the day level. The floor of the
+     *        start time is used. Returned information occurred after this day.
      */
 
     public void setFromTime(java.util.Date fromTime) {
@@ -38,7 +56,13 @@ public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The start of the time range passed in. The start time granularity is at the day level. The floor of the start
+     * time is used. Returned information occurred after this day.
+     * </p>
+     * 
+     * @return The start of the time range passed in. The start time granularity is at the day level. The floor of the
+     *         start time is used. Returned information occurred after this day.
      */
 
     public java.util.Date getFromTime() {
@@ -46,7 +70,14 @@ public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The start of the time range passed in. The start time granularity is at the day level. The floor of the start
+     * time is used. Returned information occurred after this day.
+     * </p>
+     * 
      * @param fromTime
+     *        The start of the time range passed in. The start time granularity is at the day level. The floor of the
+     *        start time is used. Returned information occurred after this day.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +87,15 @@ public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The end of the time range passed in. The start time granularity is at the day level. The floor of the start time
+     * is used. Returned information occurred before this day. If this is not specified, then the current day is used.
+     * </p>
+     * 
      * @param toTime
+     *        The end of the time range passed in. The start time granularity is at the day level. The floor of the
+     *        start time is used. Returned information occurred before this day. If this is not specified, then the
+     *        current day is used.
      */
 
     public void setToTime(java.util.Date toTime) {
@@ -64,7 +103,14 @@ public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The end of the time range passed in. The start time granularity is at the day level. The floor of the start time
+     * is used. Returned information occurred before this day. If this is not specified, then the current day is used.
+     * </p>
+     * 
+     * @return The end of the time range passed in. The start time granularity is at the day level. The floor of the
+     *         start time is used. Returned information occurred before this day. If this is not specified, then the
+     *         current day is used.
      */
 
     public java.util.Date getToTime() {
@@ -72,7 +118,15 @@ public class DescribeAccountOverviewRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The end of the time range passed in. The start time granularity is at the day level. The floor of the start time
+     * is used. Returned information occurred before this day. If this is not specified, then the current day is used.
+     * </p>
+     * 
      * @param toTime
+     *        The end of the time range passed in. The start time granularity is at the day level. The floor of the
+     *        start time is used. Returned information occurred before this day. If this is not specified, then the
+     *        current day is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

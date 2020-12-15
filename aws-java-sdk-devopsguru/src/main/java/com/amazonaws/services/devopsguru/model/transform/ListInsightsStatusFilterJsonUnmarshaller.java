@@ -48,17 +48,17 @@ public class ListInsightsStatusFilterJsonUnmarshaller implements Unmarshaller<Li
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Any", targetDepth)) {
+                if (context.testExpression("Ongoing", targetDepth)) {
                     context.nextToken();
-                    listInsightsStatusFilter.setAny(ListInsightsAnyStatusFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                    listInsightsStatusFilter.setOngoing(ListInsightsOngoingStatusFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Closed", targetDepth)) {
                     context.nextToken();
                     listInsightsStatusFilter.setClosed(ListInsightsClosedStatusFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Ongoing", targetDepth)) {
+                if (context.testExpression("Any", targetDepth)) {
                     context.nextToken();
-                    listInsightsStatusFilter.setOngoing(ListInsightsOngoingStatusFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                    listInsightsStatusFilter.setAny(ListInsightsAnyStatusFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

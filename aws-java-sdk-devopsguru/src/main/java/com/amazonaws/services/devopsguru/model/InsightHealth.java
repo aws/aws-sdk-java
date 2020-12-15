@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about the number of open reactive and proactive insights that can be used to gauge the health of your
+ * system.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightHealth" target="_top">AWS API
  *      Documentation</a>
@@ -25,40 +29,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The number of open proactive insights.
+     * </p>
+     */
+    private Integer openProactiveInsights;
+    /**
+     * <p>
+     * The number of open reactive insights.
+     * </p>
+     */
+    private Integer openReactiveInsights;
+    /**
+     * <p>
+     * The Meant Time to Recover (MTTR) for the insight.
+     * </p>
+     */
     private Long meanTimeToRecoverInMilliseconds;
 
-    private Integer openProactiveInsights;
-
-    private Integer openReactiveInsights;
-
     /**
-     * @param meanTimeToRecoverInMilliseconds
-     */
-
-    public void setMeanTimeToRecoverInMilliseconds(Long meanTimeToRecoverInMilliseconds) {
-        this.meanTimeToRecoverInMilliseconds = meanTimeToRecoverInMilliseconds;
-    }
-
-    /**
-     * @return
-     */
-
-    public Long getMeanTimeToRecoverInMilliseconds() {
-        return this.meanTimeToRecoverInMilliseconds;
-    }
-
-    /**
-     * @param meanTimeToRecoverInMilliseconds
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InsightHealth withMeanTimeToRecoverInMilliseconds(Long meanTimeToRecoverInMilliseconds) {
-        setMeanTimeToRecoverInMilliseconds(meanTimeToRecoverInMilliseconds);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The number of open proactive insights.
+     * </p>
+     * 
      * @param openProactiveInsights
+     *        The number of open proactive insights.
      */
 
     public void setOpenProactiveInsights(Integer openProactiveInsights) {
@@ -66,7 +62,11 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of open proactive insights.
+     * </p>
+     * 
+     * @return The number of open proactive insights.
      */
 
     public Integer getOpenProactiveInsights() {
@@ -74,7 +74,12 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of open proactive insights.
+     * </p>
+     * 
      * @param openProactiveInsights
+     *        The number of open proactive insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +89,12 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of open reactive insights.
+     * </p>
+     * 
      * @param openReactiveInsights
+     *        The number of open reactive insights.
      */
 
     public void setOpenReactiveInsights(Integer openReactiveInsights) {
@@ -92,7 +102,11 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of open reactive insights.
+     * </p>
+     * 
+     * @return The number of open reactive insights.
      */
 
     public Integer getOpenReactiveInsights() {
@@ -100,12 +114,57 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of open reactive insights.
+     * </p>
+     * 
      * @param openReactiveInsights
+     *        The number of open reactive insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InsightHealth withOpenReactiveInsights(Integer openReactiveInsights) {
         setOpenReactiveInsights(openReactiveInsights);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Meant Time to Recover (MTTR) for the insight.
+     * </p>
+     * 
+     * @param meanTimeToRecoverInMilliseconds
+     *        The Meant Time to Recover (MTTR) for the insight.
+     */
+
+    public void setMeanTimeToRecoverInMilliseconds(Long meanTimeToRecoverInMilliseconds) {
+        this.meanTimeToRecoverInMilliseconds = meanTimeToRecoverInMilliseconds;
+    }
+
+    /**
+     * <p>
+     * The Meant Time to Recover (MTTR) for the insight.
+     * </p>
+     * 
+     * @return The Meant Time to Recover (MTTR) for the insight.
+     */
+
+    public Long getMeanTimeToRecoverInMilliseconds() {
+        return this.meanTimeToRecoverInMilliseconds;
+    }
+
+    /**
+     * <p>
+     * The Meant Time to Recover (MTTR) for the insight.
+     * </p>
+     * 
+     * @param meanTimeToRecoverInMilliseconds
+     *        The Meant Time to Recover (MTTR) for the insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InsightHealth withMeanTimeToRecoverInMilliseconds(Long meanTimeToRecoverInMilliseconds) {
+        setMeanTimeToRecoverInMilliseconds(meanTimeToRecoverInMilliseconds);
         return this;
     }
 
@@ -121,12 +180,12 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMeanTimeToRecoverInMilliseconds() != null)
-            sb.append("MeanTimeToRecoverInMilliseconds: ").append(getMeanTimeToRecoverInMilliseconds()).append(",");
         if (getOpenProactiveInsights() != null)
             sb.append("OpenProactiveInsights: ").append(getOpenProactiveInsights()).append(",");
         if (getOpenReactiveInsights() != null)
-            sb.append("OpenReactiveInsights: ").append(getOpenReactiveInsights());
+            sb.append("OpenReactiveInsights: ").append(getOpenReactiveInsights()).append(",");
+        if (getMeanTimeToRecoverInMilliseconds() != null)
+            sb.append("MeanTimeToRecoverInMilliseconds: ").append(getMeanTimeToRecoverInMilliseconds());
         sb.append("}");
         return sb.toString();
     }
@@ -141,11 +200,6 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof InsightHealth == false)
             return false;
         InsightHealth other = (InsightHealth) obj;
-        if (other.getMeanTimeToRecoverInMilliseconds() == null ^ this.getMeanTimeToRecoverInMilliseconds() == null)
-            return false;
-        if (other.getMeanTimeToRecoverInMilliseconds() != null
-                && other.getMeanTimeToRecoverInMilliseconds().equals(this.getMeanTimeToRecoverInMilliseconds()) == false)
-            return false;
         if (other.getOpenProactiveInsights() == null ^ this.getOpenProactiveInsights() == null)
             return false;
         if (other.getOpenProactiveInsights() != null && other.getOpenProactiveInsights().equals(this.getOpenProactiveInsights()) == false)
@@ -153,6 +207,11 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
         if (other.getOpenReactiveInsights() == null ^ this.getOpenReactiveInsights() == null)
             return false;
         if (other.getOpenReactiveInsights() != null && other.getOpenReactiveInsights().equals(this.getOpenReactiveInsights()) == false)
+            return false;
+        if (other.getMeanTimeToRecoverInMilliseconds() == null ^ this.getMeanTimeToRecoverInMilliseconds() == null)
+            return false;
+        if (other.getMeanTimeToRecoverInMilliseconds() != null
+                && other.getMeanTimeToRecoverInMilliseconds().equals(this.getMeanTimeToRecoverInMilliseconds()) == false)
             return false;
         return true;
     }
@@ -162,9 +221,9 @@ public class InsightHealth implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMeanTimeToRecoverInMilliseconds() == null) ? 0 : getMeanTimeToRecoverInMilliseconds().hashCode());
         hashCode = prime * hashCode + ((getOpenProactiveInsights() == null) ? 0 : getOpenProactiveInsights().hashCode());
         hashCode = prime * hashCode + ((getOpenReactiveInsights() == null) ? 0 : getOpenReactiveInsights().hashCode());
+        hashCode = prime * hashCode + ((getMeanTimeToRecoverInMilliseconds() == null) ? 0 : getMeanTimeToRecoverInMilliseconds().hashCode());
         return hashCode;
     }
 

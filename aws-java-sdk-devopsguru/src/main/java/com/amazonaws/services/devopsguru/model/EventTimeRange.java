@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The time range during which an AWS event occurred. AWS resource events and metrics are analyzed by DevOps Guru to
+ * find anomalous behavior and provide recommendations to improve your operational solutions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/EventTimeRange" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +29,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The time when the event started.
+     * </p>
+     */
     private java.util.Date fromTime;
-
+    /**
+     * <p>
+     * The time when the event ended.
+     * </p>
+     */
     private java.util.Date toTime;
 
     /**
+     * <p>
+     * The time when the event started.
+     * </p>
+     * 
      * @param fromTime
+     *        The time when the event started.
      */
 
     public void setFromTime(java.util.Date fromTime) {
@@ -38,7 +56,11 @@ public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The time when the event started.
+     * </p>
+     * 
+     * @return The time when the event started.
      */
 
     public java.util.Date getFromTime() {
@@ -46,7 +68,12 @@ public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time when the event started.
+     * </p>
+     * 
      * @param fromTime
+     *        The time when the event started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +83,12 @@ public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time when the event ended.
+     * </p>
+     * 
      * @param toTime
+     *        The time when the event ended.
      */
 
     public void setToTime(java.util.Date toTime) {
@@ -64,7 +96,11 @@ public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The time when the event ended.
+     * </p>
+     * 
+     * @return The time when the event ended.
      */
 
     public java.util.Date getToTime() {
@@ -72,7 +108,12 @@ public class EventTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time when the event ended.
+     * </p>
+     * 
      * @param toTime
+     *        The time when the event ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

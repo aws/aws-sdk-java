@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAnomalyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the anomaly.
+     * </p>
+     */
     private String id;
 
     /**
+     * <p>
+     * The ID of the anomaly.
+     * </p>
+     * 
      * @param id
+     *        The ID of the anomaly.
      */
 
     public void setId(String id) {
@@ -36,7 +46,11 @@ public class DescribeAnomalyRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the anomaly.
+     * </p>
+     * 
+     * @return The ID of the anomaly.
      */
 
     public String getId() {
@@ -44,7 +58,12 @@ public class DescribeAnomalyRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The ID of the anomaly.
+     * </p>
+     * 
      * @param id
+     *        The ID of the anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Details about a proactive insight. This object is returned by <code>ListInsights</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ProactiveInsight" target="_top">AWS API
  *      Documentation</a>
@@ -25,24 +28,51 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of the proactive insight.
+     * </p>
+     */
     private String id;
+    /**
+     * <p>
+     * The name of the proactive insight.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The severity of the proactive insight.
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * The status of the proactive insight.
+     * </p>
+     */
+    private String status;
 
     private InsightTimeRange insightTimeRange;
-
-    private String name;
 
     private PredictionTimeRange predictionTimeRange;
 
     private ResourceCollection resourceCollection;
-
-    private String severity;
-
+    /**
+     * <p>
+     * The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of OpstItems
+     * insights before they are created for each insight.
+     * </p>
+     */
     private String ssmOpsItemId;
 
-    private String status;
-
     /**
+     * <p>
+     * The ID of the proactive insight.
+     * </p>
+     * 
      * @param id
+     *        The ID of the proactive insight.
      */
 
     public void setId(String id) {
@@ -50,7 +80,11 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the proactive insight.
+     * </p>
+     * 
+     * @return The ID of the proactive insight.
      */
 
     public String getId() {
@@ -58,12 +92,175 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ID of the proactive insight.
+     * </p>
+     * 
      * @param id
+     *        The ID of the proactive insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProactiveInsight withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the proactive insight.
+     * </p>
+     * 
+     * @param name
+     *        The name of the proactive insight.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the proactive insight.
+     * </p>
+     * 
+     * @return The name of the proactive insight.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the proactive insight.
+     * </p>
+     * 
+     * @param name
+     *        The name of the proactive insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveInsight withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of the proactive insight.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the proactive insight.
+     * @see InsightSeverity
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the proactive insight.
+     * </p>
+     * 
+     * @return The severity of the proactive insight.
+     * @see InsightSeverity
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the proactive insight.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the proactive insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsightSeverity
+     */
+
+    public ProactiveInsight withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of the proactive insight.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the proactive insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsightSeverity
+     */
+
+    public ProactiveInsight withSeverity(InsightSeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the proactive insight.
+     * </p>
+     * 
+     * @param status
+     *        The status of the proactive insight.
+     * @see InsightStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the proactive insight.
+     * </p>
+     * 
+     * @return The status of the proactive insight.
+     * @see InsightStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the proactive insight.
+     * </p>
+     * 
+     * @param status
+     *        The status of the proactive insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsightStatus
+     */
+
+    public ProactiveInsight withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the proactive insight.
+     * </p>
+     * 
+     * @param status
+     *        The status of the proactive insight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsightStatus
+     */
+
+    public ProactiveInsight withStatus(InsightStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -90,32 +287,6 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
 
     public ProactiveInsight withInsightTimeRange(InsightTimeRange insightTimeRange) {
         setInsightTimeRange(insightTimeRange);
-        return this;
-    }
-
-    /**
-     * @param name
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * @param name
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProactiveInsight withName(String name) {
-        setName(name);
         return this;
     }
 
@@ -172,47 +343,14 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @param severity
-     * @see InsightSeverity
-     */
-
-    public void setSeverity(String severity) {
-        this.severity = severity;
-    }
-
-    /**
-     * @return
-     * @see InsightSeverity
-     */
-
-    public String getSeverity() {
-        return this.severity;
-    }
-
-    /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InsightSeverity
-     */
-
-    public ProactiveInsight withSeverity(String severity) {
-        setSeverity(severity);
-        return this;
-    }
-
-    /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InsightSeverity
-     */
-
-    public ProactiveInsight withSeverity(InsightSeverity severity) {
-        this.severity = severity.toString();
-        return this;
-    }
-
-    /**
+     * <p>
+     * The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of OpstItems
+     * insights before they are created for each insight.
+     * </p>
+     * 
      * @param ssmOpsItemId
+     *        The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of
+     *        OpstItems insights before they are created for each insight.
      */
 
     public void setSsmOpsItemId(String ssmOpsItemId) {
@@ -220,7 +358,13 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of OpstItems
+     * insights before they are created for each insight.
+     * </p>
+     * 
+     * @return The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of
+     *         OpstItems insights before they are created for each insight.
      */
 
     public String getSsmOpsItemId() {
@@ -228,52 +372,19 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of OpstItems
+     * insights before they are created for each insight.
+     * </p>
+     * 
      * @param ssmOpsItemId
+     *        The ID of the AWS System Manager OpsItem created for this insight. You must enable the creation of
+     *        OpstItems insights before they are created for each insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProactiveInsight withSsmOpsItemId(String ssmOpsItemId) {
         setSsmOpsItemId(ssmOpsItemId);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @see InsightStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * @return
-     * @see InsightStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InsightStatus
-     */
-
-    public ProactiveInsight withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InsightStatus
-     */
-
-    public ProactiveInsight withStatus(InsightStatus status) {
-        this.status = status.toString();
         return this;
     }
 
@@ -291,20 +402,20 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getInsightTimeRange() != null)
-            sb.append("InsightTimeRange: ").append(getInsightTimeRange()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getSeverity() != null)
+            sb.append("Severity: ").append(getSeverity()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getInsightTimeRange() != null)
+            sb.append("InsightTimeRange: ").append(getInsightTimeRange()).append(",");
         if (getPredictionTimeRange() != null)
             sb.append("PredictionTimeRange: ").append(getPredictionTimeRange()).append(",");
         if (getResourceCollection() != null)
             sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
-        if (getSeverity() != null)
-            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getSsmOpsItemId() != null)
-            sb.append("SsmOpsItemId: ").append(getSsmOpsItemId()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("SsmOpsItemId: ").append(getSsmOpsItemId());
         sb.append("}");
         return sb.toString();
     }
@@ -323,13 +434,21 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getInsightTimeRange() == null ^ this.getInsightTimeRange() == null)
-            return false;
-        if (other.getInsightTimeRange() != null && other.getInsightTimeRange().equals(this.getInsightTimeRange()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getInsightTimeRange() == null ^ this.getInsightTimeRange() == null)
+            return false;
+        if (other.getInsightTimeRange() != null && other.getInsightTimeRange().equals(this.getInsightTimeRange()) == false)
             return false;
         if (other.getPredictionTimeRange() == null ^ this.getPredictionTimeRange() == null)
             return false;
@@ -339,17 +458,9 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
             return false;
-        if (other.getSeverity() == null ^ this.getSeverity() == null)
-            return false;
-        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
-            return false;
         if (other.getSsmOpsItemId() == null ^ this.getSsmOpsItemId() == null)
             return false;
         if (other.getSsmOpsItemId() != null && other.getSsmOpsItemId().equals(this.getSsmOpsItemId()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -360,13 +471,13 @@ public class ProactiveInsight implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getInsightTimeRange() == null) ? 0 : getInsightTimeRange().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getInsightTimeRange() == null) ? 0 : getInsightTimeRange().hashCode());
         hashCode = prime * hashCode + ((getPredictionTimeRange() == null) ? 0 : getPredictionTimeRange().hashCode());
         hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
-        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
         hashCode = prime * hashCode + ((getSsmOpsItemId() == null) ? 0 : getSsmOpsItemId().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

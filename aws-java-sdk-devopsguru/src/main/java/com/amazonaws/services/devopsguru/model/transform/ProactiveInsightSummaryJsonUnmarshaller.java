@@ -52,21 +52,9 @@ public class ProactiveInsightSummaryJsonUnmarshaller implements Unmarshaller<Pro
                     context.nextToken();
                     proactiveInsightSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("InsightTimeRange", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     proactiveInsightSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PredictionTimeRange", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsightSummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
@@ -75,6 +63,18 @@ public class ProactiveInsightSummaryJsonUnmarshaller implements Unmarshaller<Pro
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     proactiveInsightSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PredictionTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsightSummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -25,10 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateServiceIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and
+     * whether you want to update it to enabled or disabled.
+     * </p>
+     */
     private UpdateServiceIntegrationConfig serviceIntegration;
 
     /**
+     * <p>
+     * An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and
+     * whether you want to update it to enabled or disabled.
+     * </p>
+     * 
      * @param serviceIntegration
+     *        An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update,
+     *        and whether you want to update it to enabled or disabled.
      */
 
     public void setServiceIntegration(UpdateServiceIntegrationConfig serviceIntegration) {
@@ -36,7 +49,13 @@ public class UpdateServiceIntegrationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and
+     * whether you want to update it to enabled or disabled.
+     * </p>
+     * 
+     * @return An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update,
+     *         and whether you want to update it to enabled or disabled.
      */
 
     public UpdateServiceIntegrationConfig getServiceIntegration() {
@@ -44,7 +63,14 @@ public class UpdateServiceIntegrationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and
+     * whether you want to update it to enabled or disabled.
+     * </p>
+     * 
      * @param serviceIntegration
+     *        An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update,
+     *        and whether you want to update it to enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

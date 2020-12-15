@@ -52,29 +52,29 @@ public class ReactiveInsightJsonUnmarshaller implements Unmarshaller<ReactiveIns
                     context.nextToken();
                     reactiveInsight.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("InsightTimeRange", targetDepth)) {
-                    context.nextToken();
-                    reactiveInsight.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     reactiveInsight.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    reactiveInsight.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
                     reactiveInsight.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("SsmOpsItemId", targetDepth)) {
-                    context.nextToken();
-                    reactiveInsight.setSsmOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     reactiveInsight.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    context.nextToken();
+                    reactiveInsight.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    reactiveInsight.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SsmOpsItemId", targetDepth)) {
+                    context.nextToken();
+                    reactiveInsight.setSsmOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

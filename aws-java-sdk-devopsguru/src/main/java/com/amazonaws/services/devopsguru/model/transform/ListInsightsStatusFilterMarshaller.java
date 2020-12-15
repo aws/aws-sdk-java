@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListInsightsStatusFilterMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Any").build();
-    private static final MarshallingInfo<StructuredPojo> CLOSED_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Closed").build();
     private static final MarshallingInfo<StructuredPojo> ONGOING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ongoing").build();
+    private static final MarshallingInfo<StructuredPojo> CLOSED_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Closed").build();
+    private static final MarshallingInfo<StructuredPojo> ANY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Any").build();
 
     private static final ListInsightsStatusFilterMarshaller instance = new ListInsightsStatusFilterMarshaller();
 
@@ -50,9 +50,9 @@ public class ListInsightsStatusFilterMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listInsightsStatusFilter.getAny(), ANY_BINDING);
-            protocolMarshaller.marshall(listInsightsStatusFilter.getClosed(), CLOSED_BINDING);
             protocolMarshaller.marshall(listInsightsStatusFilter.getOngoing(), ONGOING_BINDING);
+            protocolMarshaller.marshall(listInsightsStatusFilter.getClosed(), CLOSED_BINDING);
+            protocolMarshaller.marshall(listInsightsStatusFilter.getAny(), ANY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

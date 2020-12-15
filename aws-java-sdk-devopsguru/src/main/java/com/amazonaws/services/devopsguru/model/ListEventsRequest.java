@@ -25,14 +25,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A <code>ListEventsFilters</code> object used to specify which events to return.
+     * </p>
+     */
     private ListEventsFilters filters;
-
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * A <code>ListEventsFilters</code> object used to specify which events to return.
+     * </p>
+     * 
      * @param filters
+     *        A <code>ListEventsFilters</code> object used to specify which events to return.
      */
 
     public void setFilters(ListEventsFilters filters) {
@@ -40,7 +60,11 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ListEventsFilters</code> object used to specify which events to return.
+     * </p>
+     * 
+     * @return A <code>ListEventsFilters</code> object used to specify which events to return.
      */
 
     public ListEventsFilters getFilters() {
@@ -48,7 +72,12 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A <code>ListEventsFilters</code> object used to specify which events to return.
+     * </p>
+     * 
      * @param filters
+     *        A <code>ListEventsFilters</code> object used to specify which events to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +87,14 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -66,7 +102,13 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -74,7 +116,14 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +133,14 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -92,7 +148,13 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -100,7 +162,14 @@ public class ListEventsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

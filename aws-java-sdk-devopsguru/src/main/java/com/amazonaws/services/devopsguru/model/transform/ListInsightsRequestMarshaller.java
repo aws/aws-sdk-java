@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListInsightsRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusFilter").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
-    private static final MarshallingInfo<StructuredPojo> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusFilter").build();
 
     private static final ListInsightsRequestMarshaller instance = new ListInsightsRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class ListInsightsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listInsightsRequest.getStatusFilter(), STATUSFILTER_BINDING);
             protocolMarshaller.marshall(listInsightsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listInsightsRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listInsightsRequest.getStatusFilter(), STATUSFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

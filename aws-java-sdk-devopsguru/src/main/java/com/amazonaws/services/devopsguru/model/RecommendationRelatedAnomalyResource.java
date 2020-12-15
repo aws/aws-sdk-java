@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about a resource in which DevOps Guru detected anomalous behavior.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedAnomalyResource"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecommendationRelatedAnomalyResource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the resource.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The type of the resource.
+     * </p>
+     */
     private String type;
 
     /**
+     * <p>
+     * The name of the resource.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource.
      */
 
     public void setName(String name) {
@@ -38,7 +55,11 @@ public class RecommendationRelatedAnomalyResource implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the resource.
+     * </p>
+     * 
+     * @return The name of the resource.
      */
 
     public String getName() {
@@ -46,7 +67,12 @@ public class RecommendationRelatedAnomalyResource implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The name of the resource.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class RecommendationRelatedAnomalyResource implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The type of the resource.
+     * </p>
+     * 
      * @param type
+     *        The type of the resource.
      */
 
     public void setType(String type) {
@@ -64,7 +95,11 @@ public class RecommendationRelatedAnomalyResource implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the resource.
+     * </p>
+     * 
+     * @return The type of the resource.
      */
 
     public String getType() {
@@ -72,7 +107,12 @@ public class RecommendationRelatedAnomalyResource implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The type of the resource.
+     * </p>
+     * 
      * @param type
+     *        The type of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

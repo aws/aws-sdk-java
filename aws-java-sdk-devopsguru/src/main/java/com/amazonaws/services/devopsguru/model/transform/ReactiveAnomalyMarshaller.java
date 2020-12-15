@@ -27,20 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReactiveAnomalyMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
-    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severity").build();
-    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
+    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
 
     private static final ReactiveAnomalyMarshaller instance = new ReactiveAnomalyMarshaller();
 
@@ -58,13 +58,13 @@ public class ReactiveAnomalyMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(reactiveAnomaly.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
-            protocolMarshaller.marshall(reactiveAnomaly.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getId(), ID_BINDING);
-            protocolMarshaller.marshall(reactiveAnomaly.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getSeverity(), SEVERITY_BINDING);
-            protocolMarshaller.marshall(reactiveAnomaly.getSourceDetails(), SOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(reactiveAnomaly.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
+            protocolMarshaller.marshall(reactiveAnomaly.getSourceDetails(), SOURCEDETAILS_BINDING);
+            protocolMarshaller.marshall(reactiveAnomaly.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
+            protocolMarshaller.marshall(reactiveAnomaly.getResourceCollection(), RESOURCECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

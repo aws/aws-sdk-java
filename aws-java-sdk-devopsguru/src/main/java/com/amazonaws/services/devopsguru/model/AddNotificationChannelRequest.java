@@ -25,10 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AddNotificationChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one
+     * supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+     * </p>
+     */
     private NotificationChannelConfig config;
 
     /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one
+     * supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+     * </p>
+     * 
      * @param config
+     *        A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add.
+     *        The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
      */
 
     public void setConfig(NotificationChannelConfig config) {
@@ -36,7 +49,13 @@ public class AddNotificationChannelRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one
+     * supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+     * </p>
+     * 
+     * @return A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add.
+     *         The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
      */
 
     public NotificationChannelConfig getConfig() {
@@ -44,7 +63,14 @@ public class AddNotificationChannelRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one
+     * supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+     * </p>
+     * 
      * @param config
+     *        A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add.
+     *        The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

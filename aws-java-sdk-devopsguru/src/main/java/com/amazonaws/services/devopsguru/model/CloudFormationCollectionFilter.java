@@ -18,6 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
+ * analyze. For more information, see <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+ * CloudFormation User Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudFormationCollectionFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +31,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudFormationCollectionFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of CloudFormation stack names.
+     * </p>
+     */
     private java.util.List<String> stackNames;
 
     /**
-     * @return
+     * <p>
+     * An array of CloudFormation stack names.
+     * </p>
+     * 
+     * @return An array of CloudFormation stack names.
      */
 
     public java.util.List<String> getStackNames() {
@@ -36,7 +51,12 @@ public class CloudFormationCollectionFilter implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * An array of CloudFormation stack names.
+     * </p>
+     * 
      * @param stackNames
+     *        An array of CloudFormation stack names.
      */
 
     public void setStackNames(java.util.Collection<String> stackNames) {
@@ -50,12 +70,16 @@ public class CloudFormationCollectionFilter implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * An array of CloudFormation stack names.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStackNames(java.util.Collection)} or {@link #withStackNames(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param stackNames
+     *        An array of CloudFormation stack names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +94,12 @@ public class CloudFormationCollectionFilter implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * An array of CloudFormation stack names.
+     * </p>
+     * 
      * @param stackNames
+     *        An array of CloudFormation stack names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

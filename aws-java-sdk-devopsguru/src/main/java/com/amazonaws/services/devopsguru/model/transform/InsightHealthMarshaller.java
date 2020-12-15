@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InsightHealthMarshaller {
 
-    private static final MarshallingInfo<Long> MEANTIMETORECOVERINMILLISECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeanTimeToRecoverInMilliseconds").build();
     private static final MarshallingInfo<Integer> OPENPROACTIVEINSIGHTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenProactiveInsights").build();
     private static final MarshallingInfo<Integer> OPENREACTIVEINSIGHTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenReactiveInsights").build();
+    private static final MarshallingInfo<Long> MEANTIMETORECOVERINMILLISECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeanTimeToRecoverInMilliseconds").build();
 
     private static final InsightHealthMarshaller instance = new InsightHealthMarshaller();
 
@@ -50,9 +50,9 @@ public class InsightHealthMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(insightHealth.getMeanTimeToRecoverInMilliseconds(), MEANTIMETORECOVERINMILLISECONDS_BINDING);
             protocolMarshaller.marshall(insightHealth.getOpenProactiveInsights(), OPENPROACTIVEINSIGHTS_BINDING);
             protocolMarshaller.marshall(insightHealth.getOpenReactiveInsights(), OPENREACTIVEINSIGHTS_BINDING);
+            protocolMarshaller.marshall(insightHealth.getMeanTimeToRecoverInMilliseconds(), MEANTIMETORECOVERINMILLISECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

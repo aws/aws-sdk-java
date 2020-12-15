@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains information used to update a collection of AWS resources.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollectionFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateResourceCollectionFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An collection of AWS CloudFormation stacks.
+     * </p>
+     */
     private UpdateCloudFormationCollectionFilter cloudFormation;
 
     /**
+     * <p>
+     * An collection of AWS CloudFormation stacks.
+     * </p>
+     * 
      * @param cloudFormation
+     *        An collection of AWS CloudFormation stacks.
      */
 
     public void setCloudFormation(UpdateCloudFormationCollectionFilter cloudFormation) {
@@ -36,7 +49,11 @@ public class UpdateResourceCollectionFilter implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * An collection of AWS CloudFormation stacks.
+     * </p>
+     * 
+     * @return An collection of AWS CloudFormation stacks.
      */
 
     public UpdateCloudFormationCollectionFilter getCloudFormation() {
@@ -44,7 +61,12 @@ public class UpdateResourceCollectionFilter implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * An collection of AWS CloudFormation stacks.
+     * </p>
+     * 
      * @param cloudFormation
+     *        An collection of AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

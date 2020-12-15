@@ -48,6 +48,26 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    event.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Id", targetDepth)) {
+                    context.nextToken();
+                    event.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Time", targetDepth)) {
+                    context.nextToken();
+                    event.setTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("EventSource", targetDepth)) {
+                    context.nextToken();
+                    event.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    event.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DataSource", targetDepth)) {
                     context.nextToken();
                     event.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,31 +76,11 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                     context.nextToken();
                     event.setEventClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("EventSource", targetDepth)) {
-                    context.nextToken();
-                    event.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Id", targetDepth)) {
-                    context.nextToken();
-                    event.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    event.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    event.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
                     event.setResources(new ListUnmarshaller<EventResource>(EventResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("Time", targetDepth)) {
-                    context.nextToken();
-                    event.setTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

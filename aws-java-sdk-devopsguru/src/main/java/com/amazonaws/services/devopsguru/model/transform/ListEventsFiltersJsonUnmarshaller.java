@@ -48,9 +48,13 @@ public class ListEventsFiltersJsonUnmarshaller implements Unmarshaller<ListEvent
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DataSource", targetDepth)) {
+                if (context.testExpression("InsightId", targetDepth)) {
                     context.nextToken();
-                    listEventsFilters.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                    listEventsFilters.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EventTimeRange", targetDepth)) {
+                    context.nextToken();
+                    listEventsFilters.setEventTimeRange(EventTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventClass", targetDepth)) {
                     context.nextToken();
@@ -60,13 +64,9 @@ public class ListEventsFiltersJsonUnmarshaller implements Unmarshaller<ListEvent
                     context.nextToken();
                     listEventsFilters.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("EventTimeRange", targetDepth)) {
+                if (context.testExpression("DataSource", targetDepth)) {
                     context.nextToken();
-                    listEventsFilters.setEventTimeRange(EventTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("InsightId", targetDepth)) {
-                    context.nextToken();
-                    listEventsFilters.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
+                    listEventsFilters.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
                     context.nextToken();

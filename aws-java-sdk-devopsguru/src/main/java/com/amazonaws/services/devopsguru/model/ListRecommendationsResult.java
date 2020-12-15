@@ -23,38 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array of the requested recommendations.
+     * </p>
+     */
+    private java.util.List<Recommendation> recommendations;
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
-    private java.util.List<Recommendation> recommendations;
-
     /**
-     * @param nextToken
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * @param nextToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRecommendationsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * @return
+     * <p>
+     * An array of the requested recommendations.
+     * </p>
+     * 
+     * @return An array of the requested recommendations.
      */
 
     public java.util.List<Recommendation> getRecommendations() {
@@ -62,7 +50,12 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * An array of the requested recommendations.
+     * </p>
+     * 
      * @param recommendations
+     *        An array of the requested recommendations.
      */
 
     public void setRecommendations(java.util.Collection<Recommendation> recommendations) {
@@ -76,12 +69,16 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * An array of the requested recommendations.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRecommendations(java.util.Collection)} or {@link #withRecommendations(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param recommendations
+     *        An array of the requested recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +93,63 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * An array of the requested recommendations.
+     * </p>
+     * 
      * @param recommendations
+     *        An array of the requested recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecommendationsResult withRecommendations(java.util.Collection<Recommendation> recommendations) {
         setRecommendations(recommendations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecommendationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -117,10 +165,10 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getRecommendations() != null)
-            sb.append("Recommendations: ").append(getRecommendations());
+            sb.append("Recommendations: ").append(getRecommendations()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -135,13 +183,13 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof ListRecommendationsResult == false)
             return false;
         ListRecommendationsResult other = (ListRecommendationsResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getRecommendations() == null ^ this.getRecommendations() == null)
             return false;
         if (other.getRecommendations() != null && other.getRecommendations().equals(this.getRecommendations()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -151,8 +199,8 @@ public class ListRecommendationsResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getRecommendations() == null) ? 0 : getRecommendations().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

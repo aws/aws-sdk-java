@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about insight feedback received from a customer.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightFeedback" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,66 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsightFeedback implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The insight feedback ID.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The feedback provided by the customer.
+     * </p>
+     */
     private String feedback;
 
-    private String id;
+    /**
+     * <p>
+     * The insight feedback ID.
+     * </p>
+     * 
+     * @param id
+     *        The insight feedback ID.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     /**
+     * <p>
+     * The insight feedback ID.
+     * </p>
+     * 
+     * @return The insight feedback ID.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The insight feedback ID.
+     * </p>
+     * 
+     * @param id
+     *        The insight feedback ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InsightFeedback withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The feedback provided by the customer.
+     * </p>
+     * 
      * @param feedback
+     *        The feedback provided by the customer.
      * @see InsightFeedbackOption
      */
 
@@ -39,7 +96,11 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The feedback provided by the customer.
+     * </p>
+     * 
+     * @return The feedback provided by the customer.
      * @see InsightFeedbackOption
      */
 
@@ -48,7 +109,12 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The feedback provided by the customer.
+     * </p>
+     * 
      * @param feedback
+     *        The feedback provided by the customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightFeedbackOption
      */
@@ -59,39 +125,18 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The feedback provided by the customer.
+     * </p>
+     * 
      * @param feedback
+     *        The feedback provided by the customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightFeedbackOption
      */
 
     public InsightFeedback withFeedback(InsightFeedbackOption feedback) {
         this.feedback = feedback.toString();
-        return this;
-    }
-
-    /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InsightFeedback withId(String id) {
-        setId(id);
         return this;
     }
 
@@ -107,10 +152,10 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFeedback() != null)
-            sb.append("Feedback: ").append(getFeedback()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getFeedback() != null)
+            sb.append("Feedback: ").append(getFeedback());
         sb.append("}");
         return sb.toString();
     }
@@ -125,13 +170,13 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof InsightFeedback == false)
             return false;
         InsightFeedback other = (InsightFeedback) obj;
-        if (other.getFeedback() == null ^ this.getFeedback() == null)
-            return false;
-        if (other.getFeedback() != null && other.getFeedback().equals(this.getFeedback()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getFeedback() == null ^ this.getFeedback() == null)
+            return false;
+        if (other.getFeedback() != null && other.getFeedback().equals(this.getFeedback()) == false)
             return false;
         return true;
     }
@@ -141,8 +186,8 @@ public class InsightFeedback implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFeedback() == null) ? 0 : getFeedback().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getFeedback() == null) ? 0 : getFeedback().hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A time ranged that specifies when the observed behavior in an insight started and ended.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightTimeRange" target="_top">AWS API
  *      Documentation</a>
@@ -25,38 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The time when the behavior described in an insight started.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The time when the behavior described in an insight ended.
+     * </p>
+     */
     private java.util.Date endTime;
 
-    private java.util.Date startTime;
-
     /**
-     * @param endTime
-     */
-
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.Date getEndTime() {
-        return this.endTime;
-    }
-
-    /**
-     * @param endTime
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InsightTimeRange withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The time when the behavior described in an insight started.
+     * </p>
+     * 
      * @param startTime
+     *        The time when the behavior described in an insight started.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -64,7 +55,11 @@ public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The time when the behavior described in an insight started.
+     * </p>
+     * 
+     * @return The time when the behavior described in an insight started.
      */
 
     public java.util.Date getStartTime() {
@@ -72,12 +67,57 @@ public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The time when the behavior described in an insight started.
+     * </p>
+     * 
      * @param startTime
+     *        The time when the behavior described in an insight started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InsightTimeRange withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the behavior described in an insight ended.
+     * </p>
+     * 
+     * @param endTime
+     *        The time when the behavior described in an insight ended.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The time when the behavior described in an insight ended.
+     * </p>
+     * 
+     * @return The time when the behavior described in an insight ended.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The time when the behavior described in an insight ended.
+     * </p>
+     * 
+     * @param endTime
+     *        The time when the behavior described in an insight ended.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InsightTimeRange withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
         return this;
     }
 
@@ -93,10 +133,10 @@ public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime());
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -111,13 +151,13 @@ public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof InsightTimeRange == false)
             return false;
         InsightTimeRange other = (InsightTimeRange) obj;
-        if (other.getEndTime() == null ^ this.getEndTime() == null)
-            return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
-            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         return true;
     }
@@ -127,8 +167,8 @@ public class InsightTimeRange implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         return hashCode;
     }
 

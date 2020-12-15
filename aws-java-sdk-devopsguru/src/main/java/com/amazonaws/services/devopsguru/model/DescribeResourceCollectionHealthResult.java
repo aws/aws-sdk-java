@@ -24,12 +24,29 @@ import javax.annotation.Generated;
 public class DescribeResourceCollectionHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+     * object with the requested system health information.
+     * </p>
+     */
     private java.util.List<CloudFormationHealth> cloudFormation;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+     * object with the requested system health information.
+     * </p>
+     * 
+     * @return The returned <code>CloudFormationHealthOverview</code> object that contains an
+     *         <code>InsightHealthOverview</code> object with the requested system health information.
      */
 
     public java.util.List<CloudFormationHealth> getCloudFormation() {
@@ -37,7 +54,14 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+     * object with the requested system health information.
+     * </p>
+     * 
      * @param cloudFormation
+     *        The returned <code>CloudFormationHealthOverview</code> object that contains an
+     *        <code>InsightHealthOverview</code> object with the requested system health information.
      */
 
     public void setCloudFormation(java.util.Collection<CloudFormationHealth> cloudFormation) {
@@ -51,12 +75,18 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
 
     /**
      * <p>
+     * The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+     * object with the requested system health information.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCloudFormation(java.util.Collection)} or {@link #withCloudFormation(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param cloudFormation
+     *        The returned <code>CloudFormationHealthOverview</code> object that contains an
+     *        <code>InsightHealthOverview</code> object with the requested system health information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +101,14 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+     * object with the requested system health information.
+     * </p>
+     * 
      * @param cloudFormation
+     *        The returned <code>CloudFormationHealthOverview</code> object that contains an
+     *        <code>InsightHealthOverview</code> object with the requested system health information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +118,14 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -89,7 +133,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -97,7 +147,14 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Details about a reactive anomaly. This object is returned by <code>ListAnomalies</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ReactiveAnomaly" target="_top">AWS API
  *      Documentation</a>
@@ -25,19 +28,199 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo {
 
-    private AnomalyTimeRange anomalyTimeRange;
-
-    private String associatedInsightId;
-
+    /**
+     * <p>
+     * The ID of the reactive anomaly.
+     * </p>
+     */
     private String id;
+    /**
+     * <p>
+     * The severity of the anomaly.
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * The status of the anomaly.
+     * </p>
+     */
+    private String status;
+
+    private AnomalyTimeRange anomalyTimeRange;
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     */
+    private AnomalySourceDetails sourceDetails;
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     */
+    private String associatedInsightId;
 
     private ResourceCollection resourceCollection;
 
-    private String severity;
+    /**
+     * <p>
+     * The ID of the reactive anomaly.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the reactive anomaly.
+     */
 
-    private AnomalySourceDetails sourceDetails;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    private String status;
+    /**
+     * <p>
+     * The ID of the reactive anomaly.
+     * </p>
+     * 
+     * @return The ID of the reactive anomaly.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the reactive anomaly.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the reactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactiveAnomaly withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of the anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the anomaly.
+     * @see AnomalySeverity
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the anomaly.
+     * </p>
+     * 
+     * @return The severity of the anomaly.
+     * @see AnomalySeverity
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalySeverity
+     */
+
+    public ReactiveAnomaly withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of the anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalySeverity
+     */
+
+    public ReactiveAnomaly withSeverity(AnomalySeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of the anomaly.
+     * @see AnomalyStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the anomaly.
+     * </p>
+     * 
+     * @return The status of the anomaly.
+     * @see AnomalyStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of the anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyStatus
+     */
+
+    public ReactiveAnomaly withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of the anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyStatus
+     */
+
+    public ReactiveAnomaly withStatus(AnomalyStatus status) {
+        this.status = status.toString();
+        return this;
+    }
 
     /**
      * @param anomalyTimeRange
@@ -66,7 +249,58 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @param sourceDetails
+     *        Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *        source is Amazon CloudWatch metrics.
+     */
+
+    public void setSourceDetails(AnomalySourceDetails sourceDetails) {
+        this.sourceDetails = sourceDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @return Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *         source is Amazon CloudWatch metrics.
+     */
+
+    public AnomalySourceDetails getSourceDetails() {
+        return this.sourceDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @param sourceDetails
+     *        Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *        source is Amazon CloudWatch metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactiveAnomaly withSourceDetails(AnomalySourceDetails sourceDetails) {
+        setSourceDetails(sourceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
      * @param associatedInsightId
+     *        The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
      */
 
     public void setAssociatedInsightId(String associatedInsightId) {
@@ -74,7 +308,11 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
+     * @return The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
      */
 
     public String getAssociatedInsightId() {
@@ -82,38 +320,17 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
      * @param associatedInsightId
+     *        The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReactiveAnomaly withAssociatedInsightId(String associatedInsightId) {
         setAssociatedInsightId(associatedInsightId);
-        return this;
-    }
-
-    /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReactiveAnomaly withId(String id) {
-        setId(id);
         return this;
     }
 
@@ -144,112 +361,6 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @param severity
-     * @see AnomalySeverity
-     */
-
-    public void setSeverity(String severity) {
-        this.severity = severity;
-    }
-
-    /**
-     * @return
-     * @see AnomalySeverity
-     */
-
-    public String getSeverity() {
-        return this.severity;
-    }
-
-    /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalySeverity
-     */
-
-    public ReactiveAnomaly withSeverity(String severity) {
-        setSeverity(severity);
-        return this;
-    }
-
-    /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalySeverity
-     */
-
-    public ReactiveAnomaly withSeverity(AnomalySeverity severity) {
-        this.severity = severity.toString();
-        return this;
-    }
-
-    /**
-     * @param sourceDetails
-     */
-
-    public void setSourceDetails(AnomalySourceDetails sourceDetails) {
-        this.sourceDetails = sourceDetails;
-    }
-
-    /**
-     * @return
-     */
-
-    public AnomalySourceDetails getSourceDetails() {
-        return this.sourceDetails;
-    }
-
-    /**
-     * @param sourceDetails
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReactiveAnomaly withSourceDetails(AnomalySourceDetails sourceDetails) {
-        setSourceDetails(sourceDetails);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @see AnomalyStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * @return
-     * @see AnomalyStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalyStatus
-     */
-
-    public ReactiveAnomaly withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalyStatus
-     */
-
-    public ReactiveAnomaly withStatus(AnomalyStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -261,20 +372,20 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAnomalyTimeRange() != null)
-            sb.append("AnomalyTimeRange: ").append(getAnomalyTimeRange()).append(",");
-        if (getAssociatedInsightId() != null)
-            sb.append("AssociatedInsightId: ").append(getAssociatedInsightId()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
         if (getSeverity() != null)
             sb.append("Severity: ").append(getSeverity()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getAnomalyTimeRange() != null)
+            sb.append("AnomalyTimeRange: ").append(getAnomalyTimeRange()).append(",");
         if (getSourceDetails() != null)
             sb.append("SourceDetails: ").append(getSourceDetails()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getAssociatedInsightId() != null)
+            sb.append("AssociatedInsightId: ").append(getAssociatedInsightId()).append(",");
+        if (getResourceCollection() != null)
+            sb.append("ResourceCollection: ").append(getResourceCollection());
         sb.append("}");
         return sb.toString();
     }
@@ -289,33 +400,33 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ReactiveAnomaly == false)
             return false;
         ReactiveAnomaly other = (ReactiveAnomaly) obj;
-        if (other.getAnomalyTimeRange() == null ^ this.getAnomalyTimeRange() == null)
-            return false;
-        if (other.getAnomalyTimeRange() != null && other.getAnomalyTimeRange().equals(this.getAnomalyTimeRange()) == false)
-            return false;
-        if (other.getAssociatedInsightId() == null ^ this.getAssociatedInsightId() == null)
-            return false;
-        if (other.getAssociatedInsightId() != null && other.getAssociatedInsightId().equals(this.getAssociatedInsightId()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
-            return false;
-        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
             return false;
         if (other.getSeverity() == null ^ this.getSeverity() == null)
             return false;
         if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getAnomalyTimeRange() == null ^ this.getAnomalyTimeRange() == null)
+            return false;
+        if (other.getAnomalyTimeRange() != null && other.getAnomalyTimeRange().equals(this.getAnomalyTimeRange()) == false)
+            return false;
         if (other.getSourceDetails() == null ^ this.getSourceDetails() == null)
             return false;
         if (other.getSourceDetails() != null && other.getSourceDetails().equals(this.getSourceDetails()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getAssociatedInsightId() == null ^ this.getAssociatedInsightId() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getAssociatedInsightId() != null && other.getAssociatedInsightId().equals(this.getAssociatedInsightId()) == false)
+            return false;
+        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
+            return false;
+        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
             return false;
         return true;
     }
@@ -325,13 +436,13 @@ public class ReactiveAnomaly implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAnomalyTimeRange() == null) ? 0 : getAnomalyTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getAssociatedInsightId() == null) ? 0 : getAssociatedInsightId().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
-        hashCode = prime * hashCode + ((getSourceDetails() == null) ? 0 : getSourceDetails().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getAnomalyTimeRange() == null) ? 0 : getAnomalyTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getSourceDetails() == null) ? 0 : getSourceDetails().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedInsightId() == null) ? 0 : getAssociatedInsightId().hashCode());
+        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         return hashCode;
     }
 

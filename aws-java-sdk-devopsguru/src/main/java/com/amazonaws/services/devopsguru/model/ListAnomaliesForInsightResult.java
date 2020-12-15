@@ -23,40 +23,32 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     */
+    private java.util.List<ProactiveAnomalySummary> proactiveAnomalies;
+    /**
+     * <p>
+     * An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     */
+    private java.util.List<ReactiveAnomalySummary> reactiveAnomalies;
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
-    private java.util.List<ProactiveAnomalySummary> proactiveAnomalies;
-
-    private java.util.List<ReactiveAnomalySummary> reactiveAnomalies;
-
     /**
-     * @param nextToken
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * @param nextToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAnomaliesForInsightResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * @return
+     * <p>
+     * An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
+     * @return An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
      */
 
     public java.util.List<ProactiveAnomalySummary> getProactiveAnomalies() {
@@ -64,7 +56,12 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
      * @param proactiveAnomalies
+     *        An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
      */
 
     public void setProactiveAnomalies(java.util.Collection<ProactiveAnomalySummary> proactiveAnomalies) {
@@ -78,12 +75,16 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProactiveAnomalies(java.util.Collection)} or {@link #withProactiveAnomalies(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param proactiveAnomalies
+     *        An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +99,12 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
      * @param proactiveAnomalies
+     *        An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,7 +114,11 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
+     * @return An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
      */
 
     public java.util.List<ReactiveAnomalySummary> getReactiveAnomalies() {
@@ -116,7 +126,12 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
      * @param reactiveAnomalies
+     *        An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
      */
 
     public void setReactiveAnomalies(java.util.Collection<ReactiveAnomalySummary> reactiveAnomalies) {
@@ -130,12 +145,16 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReactiveAnomalies(java.util.Collection)} or {@link #withReactiveAnomalies(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param reactiveAnomalies
+     *        An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +169,63 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+     * </p>
+     * 
      * @param reactiveAnomalies
+     *        An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAnomaliesForInsightResult withReactiveAnomalies(java.util.Collection<ReactiveAnomalySummary> reactiveAnomalies) {
         setReactiveAnomalies(reactiveAnomalies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnomaliesForInsightResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -171,12 +241,12 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getProactiveAnomalies() != null)
             sb.append("ProactiveAnomalies: ").append(getProactiveAnomalies()).append(",");
         if (getReactiveAnomalies() != null)
-            sb.append("ReactiveAnomalies: ").append(getReactiveAnomalies());
+            sb.append("ReactiveAnomalies: ").append(getReactiveAnomalies()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -191,10 +261,6 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof ListAnomaliesForInsightResult == false)
             return false;
         ListAnomaliesForInsightResult other = (ListAnomaliesForInsightResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getProactiveAnomalies() == null ^ this.getProactiveAnomalies() == null)
             return false;
         if (other.getProactiveAnomalies() != null && other.getProactiveAnomalies().equals(this.getProactiveAnomalies()) == false)
@@ -202,6 +268,10 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
         if (other.getReactiveAnomalies() == null ^ this.getReactiveAnomalies() == null)
             return false;
         if (other.getReactiveAnomalies() != null && other.getReactiveAnomalies().equals(this.getReactiveAnomalies()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -211,9 +281,9 @@ public class ListAnomaliesForInsightResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getProactiveAnomalies() == null) ? 0 : getProactiveAnomalies().hashCode());
         hashCode = prime * hashCode + ((getReactiveAnomalies() == null) ? 0 : getReactiveAnomalies().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

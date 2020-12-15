@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetResourceCollectionRequestMarshaller {
 
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> RESOURCECOLLECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("ResourceCollectionType").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
     private static final GetResourceCollectionRequestMarshaller instance = new GetResourceCollectionRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class GetResourceCollectionRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getResourceCollectionRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getResourceCollectionRequest.getResourceCollectionType(), RESOURCECOLLECTIONTYPE_BINDING);
+            protocolMarshaller.marshall(getResourceCollectionRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

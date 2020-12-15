@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A filter used by <code>ListInsights</code> to specify which insights to return.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsStatusFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,40 +28,83 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListInsightsStatusFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code>
+     * or <code>PROACTIVE</code>.
+     * </p>
+     */
+    private ListInsightsOngoingStatusFilter ongoing;
+    /**
+     * <p>
+     * A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     */
+    private ListInsightsClosedStatusFilter closed;
+    /**
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     */
     private ListInsightsAnyStatusFilter any;
 
-    private ListInsightsClosedStatusFilter closed;
-
-    private ListInsightsOngoingStatusFilter ongoing;
-
     /**
-     * @param any
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code>
+     * or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @param ongoing
+     *        A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
-    public void setAny(ListInsightsAnyStatusFilter any) {
-        this.any = any;
+    public void setOngoing(ListInsightsOngoingStatusFilter ongoing) {
+        this.ongoing = ongoing;
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code>
+     * or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @return A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either
+     *         <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
-    public ListInsightsAnyStatusFilter getAny() {
-        return this.any;
+    public ListInsightsOngoingStatusFilter getOngoing() {
+        return this.ongoing;
     }
 
     /**
-     * @param any
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code>
+     * or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @param ongoing
+     *        A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListInsightsStatusFilter withAny(ListInsightsAnyStatusFilter any) {
-        setAny(any);
+    public ListInsightsStatusFilter withOngoing(ListInsightsOngoingStatusFilter ongoing) {
+        setOngoing(ongoing);
         return this;
     }
 
     /**
+     * <p>
+     * A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
      * @param closed
+     *        A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
     public void setClosed(ListInsightsClosedStatusFilter closed) {
@@ -66,7 +112,13 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @return A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     *         <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
     public ListInsightsClosedStatusFilter getClosed() {
@@ -74,7 +126,14 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
      * @param closed
+     *        A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,28 +143,48 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @param ongoing
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @param any
+     *        A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
-    public void setOngoing(ListInsightsOngoingStatusFilter ongoing) {
-        this.ongoing = ongoing;
+    public void setAny(ListInsightsAnyStatusFilter any) {
+        this.any = any;
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @return A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     *         <code>REACTIVE</code> or <code>PROACTIVE</code>.
      */
 
-    public ListInsightsOngoingStatusFilter getOngoing() {
-        return this.ongoing;
+    public ListInsightsAnyStatusFilter getAny() {
+        return this.any;
     }
 
     /**
-     * @param ongoing
+     * <p>
+     * A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     * <code>REACTIVE</code> or <code>PROACTIVE</code>.
+     * </p>
+     * 
+     * @param any
+     *        A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either
+     *        <code>REACTIVE</code> or <code>PROACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListInsightsStatusFilter withOngoing(ListInsightsOngoingStatusFilter ongoing) {
-        setOngoing(ongoing);
+    public ListInsightsStatusFilter withAny(ListInsightsAnyStatusFilter any) {
+        setAny(any);
         return this;
     }
 
@@ -121,12 +200,12 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAny() != null)
-            sb.append("Any: ").append(getAny()).append(",");
+        if (getOngoing() != null)
+            sb.append("Ongoing: ").append(getOngoing()).append(",");
         if (getClosed() != null)
             sb.append("Closed: ").append(getClosed()).append(",");
-        if (getOngoing() != null)
-            sb.append("Ongoing: ").append(getOngoing());
+        if (getAny() != null)
+            sb.append("Any: ").append(getAny());
         sb.append("}");
         return sb.toString();
     }
@@ -141,17 +220,17 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
         if (obj instanceof ListInsightsStatusFilter == false)
             return false;
         ListInsightsStatusFilter other = (ListInsightsStatusFilter) obj;
-        if (other.getAny() == null ^ this.getAny() == null)
+        if (other.getOngoing() == null ^ this.getOngoing() == null)
             return false;
-        if (other.getAny() != null && other.getAny().equals(this.getAny()) == false)
+        if (other.getOngoing() != null && other.getOngoing().equals(this.getOngoing()) == false)
             return false;
         if (other.getClosed() == null ^ this.getClosed() == null)
             return false;
         if (other.getClosed() != null && other.getClosed().equals(this.getClosed()) == false)
             return false;
-        if (other.getOngoing() == null ^ this.getOngoing() == null)
+        if (other.getAny() == null ^ this.getAny() == null)
             return false;
-        if (other.getOngoing() != null && other.getOngoing().equals(this.getOngoing()) == false)
+        if (other.getAny() != null && other.getAny().equals(this.getAny()) == false)
             return false;
         return true;
     }
@@ -161,9 +240,9 @@ public class ListInsightsStatusFilter implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAny() == null) ? 0 : getAny().hashCode());
-        hashCode = prime * hashCode + ((getClosed() == null) ? 0 : getClosed().hashCode());
         hashCode = prime * hashCode + ((getOngoing() == null) ? 0 : getOngoing().hashCode());
+        hashCode = prime * hashCode + ((getClosed() == null) ? 0 : getClosed().hashCode());
+        hashCode = prime * hashCode + ((getAny() == null) ? 0 : getAny().hashCode());
         return hashCode;
     }
 

@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The feedback from customers is about the recommendations in this insight.
+     * </p>
+     */
     private InsightFeedback insightFeedback;
 
     /**
+     * <p>
+     * The feedback from customers is about the recommendations in this insight.
+     * </p>
+     * 
      * @param insightFeedback
+     *        The feedback from customers is about the recommendations in this insight.
      */
 
     public void setInsightFeedback(InsightFeedback insightFeedback) {
@@ -36,7 +46,11 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The feedback from customers is about the recommendations in this insight.
+     * </p>
+     * 
+     * @return The feedback from customers is about the recommendations in this insight.
      */
 
     public InsightFeedback getInsightFeedback() {
@@ -44,7 +58,12 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The feedback from customers is about the recommendations in this insight.
+     * </p>
+     * 
      * @param insightFeedback
+     *        The feedback from customers is about the recommendations in this insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

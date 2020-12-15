@@ -23,40 +23,72 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An integer that specifies the number of open reactive insights in your AWS account.
+     * </p>
+     */
+    private Integer openReactiveInsights;
+    /**
+     * <p>
+     * An integer that specifies the number of open proactive insights in your AWS account.
+     * </p>
+     */
+    private Integer openProactiveInsights;
+    /**
+     * <p>
+     * An integer that specifies the number of metrics that have been analyzed in your AWS account.
+     * </p>
+     */
     private Integer metricsAnalyzed;
 
-    private Integer openProactiveInsights;
-
-    private Integer openReactiveInsights;
-
     /**
-     * @param metricsAnalyzed
+     * <p>
+     * An integer that specifies the number of open reactive insights in your AWS account.
+     * </p>
+     * 
+     * @param openReactiveInsights
+     *        An integer that specifies the number of open reactive insights in your AWS account.
      */
 
-    public void setMetricsAnalyzed(Integer metricsAnalyzed) {
-        this.metricsAnalyzed = metricsAnalyzed;
+    public void setOpenReactiveInsights(Integer openReactiveInsights) {
+        this.openReactiveInsights = openReactiveInsights;
     }
 
     /**
-     * @return
+     * <p>
+     * An integer that specifies the number of open reactive insights in your AWS account.
+     * </p>
+     * 
+     * @return An integer that specifies the number of open reactive insights in your AWS account.
      */
 
-    public Integer getMetricsAnalyzed() {
-        return this.metricsAnalyzed;
+    public Integer getOpenReactiveInsights() {
+        return this.openReactiveInsights;
     }
 
     /**
-     * @param metricsAnalyzed
+     * <p>
+     * An integer that specifies the number of open reactive insights in your AWS account.
+     * </p>
+     * 
+     * @param openReactiveInsights
+     *        An integer that specifies the number of open reactive insights in your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountHealthResult withMetricsAnalyzed(Integer metricsAnalyzed) {
-        setMetricsAnalyzed(metricsAnalyzed);
+    public DescribeAccountHealthResult withOpenReactiveInsights(Integer openReactiveInsights) {
+        setOpenReactiveInsights(openReactiveInsights);
         return this;
     }
 
     /**
+     * <p>
+     * An integer that specifies the number of open proactive insights in your AWS account.
+     * </p>
+     * 
      * @param openProactiveInsights
+     *        An integer that specifies the number of open proactive insights in your AWS account.
      */
 
     public void setOpenProactiveInsights(Integer openProactiveInsights) {
@@ -64,7 +96,11 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * An integer that specifies the number of open proactive insights in your AWS account.
+     * </p>
+     * 
+     * @return An integer that specifies the number of open proactive insights in your AWS account.
      */
 
     public Integer getOpenProactiveInsights() {
@@ -72,7 +108,12 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * An integer that specifies the number of open proactive insights in your AWS account.
+     * </p>
+     * 
      * @param openProactiveInsights
+     *        An integer that specifies the number of open proactive insights in your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,28 +123,42 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @param openReactiveInsights
+     * <p>
+     * An integer that specifies the number of metrics that have been analyzed in your AWS account.
+     * </p>
+     * 
+     * @param metricsAnalyzed
+     *        An integer that specifies the number of metrics that have been analyzed in your AWS account.
      */
 
-    public void setOpenReactiveInsights(Integer openReactiveInsights) {
-        this.openReactiveInsights = openReactiveInsights;
+    public void setMetricsAnalyzed(Integer metricsAnalyzed) {
+        this.metricsAnalyzed = metricsAnalyzed;
     }
 
     /**
-     * @return
+     * <p>
+     * An integer that specifies the number of metrics that have been analyzed in your AWS account.
+     * </p>
+     * 
+     * @return An integer that specifies the number of metrics that have been analyzed in your AWS account.
      */
 
-    public Integer getOpenReactiveInsights() {
-        return this.openReactiveInsights;
+    public Integer getMetricsAnalyzed() {
+        return this.metricsAnalyzed;
     }
 
     /**
-     * @param openReactiveInsights
+     * <p>
+     * An integer that specifies the number of metrics that have been analyzed in your AWS account.
+     * </p>
+     * 
+     * @param metricsAnalyzed
+     *        An integer that specifies the number of metrics that have been analyzed in your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountHealthResult withOpenReactiveInsights(Integer openReactiveInsights) {
-        setOpenReactiveInsights(openReactiveInsights);
+    public DescribeAccountHealthResult withMetricsAnalyzed(Integer metricsAnalyzed) {
+        setMetricsAnalyzed(metricsAnalyzed);
         return this;
     }
 
@@ -119,12 +174,12 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMetricsAnalyzed() != null)
-            sb.append("MetricsAnalyzed: ").append(getMetricsAnalyzed()).append(",");
+        if (getOpenReactiveInsights() != null)
+            sb.append("OpenReactiveInsights: ").append(getOpenReactiveInsights()).append(",");
         if (getOpenProactiveInsights() != null)
             sb.append("OpenProactiveInsights: ").append(getOpenProactiveInsights()).append(",");
-        if (getOpenReactiveInsights() != null)
-            sb.append("OpenReactiveInsights: ").append(getOpenReactiveInsights());
+        if (getMetricsAnalyzed() != null)
+            sb.append("MetricsAnalyzed: ").append(getMetricsAnalyzed());
         sb.append("}");
         return sb.toString();
     }
@@ -139,17 +194,17 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof DescribeAccountHealthResult == false)
             return false;
         DescribeAccountHealthResult other = (DescribeAccountHealthResult) obj;
-        if (other.getMetricsAnalyzed() == null ^ this.getMetricsAnalyzed() == null)
+        if (other.getOpenReactiveInsights() == null ^ this.getOpenReactiveInsights() == null)
             return false;
-        if (other.getMetricsAnalyzed() != null && other.getMetricsAnalyzed().equals(this.getMetricsAnalyzed()) == false)
+        if (other.getOpenReactiveInsights() != null && other.getOpenReactiveInsights().equals(this.getOpenReactiveInsights()) == false)
             return false;
         if (other.getOpenProactiveInsights() == null ^ this.getOpenProactiveInsights() == null)
             return false;
         if (other.getOpenProactiveInsights() != null && other.getOpenProactiveInsights().equals(this.getOpenProactiveInsights()) == false)
             return false;
-        if (other.getOpenReactiveInsights() == null ^ this.getOpenReactiveInsights() == null)
+        if (other.getMetricsAnalyzed() == null ^ this.getMetricsAnalyzed() == null)
             return false;
-        if (other.getOpenReactiveInsights() != null && other.getOpenReactiveInsights().equals(this.getOpenReactiveInsights()) == false)
+        if (other.getMetricsAnalyzed() != null && other.getMetricsAnalyzed().equals(this.getMetricsAnalyzed()) == false)
             return false;
         return true;
     }
@@ -159,9 +214,9 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMetricsAnalyzed() == null) ? 0 : getMetricsAnalyzed().hashCode());
-        hashCode = prime * hashCode + ((getOpenProactiveInsights() == null) ? 0 : getOpenProactiveInsights().hashCode());
         hashCode = prime * hashCode + ((getOpenReactiveInsights() == null) ? 0 : getOpenReactiveInsights().hashCode());
+        hashCode = prime * hashCode + ((getOpenProactiveInsights() == null) ? 0 : getOpenProactiveInsights().hashCode());
+        hashCode = prime * hashCode + ((getMetricsAnalyzed() == null) ? 0 : getMetricsAnalyzed().hashCode());
         return hashCode;
     }
 

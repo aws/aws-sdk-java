@@ -36,10 +36,10 @@ public class RecommendationMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Reason").build();
-    private static final MarshallingInfo<List> RELATEDANOMALIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedAnomalies").build();
     private static final MarshallingInfo<List> RELATEDEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RelatedEvents").build();
+    private static final MarshallingInfo<List> RELATEDANOMALIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedAnomalies").build();
 
     private static final RecommendationMarshaller instance = new RecommendationMarshaller();
 
@@ -61,8 +61,8 @@ public class RecommendationMarshaller {
             protocolMarshaller.marshall(recommendation.getLink(), LINK_BINDING);
             protocolMarshaller.marshall(recommendation.getName(), NAME_BINDING);
             protocolMarshaller.marshall(recommendation.getReason(), REASON_BINDING);
-            protocolMarshaller.marshall(recommendation.getRelatedAnomalies(), RELATEDANOMALIES_BINDING);
             protocolMarshaller.marshall(recommendation.getRelatedEvents(), RELATEDEVENTS_BINDING);
+            protocolMarshaller.marshall(recommendation.getRelatedAnomalies(), RELATEDANOMALIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -15,14 +15,25 @@ package com.amazonaws.services.devopsguru.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * A requested resource could not be found
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.devopsguru.model.AmazonDevOpsGuruException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The ID of the AWS resource that could not be found.
+     * </p>
+     */
     private String resourceId;
-
+    /**
+     * <p>
+     * The type of the AWS resource that could not be found.
+     * </p>
+     */
     private String resourceType;
 
     /**
@@ -36,7 +47,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
+     * <p>
+     * The ID of the AWS resource that could not be found.
+     * </p>
+     * 
      * @param resourceId
+     *        The ID of the AWS resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -45,7 +61,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS resource that could not be found.
+     * </p>
+     * 
+     * @return The ID of the AWS resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -54,7 +74,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
+     * <p>
+     * The ID of the AWS resource that could not be found.
+     * </p>
+     * 
      * @param resourceId
+     *        The ID of the AWS resource that could not be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +89,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
+     * <p>
+     * The type of the AWS resource that could not be found.
+     * </p>
+     * 
      * @param resourceType
+     *        The type of the AWS resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -73,7 +103,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the AWS resource that could not be found.
+     * </p>
+     * 
+     * @return The type of the AWS resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -82,7 +116,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.devopsguru
     }
 
     /**
+     * <p>
+     * The type of the AWS resource that could not be found.
+     * </p>
+     * 
      * @param resourceType
+     *        The type of the AWS resource that could not be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,16 +64,16 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
                     context.nextToken();
                     recommendation.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RelatedEvents", targetDepth)) {
+                    context.nextToken();
+                    recommendation.setRelatedEvents(new ListUnmarshaller<RecommendationRelatedEvent>(RecommendationRelatedEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("RelatedAnomalies", targetDepth)) {
                     context.nextToken();
                     recommendation.setRelatedAnomalies(new ListUnmarshaller<RecommendationRelatedAnomaly>(RecommendationRelatedAnomalyJsonUnmarshaller
                             .getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("RelatedEvents", targetDepth)) {
-                    context.nextToken();
-                    recommendation.setRelatedEvents(new ListUnmarshaller<RecommendationRelatedEvent>(RecommendationRelatedEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Used to filter for insights that have the status <code>ONGOING</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsOngoingStatusFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListInsightsOngoingStatusFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     */
     private String type;
 
     /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @see InsightType
      */
 
@@ -37,7 +50,11 @@ public class ListInsightsOngoingStatusFilter implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
+     * @return Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @see InsightType
      */
 
@@ -46,7 +63,12 @@ public class ListInsightsOngoingStatusFilter implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */
@@ -57,7 +79,12 @@ public class ListInsightsOngoingStatusFilter implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */

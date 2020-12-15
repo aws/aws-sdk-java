@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an Amazon CloudWatch metric that is analyzed by DevOps Guru. It is one of many analyzed metrics
+ * that are used to generate insights.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedCloudWatchMetricsSourceDetail"
@@ -26,12 +30,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     */
     private String metricName;
-
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     */
     private String namespace;
 
     /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
      * @param metricName
+     *        The name of the CloudWatch metric.
      */
 
     public void setMetricName(String metricName) {
@@ -39,7 +57,11 @@ public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Seria
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @return The name of the CloudWatch metric.
      */
 
     public String getMetricName() {
@@ -47,7 +69,12 @@ public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Seria
     }
 
     /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
      * @param metricName
+     *        The name of the CloudWatch metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +84,12 @@ public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Seria
     }
 
     /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
      * @param namespace
+     *        The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
      */
 
     public void setNamespace(String namespace) {
@@ -65,7 +97,11 @@ public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Seria
     }
 
     /**
-     * @return
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
+     * @return The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
      */
 
     public String getNamespace() {
@@ -73,7 +109,12 @@ public class RecommendationRelatedCloudWatchMetricsSourceDetail implements Seria
     }
 
     /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
      * @param namespace
+     *        The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,13 +48,13 @@ public class PredictionTimeRangeJsonUnmarshaller implements Unmarshaller<Predict
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("EndTime", targetDepth)) {
-                    context.nextToken();
-                    predictionTimeRange.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
                     predictionTimeRange.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("EndTime", targetDepth)) {
+                    context.nextToken();
+                    predictionTimeRange.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

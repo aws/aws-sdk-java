@@ -48,17 +48,17 @@ public class EventResourceJsonUnmarshaller implements Unmarshaller<EventResource
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Arn", targetDepth)) {
+                if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    eventResource.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    eventResource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     eventResource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Type", targetDepth)) {
+                if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    eventResource.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    eventResource.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Recommendation information to help you remediate detected anomalous behavior that generated an insight.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/Recommendation" target="_top">AWS API
  *      Documentation</a>
@@ -25,20 +28,52 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A description of the problem.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * A hyperlink to information to help you address the problem.
+     * </p>
+     */
     private String link;
-
+    /**
+     * <p>
+     * The name of the recommendation.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The reason DevOps Guru flagged the anomalous behavior as a problem.
+     * </p>
+     */
     private String reason;
-
+    /**
+     * <p>
+     * Events that are related to the problem. Use these events to learn more about what's happening and to help address
+     * the issue.
+     * </p>
+     */
+    private java.util.List<RecommendationRelatedEvent> relatedEvents;
+    /**
+     * <p>
+     * Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help
+     * address the issue.
+     * </p>
+     */
     private java.util.List<RecommendationRelatedAnomaly> relatedAnomalies;
 
-    private java.util.List<RecommendationRelatedEvent> relatedEvents;
-
     /**
+     * <p>
+     * A description of the problem.
+     * </p>
+     * 
      * @param description
+     *        A description of the problem.
      */
 
     public void setDescription(String description) {
@@ -46,7 +81,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A description of the problem.
+     * </p>
+     * 
+     * @return A description of the problem.
      */
 
     public String getDescription() {
@@ -54,7 +93,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A description of the problem.
+     * </p>
+     * 
      * @param description
+     *        A description of the problem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +108,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A hyperlink to information to help you address the problem.
+     * </p>
+     * 
      * @param link
+     *        A hyperlink to information to help you address the problem.
      */
 
     public void setLink(String link) {
@@ -72,7 +121,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A hyperlink to information to help you address the problem.
+     * </p>
+     * 
+     * @return A hyperlink to information to help you address the problem.
      */
 
     public String getLink() {
@@ -80,7 +133,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A hyperlink to information to help you address the problem.
+     * </p>
+     * 
      * @param link
+     *        A hyperlink to information to help you address the problem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +148,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the recommendation.
+     * </p>
+     * 
      * @param name
+     *        The name of the recommendation.
      */
 
     public void setName(String name) {
@@ -98,7 +161,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the recommendation.
+     * </p>
+     * 
+     * @return The name of the recommendation.
      */
 
     public String getName() {
@@ -106,7 +173,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the recommendation.
+     * </p>
+     * 
      * @param name
+     *        The name of the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +188,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason DevOps Guru flagged the anomalous behavior as a problem.
+     * </p>
+     * 
      * @param reason
+     *        The reason DevOps Guru flagged the anomalous behavior as a problem.
      */
 
     public void setReason(String reason) {
@@ -124,7 +201,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The reason DevOps Guru flagged the anomalous behavior as a problem.
+     * </p>
+     * 
+     * @return The reason DevOps Guru flagged the anomalous behavior as a problem.
      */
 
     public String getReason() {
@@ -132,7 +213,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason DevOps Guru flagged the anomalous behavior as a problem.
+     * </p>
+     * 
      * @param reason
+     *        The reason DevOps Guru flagged the anomalous behavior as a problem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,59 +228,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
-     */
-
-    public java.util.List<RecommendationRelatedAnomaly> getRelatedAnomalies() {
-        return relatedAnomalies;
-    }
-
-    /**
-     * @param relatedAnomalies
-     */
-
-    public void setRelatedAnomalies(java.util.Collection<RecommendationRelatedAnomaly> relatedAnomalies) {
-        if (relatedAnomalies == null) {
-            this.relatedAnomalies = null;
-            return;
-        }
-
-        this.relatedAnomalies = new java.util.ArrayList<RecommendationRelatedAnomaly>(relatedAnomalies);
-    }
-
-    /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setRelatedAnomalies(java.util.Collection)} or {@link #withRelatedAnomalies(java.util.Collection)} if you
-     * want to override the existing values.
+     * Events that are related to the problem. Use these events to learn more about what's happening and to help address
+     * the issue.
      * </p>
      * 
-     * @param relatedAnomalies
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Recommendation withRelatedAnomalies(RecommendationRelatedAnomaly... relatedAnomalies) {
-        if (this.relatedAnomalies == null) {
-            setRelatedAnomalies(new java.util.ArrayList<RecommendationRelatedAnomaly>(relatedAnomalies.length));
-        }
-        for (RecommendationRelatedAnomaly ele : relatedAnomalies) {
-            this.relatedAnomalies.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * @param relatedAnomalies
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Recommendation withRelatedAnomalies(java.util.Collection<RecommendationRelatedAnomaly> relatedAnomalies) {
-        setRelatedAnomalies(relatedAnomalies);
-        return this;
-    }
-
-    /**
-     * @return
+     * @return Events that are related to the problem. Use these events to learn more about what's happening and to help
+     *         address the issue.
      */
 
     public java.util.List<RecommendationRelatedEvent> getRelatedEvents() {
@@ -202,7 +242,14 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Events that are related to the problem. Use these events to learn more about what's happening and to help address
+     * the issue.
+     * </p>
+     * 
      * @param relatedEvents
+     *        Events that are related to the problem. Use these events to learn more about what's happening and to help
+     *        address the issue.
      */
 
     public void setRelatedEvents(java.util.Collection<RecommendationRelatedEvent> relatedEvents) {
@@ -216,12 +263,18 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Events that are related to the problem. Use these events to learn more about what's happening and to help address
+     * the issue.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRelatedEvents(java.util.Collection)} or {@link #withRelatedEvents(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param relatedEvents
+     *        Events that are related to the problem. Use these events to learn more about what's happening and to help
+     *        address the issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,12 +289,97 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Events that are related to the problem. Use these events to learn more about what's happening and to help address
+     * the issue.
+     * </p>
+     * 
      * @param relatedEvents
+     *        Events that are related to the problem. Use these events to learn more about what's happening and to help
+     *        address the issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Recommendation withRelatedEvents(java.util.Collection<RecommendationRelatedEvent> relatedEvents) {
         setRelatedEvents(relatedEvents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help
+     * address the issue.
+     * </p>
+     * 
+     * @return Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and
+     *         to help address the issue.
+     */
+
+    public java.util.List<RecommendationRelatedAnomaly> getRelatedAnomalies() {
+        return relatedAnomalies;
+    }
+
+    /**
+     * <p>
+     * Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help
+     * address the issue.
+     * </p>
+     * 
+     * @param relatedAnomalies
+     *        Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to
+     *        help address the issue.
+     */
+
+    public void setRelatedAnomalies(java.util.Collection<RecommendationRelatedAnomaly> relatedAnomalies) {
+        if (relatedAnomalies == null) {
+            this.relatedAnomalies = null;
+            return;
+        }
+
+        this.relatedAnomalies = new java.util.ArrayList<RecommendationRelatedAnomaly>(relatedAnomalies);
+    }
+
+    /**
+     * <p>
+     * Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help
+     * address the issue.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRelatedAnomalies(java.util.Collection)} or {@link #withRelatedAnomalies(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param relatedAnomalies
+     *        Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to
+     *        help address the issue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Recommendation withRelatedAnomalies(RecommendationRelatedAnomaly... relatedAnomalies) {
+        if (this.relatedAnomalies == null) {
+            setRelatedAnomalies(new java.util.ArrayList<RecommendationRelatedAnomaly>(relatedAnomalies.length));
+        }
+        for (RecommendationRelatedAnomaly ele : relatedAnomalies) {
+            this.relatedAnomalies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help
+     * address the issue.
+     * </p>
+     * 
+     * @param relatedAnomalies
+     *        Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to
+     *        help address the issue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Recommendation withRelatedAnomalies(java.util.Collection<RecommendationRelatedAnomaly> relatedAnomalies) {
+        setRelatedAnomalies(relatedAnomalies);
         return this;
     }
 
@@ -265,10 +403,10 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
-        if (getRelatedAnomalies() != null)
-            sb.append("RelatedAnomalies: ").append(getRelatedAnomalies()).append(",");
         if (getRelatedEvents() != null)
-            sb.append("RelatedEvents: ").append(getRelatedEvents());
+            sb.append("RelatedEvents: ").append(getRelatedEvents()).append(",");
+        if (getRelatedAnomalies() != null)
+            sb.append("RelatedAnomalies: ").append(getRelatedAnomalies());
         sb.append("}");
         return sb.toString();
     }
@@ -299,13 +437,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
-        if (other.getRelatedAnomalies() == null ^ this.getRelatedAnomalies() == null)
-            return false;
-        if (other.getRelatedAnomalies() != null && other.getRelatedAnomalies().equals(this.getRelatedAnomalies()) == false)
-            return false;
         if (other.getRelatedEvents() == null ^ this.getRelatedEvents() == null)
             return false;
         if (other.getRelatedEvents() != null && other.getRelatedEvents().equals(this.getRelatedEvents()) == false)
+            return false;
+        if (other.getRelatedAnomalies() == null ^ this.getRelatedAnomalies() == null)
+            return false;
+        if (other.getRelatedAnomalies() != null && other.getRelatedAnomalies().equals(this.getRelatedAnomalies()) == false)
             return false;
         return true;
     }
@@ -319,8 +457,8 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLink() == null) ? 0 : getLink().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
-        hashCode = prime * hashCode + ((getRelatedAnomalies() == null) ? 0 : getRelatedAnomalies().hashCode());
         hashCode = prime * hashCode + ((getRelatedEvents() == null) ? 0 : getRelatedEvents().hashCode());
+        hashCode = prime * hashCode + ((getRelatedAnomalies() == null) ? 0 : getRelatedAnomalies().hashCode());
         return hashCode;
     }
 

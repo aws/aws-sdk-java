@@ -48,10 +48,6 @@ public class SearchInsightsFiltersJsonUnmarshaller implements Unmarshaller<Searc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    searchInsightsFilters.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Severities", targetDepth)) {
                     context.nextToken();
                     searchInsightsFilters.setSeverities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -63,6 +59,10 @@ public class SearchInsightsFiltersJsonUnmarshaller implements Unmarshaller<Searc
                     searchInsightsFilters.setStatuses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    searchInsightsFilters.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

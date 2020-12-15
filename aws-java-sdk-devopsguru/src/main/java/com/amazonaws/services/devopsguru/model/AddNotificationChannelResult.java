@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AddNotificationChannelResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the added notification channel.
+     * </p>
+     */
     private String id;
 
     /**
+     * <p>
+     * The ID of the added notification channel.
+     * </p>
+     * 
      * @param id
+     *        The ID of the added notification channel.
      */
 
     public void setId(String id) {
@@ -34,7 +44,11 @@ public class AddNotificationChannelResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the added notification channel.
+     * </p>
+     * 
+     * @return The ID of the added notification channel.
      */
 
     public String getId() {
@@ -42,7 +56,12 @@ public class AddNotificationChannelResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The ID of the added notification channel.
+     * </p>
+     * 
      * @param id
+     *        The ID of the added notification channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

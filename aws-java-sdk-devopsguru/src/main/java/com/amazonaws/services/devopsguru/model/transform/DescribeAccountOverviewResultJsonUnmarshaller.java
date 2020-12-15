@@ -48,17 +48,17 @@ public class DescribeAccountOverviewResultJsonUnmarshaller implements Unmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("MeanTimeToRecoverInMilliseconds", targetDepth)) {
+                if (context.testExpression("ReactiveInsights", targetDepth)) {
                     context.nextToken();
-                    describeAccountOverviewResult.setMeanTimeToRecoverInMilliseconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                    describeAccountOverviewResult.setReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProactiveInsights", targetDepth)) {
                     context.nextToken();
                     describeAccountOverviewResult.setProactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("ReactiveInsights", targetDepth)) {
+                if (context.testExpression("MeanTimeToRecoverInMilliseconds", targetDepth)) {
                     context.nextToken();
-                    describeAccountOverviewResult.setReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    describeAccountOverviewResult.setMeanTimeToRecoverInMilliseconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

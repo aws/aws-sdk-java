@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an AWS resource that emitted and event that is related to a recommendation in an insight.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedEventResource"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecommendationRelatedEventResource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     */
     private String type;
 
     /**
+     * <p>
+     * The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     *        <code>EventResource</code> object.
      */
 
     public void setName(String name) {
@@ -38,7 +59,13 @@ public class RecommendationRelatedEventResource implements Serializable, Cloneab
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
+     * @return The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     *         <code>EventResource</code> object.
      */
 
     public String getName() {
@@ -46,7 +73,14 @@ public class RecommendationRelatedEventResource implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+     *        <code>EventResource</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +90,14 @@ public class RecommendationRelatedEventResource implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
      * @param type
+     *        The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     *        <code>EventResource</code> object.
      */
 
     public void setType(String type) {
@@ -64,7 +105,13 @@ public class RecommendationRelatedEventResource implements Serializable, Cloneab
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
+     * @return The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     *         <code>EventResource</code> object.
      */
 
     public String getType() {
@@ -72,7 +119,14 @@ public class RecommendationRelatedEventResource implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     * <code>EventResource</code> object.
+     * </p>
+     * 
      * @param type
+     *        The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+     *        <code>EventResource</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

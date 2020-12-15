@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about the health of AWS resources in your account that are specified by an AWS CloudFormation stack.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudFormationHealth" target="_top">AWS
  *      API Documentation</a>
@@ -25,38 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudFormationHealth implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the CloudFormation stack.
+     * </p>
+     */
+    private String stackName;
+    /**
+     * <p>
+     * Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation
+     * stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of
+     * closed insights.
+     * </p>
+     */
     private InsightHealth insight;
 
-    private String stackName;
-
     /**
-     * @param insight
-     */
-
-    public void setInsight(InsightHealth insight) {
-        this.insight = insight;
-    }
-
-    /**
-     * @return
-     */
-
-    public InsightHealth getInsight() {
-        return this.insight;
-    }
-
-    /**
-     * @param insight
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudFormationHealth withInsight(InsightHealth insight) {
-        setInsight(insight);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The name of the CloudFormation stack.
+     * </p>
+     * 
      * @param stackName
+     *        The name of the CloudFormation stack.
      */
 
     public void setStackName(String stackName) {
@@ -64,7 +57,11 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the CloudFormation stack.
+     * </p>
+     * 
+     * @return The name of the CloudFormation stack.
      */
 
     public String getStackName() {
@@ -72,12 +69,69 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The name of the CloudFormation stack.
+     * </p>
+     * 
      * @param stackName
+     *        The name of the CloudFormation stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloudFormationHealth withStackName(String stackName) {
         setStackName(stackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation
+     * stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of
+     * closed insights.
+     * </p>
+     * 
+     * @param insight
+     *        Information about the health of the AWS resources in your account that are specified by an AWS
+     *        CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to
+     *        Recover (MTTR) of closed insights.
+     */
+
+    public void setInsight(InsightHealth insight) {
+        this.insight = insight;
+    }
+
+    /**
+     * <p>
+     * Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation
+     * stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of
+     * closed insights.
+     * </p>
+     * 
+     * @return Information about the health of the AWS resources in your account that are specified by an AWS
+     *         CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time
+     *         to Recover (MTTR) of closed insights.
+     */
+
+    public InsightHealth getInsight() {
+        return this.insight;
+    }
+
+    /**
+     * <p>
+     * Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation
+     * stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of
+     * closed insights.
+     * </p>
+     * 
+     * @param insight
+     *        Information about the health of the AWS resources in your account that are specified by an AWS
+     *        CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to
+     *        Recover (MTTR) of closed insights.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudFormationHealth withInsight(InsightHealth insight) {
+        setInsight(insight);
         return this;
     }
 
@@ -93,10 +147,10 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInsight() != null)
-            sb.append("Insight: ").append(getInsight()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: ").append(getStackName());
+            sb.append("StackName: ").append(getStackName()).append(",");
+        if (getInsight() != null)
+            sb.append("Insight: ").append(getInsight());
         sb.append("}");
         return sb.toString();
     }
@@ -111,13 +165,13 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
         if (obj instanceof CloudFormationHealth == false)
             return false;
         CloudFormationHealth other = (CloudFormationHealth) obj;
-        if (other.getInsight() == null ^ this.getInsight() == null)
-            return false;
-        if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
-            return false;
         if (other.getStackName() == null ^ this.getStackName() == null)
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
+            return false;
+        if (other.getInsight() == null ^ this.getInsight() == null)
+            return false;
+        if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
             return false;
         return true;
     }
@@ -127,8 +181,8 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
         return hashCode;
     }
 

@@ -25,12 +25,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateResourceCollectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies if the resource collection in the request is added or deleted to the resource collection.
+     * </p>
+     */
     private String action;
 
     private UpdateResourceCollectionFilter resourceCollection;
 
     /**
+     * <p>
+     * Specifies if the resource collection in the request is added or deleted to the resource collection.
+     * </p>
+     * 
      * @param action
+     *        Specifies if the resource collection in the request is added or deleted to the resource collection.
      * @see UpdateResourceCollectionAction
      */
 
@@ -39,7 +49,11 @@ public class UpdateResourceCollectionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies if the resource collection in the request is added or deleted to the resource collection.
+     * </p>
+     * 
+     * @return Specifies if the resource collection in the request is added or deleted to the resource collection.
      * @see UpdateResourceCollectionAction
      */
 
@@ -48,7 +62,12 @@ public class UpdateResourceCollectionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specifies if the resource collection in the request is added or deleted to the resource collection.
+     * </p>
+     * 
      * @param action
+     *        Specifies if the resource collection in the request is added or deleted to the resource collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateResourceCollectionAction
      */
@@ -59,7 +78,12 @@ public class UpdateResourceCollectionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specifies if the resource collection in the request is added or deleted to the resource collection.
+     * </p>
+     * 
      * @param action
+     *        Specifies if the resource collection in the request is added or deleted to the resource collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateResourceCollectionAction
      */

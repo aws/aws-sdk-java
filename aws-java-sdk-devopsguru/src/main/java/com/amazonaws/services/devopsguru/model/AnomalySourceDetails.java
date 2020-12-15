@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Details about the source of the anomalous operational data that triggered the anomaly. The one supported source is
+ * Amazon CloudWatch metrics.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalySourceDetails" target="_top">AWS
  *      API Documentation</a>
@@ -25,10 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AnomalySourceDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed metrics that
+     * displayed anomalous behavior.
+     * </p>
+     */
     private java.util.List<CloudWatchMetricsDetail> cloudWatchMetrics;
 
     /**
-     * @return
+     * <p>
+     * An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed metrics that
+     * displayed anomalous behavior.
+     * </p>
+     * 
+     * @return An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed
+     *         metrics that displayed anomalous behavior.
      */
 
     public java.util.List<CloudWatchMetricsDetail> getCloudWatchMetrics() {
@@ -36,7 +52,14 @@ public class AnomalySourceDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed metrics that
+     * displayed anomalous behavior.
+     * </p>
+     * 
      * @param cloudWatchMetrics
+     *        An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed
+     *        metrics that displayed anomalous behavior.
      */
 
     public void setCloudWatchMetrics(java.util.Collection<CloudWatchMetricsDetail> cloudWatchMetrics) {
@@ -50,12 +73,18 @@ public class AnomalySourceDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed metrics that
+     * displayed anomalous behavior.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCloudWatchMetrics(java.util.Collection)} or {@link #withCloudWatchMetrics(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param cloudWatchMetrics
+     *        An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed
+     *        metrics that displayed anomalous behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +99,14 @@ public class AnomalySourceDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed metrics that
+     * displayed anomalous behavior.
+     * </p>
+     * 
      * @param cloudWatchMetrics
+     *        An array of <code>CloudWatchMetricsDetail</code> object that contains information about the analyzed
+     *        metrics that displayed anomalous behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

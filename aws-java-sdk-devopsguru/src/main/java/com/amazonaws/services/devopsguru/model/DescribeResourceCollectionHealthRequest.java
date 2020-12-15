@@ -25,38 +25,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeResourceCollectionHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS
+     * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     */
+    private String resourceCollectionType;
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     */
     private String nextToken;
 
-    private String resourceCollectionType;
-
     /**
-     * @param nextToken
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * @param nextToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeResourceCollectionHealthRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
+     * <p>
+     * An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS
+     * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     * 
      * @param resourceCollectionType
+     *        An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type
+     *        of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
+     *        analyze only the AWS resources that are defined in the stacks.
+     * @see ResourceCollectionType
      */
 
     public void setResourceCollectionType(String resourceCollectionType) {
@@ -64,7 +60,16 @@ public class DescribeResourceCollectionHealthRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * @return
+     * <p>
+     * An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS
+     * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     * 
+     * @return An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type
+     *         of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
+     *         analyze only the AWS resources that are defined in the stacks.
+     * @see ResourceCollectionType
      */
 
     public String getResourceCollectionType() {
@@ -72,12 +77,88 @@ public class DescribeResourceCollectionHealthRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS
+     * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     * 
      * @param resourceCollectionType
+     *        An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type
+     *        of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
+     *        analyze only the AWS resources that are defined in the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceCollectionType
      */
 
     public DescribeResourceCollectionHealthRequest withResourceCollectionType(String resourceCollectionType) {
         setResourceCollectionType(resourceCollectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS
+     * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     * 
+     * @param resourceCollectionType
+     *        An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type
+     *        of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
+     *        analyze only the AWS resources that are defined in the stacks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceCollectionType
+     */
+
+    public DescribeResourceCollectionHealthRequest withResourceCollectionType(ResourceCollectionType resourceCollectionType) {
+        this.resourceCollectionType = resourceCollectionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResourceCollectionHealthRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -93,10 +174,10 @@ public class DescribeResourceCollectionHealthRequest extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getResourceCollectionType() != null)
-            sb.append("ResourceCollectionType: ").append(getResourceCollectionType());
+            sb.append("ResourceCollectionType: ").append(getResourceCollectionType()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -111,13 +192,13 @@ public class DescribeResourceCollectionHealthRequest extends com.amazonaws.Amazo
         if (obj instanceof DescribeResourceCollectionHealthRequest == false)
             return false;
         DescribeResourceCollectionHealthRequest other = (DescribeResourceCollectionHealthRequest) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getResourceCollectionType() == null ^ this.getResourceCollectionType() == null)
             return false;
         if (other.getResourceCollectionType() != null && other.getResourceCollectionType().equals(this.getResourceCollectionType()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -127,8 +208,8 @@ public class DescribeResourceCollectionHealthRequest extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getResourceCollectionType() == null) ? 0 : getResourceCollectionType().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

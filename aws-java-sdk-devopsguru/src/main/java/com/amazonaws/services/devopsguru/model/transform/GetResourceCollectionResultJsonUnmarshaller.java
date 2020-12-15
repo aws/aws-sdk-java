@@ -48,13 +48,13 @@ public class GetResourceCollectionResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NextToken", targetDepth)) {
-                    context.nextToken();
-                    getResourceCollectionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
                     context.nextToken();
                     getResourceCollectionResult.setResourceCollection(ResourceCollectionFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    getResourceCollectionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

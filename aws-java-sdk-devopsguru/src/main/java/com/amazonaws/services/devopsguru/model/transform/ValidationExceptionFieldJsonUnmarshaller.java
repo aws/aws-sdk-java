@@ -48,13 +48,13 @@ public class ValidationExceptionFieldJsonUnmarshaller implements Unmarshaller<Va
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Message", targetDepth)) {
-                    context.nextToken();
-                    validationExceptionField.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     validationExceptionField.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Message", targetDepth)) {
+                    context.nextToken();
+                    validationExceptionField.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

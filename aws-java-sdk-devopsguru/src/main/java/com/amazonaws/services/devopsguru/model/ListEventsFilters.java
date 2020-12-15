@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Filters you can use to specify which events are returned when <code>ListEvents</code> is called.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEventsFilters" target="_top">AWS API
  *      Documentation</a>
@@ -25,60 +28,129 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListEventsFilters implements Serializable, Cloneable, StructuredPojo {
 
-    private String dataSource;
-
-    private String eventClass;
-
-    private String eventSource;
-
-    private EventTimeRange eventTimeRange;
-
+    /**
+     * <p>
+     * An ID of an insight that is related to the events you want to filter for.
+     * </p>
+     */
     private String insightId;
+    /**
+     * <p>
+     * A time range during which you want the filtered events to have occurred.
+     * </p>
+     */
+    private EventTimeRange eventTimeRange;
+    /**
+     * <p>
+     * The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema
+     * change.
+     * </p>
+     */
+    private String eventClass;
+    /**
+     * <p>
+     * The AWS source that emitted the events you want to filter for.
+     * </p>
+     */
+    private String eventSource;
+    /**
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * </p>
+     */
+    private String dataSource;
 
     private ResourceCollection resourceCollection;
 
     /**
-     * @param dataSource
-     * @see EventDataSource
+     * <p>
+     * An ID of an insight that is related to the events you want to filter for.
+     * </p>
+     * 
+     * @param insightId
+     *        An ID of an insight that is related to the events you want to filter for.
      */
 
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public void setInsightId(String insightId) {
+        this.insightId = insightId;
     }
 
     /**
-     * @return
-     * @see EventDataSource
+     * <p>
+     * An ID of an insight that is related to the events you want to filter for.
+     * </p>
+     * 
+     * @return An ID of an insight that is related to the events you want to filter for.
      */
 
-    public String getDataSource() {
-        return this.dataSource;
+    public String getInsightId() {
+        return this.insightId;
     }
 
     /**
-     * @param dataSource
+     * <p>
+     * An ID of an insight that is related to the events you want to filter for.
+     * </p>
+     * 
+     * @param insightId
+     *        An ID of an insight that is related to the events you want to filter for.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventDataSource
      */
 
-    public ListEventsFilters withDataSource(String dataSource) {
-        setDataSource(dataSource);
+    public ListEventsFilters withInsightId(String insightId) {
+        setInsightId(insightId);
         return this;
     }
 
     /**
-     * @param dataSource
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventDataSource
+     * <p>
+     * A time range during which you want the filtered events to have occurred.
+     * </p>
+     * 
+     * @param eventTimeRange
+     *        A time range during which you want the filtered events to have occurred.
      */
 
-    public ListEventsFilters withDataSource(EventDataSource dataSource) {
-        this.dataSource = dataSource.toString();
+    public void setEventTimeRange(EventTimeRange eventTimeRange) {
+        this.eventTimeRange = eventTimeRange;
+    }
+
+    /**
+     * <p>
+     * A time range during which you want the filtered events to have occurred.
+     * </p>
+     * 
+     * @return A time range during which you want the filtered events to have occurred.
+     */
+
+    public EventTimeRange getEventTimeRange() {
+        return this.eventTimeRange;
+    }
+
+    /**
+     * <p>
+     * A time range during which you want the filtered events to have occurred.
+     * </p>
+     * 
+     * @param eventTimeRange
+     *        A time range during which you want the filtered events to have occurred.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEventsFilters withEventTimeRange(EventTimeRange eventTimeRange) {
+        setEventTimeRange(eventTimeRange);
         return this;
     }
 
     /**
+     * <p>
+     * The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema
+     * change.
+     * </p>
+     * 
      * @param eventClass
+     *        The class of the events you want to filter for, such as an infrastructure change, a deployment, or a
+     *        schema change.
      * @see EventClass
      */
 
@@ -87,7 +159,13 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema
+     * change.
+     * </p>
+     * 
+     * @return The class of the events you want to filter for, such as an infrastructure change, a deployment, or a
+     *         schema change.
      * @see EventClass
      */
 
@@ -96,7 +174,14 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema
+     * change.
+     * </p>
+     * 
      * @param eventClass
+     *        The class of the events you want to filter for, such as an infrastructure change, a deployment, or a
+     *        schema change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventClass
      */
@@ -107,7 +192,14 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema
+     * change.
+     * </p>
+     * 
      * @param eventClass
+     *        The class of the events you want to filter for, such as an infrastructure change, a deployment, or a
+     *        schema change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventClass
      */
@@ -118,7 +210,12 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The AWS source that emitted the events you want to filter for.
+     * </p>
+     * 
      * @param eventSource
+     *        The AWS source that emitted the events you want to filter for.
      */
 
     public void setEventSource(String eventSource) {
@@ -126,7 +223,11 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS source that emitted the events you want to filter for.
+     * </p>
+     * 
+     * @return The AWS source that emitted the events you want to filter for.
      */
 
     public String getEventSource() {
@@ -134,7 +235,12 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The AWS source that emitted the events you want to filter for.
+     * </p>
+     * 
      * @param eventSource
+     *        The AWS source that emitted the events you want to filter for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,54 +250,62 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @param eventTimeRange
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * @see EventDataSource
      */
 
-    public void setEventTimeRange(EventTimeRange eventTimeRange) {
-        this.eventTimeRange = eventTimeRange;
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
     }
 
     /**
-     * @return
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * </p>
+     * 
+     * @return The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want
+     *         returned.
+     * @see EventDataSource
      */
 
-    public EventTimeRange getEventTimeRange() {
-        return this.eventTimeRange;
+    public String getDataSource() {
+        return this.dataSource;
     }
 
     /**
-     * @param eventTimeRange
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventDataSource
      */
 
-    public ListEventsFilters withEventTimeRange(EventTimeRange eventTimeRange) {
-        setEventTimeRange(eventTimeRange);
+    public ListEventsFilters withDataSource(String dataSource) {
+        setDataSource(dataSource);
         return this;
     }
 
     /**
-     * @param insightId
-     */
-
-    public void setInsightId(String insightId) {
-        this.insightId = insightId;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getInsightId() {
-        return this.insightId;
-    }
-
-    /**
-     * @param insightId
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventDataSource
      */
 
-    public ListEventsFilters withInsightId(String insightId) {
-        setInsightId(insightId);
+    public ListEventsFilters withDataSource(EventDataSource dataSource) {
+        this.dataSource = dataSource.toString();
         return this;
     }
 
@@ -233,16 +347,16 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSource() != null)
-            sb.append("DataSource: ").append(getDataSource()).append(",");
+        if (getInsightId() != null)
+            sb.append("InsightId: ").append(getInsightId()).append(",");
+        if (getEventTimeRange() != null)
+            sb.append("EventTimeRange: ").append(getEventTimeRange()).append(",");
         if (getEventClass() != null)
             sb.append("EventClass: ").append(getEventClass()).append(",");
         if (getEventSource() != null)
             sb.append("EventSource: ").append(getEventSource()).append(",");
-        if (getEventTimeRange() != null)
-            sb.append("EventTimeRange: ").append(getEventTimeRange()).append(",");
-        if (getInsightId() != null)
-            sb.append("InsightId: ").append(getInsightId()).append(",");
+        if (getDataSource() != null)
+            sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getResourceCollection() != null)
             sb.append("ResourceCollection: ").append(getResourceCollection());
         sb.append("}");
@@ -259,9 +373,13 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof ListEventsFilters == false)
             return false;
         ListEventsFilters other = (ListEventsFilters) obj;
-        if (other.getDataSource() == null ^ this.getDataSource() == null)
+        if (other.getInsightId() == null ^ this.getInsightId() == null)
             return false;
-        if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
+        if (other.getInsightId() != null && other.getInsightId().equals(this.getInsightId()) == false)
+            return false;
+        if (other.getEventTimeRange() == null ^ this.getEventTimeRange() == null)
+            return false;
+        if (other.getEventTimeRange() != null && other.getEventTimeRange().equals(this.getEventTimeRange()) == false)
             return false;
         if (other.getEventClass() == null ^ this.getEventClass() == null)
             return false;
@@ -271,13 +389,9 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
             return false;
-        if (other.getEventTimeRange() == null ^ this.getEventTimeRange() == null)
+        if (other.getDataSource() == null ^ this.getDataSource() == null)
             return false;
-        if (other.getEventTimeRange() != null && other.getEventTimeRange().equals(this.getEventTimeRange()) == false)
-            return false;
-        if (other.getInsightId() == null ^ this.getInsightId() == null)
-            return false;
-        if (other.getInsightId() != null && other.getInsightId().equals(this.getInsightId()) == false)
+        if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
             return false;
         if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
             return false;
@@ -291,11 +405,11 @@ public class ListEventsFilters implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
+        hashCode = prime * hashCode + ((getInsightId() == null) ? 0 : getInsightId().hashCode());
+        hashCode = prime * hashCode + ((getEventTimeRange() == null) ? 0 : getEventTimeRange().hashCode());
         hashCode = prime * hashCode + ((getEventClass() == null) ? 0 : getEventClass().hashCode());
         hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
-        hashCode = prime * hashCode + ((getEventTimeRange() == null) ? 0 : getEventTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getInsightId() == null) ? 0 : getInsightId().hashCode());
+        hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         return hashCode;
     }

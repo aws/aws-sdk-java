@@ -36,6 +36,13 @@ public class ThrottlingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
     public com.amazonaws.services.devopsguru.model.ThrottlingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devopsguru.model.ThrottlingException throttlingException = new com.amazonaws.services.devopsguru.model.ThrottlingException(null);
 
+        if (context.isStartOfDocument()) {
+            if (context.getHeader("Retry-After") != null) {
+                context.setCurrentHeader("Retry-After");
+                throttlingException.setRetryAfterSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+            }
+        }
+
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;

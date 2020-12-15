@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An AWS resource event. AWS resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and
+ * provide recommendations to improve your operational solutions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/Event" target="_top">AWS API
  *      Documentation</a>
@@ -25,179 +29,51 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Event implements Serializable, Cloneable, StructuredPojo {
 
-    private String dataSource;
-
-    private String eventClass;
-
-    private String eventSource;
-
-    private String id;
-
-    private String name;
-
     private ResourceCollection resourceCollection;
-
-    private java.util.List<EventResource> resources;
-
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * A <code>Timestamp</code> that specifies the time the event occurred.
+     * </p>
+     */
     private java.util.Date time;
-
     /**
-     * @param dataSource
-     * @see EventDataSource
+     * <p>
+     * The AWS source that emitted the event.
+     * </p>
      */
-
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
-    }
-
+    private String eventSource;
     /**
-     * @return
-     * @see EventDataSource
+     * <p>
+     * The name of the event.
+     * </p>
      */
-
-    public String getDataSource() {
-        return this.dataSource;
-    }
-
+    private String name;
     /**
-     * @param dataSource
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventDataSource
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the
+     * event.
+     * </p>
      */
-
-    public Event withDataSource(String dataSource) {
-        setDataSource(dataSource);
-        return this;
-    }
-
+    private String dataSource;
     /**
-     * @param dataSource
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventDataSource
+     * <p>
+     * The class of the event. The class specifies what the event is related to, such as an infrastructure change, a
+     * deployment, or a schema change.
+     * </p>
      */
-
-    public Event withDataSource(EventDataSource dataSource) {
-        this.dataSource = dataSource.toString();
-        return this;
-    }
-
+    private String eventClass;
     /**
-     * @param eventClass
-     * @see EventClass
+     * <p>
+     * An <code>EventResource</code> object that contains information about the resource that emitted the event.
+     * </p>
      */
-
-    public void setEventClass(String eventClass) {
-        this.eventClass = eventClass;
-    }
-
-    /**
-     * @return
-     * @see EventClass
-     */
-
-    public String getEventClass() {
-        return this.eventClass;
-    }
-
-    /**
-     * @param eventClass
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventClass
-     */
-
-    public Event withEventClass(String eventClass) {
-        setEventClass(eventClass);
-        return this;
-    }
-
-    /**
-     * @param eventClass
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EventClass
-     */
-
-    public Event withEventClass(EventClass eventClass) {
-        this.eventClass = eventClass.toString();
-        return this;
-    }
-
-    /**
-     * @param eventSource
-     */
-
-    public void setEventSource(String eventSource) {
-        this.eventSource = eventSource;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getEventSource() {
-        return this.eventSource;
-    }
-
-    /**
-     * @param eventSource
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Event withEventSource(String eventSource) {
-        setEventSource(eventSource);
-        return this;
-    }
-
-    /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Event withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * @param name
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * @param name
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Event withName(String name) {
-        setName(name);
-        return this;
-    }
+    private java.util.List<EventResource> resources;
 
     /**
      * @param resourceCollection
@@ -226,7 +102,305 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the event.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @return The ID of the event.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>Timestamp</code> that specifies the time the event occurred.
+     * </p>
+     * 
+     * @param time
+     *        A <code>Timestamp</code> that specifies the time the event occurred.
+     */
+
+    public void setTime(java.util.Date time) {
+        this.time = time;
+    }
+
+    /**
+     * <p>
+     * A <code>Timestamp</code> that specifies the time the event occurred.
+     * </p>
+     * 
+     * @return A <code>Timestamp</code> that specifies the time the event occurred.
+     */
+
+    public java.util.Date getTime() {
+        return this.time;
+    }
+
+    /**
+     * <p>
+     * A <code>Timestamp</code> that specifies the time the event occurred.
+     * </p>
+     * 
+     * @param time
+     *        A <code>Timestamp</code> that specifies the time the event occurred.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withTime(java.util.Date time) {
+        setTime(time);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS source that emitted the event.
+     * </p>
+     * 
+     * @param eventSource
+     *        The AWS source that emitted the event.
+     */
+
+    public void setEventSource(String eventSource) {
+        this.eventSource = eventSource;
+    }
+
+    /**
+     * <p>
+     * The AWS source that emitted the event.
+     * </p>
+     * 
+     * @return The AWS source that emitted the event.
+     */
+
+    public String getEventSource() {
+        return this.eventSource;
+    }
+
+    /**
+     * <p>
+     * The AWS source that emitted the event.
+     * </p>
+     * 
+     * @param eventSource
+     *        The AWS source that emitted the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withEventSource(String eventSource) {
+        setEventSource(eventSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the event.
+     * </p>
+     * 
+     * @param name
+     *        The name of the event.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the event.
+     * </p>
+     * 
+     * @return The name of the event.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the event.
+     * </p>
+     * 
+     * @param name
+     *        The name of the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the
+     * event.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found
+     *        the event.
+     * @see EventDataSource
+     */
+
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    /**
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the
+     * event.
+     * </p>
+     * 
+     * @return The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis
+     *         found the event.
+     * @see EventDataSource
+     */
+
+    public String getDataSource() {
+        return this.dataSource;
+    }
+
+    /**
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the
+     * event.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found
+     *        the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventDataSource
+     */
+
+    public Event withDataSource(String dataSource) {
+        setDataSource(dataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the
+     * event.
+     * </p>
+     * 
+     * @param dataSource
+     *        The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found
+     *        the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventDataSource
+     */
+
+    public Event withDataSource(EventDataSource dataSource) {
+        this.dataSource = dataSource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The class of the event. The class specifies what the event is related to, such as an infrastructure change, a
+     * deployment, or a schema change.
+     * </p>
+     * 
+     * @param eventClass
+     *        The class of the event. The class specifies what the event is related to, such as an infrastructure
+     *        change, a deployment, or a schema change.
+     * @see EventClass
+     */
+
+    public void setEventClass(String eventClass) {
+        this.eventClass = eventClass;
+    }
+
+    /**
+     * <p>
+     * The class of the event. The class specifies what the event is related to, such as an infrastructure change, a
+     * deployment, or a schema change.
+     * </p>
+     * 
+     * @return The class of the event. The class specifies what the event is related to, such as an infrastructure
+     *         change, a deployment, or a schema change.
+     * @see EventClass
+     */
+
+    public String getEventClass() {
+        return this.eventClass;
+    }
+
+    /**
+     * <p>
+     * The class of the event. The class specifies what the event is related to, such as an infrastructure change, a
+     * deployment, or a schema change.
+     * </p>
+     * 
+     * @param eventClass
+     *        The class of the event. The class specifies what the event is related to, such as an infrastructure
+     *        change, a deployment, or a schema change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventClass
+     */
+
+    public Event withEventClass(String eventClass) {
+        setEventClass(eventClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The class of the event. The class specifies what the event is related to, such as an infrastructure change, a
+     * deployment, or a schema change.
+     * </p>
+     * 
+     * @param eventClass
+     *        The class of the event. The class specifies what the event is related to, such as an infrastructure
+     *        change, a deployment, or a schema change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventClass
+     */
+
+    public Event withEventClass(EventClass eventClass) {
+        this.eventClass = eventClass.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An <code>EventResource</code> object that contains information about the resource that emitted the event.
+     * </p>
+     * 
+     * @return An <code>EventResource</code> object that contains information about the resource that emitted the event.
      */
 
     public java.util.List<EventResource> getResources() {
@@ -234,7 +408,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An <code>EventResource</code> object that contains information about the resource that emitted the event.
+     * </p>
+     * 
      * @param resources
+     *        An <code>EventResource</code> object that contains information about the resource that emitted the event.
      */
 
     public void setResources(java.util.Collection<EventResource> resources) {
@@ -248,12 +427,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An <code>EventResource</code> object that contains information about the resource that emitted the event.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param resources
+     *        An <code>EventResource</code> object that contains information about the resource that emitted the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,38 +451,17 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An <code>EventResource</code> object that contains information about the resource that emitted the event.
+     * </p>
+     * 
      * @param resources
+     *        An <code>EventResource</code> object that contains information about the resource that emitted the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withResources(java.util.Collection<EventResource> resources) {
         setResources(resources);
-        return this;
-    }
-
-    /**
-     * @param time
-     */
-
-    public void setTime(java.util.Date time) {
-        this.time = time;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.Date getTime() {
-        return this.time;
-    }
-
-    /**
-     * @param time
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Event withTime(java.util.Date time) {
-        setTime(time);
         return this;
     }
 
@@ -315,22 +477,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResourceCollection() != null)
+            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getTime() != null)
+            sb.append("Time: ").append(getTime()).append(",");
+        if (getEventSource() != null)
+            sb.append("EventSource: ").append(getEventSource()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getDataSource() != null)
             sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getEventClass() != null)
             sb.append("EventClass: ").append(getEventClass()).append(",");
-        if (getEventSource() != null)
-            sb.append("EventSource: ").append(getEventSource()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
         if (getResources() != null)
-            sb.append("Resources: ").append(getResources()).append(",");
-        if (getTime() != null)
-            sb.append("Time: ").append(getTime());
+            sb.append("Resources: ").append(getResources());
         sb.append("}");
         return sb.toString();
     }
@@ -345,6 +507,26 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Event == false)
             return false;
         Event other = (Event) obj;
+        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
+            return false;
+        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
+            return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getTime() == null ^ this.getTime() == null)
+            return false;
+        if (other.getTime() != null && other.getTime().equals(this.getTime()) == false)
+            return false;
+        if (other.getEventSource() == null ^ this.getEventSource() == null)
+            return false;
+        if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getDataSource() == null ^ this.getDataSource() == null)
             return false;
         if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
@@ -353,29 +535,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEventClass() != null && other.getEventClass().equals(this.getEventClass()) == false)
             return false;
-        if (other.getEventSource() == null ^ this.getEventSource() == null)
-            return false;
-        if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
-            return false;
-        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
-            return false;
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
-            return false;
-        if (other.getTime() == null ^ this.getTime() == null)
-            return false;
-        if (other.getTime() != null && other.getTime().equals(this.getTime()) == false)
             return false;
         return true;
     }
@@ -385,14 +547,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
+        hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getEventClass() == null) ? 0 : getEventClass().hashCode());
-        hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
-        hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
         return hashCode;
     }
 

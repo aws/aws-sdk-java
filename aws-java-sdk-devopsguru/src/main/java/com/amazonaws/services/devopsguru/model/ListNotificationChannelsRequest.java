@@ -25,10 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListNotificationChannelsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -36,7 +49,13 @@ public class ListNotificationChannelsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -44,7 +63,14 @@ public class ListNotificationChannelsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

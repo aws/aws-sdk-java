@@ -18,6 +18,23 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about a notification channel. A notification channel is used to notify you when DevOps Guru creates an
+ * insight. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+ * </p>
+ * <p>
+ * If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
+ * to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in
+ * your account. For more information, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross
+ * account Amazon SNS topics</a>.
+ * </p>
+ * <p>
+ * If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK), then
+ * you must add permissions to the CMK. For more information, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for AWS
+ * KMS–encrypted Amazon SNS topics</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/NotificationChannel" target="_top">AWS
  *      API Documentation</a>
@@ -25,38 +42,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotificationChannel implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of a notification channel.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+     * </p>
+     */
     private NotificationChannelConfig config;
 
-    private String id;
-
     /**
-     * @param config
-     */
-
-    public void setConfig(NotificationChannelConfig config) {
-        this.config = config;
-    }
-
-    /**
-     * @return
-     */
-
-    public NotificationChannelConfig getConfig() {
-        return this.config;
-    }
-
-    /**
-     * @param config
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NotificationChannel withConfig(NotificationChannelConfig config) {
-        setConfig(config);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The ID of a notification channel.
+     * </p>
+     * 
      * @param id
+     *        The ID of a notification channel.
      */
 
     public void setId(String id) {
@@ -64,7 +69,11 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of a notification channel.
+     * </p>
+     * 
+     * @return The ID of a notification channel.
      */
 
     public String getId() {
@@ -72,12 +81,60 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of a notification channel.
+     * </p>
+     * 
      * @param id
+     *        The ID of a notification channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NotificationChannel withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+     * </p>
+     * 
+     * @param config
+     *        A <code>NotificationChannelConfig</code> object that contains information about configured notification
+     *        channels.
+     */
+
+    public void setConfig(NotificationChannelConfig config) {
+        this.config = config;
+    }
+
+    /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+     * </p>
+     * 
+     * @return A <code>NotificationChannelConfig</code> object that contains information about configured notification
+     *         channels.
+     */
+
+    public NotificationChannelConfig getConfig() {
+        return this.config;
+    }
+
+    /**
+     * <p>
+     * A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+     * </p>
+     * 
+     * @param config
+     *        A <code>NotificationChannelConfig</code> object that contains information about configured notification
+     *        channels.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotificationChannel withConfig(NotificationChannelConfig config) {
+        setConfig(config);
         return this;
     }
 
@@ -93,10 +150,10 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getConfig() != null)
-            sb.append("Config: ").append(getConfig()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getConfig() != null)
+            sb.append("Config: ").append(getConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -111,13 +168,13 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
         if (obj instanceof NotificationChannel == false)
             return false;
         NotificationChannel other = (NotificationChannel) obj;
-        if (other.getConfig() == null ^ this.getConfig() == null)
-            return false;
-        if (other.getConfig() != null && other.getConfig().equals(this.getConfig()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getConfig() == null ^ this.getConfig() == null)
+            return false;
+        if (other.getConfig() != null && other.getConfig().equals(this.getConfig()) == false)
             return false;
         return true;
     }
@@ -127,8 +184,8 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode());
         return hashCode;
     }
 

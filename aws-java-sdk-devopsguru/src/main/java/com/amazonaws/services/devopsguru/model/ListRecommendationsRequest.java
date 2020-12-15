@@ -25,12 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the requested insight.
+     * </p>
+     */
     private String insightId;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The ID of the requested insight.
+     * </p>
+     * 
      * @param insightId
+     *        The ID of the requested insight.
      */
 
     public void setInsightId(String insightId) {
@@ -38,7 +53,11 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the requested insight.
+     * </p>
+     * 
+     * @return The ID of the requested insight.
      */
 
     public String getInsightId() {
@@ -46,7 +65,12 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the requested insight.
+     * </p>
+     * 
      * @param insightId
+     *        The ID of the requested insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +80,14 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -64,7 +95,13 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -72,7 +109,14 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

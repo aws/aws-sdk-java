@@ -220,6 +220,7 @@ public enum InstanceType {
     C5n4xlarge("c5n.4xlarge"),
     C5n9xlarge("c5n.9xlarge"),
     C5n18xlarge("c5n.18xlarge"),
+    C5nMetal("c5n.metal"),
     C6gMetal("c6g.metal"),
     C6gMedium("c6g.medium"),
     C6gLarge("c6g.large"),

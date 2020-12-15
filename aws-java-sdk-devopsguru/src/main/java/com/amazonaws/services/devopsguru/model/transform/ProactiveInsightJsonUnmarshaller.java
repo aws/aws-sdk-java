@@ -52,13 +52,21 @@ public class ProactiveInsightJsonUnmarshaller implements Unmarshaller<ProactiveI
                     context.nextToken();
                     proactiveInsight.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("InsightTimeRange", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsight.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     proactiveInsight.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Severity", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsight.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsight.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveInsight.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PredictionTimeRange", targetDepth)) {
                     context.nextToken();
@@ -68,17 +76,9 @@ public class ProactiveInsightJsonUnmarshaller implements Unmarshaller<ProactiveI
                     context.nextToken();
                     proactiveInsight.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Severity", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsight.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("SsmOpsItemId", targetDepth)) {
                     context.nextToken();
                     proactiveInsight.setSsmOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Status", targetDepth)) {
-                    context.nextToken();
-                    proactiveInsight.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

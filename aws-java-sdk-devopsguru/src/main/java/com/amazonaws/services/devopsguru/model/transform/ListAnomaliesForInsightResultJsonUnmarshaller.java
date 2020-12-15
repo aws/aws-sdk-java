@@ -48,10 +48,6 @@ public class ListAnomaliesForInsightResultJsonUnmarshaller implements Unmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NextToken", targetDepth)) {
-                    context.nextToken();
-                    listAnomaliesForInsightResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ProactiveAnomalies", targetDepth)) {
                     context.nextToken();
                     listAnomaliesForInsightResult.setProactiveAnomalies(new ListUnmarshaller<ProactiveAnomalySummary>(ProactiveAnomalySummaryJsonUnmarshaller
@@ -65,6 +61,10 @@ public class ListAnomaliesForInsightResultJsonUnmarshaller implements Unmarshall
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    listAnomaliesForInsightResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains the names of AWS CloudFormation stacks used to update a collection of stacks.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateCloudFormationCollectionFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateCloudFormationCollectionFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of the name of stacks to update.
+     * </p>
+     */
     private java.util.List<String> stackNames;
 
     /**
-     * @return
+     * <p>
+     * An array of the name of stacks to update.
+     * </p>
+     * 
+     * @return An array of the name of stacks to update.
      */
 
     public java.util.List<String> getStackNames() {
@@ -36,7 +48,12 @@ public class UpdateCloudFormationCollectionFilter implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * An array of the name of stacks to update.
+     * </p>
+     * 
      * @param stackNames
+     *        An array of the name of stacks to update.
      */
 
     public void setStackNames(java.util.Collection<String> stackNames) {
@@ -50,12 +67,16 @@ public class UpdateCloudFormationCollectionFilter implements Serializable, Clone
 
     /**
      * <p>
+     * An array of the name of stacks to update.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStackNames(java.util.Collection)} or {@link #withStackNames(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param stackNames
+     *        An array of the name of stacks to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +91,12 @@ public class UpdateCloudFormationCollectionFilter implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * An array of the name of stacks to update.
+     * </p>
+     * 
      * @param stackNames
+     *        An array of the name of stacks to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

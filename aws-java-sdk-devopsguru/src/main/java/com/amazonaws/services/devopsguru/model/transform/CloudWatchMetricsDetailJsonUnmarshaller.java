@@ -48,13 +48,6 @@ public class CloudWatchMetricsDetailJsonUnmarshaller implements Unmarshaller<Clo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Dimensions", targetDepth)) {
-                    context.nextToken();
-                    cloudWatchMetricsDetail.setDimensions(new ListUnmarshaller<CloudWatchMetricsDimension>(CloudWatchMetricsDimensionJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("MetricName", targetDepth)) {
                     context.nextToken();
                     cloudWatchMetricsDetail.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,9 +56,12 @@ public class CloudWatchMetricsDetailJsonUnmarshaller implements Unmarshaller<Clo
                     context.nextToken();
                     cloudWatchMetricsDetail.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Period", targetDepth)) {
+                if (context.testExpression("Dimensions", targetDepth)) {
                     context.nextToken();
-                    cloudWatchMetricsDetail.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    cloudWatchMetricsDetail.setDimensions(new ListUnmarshaller<CloudWatchMetricsDimension>(CloudWatchMetricsDimensionJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Stat", targetDepth)) {
                     context.nextToken();
@@ -74,6 +70,10 @@ public class CloudWatchMetricsDetailJsonUnmarshaller implements Unmarshaller<Clo
                 if (context.testExpression("Unit", targetDepth)) {
                     context.nextToken();
                     cloudWatchMetricsDetail.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Period", targetDepth)) {
+                    context.nextToken();
+                    cloudWatchMetricsDetail.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

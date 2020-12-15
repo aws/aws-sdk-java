@@ -18,6 +18,13 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The dimension of a Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for
+ * operational problems and anomalous behaviour. A dimension is a name/value pair that is part of the identity of a
+ * metric. A metric can have up to 10 dimensions. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension"
+ * >Dimensions</a> in the <i>Amazon CloudWatch User Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudWatchMetricsDimension"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +32,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudWatchMetricsDimension implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the CloudWatch dimension.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The value of the CloudWatch dimension.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * The name of the CloudWatch dimension.
+     * </p>
+     * 
      * @param name
+     *        The name of the CloudWatch dimension.
      */
 
     public void setName(String name) {
@@ -38,7 +59,11 @@ public class CloudWatchMetricsDimension implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the CloudWatch dimension.
+     * </p>
+     * 
+     * @return The name of the CloudWatch dimension.
      */
 
     public String getName() {
@@ -46,7 +71,12 @@ public class CloudWatchMetricsDimension implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The name of the CloudWatch dimension.
+     * </p>
+     * 
      * @param name
+     *        The name of the CloudWatch dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +86,12 @@ public class CloudWatchMetricsDimension implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The value of the CloudWatch dimension.
+     * </p>
+     * 
      * @param value
+     *        The value of the CloudWatch dimension.
      */
 
     public void setValue(String value) {
@@ -64,7 +99,11 @@ public class CloudWatchMetricsDimension implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The value of the CloudWatch dimension.
+     * </p>
+     * 
+     * @return The value of the CloudWatch dimension.
      */
 
     public String getValue() {
@@ -72,7 +111,12 @@ public class CloudWatchMetricsDimension implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The value of the CloudWatch dimension.
+     * </p>
+     * 
      * @param value
+     *        The value of the CloudWatch dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

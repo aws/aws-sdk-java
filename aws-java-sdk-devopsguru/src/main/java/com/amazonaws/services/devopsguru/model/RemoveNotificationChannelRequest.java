@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemoveNotificationChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the notification channel to be removed.
+     * </p>
+     */
     private String id;
 
     /**
+     * <p>
+     * The ID of the notification channel to be removed.
+     * </p>
+     * 
      * @param id
+     *        The ID of the notification channel to be removed.
      */
 
     public void setId(String id) {
@@ -36,7 +46,11 @@ public class RemoveNotificationChannelRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the notification channel to be removed.
+     * </p>
+     * 
+     * @return The ID of the notification channel to be removed.
      */
 
     public String getId() {
@@ -44,7 +58,12 @@ public class RemoveNotificationChannelRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The ID of the notification channel to be removed.
+     * </p>
+     * 
      * @param id
+     *        The ID of the notification channel to be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

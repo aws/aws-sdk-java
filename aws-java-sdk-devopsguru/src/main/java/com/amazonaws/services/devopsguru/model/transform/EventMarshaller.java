@@ -28,22 +28,22 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EventMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Id").build();
+    private static final MarshallingInfo<java.util.Date> TIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Time").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSource").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<String> EVENTCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventClass").build();
-    private static final MarshallingInfo<String> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSource").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Id").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<List> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Resources").build();
-    private static final MarshallingInfo<java.util.Date> TIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Time").timestampFormat("unixTimestamp").build();
 
     private static final EventMarshaller instance = new EventMarshaller();
 
@@ -61,14 +61,14 @@ public class EventMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(event.getResourceCollection(), RESOURCECOLLECTION_BINDING);
+            protocolMarshaller.marshall(event.getId(), ID_BINDING);
+            protocolMarshaller.marshall(event.getTime(), TIME_BINDING);
+            protocolMarshaller.marshall(event.getEventSource(), EVENTSOURCE_BINDING);
+            protocolMarshaller.marshall(event.getName(), NAME_BINDING);
             protocolMarshaller.marshall(event.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(event.getEventClass(), EVENTCLASS_BINDING);
-            protocolMarshaller.marshall(event.getEventSource(), EVENTSOURCE_BINDING);
-            protocolMarshaller.marshall(event.getId(), ID_BINDING);
-            protocolMarshaller.marshall(event.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(event.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(event.getResources(), RESOURCES_BINDING);
-            protocolMarshaller.marshall(event.getTime(), TIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

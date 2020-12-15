@@ -28,18 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CloudWatchMetricsDetailMarshaller {
 
-    private static final MarshallingInfo<List> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
     private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Namespace").build();
-    private static final MarshallingInfo<Integer> PERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Period").build();
+    private static final MarshallingInfo<List> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<String> STAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Stat").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Unit").build();
+    private static final MarshallingInfo<Integer> PERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Period").build();
 
     private static final CloudWatchMetricsDetailMarshaller instance = new CloudWatchMetricsDetailMarshaller();
 
@@ -57,12 +57,12 @@ public class CloudWatchMetricsDetailMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(cloudWatchMetricsDetail.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(cloudWatchMetricsDetail.getMetricName(), METRICNAME_BINDING);
             protocolMarshaller.marshall(cloudWatchMetricsDetail.getNamespace(), NAMESPACE_BINDING);
-            protocolMarshaller.marshall(cloudWatchMetricsDetail.getPeriod(), PERIOD_BINDING);
+            protocolMarshaller.marshall(cloudWatchMetricsDetail.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(cloudWatchMetricsDetail.getStat(), STAT_BINDING);
             protocolMarshaller.marshall(cloudWatchMetricsDetail.getUnit(), UNIT_BINDING);
+            protocolMarshaller.marshall(cloudWatchMetricsDetail.getPeriod(), PERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

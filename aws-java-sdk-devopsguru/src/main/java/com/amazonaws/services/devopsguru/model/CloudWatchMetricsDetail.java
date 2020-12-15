@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an Amazon CloudWatch metric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudWatchMetricsDetail"
  *      target="_top">AWS API Documentation</a>
@@ -25,20 +28,132 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudWatchMetricsDetail implements Serializable, Cloneable, StructuredPojo {
 
-    private java.util.List<CloudWatchMetricsDimension> dimensions;
-
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     */
     private String metricName;
-
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     */
     private String namespace;
-
+    /**
+     * <p>
+     * An array of CloudWatch dimensions associated with
+     * </p>
+     */
+    private java.util.List<CloudWatchMetricsDimension> dimensions;
+    /**
+     * <p>
+     * The type of statistic associated with the CloudWatch metric. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     */
+    private String stat;
+    /**
+     * <p>
+     * The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     * <code>Count</code>, and <code>Percent</code>.
+     * </p>
+     */
+    private String unit;
+    /**
+     * <p>
+     * The length of time associated with the CloudWatch metric in number of seconds.
+     * </p>
+     */
     private Integer period;
 
-    private String stat;
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name of the CloudWatch metric.
+     */
 
-    private String unit;
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
 
     /**
-     * @return
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @return The name of the CloudWatch metric.
+     */
+
+    public String getMetricName() {
+        return this.metricName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name of the CloudWatch metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudWatchMetricsDetail withMetricName(String metricName) {
+        setMetricName(metricName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
+     * @return The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudWatchMetricsDetail withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of CloudWatch dimensions associated with
+     * </p>
+     * 
+     * @return An array of CloudWatch dimensions associated with
      */
 
     public java.util.List<CloudWatchMetricsDimension> getDimensions() {
@@ -46,7 +161,12 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * An array of CloudWatch dimensions associated with
+     * </p>
+     * 
      * @param dimensions
+     *        An array of CloudWatch dimensions associated with
      */
 
     public void setDimensions(java.util.Collection<CloudWatchMetricsDimension> dimensions) {
@@ -60,12 +180,16 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * An array of CloudWatch dimensions associated with
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param dimensions
+     *        An array of CloudWatch dimensions associated with
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +204,12 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * An array of CloudWatch dimensions associated with
+     * </p>
+     * 
      * @param dimensions
+     *        An array of CloudWatch dimensions associated with
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,85 +219,16 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @param metricName
-     */
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getMetricName() {
-        return this.metricName;
-    }
-
-    /**
-     * @param metricName
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudWatchMetricsDetail withMetricName(String metricName) {
-        setMetricName(metricName);
-        return this;
-    }
-
-    /**
-     * @param namespace
-     */
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNamespace() {
-        return this.namespace;
-    }
-
-    /**
-     * @param namespace
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudWatchMetricsDetail withNamespace(String namespace) {
-        setNamespace(namespace);
-        return this;
-    }
-
-    /**
-     * @param period
-     */
-
-    public void setPeriod(Integer period) {
-        this.period = period;
-    }
-
-    /**
-     * @return
-     */
-
-    public Integer getPeriod() {
-        return this.period;
-    }
-
-    /**
-     * @param period
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudWatchMetricsDetail withPeriod(Integer period) {
-        setPeriod(period);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The type of statistic associated with the CloudWatch metric. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
      * @param stat
+     *        The type of statistic associated with the CloudWatch metric. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @see CloudWatchMetricsStat
      */
 
@@ -177,7 +237,15 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The type of statistic associated with the CloudWatch metric. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @return The type of statistic associated with the CloudWatch metric. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     *         >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @see CloudWatchMetricsStat
      */
 
@@ -186,7 +254,16 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The type of statistic associated with the CloudWatch metric. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
      * @param stat
+     *        The type of statistic associated with the CloudWatch metric. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchMetricsStat
      */
@@ -197,7 +274,16 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The type of statistic associated with the CloudWatch metric. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
      * @param stat
+     *        The type of statistic associated with the CloudWatch metric. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchMetricsStat
      */
@@ -208,7 +294,14 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     * <code>Count</code>, and <code>Percent</code>.
+     * </p>
+     * 
      * @param unit
+     *        The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     *        <code>Count</code>, and <code>Percent</code>.
      */
 
     public void setUnit(String unit) {
@@ -216,7 +309,13 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     * <code>Count</code>, and <code>Percent</code>.
+     * </p>
+     * 
+     * @return The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>
+     *         , <code>Count</code>, and <code>Percent</code>.
      */
 
     public String getUnit() {
@@ -224,12 +323,59 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     * <code>Count</code>, and <code>Percent</code>.
+     * </p>
+     * 
      * @param unit
+     *        The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+     *        <code>Count</code>, and <code>Percent</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloudWatchMetricsDetail withUnit(String unit) {
         setUnit(unit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The length of time associated with the CloudWatch metric in number of seconds.
+     * </p>
+     * 
+     * @param period
+     *        The length of time associated with the CloudWatch metric in number of seconds.
+     */
+
+    public void setPeriod(Integer period) {
+        this.period = period;
+    }
+
+    /**
+     * <p>
+     * The length of time associated with the CloudWatch metric in number of seconds.
+     * </p>
+     * 
+     * @return The length of time associated with the CloudWatch metric in number of seconds.
+     */
+
+    public Integer getPeriod() {
+        return this.period;
+    }
+
+    /**
+     * <p>
+     * The length of time associated with the CloudWatch metric in number of seconds.
+     * </p>
+     * 
+     * @param period
+     *        The length of time associated with the CloudWatch metric in number of seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudWatchMetricsDetail withPeriod(Integer period) {
+        setPeriod(period);
         return this;
     }
 
@@ -245,18 +391,18 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDimensions() != null)
-            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getMetricName() != null)
             sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
-        if (getPeriod() != null)
-            sb.append("Period: ").append(getPeriod()).append(",");
+        if (getDimensions() != null)
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getStat() != null)
             sb.append("Stat: ").append(getStat()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getPeriod() != null)
+            sb.append("Period: ").append(getPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -271,10 +417,6 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
         if (obj instanceof CloudWatchMetricsDetail == false)
             return false;
         CloudWatchMetricsDetail other = (CloudWatchMetricsDetail) obj;
-        if (other.getDimensions() == null ^ this.getDimensions() == null)
-            return false;
-        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
-            return false;
         if (other.getMetricName() == null ^ this.getMetricName() == null)
             return false;
         if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
@@ -283,9 +425,9 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
             return false;
         if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
             return false;
-        if (other.getPeriod() == null ^ this.getPeriod() == null)
+        if (other.getDimensions() == null ^ this.getDimensions() == null)
             return false;
-        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
             return false;
         if (other.getStat() == null ^ this.getStat() == null)
             return false;
@@ -295,6 +437,10 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getPeriod() == null ^ this.getPeriod() == null)
+            return false;
+        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -303,12 +449,12 @@ public class CloudWatchMetricsDetail implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
-        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getStat() == null) ? 0 : getStat().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         return hashCode;
     }
 

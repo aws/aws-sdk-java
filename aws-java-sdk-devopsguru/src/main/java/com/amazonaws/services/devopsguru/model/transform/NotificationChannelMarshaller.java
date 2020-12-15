@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NotificationChannelMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> CONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Config").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Config").build();
 
     private static final NotificationChannelMarshaller instance = new NotificationChannelMarshaller();
 
@@ -48,8 +48,8 @@ public class NotificationChannelMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(notificationChannel.getConfig(), CONFIG_BINDING);
             protocolMarshaller.marshall(notificationChannel.getId(), ID_BINDING);
+            protocolMarshaller.marshall(notificationChannel.getConfig(), CONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

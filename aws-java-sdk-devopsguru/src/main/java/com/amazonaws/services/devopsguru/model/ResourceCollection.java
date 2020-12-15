@@ -18,6 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS
+ * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
+ * stacks.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ResourceCollection" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +30,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceCollection implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * </p>
+     */
     private CloudFormationCollection cloudFormation;
 
     /**
+     * <p>
+     * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * </p>
+     * 
      * @param cloudFormation
+     *        An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
+     *        analyzes.
      */
 
     public void setCloudFormation(CloudFormationCollection cloudFormation) {
@@ -36,7 +52,12 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * </p>
+     * 
+     * @return An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
+     *         analyzes.
      */
 
     public CloudFormationCollection getCloudFormation() {
@@ -44,7 +65,13 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * </p>
+     * 
      * @param cloudFormation
+     *        An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
+     *        analyzes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

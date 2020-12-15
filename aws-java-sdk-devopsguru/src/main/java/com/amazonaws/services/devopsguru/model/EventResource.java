@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The AWS resource that emitted an event. AWS resource events and metrics are analyzed by DevOps Guru to find anomalous
+ * behavior and provide recommendations to improve your operational solutions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/EventResource" target="_top">AWS API
  *      Documentation</a>
@@ -25,40 +29,72 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventResource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The type of resource that emitted an event.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The name of the resource that emitted an event.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource that emitted an event.
+     * </p>
+     */
     private String arn;
 
-    private String name;
-
-    private String type;
-
     /**
-     * @param arn
+     * <p>
+     * The type of resource that emitted an event.
+     * </p>
+     * 
+     * @param type
+     *        The type of resource that emitted an event.
      */
 
-    public void setArn(String arn) {
-        this.arn = arn;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
-     * @return
+     * <p>
+     * The type of resource that emitted an event.
+     * </p>
+     * 
+     * @return The type of resource that emitted an event.
      */
 
-    public String getArn() {
-        return this.arn;
+    public String getType() {
+        return this.type;
     }
 
     /**
-     * @param arn
+     * <p>
+     * The type of resource that emitted an event.
+     * </p>
+     * 
+     * @param type
+     *        The type of resource that emitted an event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventResource withArn(String arn) {
-        setArn(arn);
+    public EventResource withType(String type) {
+        setType(type);
         return this;
     }
 
     /**
+     * <p>
+     * The name of the resource that emitted an event.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource that emitted an event.
      */
 
     public void setName(String name) {
@@ -66,7 +102,11 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the resource that emitted an event.
+     * </p>
+     * 
+     * @return The name of the resource that emitted an event.
      */
 
     public String getName() {
@@ -74,7 +114,12 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the resource that emitted an event.
+     * </p>
+     * 
      * @param name
+     *        The name of the resource that emitted an event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,28 +129,42 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param type
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource that emitted an event.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the resource that emitted an event.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource that emitted an event.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the resource that emitted an event.
      */
 
-    public String getType() {
-        return this.type;
+    public String getArn() {
+        return this.arn;
     }
 
     /**
-     * @param type
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource that emitted an event.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the resource that emitted an event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventResource withType(String type) {
-        setType(type);
+    public EventResource withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -121,12 +180,12 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -141,17 +200,17 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof EventResource == false)
             return false;
         EventResource other = (EventResource) obj;
-        if (other.getArn() == null ^ this.getArn() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -161,9 +220,9 @@ public class EventResource implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

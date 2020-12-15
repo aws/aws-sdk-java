@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an anomaly that is related to a recommendation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedAnomaly"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecommendationRelatedAnomaly implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     * contains the name and type of the resource.
+     * </p>
+     */
     private java.util.List<RecommendationRelatedAnomalyResource> resources;
-
+    /**
+     * <p>
+     * Information about where the anomalous behavior related the recommendation was found. For example, details in
+     * Amazon CloudWatch metrics.
+     * </p>
+     */
     private java.util.List<RecommendationRelatedAnomalySourceDetail> sourceDetails;
 
     /**
-     * @return
+     * <p>
+     * An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     * contains the name and type of the resource.
+     * </p>
+     * 
+     * @return An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each
+     *         object contains the name and type of the resource.
      */
 
     public java.util.List<RecommendationRelatedAnomalyResource> getResources() {
@@ -38,7 +58,14 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     * contains the name and type of the resource.
+     * </p>
+     * 
      * @param resources
+     *        An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     *        contains the name and type of the resource.
      */
 
     public void setResources(java.util.Collection<RecommendationRelatedAnomalyResource> resources) {
@@ -52,12 +79,18 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     * contains the name and type of the resource.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param resources
+     *        An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     *        contains the name and type of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +105,14 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     * contains the name and type of the resource.
+     * </p>
+     * 
      * @param resources
+     *        An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object
+     *        contains the name and type of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +122,13 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * Information about where the anomalous behavior related the recommendation was found. For example, details in
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @return Information about where the anomalous behavior related the recommendation was found. For example, details
+     *         in Amazon CloudWatch metrics.
      */
 
     public java.util.List<RecommendationRelatedAnomalySourceDetail> getSourceDetails() {
@@ -90,7 +136,14 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Information about where the anomalous behavior related the recommendation was found. For example, details in
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
      * @param sourceDetails
+     *        Information about where the anomalous behavior related the recommendation was found. For example, details
+     *        in Amazon CloudWatch metrics.
      */
 
     public void setSourceDetails(java.util.Collection<RecommendationRelatedAnomalySourceDetail> sourceDetails) {
@@ -104,12 +157,18 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * Information about where the anomalous behavior related the recommendation was found. For example, details in
+     * Amazon CloudWatch metrics.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSourceDetails(java.util.Collection)} or {@link #withSourceDetails(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param sourceDetails
+     *        Information about where the anomalous behavior related the recommendation was found. For example, details
+     *        in Amazon CloudWatch metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +183,14 @@ public class RecommendationRelatedAnomaly implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Information about where the anomalous behavior related the recommendation was found. For example, details in
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
      * @param sourceDetails
+     *        Information about where the anomalous behavior related the recommendation was found. For example, details
+     *        in Amazon CloudWatch metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

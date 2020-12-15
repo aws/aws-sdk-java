@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of the requested events.
+     * </p>
+     */
     private java.util.List<Event> events;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of the requested events.
+     * </p>
+     * 
+     * @return A list of the requested events.
      */
 
     public java.util.List<Event> getEvents() {
@@ -36,7 +50,12 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * A list of the requested events.
+     * </p>
+     * 
      * @param events
+     *        A list of the requested events.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -50,12 +69,16 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * A list of the requested events.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
+     *        A list of the requested events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +93,12 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * A list of the requested events.
+     * </p>
+     * 
      * @param events
+     *        A list of the requested events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +108,14 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +123,13 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -96,7 +137,14 @@ public class ListEventsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

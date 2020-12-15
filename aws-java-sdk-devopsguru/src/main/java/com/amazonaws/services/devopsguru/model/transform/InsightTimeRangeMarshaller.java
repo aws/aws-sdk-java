@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InsightTimeRangeMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
 
     private static final InsightTimeRangeMarshaller instance = new InsightTimeRangeMarshaller();
 
@@ -48,8 +48,8 @@ public class InsightTimeRangeMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(insightTimeRange.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(insightTimeRange.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(insightTimeRange.getEndTime(), ENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

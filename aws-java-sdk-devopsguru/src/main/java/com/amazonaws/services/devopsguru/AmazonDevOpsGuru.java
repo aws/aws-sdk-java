@@ -25,6 +25,26 @@ import com.amazonaws.services.devopsguru.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.devopsguru.AbstractAmazonDevOpsGuru} instead.
  * </p>
+ * <p>
+ * <p>
+ * Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior in business critical
+ * operational applications. You specify the AWS resources that you want DevOps Guru to cover, then the Amazon
+ * CloudWatch metrics and AWS CloudTrail events related to those resources are analyzed. When anomalous behavior is
+ * detected, DevOps Guru creates an <i>insight</i> that includes recommendations, related events, and related metrics
+ * that can help you improve your operational applications. For more information, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html">What is Amazon DevOps Guru</a>.
+ * </p>
+ * <p>
+ * You can specify 1 or 2 Amazon Simple Notification Service topics so you are notified every time a new insight is
+ * created. You can also enable DevOps Guru to generate an OpsItem in AWS Systems Manager for each insight to help you
+ * manage and track your work addressing insights.
+ * </p>
+ * <p>
+ * To learn about the DevOps Guru workflow, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html#how-it-works">How DevOps Guru works</a>.
+ * To learn about DevOps Guru concepts, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/concepts.html">Concepts in DevOps Guru</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDevOpsGuru {
@@ -38,15 +58,43 @@ public interface AmazonDevOpsGuru {
     String ENDPOINT_PREFIX = "devops-guru";
 
     /**
+     * <p>
+     * Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps
+     * Guru events, such as when an insight is generated.
+     * </p>
+     * <p>
+     * If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru
+     * permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using
+     * Amazon SNS in your account. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for
+     * cross account Amazon SNS topics</a>.
+     * </p>
+     * <p>
+     * If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK),
+     * then you must add permissions to the CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for AWS
+     * KMS–encrypted Amazon SNS topics</a>.
+     * </p>
+     * 
      * @param addNotificationChannelRequest
      * @return Result of the AddNotificationChannel operation returned by the service.
-     * @throws ValidationException
-     * @throws InternalServerException
-     * @throws ServiceQuotaExceededException
      * @throws AccessDeniedException
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ServiceQuotaExceededException
+     *         The request contains a value that exceeds a maximum quota.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.AddNotificationChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel"
      *      target="_top">AWS API Documentation</a>
@@ -54,12 +102,24 @@ public interface AmazonDevOpsGuru {
     AddNotificationChannelResult addNotificationChannel(AddNotificationChannelRequest addNotificationChannelRequest);
 
     /**
+     * <p>
+     * Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics
+     * analyzed in your AWS account. Use these numbers to gauge the health of operations in your AWS account.
+     * </p>
+     * 
      * @param describeAccountHealthRequest
      * @return Result of the DescribeAccountHealth operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeAccountHealth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountHealth"
      *      target="_top">AWS API Documentation</a>
@@ -67,12 +127,24 @@ public interface AmazonDevOpsGuru {
     DescribeAccountHealthResult describeAccountHealth(DescribeAccountHealthRequest describeAccountHealthRequest);
 
     /**
+     * <p>
+     * For the time range passed in, returns the number of open reactive insight that were created, the number of open
+     * proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.
+     * </p>
+     * 
      * @param describeAccountOverviewRequest
      * @return Result of the DescribeAccountOverview operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeAccountOverview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountOverview"
      *      target="_top">AWS API Documentation</a>
@@ -80,13 +152,25 @@ public interface AmazonDevOpsGuru {
     DescribeAccountOverviewResult describeAccountOverview(DescribeAccountOverviewRequest describeAccountOverviewRequest);
 
     /**
+     * <p>
+     * Returns details about an anomaly that you specify using its ID.
+     * </p>
+     * 
      * @param describeAnomalyRequest
      * @return Result of the DescribeAnomaly operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeAnomaly
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAnomaly" target="_top">AWS
      *      API Documentation</a>
@@ -94,13 +178,25 @@ public interface AmazonDevOpsGuru {
     DescribeAnomalyResult describeAnomaly(DescribeAnomalyRequest describeAnomalyRequest);
 
     /**
+     * <p>
+     * Returns details about an insight that you specify using its ID.
+     * </p>
+     * 
      * @param describeInsightRequest
      * @return Result of the DescribeInsight operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeInsight
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeInsight" target="_top">AWS
      *      API Documentation</a>
@@ -108,12 +204,26 @@ public interface AmazonDevOpsGuru {
     DescribeInsightResult describeInsight(DescribeInsightRequest describeInsightRequest);
 
     /**
+     * <p>
+     * Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for
+     * all closed insights in resource collections in your account. You specify the type of AWS resources collection.
+     * The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
+     * analyze only the AWS resources that are defined in the stacks.
+     * </p>
+     * 
      * @param describeResourceCollectionHealthRequest
      * @return Result of the DescribeResourceCollectionHealth operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeResourceCollectionHealth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth"
      *      target="_top">AWS API Documentation</a>
@@ -121,12 +231,25 @@ public interface AmazonDevOpsGuru {
     DescribeResourceCollectionHealthResult describeResourceCollectionHealth(DescribeResourceCollectionHealthRequest describeResourceCollectionHealthRequest);
 
     /**
+     * <p>
+     * Returns the integration status of services that are integrated with DevOps Guru. The one service that can be
+     * integrated with DevOps Guru is AWS Systems Manager, which can be used to create an OpsItem for each generated
+     * insight.
+     * </p>
+     * 
      * @param describeServiceIntegrationRequest
      * @return Result of the DescribeServiceIntegration operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.DescribeServiceIntegration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeServiceIntegration"
      *      target="_top">AWS API Documentation</a>
@@ -134,13 +257,27 @@ public interface AmazonDevOpsGuru {
     DescribeServiceIntegrationResult describeServiceIntegration(DescribeServiceIntegrationRequest describeServiceIntegrationRequest);
 
     /**
+     * <p>
+     * Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource
+     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
+     * resources that are defined in the stacks.
+     * </p>
+     * 
      * @param getResourceCollectionRequest
      * @return Result of the GetResourceCollection operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.GetResourceCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection"
      *      target="_top">AWS API Documentation</a>
@@ -148,13 +285,25 @@ public interface AmazonDevOpsGuru {
     GetResourceCollectionResult getResourceCollection(GetResourceCollectionRequest getResourceCollectionRequest);
 
     /**
+     * <p>
+     * Returns a list of the anomalies that belong to an insight that you specify using its ID.
+     * </p>
+     * 
      * @param listAnomaliesForInsightRequest
      * @return Result of the ListAnomaliesForInsight operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.ListAnomaliesForInsight
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomaliesForInsight"
      *      target="_top">AWS API Documentation</a>
@@ -162,13 +311,26 @@ public interface AmazonDevOpsGuru {
     ListAnomaliesForInsightResult listAnomaliesForInsight(ListAnomaliesForInsightRequest listAnomaliesForInsightRequest);
 
     /**
+     * <p>
+     * Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to
+     * specify which events are returned.
+     * </p>
+     * 
      * @param listEventsRequest
      * @return Result of the ListEvents operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.ListEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEvents" target="_top">AWS API
      *      Documentation</a>
@@ -176,12 +338,24 @@ public interface AmazonDevOpsGuru {
     ListEventsResult listEvents(ListEventsRequest listEventsRequest);
 
     /**
+     * <p>
+     * Returns a list of insights in your AWS account. You can specify which insights are returned by their start time
+     * and status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>).
+     * </p>
+     * 
      * @param listInsightsRequest
      * @return Result of the ListInsights operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.ListInsights
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsights" target="_top">AWS API
      *      Documentation</a>
@@ -189,12 +363,25 @@ public interface AmazonDevOpsGuru {
     ListInsightsResult listInsights(ListInsightsRequest listInsightsRequest);
 
     /**
+     * <p>
+     * Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify
+     * you when DevOps Guru generates an insight that contains information about how to improve your operations. The one
+     * supported notification channel is Amazon Simple Notification Service (Amazon SNS).
+     * </p>
+     * 
      * @param listNotificationChannelsRequest
      * @return Result of the ListNotificationChannels operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.ListNotificationChannels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListNotificationChannels"
      *      target="_top">AWS API Documentation</a>
@@ -202,13 +389,26 @@ public interface AmazonDevOpsGuru {
     ListNotificationChannelsResult listNotificationChannels(ListNotificationChannelsRequest listNotificationChannelsRequest);
 
     /**
+     * <p>
+     * Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics
+     * and a list of related events.
+     * </p>
+     * 
      * @param listRecommendationsRequest
      * @return Result of the ListRecommendations operation returned by the service.
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.ListRecommendations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListRecommendations"
      *      target="_top">AWS API Documentation</a>
@@ -216,14 +416,27 @@ public interface AmazonDevOpsGuru {
     ListRecommendationsResult listRecommendations(ListRecommendationsRequest listRecommendationsRequest);
 
     /**
+     * <p>
+     * Collects customer feedback about the specified insight.
+     * </p>
+     * 
      * @param putFeedbackRequest
      * @return Result of the PutFeedback operation returned by the service.
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.PutFeedback
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PutFeedback" target="_top">AWS API
      *      Documentation</a>
@@ -231,14 +444,28 @@ public interface AmazonDevOpsGuru {
     PutFeedbackResult putFeedback(PutFeedbackRequest putFeedbackRequest);
 
     /**
+     * <p>
+     * Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru
+     * generates an insight that contains information about how to improve your operations.
+     * </p>
+     * 
      * @param removeNotificationChannelRequest
      * @return Result of the RemoveNotificationChannel operation returned by the service.
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.RemoveNotificationChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RemoveNotificationChannel"
      *      target="_top">AWS API Documentation</a>
@@ -246,12 +473,30 @@ public interface AmazonDevOpsGuru {
     RemoveNotificationChannelResult removeNotificationChannel(RemoveNotificationChannelRequest removeNotificationChannelRequest);
 
     /**
+     * <p>
+     * Returns a list of insights in your AWS account. You can specify which insights are returned by their start time,
+     * one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities
+     * (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
+     * </p>
+     * <p>
+     * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the
+     * <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search.
+     * </p>
+     * 
      * @param searchInsightsRequest
      * @return Result of the SearchInsights operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.SearchInsights
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsights" target="_top">AWS API
      *      Documentation</a>
@@ -259,13 +504,27 @@ public interface AmazonDevOpsGuru {
     SearchInsightsResult searchInsights(SearchInsightsRequest searchInsightsRequest);
 
     /**
+     * <p>
+     * Updates the collection of resources that DevOps Guru analyzes. The one type of AWS resource collection supported
+     * is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
+     * the stacks. This method also creates the IAM role required for you to use DevOps Guru.
+     * </p>
+     * 
      * @param updateResourceCollectionRequest
      * @return Result of the UpdateResourceCollection operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
-     * @throws ConflictException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.UpdateResourceCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection"
      *      target="_top">AWS API Documentation</a>
@@ -273,13 +532,27 @@ public interface AmazonDevOpsGuru {
     UpdateResourceCollectionResult updateResourceCollection(UpdateResourceCollectionRequest updateResourceCollectionRequest);
 
     /**
+     * <p>
+     * Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can
+     * be integrated with DevOps Guru is AWS Systems Manager, which can be used to create an OpsItem for each generated
+     * insight.
+     * </p>
+     * 
      * @param updateServiceIntegrationRequest
      * @return Result of the UpdateServiceIntegration operation returned by the service.
-     * @throws ThrottlingException
-     * @throws ValidationException
-     * @throws InternalServerException
-     * @throws ConflictException
      * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
      * @sample AmazonDevOpsGuru.UpdateServiceIntegration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegration"
      *      target="_top">AWS API Documentation</a>

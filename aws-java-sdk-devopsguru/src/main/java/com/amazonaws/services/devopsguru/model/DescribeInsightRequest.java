@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInsightRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the insight.
+     * </p>
+     */
     private String id;
 
     /**
+     * <p>
+     * The ID of the insight.
+     * </p>
+     * 
      * @param id
+     *        The ID of the insight.
      */
 
     public void setId(String id) {
@@ -36,7 +46,11 @@ public class DescribeInsightRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the insight.
+     * </p>
+     * 
+     * @return The ID of the insight.
      */
 
     public String getId() {
@@ -44,7 +58,12 @@ public class DescribeInsightRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The ID of the insight.
+     * </p>
+     * 
      * @param id
+     *        The ID of the insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

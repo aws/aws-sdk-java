@@ -48,33 +48,33 @@ public class ReactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Reac
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("AnomalyTimeRange", targetDepth)) {
-                    context.nextToken();
-                    reactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("AssociatedInsightId", targetDepth)) {
-                    context.nextToken();
-                    reactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     reactiveAnomalySummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    reactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
                     reactiveAnomalySummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    reactiveAnomalySummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AnomalyTimeRange", targetDepth)) {
+                    context.nextToken();
+                    reactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SourceDetails", targetDepth)) {
                     context.nextToken();
                     reactiveAnomalySummary.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Status", targetDepth)) {
+                if (context.testExpression("AssociatedInsightId", targetDepth)) {
                     context.nextToken();
-                    reactiveAnomalySummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    reactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    reactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

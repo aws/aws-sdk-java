@@ -18,6 +18,22 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
+ * </p>
+ * <p>
+ * If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
+ * to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in
+ * your account. For more information, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross
+ * account Amazon SNS topics</a>.
+ * </p>
+ * <p>
+ * If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK), then
+ * you must add permissions to the CMK. For more information, see <a
+ * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for AWS
+ * KMS–encrypted Amazon SNS topics</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SnsChannelConfig" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +41,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnsChannelConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
+     * </p>
+     */
     private String topicArn;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
+     * </p>
+     * 
      * @param topicArn
+     *        The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
      */
 
     public void setTopicArn(String topicArn) {
@@ -36,7 +62,11 @@ public class SnsChannelConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
      */
 
     public String getTopicArn() {
@@ -44,7 +74,12 @@ public class SnsChannelConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
+     * </p>
+     * 
      * @param topicArn
+     *        The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

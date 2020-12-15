@@ -29,16 +29,16 @@ public class ReactiveInsightSummaryMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
-    private static final MarshallingInfo<StructuredPojo> INSIGHTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InsightTimeRange").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severity").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> INSIGHTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InsightTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
 
     private static final ReactiveInsightSummaryMarshaller instance = new ReactiveInsightSummaryMarshaller();
 
@@ -57,11 +57,11 @@ public class ReactiveInsightSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(reactiveInsightSummary.getId(), ID_BINDING);
-            protocolMarshaller.marshall(reactiveInsightSummary.getInsightTimeRange(), INSIGHTTIMERANGE_BINDING);
             protocolMarshaller.marshall(reactiveInsightSummary.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(reactiveInsightSummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(reactiveInsightSummary.getSeverity(), SEVERITY_BINDING);
             protocolMarshaller.marshall(reactiveInsightSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(reactiveInsightSummary.getInsightTimeRange(), INSIGHTTIMERANGE_BINDING);
+            protocolMarshaller.marshall(reactiveInsightSummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

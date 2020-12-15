@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InsightFeedbackMarshaller {
 
-    private static final MarshallingInfo<String> FEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Feedback").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> FEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Feedback").build();
 
     private static final InsightFeedbackMarshaller instance = new InsightFeedbackMarshaller();
 
@@ -48,8 +48,8 @@ public class InsightFeedbackMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(insightFeedback.getFeedback(), FEEDBACK_BINDING);
             protocolMarshaller.marshall(insightFeedback.getId(), ID_BINDING);
+            protocolMarshaller.marshall(insightFeedback.getFeedback(), FEEDBACK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The field associated with the validation exception.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ValidationExceptionField"
  *      target="_top">AWS API Documentation</a>
@@ -25,38 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationExceptionField implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the field.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The message associated with the validation exception with information to help determine its cause.
+     * </p>
+     */
     private String message;
 
-    private String name;
-
     /**
-     * @param message
-     */
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getMessage() {
-        return this.message;
-    }
-
-    /**
-     * @param message
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ValidationExceptionField withMessage(String message) {
-        setMessage(message);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The name of the field.
+     * </p>
+     * 
      * @param name
+     *        The name of the field.
      */
 
     public void setName(String name) {
@@ -64,7 +55,11 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the field.
+     * </p>
+     * 
+     * @return The name of the field.
      */
 
     public String getName() {
@@ -72,12 +67,57 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The name of the field.
+     * </p>
+     * 
      * @param name
+     *        The name of the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ValidationExceptionField withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The message associated with the validation exception with information to help determine its cause.
+     * </p>
+     * 
+     * @param message
+     *        The message associated with the validation exception with information to help determine its cause.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * The message associated with the validation exception with information to help determine its cause.
+     * </p>
+     * 
+     * @return The message associated with the validation exception with information to help determine its cause.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * The message associated with the validation exception with information to help determine its cause.
+     * </p>
+     * 
+     * @param message
+     *        The message associated with the validation exception with information to help determine its cause.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidationExceptionField withMessage(String message) {
+        setMessage(message);
         return this;
     }
 
@@ -93,10 +133,10 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMessage() != null)
-            sb.append("Message: ").append(getMessage()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -111,13 +151,13 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
         if (obj instanceof ValidationExceptionField == false)
             return false;
         ValidationExceptionField other = (ValidationExceptionField) obj;
-        if (other.getMessage() == null ^ this.getMessage() == null)
-            return false;
-        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         return true;
     }
@@ -127,8 +167,8 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 

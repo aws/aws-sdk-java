@@ -23,38 +23,33 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
+     * stacks.
+     * </p>
+     */
+    private ResourceCollectionFilter resourceCollection;
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
-    private ResourceCollectionFilter resourceCollection;
-
     /**
-     * @param nextToken
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * @param nextToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetResourceCollectionResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
+     * <p>
+     * The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
+     * stacks.
+     * </p>
+     * 
      * @param resourceCollection
+     *        The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     *        CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
+     *        the stacks.
      */
 
     public void setResourceCollection(ResourceCollectionFilter resourceCollection) {
@@ -62,7 +57,15 @@ public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
+     * stacks.
+     * </p>
+     * 
+     * @return The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     *         CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined
+     *         in the stacks.
      */
 
     public ResourceCollectionFilter getResourceCollection() {
@@ -70,12 +73,67 @@ public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
+     * stacks.
+     * </p>
+     * 
      * @param resourceCollection
+     *        The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS
+     *        CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
+     *        the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceCollectionResult withResourceCollection(ResourceCollectionFilter resourceCollection) {
         setResourceCollection(resourceCollection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourceCollectionResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -91,10 +149,10 @@ public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection());
+            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -109,13 +167,13 @@ public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof GetResourceCollectionResult == false)
             return false;
         GetResourceCollectionResult other = (GetResourceCollectionResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
             return false;
         if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -125,8 +183,8 @@ public class GetResourceCollectionResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

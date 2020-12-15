@@ -15,7 +15,9 @@ package com.amazonaws.services.devopsguru.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request contains a value that exceeds a maximum quota.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceQuotaExceededException extends com.amazonaws.services.devopsguru.model.AmazonDevOpsGuruException {

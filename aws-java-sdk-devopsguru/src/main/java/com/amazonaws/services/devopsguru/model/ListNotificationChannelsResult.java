@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array that contains the requested notification channels.
+     * </p>
+     */
     private java.util.List<NotificationChannel> channels;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * An array that contains the requested notification channels.
+     * </p>
+     * 
+     * @return An array that contains the requested notification channels.
      */
 
     public java.util.List<NotificationChannel> getChannels() {
@@ -36,7 +50,12 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An array that contains the requested notification channels.
+     * </p>
+     * 
      * @param channels
+     *        An array that contains the requested notification channels.
      */
 
     public void setChannels(java.util.Collection<NotificationChannel> channels) {
@@ -50,12 +69,16 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * An array that contains the requested notification channels.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setChannels(java.util.Collection)} or {@link #withChannels(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param channels
+     *        An array that contains the requested notification channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +93,12 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An array that contains the requested notification channels.
+     * </p>
+     * 
      * @param channels
+     *        An array that contains the requested notification channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +108,14 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +123,13 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -96,7 +137,14 @@ public class ListNotificationChannelsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

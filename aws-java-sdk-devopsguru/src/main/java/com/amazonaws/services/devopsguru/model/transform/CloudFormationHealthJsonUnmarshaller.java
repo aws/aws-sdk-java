@@ -48,13 +48,13 @@ public class CloudFormationHealthJsonUnmarshaller implements Unmarshaller<CloudF
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Insight", targetDepth)) {
-                    context.nextToken();
-                    cloudFormationHealth.setInsight(InsightHealthJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("StackName", targetDepth)) {
                     context.nextToken();
                     cloudFormationHealth.setStackName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Insight", targetDepth)) {
+                    context.nextToken();
+                    cloudFormationHealth.setInsight(InsightHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

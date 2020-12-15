@@ -48,10 +48,6 @@ public class InsightHealthJsonUnmarshaller implements Unmarshaller<InsightHealth
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("MeanTimeToRecoverInMilliseconds", targetDepth)) {
-                    context.nextToken();
-                    insightHealth.setMeanTimeToRecoverInMilliseconds(context.getUnmarshaller(Long.class).unmarshall(context));
-                }
                 if (context.testExpression("OpenProactiveInsights", targetDepth)) {
                     context.nextToken();
                     insightHealth.setOpenProactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -59,6 +55,10 @@ public class InsightHealthJsonUnmarshaller implements Unmarshaller<InsightHealth
                 if (context.testExpression("OpenReactiveInsights", targetDepth)) {
                     context.nextToken();
                     insightHealth.setOpenReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MeanTimeToRecoverInMilliseconds", targetDepth)) {
+                    context.nextToken();
+                    insightHealth.setMeanTimeToRecoverInMilliseconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

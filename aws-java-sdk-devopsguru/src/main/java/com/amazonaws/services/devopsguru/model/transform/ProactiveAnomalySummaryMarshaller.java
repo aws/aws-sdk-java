@@ -27,26 +27,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ProactiveAnomalySummaryMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
-    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
-    private static final MarshallingInfo<Double> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Limit").build();
-    private static final MarshallingInfo<StructuredPojo> PREDICTIONTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictionTimeRange").build();
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severity").build();
-    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> UPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> PREDICTIONTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictionTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
+    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
+    private static final MarshallingInfo<Double> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
     private static final ProactiveAnomalySummaryMarshaller instance = new ProactiveAnomalySummaryMarshaller();
 
@@ -64,16 +64,16 @@ public class ProactiveAnomalySummaryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(proactiveAnomalySummary.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
-            protocolMarshaller.marshall(proactiveAnomalySummary.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getId(), ID_BINDING);
-            protocolMarshaller.marshall(proactiveAnomalySummary.getLimit(), LIMIT_BINDING);
-            protocolMarshaller.marshall(proactiveAnomalySummary.getPredictionTimeRange(), PREDICTIONTIMERANGE_BINDING);
-            protocolMarshaller.marshall(proactiveAnomalySummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getSeverity(), SEVERITY_BINDING);
-            protocolMarshaller.marshall(proactiveAnomalySummary.getSourceDetails(), SOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getUpdateTime(), UPDATETIME_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getPredictionTimeRange(), PREDICTIONTIMERANGE_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getSourceDetails(), SOURCEDETAILS_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getLimit(), LIMIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

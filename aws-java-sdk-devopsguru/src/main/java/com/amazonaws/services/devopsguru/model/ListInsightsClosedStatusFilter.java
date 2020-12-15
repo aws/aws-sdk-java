@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Used to filter for insights that have the status <code>CLOSED</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsClosedStatusFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,38 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * A time range used to specify when the behavior of the filtered insights ended.
+     * </p>
+     */
     private EndTimeRange endTimeRange;
 
-    private String type;
-
     /**
-     * @param endTimeRange
-     */
-
-    public void setEndTimeRange(EndTimeRange endTimeRange) {
-        this.endTimeRange = endTimeRange;
-    }
-
-    /**
-     * @return
-     */
-
-    public EndTimeRange getEndTimeRange() {
-        return this.endTimeRange;
-    }
-
-    /**
-     * @param endTimeRange
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListInsightsClosedStatusFilter withEndTimeRange(EndTimeRange endTimeRange) {
-        setEndTimeRange(endTimeRange);
-        return this;
-    }
-
-    /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @see InsightType
      */
 
@@ -65,7 +56,11 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
+     * @return Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @see InsightType
      */
 
@@ -74,7 +69,12 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */
@@ -85,13 +85,58 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+     * </p>
+     * 
      * @param type
+     *        Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */
 
     public ListInsightsClosedStatusFilter withType(InsightType type) {
         this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A time range used to specify when the behavior of the filtered insights ended.
+     * </p>
+     * 
+     * @param endTimeRange
+     *        A time range used to specify when the behavior of the filtered insights ended.
+     */
+
+    public void setEndTimeRange(EndTimeRange endTimeRange) {
+        this.endTimeRange = endTimeRange;
+    }
+
+    /**
+     * <p>
+     * A time range used to specify when the behavior of the filtered insights ended.
+     * </p>
+     * 
+     * @return A time range used to specify when the behavior of the filtered insights ended.
+     */
+
+    public EndTimeRange getEndTimeRange() {
+        return this.endTimeRange;
+    }
+
+    /**
+     * <p>
+     * A time range used to specify when the behavior of the filtered insights ended.
+     * </p>
+     * 
+     * @param endTimeRange
+     *        A time range used to specify when the behavior of the filtered insights ended.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInsightsClosedStatusFilter withEndTimeRange(EndTimeRange endTimeRange) {
+        setEndTimeRange(endTimeRange);
         return this;
     }
 
@@ -107,10 +152,10 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEndTimeRange() != null)
-            sb.append("EndTimeRange: ").append(getEndTimeRange()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getEndTimeRange() != null)
+            sb.append("EndTimeRange: ").append(getEndTimeRange());
         sb.append("}");
         return sb.toString();
     }
@@ -125,13 +170,13 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
         if (obj instanceof ListInsightsClosedStatusFilter == false)
             return false;
         ListInsightsClosedStatusFilter other = (ListInsightsClosedStatusFilter) obj;
-        if (other.getEndTimeRange() == null ^ this.getEndTimeRange() == null)
-            return false;
-        if (other.getEndTimeRange() != null && other.getEndTimeRange().equals(this.getEndTimeRange()) == false)
-            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getEndTimeRange() == null ^ this.getEndTimeRange() == null)
+            return false;
+        if (other.getEndTimeRange() != null && other.getEndTimeRange().equals(this.getEndTimeRange()) == false)
             return false;
         return true;
     }
@@ -141,8 +186,8 @@ public class ListInsightsClosedStatusFilter implements Serializable, Cloneable, 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEndTimeRange() == null) ? 0 : getEndTimeRange().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getEndTimeRange() == null) ? 0 : getEndTimeRange().hashCode());
         return hashCode;
     }
 

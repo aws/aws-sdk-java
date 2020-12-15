@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an anomaly. This object is returned by <code>ListAnomalies</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ProactiveAnomaly" target="_top">AWS API
  *      Documentation</a>
@@ -25,25 +28,254 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of a proactive anomaly.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The severity of a proactive anomaly.
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * The status of a proactive anomaly.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The time of the anomaly's most recent update.
+     * </p>
+     */
+    private java.util.Date updateTime;
+
     private AnomalyTimeRange anomalyTimeRange;
 
+    private PredictionTimeRange predictionTimeRange;
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     */
+    private AnomalySourceDetails sourceDetails;
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     */
     private String associatedInsightId;
 
-    private String id;
-
+    private ResourceCollection resourceCollection;
+    /**
+     * <p>
+     * A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the
+     * anomalous behavior that generated this anomaly.
+     * </p>
+     */
     private Double limit;
 
-    private PredictionTimeRange predictionTimeRange;
+    /**
+     * <p>
+     * The ID of a proactive anomaly.
+     * </p>
+     * 
+     * @param id
+     *        The ID of a proactive anomaly.
+     */
 
-    private ResourceCollection resourceCollection;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    private String severity;
+    /**
+     * <p>
+     * The ID of a proactive anomaly.
+     * </p>
+     * 
+     * @return The ID of a proactive anomaly.
+     */
 
-    private AnomalySourceDetails sourceDetails;
+    public String getId() {
+        return this.id;
+    }
 
-    private String status;
+    /**
+     * <p>
+     * The ID of a proactive anomaly.
+     * </p>
+     * 
+     * @param id
+     *        The ID of a proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
 
-    private java.util.Date updateTime;
+    public ProactiveAnomaly withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of a proactive anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of a proactive anomaly.
+     * @see AnomalySeverity
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The severity of a proactive anomaly.
+     * </p>
+     * 
+     * @return The severity of a proactive anomaly.
+     * @see AnomalySeverity
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity of a proactive anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of a proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalySeverity
+     */
+
+    public ProactiveAnomaly withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of a proactive anomaly.
+     * </p>
+     * 
+     * @param severity
+     *        The severity of a proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalySeverity
+     */
+
+    public ProactiveAnomaly withSeverity(AnomalySeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of a proactive anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of a proactive anomaly.
+     * @see AnomalyStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of a proactive anomaly.
+     * </p>
+     * 
+     * @return The status of a proactive anomaly.
+     * @see AnomalyStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of a proactive anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of a proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyStatus
+     */
+
+    public ProactiveAnomaly withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of a proactive anomaly.
+     * </p>
+     * 
+     * @param status
+     *        The status of a proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyStatus
+     */
+
+    public ProactiveAnomaly withStatus(AnomalyStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time of the anomaly's most recent update.
+     * </p>
+     * 
+     * @param updateTime
+     *        The time of the anomaly's most recent update.
+     */
+
+    public void setUpdateTime(java.util.Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * <p>
+     * The time of the anomaly's most recent update.
+     * </p>
+     * 
+     * @return The time of the anomaly's most recent update.
+     */
+
+    public java.util.Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    /**
+     * <p>
+     * The time of the anomaly's most recent update.
+     * </p>
+     * 
+     * @param updateTime
+     *        The time of the anomaly's most recent update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveAnomaly withUpdateTime(java.util.Date updateTime) {
+        setUpdateTime(updateTime);
+        return this;
+    }
 
     /**
      * @param anomalyTimeRange
@@ -68,84 +300,6 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
 
     public ProactiveAnomaly withAnomalyTimeRange(AnomalyTimeRange anomalyTimeRange) {
         setAnomalyTimeRange(anomalyTimeRange);
-        return this;
-    }
-
-    /**
-     * @param associatedInsightId
-     */
-
-    public void setAssociatedInsightId(String associatedInsightId) {
-        this.associatedInsightId = associatedInsightId;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getAssociatedInsightId() {
-        return this.associatedInsightId;
-    }
-
-    /**
-     * @param associatedInsightId
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProactiveAnomaly withAssociatedInsightId(String associatedInsightId) {
-        setAssociatedInsightId(associatedInsightId);
-        return this;
-    }
-
-    /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProactiveAnomaly withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * @param limit
-     */
-
-    public void setLimit(Double limit) {
-        this.limit = limit;
-    }
-
-    /**
-     * @return
-     */
-
-    public Double getLimit() {
-        return this.limit;
-    }
-
-    /**
-     * @param limit
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProactiveAnomaly withLimit(Double limit) {
-        setLimit(limit);
         return this;
     }
 
@@ -176,6 +330,92 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @param sourceDetails
+     *        Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *        source is Amazon CloudWatch metrics.
+     */
+
+    public void setSourceDetails(AnomalySourceDetails sourceDetails) {
+        this.sourceDetails = sourceDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @return Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *         source is Amazon CloudWatch metrics.
+     */
+
+    public AnomalySourceDetails getSourceDetails() {
+        return this.sourceDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is
+     * Amazon CloudWatch metrics.
+     * </p>
+     * 
+     * @param sourceDetails
+     *        Details about the source of the analyzed operational data that triggered the anomaly. The one supported
+     *        source is Amazon CloudWatch metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveAnomaly withSourceDetails(AnomalySourceDetails sourceDetails) {
+        setSourceDetails(sourceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
+     * @param associatedInsightId
+     *        The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     */
+
+    public void setAssociatedInsightId(String associatedInsightId) {
+        this.associatedInsightId = associatedInsightId;
+    }
+
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
+     * @return The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     */
+
+    public String getAssociatedInsightId() {
+        return this.associatedInsightId;
+    }
+
+    /**
+     * <p>
+     * The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * </p>
+     * 
+     * @param associatedInsightId
+     *        The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveAnomaly withAssociatedInsightId(String associatedInsightId) {
+        setAssociatedInsightId(associatedInsightId);
+        return this;
+    }
+
+    /**
      * @param resourceCollection
      */
 
@@ -202,134 +442,48 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @param severity
-     * @see AnomalySeverity
+     * <p>
+     * A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the
+     * anomalous behavior that generated this anomaly.
+     * </p>
+     * 
+     * @param limit
+     *        A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to
+     *        the anomalous behavior that generated this anomaly.
      */
 
-    public void setSeverity(String severity) {
-        this.severity = severity;
+    public void setLimit(Double limit) {
+        this.limit = limit;
     }
 
     /**
-     * @return
-     * @see AnomalySeverity
+     * <p>
+     * A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the
+     * anomalous behavior that generated this anomaly.
+     * </p>
+     * 
+     * @return A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to
+     *         the anomalous behavior that generated this anomaly.
      */
 
-    public String getSeverity() {
-        return this.severity;
+    public Double getLimit() {
+        return this.limit;
     }
 
     /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalySeverity
-     */
-
-    public ProactiveAnomaly withSeverity(String severity) {
-        setSeverity(severity);
-        return this;
-    }
-
-    /**
-     * @param severity
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalySeverity
-     */
-
-    public ProactiveAnomaly withSeverity(AnomalySeverity severity) {
-        this.severity = severity.toString();
-        return this;
-    }
-
-    /**
-     * @param sourceDetails
-     */
-
-    public void setSourceDetails(AnomalySourceDetails sourceDetails) {
-        this.sourceDetails = sourceDetails;
-    }
-
-    /**
-     * @return
-     */
-
-    public AnomalySourceDetails getSourceDetails() {
-        return this.sourceDetails;
-    }
-
-    /**
-     * @param sourceDetails
+     * <p>
+     * A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the
+     * anomalous behavior that generated this anomaly.
+     * </p>
+     * 
+     * @param limit
+     *        A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to
+     *        the anomalous behavior that generated this anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ProactiveAnomaly withSourceDetails(AnomalySourceDetails sourceDetails) {
-        setSourceDetails(sourceDetails);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @see AnomalyStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * @return
-     * @see AnomalyStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalyStatus
-     */
-
-    public ProactiveAnomaly withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * @param status
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AnomalyStatus
-     */
-
-    public ProactiveAnomaly withStatus(AnomalyStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
-     * @param updateTime
-     */
-
-    public void setUpdateTime(java.util.Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.Date getUpdateTime() {
-        return this.updateTime;
-    }
-
-    /**
-     * @param updateTime
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProactiveAnomaly withUpdateTime(java.util.Date updateTime) {
-        setUpdateTime(updateTime);
+    public ProactiveAnomaly withLimit(Double limit) {
+        setLimit(limit);
         return this;
     }
 
@@ -345,26 +499,26 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAnomalyTimeRange() != null)
-            sb.append("AnomalyTimeRange: ").append(getAnomalyTimeRange()).append(",");
-        if (getAssociatedInsightId() != null)
-            sb.append("AssociatedInsightId: ").append(getAssociatedInsightId()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit()).append(",");
-        if (getPredictionTimeRange() != null)
-            sb.append("PredictionTimeRange: ").append(getPredictionTimeRange()).append(",");
-        if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
         if (getSeverity() != null)
             sb.append("Severity: ").append(getSeverity()).append(",");
-        if (getSourceDetails() != null)
-            sb.append("SourceDetails: ").append(getSourceDetails()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime());
+            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
+        if (getAnomalyTimeRange() != null)
+            sb.append("AnomalyTimeRange: ").append(getAnomalyTimeRange()).append(",");
+        if (getPredictionTimeRange() != null)
+            sb.append("PredictionTimeRange: ").append(getPredictionTimeRange()).append(",");
+        if (getSourceDetails() != null)
+            sb.append("SourceDetails: ").append(getSourceDetails()).append(",");
+        if (getAssociatedInsightId() != null)
+            sb.append("AssociatedInsightId: ").append(getAssociatedInsightId()).append(",");
+        if (getResourceCollection() != null)
+            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
+        if (getLimit() != null)
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -379,37 +533,13 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof ProactiveAnomaly == false)
             return false;
         ProactiveAnomaly other = (ProactiveAnomaly) obj;
-        if (other.getAnomalyTimeRange() == null ^ this.getAnomalyTimeRange() == null)
-            return false;
-        if (other.getAnomalyTimeRange() != null && other.getAnomalyTimeRange().equals(this.getAnomalyTimeRange()) == false)
-            return false;
-        if (other.getAssociatedInsightId() == null ^ this.getAssociatedInsightId() == null)
-            return false;
-        if (other.getAssociatedInsightId() != null && other.getAssociatedInsightId().equals(this.getAssociatedInsightId()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getLimit() == null ^ this.getLimit() == null)
-            return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
-            return false;
-        if (other.getPredictionTimeRange() == null ^ this.getPredictionTimeRange() == null)
-            return false;
-        if (other.getPredictionTimeRange() != null && other.getPredictionTimeRange().equals(this.getPredictionTimeRange()) == false)
-            return false;
-        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
-            return false;
-        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
-            return false;
         if (other.getSeverity() == null ^ this.getSeverity() == null)
             return false;
         if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
-            return false;
-        if (other.getSourceDetails() == null ^ this.getSourceDetails() == null)
-            return false;
-        if (other.getSourceDetails() != null && other.getSourceDetails().equals(this.getSourceDetails()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -419,6 +549,30 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
+        if (other.getAnomalyTimeRange() == null ^ this.getAnomalyTimeRange() == null)
+            return false;
+        if (other.getAnomalyTimeRange() != null && other.getAnomalyTimeRange().equals(this.getAnomalyTimeRange()) == false)
+            return false;
+        if (other.getPredictionTimeRange() == null ^ this.getPredictionTimeRange() == null)
+            return false;
+        if (other.getPredictionTimeRange() != null && other.getPredictionTimeRange().equals(this.getPredictionTimeRange()) == false)
+            return false;
+        if (other.getSourceDetails() == null ^ this.getSourceDetails() == null)
+            return false;
+        if (other.getSourceDetails() != null && other.getSourceDetails().equals(this.getSourceDetails()) == false)
+            return false;
+        if (other.getAssociatedInsightId() == null ^ this.getAssociatedInsightId() == null)
+            return false;
+        if (other.getAssociatedInsightId() != null && other.getAssociatedInsightId().equals(this.getAssociatedInsightId()) == false)
+            return false;
+        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
+            return false;
+        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
+            return false;
         return true;
     }
 
@@ -427,16 +581,16 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAnomalyTimeRange() == null) ? 0 : getAnomalyTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getAssociatedInsightId() == null) ? 0 : getAssociatedInsightId().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode + ((getPredictionTimeRange() == null) ? 0 : getPredictionTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
-        hashCode = prime * hashCode + ((getSourceDetails() == null) ? 0 : getSourceDetails().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getAnomalyTimeRange() == null) ? 0 : getAnomalyTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getPredictionTimeRange() == null) ? 0 : getPredictionTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getSourceDetails() == null) ? 0 : getSourceDetails().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedInsightId() == null) ? 0 : getAssociatedInsightId().hashCode());
+        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

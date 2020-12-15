@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about an event that is related to a recommendation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedEvent"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecommendationRelatedEvent implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * </p>
+     */
     private java.util.List<RecommendationRelatedEventResource> resources;
 
     /**
+     * <p>
+     * The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
+     * </p>
+     * 
      * @param name
+     *        The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
      */
 
     public void setName(String name) {
@@ -38,7 +55,11 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
+     * </p>
+     * 
+     * @return The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
      */
 
     public String getName() {
@@ -46,7 +67,12 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
+     * </p>
+     * 
      * @param name
+     *        The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,11 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * </p>
+     * 
+     * @return A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
      */
 
     public java.util.List<RecommendationRelatedEventResource> getResources() {
@@ -64,7 +94,12 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * </p>
+     * 
      * @param resources
+     *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
      */
 
     public void setResources(java.util.Collection<RecommendationRelatedEventResource> resources) {
@@ -78,12 +113,16 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param resources
+     *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +137,12 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * </p>
+     * 
      * @param resources
+     *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

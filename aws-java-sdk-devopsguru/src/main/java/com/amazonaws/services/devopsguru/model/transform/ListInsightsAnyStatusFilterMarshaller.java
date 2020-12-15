@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListInsightsAnyStatusFilterMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
 
     private static final ListInsightsAnyStatusFilterMarshaller instance = new ListInsightsAnyStatusFilterMarshaller();
 
@@ -48,8 +48,8 @@ public class ListInsightsAnyStatusFilterMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listInsightsAnyStatusFilter.getStartTimeRange(), STARTTIMERANGE_BINDING);
             protocolMarshaller.marshall(listInsightsAnyStatusFilter.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(listInsightsAnyStatusFilter.getStartTimeRange(), STARTTIMERANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

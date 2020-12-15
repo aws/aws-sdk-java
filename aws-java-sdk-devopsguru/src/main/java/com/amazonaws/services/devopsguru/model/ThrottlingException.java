@@ -15,15 +15,32 @@ package com.amazonaws.services.devopsguru.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request was denied due to a request throttling.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThrottlingException extends com.amazonaws.services.devopsguru.model.AmazonDevOpsGuruException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     private String quotaCode;
-
+    /**
+     * <p>
+     * The code of the service that caused the throttling exception.
+     * </p>
+     */
     private String serviceCode;
+    /**
+     * <p>
+     * The number of seconds after which the action that caused the throttling exception can be retried.
+     * </p>
+     */
+    private Integer retryAfterSeconds;
 
     /**
      * Constructs a new ThrottlingException with the specified error message.
@@ -36,7 +53,12 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
+     * <p>
+     * The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     * 
      * @param quotaCode
+     *        The code of the quota that was exceeded, causing the throttling exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
@@ -45,7 +67,11 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
-     * @return
+     * <p>
+     * The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     * 
+     * @return The code of the quota that was exceeded, causing the throttling exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
@@ -54,7 +80,12 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
+     * <p>
+     * The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     * 
      * @param quotaCode
+     *        The code of the quota that was exceeded, causing the throttling exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +95,12 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
+     * <p>
+     * The code of the service that caused the throttling exception.
+     * </p>
+     * 
      * @param serviceCode
+     *        The code of the service that caused the throttling exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ServiceCode")
@@ -73,7 +109,11 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
-     * @return
+     * <p>
+     * The code of the service that caused the throttling exception.
+     * </p>
+     * 
+     * @return The code of the service that caused the throttling exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ServiceCode")
@@ -82,12 +122,59 @@ public class ThrottlingException extends com.amazonaws.services.devopsguru.model
     }
 
     /**
+     * <p>
+     * The code of the service that caused the throttling exception.
+     * </p>
+     * 
      * @param serviceCode
+     *        The code of the service that caused the throttling exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ThrottlingException withServiceCode(String serviceCode) {
         setServiceCode(serviceCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of seconds after which the action that caused the throttling exception can be retried.
+     * </p>
+     * 
+     * @param retryAfterSeconds
+     *        The number of seconds after which the action that caused the throttling exception can be retried.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
+    public void setRetryAfterSeconds(Integer retryAfterSeconds) {
+        this.retryAfterSeconds = retryAfterSeconds;
+    }
+
+    /**
+     * <p>
+     * The number of seconds after which the action that caused the throttling exception can be retried.
+     * </p>
+     * 
+     * @return The number of seconds after which the action that caused the throttling exception can be retried.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
+    public Integer getRetryAfterSeconds() {
+        return this.retryAfterSeconds;
+    }
+
+    /**
+     * <p>
+     * The number of seconds after which the action that caused the throttling exception can be retried.
+     * </p>
+     * 
+     * @param retryAfterSeconds
+     *        The number of seconds after which the action that caused the throttling exception can be retried.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThrottlingException withRetryAfterSeconds(Integer retryAfterSeconds) {
+        setRetryAfterSeconds(retryAfterSeconds);
         return this;
     }
 

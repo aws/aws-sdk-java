@@ -48,13 +48,13 @@ public class ListInsightsAnyStatusFilterJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("StartTimeRange", targetDepth)) {
-                    context.nextToken();
-                    listInsightsAnyStatusFilter.setStartTimeRange(StartTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     listInsightsAnyStatusFilter.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartTimeRange", targetDepth)) {
+                    context.nextToken();
+                    listInsightsAnyStatusFilter.setStartTimeRange(StartTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

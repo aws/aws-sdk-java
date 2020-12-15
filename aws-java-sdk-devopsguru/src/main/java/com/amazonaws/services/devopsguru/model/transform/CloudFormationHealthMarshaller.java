@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CloudFormationHealthMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> INSIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Insight").build();
     private static final MarshallingInfo<String> STACKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("StackName").build();
+    private static final MarshallingInfo<StructuredPojo> INSIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Insight").build();
 
     private static final CloudFormationHealthMarshaller instance = new CloudFormationHealthMarshaller();
 
@@ -48,8 +48,8 @@ public class CloudFormationHealthMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(cloudFormationHealth.getInsight(), INSIGHT_BINDING);
             protocolMarshaller.marshall(cloudFormationHealth.getStackName(), STACKNAME_BINDING);
+            protocolMarshaller.marshall(cloudFormationHealth.getInsight(), INSIGHT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

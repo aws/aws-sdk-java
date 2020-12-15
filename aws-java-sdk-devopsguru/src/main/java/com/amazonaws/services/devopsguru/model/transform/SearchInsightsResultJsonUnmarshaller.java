@@ -48,10 +48,6 @@ public class SearchInsightsResultJsonUnmarshaller implements Unmarshaller<Search
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NextToken", targetDepth)) {
-                    context.nextToken();
-                    searchInsightsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ProactiveInsights", targetDepth)) {
                     context.nextToken();
                     searchInsightsResult.setProactiveInsights(new ListUnmarshaller<ProactiveInsightSummary>(ProactiveInsightSummaryJsonUnmarshaller
@@ -64,6 +60,10 @@ public class SearchInsightsResultJsonUnmarshaller implements Unmarshaller<Search
                     searchInsightsResult.setReactiveInsights(new ListUnmarshaller<ReactiveInsightSummary>(ReactiveInsightSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    searchInsightsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

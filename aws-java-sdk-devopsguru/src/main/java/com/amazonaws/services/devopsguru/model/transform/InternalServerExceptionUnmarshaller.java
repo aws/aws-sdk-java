@@ -20,7 +20,6 @@ import com.amazonaws.services.devopsguru.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
@@ -37,30 +36,13 @@ public class InternalServerExceptionUnmarshaller extends EnhancedJsonErrorUnmars
         com.amazonaws.services.devopsguru.model.InternalServerException internalServerException = new com.amazonaws.services.devopsguru.model.InternalServerException(
                 null);
 
-        int originalDepth = context.getCurrentDepth();
-        String currentParentElement = context.getCurrentParentElement();
-        int targetDepth = originalDepth + 1;
-
-        JsonToken token = context.getCurrentToken();
-        if (token == null)
-            token = context.nextToken();
-        if (token == VALUE_NULL) {
-            return null;
-        }
-
-        while (true) {
-            if (token == null)
-                break;
-
-            if (token == FIELD_NAME || token == START_OBJECT) {
-            } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth)
-                        break;
-                }
+        if (context.isStartOfDocument()) {
+            if (context.getHeader("Retry-After") != null) {
+                context.setCurrentHeader("Retry-After");
+                internalServerException.setRetryAfterSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
             }
-            token = context.nextToken();
         }
+
         return internalServerException;
     }
 

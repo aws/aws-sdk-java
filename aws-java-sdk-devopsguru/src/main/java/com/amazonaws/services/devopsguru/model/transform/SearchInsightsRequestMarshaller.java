@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SearchInsightsRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
     private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
-    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
 
@@ -54,10 +54,10 @@ public class SearchInsightsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(searchInsightsRequest.getStartTimeRange(), STARTTIMERANGE_BINDING);
             protocolMarshaller.marshall(searchInsightsRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(searchInsightsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(searchInsightsRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(searchInsightsRequest.getStartTimeRange(), STARTTIMERANGE_BINDING);
             protocolMarshaller.marshall(searchInsightsRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

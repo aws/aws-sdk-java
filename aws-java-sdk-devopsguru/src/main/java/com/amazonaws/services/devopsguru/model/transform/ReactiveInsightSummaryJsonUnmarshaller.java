@@ -52,17 +52,9 @@ public class ReactiveInsightSummaryJsonUnmarshaller implements Unmarshaller<Reac
                     context.nextToken();
                     reactiveInsightSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("InsightTimeRange", targetDepth)) {
-                    context.nextToken();
-                    reactiveInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     reactiveInsightSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    reactiveInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
@@ -71,6 +63,14 @@ public class ReactiveInsightSummaryJsonUnmarshaller implements Unmarshaller<Reac
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     reactiveInsightSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    context.nextToken();
+                    reactiveInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    reactiveInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

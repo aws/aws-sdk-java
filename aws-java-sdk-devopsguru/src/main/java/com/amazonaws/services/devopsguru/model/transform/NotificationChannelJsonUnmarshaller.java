@@ -48,13 +48,13 @@ public class NotificationChannelJsonUnmarshaller implements Unmarshaller<Notific
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Config", targetDepth)) {
-                    context.nextToken();
-                    notificationChannel.setConfig(NotificationChannelConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     notificationChannel.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Config", targetDepth)) {
+                    context.nextToken();
+                    notificationChannel.setConfig(NotificationChannelConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

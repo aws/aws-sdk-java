@@ -1,3 +1,16 @@
+# __1.11.919__ __2020-12-14__
+## __AWS Global Accelerator__
+  - ### Features
+    - This release adds support for custom routing accelerators
+
+## __Amazon DevOps Guru__
+  - ### Features
+    - Documentation updates for DevOps Guru.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Add c5n.metal to ec2 instance types list
+
 # __1.11.918__ __2020-12-11__
 ## __AWS CloudTrail__
   - ### Features

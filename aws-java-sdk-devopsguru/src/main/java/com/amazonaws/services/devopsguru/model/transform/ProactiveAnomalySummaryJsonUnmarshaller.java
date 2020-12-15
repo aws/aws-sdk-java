@@ -48,37 +48,13 @@ public class ProactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Pro
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("AnomalyTimeRange", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("AssociatedInsightId", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     proactiveAnomalySummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Limit", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setLimit(context.getUnmarshaller(Double.class).unmarshall(context));
-                }
-                if (context.testExpression("PredictionTimeRange", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ResourceCollection", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
                     proactiveAnomalySummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("SourceDetails", targetDepth)) {
-                    context.nextToken();
-                    proactiveAnomalySummary.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -87,6 +63,30 @@ public class ProactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Pro
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     proactiveAnomalySummary.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("AnomalyTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PredictionTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SourceDetails", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AssociatedInsightId", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceCollection", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Limit", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setLimit(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SearchInsightsFiltersMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<List> SEVERITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severities").build();
     private static final MarshallingInfo<List> STATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Statuses").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
 
     private static final SearchInsightsFiltersMarshaller instance = new SearchInsightsFiltersMarshaller();
 
@@ -51,9 +51,9 @@ public class SearchInsightsFiltersMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(searchInsightsFilters.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(searchInsightsFilters.getSeverities(), SEVERITIES_BINDING);
             protocolMarshaller.marshall(searchInsightsFilters.getStatuses(), STATUSES_BINDING);
+            protocolMarshaller.marshall(searchInsightsFilters.getResourceCollection(), RESOURCECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

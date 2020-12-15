@@ -48,17 +48,17 @@ public class DescribeAccountHealthResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("MetricsAnalyzed", targetDepth)) {
+                if (context.testExpression("OpenReactiveInsights", targetDepth)) {
                     context.nextToken();
-                    describeAccountHealthResult.setMetricsAnalyzed(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    describeAccountHealthResult.setOpenReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenProactiveInsights", targetDepth)) {
                     context.nextToken();
                     describeAccountHealthResult.setOpenProactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("OpenReactiveInsights", targetDepth)) {
+                if (context.testExpression("MetricsAnalyzed", targetDepth)) {
                     context.nextToken();
-                    describeAccountHealthResult.setOpenReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    describeAccountHealthResult.setMetricsAnalyzed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

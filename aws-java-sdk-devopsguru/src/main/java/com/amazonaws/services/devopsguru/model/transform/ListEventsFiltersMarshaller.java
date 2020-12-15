@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListEventsFiltersMarshaller {
 
-    private static final MarshallingInfo<String> DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
+    private static final MarshallingInfo<String> INSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("InsightId").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTimeRange").build();
     private static final MarshallingInfo<String> EVENTCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventClass").build();
     private static final MarshallingInfo<String> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSource").build();
-    private static final MarshallingInfo<StructuredPojo> EVENTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTimeRange").build();
-    private static final MarshallingInfo<String> INSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("InsightId").build();
+    private static final MarshallingInfo<String> DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
 
@@ -56,11 +56,11 @@ public class ListEventsFiltersMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listEventsFilters.getDataSource(), DATASOURCE_BINDING);
+            protocolMarshaller.marshall(listEventsFilters.getInsightId(), INSIGHTID_BINDING);
+            protocolMarshaller.marshall(listEventsFilters.getEventTimeRange(), EVENTTIMERANGE_BINDING);
             protocolMarshaller.marshall(listEventsFilters.getEventClass(), EVENTCLASS_BINDING);
             protocolMarshaller.marshall(listEventsFilters.getEventSource(), EVENTSOURCE_BINDING);
-            protocolMarshaller.marshall(listEventsFilters.getEventTimeRange(), EVENTTIMERANGE_BINDING);
-            protocolMarshaller.marshall(listEventsFilters.getInsightId(), INSIGHTID_BINDING);
+            protocolMarshaller.marshall(listEventsFilters.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(listEventsFilters.getResourceCollection(), RESOURCECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about a filter used to specify which AWS resources are analyzed for anomalous behavior by DevOps Guru.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ResourceCollectionFilter"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceCollectionFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
+     * analyze. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     */
     private CloudFormationCollectionFilter cloudFormation;
 
     /**
+     * <p>
+     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
+     * analyze. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * 
      * @param cloudFormation
+     *        Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
+     *        account to analyze. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     *        CloudFormation User Guide</i>.
      */
 
     public void setCloudFormation(CloudFormationCollectionFilter cloudFormation) {
@@ -36,7 +58,17 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
+     * analyze. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
+     *         account to analyze. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the
+     *         <i>AWS CloudFormation User Guide</i>.
      */
 
     public CloudFormationCollectionFilter getCloudFormation() {
@@ -44,7 +76,18 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
+     * analyze. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * 
      * @param cloudFormation
+     *        Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
+     *        account to analyze. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
+     *        CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

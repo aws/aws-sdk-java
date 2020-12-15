@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A range of time that specifies when anomalous behavior in an anomaly or insight ended.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/EndTimeRange" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The earliest end time in the time range.
+     * </p>
+     */
     private java.util.Date fromTime;
-
+    /**
+     * <p>
+     * The latest end time in the time range.
+     * </p>
+     */
     private java.util.Date toTime;
 
     /**
+     * <p>
+     * The earliest end time in the time range.
+     * </p>
+     * 
      * @param fromTime
+     *        The earliest end time in the time range.
      */
 
     public void setFromTime(java.util.Date fromTime) {
@@ -38,7 +55,11 @@ public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The earliest end time in the time range.
+     * </p>
+     * 
+     * @return The earliest end time in the time range.
      */
 
     public java.util.Date getFromTime() {
@@ -46,7 +67,12 @@ public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The earliest end time in the time range.
+     * </p>
+     * 
      * @param fromTime
+     *        The earliest end time in the time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The latest end time in the time range.
+     * </p>
+     * 
      * @param toTime
+     *        The latest end time in the time range.
      */
 
     public void setToTime(java.util.Date toTime) {
@@ -64,7 +95,11 @@ public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The latest end time in the time range.
+     * </p>
+     * 
+     * @return The latest end time in the time range.
      */
 
     public java.util.Date getToTime() {
@@ -72,7 +107,12 @@ public class EndTimeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The latest end time in the time range.
+     * </p>
+     * 
      * @param toTime
+     *        The latest end time in the time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

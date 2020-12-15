@@ -29,12 +29,12 @@ public class ListAnomaliesForInsightRequestMarshaller {
 
     private static final MarshallingInfo<String> INSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("InsightId").build();
+    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
-    private static final MarshallingInfo<StructuredPojo> STARTTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeRange").build();
 
     private static final ListAnomaliesForInsightRequestMarshaller instance = new ListAnomaliesForInsightRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class ListAnomaliesForInsightRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getInsightId(), INSIGHTID_BINDING);
+            protocolMarshaller.marshall(listAnomaliesForInsightRequest.getStartTimeRange(), STARTTIMERANGE_BINDING);
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listAnomaliesForInsightRequest.getStartTimeRange(), STARTTIMERANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

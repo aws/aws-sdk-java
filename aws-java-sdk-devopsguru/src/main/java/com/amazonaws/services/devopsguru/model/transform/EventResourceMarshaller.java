@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EventResourceMarshaller {
 
-    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Arn").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final EventResourceMarshaller instance = new EventResourceMarshaller();
 
@@ -50,9 +50,9 @@ public class EventResourceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(eventResource.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(eventResource.getName(), NAME_BINDING);
             protocolMarshaller.marshall(eventResource.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(eventResource.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(eventResource.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

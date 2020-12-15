@@ -48,13 +48,13 @@ public class InsightFeedbackJsonUnmarshaller implements Unmarshaller<InsightFeed
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Feedback", targetDepth)) {
-                    context.nextToken();
-                    insightFeedback.setFeedback(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     insightFeedback.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Feedback", targetDepth)) {
+                    context.nextToken();
+                    insightFeedback.setFeedback(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -27,20 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReactiveAnomalySummaryMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
-    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
-    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severity").build();
-    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
+    private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatedInsightId").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
 
     private static final ReactiveAnomalySummaryMarshaller instance = new ReactiveAnomalySummaryMarshaller();
 
@@ -58,13 +58,13 @@ public class ReactiveAnomalySummaryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(reactiveAnomalySummary.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
-            protocolMarshaller.marshall(reactiveAnomalySummary.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
             protocolMarshaller.marshall(reactiveAnomalySummary.getId(), ID_BINDING);
-            protocolMarshaller.marshall(reactiveAnomalySummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
             protocolMarshaller.marshall(reactiveAnomalySummary.getSeverity(), SEVERITY_BINDING);
-            protocolMarshaller.marshall(reactiveAnomalySummary.getSourceDetails(), SOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(reactiveAnomalySummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(reactiveAnomalySummary.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
+            protocolMarshaller.marshall(reactiveAnomalySummary.getSourceDetails(), SOURCEDETAILS_BINDING);
+            protocolMarshaller.marshall(reactiveAnomalySummary.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
+            protocolMarshaller.marshall(reactiveAnomalySummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

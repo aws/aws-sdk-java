@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     */
     private ProactiveAnomaly proactiveAnomaly;
-
+    /**
+     * <p>
+     * An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     */
     private ReactiveAnomaly reactiveAnomaly;
 
     /**
+     * <p>
+     * An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
      * @param proactiveAnomaly
+     *        An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
      */
 
     public void setProactiveAnomaly(ProactiveAnomaly proactiveAnomaly) {
@@ -36,7 +50,11 @@ public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
+     * @return An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
      */
 
     public ProactiveAnomaly getProactiveAnomaly() {
@@ -44,7 +62,12 @@ public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
      * @param proactiveAnomaly
+     *        An <code>ReactiveAnomaly</code> object that represents the requested anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,12 @@ public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
      * @param reactiveAnomaly
+     *        An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
      */
 
     public void setReactiveAnomaly(ReactiveAnomaly reactiveAnomaly) {
@@ -62,7 +90,11 @@ public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
+     * @return An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
      */
 
     public ReactiveAnomaly getReactiveAnomaly() {
@@ -70,7 +102,12 @@ public class DescribeAnomalyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
+     * 
      * @param reactiveAnomaly
+     *        An <code>ProactiveAnomaly</code> object that represents the requested anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
