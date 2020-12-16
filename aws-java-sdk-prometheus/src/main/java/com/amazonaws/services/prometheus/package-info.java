@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * StealFire Service
+ * Amazon Managed Service for Prometheus
  * </p>
  */
 package com.amazonaws.services.prometheus;

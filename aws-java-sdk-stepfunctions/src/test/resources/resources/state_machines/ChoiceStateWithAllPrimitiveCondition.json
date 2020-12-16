@@ -93,6 +93,98 @@
             {
               "Variable": "$.boolean",
               "BooleanEquals": false
+            },
+            {
+              "Variable": "$.string",
+              "StringEqualsPath": "$.string2"
+            },
+            {
+              "Variable": "$.string",
+              "StringGreaterThanPath": "$.string2"
+            },
+            {
+              "Variable": "$.string",
+              "StringGreaterThanEqualsPath": "$.string2"
+            },
+            {
+              "Variable": "$.string",
+              "StringLessThanPath": "$.string2"
+            },
+            {
+              "Variable": "$.string",
+              "StringLessThanEqualsPath": "$.string2"
+            },
+            {
+              "Variable": "$.number",
+              "NumericEqualsPath": "$.number2"
+            },
+            {
+              "Variable": "$.number",
+              "NumericGreaterThanPath": "$.number2"
+            },
+            {
+              "Variable": "$.number",
+              "NumericGreaterThanEqualsPath": "$.number2"
+            },
+            {
+              "Variable": "$.number",
+              "NumericLessThanPath": "$.number2"
+            },
+            {
+              "Variable": "$.number",
+              "NumericLessThanEqualsPath": "$.number2"
+            },
+            {
+              "Variable": "$.timestamp",
+              "TimestampEqualsPath": "$.timestamp2"
+            },
+            {
+              "Variable": "$.timestamp",
+              "TimestampGreaterThanPath": "$.timestamp2"
+            },
+            {
+              "Variable": "$.timestamp",
+              "TimestampGreaterThanEqualsPath": "$.timestamp2"
+            },
+            {
+              "Variable": "$.timestamp",
+              "TimestampLessThanPath": "$.timestamp2"
+            },
+            {
+              "Variable": "$.timestamp",
+              "TimestampLessThanEqualsPath": "$.timestamp2"
+            },
+            {
+              "Variable": "$.boolean",
+              "BooleanEqualsPath": "$.boolean2"
+            },
+            {
+              "Variable": "$.variable",
+              "IsNull": true
+            },
+            {
+              "Variable": "$.variable",
+              "IsPresent": true
+            },
+            {
+              "Variable": "$.variable",
+              "IsString": true
+            },
+            {
+              "Variable": "$.variable",
+              "IsNumeric": true
+            },
+            {
+              "Variable": "$.variable",
+              "IsTimestamp": true
+            },
+            {
+              "Variable": "$.variable",
+              "IsBoolean": true
+            },
+            {
+              "Variable": "$.variable",
+              "StringMatches": "pattern"
             }
           ],
           "Next": "NextState"

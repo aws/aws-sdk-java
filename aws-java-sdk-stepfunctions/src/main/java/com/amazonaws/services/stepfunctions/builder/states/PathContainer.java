@@ -26,6 +26,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.node.NullNode;
 import com.fasterxml.jackson.databind.node.TextNode;
+
 import java.io.IOException;
 
 /**
@@ -54,12 +55,17 @@ final class PathContainer {
     @JsonSerialize(using = PathSerializer.class)
     private final JsonNode parameters;
 
+    @JsonProperty(PropertyNames.RESULT_SELECTOR)
+    @JsonSerialize(using = PathSerializer.class)
+    private final JsonNode resultSelector;
+
     private PathContainer(Builder builder) {
         this.inputPath = builder.inputPath;
         this.outputPath = builder.outputPath;
         this.resultPath = builder.resultPath;
         this.itemsPath = builder.itemsPath;
         this.parameters = builder.parameters;
+        this.resultSelector = builder.resultSelector;
     }
 
     @JsonIgnore
@@ -116,6 +122,8 @@ final class PathContainer {
 
         private JsonNode parameters;
 
+        private JsonNode resultSelector;
+
         protected Builder() {
         }
 
@@ -146,6 +154,12 @@ final class PathContainer {
         @JsonProperty(PropertyNames.PARAMETERS)
         public Builder parameters(JsonNode parameters) {
             this.parameters = parameters == null ? NullNode.getInstance() : parameters;
+            return this;
+        }
+
+        @JsonProperty(PropertyNames.RESULT_SELECTOR)
+        public Builder resultSelector(JsonNode resultSelector) {
+            this.resultSelector = resultSelector == null ? NullNode.getInstance() : resultSelector;
             return this;
         }
 

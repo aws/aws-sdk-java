@@ -52,6 +52,10 @@ public class RelationalTableJsonUnmarshaller implements Unmarshaller<RelationalT
                     context.nextToken();
                     relationalTable.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Catalog", targetDepth)) {
+                    context.nextToken();
+                    relationalTable.setCatalog(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Schema", targetDepth)) {
                     context.nextToken();
                     relationalTable.setSchema(context.getUnmarshaller(String.class).unmarshall(context));

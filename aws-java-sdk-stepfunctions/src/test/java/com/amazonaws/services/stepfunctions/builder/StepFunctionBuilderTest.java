@@ -17,6 +17,22 @@ package com.amazonaws.services.stepfunctions.builder;
 import static com.amazonaws.services.stepfunctions.builder.StatesAsserts.assertStateMachineMatches;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.eqBoolean;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.eqNumeric;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.eqString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.eqTimestamp;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gtNumeric;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gtString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gtTimestamp;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gteNumeric;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gteString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gteTimestamp;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isBoolean;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isNull;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isNumber;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isPresent;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.isTimestamp;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.iterator;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choice;
@@ -27,13 +43,20 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.f
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gt;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gte;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.lt;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.ltNumeric;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.ltString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.ltTimestamp;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.lte;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.lteNumeric;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.lteString;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.lteTimestamp;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.next;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.not;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.or;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.patternMatch;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.retrier;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.seconds;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.secondsPath;
@@ -77,11 +100,26 @@ public class StepFunctionBuilderTest {
                         .inputPath("$.input")
                         .resultPath("$.result")
                         .outputPath("$.output")
-                        .parameters(new SimplePojo("value")))
+                        .parameters(new SimplePojo("value"))
+                        .resultSelector(new SimplePojo("value")))
                 .state("NextState", succeedState())
                 .build();
 
         assertStateMachineMatches("SimpleTaskState.json", stateMachine);
+    }
+
+    @Test
+    public void singleTaskStateWithDynamicTimeouts() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", taskState()
+                        .resource("resource-arn")
+                        .timeoutSecondsPath("$.timeout")
+                        .heartbeatSecondsPath("$.heartbeat")
+                        .transition(end()))
+                .build();
+
+        assertStateMachineMatches("SimpleTaskStateWithDynamicTimeouts.json", stateMachine);
     }
 
     @Test
@@ -400,7 +438,32 @@ public class StepFunctionBuilderTest {
                                                 lt("$.timestamp", date),
                                                 lte("$.timestamp", date),
                                                 eq("$.boolean", true),
-                                                eq("$.boolean", false)
+                                                eq("$.boolean", false),
+
+                                                eqString("$.string", "$.string2"),
+                                                gtString("$.string", "$.string2"),
+                                                gteString("$.string", "$.string2"),
+                                                ltString("$.string", "$.string2"),
+                                                lteString("$.string", "$.string2"),
+                                                eqNumeric("$.number", "$.number2"),
+                                                gtNumeric("$.number", "$.number2"),
+                                                gteNumeric("$.number", "$.number2"),
+                                                ltNumeric("$.number", "$.number2"),
+                                                lteNumeric("$.number", "$.number2"),
+                                                eqTimestamp("$.timestamp", "$.timestamp2"),
+                                                gtTimestamp("$.timestamp", "$.timestamp2"),
+                                                gteTimestamp("$.timestamp", "$.timestamp2"),
+                                                ltTimestamp("$.timestamp", "$.timestamp2"),
+                                                lteTimestamp("$.timestamp", "$.timestamp2"),
+                                                eqBoolean("$.boolean", "$.boolean2"),
+
+                                                isNull("$.variable", true),
+                                                isPresent("$.variable", true),
+                                                isString("$.variable", true),
+                                                isNumber("$.variable", true),
+                                                isTimestamp("$.variable", true),
+                                                isBoolean("$.variable", true),
+                                                patternMatch("$.variable", "pattern")
                                         ))))
                 .state("NextState", succeedState())
                 .state("DefaultState", succeedState())
@@ -419,6 +482,7 @@ public class StepFunctionBuilderTest {
                         .outputPath("$.output")
                         .resultPath("$.result")
                         .parameters("{\"foo.$\": \"$.val\"}")
+                        .resultSelector("{\"foo.$\": \"$.val\"}")
                         .transition(next("NextState"))
                         .branches(
                                 branch()
@@ -512,6 +576,7 @@ public class StepFunctionBuilderTest {
                         .resultPath("$.result")
                         .maxConcurrency(50)
                         .parameters("{\"foo.$\": \"$.val\"}")
+                        .resultSelector("{\"foo.$\": \"$.val\"}")
                         .transition(next("NextState"))
                         .iterator(
                                 iterator()

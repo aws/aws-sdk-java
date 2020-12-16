@@ -156,7 +156,7 @@ public final class ParallelState extends TransitionState {
      * Builder for a {@link ParallelState}.
      */
     public static final class Builder extends TransitionStateBuilder
-        implements InputOutputResultPathBuilder<Builder>, ParametersBuilder<Builder> {
+        implements InputOutputResultPathBuilder<Builder>, ParametersBuilder<Builder>, ResultSelectorBuilder<Builder> {
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
@@ -246,6 +246,18 @@ public final class ParallelState extends TransitionState {
         @Override
         public Builder parameters(Object parameters) {
             pathContainer.parameters(objectToJsonNode(parameters));
+            return this;
+        }
+
+        @Override
+        public Builder resultSelector(String resultSelector) {
+            pathContainer.resultSelector(stringToJsonNode("ResultSelector", resultSelector));
+            return this;
+        }
+
+        @Override
+        public Builder resultSelector(Object resultSelector) {
+            pathContainer.resultSelector(objectToJsonNode(resultSelector));
             return this;
         }
 

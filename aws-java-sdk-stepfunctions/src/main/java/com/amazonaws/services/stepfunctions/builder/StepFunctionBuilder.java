@@ -16,24 +16,47 @@ package com.amazonaws.services.stepfunctions.builder;
 
 import com.amazonaws.services.stepfunctions.builder.conditions.AndCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.BooleanEqualsCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.BooleanEqualsPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.Condition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsBooleanCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsNullCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsNumericCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsPresentCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsStringCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.IsTimestampCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NotCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NumericEqualsCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.NumericEqualsPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NumericGreaterThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NumericGreaterThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.NumericGreaterThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.NumericGreaterThanPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NumericLessThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NumericLessThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.NumericLessThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.NumericLessThanPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.OrCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.StringEqualsCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringEqualsPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.StringGreaterThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.StringGreaterThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringGreaterThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringGreaterThanPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.StringLessThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.StringLessThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringLessThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringLessThanPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.StringMatchesCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampEqualsCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.TimestampEqualsPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampGreaterThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampGreaterThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.TimestampGreaterThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.TimestampGreaterThanPathCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanOrEqualCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanOrEqualPathCondition;
+import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanPathCondition;
 import com.amazonaws.services.stepfunctions.builder.states.Branch;
 import com.amazonaws.services.stepfunctions.builder.states.Iterator;
 import com.amazonaws.services.stepfunctions.builder.states.Catcher;
@@ -477,6 +500,93 @@ public final class StepFunctionBuilder {
     }
 
     /**
+     * Binary condition for Null type comparison.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the variable is a Null value.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsNullCondition.Builder isNull(String variable, Boolean expectedValue) {
+        return IsNullCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+    /**
+     * Binary condition for checking the existence of the key.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the JSONPath expression points to a valid key in the input document.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsPresentCondition.Builder isPresent(String variable, Boolean expectedValue) {
+        return IsPresentCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+
+    /**
+     * Binary condition for Numeric type comparison. Checks for both integral and floating point numeric types.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the variable is a Null value.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsNumericCondition.Builder isNumber(String variable, Boolean expectedValue) {
+        return IsNumericCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+    /**
+     * Binary condition for Timestamp type comparison. Checks that Date is ISO8601 UTC timestamp format.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the variable is a Null value.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsTimestampCondition.Builder isTimestamp(String variable, Boolean expectedValue) {
+        return IsTimestampCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+    /**
+     * Binary condition for Boolean type comparison.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the variable is a Null value.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsBooleanCondition.Builder isBoolean(String variable, Boolean expectedValue) {
+        return IsBooleanCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+    /**
+     * Binary condition for Boolean type comparison.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param pattern       The pattern to match the input against.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringMatchesCondition.Builder patternMatch(String variable, String pattern) {
+        return StringMatchesCondition.builder().variable(variable).expectedValue(pattern);
+    }
+
+
+    /**
+     * Binary condition for String type comparison.
+     *
+     * @param variable      The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param expectedValue Whether or not the variable is a Null value.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static IsStringCondition.Builder isString(String variable, Boolean expectedValue) {
+        return IsStringCondition.builder().variable(variable).expectedValue(expectedValue);
+    }
+
+
+    /**
      * Represents the logical NOT of a single condition. May be used in a {@link com.amazonaws.services.stepfunctions.builder.states.ChoiceState}.
      *
      * @param conditionBuilder The condition to be negated. May be another composite condition or a simple condition.
@@ -574,5 +684,196 @@ public final class StepFunctionBuilder {
         return WaitForTimestampPath.builder().timestampPath(timestampPath);
     }
 
+    /**
+     * Binary condition for String equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected string for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringEqualsPathCondition.Builder eqString(String variable, String path) {
+        return StringEqualsPathCondition.builder().variable(variable).expectedValue(path);
+    }
 
+    /**
+     * Binary condition for Numeric equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected number for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static NumericEqualsPathCondition.Builder eqNumeric(String variable, String path) {
+        return NumericEqualsPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Timestamp equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected timestamp for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static TimestampEqualsPathCondition.Builder eqTimestamp(String variable, String path) {
+        return TimestampEqualsPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Boolean equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected boolean for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static BooleanEqualsPathCondition.Builder eqBoolean(String variable, String path) {
+        return BooleanEqualsPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+
+    /**
+     * Binary condition for String equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected string for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringGreaterThanPathCondition.Builder gtString(String variable, String path) {
+        return StringGreaterThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Numeric equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected number for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static NumericGreaterThanPathCondition.Builder gtNumeric(String variable, String path) {
+        return NumericGreaterThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Timestamp equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected timestamp for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static TimestampGreaterThanPathCondition.Builder gtTimestamp(String variable, String path) {
+        return TimestampGreaterThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for String equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected string for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringGreaterThanOrEqualPathCondition.Builder gteString(String variable, String path) {
+        return StringGreaterThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Numeric equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected number for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static NumericGreaterThanOrEqualPathCondition.Builder gteNumeric(String variable, String path) {
+        return NumericGreaterThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Timestamp equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected timestamp for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static TimestampGreaterThanOrEqualPathCondition.Builder gteTimestamp(String variable, String path) {
+        return TimestampGreaterThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for String equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected string for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringLessThanPathCondition.Builder ltString(String variable, String path) {
+        return StringLessThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Numeric equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected number for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static NumericLessThanPathCondition.Builder ltNumeric(String variable, String path) {
+        return NumericLessThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Timestamp equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected timestamp for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static TimestampLessThanPathCondition.Builder ltTimestamp(String variable, String path) {
+        return TimestampLessThanPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for String equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected string for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static StringLessThanOrEqualPathCondition.Builder lteString(String variable, String path) {
+        return StringLessThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Numeric equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected number for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static NumericLessThanOrEqualPathCondition.Builder lteNumeric(String variable, String path) {
+        return NumericLessThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
+
+    /**
+     * Binary condition for Timestamp equality comparison.
+     *
+     * @param variable The JSONPath expression that determines which piece of the input document is used for the comparison.
+     * @param path Reference path to the location in the input data containing the expected timestamp for this condition.
+     * @see <a href="https://states-language.net/spec.html#choice-state">https://states-language.net/spec.html#choice-state</a>
+     * @see com.amazonaws.services.stepfunctions.builder.states.Choice
+     */
+    public static TimestampLessThanOrEqualPathCondition.Builder lteTimestamp(String variable, String path) {
+        return TimestampLessThanOrEqualPathCondition.builder().variable(variable).expectedValue(path);
+    }
 }

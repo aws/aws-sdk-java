@@ -35,12 +35,15 @@ public class PropertyNames {
     public static final String OUTPUT_PATH = "OutputPath";
     public static final String ITEMS_PATH = "ItemsPath";
     public static final String PARAMETERS = "Parameters";
+    public static final String RESULT_SELECTOR = "ResultSelector";
     public static final String END = "End";
     public static final String VERSION = "Version";
 
     // TaskState property names
     public static final String RESOURCE = "Resource";
     public static final String HEARTBEAT_SECONDS = "HeartbeatSeconds";
+    public static final String HEARTBEAT_SECONDS_PATH = "HeartbeatSecondsPath";
+    public static final String TIMEOUT_SECONDS_PATH = "TimeoutSecondsPath";
 
     // ParallelState property names
     public static final String BRANCHES = "Branches";
@@ -80,6 +83,11 @@ public class PropertyNames {
     public static final String STRING_GREATER_THAN = "StringGreaterThan";
     public static final String STRING_GREATER_THAN_EQUALS = "StringGreaterThanEquals";
     public static final String STRING_LESS_THAN_EQUALS = "StringLessThanEquals";
+    public static final String STRING_EQUALS_PATH = "StringEqualsPath";
+    public static final String STRING_LESS_THAN_PATH = "StringLessThanPath";
+    public static final String STRING_GREATER_THAN_PATH = "StringGreaterThanPath";
+    public static final String STRING_GREATER_THAN_EQUALS_PATH = "StringGreaterThanEqualsPath";
+    public static final String STRING_LESS_THAN_EQUALS_PATH = "StringLessThanEqualsPath";
 
     // Binary numeric condition property names
     public static final String NUMERIC_EQUALS = "NumericEquals";
@@ -87,6 +95,11 @@ public class PropertyNames {
     public static final String NUMERIC_GREATER_THAN = "NumericGreaterThan";
     public static final String NUMERIC_GREATER_THAN_EQUALS = "NumericGreaterThanEquals";
     public static final String NUMERIC_LESS_THAN_EQUALS = "NumericLessThanEquals";
+    public static final String NUMERIC_EQUALS_PATH = "NumericEqualsPath";
+    public static final String NUMERIC_LESS_THAN_PATH = "NumericLessThanPath";
+    public static final String NUMERIC_GREATER_THAN_PATH = "NumericGreaterThanPath";
+    public static final String NUMERIC_GREATER_THAN_EQUALS_PATH = "NumericGreaterThanEqualsPath";
+    public static final String NUMERIC_LESS_THAN_EQUALS_PATH = "NumericLessThanEqualsPath";
 
     // Binary timestamp condition property names
     public static final String TIMESTAMP_EQUALS = "TimestampEquals";
@@ -94,13 +107,30 @@ public class PropertyNames {
     public static final String TIMESTAMP_GREATER_THAN = "TimestampGreaterThan";
     public static final String TIMESTAMP_GREATER_THAN_EQUALS = "TimestampGreaterThanEquals";
     public static final String TIMESTAMP_LESS_THAN_EQUALS = "TimestampLessThanEquals";
+    public static final String TIMESTAMP_EQUALS_PATH = "TimestampEqualsPath";
+    public static final String TIMESTAMP_LESS_THAN_PATH = "TimestampLessThanPath";
+    public static final String TIMESTAMP_GREATER_THAN_PATH = "TimestampGreaterThanPath";
+    public static final String TIMESTAMP_GREATER_THAN_EQUALS_PATH = "TimestampGreaterThanEqualsPath";
+    public static final String TIMESTAMP_LESS_THAN_EQUALS_PATH = "TimestampLessThanEqualsPath";
 
     // Binary boolean condition property names
     public static final String BOOLEAN_EQUALS = "BooleanEquals";
+    public static final String BOOLEAN_EQUALS_PATH = "BooleanEqualsPath";
+
+    // Binary type condition property names
+    public static final String IS_NULL = "IsNull";
+    public static final String IS_PRESENT = "IsPresent";
+    public static final String IS_BOOLEAN = "IsBoolean";
+    public static final String IS_STRING = "IsString";
+    public static final String IS_NUMERIC = "IsNumeric";
+    public static final String IS_TIMESTAMP = "IsTimestamp";
 
     // Composite conditions property names
     public static final String AND = "And";
     public static final String OR = "Or";
     public static final String NOT = "Not";
+
+    // Binary string pattern condition names
+    public static final String STRING_MATCHES = "StringMatches";
 
 }

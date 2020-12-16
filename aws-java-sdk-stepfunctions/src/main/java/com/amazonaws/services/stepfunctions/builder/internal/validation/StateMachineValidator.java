@@ -356,6 +356,19 @@ public class StateMachineValidator {
                 }
             }
 
+            if (taskState.getTimeoutSecondsPath() != null && taskState.getTimeoutSeconds() != null) {
+                problemReporter.report(new Problem(currentContext, String.format("Only one of %s or %s should be defined",
+                        PropertyNames.TIMEOUT_SECONDS,
+                        PropertyNames.TIMEOUT_SECONDS_PATH)));
+            }
+
+            if (taskState.getHeartbeatSecondsPath() != null && taskState.getHeartbeatSeconds() != null) {
+                problemReporter.report(new Problem(currentContext, String.format("Only one of %s or %s should be defined",
+                        PropertyNames.HEARTBEAT_SECONDS,
+                        PropertyNames.HEARTBEAT_SECONDS_PATH)));
+            }
+
+
             currentContext.assertStringNotEmpty(taskState.getResource(), PropertyNames.RESOURCE);
             validateRetriers(taskState.getRetriers());
             validateCatchers(taskState.getCatchers());

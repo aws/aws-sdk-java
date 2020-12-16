@@ -390,7 +390,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -409,7 +409,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -1968,12 +1968,11 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
-     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
-     *        Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
      * @return A Java Future containing the result of the GetDashboardEmbedUrl operation returned by the service.
      * @sample AmazonQuickSightAsync.GetDashboardEmbedUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl"
@@ -2015,12 +2014,11 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
-     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
-     *        Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

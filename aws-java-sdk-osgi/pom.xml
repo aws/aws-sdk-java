@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.920</version>
+    <version>1.11.921</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-wellarchitected</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-location</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-iotdeviceadvisor</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1652,6 +1664,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Well-Architected Tool</title>
+                                  <packages>com.amazonaws.services.wellarchitected*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Location</title>
+                                  <packages>com.amazonaws.services.location*</packages>
+                              </group>
                               <group>
                                   <title>AWS IoT Core Device Advisor</title>
                                   <packages>com.amazonaws.services.iotdeviceadvisor*</packages>

@@ -78,7 +78,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<OutputColumn> outputColumns;
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      */
     private String importMode;
@@ -520,11 +520,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -534,10 +534,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
-     * @return Indicates whether you want to import the data into SPICE.
+     * @return A value that indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -547,11 +547,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -563,11 +563,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */

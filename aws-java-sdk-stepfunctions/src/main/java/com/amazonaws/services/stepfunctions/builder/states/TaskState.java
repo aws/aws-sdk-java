@@ -14,10 +14,6 @@
  */
 package com.amazonaws.services.stepfunctions.builder.states;
 
-import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.jsonToString;
-import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.objectToJsonNode;
-import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.stringToJsonNode;
-
 import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
 import com.amazonaws.services.stepfunctions.builder.internal.Buildable;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
@@ -25,8 +21,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.jsonToString;
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.objectToJsonNode;
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.stringToJsonNode;
 
 /**
  * The Task State causes the interpreter to execute the work identified by the state’s “Resource” field.
@@ -49,8 +50,14 @@ public final class TaskState extends TransitionState {
     @JsonProperty(PropertyNames.TIMEOUT_SECONDS)
     private final Integer timeoutSeconds;
 
+    @JsonProperty(PropertyNames.TIMEOUT_SECONDS_PATH)
+    private final String timeoutSecondsPath;
+
     @JsonProperty(PropertyNames.HEARTBEAT_SECONDS)
     private final Integer heartbeatSeconds;
+
+    @JsonProperty(PropertyNames.HEARTBEAT_SECONDS_PATH)
+    private final String heartbeatSecondsPath;
 
     @JsonUnwrapped
     private final Transition transition;
@@ -68,7 +75,9 @@ public final class TaskState extends TransitionState {
         this.pathContainer = builder.pathContainer.build();
         this.comment = builder.comment;
         this.timeoutSeconds = builder.timeoutSeconds;
+        this.timeoutSecondsPath = builder.timeoutSecondsPath;
         this.heartbeatSeconds = builder.heartbeatSeconds;
+        this.heartbeatSecondsPath = builder.heartbeatSecondsPath;
         this.transition = builder.transition.build();
         this.retriers = Buildable.Utils.build(builder.retriers);
         this.catchers = Buildable.Utils.build(builder.catchers);
@@ -143,10 +152,24 @@ public final class TaskState extends TransitionState {
     }
 
     /**
+     * @return Reference path to Timeout, in seconds, that a task is allowed to run. If the task execution runs longer than this timeout the execution fails with a {@link ErrorCodes#TIMEOUT} error.
+     */
+    public String getTimeoutSecondsPath() {
+        return timeoutSecondsPath;
+    }
+
+    /**
      * @return Allowed time between "Heartbeats".
      */
     public Integer getHeartbeatSeconds() {
         return heartbeatSeconds;
+    }
+
+    /**
+     * @return Reference path to allowed time between "Heartbeats". If the task does not send "Heartbeats" within the timeout then execution fails with a {@link ErrorCodes#TIMEOUT}
+     */
+    public String getHeartbeatSecondsPath() {
+        return heartbeatSecondsPath;
     }
 
     /**
@@ -179,7 +202,7 @@ public final class TaskState extends TransitionState {
      * Builder for a {@link TaskState}.
      */
     public static final class Builder extends TransitionStateBuilder
-        implements InputOutputResultPathBuilder<Builder>, ParametersBuilder<Builder> {
+        implements InputOutputResultPathBuilder<Builder>, ParametersBuilder<Builder>, ResultSelectorBuilder<Builder> {
 
         @JsonProperty(PropertyNames.RESOURCE)
         private String resource;
@@ -190,8 +213,14 @@ public final class TaskState extends TransitionState {
         @JsonProperty(PropertyNames.TIMEOUT_SECONDS)
         private Integer timeoutSeconds;
 
+        @JsonProperty(PropertyNames.TIMEOUT_SECONDS_PATH)
+        private String timeoutSecondsPath;
+
         @JsonProperty(PropertyNames.HEARTBEAT_SECONDS)
         private Integer heartbeatSeconds;
+
+        @JsonProperty(PropertyNames.HEARTBEAT_SECONDS_PATH)
+        private String heartbeatSecondsPath;
 
         private Transition.Builder transition = Transition.NULL_BUILDER;
 
@@ -249,6 +278,18 @@ public final class TaskState extends TransitionState {
             return this;
         }
 
+        @Override
+        public Builder resultSelector(String resultSelector) {
+            pathContainer.resultSelector(stringToJsonNode("ResultSelector", resultSelector));
+            return this;
+        }
+
+        @Override
+        public Builder resultSelector(Object resultSelector) {
+            pathContainer.resultSelector(objectToJsonNode(resultSelector));
+            return this;
+        }
+
         /**
          * OPTIONAL. Human readable description for the state.
          *
@@ -264,6 +305,8 @@ public final class TaskState extends TransitionState {
          * OPTIONAL. Timeout, in seconds, that a task is allowed to run. If the task execution runs longer than this timeout the
          * execution fails with a {@link ErrorCodes#TIMEOUT} error.
          *
+         * TimeoutSeconds and TimeoutSecondsPath are mutually exclusive fields.
+         *
          * @param timeoutSeconds Timeout value.
          * @return This object for method chaining.
          */
@@ -273,16 +316,48 @@ public final class TaskState extends TransitionState {
         }
 
         /**
+         * OPTIONAL. Reference path to Timeout, in seconds, that a task is allowed to run. If the task execution runs longer than this timeout the
+         * execution fails with a {@link ErrorCodes#TIMEOUT} error.
+         *
+         * TimeoutSeconds and TimeoutSecondsPath are mutually exclusive fields.
+         *
+         * @param timeoutSecondsPath Reference path to Timeout value in the input.
+         * @return This object for method chaining.
+         */
+        public Builder timeoutSecondsPath(String timeoutSecondsPath) {
+            this.timeoutSecondsPath = timeoutSecondsPath;
+            return this;
+        }
+
+        /**
          * OPTIONAL. Allowed time between "Heartbeats". If the task does not send "Heartbeats" within the timeout then execution
          * fails with a {@link ErrorCodes#TIMEOUT}. If not set then no heartbeats are required. Heartbeats are a more granular
          * way
          * for a task to report it's progress to the state machine.
+         *
+         * HeartbeatSeconds and HeartbeatSecondsPath are mutually exclusive fields.
          *
          * @param heartbeatSeconds Heartbeat value.
          * @return This object for method chaining.
          */
         public Builder heartbeatSeconds(Integer heartbeatSeconds) {
             this.heartbeatSeconds = heartbeatSeconds;
+            return this;
+        }
+
+        /**
+         * OPTIONAL. Reference path to allowed time between "Heartbeats". If the task does not send "Heartbeats" within the timeout then execution
+         * fails with a {@link ErrorCodes#TIMEOUT}. If not set then no heartbeats are required. Heartbeats are a more granular
+         * way
+         * for a task to report it's progress to the state machine.
+         *
+         * HeartbeatSeconds and HeartbeatSecondsPath are mutually exclusive fields.
+         *
+         * @param heartbeatSecondsPath Reference path to Heartbeat value in the input.
+         * @return This object for method chaining.
+         */
+        public Builder heartbeatSecondsPath(String heartbeatSecondsPath) {
+            this.heartbeatSecondsPath = heartbeatSecondsPath;
             return this;
         }
 

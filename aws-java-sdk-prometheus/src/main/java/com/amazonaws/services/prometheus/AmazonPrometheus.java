@@ -27,7 +27,7 @@ import com.amazonaws.services.prometheus.model.*;
  * </p>
  * <p>
  * <p>
- * StealFire Service
+ * Amazon Managed Service for Prometheus
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,7 +43,7 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
-     * Creates a new StealFire workspace.
+     * Creates a new AMP workspace.
      * </p>
      * 
      * @param createWorkspaceRequest
@@ -69,7 +69,7 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
-     * Deletes a StealFire workspace.
+     * Deletes an AMP workspace.
      * </p>
      * 
      * @param deleteWorkspaceRequest
@@ -93,7 +93,7 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
-     * Describes an existing StealFire workspace.
+     * Describes an existing AMP workspace.
      * </p>
      * 
      * @param describeWorkspaceRequest
@@ -117,7 +117,7 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
-     * Lists all StealFire workspaces, including workspaces being created or deleted.
+     * Lists all AMP workspaces, including workspaces being created or deleted.
      * </p>
      * 
      * @param listWorkspacesRequest
@@ -139,7 +139,7 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
-     * Updates a StealFire workspace alias.
+     * Updates an AMP workspace alias.
      * </p>
      * 
      * @param updateWorkspaceAliasRequest

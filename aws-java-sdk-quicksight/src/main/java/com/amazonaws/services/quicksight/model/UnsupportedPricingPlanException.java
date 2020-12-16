@@ -17,12 +17,12 @@ import javax.annotation.Generated;
 /**
  * <p>
  * This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing
- * plan on your AWS account. Before you can use anonymous embedding, a QuickSight administrator needs to add capacity
- * pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.
+ * plan on your AWS account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add
+ * capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.
  * </p>
  * <p>
- * After capacity pricing is added, you can enable anonymous embedding by using the
- * <code> <a>GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+ * After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
+ * <code>--identity-type ANONYMOUS</code> option.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

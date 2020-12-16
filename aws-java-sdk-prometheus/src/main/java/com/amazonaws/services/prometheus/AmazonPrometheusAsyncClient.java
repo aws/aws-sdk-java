@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * StealFire Service
+ * Amazon Managed Service for Prometheus
  * </p>
  */
 @ThreadSafe

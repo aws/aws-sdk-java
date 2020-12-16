@@ -30,6 +30,8 @@ public class RelationalTableMarshaller {
 
     private static final MarshallingInfo<String> DATASOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceArn").build();
+    private static final MarshallingInfo<String> CATALOG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Catalog").build();
     private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schema").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class RelationalTableMarshaller {
 
         try {
             protocolMarshaller.marshall(relationalTable.getDataSourceArn(), DATASOURCEARN_BINDING);
+            protocolMarshaller.marshall(relationalTable.getCatalog(), CATALOG_BINDING);
             protocolMarshaller.marshall(relationalTable.getSchema(), SCHEMA_BINDING);
             protocolMarshaller.marshall(relationalTable.getName(), NAME_BINDING);
             protocolMarshaller.marshall(relationalTable.getInputColumns(), INPUTCOLUMNS_BINDING);

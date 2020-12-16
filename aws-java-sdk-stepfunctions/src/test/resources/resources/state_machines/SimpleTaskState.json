@@ -13,6 +13,9 @@
       "OutputPath": "$.output",
       "Parameters": {
         "foo": "value"
+      },
+      "ResultSelector": {
+        "foo": "value"
       }
     },
     "NextState": {

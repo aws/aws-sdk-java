@@ -96,13 +96,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation
+     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
      * </ol>
      * <p>
-     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      * </p>
      */
     private String userArn;
@@ -450,13 +450,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation
+     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
      * </ol>
      * <p>
-     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      * </p>
      * 
      * @param userArn
@@ -476,13 +476,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *        Connect, or IAM federation
+     *        AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
+     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>
      *        <p>
-     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     *        Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      */
 
     public void setUserArn(String userArn) {
@@ -508,13 +508,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation
+     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
      * </ol>
      * <p>
-     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      * </p>
      * 
      * @return The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
@@ -533,13 +533,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *         Connect, or IAM federation
+     *         AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through
+     *         Federated Single Sign-On using SAML, OpenID Connect, or IAM federation
      *         </p>
      *         </li>
      *         </ol>
      *         <p>
-     *         Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     *         Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      */
 
     public String getUserArn() {
@@ -565,13 +565,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation
+     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
      * </ol>
      * <p>
-     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      * </p>
      * 
      * @param userArn
@@ -591,13 +591,13 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *        Connect, or IAM federation
+     *        AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
+     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>
      *        <p>
-     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     *        Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

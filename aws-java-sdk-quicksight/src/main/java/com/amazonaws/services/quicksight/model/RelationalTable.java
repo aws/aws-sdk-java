@@ -36,6 +36,12 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
     private String dataSourceArn;
     /**
      * <p>
+     * The catalog associated with a table.
+     * </p>
+     */
+    private String catalog;
+    /**
+     * <p>
      * The schema name. This name applies to certain relational database engines.
      * </p>
      */
@@ -90,6 +96,46 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     public RelationalTable withDataSourceArn(String dataSourceArn) {
         setDataSourceArn(dataSourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The catalog associated with a table.
+     * </p>
+     * 
+     * @param catalog
+     *        The catalog associated with a table.
+     */
+
+    public void setCatalog(String catalog) {
+        this.catalog = catalog;
+    }
+
+    /**
+     * <p>
+     * The catalog associated with a table.
+     * </p>
+     * 
+     * @return The catalog associated with a table.
+     */
+
+    public String getCatalog() {
+        return this.catalog;
+    }
+
+    /**
+     * <p>
+     * The catalog associated with a table.
+     * </p>
+     * 
+     * @param catalog
+     *        The catalog associated with a table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelationalTable withCatalog(String catalog) {
+        setCatalog(catalog);
         return this;
     }
 
@@ -257,6 +303,8 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getDataSourceArn() != null)
             sb.append("DataSourceArn: ").append(getDataSourceArn()).append(",");
+        if (getCatalog() != null)
+            sb.append("Catalog: ").append(getCatalog()).append(",");
         if (getSchema() != null)
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getName() != null)
@@ -281,6 +329,10 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDataSourceArn() != null && other.getDataSourceArn().equals(this.getDataSourceArn()) == false)
             return false;
+        if (other.getCatalog() == null ^ this.getCatalog() == null)
+            return false;
+        if (other.getCatalog() != null && other.getCatalog().equals(this.getCatalog()) == false)
+            return false;
         if (other.getSchema() == null ^ this.getSchema() == null)
             return false;
         if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
@@ -302,6 +354,7 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDataSourceArn() == null) ? 0 : getDataSourceArn().hashCode());
+        hashCode = prime * hashCode + ((getCatalog() == null) ? 0 : getCatalog().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInputColumns() == null) ? 0 : getInputColumns().hashCode());
