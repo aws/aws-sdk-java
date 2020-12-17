@@ -42,10 +42,19 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
     private String description;
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+     * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only
+     * supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     * <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -164,15 +173,33 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only
+     * supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     * <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      * 
-     * @return The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     * @return Specify the template source with one of the following options, but not both. Keys accepted: [
+     *         <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+     *         <p>
+     *         The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     *         </p>
      *         <p>
      *         <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+     *         </p>
+     *         <p>
+     *         <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently
+     *         only supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     *         <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -181,16 +208,34 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only
+     * supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     * <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      * 
      * @param info
-     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        Specify the template source with one of the following options, but not both. Keys accepted: [
+     *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+     *        <p>
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+     *        </p>
+     *        <p>
+     *        <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently
+     *        only supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     *        <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -199,16 +244,34 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only
+     * supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     * <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      * 
      * @param info
-     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        Specify the template source with one of the following options, but not both. Keys accepted: [
+     *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+     *        <p>
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+     *        </p>
+     *        <p>
+     *        <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently
+     *        only supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+     *        <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

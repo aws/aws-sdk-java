@@ -2723,6 +2723,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest request) {
+
+        return putExternalEvaluationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(final PutExternalEvaluationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutExternalEvaluationRequest, PutExternalEvaluationResult> asyncHandler) {
+        final PutExternalEvaluationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutExternalEvaluationResult>() {
+            @Override
+            public PutExternalEvaluationResult call() throws Exception {
+                PutExternalEvaluationResult result = null;
+
+                try {
+                    result = executePutExternalEvaluation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(PutOrganizationConfigRuleRequest request) {
 
         return putOrganizationConfigRuleAsync(request, null);

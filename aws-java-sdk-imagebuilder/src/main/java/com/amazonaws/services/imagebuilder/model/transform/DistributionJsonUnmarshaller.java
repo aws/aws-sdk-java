@@ -56,6 +56,10 @@ public class DistributionJsonUnmarshaller implements Unmarshaller<Distribution, 
                     context.nextToken();
                     distribution.setAmiDistributionConfiguration(AmiDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("containerDistributionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    distribution.setContainerDistributionConfiguration(ContainerDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("licenseConfigurationArns", targetDepth)) {
                     context.nextToken();
                     distribution.setLicenseConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

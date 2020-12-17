@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a backup schedule.
+ * Specifies a backup schedule for a snapshot or AMI lifecycle policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule" target="_top">AWS API Documentation</a>
@@ -78,6 +78,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CrossRegionCopyRule> crossRegionCopyRules;
+    /**
+     * <p>
+     * The rule for sharing snapshots with other AWS accounts.
+     * </p>
+     */
+    private java.util.List<ShareRule> shareRules;
 
     /**
      * <p>
@@ -530,6 +536,76 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The rule for sharing snapshots with other AWS accounts.
+     * </p>
+     * 
+     * @return The rule for sharing snapshots with other AWS accounts.
+     */
+
+    public java.util.List<ShareRule> getShareRules() {
+        return shareRules;
+    }
+
+    /**
+     * <p>
+     * The rule for sharing snapshots with other AWS accounts.
+     * </p>
+     * 
+     * @param shareRules
+     *        The rule for sharing snapshots with other AWS accounts.
+     */
+
+    public void setShareRules(java.util.Collection<ShareRule> shareRules) {
+        if (shareRules == null) {
+            this.shareRules = null;
+            return;
+        }
+
+        this.shareRules = new java.util.ArrayList<ShareRule>(shareRules);
+    }
+
+    /**
+     * <p>
+     * The rule for sharing snapshots with other AWS accounts.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShareRules(java.util.Collection)} or {@link #withShareRules(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param shareRules
+     *        The rule for sharing snapshots with other AWS accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withShareRules(ShareRule... shareRules) {
+        if (this.shareRules == null) {
+            setShareRules(new java.util.ArrayList<ShareRule>(shareRules.length));
+        }
+        for (ShareRule ele : shareRules) {
+            this.shareRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule for sharing snapshots with other AWS accounts.
+     * </p>
+     * 
+     * @param shareRules
+     *        The rule for sharing snapshots with other AWS accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withShareRules(java.util.Collection<ShareRule> shareRules) {
+        setShareRules(shareRules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -556,7 +632,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         if (getFastRestoreRule() != null)
             sb.append("FastRestoreRule: ").append(getFastRestoreRule()).append(",");
         if (getCrossRegionCopyRules() != null)
-            sb.append("CrossRegionCopyRules: ").append(getCrossRegionCopyRules());
+            sb.append("CrossRegionCopyRules: ").append(getCrossRegionCopyRules()).append(",");
+        if (getShareRules() != null)
+            sb.append("ShareRules: ").append(getShareRules());
         sb.append("}");
         return sb.toString();
     }
@@ -603,6 +681,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCrossRegionCopyRules() != null && other.getCrossRegionCopyRules().equals(this.getCrossRegionCopyRules()) == false)
             return false;
+        if (other.getShareRules() == null ^ this.getShareRules() == null)
+            return false;
+        if (other.getShareRules() != null && other.getShareRules().equals(this.getShareRules()) == false)
+            return false;
         return true;
     }
 
@@ -619,6 +701,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetainRule() == null) ? 0 : getRetainRule().hashCode());
         hashCode = prime * hashCode + ((getFastRestoreRule() == null) ? 0 : getFastRestoreRule().hashCode());
         hashCode = prime * hashCode + ((getCrossRegionCopyRules() == null) ? 0 : getCrossRegionCopyRules().hashCode());
+        hashCode = prime * hashCode + ((getShareRules() == null) ? 0 : getShareRules().hashCode());
         return hashCode;
     }
 

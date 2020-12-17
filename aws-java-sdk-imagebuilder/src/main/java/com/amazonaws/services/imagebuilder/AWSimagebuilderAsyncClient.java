@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * EC2 Image Builder is a fully managed AWS service that makes it easier to automate the creation, management, and
- * deployment of customized, secure, and up-to-date “golden” server images that are pre-installed and pre-configured
+ * deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured
  * with software and settings to meet specific IT standards.
  * </p>
  */
@@ -126,6 +126,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeCreateComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(CreateContainerRecipeRequest request) {
+
+        return createContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(final CreateContainerRecipeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContainerRecipeRequest, CreateContainerRecipeResult> asyncHandler) {
+        final CreateContainerRecipeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContainerRecipeResult>() {
+            @Override
+            public CreateContainerRecipeResult call() throws Exception {
+                CreateContainerRecipeResult result = null;
+
+                try {
+                    result = executeCreateContainerRecipe(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -328,6 +361,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeDeleteComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(DeleteContainerRecipeRequest request) {
+
+        return deleteContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(final DeleteContainerRecipeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContainerRecipeRequest, DeleteContainerRecipeResult> asyncHandler) {
+        final DeleteContainerRecipeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContainerRecipeResult>() {
+            @Override
+            public DeleteContainerRecipeResult call() throws Exception {
+                DeleteContainerRecipeResult result = null;
+
+                try {
+                    result = executeDeleteContainerRecipe(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -563,6 +629,72 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeGetComponentPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(GetContainerRecipeRequest request) {
+
+        return getContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(final GetContainerRecipeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerRecipeRequest, GetContainerRecipeResult> asyncHandler) {
+        final GetContainerRecipeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerRecipeResult>() {
+            @Override
+            public GetContainerRecipeResult call() throws Exception {
+                GetContainerRecipeResult result = null;
+
+                try {
+                    result = executeGetContainerRecipe(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(GetContainerRecipePolicyRequest request) {
+
+        return getContainerRecipePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(final GetContainerRecipePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerRecipePolicyRequest, GetContainerRecipePolicyResult> asyncHandler) {
+        final GetContainerRecipePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerRecipePolicyResult>() {
+            @Override
+            public GetContainerRecipePolicyResult call() throws Exception {
+                GetContainerRecipePolicyResult result = null;
+
+                try {
+                    result = executeGetContainerRecipePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -910,6 +1042,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(ListContainerRecipesRequest request) {
+
+        return listContainerRecipesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(final ListContainerRecipesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContainerRecipesRequest, ListContainerRecipesResult> asyncHandler) {
+        final ListContainerRecipesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContainerRecipesResult>() {
+            @Override
+            public ListContainerRecipesResult call() throws Exception {
+                ListContainerRecipesResult result = null;
+
+                try {
+                    result = executeListContainerRecipes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionConfigurationsResult> listDistributionConfigurationsAsync(ListDistributionConfigurationsRequest request) {
 
         return listDistributionConfigurationsAsync(request, null);
@@ -1194,6 +1359,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executePutComponentPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(PutContainerRecipePolicyRequest request) {
+
+        return putContainerRecipePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(final PutContainerRecipePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutContainerRecipePolicyRequest, PutContainerRecipePolicyResult> asyncHandler) {
+        final PutContainerRecipePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutContainerRecipePolicyResult>() {
+            @Override
+            public PutContainerRecipePolicyResult call() throws Exception {
+                PutContainerRecipePolicyResult result = null;
+
+                try {
+                    result = executePutContainerRecipePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

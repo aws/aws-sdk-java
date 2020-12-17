@@ -42,6 +42,12 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
     private AmiDistributionConfiguration amiDistributionConfiguration;
     /**
      * <p>
+     * Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     * </p>
+     */
+    private ContainerDistributionConfiguration containerDistributionConfiguration;
+    /**
+     * <p>
      * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      */
@@ -124,6 +130,46 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     public Distribution withAmiDistributionConfiguration(AmiDistributionConfiguration amiDistributionConfiguration) {
         setAmiDistributionConfiguration(amiDistributionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     * </p>
+     * 
+     * @param containerDistributionConfiguration
+     *        Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     */
+
+    public void setContainerDistributionConfiguration(ContainerDistributionConfiguration containerDistributionConfiguration) {
+        this.containerDistributionConfiguration = containerDistributionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     * </p>
+     * 
+     * @return Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     */
+
+    public ContainerDistributionConfiguration getContainerDistributionConfiguration() {
+        return this.containerDistributionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     * </p>
+     * 
+     * @param containerDistributionConfiguration
+     *        Container distribution settings for encryption, licensing, and sharing in a specific Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Distribution withContainerDistributionConfiguration(ContainerDistributionConfiguration containerDistributionConfiguration) {
+        setContainerDistributionConfiguration(containerDistributionConfiguration);
         return this;
     }
 
@@ -213,6 +259,8 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
             sb.append("Region: ").append(getRegion()).append(",");
         if (getAmiDistributionConfiguration() != null)
             sb.append("AmiDistributionConfiguration: ").append(getAmiDistributionConfiguration()).append(",");
+        if (getContainerDistributionConfiguration() != null)
+            sb.append("ContainerDistributionConfiguration: ").append(getContainerDistributionConfiguration()).append(",");
         if (getLicenseConfigurationArns() != null)
             sb.append("LicenseConfigurationArns: ").append(getLicenseConfigurationArns());
         sb.append("}");
@@ -237,6 +285,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAmiDistributionConfiguration() != null && other.getAmiDistributionConfiguration().equals(this.getAmiDistributionConfiguration()) == false)
             return false;
+        if (other.getContainerDistributionConfiguration() == null ^ this.getContainerDistributionConfiguration() == null)
+            return false;
+        if (other.getContainerDistributionConfiguration() != null
+                && other.getContainerDistributionConfiguration().equals(this.getContainerDistributionConfiguration()) == false)
+            return false;
         if (other.getLicenseConfigurationArns() == null ^ this.getLicenseConfigurationArns() == null)
             return false;
         if (other.getLicenseConfigurationArns() != null && other.getLicenseConfigurationArns().equals(this.getLicenseConfigurationArns()) == false)
@@ -251,6 +304,7 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAmiDistributionConfiguration() == null) ? 0 : getAmiDistributionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getContainerDistributionConfiguration() == null) ? 0 : getContainerDistributionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLicenseConfigurationArns() == null) ? 0 : getLicenseConfigurationArns().hashCode());
         return hashCode;
     }

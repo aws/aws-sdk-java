@@ -696,6 +696,37 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Gets DNSSEC validation information for a specified resource.
+     * </p>
+     * 
+     * @param getResolverDnssecConfigRequest
+     * @return A Java Future containing the result of the GetResolverDnssecConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResolverDnssecConfigResult> getResolverDnssecConfigAsync(GetResolverDnssecConfigRequest getResolverDnssecConfigRequest);
+
+    /**
+     * <p>
+     * Gets DNSSEC validation information for a specified resource.
+     * </p>
+     * 
+     * @param getResolverDnssecConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResolverDnssecConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResolverDnssecConfigResult> getResolverDnssecConfigAsync(GetResolverDnssecConfigRequest getResolverDnssecConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResolverDnssecConfigRequest, GetResolverDnssecConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver
      * endpoint, and the current status of the endpoint.
      * </p>
@@ -914,8 +945,9 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a Resolver rule policy. A Resolver rule policy specifies the Resolver operations and
-     * resources that you want to allow another AWS account to be able to use.
+     * Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule
+     * that you want to share with another account, the account that you want to share the rule with, and the Resolver
+     * operations that you want to allow the account to use.
      * </p>
      * 
      * @param getResolverRulePolicyRequest
@@ -928,8 +960,9 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a Resolver rule policy. A Resolver rule policy specifies the Resolver operations and
-     * resources that you want to allow another AWS account to be able to use.
+     * Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule
+     * that you want to share with another account, the account that you want to share the rule with, and the Resolver
+     * operations that you want to allow the account to use.
      * </p>
      * 
      * @param getResolverRulePolicyRequest
@@ -944,6 +977,39 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<GetResolverRulePolicyResult> getResolverRulePolicyAsync(GetResolverRulePolicyRequest getResolverRulePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetResolverRulePolicyRequest, GetResolverRulePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the configurations for DNSSEC validation that are associated with the current AWS account.
+     * </p>
+     * 
+     * @param listResolverDnssecConfigsRequest
+     * @return A Java Future containing the result of the ListResolverDnssecConfigs operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListResolverDnssecConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResolverDnssecConfigsResult> listResolverDnssecConfigsAsync(
+            ListResolverDnssecConfigsRequest listResolverDnssecConfigsRequest);
+
+    /**
+     * <p>
+     * Lists the configurations for DNSSEC validation that are associated with the current AWS account.
+     * </p>
+     * 
+     * @param listResolverDnssecConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResolverDnssecConfigs operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListResolverDnssecConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResolverDnssecConfigsResult> listResolverDnssecConfigsAsync(
+            ListResolverDnssecConfigsRequest listResolverDnssecConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResolverDnssecConfigsRequest, ListResolverDnssecConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -1221,8 +1287,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Specifies an AWS account that you want to share rules with, the Resolver rules that you want to share, and the
-     * operations that you want the account to be able to perform on those rules.
+     * Specifies an AWS rule that you want to share with another account, the account that you want to share the rule
+     * with, and the operations that you want the account to be able to perform on the rule.
      * </p>
      * 
      * @param putResolverRulePolicyRequest
@@ -1235,8 +1301,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Specifies an AWS account that you want to share rules with, the Resolver rules that you want to share, and the
-     * operations that you want the account to be able to perform on those rules.
+     * Specifies an AWS rule that you want to share with another account, the account that you want to share the rule
+     * with, and the operations that you want the account to be able to perform on the rule.
      * </p>
      * 
      * @param putResolverRulePolicyRequest
@@ -1313,6 +1379,41 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one
+     * is created.
+     * </p>
+     * 
+     * @param updateResolverDnssecConfigRequest
+     * @return A Java Future containing the result of the UpdateResolverDnssecConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.UpdateResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResolverDnssecConfigResult> updateResolverDnssecConfigAsync(
+            UpdateResolverDnssecConfigRequest updateResolverDnssecConfigRequest);
+
+    /**
+     * <p>
+     * Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one
+     * is created.
+     * </p>
+     * 
+     * @param updateResolverDnssecConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResolverDnssecConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResolverDnssecConfigResult> updateResolverDnssecConfigAsync(
+            UpdateResolverDnssecConfigRequest updateResolverDnssecConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResolverDnssecConfigRequest, UpdateResolverDnssecConfigResult> asyncHandler);
 
     /**
      * <p>

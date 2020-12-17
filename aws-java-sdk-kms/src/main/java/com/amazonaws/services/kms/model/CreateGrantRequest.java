@@ -95,6 +95,10 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
+     * <p>
+     * Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic
+     * operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+     * </p>
      */
     private GrantConstraints constraints;
     /**
@@ -110,8 +114,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
     /**
      * <p>
-     * A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate grants
-     * when retrying this request.
+     * A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     * retrying this request.
      * </p>
      * <p>
      * When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
@@ -122,7 +126,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the
      * grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the
      * returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     * <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     * <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      * </p>
      */
     private String name;
@@ -578,6 +582,10 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
+     * <p>
+     * Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic
+     * operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+     * </p>
      * 
      * @param constraints
      *        Allows a <a
@@ -585,7 +593,11 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >cryptographic operation</a> only when the encryption context matches or includes the encryption context
      *        specified in this structure. For more information about encryption context, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p>
+     *        <p>
+     *        Grant constraints are not applied to operations that do not support an encryption context, such as
+     *        cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or
+     *        <a>RetireGrant</a>.
      */
 
     public void setConstraints(GrantConstraints constraints) {
@@ -600,13 +612,21 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
+     * <p>
+     * Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic
+     * operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+     * </p>
      * 
      * @return Allows a <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
      *         >cryptographic operation</a> only when the encryption context matches or includes the encryption context
      *         specified in this structure. For more information about encryption context, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     *         Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     *         Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p>
+     *         <p>
+     *         Grant constraints are not applied to operations that do not support an encryption context, such as
+     *         cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or
+     *         <a>RetireGrant</a>.
      */
 
     public GrantConstraints getConstraints() {
@@ -621,6 +641,10 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
+     * <p>
+     * Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic
+     * operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+     * </p>
      * 
      * @param constraints
      *        Allows a <a
@@ -628,7 +652,11 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >cryptographic operation</a> only when the encryption context matches or includes the encryption context
      *        specified in this structure. For more information about encryption context, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p>
+     *        <p>
+     *        Grant constraints are not applied to operations that do not support an encryption context, such as
+     *        cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or
+     *        <a>RetireGrant</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -748,8 +776,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate grants
-     * when retrying this request.
+     * A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     * retrying this request.
      * </p>
      * <p>
      * When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
@@ -760,12 +788,12 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the
      * grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the
      * returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     * <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     * <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      * </p>
      * 
      * @param name
-     *        A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate
-     *        grants when retrying this request.</p>
+     *        A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     *        retrying this request.</p>
      *        <p>
      *        When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
      *        <code>GrantId</code> even if all the supplied parameters are identical. This can result in unintended
@@ -775,7 +803,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if
      *        the grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note
      *        that the returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     *        <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     *        <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      */
 
     public void setName(String name) {
@@ -784,8 +812,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate grants
-     * when retrying this request.
+     * A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     * retrying this request.
      * </p>
      * <p>
      * When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
@@ -796,11 +824,11 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the
      * grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the
      * returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     * <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     * <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      * </p>
      * 
-     * @return A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate
-     *         grants when retrying this request.</p>
+     * @return A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     *         retrying this request.</p>
      *         <p>
      *         When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
      *         <code>GrantId</code> even if all the supplied parameters are identical. This can result in unintended
@@ -810,7 +838,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters;
      *         if the grant already exists, the original <code>GrantId</code> is returned without creating a new grant.
      *         Note that the returned grant token is unique with every <code>CreateGrant</code> request, even when a
-     *         duplicate <code>GrantId</code> is returned. All grant tokens obtained in this way can be used
+     *         duplicate <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used
      *         interchangeably.
      */
 
@@ -820,8 +848,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate grants
-     * when retrying this request.
+     * A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     * retrying this request.
      * </p>
      * <p>
      * When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
@@ -832,12 +860,12 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the
      * grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the
      * returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     * <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     * <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      * </p>
      * 
      * @param name
-     *        A friendly name for identifying the grant. Use this value to prevent the unintended creation of duplicate
-     *        grants when retrying this request.</p>
+     *        A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when
+     *        retrying this request.</p>
      *        <p>
      *        When this value is absent, all <code>CreateGrant</code> requests result in a new grant with a unique
      *        <code>GrantId</code> even if all the supplied parameters are identical. This can result in unintended
@@ -847,7 +875,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if
      *        the grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note
      *        that the returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate
-     *        <code>GrantId</code> is returned. All grant tokens obtained in this way can be used interchangeably.
+     *        <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
  * CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as
  * cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or
- * <a>ScheduleKeyDeletion</a>.
+ * <a>RetireGrant</a>.
  * </p>
  * <important>
  * <p>

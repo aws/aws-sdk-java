@@ -68,6 +68,12 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
     private String imageRecipeArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     * </p>
+     */
+    private String containerRecipeArn;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * </p>
      */
@@ -411,6 +417,46 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     public ImagePipeline withImageRecipeArn(String imageRecipeArn) {
         setImageRecipeArn(imageRecipeArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     */
+
+    public void setContainerRecipeArn(String containerRecipeArn) {
+        this.containerRecipeArn = containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     */
+
+    public String getContainerRecipeArn() {
+        return this.containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImagePipeline withContainerRecipeArn(String containerRecipeArn) {
+        setContainerRecipeArn(containerRecipeArn);
         return this;
     }
 
@@ -885,6 +931,8 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
             sb.append("EnhancedImageMetadataEnabled: ").append(getEnhancedImageMetadataEnabled()).append(",");
         if (getImageRecipeArn() != null)
             sb.append("ImageRecipeArn: ").append(getImageRecipeArn()).append(",");
+        if (getContainerRecipeArn() != null)
+            sb.append("ContainerRecipeArn: ").append(getContainerRecipeArn()).append(",");
         if (getInfrastructureConfigurationArn() != null)
             sb.append("InfrastructureConfigurationArn: ").append(getInfrastructureConfigurationArn()).append(",");
         if (getDistributionConfigurationArn() != null)
@@ -943,6 +991,10 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageRecipeArn() != null && other.getImageRecipeArn().equals(this.getImageRecipeArn()) == false)
             return false;
+        if (other.getContainerRecipeArn() == null ^ this.getContainerRecipeArn() == null)
+            return false;
+        if (other.getContainerRecipeArn() != null && other.getContainerRecipeArn().equals(this.getContainerRecipeArn()) == false)
+            return false;
         if (other.getInfrastructureConfigurationArn() == null ^ this.getInfrastructureConfigurationArn() == null)
             return false;
         if (other.getInfrastructureConfigurationArn() != null
@@ -998,6 +1050,7 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
         hashCode = prime * hashCode + ((getImageRecipeArn() == null) ? 0 : getImageRecipeArn().hashCode());
+        hashCode = prime * hashCode + ((getContainerRecipeArn() == null) ? 0 : getContainerRecipeArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getImageTestsConfiguration() == null) ? 0 : getImageTestsConfiguration().hashCode());

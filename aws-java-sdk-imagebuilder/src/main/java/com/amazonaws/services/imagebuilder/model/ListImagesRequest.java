@@ -41,6 +41,12 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<Filter> filters;
     /**
      * <p>
+     * Requests a list of images with a specific recipe name.
+     * </p>
+     */
+    private Boolean byName;
+    /**
+     * <p>
      * The maximum items to return in a request.
      * </p>
      */
@@ -51,6 +57,12 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Includes deprecated images in the response list.
+     * </p>
+     */
+    private Boolean includeDeprecated;
 
     /**
      * <p>
@@ -199,6 +211,58 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Requests a list of images with a specific recipe name.
+     * </p>
+     * 
+     * @param byName
+     *        Requests a list of images with a specific recipe name.
+     */
+
+    public void setByName(Boolean byName) {
+        this.byName = byName;
+    }
+
+    /**
+     * <p>
+     * Requests a list of images with a specific recipe name.
+     * </p>
+     * 
+     * @return Requests a list of images with a specific recipe name.
+     */
+
+    public Boolean getByName() {
+        return this.byName;
+    }
+
+    /**
+     * <p>
+     * Requests a list of images with a specific recipe name.
+     * </p>
+     * 
+     * @param byName
+     *        Requests a list of images with a specific recipe name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListImagesRequest withByName(Boolean byName) {
+        setByName(byName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Requests a list of images with a specific recipe name.
+     * </p>
+     * 
+     * @return Requests a list of images with a specific recipe name.
+     */
+
+    public Boolean isByName() {
+        return this.byName;
+    }
+
+    /**
+     * <p>
      * The maximum items to return in a request.
      * </p>
      * 
@@ -278,6 +342,58 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Includes deprecated images in the response list.
+     * </p>
+     * 
+     * @param includeDeprecated
+     *        Includes deprecated images in the response list.
+     */
+
+    public void setIncludeDeprecated(Boolean includeDeprecated) {
+        this.includeDeprecated = includeDeprecated;
+    }
+
+    /**
+     * <p>
+     * Includes deprecated images in the response list.
+     * </p>
+     * 
+     * @return Includes deprecated images in the response list.
+     */
+
+    public Boolean getIncludeDeprecated() {
+        return this.includeDeprecated;
+    }
+
+    /**
+     * <p>
+     * Includes deprecated images in the response list.
+     * </p>
+     * 
+     * @param includeDeprecated
+     *        Includes deprecated images in the response list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListImagesRequest withIncludeDeprecated(Boolean includeDeprecated) {
+        setIncludeDeprecated(includeDeprecated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Includes deprecated images in the response list.
+     * </p>
+     * 
+     * @return Includes deprecated images in the response list.
+     */
+
+    public Boolean isIncludeDeprecated() {
+        return this.includeDeprecated;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -293,10 +409,14 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
+        if (getByName() != null)
+            sb.append("ByName: ").append(getByName()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIncludeDeprecated() != null)
+            sb.append("IncludeDeprecated: ").append(getIncludeDeprecated());
         sb.append("}");
         return sb.toString();
     }
@@ -319,6 +439,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getByName() == null ^ this.getByName() == null)
+            return false;
+        if (other.getByName() != null && other.getByName().equals(this.getByName()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -326,6 +450,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getIncludeDeprecated() == null ^ this.getIncludeDeprecated() == null)
+            return false;
+        if (other.getIncludeDeprecated() != null && other.getIncludeDeprecated().equals(this.getIncludeDeprecated()) == false)
             return false;
         return true;
     }
@@ -337,8 +465,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getByName() == null) ? 0 : getByName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDeprecated() == null) ? 0 : getIncludeDeprecated().hashCode());
         return hashCode;
     }
 

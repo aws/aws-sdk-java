@@ -16,13 +16,19 @@ package com.amazonaws.services.route53.internal;
 
 import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
+import com.amazonaws.services.route53.model.ActivateKeySigningKeyResult;
 import com.amazonaws.services.route53.model.AliasTarget;
 import com.amazonaws.services.route53.model.ChangeInfo;
 import com.amazonaws.services.route53.model.ChangeResourceRecordSetsResult;
 import com.amazonaws.services.route53.model.CreateHostedZoneResult;
+import com.amazonaws.services.route53.model.CreateKeySigningKeyResult;
 import com.amazonaws.services.route53.model.CreateReusableDelegationSetResult;
+import com.amazonaws.services.route53.model.DeactivateKeySigningKeyResult;
 import com.amazonaws.services.route53.model.DelegationSet;
 import com.amazonaws.services.route53.model.DeleteHostedZoneResult;
+import com.amazonaws.services.route53.model.DeleteKeySigningKeyResult;
+import com.amazonaws.services.route53.model.DisableHostedZoneDNSSECResult;
+import com.amazonaws.services.route53.model.EnableHostedZoneDNSSECResult;
 import com.amazonaws.services.route53.model.GetChangeResult;
 import com.amazonaws.services.route53.model.GetHostedZoneResult;
 import com.amazonaws.services.route53.model.GetReusableDelegationSetResult;
@@ -82,9 +88,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
         } else if (obj instanceof CreateReusableDelegationSetResult) {
             CreateReusableDelegationSetResult result = (CreateReusableDelegationSetResult) obj;
             removePrefix(result.getDelegationSet());
-        } else if (obj instanceof GetHostedZoneResult) {
-            GetHostedZoneResult result = (GetHostedZoneResult) obj;
-            removePrefix(result.getDelegationSet());
         } else if (obj instanceof GetReusableDelegationSetResult) {
             GetReusableDelegationSetResult result = (GetReusableDelegationSetResult) obj;
             removePrefix(result.getDelegationSet());
@@ -92,6 +95,24 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
             ListReusableDelegationSetsResult result = (ListReusableDelegationSetsResult) obj;
             for (DelegationSet delegationSet : result.getDelegationSets())
                 removePrefix(delegationSet);
+        } else if (obj instanceof CreateKeySigningKeyResult) {
+            CreateKeySigningKeyResult result = (CreateKeySigningKeyResult)obj;
+            removePrefix(result.getChangeInfo());
+        } else if (obj instanceof DeleteKeySigningKeyResult) {
+            DeleteKeySigningKeyResult result = (DeleteKeySigningKeyResult)obj;
+            removePrefix(result.getChangeInfo());
+        } else if (obj instanceof ActivateKeySigningKeyResult) {
+            ActivateKeySigningKeyResult result = (ActivateKeySigningKeyResult)obj;
+            removePrefix(result.getChangeInfo());
+        } else if (obj instanceof DeactivateKeySigningKeyResult) {
+            DeactivateKeySigningKeyResult result = (DeactivateKeySigningKeyResult)obj;
+            removePrefix(result.getChangeInfo());
+        } else if (obj instanceof EnableHostedZoneDNSSECResult) {
+            EnableHostedZoneDNSSECResult result = (EnableHostedZoneDNSSECResult)obj;
+            removePrefix(result.getChangeInfo());
+        } else if (obj instanceof DisableHostedZoneDNSSECResult) {
+            DisableHostedZoneDNSSECResult result = (DisableHostedZoneDNSSECResult)obj;
+            removePrefix(result.getChangeInfo());
         }
     }
 

@@ -27,7 +27,7 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     * The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      * </p>
      */
     private String arn;
@@ -35,7 +35,7 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An AWS Identity and Access Management policy statement that lists the rules that you want to share with another
      * AWS account and the operations that you want the account to be able to perform. You can specify the following
-     * operations in the <code>Actions</code> section of the statement:
+     * operations in the <code>Action</code> section of the statement:
      * </p>
      * <ul>
      * <li>
@@ -65,19 +65,19 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * <p>
-     * In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to share
-     * with the account that you specified in <code>Arn</code>.
+     * In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with
+     * another account. Specify the same ARN that you specified in <code>Arn</code>.
      * </p>
      */
     private String resolverRulePolicy;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     * The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     *        The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      */
 
     public void setArn(String arn) {
@@ -86,10 +86,10 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     * The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     * @return The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      */
 
     public String getArn() {
@@ -98,11 +98,11 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     * The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the account that you want to share rules with.
+     *        The Amazon Resource Name (ARN) of the rule that you want to share with another account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,7 +115,7 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An AWS Identity and Access Management policy statement that lists the rules that you want to share with another
      * AWS account and the operations that you want the account to be able to perform. You can specify the following
-     * operations in the <code>Actions</code> section of the statement:
+     * operations in the <code>Action</code> section of the statement:
      * </p>
      * <ul>
      * <li>
@@ -145,14 +145,14 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * <p>
-     * In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to share
-     * with the account that you specified in <code>Arn</code>.
+     * In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with
+     * another account. Specify the same ARN that you specified in <code>Arn</code>.
      * </p>
      * 
      * @param resolverRulePolicy
      *        An AWS Identity and Access Management policy statement that lists the rules that you want to share with
      *        another AWS account and the operations that you want the account to be able to perform. You can specify
-     *        the following operations in the <code>Actions</code> section of the statement:</p>
+     *        the following operations in the <code>Action</code> section of the statement:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -181,8 +181,8 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        </ul>
      *        <p>
-     *        In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to
-     *        share with the account that you specified in <code>Arn</code>.
+     *        In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share
+     *        with another account. Specify the same ARN that you specified in <code>Arn</code>.
      */
 
     public void setResolverRulePolicy(String resolverRulePolicy) {
@@ -193,7 +193,7 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An AWS Identity and Access Management policy statement that lists the rules that you want to share with another
      * AWS account and the operations that you want the account to be able to perform. You can specify the following
-     * operations in the <code>Actions</code> section of the statement:
+     * operations in the <code>Action</code> section of the statement:
      * </p>
      * <ul>
      * <li>
@@ -223,13 +223,13 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * <p>
-     * In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to share
-     * with the account that you specified in <code>Arn</code>.
+     * In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with
+     * another account. Specify the same ARN that you specified in <code>Arn</code>.
      * </p>
      * 
      * @return An AWS Identity and Access Management policy statement that lists the rules that you want to share with
      *         another AWS account and the operations that you want the account to be able to perform. You can specify
-     *         the following operations in the <code>Actions</code> section of the statement:</p>
+     *         the following operations in the <code>Action</code> section of the statement:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -258,8 +258,8 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         </ul>
      *         <p>
-     *         In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want
-     *         to share with the account that you specified in <code>Arn</code>.
+     *         In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to
+     *         share with another account. Specify the same ARN that you specified in <code>Arn</code>.
      */
 
     public String getResolverRulePolicy() {
@@ -270,7 +270,7 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An AWS Identity and Access Management policy statement that lists the rules that you want to share with another
      * AWS account and the operations that you want the account to be able to perform. You can specify the following
-     * operations in the <code>Actions</code> section of the statement:
+     * operations in the <code>Action</code> section of the statement:
      * </p>
      * <ul>
      * <li>
@@ -300,14 +300,14 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * <p>
-     * In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to share
-     * with the account that you specified in <code>Arn</code>.
+     * In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with
+     * another account. Specify the same ARN that you specified in <code>Arn</code>.
      * </p>
      * 
      * @param resolverRulePolicy
      *        An AWS Identity and Access Management policy statement that lists the rules that you want to share with
      *        another AWS account and the operations that you want the account to be able to perform. You can specify
-     *        the following operations in the <code>Actions</code> section of the statement:</p>
+     *        the following operations in the <code>Action</code> section of the statement:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -336,8 +336,8 @@ public class PutResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        </ul>
      *        <p>
-     *        In the <code>Resource</code> section of the statement, you specify the ARNs for the rules that you want to
-     *        share with the account that you specified in <code>Arn</code>.
+     *        In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share
+     *        with another account. Specify the same ARN that you specified in <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

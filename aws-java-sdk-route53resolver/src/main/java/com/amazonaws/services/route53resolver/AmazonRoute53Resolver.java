@@ -512,6 +512,32 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Gets DNSSEC validation information for a specified resource.
+     * </p>
+     * 
+     * @param getResolverDnssecConfigRequest
+     * @return Result of the GetResolverDnssecConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.GetResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResolverDnssecConfigResult getResolverDnssecConfig(GetResolverDnssecConfigRequest getResolverDnssecConfigRequest);
+
+    /**
+     * <p>
      * Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver
      * endpoint, and the current status of the endpoint.
      * </p>
@@ -662,8 +688,9 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a Resolver rule policy. A Resolver rule policy specifies the Resolver operations and
-     * resources that you want to allow another AWS account to be able to use.
+     * Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule
+     * that you want to share with another account, the account that you want to share the rule with, and the Resolver
+     * operations that you want to allow the account to use.
      * </p>
      * 
      * @param getResolverRulePolicyRequest
@@ -679,6 +706,32 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     GetResolverRulePolicyResult getResolverRulePolicy(GetResolverRulePolicyRequest getResolverRulePolicyRequest);
+
+    /**
+     * <p>
+     * Lists the configurations for DNSSEC validation that are associated with the current AWS account.
+     * </p>
+     * 
+     * @param listResolverDnssecConfigsRequest
+     * @return Result of the ListResolverDnssecConfigs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The value that you specified for <code>NextToken</code> in a <code>List</code> request isn't valid.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.ListResolverDnssecConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResolverDnssecConfigsResult listResolverDnssecConfigs(ListResolverDnssecConfigsRequest listResolverDnssecConfigsRequest);
 
     /**
      * <p>
@@ -882,8 +935,8 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Specifies an AWS account that you want to share rules with, the Resolver rules that you want to share, and the
-     * operations that you want the account to be able to perform on those rules.
+     * Specifies an AWS rule that you want to share with another account, the account that you want to share the rule
+     * with, and the operations that you want the account to be able to perform on the rule.
      * </p>
      * 
      * @param putResolverRulePolicyRequest
@@ -951,6 +1004,33 @@ public interface AmazonRoute53Resolver {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one
+     * is created.
+     * </p>
+     * 
+     * @param updateResolverDnssecConfigRequest
+     * @return Result of the UpdateResolverDnssecConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.UpdateResolverDnssecConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResolverDnssecConfigResult updateResolverDnssecConfig(UpdateResolverDnssecConfigRequest updateResolverDnssecConfigRequest);
 
     /**
      * <p>

@@ -269,6 +269,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     private void init() {
         exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidKeySigningKeyNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrafficPolicyVersionsForCurrentPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchTrafficPolicyExceptionUnmarshaller());
@@ -280,7 +281,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new HostedZoneNotPrivateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PublicZoneVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KeySigningKeyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KeySigningKeyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KeySigningKeyWithActiveStatusNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientCloudWatchLogsResourcePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KeySigningKeyInParentDSRecordExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckVersionMismatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDelegationSetExceptionUnmarshaller());
@@ -293,6 +298,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new VPCAssociationAuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDomainNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHealthChecksExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DNSSECNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidChangeBatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
@@ -303,21 +309,27 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrafficPolicyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHostedZonesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HostedZonePartiallyDelegatedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrafficPolicyInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchChangeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidKeySigningKeyStatusExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidKMSArnExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConflictingTypesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LastVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetNotReusableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PriorRequestNotCompleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchKeySigningKeyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConflictingDomainExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSigningStatusExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchQueryLoggingConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHealthCheckExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyVPCAssociationAuthorizationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchCloudWatchLogsLogGroupExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyKeySigningKeysExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.route53.model.AmazonRoute53Exception.class));
 
@@ -329,6 +341,73 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/route53/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/route53/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @return Result of the ActivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ActivateKeySigningKeyResult activateKeySigningKey(ActivateKeySigningKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateKeySigningKey(request);
+    }
+
+    @SdkInternalApi
+    final ActivateKeySigningKeyResult executeActivateKeySigningKey(ActivateKeySigningKeyRequest activateKeySigningKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(activateKeySigningKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ActivateKeySigningKeyRequest> request = null;
+        Response<ActivateKeySigningKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ActivateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(activateKeySigningKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateKeySigningKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ActivateKeySigningKeyResult> responseHandler = new StaxResponseHandler<ActivateKeySigningKeyResult>(
+                    new ActivateKeySigningKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1008,6 +1087,84 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @return Result of the CreateKeySigningKey operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKeySigningKeyNameException
+     *         The key signing key (KSK) name that you specified isn't a valid name.
+     * @throws KeySigningKeyAlreadyExistsException
+     *         You've already created a key signing key (KSK) with this name or with the same customer managed key (CMK)
+     *         ARN.
+     * @throws TooManyKeySigningKeysException
+     *         You've reached the limit for the number of key signing keys (KSKs). Remove at least one KSK, and then try
+     *         again.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateKeySigningKeyResult createKeySigningKey(CreateKeySigningKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateKeySigningKey(request);
+    }
+
+    @SdkInternalApi
+    final CreateKeySigningKeyResult executeCreateKeySigningKey(CreateKeySigningKeyRequest createKeySigningKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createKeySigningKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateKeySigningKeyRequest> request = null;
+        Response<CreateKeySigningKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(createKeySigningKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKeySigningKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateKeySigningKeyResult> responseHandler = new StaxResponseHandler<CreateKeySigningKeyResult>(
+                    new CreateKeySigningKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a configuration for DNS query logging. After you create a query logging configuration, Amazon Route 53
      * begins to publish log data to an Amazon CloudWatch Logs log group.
      * </p>
@@ -1354,7 +1511,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
-     *         Parameter name is invalid.
+     *         Parameter name is not valid.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws DelegationSetNotAvailableException
@@ -1441,8 +1598,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws TrafficPolicyAlreadyExistsException
      *         A traffic policy that has the same value for <code>Name</code> already exists.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -1605,8 +1762,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicyVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1727,6 +1884,76 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateVPCAssociationAuthorizationResult> responseHandler = new StaxResponseHandler<CreateVPCAssociationAuthorizationResult>(
                     new CreateVPCAssociationAuthorizationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @return Result of the DeactivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws KeySigningKeyInUseException
+     *         The key signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
+     *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key signing key (KSK) is specified in a parent DS record.
+     * @sample AmazonRoute53.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeactivateKeySigningKeyResult deactivateKeySigningKey(DeactivateKeySigningKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateKeySigningKey(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateKeySigningKeyResult executeDeactivateKeySigningKey(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deactivateKeySigningKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeactivateKeySigningKeyRequest> request = null;
+        Response<DeactivateKeySigningKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeactivateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(deactivateKeySigningKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateKeySigningKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeactivateKeySigningKeyResult> responseHandler = new StaxResponseHandler<DeactivateKeySigningKeyResult>(
+                    new DeactivateKeySigningKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1927,6 +2154,73 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteHostedZoneResult> responseHandler = new StaxResponseHandler<DeleteHostedZoneResult>(
                     new DeleteHostedZoneResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @return Result of the DeleteKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteKeySigningKeyResult deleteKeySigningKey(DeleteKeySigningKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteKeySigningKey(request);
+    }
+
+    @SdkInternalApi
+    final DeleteKeySigningKeyResult executeDeleteKeySigningKey(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteKeySigningKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteKeySigningKeyRequest> request = null;
+        Response<DeleteKeySigningKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(deleteKeySigningKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKeySigningKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteKeySigningKeyResult> responseHandler = new StaxResponseHandler<DeleteKeySigningKeyResult>(
+                    new DeleteKeySigningKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2318,6 +2612,76 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @return Result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key signing key (KSK) is specified in a parent DS record.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableHostedZoneDNSSECResult disableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableHostedZoneDNSSEC(request);
+    }
+
+    @SdkInternalApi
+    final DisableHostedZoneDNSSECResult executeDisableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableHostedZoneDNSSECRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableHostedZoneDNSSECRequest> request = null;
+        Response<DisableHostedZoneDNSSECResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableHostedZoneDNSSECRequestMarshaller().marshall(super.beforeMarshalling(disableHostedZoneDNSSECRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableHostedZoneDNSSEC");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableHostedZoneDNSSECResult> responseHandler = new StaxResponseHandler<DisableHostedZoneDNSSECResult>(
+                    new DisableHostedZoneDNSSECResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
      * following:
      * </p>
@@ -2408,6 +2772,78 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DisassociateVPCFromHostedZoneResult> responseHandler = new StaxResponseHandler<DisassociateVPCFromHostedZoneResult>(
                     new DisassociateVPCFromHostedZoneResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @return Result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyWithActiveStatusNotFoundException
+     *         A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws HostedZonePartiallyDelegatedException
+     *         The hosted zone nameservers don't match the parent nameservers. The hosted zone and parent must have the
+     *         same nameservers.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @sample AmazonRoute53.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableHostedZoneDNSSECResult enableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableHostedZoneDNSSEC(request);
+    }
+
+    @SdkInternalApi
+    final EnableHostedZoneDNSSECResult executeEnableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableHostedZoneDNSSECRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableHostedZoneDNSSECRequest> request = null;
+        Response<EnableHostedZoneDNSSECResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableHostedZoneDNSSECRequestMarshaller().marshall(super.beforeMarshalling(enableHostedZoneDNSSECRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableHostedZoneDNSSEC");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableHostedZoneDNSSECResult> responseHandler = new StaxResponseHandler<EnableHostedZoneDNSSECResult>(
+                    new EnableHostedZoneDNSSECResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2625,6 +3061,64 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public GetCheckerIpRangesResult getCheckerIpRanges() {
         return getCheckerIpRanges(new GetCheckerIpRangesRequest());
+    }
+
+    /**
+     * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
+     * signing keys (ZSKs) in the hosted zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @return Result of the GetDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @sample AmazonRoute53.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDNSSECResult getDNSSEC(GetDNSSECRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDNSSEC(request);
+    }
+
+    @SdkInternalApi
+    final GetDNSSECResult executeGetDNSSEC(GetDNSSECRequest getDNSSECRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDNSSECRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDNSSECRequest> request = null;
+        Response<GetDNSSECResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDNSSECRequestMarshaller().marshall(super.beforeMarshalling(getDNSSECRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDNSSEC");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetDNSSECResult> responseHandler = new StaxResponseHandler<GetDNSSECResult>(new GetDNSSECResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

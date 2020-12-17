@@ -60,6 +60,14 @@ public class AliasListEntryJsonUnmarshaller implements Unmarshaller<AliasListEnt
                     context.nextToken();
                     aliasListEntry.setTargetKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreationDate", targetDepth)) {
+                    context.nextToken();
+                    aliasListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    context.nextToken();
+                    aliasListEntry.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

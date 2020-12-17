@@ -24,11 +24,7 @@ import javax.annotation.Generated;
 public class InvalidChangeBatchException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * <p>
-     * Descriptive message for the error response.
-     * </p>
-     */
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> messages;
 
     /**
@@ -42,11 +38,9 @@ public class InvalidChangeBatchException extends com.amazonaws.services.route53.
     }
 
     /**
-     * <p>
-     * Descriptive message for the error response.
-     * </p>
+     * <p/>
      * 
-     * @return Descriptive message for the error response.
+     * @return
      */
 
     public java.util.List<String> getMessages() {
@@ -57,12 +51,9 @@ public class InvalidChangeBatchException extends com.amazonaws.services.route53.
     }
 
     /**
-     * <p>
-     * Descriptive message for the error response.
-     * </p>
+     * <p/>
      * 
      * @param messages
-     *        Descriptive message for the error response.
      */
 
     public void setMessages(java.util.Collection<String> messages) {
@@ -75,9 +66,7 @@ public class InvalidChangeBatchException extends com.amazonaws.services.route53.
     }
 
     /**
-     * <p>
-     * Descriptive message for the error response.
-     * </p>
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMessages(java.util.Collection)} or {@link #withMessages(java.util.Collection)} if you want to override
@@ -85,7 +74,6 @@ public class InvalidChangeBatchException extends com.amazonaws.services.route53.
      * </p>
      * 
      * @param messages
-     *        Descriptive message for the error response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,12 +88,9 @@ public class InvalidChangeBatchException extends com.amazonaws.services.route53.
     }
 
     /**
-     * <p>
-     * Descriptive message for the error response.
-     * </p>
+     * <p/>
      * 
      * @param messages
-     *        Descriptive message for the error response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

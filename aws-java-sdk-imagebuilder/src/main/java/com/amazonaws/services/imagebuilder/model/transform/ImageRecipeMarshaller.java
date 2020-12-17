@@ -31,6 +31,8 @@ public class ImageRecipeMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -71,6 +73,7 @@ public class ImageRecipeMarshaller {
 
         try {
             protocolMarshaller.marshall(imageRecipe.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(imageRecipe.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(imageRecipe.getName(), NAME_BINDING);
             protocolMarshaller.marshall(imageRecipe.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(imageRecipe.getPlatform(), PLATFORM_BINDING);

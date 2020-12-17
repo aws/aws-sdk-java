@@ -58,14 +58,24 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     private String templateBody;
     /**
      * <p>
-     * AWS Config stores intermediate files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      */
     private String deliveryS3Bucket;
     /**
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      */
     private String deliveryS3KeyPrefix;
     /**
@@ -263,11 +273,19 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * AWS Config stores intermediate files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        AWS Config stores intermediate files while processing conformance pack template.
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      */
 
     public void setDeliveryS3Bucket(String deliveryS3Bucket) {
@@ -276,10 +294,18 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * AWS Config stores intermediate files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
-     * @return AWS Config stores intermediate files while processing conformance pack template.
+     * @return Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
+     *         <p>
+     *         This field is optional.
+     *         </p>
      */
 
     public String getDeliveryS3Bucket() {
@@ -288,11 +314,19 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * AWS Config stores intermediate files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        AWS Config stores intermediate files while processing conformance pack template.
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,9 +339,17 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        The prefix for the Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket. </p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      */
 
     public void setDeliveryS3KeyPrefix(String deliveryS3KeyPrefix) {
@@ -318,8 +360,16 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
-     * @return The prefix for the Amazon S3 bucket.
+     * @return The prefix for the Amazon S3 bucket. </p> <note>
+     *         <p>
+     *         This field is optional.
+     *         </p>
      */
 
     public String getDeliveryS3KeyPrefix() {
@@ -330,9 +380,17 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        The prefix for the Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket. </p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

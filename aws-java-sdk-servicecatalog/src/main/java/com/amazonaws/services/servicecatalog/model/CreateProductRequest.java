@@ -88,6 +88,9 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The contact URL for product support.
      * </p>
+     * <p>
+     * <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
+     * </p>
      */
     private String supportUrl;
     /**
@@ -104,8 +107,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The configuration of the provisioning artifact. The <code>info</code> field accepts
-     * <code>ImportFromPhysicalID</code>.
+     * The configuration of the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactProperties provisioningArtifactParameters;
@@ -500,9 +502,14 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The contact URL for product support.
      * </p>
+     * <p>
+     * <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
+     * </p>
      * 
      * @param supportUrl
-     *        The contact URL for product support.
+     *        The contact URL for product support.</p>
+     *        <p>
+     *        <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
      */
 
     public void setSupportUrl(String supportUrl) {
@@ -513,8 +520,13 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The contact URL for product support.
      * </p>
+     * <p>
+     * <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
+     * </p>
      * 
-     * @return The contact URL for product support.
+     * @return The contact URL for product support.</p>
+     *         <p>
+     *         <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
      */
 
     public String getSupportUrl() {
@@ -525,9 +537,14 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The contact URL for product support.
      * </p>
+     * <p>
+     * <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
+     * </p>
      * 
      * @param supportUrl
-     *        The contact URL for product support.
+     *        The contact URL for product support.</p>
+     *        <p>
+     *        <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,13 +698,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact. The <code>info</code> field accepts
-     * <code>ImportFromPhysicalID</code>.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The configuration of the provisioning artifact. The <code>info</code> field accepts
-     *        <code>ImportFromPhysicalID</code>.
+     *        The configuration of the provisioning artifact.
      */
 
     public void setProvisioningArtifactParameters(ProvisioningArtifactProperties provisioningArtifactParameters) {
@@ -696,12 +711,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact. The <code>info</code> field accepts
-     * <code>ImportFromPhysicalID</code>.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
-     * @return The configuration of the provisioning artifact. The <code>info</code> field accepts
-     *         <code>ImportFromPhysicalID</code>.
+     * @return The configuration of the provisioning artifact.
      */
 
     public ProvisioningArtifactProperties getProvisioningArtifactParameters() {
@@ -710,13 +723,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact. The <code>info</code> field accepts
-     * <code>ImportFromPhysicalID</code>.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The configuration of the provisioning artifact. The <code>info</code> field accepts
-     *        <code>ImportFromPhysicalID</code>.
+     *        The configuration of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,6 +56,10 @@ public class ImageVersionJsonUnmarshaller implements Unmarshaller<ImageVersion, 
                     context.nextToken();
                     imageVersion.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    imageVersion.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     imageVersion.setVersion(context.getUnmarshaller(String.class).unmarshall(context));

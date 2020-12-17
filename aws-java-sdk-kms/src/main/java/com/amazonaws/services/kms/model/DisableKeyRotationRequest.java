@@ -27,7 +27,7 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
+     * Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or CMKs in a <a
@@ -59,7 +59,7 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
+     * Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or CMKs in a <a
@@ -88,9 +88,9 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param keyId
-     *        Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks"
-     *        >asymmetric CMKs</a>, CMKs with <a
+     *        Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">
+     *        asymmetric CMKs</a>, CMKs with <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
      *        material</a>, or CMKs in a <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
@@ -123,7 +123,7 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
+     * Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or CMKs in a <a
@@ -151,9 +151,9 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks"
-     *         >asymmetric CMKs</a>, CMKs with <a
+     * @return Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">
+     *         asymmetric CMKs</a>, CMKs with <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
      *         material</a>, or CMKs in a <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
@@ -186,7 +186,7 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
+     * Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or CMKs in a <a
@@ -215,9 +215,9 @@ public class DisableKeyRotationRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param keyId
-     *        Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks"
-     *        >asymmetric CMKs</a>, CMKs with <a
+     *        Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic rotation of <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">
+     *        asymmetric CMKs</a>, CMKs with <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
      *        material</a>, or CMKs in a <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key

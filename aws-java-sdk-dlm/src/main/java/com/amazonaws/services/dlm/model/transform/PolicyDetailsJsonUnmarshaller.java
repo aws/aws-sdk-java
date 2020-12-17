@@ -74,6 +74,16 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
                     context.nextToken();
                     policyDetails.setParameters(ParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EventSource", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setEventSource(EventSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Actions", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

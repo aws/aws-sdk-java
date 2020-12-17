@@ -32,6 +32,8 @@ public class DistributionMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<StructuredPojo> AMIDISTRIBUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("amiDistributionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERDISTRIBUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerDistributionConfiguration").build();
     private static final MarshallingInfo<List> LICENSECONFIGURATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseConfigurationArns").build();
 
@@ -53,6 +55,7 @@ public class DistributionMarshaller {
         try {
             protocolMarshaller.marshall(distribution.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(distribution.getAmiDistributionConfiguration(), AMIDISTRIBUTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(distribution.getContainerDistributionConfiguration(), CONTAINERDISTRIBUTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(distribution.getLicenseConfigurationArns(), LICENSECONFIGURATIONARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

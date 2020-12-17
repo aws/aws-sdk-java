@@ -34,6 +34,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @return A Java Future containing the result of the ActivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest activateKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ActivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest activateKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<ActivateKeySigningKeyRequest, ActivateKeySigningKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
      * <important>
@@ -628,6 +661,37 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @return A Java Future containing the result of the CreateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest createKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest createKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateKeySigningKeyRequest, CreateKeySigningKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1361,6 +1425,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @return A Java Future containing the result of the DeactivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeactivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeactivateKeySigningKeyRequest, DeactivateKeySigningKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a health check.
      * </p>
      * <important>
@@ -1566,6 +1663,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<DeleteHostedZoneResult> deleteHostedZoneAsync(DeleteHostedZoneRequest deleteHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @return A Java Future containing the result of the DeleteKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeySigningKeyRequest, DeleteKeySigningKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1856,6 +1986,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @return A Java Future containing the result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableHostedZoneDNSSECRequest, DisableHostedZoneDNSSECResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
      * following:
      * </p>
@@ -1958,6 +2121,37 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(
             DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @return A Java Future containing the result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableHostedZoneDNSSECRequest, EnableHostedZoneDNSSECResult> asyncHandler);
 
     /**
      * <p>
@@ -2140,6 +2334,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
+     * signing keys (ZSKs) in the hosted zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @return A Java Future containing the result of the GetDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest getDNSSECRequest);
+
+    /**
+     * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
+     * signing keys (ZSKs) in the hosted zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest getDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDNSSECRequest, GetDNSSECResult> asyncHandler);
 
     /**
      * <p>

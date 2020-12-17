@@ -51,22 +51,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private com.amazonaws.internal.SdkInternalMap<String, String> sourceEncryptionContext;
     /**
      * <p>
-     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     * destination CMK.
+     * Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     * re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.
      * </p>
      * <p>
-     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
-     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
-     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
-     * ciphertext before it is reencrypted.
-     * </p>
-     * <p>
-     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
-     * if the specified CMK was used to encrypt the ciphertext.
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     * symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the CMK that you intend.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -408,22 +404,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     * destination CMK.
+     * Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     * re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.
      * </p>
      * <p>
-     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
-     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
-     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
-     * ciphertext before it is reencrypted.
-     * </p>
-     * <p>
-     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
-     * if the specified CMK was used to encrypt the ciphertext.
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     * symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the CMK that you intend.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -456,21 +448,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param sourceKeyId
-     *        A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     *        destination CMK.</p>
+     *        Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     *        re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.</p>
      *        <p>
-     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
-     *        KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
-     *        ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
-     *        decrypt the ciphertext before it is reencrypted.
-     *        </p>
-     *        <p>
-     *        If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
-     *        succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     *        symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob.
+     *        However, it is always recommended as a best practice. This practice ensures that you use the CMK that you
+     *        intend.
      *        </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -508,22 +497,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     * destination CMK.
+     * Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     * re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.
      * </p>
      * <p>
-     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
-     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
-     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
-     * ciphertext before it is reencrypted.
-     * </p>
-     * <p>
-     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
-     * if the specified CMK was used to encrypt the ciphertext.
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     * symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the CMK that you intend.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -555,21 +540,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * alias ARN, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     *         destination CMK.</p>
+     * @return Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     *         re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.</p>
      *         <p>
-     *         This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
-     *         KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
-     *         ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
-     *         decrypt the ciphertext before it is reencrypted.
-     *         </p>
-     *         <p>
-     *         If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
-     *         succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *         This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     *         symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob.
+     *         However, it is always recommended as a best practice. This practice ensures that you use the CMK that you
+     *         intend.
      *         </p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with <code>"alias/"</code>.
+     *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *         use the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -607,22 +589,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     * destination CMK.
+     * Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     * re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.
      * </p>
      * <p>
-     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
-     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
-     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
-     * ciphertext before it is reencrypted.
-     * </p>
-     * <p>
-     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
-     * if the specified CMK was used to encrypt the ciphertext.
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     * symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the CMK that you intend.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -655,21 +633,18 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param sourceKeyId
-     *        A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
-     *        destination CMK.</p>
+     *        Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext before it is
+     *        re-encrypted. Enter a key ID of the CMK that was used to encrypt the ciphertext.</p>
      *        <p>
-     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
-     *        KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
-     *        ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
-     *        decrypt the ciphertext before it is reencrypted.
-     *        </p>
-     *        <p>
-     *        If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
-     *        succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. If you used a
+     *        symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the symmetric ciphertext blob.
+     *        However, it is always recommended as a best practice. This practice ensures that you use the CMK that you
+     *        intend.
      *        </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:

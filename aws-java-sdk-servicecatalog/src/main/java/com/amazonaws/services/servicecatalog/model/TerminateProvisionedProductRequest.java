@@ -79,9 +79,9 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     private String acceptLanguage;
     /**
      * <p>
-     * When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service Catalog
-     * provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources
-     * of the deleted provisioned product. The default value is false.
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
      * </p>
      */
     private Boolean retainPhysicalResources;
@@ -431,15 +431,15 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service Catalog
-     * provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources
-     * of the deleted provisioned product. The default value is false.
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
      * </p>
      * 
      * @param retainPhysicalResources
-     *        When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service
-     *        Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the
-     *        underlying resources of the deleted provisioned product. The default value is false.
+     *        When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *        Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *        the underlying resources of the deleted provisioned product. The default value is false.
      */
 
     public void setRetainPhysicalResources(Boolean retainPhysicalResources) {
@@ -448,14 +448,14 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service Catalog
-     * provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources
-     * of the deleted provisioned product. The default value is false.
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
      * </p>
      * 
-     * @return When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service
-     *         Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the
-     *         underlying resources of the deleted provisioned product. The default value is false.
+     * @return When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *         Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *         the underlying resources of the deleted provisioned product. The default value is false.
      */
 
     public Boolean getRetainPhysicalResources() {
@@ -464,15 +464,15 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service Catalog
-     * provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources
-     * of the deleted provisioned product. The default value is false.
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
      * </p>
      * 
      * @param retainPhysicalResources
-     *        When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service
-     *        Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the
-     *        underlying resources of the deleted provisioned product. The default value is false.
+     *        When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *        Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *        the underlying resources of the deleted provisioned product. The default value is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,14 +483,14 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service Catalog
-     * provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources
-     * of the deleted provisioned product. The default value is false.
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
      * </p>
      * 
-     * @return When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes the Service
-     *         Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the
-     *         underlying resources of the deleted provisioned product. The default value is false.
+     * @return When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *         Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *         the underlying resources of the deleted provisioned product. The default value is false.
      */
 
     public Boolean isRetainPhysicalResources() {

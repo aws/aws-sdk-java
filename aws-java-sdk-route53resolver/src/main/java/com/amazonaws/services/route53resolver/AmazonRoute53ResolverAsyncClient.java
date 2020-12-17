@@ -512,6 +512,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetResolverDnssecConfigResult> getResolverDnssecConfigAsync(GetResolverDnssecConfigRequest request) {
+
+        return getResolverDnssecConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverDnssecConfigResult> getResolverDnssecConfigAsync(final GetResolverDnssecConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResolverDnssecConfigRequest, GetResolverDnssecConfigResult> asyncHandler) {
+        final GetResolverDnssecConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResolverDnssecConfigResult>() {
+            @Override
+            public GetResolverDnssecConfigResult call() throws Exception {
+                GetResolverDnssecConfigResult result = null;
+
+                try {
+                    result = executeGetResolverDnssecConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResolverEndpointResult> getResolverEndpointAsync(GetResolverEndpointRequest request) {
 
         return getResolverEndpointAsync(request, null);
@@ -731,6 +764,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeGetResolverRulePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverDnssecConfigsResult> listResolverDnssecConfigsAsync(ListResolverDnssecConfigsRequest request) {
+
+        return listResolverDnssecConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverDnssecConfigsResult> listResolverDnssecConfigsAsync(final ListResolverDnssecConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResolverDnssecConfigsRequest, ListResolverDnssecConfigsResult> asyncHandler) {
+        final ListResolverDnssecConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResolverDnssecConfigsResult>() {
+            @Override
+            public ListResolverDnssecConfigsResult call() throws Exception {
+                ListResolverDnssecConfigsResult result = null;
+
+                try {
+                    result = executeListResolverDnssecConfigs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1100,6 +1166,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResolverDnssecConfigResult> updateResolverDnssecConfigAsync(UpdateResolverDnssecConfigRequest request) {
+
+        return updateResolverDnssecConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResolverDnssecConfigResult> updateResolverDnssecConfigAsync(final UpdateResolverDnssecConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResolverDnssecConfigRequest, UpdateResolverDnssecConfigResult> asyncHandler) {
+        final UpdateResolverDnssecConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResolverDnssecConfigResult>() {
+            @Override
+            public UpdateResolverDnssecConfigResult call() throws Exception {
+                UpdateResolverDnssecConfigResult result = null;
+
+                try {
+                    result = executeUpdateResolverDnssecConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

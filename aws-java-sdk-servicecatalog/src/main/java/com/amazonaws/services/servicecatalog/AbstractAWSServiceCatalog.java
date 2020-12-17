@@ -186,6 +186,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DescribePortfolioSharesResult describePortfolioShares(DescribePortfolioSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProductResult describeProduct(DescribeProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -433,6 +438,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePortfolioShareResult updatePortfolioShare(UpdatePortfolioShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

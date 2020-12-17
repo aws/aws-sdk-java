@@ -31,7 +31,23 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * </p>
+     * <p>
+     * <code>LoadTemplateFromURL</code>
+     * </p>
+     * <p>
+     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>
+     * </p>
+     * <p>
+     * Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -84,10 +100,42 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3, in JSON format.
      * </p>
+     * <p>
+     * <code>LoadTemplateFromURL</code>
+     * </p>
+     * <p>
+     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>
+     * </p>
+     * <p>
+     * Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.
+     * </p>
      * 
-     * @return The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * @return Specify the template source with one of the following options, but not both. Keys accepted: [
+     *         <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+     *         <p>
+     *         The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *         </p>
+     *         <p>
+     *         <code>LoadTemplateFromURL</code>
+     *         </p>
+     *         <p>
+     *         Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *         </p>
+     *         <p>
+     *         <code>ImportFromPhysicalId</code>
+     *         </p>
+     *         <p>
+     *         Use the physical id of the resource that contains the template; currently supports CloudFormation stack
+     *         ARN.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -96,11 +144,43 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * </p>
+     * <p>
+     * <code>LoadTemplateFromURL</code>
+     * </p>
+     * <p>
+     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>
+     * </p>
+     * <p>
+     * Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.
      * </p>
      * 
      * @param info
+     *        Specify the template source with one of the following options, but not both. Keys accepted: [
+     *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+     *        <p>
      *        The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *        </p>
+     *        <p>
+     *        <code>LoadTemplateFromURL</code>
+     *        </p>
+     *        <p>
+     *        Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *        </p>
+     *        <p>
+     *        <code>ImportFromPhysicalId</code>
+     *        </p>
+     *        <p>
+     *        Use the physical id of the resource that contains the template; currently supports CloudFormation stack
+     *        ARN.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -109,11 +189,43 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specify the template source with one of the following options, but not both. Keys accepted: [
+     * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+     * </p>
+     * <p>
      * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * </p>
+     * <p>
+     * <code>LoadTemplateFromURL</code>
+     * </p>
+     * <p>
+     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * </p>
+     * <p>
+     * <code>ImportFromPhysicalId</code>
+     * </p>
+     * <p>
+     * Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.
      * </p>
      * 
      * @param info
+     *        Specify the template source with one of the following options, but not both. Keys accepted: [
+     *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+     *        <p>
      *        The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *        </p>
+     *        <p>
+     *        <code>LoadTemplateFromURL</code>
+     *        </p>
+     *        <p>
+     *        Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *        </p>
+     *        <p>
+     *        <code>ImportFromPhysicalId</code>
+     *        </p>
+     *        <p>
+     *        Use the physical id of the resource that contains the template; currently supports CloudFormation stack
+     *        ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

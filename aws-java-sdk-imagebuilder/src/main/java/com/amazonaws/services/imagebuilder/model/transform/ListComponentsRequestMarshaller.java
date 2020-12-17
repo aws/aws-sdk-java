@@ -32,6 +32,8 @@ public class ListComponentsRequestMarshaller {
             .marshallLocationName("owner").build();
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filters").build();
+    private static final MarshallingInfo<Boolean> BYNAME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("byName").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ListComponentsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listComponentsRequest.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(listComponentsRequest.getByName(), BYNAME_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

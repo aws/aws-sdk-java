@@ -256,6 +256,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest request) {
+
+        return activateKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(final ActivateKeySigningKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ActivateKeySigningKeyRequest, ActivateKeySigningKeyResult> asyncHandler) {
+        final ActivateKeySigningKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ActivateKeySigningKeyResult>() {
+            @Override
+            public ActivateKeySigningKeyResult call() throws Exception {
+                ActivateKeySigningKeyResult result = null;
+
+                try {
+                    result = executeActivateKeySigningKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request) {
 
         return associateVPCWithHostedZoneAsync(request, null);
@@ -405,6 +438,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeCreateHostedZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest request) {
+
+        return createKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(final CreateKeySigningKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKeySigningKeyRequest, CreateKeySigningKeyResult> asyncHandler) {
+        final CreateKeySigningKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKeySigningKeyResult>() {
+            @Override
+            public CreateKeySigningKeyResult call() throws Exception {
+                CreateKeySigningKeyResult result = null;
+
+                try {
+                    result = executeCreateKeySigningKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -621,6 +687,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest request) {
+
+        return deactivateKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(final DeactivateKeySigningKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeactivateKeySigningKeyRequest, DeactivateKeySigningKeyResult> asyncHandler) {
+        final DeactivateKeySigningKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeactivateKeySigningKeyResult>() {
+            @Override
+            public DeactivateKeySigningKeyResult call() throws Exception {
+                DeactivateKeySigningKeyResult result = null;
+
+                try {
+                    result = executeDeactivateKeySigningKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest request) {
 
         return deleteHealthCheckAsync(request, null);
@@ -671,6 +770,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeDeleteHostedZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest request) {
+
+        return deleteKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(final DeleteKeySigningKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKeySigningKeyRequest, DeleteKeySigningKeyResult> asyncHandler) {
+        final DeleteKeySigningKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKeySigningKeyResult>() {
+            @Override
+            public DeleteKeySigningKeyResult call() throws Exception {
+                DeleteKeySigningKeyResult result = null;
+
+                try {
+                    result = executeDeleteKeySigningKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -854,6 +986,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest request) {
+
+        return disableHostedZoneDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(final DisableHostedZoneDNSSECRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableHostedZoneDNSSECRequest, DisableHostedZoneDNSSECResult> asyncHandler) {
+        final DisableHostedZoneDNSSECRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableHostedZoneDNSSECResult>() {
+            @Override
+            public DisableHostedZoneDNSSECResult call() throws Exception {
+                DisableHostedZoneDNSSECResult result = null;
+
+                try {
+                    result = executeDisableHostedZoneDNSSEC(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request) {
 
         return disassociateVPCFromHostedZoneAsync(request, null);
@@ -872,6 +1037,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeDisassociateVPCFromHostedZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest request) {
+
+        return enableHostedZoneDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(final EnableHostedZoneDNSSECRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableHostedZoneDNSSECRequest, EnableHostedZoneDNSSECResult> asyncHandler) {
+        final EnableHostedZoneDNSSECRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableHostedZoneDNSSECResult>() {
+            @Override
+            public EnableHostedZoneDNSSECResult call() throws Exception {
+                EnableHostedZoneDNSSECResult result = null;
+
+                try {
+                    result = executeEnableHostedZoneDNSSEC(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1007,6 +1205,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler) {
 
         return getCheckerIpRangesAsync(new GetCheckerIpRangesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest request) {
+
+        return getDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(final GetDNSSECRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDNSSECRequest, GetDNSSECResult> asyncHandler) {
+        final GetDNSSECRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDNSSECResult>() {
+            @Override
+            public GetDNSSECResult call() throws Exception {
+                GetDNSSECResult result = null;
+
+                try {
+                    result = executeGetDNSSEC(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

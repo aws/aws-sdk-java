@@ -38,6 +38,10 @@ public class PolicyDetailsMarshaller {
             .marshallLocationName("Schedules").build();
     private static final MarshallingInfo<StructuredPojo> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSource").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Actions").build();
 
     private static final PolicyDetailsMarshaller instance = new PolicyDetailsMarshaller();
 
@@ -60,6 +64,8 @@ public class PolicyDetailsMarshaller {
             protocolMarshaller.marshall(policyDetails.getTargetTags(), TARGETTAGS_BINDING);
             protocolMarshaller.marshall(policyDetails.getSchedules(), SCHEDULES_BINDING);
             protocolMarshaller.marshall(policyDetails.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(policyDetails.getEventSource(), EVENTSOURCE_BINDING);
+            protocolMarshaller.marshall(policyDetails.getActions(), ACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

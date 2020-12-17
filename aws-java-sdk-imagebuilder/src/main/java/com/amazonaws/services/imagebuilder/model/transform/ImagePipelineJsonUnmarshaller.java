@@ -72,6 +72,10 @@ public class ImagePipelineJsonUnmarshaller implements Unmarshaller<ImagePipeline
                     context.nextToken();
                     imagePipeline.setImageRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("containerRecipeArn", targetDepth)) {
+                    context.nextToken();
+                    imagePipeline.setContainerRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("infrastructureConfigurationArn", targetDepth)) {
                     context.nextToken();
                     imagePipeline.setInfrastructureConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));

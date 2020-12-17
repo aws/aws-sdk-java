@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.
+ * The format of the traffic policy document that you specified in the <code>Document</code> element is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

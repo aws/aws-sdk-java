@@ -41,6 +41,12 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Filter> filters;
     /**
      * <p>
+     * Returns the list of component build versions for the specified semantic version.
+     * </p>
+     */
+    private Boolean byName;
+    /**
+     * <p>
      * The maximum items to return in a request.
      * </p>
      */
@@ -199,6 +205,58 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Returns the list of component build versions for the specified semantic version.
+     * </p>
+     * 
+     * @param byName
+     *        Returns the list of component build versions for the specified semantic version.
+     */
+
+    public void setByName(Boolean byName) {
+        this.byName = byName;
+    }
+
+    /**
+     * <p>
+     * Returns the list of component build versions for the specified semantic version.
+     * </p>
+     * 
+     * @return Returns the list of component build versions for the specified semantic version.
+     */
+
+    public Boolean getByName() {
+        return this.byName;
+    }
+
+    /**
+     * <p>
+     * Returns the list of component build versions for the specified semantic version.
+     * </p>
+     * 
+     * @param byName
+     *        Returns the list of component build versions for the specified semantic version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListComponentsRequest withByName(Boolean byName) {
+        setByName(byName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the list of component build versions for the specified semantic version.
+     * </p>
+     * 
+     * @return Returns the list of component build versions for the specified semantic version.
+     */
+
+    public Boolean isByName() {
+        return this.byName;
+    }
+
+    /**
+     * <p>
      * The maximum items to return in a request.
      * </p>
      * 
@@ -293,6 +351,8 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
+        if (getByName() != null)
+            sb.append("ByName: ").append(getByName()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -319,6 +379,10 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getByName() == null ^ this.getByName() == null)
+            return false;
+        if (other.getByName() != null && other.getByName().equals(this.getByName()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -337,6 +401,7 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getByName() == null) ? 0 : getByName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

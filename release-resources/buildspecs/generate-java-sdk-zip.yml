@@ -1,0 +1,6 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+    - clean package -Ppublishing,staging -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Dadditionalparam=-Xdoclint:none -DuseAgent=false -Dzip.generation.additional.files.sources=/var/sdk/additional-files-to-copy -e

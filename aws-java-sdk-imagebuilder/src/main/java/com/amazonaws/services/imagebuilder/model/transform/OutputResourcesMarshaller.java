@@ -30,6 +30,8 @@ public class OutputResourcesMarshaller {
 
     private static final MarshallingInfo<List> AMIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("amis").build();
+    private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("containers").build();
 
     private static final OutputResourcesMarshaller instance = new OutputResourcesMarshaller();
 
@@ -48,6 +50,7 @@ public class OutputResourcesMarshaller {
 
         try {
             protocolMarshaller.marshall(outputResources.getAmis(), AMIS_BINDING);
+            protocolMarshaller.marshall(outputResources.getContainers(), CONTAINERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

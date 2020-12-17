@@ -46,6 +46,12 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
     private String imageRecipeArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the container pipeline to update.
+     * </p>
+     */
+    private String containerRecipeArn;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by
      * this image pipeline.
      * </p>
@@ -214,6 +220,46 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     public UpdateImagePipelineRequest withImageRecipeArn(String imageRecipeArn) {
         setImageRecipeArn(imageRecipeArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container pipeline to update.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container pipeline to update.
+     */
+
+    public void setContainerRecipeArn(String containerRecipeArn) {
+        this.containerRecipeArn = containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container pipeline to update.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the container pipeline to update.
+     */
+
+    public String getContainerRecipeArn() {
+        return this.containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container pipeline to update.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container pipeline to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateImagePipelineRequest withContainerRecipeArn(String containerRecipeArn) {
+        setContainerRecipeArn(containerRecipeArn);
         return this;
     }
 
@@ -574,6 +620,8 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("Description: ").append(getDescription()).append(",");
         if (getImageRecipeArn() != null)
             sb.append("ImageRecipeArn: ").append(getImageRecipeArn()).append(",");
+        if (getContainerRecipeArn() != null)
+            sb.append("ContainerRecipeArn: ").append(getContainerRecipeArn()).append(",");
         if (getInfrastructureConfigurationArn() != null)
             sb.append("InfrastructureConfigurationArn: ").append(getInfrastructureConfigurationArn()).append(",");
         if (getDistributionConfigurationArn() != null)
@@ -613,6 +661,10 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getImageRecipeArn() == null ^ this.getImageRecipeArn() == null)
             return false;
         if (other.getImageRecipeArn() != null && other.getImageRecipeArn().equals(this.getImageRecipeArn()) == false)
+            return false;
+        if (other.getContainerRecipeArn() == null ^ this.getContainerRecipeArn() == null)
+            return false;
+        if (other.getContainerRecipeArn() != null && other.getContainerRecipeArn().equals(this.getContainerRecipeArn()) == false)
             return false;
         if (other.getInfrastructureConfigurationArn() == null ^ this.getInfrastructureConfigurationArn() == null)
             return false;
@@ -654,6 +706,7 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getImagePipelineArn() == null) ? 0 : getImagePipelineArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImageRecipeArn() == null) ? 0 : getImageRecipeArn().hashCode());
+        hashCode = prime * hashCode + ((getContainerRecipeArn() == null) ? 0 : getContainerRecipeArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getImageTestsConfiguration() == null) ? 0 : getImageTestsConfiguration().hashCode());

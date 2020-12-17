@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum PolicyTypeValues {
 
     EBS_SNAPSHOT_MANAGEMENT("EBS_SNAPSHOT_MANAGEMENT"),
-    IMAGE_MANAGEMENT("IMAGE_MANAGEMENT");
+    IMAGE_MANAGEMENT("IMAGE_MANAGEMENT"),
+    EVENT_BASED_POLICY("EVENT_BASED_POLICY");
 
     private String value;
 

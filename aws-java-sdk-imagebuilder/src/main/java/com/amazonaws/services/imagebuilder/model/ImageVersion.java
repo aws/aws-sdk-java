@@ -42,6 +42,12 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The semantic version of the image semantic version.
      * </p>
      */
@@ -149,6 +155,65 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     public ImageVersion withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @see ImageType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @return Specifies whether this is an AMI or container image.
+     * @see ImageType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageVersion withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageVersion withType(ImageType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -393,6 +458,8 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getPlatform() != null)
@@ -425,6 +492,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -455,6 +526,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());

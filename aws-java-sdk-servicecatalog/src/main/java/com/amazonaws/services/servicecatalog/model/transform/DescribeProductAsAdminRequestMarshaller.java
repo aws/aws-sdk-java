@@ -33,6 +33,8 @@ public class DescribeProductAsAdminRequestMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SOURCEPORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourcePortfolioId").build();
 
     private static final DescribeProductAsAdminRequestMarshaller instance = new DescribeProductAsAdminRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DescribeProductAsAdminRequestMarshaller {
             protocolMarshaller.marshall(describeProductAsAdminRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(describeProductAsAdminRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(describeProductAsAdminRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(describeProductAsAdminRequest.getSourcePortfolioId(), SOURCEPORTFOLIOID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

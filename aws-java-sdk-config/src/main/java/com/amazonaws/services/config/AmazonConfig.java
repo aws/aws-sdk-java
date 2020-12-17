@@ -1242,11 +1242,6 @@ public interface AmazonConfig {
      * <p>
      * Provides organization config rule deployment status for an organization.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * <note>
      * <p>
      * The status is not considered successful until organization config rule is successfully deployed in all the member
@@ -1284,11 +1279,6 @@ public interface AmazonConfig {
      * <p>
      * Returns a list of organization config rules.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.&#x2028;
-     * </p>
      * <note>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
@@ -1320,11 +1310,6 @@ public interface AmazonConfig {
     /**
      * <p>
      * Provides organization conformance pack deployment status for an organization.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * <note>
      * <p>
@@ -1367,11 +1352,6 @@ public interface AmazonConfig {
     /**
      * <p>
      * Returns a list of organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * <note>
      * <p>
@@ -1853,11 +1833,6 @@ public interface AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @return Result of the GetOrganizationConfigRuleDetailedStatus operation returned by the service.
@@ -1883,11 +1858,6 @@ public interface AmazonConfig {
     /**
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
@@ -2470,6 +2440,20 @@ public interface AmazonConfig {
     PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest);
 
     /**
+     * @param putExternalEvaluationRequest
+     * @return Result of the PutExternalEvaluation operation returned by the service.
+     * @throws NoSuchConfigRuleException
+     *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
+     *         again.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutExternalEvaluationResult putExternalEvaluation(PutExternalEvaluationRequest putExternalEvaluationRequest);
+
+    /**
      * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
      * comply with your desired configurations.
@@ -2772,6 +2756,10 @@ public interface AmazonConfig {
      * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
      * remediations can run.
      * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
      * </note>
      * 
      * @param putRemediationConfigurationsRequest
@@ -2826,7 +2814,7 @@ public interface AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>

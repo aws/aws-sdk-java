@@ -64,6 +64,12 @@ public class DistributionConfigurationSummary implements Serializable, Cloneable
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A list of Regions where the container image is distributed to.
+     * </p>
+     */
+    private java.util.List<String> regions;
 
     /**
      * <p>
@@ -334,6 +340,76 @@ public class DistributionConfigurationSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * A list of Regions where the container image is distributed to.
+     * </p>
+     * 
+     * @return A list of Regions where the container image is distributed to.
+     */
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
+
+    /**
+     * <p>
+     * A list of Regions where the container image is distributed to.
+     * </p>
+     * 
+     * @param regions
+     *        A list of Regions where the container image is distributed to.
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new java.util.ArrayList<String>(regions);
+    }
+
+    /**
+     * <p>
+     * A list of Regions where the container image is distributed to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param regions
+     *        A list of Regions where the container image is distributed to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionConfigurationSummary withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new java.util.ArrayList<String>(regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of Regions where the container image is distributed to.
+     * </p>
+     * 
+     * @param regions
+     *        A list of Regions where the container image is distributed to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionConfigurationSummary withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,7 +432,9 @@ public class DistributionConfigurationSummary implements Serializable, Cloneable
         if (getDateUpdated() != null)
             sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRegions() != null)
+            sb.append("Regions: ").append(getRegions());
         sb.append("}");
         return sb.toString();
     }
@@ -395,6 +473,10 @@ public class DistributionConfigurationSummary implements Serializable, Cloneable
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
+            return false;
         return true;
     }
 
@@ -409,6 +491,7 @@ public class DistributionConfigurationSummary implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         return hashCode;
     }
 

@@ -413,6 +413,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest request) {
+
+        return describePortfolioSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePortfolioSharesRequest, DescribePortfolioSharesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest request) {
 
         return describeProductAsync(request, null);
@@ -1080,6 +1093,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(UpdatePortfolioRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePortfolioRequest, UpdatePortfolioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest request) {
+
+        return updatePortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePortfolioShareRequest, UpdatePortfolioShareResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

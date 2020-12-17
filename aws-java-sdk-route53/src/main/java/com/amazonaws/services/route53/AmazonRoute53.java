@@ -95,6 +95,32 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @return Result of the ActivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ActivateKeySigningKeyResult activateKeySigningKey(ActivateKeySigningKeyRequest activateKeySigningKeyRequest);
+
+    /**
+     * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
      * <important>
@@ -565,6 +591,43 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @return Result of the CreateKeySigningKey operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKeySigningKeyNameException
+     *         The key signing key (KSK) name that you specified isn't a valid name.
+     * @throws KeySigningKeyAlreadyExistsException
+     *         You've already created a key signing key (KSK) with this name or with the same customer managed key (CMK)
+     *         ARN.
+     * @throws TooManyKeySigningKeysException
+     *         You've reached the limit for the number of key signing keys (KSKs). Remove at least one KSK, and then try
+     *         again.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateKeySigningKeyResult createKeySigningKey(CreateKeySigningKeyRequest createKeySigningKeyRequest);
+
+    /**
+     * <p>
      * Creates a configuration for DNS query logging. After you create a query logging configuration, Amazon Route 53
      * begins to publish log data to an Amazon CloudWatch Logs log group.
      * </p>
@@ -870,7 +933,7 @@ public interface AmazonRoute53 {
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
-     *         Parameter name is invalid.
+     *         Parameter name is not valid.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws DelegationSetNotAvailableException
@@ -916,8 +979,8 @@ public interface AmazonRoute53 {
      * @throws TrafficPolicyAlreadyExistsException
      *         A traffic policy that has the same value for <code>Name</code> already exists.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -998,8 +1061,8 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicyVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1046,6 +1109,35 @@ public interface AmazonRoute53 {
      *      target="_top">AWS API Documentation</a>
      */
     CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest);
+
+    /**
+     * <p>
+     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @return Result of the DeactivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws KeySigningKeyInUseException
+     *         The key signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
+     *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key signing key (KSK) is specified in a parent DS record.
+     * @sample AmazonRoute53.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeactivateKeySigningKeyResult deactivateKeySigningKey(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest);
 
     /**
      * <p>
@@ -1164,6 +1256,32 @@ public interface AmazonRoute53 {
      *      Documentation</a>
      */
     DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest);
+
+    /**
+     * <p>
+     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @return Result of the DeleteKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteKeySigningKeyResult deleteKeySigningKey(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest);
 
     /**
      * <p>
@@ -1340,6 +1458,35 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @return Result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key signing key (KSK) is specified in a parent DS record.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableHostedZoneDNSSECResult disableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
      * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
      * following:
      * </p>
@@ -1398,6 +1545,37 @@ public interface AmazonRoute53 {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @return Result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyWithActiveStatusNotFoundException
+     *         A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws HostedZonePartiallyDelegatedException
+     *         The hosted zone nameservers don't match the parent nameservers. The hosted zone and parent must have the
+     *         same nameservers.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @sample AmazonRoute53.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EnableHostedZoneDNSSECResult enableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest);
 
     /**
      * <p>
@@ -1487,6 +1665,24 @@ public interface AmazonRoute53 {
      * @see #getCheckerIpRanges(GetCheckerIpRangesRequest)
      */
     GetCheckerIpRangesResult getCheckerIpRanges();
+
+    /**
+     * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
+     * signing keys (ZSKs) in the hosted zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @return Result of the GetDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @sample AmazonRoute53.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDNSSECResult getDNSSEC(GetDNSSECRequest getDNSSECRequest);
 
     /**
      * <p>

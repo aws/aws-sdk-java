@@ -35,6 +35,8 @@ public class TagOptionDetailMarshaller {
             .marshallLocationName("Active").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final TagOptionDetailMarshaller instance = new TagOptionDetailMarshaller();
 
@@ -56,6 +58,7 @@ public class TagOptionDetailMarshaller {
             protocolMarshaller.marshall(tagOptionDetail.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(tagOptionDetail.getActive(), ACTIVE_BINDING);
             protocolMarshaller.marshall(tagOptionDetail.getId(), ID_BINDING);
+            protocolMarshaller.marshall(tagOptionDetail.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

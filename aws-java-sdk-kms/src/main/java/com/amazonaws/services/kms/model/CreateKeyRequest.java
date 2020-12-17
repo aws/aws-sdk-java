@@ -63,6 +63,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The key policy size quota is 32 kilobytes (32768 bytes).
      * </p>
+     * <p>
+     * For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>IAM User Guide</i> </i>.
+     * </p>
      */
     private String policy;
     /**
@@ -289,6 +294,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
      * operation.
      * </p>
+     * <p>
+     * To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
@@ -330,6 +340,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The key policy size quota is 32 kilobytes (32768 bytes).
      * </p>
+     * <p>
+     * For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>IAM User Guide</i> </i>.
+     * </p>
      * 
      * @param policy
      *        The key policy to attach to the CMK.</p>
@@ -367,6 +382,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        The key policy size quota is 32 kilobytes (32768 bytes).
+     *        </p>
+     *        <p>
+     *        For help writing and formatting a JSON policy document, see the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
+     *        Reference</a> in the <i> <i>IAM User Guide</i> </i>.
      */
 
     public void setPolicy(String policy) {
@@ -411,6 +431,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The key policy size quota is 32 kilobytes (32768 bytes).
      * </p>
+     * <p>
+     * For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>IAM User Guide</i> </i>.
+     * </p>
      * 
      * @return The key policy to attach to the CMK.</p>
      *         <p>
@@ -447,6 +472,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <p>
      *         The key policy size quota is 32 kilobytes (32768 bytes).
+     *         </p>
+     *         <p>
+     *         For help writing and formatting a JSON policy document, see the <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
+     *         Reference</a> in the <i> <i>IAM User Guide</i> </i>.
      */
 
     public String getPolicy() {
@@ -491,6 +521,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The key policy size quota is 32 kilobytes (32768 bytes).
      * </p>
+     * <p>
+     * For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>IAM User Guide</i> </i>.
+     * </p>
      * 
      * @param policy
      *        The key policy to attach to the CMK.</p>
@@ -528,6 +563,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        The key policy size quota is 32 kilobytes (32768 bytes).
+     *        </p>
+     *        <p>
+     *        For help writing and formatting a JSON policy document, see the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
+     *        Reference</a> in the <i> <i>IAM User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2507,9 +2547,14 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
      * operation.
      * </p>
+     * <p>
+     * To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
      * 
      * @return One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *         required, but the tag value can be an empty (null) string.</p>
+     *         required, but the tag value can be an empty (null) string. </p>
      *         <p>
      *         When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
      *         aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
@@ -2518,6 +2563,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <p>
      *         Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
      *         <a>TagResource</a> operation.
+     *         </p>
+     *         <p>
+     *         To use this parameter, you must have <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     *         >kms:TagResource</a> permission in an IAM policy.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2541,10 +2591,15 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
      * operation.
      * </p>
+     * <p>
+     * To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
      * 
      * @param tags
      *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string.</p>
+     *        required, but the tag value can be an empty (null) string. </p>
      *        <p>
      *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
      *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
@@ -2553,6 +2608,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
      *        <a>TagResource</a> operation.
+     *        </p>
+     *        <p>
+     *        To use this parameter, you must have <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     *        >kms:TagResource</a> permission in an IAM policy.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2579,6 +2639,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * operation.
      * </p>
      * <p>
+     * To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -2586,7 +2651,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param tags
      *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string.</p>
+     *        required, but the tag value can be an empty (null) string. </p>
      *        <p>
      *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
      *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
@@ -2595,6 +2660,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
      *        <a>TagResource</a> operation.
+     *        </p>
+     *        <p>
+     *        To use this parameter, you must have <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     *        >kms:TagResource</a> permission in an IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2622,10 +2692,15 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
      * operation.
      * </p>
+     * <p>
+     * To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
      * 
      * @param tags
      *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string.</p>
+     *        required, but the tag value can be an empty (null) string. </p>
      *        <p>
      *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
      *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
@@ -2634,6 +2709,11 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
      *        <a>TagResource</a> operation.
+     *        </p>
+     *        <p>
+     *        To use this parameter, you must have <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     *        >kms:TagResource</a> permission in an IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

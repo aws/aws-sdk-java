@@ -39,6 +39,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public ActivateKeySigningKeyResult activateKeySigningKey(ActivateKeySigningKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,6 +65,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateKeySigningKeyResult createKeySigningKey(CreateKeySigningKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,12 +104,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public DeactivateKeySigningKeyResult deactivateKeySigningKey(DeactivateKeySigningKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteKeySigningKeyResult deleteKeySigningKey(DeleteKeySigningKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,7 +149,17 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public DisableHostedZoneDNSSECResult disableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableHostedZoneDNSSECResult enableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,6 +181,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public GetCheckerIpRangesResult getCheckerIpRanges() {
         return getCheckerIpRanges(new GetCheckerIpRangesRequest());
+    }
+
+    @Override
+    public GetDNSSECResult getDNSSEC(GetDNSSECRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

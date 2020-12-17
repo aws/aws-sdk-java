@@ -36,6 +36,12 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The name of the image recipe.
      * </p>
      */
@@ -138,6 +144,65 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
 
     public ImageRecipe withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @see ImageType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @return Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @see ImageType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageRecipe withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageRecipe withType(ImageType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -702,6 +767,8 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
@@ -741,6 +808,10 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -795,6 +866,7 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());

@@ -27,7 +27,7 @@ import com.amazonaws.services.imagebuilder.model.*;
  * <p>
  * <p>
  * EC2 Image Builder is a fully managed AWS service that makes it easier to automate the creation, management, and
- * deployment of customized, secure, and up-to-date “golden” server images that are pre-installed and pre-configured
+ * deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured
  * with software and settings to meet specific IT standards.
  * </p>
  */
@@ -97,6 +97,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest createComponentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateComponentRequest, CreateComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.
+     * </p>
+     * 
+     * @param createContainerRecipeRequest
+     * @return A Java Future containing the result of the CreateContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsync.CreateContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(CreateContainerRecipeRequest createContainerRecipeRequest);
+
+    /**
+     * <p>
+     * Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.
+     * </p>
+     * 
+     * @param createContainerRecipeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CreateContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(CreateContainerRecipeRequest createContainerRecipeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContainerRecipeRequest, CreateContainerRecipeResult> asyncHandler);
 
     /**
      * <p>
@@ -297,6 +328,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a container recipe.
+     * </p>
+     * 
+     * @param deleteContainerRecipeRequest
+     * @return A Java Future containing the result of the DeleteContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsync.DeleteContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(DeleteContainerRecipeRequest deleteContainerRecipeRequest);
+
+    /**
+     * <p>
+     * Deletes a container recipe.
+     * </p>
+     * 
+     * @param deleteContainerRecipeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.DeleteContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(DeleteContainerRecipeRequest deleteContainerRecipeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContainerRecipeRequest, DeleteContainerRecipeResult> asyncHandler);
 
     /**
      * <p>
@@ -522,6 +584,68 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<GetComponentPolicyResult> getComponentPolicyAsync(GetComponentPolicyRequest getComponentPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetComponentPolicyRequest, GetComponentPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a container recipe.
+     * </p>
+     * 
+     * @param getContainerRecipeRequest
+     * @return A Java Future containing the result of the GetContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(GetContainerRecipeRequest getContainerRecipeRequest);
+
+    /**
+     * <p>
+     * Retrieves a container recipe.
+     * </p>
+     * 
+     * @param getContainerRecipeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerRecipe operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetContainerRecipe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(GetContainerRecipeRequest getContainerRecipeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerRecipeRequest, GetContainerRecipeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the policy for a container recipe.
+     * </p>
+     * 
+     * @param getContainerRecipePolicyRequest
+     * @return A Java Future containing the result of the GetContainerRecipePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetContainerRecipePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(GetContainerRecipePolicyRequest getContainerRecipePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the policy for a container recipe.
+     * </p>
+     * 
+     * @param getContainerRecipePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerRecipePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetContainerRecipePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(GetContainerRecipePolicyRequest getContainerRecipePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerRecipePolicyRequest, GetContainerRecipePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -847,6 +971,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * Returns a list of container recipes.
+     * </p>
+     * 
+     * @param listContainerRecipesRequest
+     * @return A Java Future containing the result of the ListContainerRecipes operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListContainerRecipes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(ListContainerRecipesRequest listContainerRecipesRequest);
+
+    /**
+     * <p>
+     * Returns a list of container recipes.
+     * </p>
+     * 
+     * @param listContainerRecipesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContainerRecipes operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListContainerRecipes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(ListContainerRecipesRequest listContainerRecipesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContainerRecipesRequest, ListContainerRecipesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of distribution configurations.
      * </p>
      * 
@@ -1141,6 +1296,47 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<PutComponentPolicyResult> putComponentPolicyAsync(PutComponentPolicyRequest putComponentPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutComponentPolicyRequest, PutComponentPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
+     * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you
+     * call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API
+     * PromoteResourceShareCreatedFromPolicy
+     * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for
+     * the resource to be visible to all principals with whom the resource is shared.
+     * </p>
+     * 
+     * @param putContainerRecipePolicyRequest
+     * @return A Java Future containing the result of the PutContainerRecipePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.PutContainerRecipePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(PutContainerRecipePolicyRequest putContainerRecipePolicyRequest);
+
+    /**
+     * <p>
+     * Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
+     * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you
+     * call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API
+     * PromoteResourceShareCreatedFromPolicy
+     * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for
+     * the resource to be visible to all principals with whom the resource is shared.
+     * </p>
+     * 
+     * @param putContainerRecipePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutContainerRecipePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.PutContainerRecipePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(PutContainerRecipePolicyRequest putContainerRecipePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutContainerRecipePolicyRequest, PutContainerRecipePolicyResult> asyncHandler);
 
     /**
      * <p>

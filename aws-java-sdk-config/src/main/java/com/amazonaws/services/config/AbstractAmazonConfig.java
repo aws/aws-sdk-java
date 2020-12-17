@@ -416,6 +416,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public PutExternalEvaluationResult putExternalEvaluation(PutExternalEvaluationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutOrganizationConfigRuleResult putOrganizationConfigRule(PutOrganizationConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

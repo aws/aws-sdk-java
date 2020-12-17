@@ -1711,11 +1711,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Provides organization config rule deployment status for an organization.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * <note>
      * <p>
      * The status is not considered successful until organization config rule is successfully deployed in all the member
@@ -1741,11 +1736,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Provides organization config rule deployment status for an organization.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * <note>
      * <p>
@@ -1778,11 +1768,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns a list of organization config rules.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.&#x2028;
-     * </p>
      * <note>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
@@ -1804,11 +1789,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of organization config rules.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.&#x2028;
      * </p>
      * <note>
      * <p>
@@ -1837,11 +1817,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Provides organization conformance pack deployment status for an organization.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * <note>
      * <p>
      * The status is not considered successful until organization conformance pack is successfully deployed in all the
@@ -1868,11 +1843,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Provides organization conformance pack deployment status for an organization.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * <note>
      * <p>
@@ -1906,11 +1876,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns a list of organization conformance packs.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * <note>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response.
@@ -1934,11 +1899,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * <note>
      * <p>
@@ -2787,11 +2747,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @return A Java Future containing the result of the GetOrganizationConfigRuleDetailedStatus operation returned by
@@ -2806,11 +2761,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
@@ -2832,11 +2782,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
      * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
-     * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
      * @return A Java Future containing the result of the GetOrganizationConformancePackDetailedStatus operation
@@ -2852,11 +2797,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
-     * </p>
-     * <p>
-     * Only a master account and a delegated administrator account can call this API. When calling this API with a
-     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
-     * are added.
      * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
@@ -3493,6 +3433,29 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
 
     /**
+     * @param putExternalEvaluationRequest
+     * @return A Java Future containing the result of the PutExternalEvaluation operation returned by the service.
+     * @sample AmazonConfigAsync.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest putExternalEvaluationRequest);
+
+    /**
+     * @param putExternalEvaluationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutExternalEvaluation operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest putExternalEvaluationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutExternalEvaluationRequest, PutExternalEvaluationResult> asyncHandler);
+
+    /**
      * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
      * comply with your desired configurations.
@@ -3704,6 +3667,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
      * remediations can run.
      * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
      * </note>
      * 
      * @param putRemediationConfigurationsRequest
@@ -3728,6 +3695,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
      * remediations can run.
      * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
      * </note>
      * 
      * @param putRemediationConfigurationsRequest
@@ -3748,7 +3719,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -3768,7 +3739,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>

@@ -69,6 +69,13 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private OrganizationNode organizationNode;
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     */
+    private Boolean shareTagOptions;
 
     /**
      * <p>
@@ -348,6 +355,66 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @param shareTagOptions
+     *        Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *        not provided, TagOptions sharing is disabled.
+     */
+
+    public void setShareTagOptions(Boolean shareTagOptions) {
+        this.shareTagOptions = shareTagOptions;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @return Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *         not provided, TagOptions sharing is disabled.
+     */
+
+    public Boolean getShareTagOptions() {
+        return this.shareTagOptions;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @param shareTagOptions
+     *        Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *        not provided, TagOptions sharing is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortfolioShareRequest withShareTagOptions(Boolean shareTagOptions) {
+        setShareTagOptions(shareTagOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @return Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *         not provided, TagOptions sharing is disabled.
+     */
+
+    public Boolean isShareTagOptions() {
+        return this.shareTagOptions;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -366,7 +433,9 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getOrganizationNode() != null)
-            sb.append("OrganizationNode: ").append(getOrganizationNode());
+            sb.append("OrganizationNode: ").append(getOrganizationNode()).append(",");
+        if (getShareTagOptions() != null)
+            sb.append("ShareTagOptions: ").append(getShareTagOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +466,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOrganizationNode() != null && other.getOrganizationNode().equals(this.getOrganizationNode()) == false)
             return false;
+        if (other.getShareTagOptions() == null ^ this.getShareTagOptions() == null)
+            return false;
+        if (other.getShareTagOptions() != null && other.getShareTagOptions().equals(this.getShareTagOptions()) == false)
+            return false;
         return true;
     }
 
@@ -409,6 +482,7 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getOrganizationNode() == null) ? 0 : getOrganizationNode().hashCode());
+        hashCode = prime * hashCode + ((getShareTagOptions() == null) ? 0 : getShareTagOptions().hashCode());
         return hashCode;
     }
 

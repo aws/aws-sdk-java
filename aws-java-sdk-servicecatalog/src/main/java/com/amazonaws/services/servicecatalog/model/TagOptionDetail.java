@@ -52,6 +52,12 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The AWS account Id of the owner account that created the TagOption.
+     * </p>
+     */
+    private String owner;
 
     /**
      * <p>
@@ -226,6 +232,46 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The AWS account Id of the owner account that created the TagOption.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS account Id of the owner account that created the TagOption.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The AWS account Id of the owner account that created the TagOption.
+     * </p>
+     * 
+     * @return The AWS account Id of the owner account that created the TagOption.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The AWS account Id of the owner account that created the TagOption.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS account Id of the owner account that created the TagOption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagOptionDetail withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -244,7 +290,9 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
         if (getActive() != null)
             sb.append("Active: ").append(getActive()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -275,6 +323,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +339,7 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         return hashCode;
     }
 

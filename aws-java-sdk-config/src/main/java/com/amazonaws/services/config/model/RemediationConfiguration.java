@@ -88,8 +88,8 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
      * seconds.
      * </p>
      */
@@ -100,7 +100,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      */
@@ -532,8 +532,8 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
      * seconds.
      * </p>
      * 
@@ -541,7 +541,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *        5.</p>
      *        <p>
-     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
      *        Config will put a RemediationException on your behalf for the failing resource after the 5th failed
      *        attempt within 50 seconds.
      */
@@ -555,15 +555,15 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
      * seconds.
      * </p>
      * 
      * @return The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *         5.</p>
      *         <p>
-     *         For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *         For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
      *         Config will put a RemediationException on your behalf for the failing resource after the 5th failed
      *         attempt within 50 seconds.
      */
@@ -577,8 +577,8 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
      * seconds.
      * </p>
      * 
@@ -586,7 +586,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *        5.</p>
      *        <p>
-     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
      *        Config will put a RemediationException on your behalf for the failing resource after the 5th failed
      *        attempt within 50 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -603,7 +603,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
@@ -611,7 +611,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *        is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      */
 
@@ -625,14 +625,14 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
      * @return Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *         is 60 seconds. </p>
      *         <p>
-     *         For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *         For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *         Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      */
 
@@ -646,7 +646,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
@@ -654,7 +654,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *        is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

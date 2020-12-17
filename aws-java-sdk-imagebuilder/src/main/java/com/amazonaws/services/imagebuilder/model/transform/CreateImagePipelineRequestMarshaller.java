@@ -37,6 +37,8 @@ public class CreateImagePipelineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> IMAGERECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageRecipeArn").build();
+    private static final MarshallingInfo<String> CONTAINERRECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerRecipeArn").build();
     private static final MarshallingInfo<String> INFRASTRUCTURECONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("infrastructureConfigurationArn").build();
     private static final MarshallingInfo<String> DISTRIBUTIONCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,6 +76,7 @@ public class CreateImagePipelineRequestMarshaller {
             protocolMarshaller.marshall(createImagePipelineRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getImageRecipeArn(), IMAGERECIPEARN_BINDING);
+            protocolMarshaller.marshall(createImagePipelineRequest.getContainerRecipeArn(), CONTAINERRECIPEARN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getInfrastructureConfigurationArn(), INFRASTRUCTURECONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getDistributionConfigurationArn(), DISTRIBUTIONCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getImageTestsConfiguration(), IMAGETESTSCONFIGURATION_BINDING);

@@ -43,15 +43,24 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
     private String organizationConformancePackArn;
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      */
     private String deliveryS3Bucket;
     /**
      * <p>
      * Any folder structure you want to add to an Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      */
     private String deliveryS3KeyPrefix;
     /**
@@ -155,13 +164,19 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *        template that is used to create a pack.
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates. </p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      */
 
     public void setDeliveryS3Bucket(String deliveryS3Bucket) {
@@ -170,12 +185,18 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
-     * @return Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *         template that is used to create a pack.
+     * @return Amazon S3 bucket where AWS Config stores conformance pack templates. </p> <note>
+     *         <p>
+     *         This field is optional.
+     *         </p>
      */
 
     public String getDeliveryS3Bucket() {
@@ -184,13 +205,19 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *        template that is used to create a pack.
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates. </p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,9 +230,17 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
      * <p>
      * Any folder structure you want to add to an Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        Any folder structure you want to add to an Amazon S3 bucket.
+     *        Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      */
 
     public void setDeliveryS3KeyPrefix(String deliveryS3KeyPrefix) {
@@ -216,8 +251,16 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
      * <p>
      * Any folder structure you want to add to an Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
-     * @return Any folder structure you want to add to an Amazon S3 bucket.
+     * @return Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
+     *         <p>
+     *         This field is optional.
+     *         </p>
      */
 
     public String getDeliveryS3KeyPrefix() {
@@ -228,9 +271,17 @@ public class OrganizationConformancePack implements Serializable, Cloneable, Str
      * <p>
      * Any folder structure you want to add to an Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        Any folder structure you want to add to an Amazon S3 bucket.
+     *        Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

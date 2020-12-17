@@ -1230,6 +1230,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest request) {
+
+        return describePortfolioSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(final DescribePortfolioSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePortfolioSharesRequest, DescribePortfolioSharesResult> asyncHandler) {
+        final DescribePortfolioSharesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePortfolioSharesResult>() {
+            @Override
+            public DescribePortfolioSharesResult call() throws Exception {
+                DescribePortfolioSharesResult result = null;
+
+                try {
+                    result = executeDescribePortfolioShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest request) {
 
         return describeProductAsync(request, null);
@@ -2891,6 +2924,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeUpdatePortfolio(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest request) {
+
+        return updatePortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(final UpdatePortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePortfolioShareRequest, UpdatePortfolioShareResult> asyncHandler) {
+        final UpdatePortfolioShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePortfolioShareResult>() {
+            @Override
+            public UpdatePortfolioShareResult call() throws Exception {
+                UpdatePortfolioShareResult result = null;
+
+                try {
+                    result = executeUpdatePortfolioShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

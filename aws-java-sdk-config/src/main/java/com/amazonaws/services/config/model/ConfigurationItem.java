@@ -104,7 +104,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
     private String configurationItemMD5Hash;
     /**
      * <p>
-     * accoun
+     * Amazon Resource Name (ARN) associated with the resource.
      * </p>
      */
     private String arn;
@@ -819,11 +819,11 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * accoun
+     * Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
      * @param arn
-     *        accoun
+     *        Amazon Resource Name (ARN) associated with the resource.
      */
 
     public void setArn(String arn) {
@@ -832,10 +832,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * accoun
+     * Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
-     * @return accoun
+     * @return Amazon Resource Name (ARN) associated with the resource.
      */
 
     public String getArn() {
@@ -844,11 +844,11 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * accoun
+     * Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
      * @param arn
-     *        accoun
+     *        Amazon Resource Name (ARN) associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

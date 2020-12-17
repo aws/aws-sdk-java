@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +41,8 @@ public class DistributionConfigurationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateUpdated").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> REGIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("regions").build();
 
     private static final DistributionConfigurationSummaryMarshaller instance = new DistributionConfigurationSummaryMarshaller();
 
@@ -64,6 +66,7 @@ public class DistributionConfigurationSummaryMarshaller {
             protocolMarshaller.marshall(distributionConfigurationSummary.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(distributionConfigurationSummary.getDateUpdated(), DATEUPDATED_BINDING);
             protocolMarshaller.marshall(distributionConfigurationSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(distributionConfigurationSummary.getRegions(), REGIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

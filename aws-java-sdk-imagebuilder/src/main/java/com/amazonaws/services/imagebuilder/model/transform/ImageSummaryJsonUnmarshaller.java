@@ -56,6 +56,10 @@ public class ImageSummaryJsonUnmarshaller implements Unmarshaller<ImageSummary, 
                     context.nextToken();
                     imageSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    imageSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     imageSummary.setVersion(context.getUnmarshaller(String.class).unmarshall(context));

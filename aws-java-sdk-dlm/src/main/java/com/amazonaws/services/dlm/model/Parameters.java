@@ -43,7 +43,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
      * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instance are not rebooted).
+     * <code>true</code> (instances are not rebooted).
      * </p>
      */
     private Boolean noReboot;
@@ -129,14 +129,14 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
      * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instance are not rebooted).
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @param noReboot
      *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
      *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
      *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *        default is <code>true</code> (instance are not rebooted).
+     *        default is <code>true</code> (instances are not rebooted).
      */
 
     public void setNoReboot(Boolean noReboot) {
@@ -148,13 +148,13 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
      * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instance are not rebooted).
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
      *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
      *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *         default is <code>true</code> (instance are not rebooted).
+     *         default is <code>true</code> (instances are not rebooted).
      */
 
     public Boolean getNoReboot() {
@@ -166,14 +166,14 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
      * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instance are not rebooted).
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @param noReboot
      *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
      *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
      *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *        default is <code>true</code> (instance are not rebooted).
+     *        default is <code>true</code> (instances are not rebooted).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,13 +187,13 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
      * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instance are not rebooted).
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
      *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
      *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *         default is <code>true</code> (instance are not rebooted).
+     *         default is <code>true</code> (instances are not rebooted).
      */
 
     public Boolean isNoReboot() {

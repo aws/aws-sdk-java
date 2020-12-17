@@ -1,3 +1,40 @@
+# __1.11.922__ __2020-12-17__
+## __AWS Config__
+  - ### Features
+    - Adding PutExternalEvaluation API which grants permission to deliver evaluation result to AWS Config
+
+## __AWS Key Management Service__
+  - ### Features
+    - Added CreationDate and LastUpdatedDate timestamps to ListAliases API response
+
+## __AWS Service Catalog__
+  - ### Features
+    - Support TagOptions sharing with Service Catalog portfolio sharing.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Provide Cross-account copy event based policy support in DataLifecycleManager (DLM)
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - C6gn instances are powered by AWS Graviton2 processors and offer 100 Gbps networking bandwidth. These instances deliver up to 40% better price-performance benefit versus comparable x86-based instances
+
+## __Amazon Route 53__
+  - ### Features
+    - This release adds support for DNSSEC signing in Amazon Route 53.
+
+## __Amazon Route 53 Resolver__
+  - ### Features
+    - Route 53 Resolver adds support for enabling resolver DNSSEC validation in virtual private cloud (VPC).
+
+## __Amazon Simple Queue Service__
+  - ### Features
+    - Amazon SQS adds queue attributes to enable high throughput FIFO.
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release adds support for building and distributing container images within EC2 Image Builder.
+
 # __1.11.921__ __2020-12-16__
 ## __AWS Cost Explorer Service__
   - ### Features

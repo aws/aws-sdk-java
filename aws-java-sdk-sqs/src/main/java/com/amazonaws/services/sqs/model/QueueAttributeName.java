@@ -37,7 +37,9 @@ public enum QueueAttributeName {
     FifoQueue("FifoQueue"),
     ContentBasedDeduplication("ContentBasedDeduplication"),
     KmsMasterKeyId("KmsMasterKeyId"),
-    KmsDataKeyReusePeriodSeconds("KmsDataKeyReusePeriodSeconds");
+    KmsDataKeyReusePeriodSeconds("KmsDataKeyReusePeriodSeconds"),
+    DeduplicationScope("DeduplicationScope"),
+    FifoThroughputLimit("FifoThroughputLimit");
 
     private String value;
 

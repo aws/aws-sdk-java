@@ -32,15 +32,24 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+     * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined
+     * event occurs in your AWS account.
+     * </p>
+     * <p>
+     * The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      */
     private java.util.List<String> resourceTypes;
@@ -48,35 +57,74 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The single tag that identifies targeted resources for this policy.
      * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
+     * </p>
      */
     private java.util.List<Tag> targetTags;
     /**
      * <p>
-     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
-     * to three optional schedules.
+     * The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four
+     * schedules—one mandatory schedule and up to three optional schedules.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      */
     private java.util.List<Schedule> schedules;
     /**
      * <p>
-     * A set of optional parameters for the policy.
+     * A set of optional parameters for snapshot and AMI lifecycle policies.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      */
     private Parameters parameters;
+    /**
+     * <p>
+     * The event that triggers the event-based policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     */
+    private EventSource eventSource;
+    /**
+     * <p>
+     * The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     */
+    private java.util.List<Action> actions;
 
     /**
      * <p>
      * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+     * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined
+     * event occurs in your AWS account.
+     * </p>
+     * <p>
+     * The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
      *        The valid target resource types and actions a policy can manage. Specify
      *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
      *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
-     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     *        of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
+     *        specific actions when a defined event occurs in your AWS account.</p>
+     *        <p>
+     *        The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @see PolicyTypeValues
      */
 
@@ -88,14 +136,21 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+     * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined
+     * event occurs in your AWS account.
+     * </p>
+     * <p>
+     * The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @return The valid target resource types and actions a policy can manage. Specify
      *         <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon
      *         EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the
-     *         lifecycle of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     *         lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy
+     *         that performs specific actions when a defined event occurs in your AWS account.</p>
+     *         <p>
+     *         The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @see PolicyTypeValues
      */
 
@@ -107,15 +162,22 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+     * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined
+     * event occurs in your AWS account.
+     * </p>
+     * <p>
+     * The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
      *        The valid target resource types and actions a policy can manage. Specify
      *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
      *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
-     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     *        of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
+     *        specific actions when a defined event occurs in your AWS account.</p>
+     *        <p>
+     *        The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -129,15 +191,22 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+     * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined
+     * event occurs in your AWS account.
+     * </p>
+     * <p>
+     * The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
      *        The valid target resource types and actions a policy can manage. Specify
      *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
      *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
-     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
+     *        of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
+     *        specific actions when a defined event occurs in your AWS account.</p>
+     *        <p>
+     *        The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -149,12 +218,21 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
-     * @return The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
-     *         multi-volume snapshots from the volumes for an instance.
+     * @return The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create
+     *         snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the
+     *         volumes for an instance.</p>
+     *         <p>
+     *         This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *         omit this parameter.
      * @see ResourceTypeValues
      */
 
@@ -164,13 +242,22 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
-     *        multi-volume snapshots from the volumes for an instance.
+     *        The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create
+     *        snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the
+     *        volumes for an instance.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @see ResourceTypeValues
      */
 
@@ -185,8 +272,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,8 +287,12 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
-     *        multi-volume snapshots from the volumes for an instance.
+     *        The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create
+     *        snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the
+     *        volumes for an instance.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */
@@ -213,13 +309,22 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
-     *        multi-volume snapshots from the volumes for an instance.
+     *        The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create
+     *        snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the
+     *        volumes for an instance.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */
@@ -231,13 +336,22 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
-     * snapshots from the volumes for an instance.
+     * The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of
+     * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an
+     * instance.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
-     *        multi-volume snapshots from the volumes for an instance.
+     *        The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create
+     *        snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the
+     *        volumes for an instance.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */
@@ -259,8 +373,15 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The single tag that identifies targeted resources for this policy.
      * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
+     * </p>
      * 
-     * @return The single tag that identifies targeted resources for this policy.
+     * @return The single tag that identifies targeted resources for this policy.</p>
+     *         <p>
+     *         This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *         omit this parameter.
      */
 
     public java.util.List<Tag> getTargetTags() {
@@ -271,9 +392,16 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The single tag that identifies targeted resources for this policy.
      * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
+     * </p>
      * 
      * @param targetTags
-     *        The single tag that identifies targeted resources for this policy.
+     *        The single tag that identifies targeted resources for this policy.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      */
 
     public void setTargetTags(java.util.Collection<Tag> targetTags) {
@@ -290,13 +418,20 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * The single tag that identifies targeted resources for this policy.
      * </p>
      * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param targetTags
-     *        The single tag that identifies targeted resources for this policy.
+     *        The single tag that identifies targeted resources for this policy.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,9 +449,16 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The single tag that identifies targeted resources for this policy.
      * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
+     * </p>
      * 
      * @param targetTags
-     *        The single tag that identifies targeted resources for this policy.
+     *        The single tag that identifies targeted resources for this policy.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,12 +469,19 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
-     * to three optional schedules.
+     * The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four
+     * schedules—one mandatory schedule and up to three optional schedules.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
-     * @return The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
-     *         and up to three optional schedules.
+     * @return The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to
+     *         four schedules—one mandatory schedule and up to three optional schedules.</p>
+     *         <p>
+     *         This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *         omit this parameter.
      */
 
     public java.util.List<Schedule> getSchedules() {
@@ -341,13 +490,20 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
-     * to three optional schedules.
+     * The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four
+     * schedules—one mandatory schedule and up to three optional schedules.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param schedules
-     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
-     *        and up to three optional schedules.
+     *        The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to
+     *        four schedules—one mandatory schedule and up to three optional schedules.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      */
 
     public void setSchedules(java.util.Collection<Schedule> schedules) {
@@ -361,8 +517,12 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
-     * to three optional schedules.
+     * The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four
+     * schedules—one mandatory schedule and up to three optional schedules.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -371,8 +531,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param schedules
-     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
-     *        and up to three optional schedules.
+     *        The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to
+     *        four schedules—one mandatory schedule and up to three optional schedules.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,13 +551,20 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
-     * to three optional schedules.
+     * The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four
+     * schedules—one mandatory schedule and up to three optional schedules.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param schedules
-     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
-     *        and up to three optional schedules.
+     *        The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to
+     *        four schedules—one mandatory schedule and up to three optional schedules.</p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,11 +575,18 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters for the policy.
+     * A set of optional parameters for snapshot and AMI lifecycle policies.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param parameters
-     *        A set of optional parameters for the policy.
+     *        A set of optional parameters for snapshot and AMI lifecycle policies. </p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      */
 
     public void setParameters(Parameters parameters) {
@@ -418,10 +595,17 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters for the policy.
+     * A set of optional parameters for snapshot and AMI lifecycle policies.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
-     * @return A set of optional parameters for the policy.
+     * @return A set of optional parameters for snapshot and AMI lifecycle policies. </p>
+     *         <p>
+     *         This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *         omit this parameter.
      */
 
     public Parameters getParameters() {
@@ -430,16 +614,186 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters for the policy.
+     * A set of optional parameters for snapshot and AMI lifecycle policies.
+     * </p>
+     * <p>
+     * This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit
+     * this parameter.
      * </p>
      * 
      * @param parameters
-     *        A set of optional parameters for the policy.
+     *        A set of optional parameters for snapshot and AMI lifecycle policies. </p>
+     *        <p>
+     *        This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy,
+     *        omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyDetails withParameters(Parameters parameters) {
         setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event that triggers the event-based policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @param eventSource
+     *        The event that triggers the event-based policy. </p>
+     *        <p>
+     *        This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *        omit this parameter.
+     */
+
+    public void setEventSource(EventSource eventSource) {
+        this.eventSource = eventSource;
+    }
+
+    /**
+     * <p>
+     * The event that triggers the event-based policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @return The event that triggers the event-based policy. </p>
+     *         <p>
+     *         This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *         omit this parameter.
+     */
+
+    public EventSource getEventSource() {
+        return this.eventSource;
+    }
+
+    /**
+     * <p>
+     * The event that triggers the event-based policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @param eventSource
+     *        The event that triggers the event-based policy. </p>
+     *        <p>
+     *        This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *        omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyDetails withEventSource(EventSource eventSource) {
+        setEventSource(eventSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @return The actions to be performed when the event-based policy is triggered. You can specify only one action per
+     *         policy.</p>
+     *         <p>
+     *         This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *         omit this parameter.
+     */
+
+    public java.util.List<Action> getActions() {
+        return actions;
+    }
+
+    /**
+     * <p>
+     * The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @param actions
+     *        The actions to be performed when the event-based policy is triggered. You can specify only one action per
+     *        policy.</p>
+     *        <p>
+     *        This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *        omit this parameter.
+     */
+
+    public void setActions(java.util.Collection<Action> actions) {
+        if (actions == null) {
+            this.actions = null;
+            return;
+        }
+
+        this.actions = new java.util.ArrayList<Action>(actions);
+    }
+
+    /**
+     * <p>
+     * The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param actions
+     *        The actions to be performed when the event-based policy is triggered. You can specify only one action per
+     *        policy.</p>
+     *        <p>
+     *        This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *        omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyDetails withActions(Action... actions) {
+        if (this.actions == null) {
+            setActions(new java.util.ArrayList<Action>(actions.length));
+        }
+        for (Action ele : actions) {
+            this.actions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.
+     * </p>
+     * <p>
+     * This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this
+     * parameter.
+     * </p>
+     * 
+     * @param actions
+     *        The actions to be performed when the event-based policy is triggered. You can specify only one action per
+     *        policy.</p>
+     *        <p>
+     *        This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy,
+     *        omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyDetails withActions(java.util.Collection<Action> actions) {
+        setActions(actions);
         return this;
     }
 
@@ -464,7 +818,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
         if (getSchedules() != null)
             sb.append("Schedules: ").append(getSchedules()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getEventSource() != null)
+            sb.append("EventSource: ").append(getEventSource()).append(",");
+        if (getActions() != null)
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +857,14 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getEventSource() == null ^ this.getEventSource() == null)
+            return false;
+        if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
+            return false;
+        if (other.getActions() == null ^ this.getActions() == null)
+            return false;
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
+            return false;
         return true;
     }
 
@@ -512,6 +878,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetTags() == null) ? 0 : getTargetTags().hashCode());
         hashCode = prime * hashCode + ((getSchedules() == null) ? 0 : getSchedules().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         return hashCode;
     }
 

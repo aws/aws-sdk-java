@@ -356,7 +356,12 @@ public interface AWSServiceCatalog {
      * <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.
      * </p>
      * <p>
-     * You can't share a shared resource. This includes portfolios that contain a shared product.
+     * You can't share a shared resource, including portfolios that contain a shared product.
+     * </p>
+     * <p>
+     * If the portfolio share with the specified account or organization node already exists, this action will have no
+     * effect and will not return an error. To update an existing share, you must use the
+     * <code> UpdatePortfolioShare</code> API instead.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -385,6 +390,11 @@ public interface AWSServiceCatalog {
      * </p>
      * <p>
      * A delegated admin is authorized to invoke this command.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
      * </p>
      * 
      * @param createProductRequest
@@ -439,6 +449,11 @@ public interface AWSServiceCatalog {
      * </p>
      * <p>
      * You cannot create a provisioning artifact for a product that was shared with you.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -749,6 +764,30 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DescribePortfolioShareStatusResult describePortfolioShareStatus(DescribePortfolioShareStatusRequest describePortfolioShareStatusRequest);
+
+    /**
+     * <p>
+     * Returns a summary of each of the portfolio shares that were created for the specified portfolio.
+     * </p>
+     * <p>
+     * You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether
+     * the recipient entity has imported the share, and whether TagOptions are included with the share.
+     * </p>
+     * <p>
+     * The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+     * </p>
+     * 
+     * @param describePortfolioSharesRequest
+     * @return Result of the DescribePortfolioShares operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.DescribePortfolioShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePortfolioSharesResult describePortfolioShares(DescribePortfolioSharesRequest describePortfolioSharesRequest);
 
     /**
      * <p>
@@ -1192,7 +1231,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
-     * Catalog product and provisioning artifact. Once imported all supported Service Catalog governance actions are
+     * Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are
      * supported on the provisioned product.
      * </p>
      * <p>
@@ -1200,12 +1239,17 @@ public interface AWSServiceCatalog {
      * not supported.
      * </p>
      * <p>
-     * The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
-     * UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+     * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
+     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+     * <code>IMPORT_ROLLBACK_COMPLETE</code>.
      * </p>
      * <p>
      * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
      * product provisioning artifact.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
+     * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
      * </p>
      * 
      * @param importAsProvisionedProductRequest
@@ -1724,6 +1768,45 @@ public interface AWSServiceCatalog {
      *      API Documentation</a>
      */
     UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest);
+
+    /**
+     * <p>
+     * Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an
+     * existing portfolio share.
+     * </p>
+     * <p>
+     * The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is
+     * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
+     * the portfolio share to be COMPLETED.
+     * </p>
+     * <p>
+     * You must provide the <code>accountId</code> or organization node in the input, but not both.
+     * </p>
+     * <p>
+     * If the portfolio is shared to both an external account and an organization node, and both shares need to be
+     * updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type.
+     * </p>
+     * <p>
+     * This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for
+     * that action.
+     * </p>
+     * 
+     * @param updatePortfolioShareRequest
+     * @return Result of the UpdatePortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @sample AWSServiceCatalog.UpdatePortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePortfolioShareResult updatePortfolioShare(UpdatePortfolioShareRequest updatePortfolioShareRequest);
 
     /**
      * <p>

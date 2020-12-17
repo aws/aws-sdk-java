@@ -64,6 +64,10 @@ public class TagOptionDetailJsonUnmarshaller implements Unmarshaller<TagOptionDe
                     context.nextToken();
                     tagOptionDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    tagOptionDetail.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,10 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                     context.nextToken();
                     imageRecipe.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    imageRecipe.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setName(context.getUnmarshaller(String.class).unmarshall(context));

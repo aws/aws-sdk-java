@@ -50,7 +50,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -251,7 +252,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -289,7 +291,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *        use the <a>DescribeKey</a> operation. </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -333,7 +336,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -370,7 +374,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *         use the <a>DescribeKey</a> operation. </p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with <code>"alias/"</code>.
+     *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *         use the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -414,7 +419,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -452,7 +458,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *        use the <a>DescribeKey</a> operation. </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:

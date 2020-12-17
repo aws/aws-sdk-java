@@ -60,6 +60,17 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     */
+    private String sourcePortfolioId;
 
     /**
      * <p>
@@ -281,6 +292,74 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @param sourcePortfolioId
+     *        The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *        <p>
+     *        You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *        parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *        local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     */
+
+    public void setSourcePortfolioId(String sourcePortfolioId) {
+        this.sourcePortfolioId = sourcePortfolioId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @return The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *         <p>
+     *         You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *         parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *         local and shared TagOptions associated with the product. Otherwise only local TagOptions will be
+     *         returned.
+     */
+
+    public String getSourcePortfolioId() {
+        return this.sourcePortfolioId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @param sourcePortfolioId
+     *        The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *        <p>
+     *        You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *        parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *        local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminRequest withSourcePortfolioId(String sourcePortfolioId) {
+        setSourcePortfolioId(sourcePortfolioId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +376,9 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSourcePortfolioId() != null)
+            sb.append("SourcePortfolioId: ").append(getSourcePortfolioId());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +405,10 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSourcePortfolioId() == null ^ this.getSourcePortfolioId() == null)
+            return false;
+        if (other.getSourcePortfolioId() != null && other.getSourcePortfolioId().equals(this.getSourcePortfolioId()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +420,7 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSourcePortfolioId() == null) ? 0 : getSourcePortfolioId().hashCode());
         return hashCode;
     }
 
