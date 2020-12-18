@@ -120,6 +120,17 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Integer throughput;
+    /**
+     * <p>
+     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
+     * <code>io2</code> volumes only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private Boolean multiAttachEnabled;
 
     /**
      * <p>
@@ -751,6 +762,102 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
+     * <code>io2</code> volumes only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param multiAttachEnabled
+     *        Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
+     *        to up to 16 <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *        Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     *        and <code>io2</code> volumes only. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setMultiAttachEnabled(Boolean multiAttachEnabled) {
+        this.multiAttachEnabled = multiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
+     * <code>io2</code> volumes only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
+     *         volume to up to 16 <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *         Nitro-based instances</a> in the same Availability Zone. This parameter is supported with
+     *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public Boolean getMultiAttachEnabled() {
+        return this.multiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
+     * <code>io2</code> volumes only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param multiAttachEnabled
+     *        Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
+     *        to up to 16 <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *        Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     *        and <code>io2</code> volumes only. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVolumeRequest withMultiAttachEnabled(Boolean multiAttachEnabled) {
+        setMultiAttachEnabled(multiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
+     * <code>io2</code> volumes only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
+     *         volume to up to 16 <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *         Nitro-based instances</a> in the same Availability Zone. This parameter is supported with
+     *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public Boolean isMultiAttachEnabled() {
+        return this.multiAttachEnabled;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -782,7 +889,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (getIops() != null)
             sb.append("Iops: ").append(getIops()).append(",");
         if (getThroughput() != null)
-            sb.append("Throughput: ").append(getThroughput());
+            sb.append("Throughput: ").append(getThroughput()).append(",");
+        if (getMultiAttachEnabled() != null)
+            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -817,6 +926,10 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
             return false;
+        if (other.getMultiAttachEnabled() == null ^ this.getMultiAttachEnabled() == null)
+            return false;
+        if (other.getMultiAttachEnabled() != null && other.getMultiAttachEnabled().equals(this.getMultiAttachEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -830,6 +943,7 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
+        hashCode = prime * hashCode + ((getMultiAttachEnabled() == null) ? 0 : getMultiAttachEnabled().hashCode());
         return hashCode;
     }
 

@@ -3,4 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-    - clean package -Ppublishing,staging -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Dadditionalparam=-Xdoclint:none -DuseAgent=false -Dzip.generation.additional.files.sources=/var/sdk/additional-files-to-copy -e
+    - mvn clean package -Ppublishing,staging -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Dadditionalparam=-Xdoclint:none -Dadditionalparam=--allow-script-in-comments -DuseAgent=false -Dzip.generation.additional.files.sources=/var/sdk/additional-files-to-copy -e
+
+artifacts:
+  files:
+    - aws-java-sdk-osgi/target/aws-java-sdk.zip

@@ -408,6 +408,13 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private Boolean globalWriteForwardingRequested;
+    /**
+     * <p>
+     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
+     * Specific changes are identified by subelements.
+     * </p>
+     */
+    private ClusterPendingModifiedValues pendingModifiedValues;
 
     /**
      * <p>
@@ -3439,6 +3446,52 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
+     * Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        Specifies that changes to the DB cluster are pending. This element is only included when changes are
+     *        pending. Specific changes are identified by subelements.
+     */
+
+    public void setPendingModifiedValues(ClusterPendingModifiedValues pendingModifiedValues) {
+        this.pendingModifiedValues = pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
+     * Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @return Specifies that changes to the DB cluster are pending. This element is only included when changes are
+     *         pending. Specific changes are identified by subelements.
+     */
+
+    public ClusterPendingModifiedValues getPendingModifiedValues() {
+        return this.pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
+     * Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        Specifies that changes to the DB cluster are pending. This element is only included when changes are
+     *        pending. Specific changes are identified by subelements.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withPendingModifiedValues(ClusterPendingModifiedValues pendingModifiedValues) {
+        setPendingModifiedValues(pendingModifiedValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3559,7 +3612,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getGlobalWriteForwardingStatus() != null)
             sb.append("GlobalWriteForwardingStatus: ").append(getGlobalWriteForwardingStatus()).append(",");
         if (getGlobalWriteForwardingRequested() != null)
-            sb.append("GlobalWriteForwardingRequested: ").append(getGlobalWriteForwardingRequested());
+            sb.append("GlobalWriteForwardingRequested: ").append(getGlobalWriteForwardingRequested()).append(",");
+        if (getPendingModifiedValues() != null)
+            sb.append("PendingModifiedValues: ").append(getPendingModifiedValues());
         sb.append("}");
         return sb.toString();
     }
@@ -3799,6 +3854,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getGlobalWriteForwardingRequested() != null
                 && other.getGlobalWriteForwardingRequested().equals(this.getGlobalWriteForwardingRequested()) == false)
             return false;
+        if (other.getPendingModifiedValues() == null ^ this.getPendingModifiedValues() == null)
+            return false;
+        if (other.getPendingModifiedValues() != null && other.getPendingModifiedValues().equals(this.getPendingModifiedValues()) == false)
+            return false;
         return true;
     }
 
@@ -3862,6 +3921,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getGlobalWriteForwardingStatus() == null) ? 0 : getGlobalWriteForwardingStatus().hashCode());
         hashCode = prime * hashCode + ((getGlobalWriteForwardingRequested() == null) ? 0 : getGlobalWriteForwardingRequested().hashCode());
+        hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode());
         return hashCode;
     }
 

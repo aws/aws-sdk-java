@@ -73,6 +73,12 @@ public class VolumeModification implements Serializable, Cloneable {
     private Integer targetThroughput;
     /**
      * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     */
+    private Boolean targetMultiAttachEnabled;
+    /**
+     * <p>
      * The original size of the volume, in GiB.
      * </p>
      */
@@ -95,6 +101,12 @@ public class VolumeModification implements Serializable, Cloneable {
      * </p>
      */
     private Integer originalThroughput;
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     */
+    private Boolean originalMultiAttachEnabled;
     /**
      * <p>
      * The modification progress, from 0 to 100 percent complete.
@@ -462,6 +474,58 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param targetMultiAttachEnabled
+     *        The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public void setTargetMultiAttachEnabled(Boolean targetMultiAttachEnabled) {
+        this.targetMultiAttachEnabled = targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean getTargetMultiAttachEnabled() {
+        return this.targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param targetMultiAttachEnabled
+     *        The target setting for Amazon EBS Multi-Attach.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withTargetMultiAttachEnabled(Boolean targetMultiAttachEnabled) {
+        setTargetMultiAttachEnabled(targetMultiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean isTargetMultiAttachEnabled() {
+        return this.targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
      * The original size of the volume, in GiB.
      * </p>
      * 
@@ -655,6 +719,58 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param originalMultiAttachEnabled
+     *        The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public void setOriginalMultiAttachEnabled(Boolean originalMultiAttachEnabled) {
+        this.originalMultiAttachEnabled = originalMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean getOriginalMultiAttachEnabled() {
+        return this.originalMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param originalMultiAttachEnabled
+     *        The original setting for Amazon EBS Multi-Attach.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withOriginalMultiAttachEnabled(Boolean originalMultiAttachEnabled) {
+        setOriginalMultiAttachEnabled(originalMultiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean isOriginalMultiAttachEnabled() {
+        return this.originalMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
      * The modification progress, from 0 to 100 percent complete.
      * </p>
      * 
@@ -799,6 +915,8 @@ public class VolumeModification implements Serializable, Cloneable {
             sb.append("TargetVolumeType: ").append(getTargetVolumeType()).append(",");
         if (getTargetThroughput() != null)
             sb.append("TargetThroughput: ").append(getTargetThroughput()).append(",");
+        if (getTargetMultiAttachEnabled() != null)
+            sb.append("TargetMultiAttachEnabled: ").append(getTargetMultiAttachEnabled()).append(",");
         if (getOriginalSize() != null)
             sb.append("OriginalSize: ").append(getOriginalSize()).append(",");
         if (getOriginalIops() != null)
@@ -807,6 +925,8 @@ public class VolumeModification implements Serializable, Cloneable {
             sb.append("OriginalVolumeType: ").append(getOriginalVolumeType()).append(",");
         if (getOriginalThroughput() != null)
             sb.append("OriginalThroughput: ").append(getOriginalThroughput()).append(",");
+        if (getOriginalMultiAttachEnabled() != null)
+            sb.append("OriginalMultiAttachEnabled: ").append(getOriginalMultiAttachEnabled()).append(",");
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
         if (getStartTime() != null)
@@ -855,6 +975,10 @@ public class VolumeModification implements Serializable, Cloneable {
             return false;
         if (other.getTargetThroughput() != null && other.getTargetThroughput().equals(this.getTargetThroughput()) == false)
             return false;
+        if (other.getTargetMultiAttachEnabled() == null ^ this.getTargetMultiAttachEnabled() == null)
+            return false;
+        if (other.getTargetMultiAttachEnabled() != null && other.getTargetMultiAttachEnabled().equals(this.getTargetMultiAttachEnabled()) == false)
+            return false;
         if (other.getOriginalSize() == null ^ this.getOriginalSize() == null)
             return false;
         if (other.getOriginalSize() != null && other.getOriginalSize().equals(this.getOriginalSize()) == false)
@@ -870,6 +994,10 @@ public class VolumeModification implements Serializable, Cloneable {
         if (other.getOriginalThroughput() == null ^ this.getOriginalThroughput() == null)
             return false;
         if (other.getOriginalThroughput() != null && other.getOriginalThroughput().equals(this.getOriginalThroughput()) == false)
+            return false;
+        if (other.getOriginalMultiAttachEnabled() == null ^ this.getOriginalMultiAttachEnabled() == null)
+            return false;
+        if (other.getOriginalMultiAttachEnabled() != null && other.getOriginalMultiAttachEnabled().equals(this.getOriginalMultiAttachEnabled()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
@@ -898,10 +1026,12 @@ public class VolumeModification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTargetIops() == null) ? 0 : getTargetIops().hashCode());
         hashCode = prime * hashCode + ((getTargetVolumeType() == null) ? 0 : getTargetVolumeType().hashCode());
         hashCode = prime * hashCode + ((getTargetThroughput() == null) ? 0 : getTargetThroughput().hashCode());
+        hashCode = prime * hashCode + ((getTargetMultiAttachEnabled() == null) ? 0 : getTargetMultiAttachEnabled().hashCode());
         hashCode = prime * hashCode + ((getOriginalSize() == null) ? 0 : getOriginalSize().hashCode());
         hashCode = prime * hashCode + ((getOriginalIops() == null) ? 0 : getOriginalIops().hashCode());
         hashCode = prime * hashCode + ((getOriginalVolumeType() == null) ? 0 : getOriginalVolumeType().hashCode());
         hashCode = prime * hashCode + ((getOriginalThroughput() == null) ? 0 : getOriginalThroughput().hashCode());
+        hashCode = prime * hashCode + ((getOriginalMultiAttachEnabled() == null) ? 0 : getOriginalMultiAttachEnabled().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());

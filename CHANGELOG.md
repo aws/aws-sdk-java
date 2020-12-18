@@ -1,3 +1,16 @@
+# __1.11.923__ __2020-12-18__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - EBS io2 volumes now supports Multi-Attach
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Updated FilterValues regex pattern to align with Filter Expression.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds IAM DB authentication information to the PendingModifiedValues output of the DescribeDBInstances API. Adds ClusterPendingModifiedValues information to the output of the DescribeDBClusters API.
+
 # __1.11.922__ __2020-12-17__
 ## __AWS Config__
   - ### Features

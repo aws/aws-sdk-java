@@ -674,7 +674,9 @@ public interface AmazonRDS {
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBCluster
@@ -1116,7 +1118,10 @@ public interface AmazonRDS {
      * @param createGlobalClusterRequest
      * @return Result of the CreateGlobalCluster operation returned by the service.
      * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique
+     *         name) to create a new global database cluster.
      * @throws GlobalClusterQuotaExceededException
+     *         The number of global database clusters for this account is already at the maximum allowed.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterNotFoundException
@@ -1505,7 +1510,9 @@ public interface AmazonRDS {
      * @param deleteGlobalClusterRequest
      * @return Result of the DeleteGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @sample AmazonRDS.DeleteGlobalCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2270,6 +2277,7 @@ public interface AmazonRDS {
      * @param describeGlobalClustersRequest
      * @return Result of the DescribeGlobalClusters operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @sample AmazonRDS.DescribeGlobalClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeGlobalClusters" target="_top">AWS API
      *      Documentation</a>
@@ -3087,7 +3095,9 @@ public interface AmazonRDS {
      * @param modifyGlobalClusterRequest
      * @return Result of the ModifyGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @sample AmazonRDS.ModifyGlobalCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3265,7 +3275,9 @@ public interface AmazonRDS {
      * @param removeFromGlobalClusterRequest
      * @return Result of the RemoveFromGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.RemoveFromGlobalCluster

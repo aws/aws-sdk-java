@@ -15,7 +15,10 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to
+ * create a new global database cluster.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GlobalClusterAlreadyExistsException extends com.amazonaws.services.rds.model.AmazonRDSException {

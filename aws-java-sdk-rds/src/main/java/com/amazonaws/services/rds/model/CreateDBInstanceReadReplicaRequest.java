@@ -342,9 +342,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
-     * instance.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
      * </p>
      * <p>
      * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
@@ -2688,9 +2688,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
-     * instance.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
      * </p>
      * <p>
      * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
@@ -2707,9 +2707,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the
-     *        source DB instance.
+     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *        AWS KMS CMK as the source DB instance.
      *        </p>
      *        <p>
      *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
@@ -2732,9 +2732,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
-     * instance.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
      * </p>
      * <p>
      * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
@@ -2750,9 +2750,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *         </p>
      *         <p>
-     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *         have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as
-     *         the source DB instance.
+     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *         specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *         AWS KMS CMK as the source DB instance.
      *         </p>
      *         <p>
      *         If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
@@ -2775,9 +2775,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the source DB
-     * instance.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
      * </p>
      * <p>
      * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
@@ -2794,9 +2794,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same AWS KMS CMK as the
-     *        source DB instance.
+     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *        AWS KMS CMK as the source DB instance.
      *        </p>
      *        <p>
      *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key

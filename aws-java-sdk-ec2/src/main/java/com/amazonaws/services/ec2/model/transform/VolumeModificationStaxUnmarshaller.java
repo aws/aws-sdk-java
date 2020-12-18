@@ -78,6 +78,11 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
                     continue;
                 }
 
+                if (context.testExpression("targetMultiAttachEnabled", targetDepth)) {
+                    volumeModification.setTargetMultiAttachEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("originalSize", targetDepth)) {
                     volumeModification.setOriginalSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -95,6 +100,11 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
 
                 if (context.testExpression("originalThroughput", targetDepth)) {
                     volumeModification.setOriginalThroughput(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("originalMultiAttachEnabled", targetDepth)) {
+                    volumeModification.setOriginalMultiAttachEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

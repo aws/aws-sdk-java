@@ -88,8 +88,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1898,8 +1898,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2031,8 +2031,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     *        default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2170,8 +2170,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2302,8 +2302,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is created. If this parameter isn't specified,
-     *         the default "postgres" database is created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     *         database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2441,8 +2441,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2574,8 +2574,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     *        default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:

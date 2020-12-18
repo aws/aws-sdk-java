@@ -125,6 +125,10 @@ public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<Pendi
                     continue;
                 }
 
+                if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
+                    pendingModifiedValues.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return pendingModifiedValues;

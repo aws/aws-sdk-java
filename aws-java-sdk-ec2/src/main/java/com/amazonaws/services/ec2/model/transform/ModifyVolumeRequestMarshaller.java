@@ -60,6 +60,10 @@ public class ModifyVolumeRequestMarshaller implements Marshaller<Request<ModifyV
             request.addParameter("Throughput", StringUtils.fromInteger(modifyVolumeRequest.getThroughput()));
         }
 
+        if (modifyVolumeRequest.getMultiAttachEnabled() != null) {
+            request.addParameter("MultiAttachEnabled", StringUtils.fromBoolean(modifyVolumeRequest.getMultiAttachEnabled()));
+        }
+
         return request;
     }
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The global cluster is in an invalid state and can't perform the requested operation.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidGlobalClusterStateException extends com.amazonaws.services.rds.model.AmazonRDSException {

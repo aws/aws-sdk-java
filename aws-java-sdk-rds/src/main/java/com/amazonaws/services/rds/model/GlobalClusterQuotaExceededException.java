@@ -15,7 +15,9 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The number of global database clusters for this account is already at the maximum allowed.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GlobalClusterQuotaExceededException extends com.amazonaws.services.rds.model.AmazonRDSException {

@@ -15,7 +15,9 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GlobalClusterNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {
