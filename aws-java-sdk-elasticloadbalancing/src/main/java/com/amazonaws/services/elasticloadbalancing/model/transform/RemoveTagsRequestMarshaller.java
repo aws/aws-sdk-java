@@ -59,9 +59,11 @@ public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTag
             int tagsListIndex = 1;
 
             for (TagKeyOnly tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
                 }
                 tagsListIndex++;
             }

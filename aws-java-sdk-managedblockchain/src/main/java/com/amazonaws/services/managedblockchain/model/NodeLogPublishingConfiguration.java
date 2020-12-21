@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
- * network.
+ * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed
+ * Blockchain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeLogPublishingConfiguration"

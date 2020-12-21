@@ -1067,11 +1067,77 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
+     * Syncs the resource with what is currently recorded in App registry. Specifically, the resource’s App registry
+     * system tags are synced with its associated application. The resource is removed if it is not associated with the
+     * application. The caller must have permissions to read and update the resource.
+     * </p>
+     * 
+     * @param syncResourceRequest
+     * @return Result of the SyncResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
+     * @sample AWSAppRegistry.SyncResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public SyncResourceResult syncResource(SyncResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeSyncResource(request);
+    }
+
+    @SdkInternalApi
+    final SyncResourceResult executeSyncResource(SyncResourceRequest syncResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(syncResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SyncResourceRequest> request = null;
+        Response<SyncResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SyncResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(syncResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog AppRegistry");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SyncResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SyncResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SyncResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified resource.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
      * resource, this action updates its value.
+     * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1132,6 +1198,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
     /**
      * <p>
      * Removes tags from a resource.
+     * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
      * </p>
      * 
      * @param untagResourceRequest

@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An invitation to an AWS account to create a member and join the network.
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Invitation" target="_top">AWS API
  *      Documentation</a>

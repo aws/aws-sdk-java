@@ -34,6 +34,12 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
      * </p>
      */
     private String transactionId;
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     */
+    private TimingInformation timingInformation;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     */
+
+    public void setTimingInformation(TimingInformation timingInformation) {
+        this.timingInformation = timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @return Contains server-side performance information for the command.
+     */
+
+    public TimingInformation getTimingInformation() {
+        return this.timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTransactionResult withTimingInformation(TimingInformation timingInformation) {
+        setTimingInformation(timingInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTransactionId() != null)
-            sb.append("TransactionId: ").append(getTransactionId());
+            sb.append("TransactionId: ").append(getTransactionId()).append(",");
+        if (getTimingInformation() != null)
+            sb.append("TimingInformation: ").append(getTimingInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
             return false;
         if (other.getTransactionId() != null && other.getTransactionId().equals(this.getTransactionId()) == false)
             return false;
+        if (other.getTimingInformation() == null ^ this.getTimingInformation() == null)
+            return false;
+        if (other.getTimingInformation() != null && other.getTimingInformation().equals(this.getTimingInformation()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
+        hashCode = prime * hashCode + ((getTimingInformation() == null) ? 0 : getTimingInformation().hashCode());
         return hashCode;
     }
 

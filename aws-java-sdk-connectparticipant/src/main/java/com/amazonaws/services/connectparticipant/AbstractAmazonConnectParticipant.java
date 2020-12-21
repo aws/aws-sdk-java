@@ -28,12 +28,22 @@ public class AbstractAmazonConnectParticipant implements AmazonConnectParticipan
     }
 
     @Override
+    public CompleteAttachmentUploadResult completeAttachmentUpload(CompleteAttachmentUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateParticipantConnectionResult createParticipantConnection(CreateParticipantConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DisconnectParticipantResult disconnectParticipant(DisconnectParticipantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAttachmentResult getAttachment(GetAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +59,11 @@ public class AbstractAmazonConnectParticipant implements AmazonConnectParticipan
 
     @Override
     public SendMessageResult sendMessage(SendMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAttachmentUploadResult startAttachmentUpload(StartAttachmentUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

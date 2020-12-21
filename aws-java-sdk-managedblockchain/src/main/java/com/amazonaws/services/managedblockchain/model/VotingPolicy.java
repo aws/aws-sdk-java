@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The voting rules for the network to decide if a proposal is accepted
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VotingPolicy" target="_top">AWS API
  *      Documentation</a>

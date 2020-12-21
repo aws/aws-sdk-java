@@ -69,17 +69,19 @@ public class DescribeConfigurationOptionsRequestMarshaller implements
             int optionsListIndex = 1;
 
             for (OptionSpecification optionsListValue : optionsList) {
+                if (optionsListValue != null) {
 
-                if (optionsListValue.getResourceName() != null) {
-                    request.addParameter("Options.member." + optionsListIndex + ".ResourceName", StringUtils.fromString(optionsListValue.getResourceName()));
-                }
+                    if (optionsListValue.getResourceName() != null) {
+                        request.addParameter("Options.member." + optionsListIndex + ".ResourceName", StringUtils.fromString(optionsListValue.getResourceName()));
+                    }
 
-                if (optionsListValue.getNamespace() != null) {
-                    request.addParameter("Options.member." + optionsListIndex + ".Namespace", StringUtils.fromString(optionsListValue.getNamespace()));
-                }
+                    if (optionsListValue.getNamespace() != null) {
+                        request.addParameter("Options.member." + optionsListIndex + ".Namespace", StringUtils.fromString(optionsListValue.getNamespace()));
+                    }
 
-                if (optionsListValue.getOptionName() != null) {
-                    request.addParameter("Options.member." + optionsListIndex + ".OptionName", StringUtils.fromString(optionsListValue.getOptionName()));
+                    if (optionsListValue.getOptionName() != null) {
+                        request.addParameter("Options.member." + optionsListIndex + ".OptionName", StringUtils.fromString(optionsListValue.getOptionName()));
+                    }
                 }
                 optionsListIndex++;
             }

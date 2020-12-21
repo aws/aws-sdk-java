@@ -54,20 +54,22 @@ public class ChangeMessageVisibilityBatchRequestMarshaller implements
             int entriesListIndex = 1;
 
             for (ChangeMessageVisibilityBatchRequestEntry entriesListValue : entriesList) {
+                if (entriesListValue != null) {
 
-                if (entriesListValue.getId() != null) {
-                    request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".Id",
-                            StringUtils.fromString(entriesListValue.getId()));
-                }
+                    if (entriesListValue.getId() != null) {
+                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".Id",
+                                StringUtils.fromString(entriesListValue.getId()));
+                    }
 
-                if (entriesListValue.getReceiptHandle() != null) {
-                    request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
-                            StringUtils.fromString(entriesListValue.getReceiptHandle()));
-                }
+                    if (entriesListValue.getReceiptHandle() != null) {
+                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
+                                StringUtils.fromString(entriesListValue.getReceiptHandle()));
+                    }
 
-                if (entriesListValue.getVisibilityTimeout() != null) {
-                    request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".VisibilityTimeout",
-                            StringUtils.fromInteger(entriesListValue.getVisibilityTimeout()));
+                    if (entriesListValue.getVisibilityTimeout() != null) {
+                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".VisibilityTimeout",
+                                StringUtils.fromInteger(entriesListValue.getVisibilityTimeout()));
+                    }
                 }
                 entriesListIndex++;
             }

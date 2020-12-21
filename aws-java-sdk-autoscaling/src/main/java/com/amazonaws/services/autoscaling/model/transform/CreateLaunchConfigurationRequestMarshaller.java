@@ -113,56 +113,58 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             int blockDeviceMappingsListIndex = 1;
 
             for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+                if (blockDeviceMappingsListValue != null) {
 
-                if (blockDeviceMappingsListValue.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
-                }
+                    if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName",
+                                StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
+                    }
 
-                if (blockDeviceMappingsListValue.getDeviceName() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
-                }
+                    if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName",
+                                StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
+                    }
 
-                {
-                    Ebs ebs = blockDeviceMappingsListValue.getEbs();
-                    if (ebs != null) {
+                    {
+                        Ebs ebs = blockDeviceMappingsListValue.getEbs();
+                        if (ebs != null) {
 
-                        if (ebs.getSnapshotId() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
-                                    StringUtils.fromString(ebs.getSnapshotId()));
-                        }
+                            if (ebs.getSnapshotId() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
+                                        StringUtils.fromString(ebs.getSnapshotId()));
+                            }
 
-                        if (ebs.getVolumeSize() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
-                                    StringUtils.fromInteger(ebs.getVolumeSize()));
-                        }
+                            if (ebs.getVolumeSize() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
+                                        StringUtils.fromInteger(ebs.getVolumeSize()));
+                            }
 
-                        if (ebs.getVolumeType() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
-                                    StringUtils.fromString(ebs.getVolumeType()));
-                        }
+                            if (ebs.getVolumeType() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
+                                        StringUtils.fromString(ebs.getVolumeType()));
+                            }
 
-                        if (ebs.getDeleteOnTermination() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                    StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                        }
+                            if (ebs.getDeleteOnTermination() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                        StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                            }
 
-                        if (ebs.getIops() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops",
-                                    StringUtils.fromInteger(ebs.getIops()));
-                        }
+                            if (ebs.getIops() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops",
+                                        StringUtils.fromInteger(ebs.getIops()));
+                            }
 
-                        if (ebs.getEncrypted() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                    StringUtils.fromBoolean(ebs.getEncrypted()));
+                            if (ebs.getEncrypted() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                        StringUtils.fromBoolean(ebs.getEncrypted()));
+                            }
                         }
                     }
-                }
 
-                if (blockDeviceMappingsListValue.getNoDevice() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice",
-                            StringUtils.fromBoolean(blockDeviceMappingsListValue.getNoDevice()));
+                    if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice",
+                                StringUtils.fromBoolean(blockDeviceMappingsListValue.getNoDevice()));
+                    }
                 }
                 blockDeviceMappingsListIndex++;
             }

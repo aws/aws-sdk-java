@@ -36,7 +36,7 @@ public class ArrayPropertiesSummary implements Serializable, Cloneable, Structur
     private Integer size;
     /**
      * <p>
-     * The job index within the array that is associated with this job. This parameter is returned for children of array
+     * The job index within the array that's associated with this job. This parameter is returned for children of array
      * jobs.
      * </p>
      */
@@ -84,13 +84,13 @@ public class ArrayPropertiesSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The job index within the array that is associated with this job. This parameter is returned for children of array
+     * The job index within the array that's associated with this job. This parameter is returned for children of array
      * jobs.
      * </p>
      * 
      * @param index
-     *        The job index within the array that is associated with this job. This parameter is returned for children
-     *        of array jobs.
+     *        The job index within the array that's associated with this job. This parameter is returned for children of
+     *        array jobs.
      */
 
     public void setIndex(Integer index) {
@@ -99,11 +99,11 @@ public class ArrayPropertiesSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The job index within the array that is associated with this job. This parameter is returned for children of array
+     * The job index within the array that's associated with this job. This parameter is returned for children of array
      * jobs.
      * </p>
      * 
-     * @return The job index within the array that is associated with this job. This parameter is returned for children
+     * @return The job index within the array that's associated with this job. This parameter is returned for children
      *         of array jobs.
      */
 
@@ -113,13 +113,13 @@ public class ArrayPropertiesSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The job index within the array that is associated with this job. This parameter is returned for children of array
+     * The job index within the array that's associated with this job. This parameter is returned for children of array
      * jobs.
      * </p>
      * 
      * @param index
-     *        The job index within the array that is associated with this job. This parameter is returned for children
-     *        of array jobs.
+     *        The job index within the array that's associated with this job. This parameter is returned for children of
+     *        array jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

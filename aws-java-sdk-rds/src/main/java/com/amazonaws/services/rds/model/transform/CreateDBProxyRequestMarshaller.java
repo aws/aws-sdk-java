@@ -55,25 +55,27 @@ public class CreateDBProxyRequestMarshaller implements Marshaller<Request<Create
             int authListIndex = 1;
 
             for (UserAuthConfig authListValue : authList) {
+                if (authListValue != null) {
 
-                if (authListValue.getDescription() != null) {
-                    request.addParameter("Auth.member." + authListIndex + ".Description", StringUtils.fromString(authListValue.getDescription()));
-                }
+                    if (authListValue.getDescription() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".Description", StringUtils.fromString(authListValue.getDescription()));
+                    }
 
-                if (authListValue.getUserName() != null) {
-                    request.addParameter("Auth.member." + authListIndex + ".UserName", StringUtils.fromString(authListValue.getUserName()));
-                }
+                    if (authListValue.getUserName() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".UserName", StringUtils.fromString(authListValue.getUserName()));
+                    }
 
-                if (authListValue.getAuthScheme() != null) {
-                    request.addParameter("Auth.member." + authListIndex + ".AuthScheme", StringUtils.fromString(authListValue.getAuthScheme()));
-                }
+                    if (authListValue.getAuthScheme() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".AuthScheme", StringUtils.fromString(authListValue.getAuthScheme()));
+                    }
 
-                if (authListValue.getSecretArn() != null) {
-                    request.addParameter("Auth.member." + authListIndex + ".SecretArn", StringUtils.fromString(authListValue.getSecretArn()));
-                }
+                    if (authListValue.getSecretArn() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".SecretArn", StringUtils.fromString(authListValue.getSecretArn()));
+                    }
 
-                if (authListValue.getIAMAuth() != null) {
-                    request.addParameter("Auth.member." + authListIndex + ".IAMAuth", StringUtils.fromString(authListValue.getIAMAuth()));
+                    if (authListValue.getIAMAuth() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".IAMAuth", StringUtils.fromString(authListValue.getIAMAuth()));
+                    }
                 }
                 authListIndex++;
             }
@@ -128,13 +130,15 @@ public class CreateDBProxyRequestMarshaller implements Marshaller<Request<Create
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }

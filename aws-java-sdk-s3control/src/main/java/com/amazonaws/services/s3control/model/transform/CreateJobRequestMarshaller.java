@@ -170,6 +170,9 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                             xmlWriter.startElement("UserMetadata");
 
                                             for (Map.Entry<String, String> s3ObjectMetadataUserMetadataMapValue : s3ObjectMetadataUserMetadataMap.entrySet()) {
+                                                if (s3ObjectMetadataUserMetadataMapValue == null) {
+                                                    continue;
+                                                }
                                                 xmlWriter.startElement("entry");
                                                 xmlWriter.startElement("key");
                                                 xmlWriter.value(s3ObjectMetadataUserMetadataMapValue.getKey());

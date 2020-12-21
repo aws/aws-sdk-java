@@ -70,25 +70,27 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
                 int subnetMappingsListIndex = 1;
 
                 for (SubnetMapping subnetMappingsListValue : subnetMappingsList) {
+                    if (subnetMappingsListValue != null) {
 
-                    if (subnetMappingsListValue.getSubnetId() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
-                                StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
-                    }
+                        if (subnetMappingsListValue.getSubnetId() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
+                                    StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
+                        }
 
-                    if (subnetMappingsListValue.getAllocationId() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
-                                StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
-                    }
+                        if (subnetMappingsListValue.getAllocationId() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
+                                    StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
+                        }
 
-                    if (subnetMappingsListValue.getPrivateIPv4Address() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
-                                StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
-                    }
+                        if (subnetMappingsListValue.getPrivateIPv4Address() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
+                                    StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
+                        }
 
-                    if (subnetMappingsListValue.getIPv6Address() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".IPv6Address",
-                                StringUtils.fromString(subnetMappingsListValue.getIPv6Address()));
+                        if (subnetMappingsListValue.getIPv6Address() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".IPv6Address",
+                                    StringUtils.fromString(subnetMappingsListValue.getIPv6Address()));
+                        }
                     }
                     subnetMappingsListIndex++;
                 }
@@ -123,13 +125,15 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
                 int tagsListIndex = 1;
 
                 for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
 
-                    if (tagsListValue.getKey() != null) {
-                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                    }
+                        if (tagsListValue.getKey() != null) {
+                            request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                        }
 
-                    if (tagsListValue.getValue() != null) {
-                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                        if (tagsListValue.getValue() != null) {
+                            request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                        }
                     }
                     tagsListIndex++;
                 }

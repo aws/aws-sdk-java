@@ -62,9 +62,11 @@ public class AssumeRoleWithSAMLRequestMarshaller implements Marshaller<Request<A
                 int policyArnsListIndex = 1;
 
                 for (PolicyDescriptorType policyArnsListValue : policyArnsList) {
+                    if (policyArnsListValue != null) {
 
-                    if (policyArnsListValue.getArn() != null) {
-                        request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                        if (policyArnsListValue.getArn() != null) {
+                            request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                        }
                     }
                     policyArnsListIndex++;
                 }

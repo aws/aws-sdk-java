@@ -25,7 +25,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      */
     private java.util.List<VoteSummary> proposalVotes;
@@ -38,10 +38,10 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
-     * @return The listing of votes.
+     * @return The list of votes.
      */
 
     public java.util.List<VoteSummary> getProposalVotes() {
@@ -50,11 +50,11 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      */
 
     public void setProposalVotes(java.util.Collection<VoteSummary> proposalVotes) {
@@ -68,7 +68,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,10 +68,10 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
         java.util.Map<String, MessageAttributeValue> messageAttributes = publishRequest.getMessageAttributes();
         int messageAttributesListIndex = 1;
         for (Map.Entry<String, MessageAttributeValue> entry : messageAttributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("MessageAttributes.entry." + messageAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
 
                 if (entry.getValue().getDataType() != null) {
                     request.addParameter("MessageAttributes.entry." + messageAttributesListIndex + ".Value.DataType",

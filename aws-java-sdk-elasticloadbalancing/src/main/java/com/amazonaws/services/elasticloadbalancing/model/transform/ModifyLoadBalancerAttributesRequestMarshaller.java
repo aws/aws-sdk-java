@@ -115,15 +115,17 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
                     int additionalAttributesListIndex = 1;
 
                     for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {
+                        if (additionalAttributesListValue != null) {
 
-                        if (additionalAttributesListValue.getKey() != null) {
-                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
-                                    StringUtils.fromString(additionalAttributesListValue.getKey()));
-                        }
+                            if (additionalAttributesListValue.getKey() != null) {
+                                request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
+                                        StringUtils.fromString(additionalAttributesListValue.getKey()));
+                            }
 
-                        if (additionalAttributesListValue.getValue() != null) {
-                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
-                                    StringUtils.fromString(additionalAttributesListValue.getValue()));
+                            if (additionalAttributesListValue.getValue() != null) {
+                                request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
+                                        StringUtils.fromString(additionalAttributesListValue.getValue()));
+                            }
                         }
                         additionalAttributesListIndex++;
                     }

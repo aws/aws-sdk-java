@@ -102,23 +102,25 @@ public class UpdateConfigurationSetEventDestinationRequestMarshaller implements
                             int dimensionConfigurationsListIndex = 1;
 
                             for (CloudWatchDimensionConfiguration dimensionConfigurationsListValue : dimensionConfigurationsList) {
+                                if (dimensionConfigurationsListValue != null) {
 
-                                if (dimensionConfigurationsListValue.getDimensionName() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DimensionName",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
-                                }
+                                    if (dimensionConfigurationsListValue.getDimensionName() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DimensionName",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
+                                    }
 
-                                if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DimensionValueSource",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
-                                }
+                                    if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DimensionValueSource",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
+                                    }
 
-                                if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DefaultDimensionValue",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
+                                    if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DefaultDimensionValue",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
+                                    }
                                 }
                                 dimensionConfigurationsListIndex++;
                             }

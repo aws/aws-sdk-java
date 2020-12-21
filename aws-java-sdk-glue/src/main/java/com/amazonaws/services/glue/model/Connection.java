@@ -182,6 +182,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -550,6 +570,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -680,6 +720,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
      *         not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
      *         value is "false".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      *         </p>
      *         </li>
      */
@@ -818,6 +878,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -949,6 +1029,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
      *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
      *        value is "false".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      *        </p>
      *        </li>
      */
@@ -1087,6 +1187,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1218,6 +1338,26 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
      *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
      *        value is "false".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

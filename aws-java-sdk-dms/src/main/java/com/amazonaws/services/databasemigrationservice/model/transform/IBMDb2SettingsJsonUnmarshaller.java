@@ -80,6 +80,14 @@ public class IBMDb2SettingsJsonUnmarshaller implements Unmarshaller<IBMDb2Settin
                     context.nextToken();
                     iBMDb2Settings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

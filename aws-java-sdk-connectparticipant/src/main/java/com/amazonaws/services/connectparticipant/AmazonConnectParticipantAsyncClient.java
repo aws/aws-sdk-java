@@ -83,6 +83,39 @@ public class AmazonConnectParticipantAsyncClient extends AmazonConnectParticipan
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteAttachmentUploadResult> completeAttachmentUploadAsync(CompleteAttachmentUploadRequest request) {
+
+        return completeAttachmentUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteAttachmentUploadResult> completeAttachmentUploadAsync(final CompleteAttachmentUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CompleteAttachmentUploadRequest, CompleteAttachmentUploadResult> asyncHandler) {
+        final CompleteAttachmentUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CompleteAttachmentUploadResult>() {
+            @Override
+            public CompleteAttachmentUploadResult call() throws Exception {
+                CompleteAttachmentUploadResult result = null;
+
+                try {
+                    result = executeCompleteAttachmentUpload(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateParticipantConnectionResult> createParticipantConnectionAsync(CreateParticipantConnectionRequest request) {
 
         return createParticipantConnectionAsync(request, null);
@@ -133,6 +166,39 @@ public class AmazonConnectParticipantAsyncClient extends AmazonConnectParticipan
 
                 try {
                     result = executeDisconnectParticipant(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttachmentResult> getAttachmentAsync(GetAttachmentRequest request) {
+
+        return getAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttachmentResult> getAttachmentAsync(final GetAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAttachmentRequest, GetAttachmentResult> asyncHandler) {
+        final GetAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAttachmentResult>() {
+            @Override
+            public GetAttachmentResult call() throws Exception {
+                GetAttachmentResult result = null;
+
+                try {
+                    result = executeGetAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -232,6 +298,39 @@ public class AmazonConnectParticipantAsyncClient extends AmazonConnectParticipan
 
                 try {
                     result = executeSendMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAttachmentUploadResult> startAttachmentUploadAsync(StartAttachmentUploadRequest request) {
+
+        return startAttachmentUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAttachmentUploadResult> startAttachmentUploadAsync(final StartAttachmentUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAttachmentUploadRequest, StartAttachmentUploadResult> asyncHandler) {
+        final StartAttachmentUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAttachmentUploadResult>() {
+            @Override
+            public StartAttachmentUploadResult call() throws Exception {
+                StartAttachmentUploadResult result = null;
+
+                try {
+                    result = executeStartAttachmentUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

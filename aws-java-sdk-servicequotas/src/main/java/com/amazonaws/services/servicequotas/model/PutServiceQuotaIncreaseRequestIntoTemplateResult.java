@@ -27,18 +27,18 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateResult extends com.amazon
 
     /**
      * <p>
-     * A structure that contains information about one service quota increase request.
+     * Information about the quota increase request.
      * </p>
      */
     private ServiceQuotaIncreaseRequestInTemplate serviceQuotaIncreaseRequestInTemplate;
 
     /**
      * <p>
-     * A structure that contains information about one service quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param serviceQuotaIncreaseRequestInTemplate
-     *        A structure that contains information about one service quota increase request.
+     *        Information about the quota increase request.
      */
 
     public void setServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate serviceQuotaIncreaseRequestInTemplate) {
@@ -47,10 +47,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateResult extends com.amazon
 
     /**
      * <p>
-     * A structure that contains information about one service quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
-     * @return A structure that contains information about one service quota increase request.
+     * @return Information about the quota increase request.
      */
 
     public ServiceQuotaIncreaseRequestInTemplate getServiceQuotaIncreaseRequestInTemplate() {
@@ -59,11 +59,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateResult extends com.amazon
 
     /**
      * <p>
-     * A structure that contains information about one service quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param serviceQuotaIncreaseRequestInTemplate
-     *        A structure that contains information about one service quota increase request.
+     *        Information about the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

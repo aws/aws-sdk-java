@@ -96,6 +96,14 @@ public class MongoDbSettingsJsonUnmarshaller implements Unmarshaller<MongoDbSett
                     context.nextToken();
                     mongoDbSettings.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    mongoDbSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    context.nextToken();
+                    mongoDbSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

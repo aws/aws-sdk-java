@@ -28,30 +28,30 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * Specifies the quota you want.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * Specifies the AWS Region for the quota that you want to use.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -60,10 +60,10 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -72,11 +72,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the quota you want.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the quota you want.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -100,10 +100,10 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the quota you want.
+     * The quota identifier.
      * </p>
      * 
-     * @return Specifies the quota you want.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -112,11 +112,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the quota you want.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the quota you want.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +127,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota that you want to use.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        Specifies the AWS Region for the quota that you want to use.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -140,10 +140,10 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota that you want to use.
+     * The AWS Region.
      * </p>
      * 
-     * @return Specifies the AWS Region for the quota that you want to use.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -152,11 +152,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota that you want to use.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        Specifies the AWS Region for the quota that you want to use.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

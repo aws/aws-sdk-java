@@ -55,23 +55,25 @@ public class DeleteAttributesRequestMarshaller implements Marshaller<Request<Del
             int attributesListIndex = 1;
 
             for (Attribute attributesListValue : attributesList) {
+                if (attributesListValue != null) {
 
-                if (attributesListValue.getName() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
-                }
+                    if (attributesListValue.getName() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
+                    }
 
-                if (attributesListValue.getAlternateNameEncoding() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".AlternateNameEncoding",
-                            StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
-                }
+                    if (attributesListValue.getAlternateNameEncoding() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".AlternateNameEncoding",
+                                StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
+                    }
 
-                if (attributesListValue.getValue() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                }
+                    if (attributesListValue.getValue() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                    }
 
-                if (attributesListValue.getAlternateValueEncoding() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".AlternateValueEncoding",
-                            StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
+                    if (attributesListValue.getAlternateValueEncoding() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".AlternateValueEncoding",
+                                StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
+                    }
                 }
                 attributesListIndex++;
             }

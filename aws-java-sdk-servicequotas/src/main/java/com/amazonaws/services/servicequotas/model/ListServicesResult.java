@@ -25,36 +25,27 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If present in the response, this value indicates there's more output available that what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Returns a list of services.
+     * Information about the services.
      * </p>
      */
     private java.util.List<ServiceInfo> services;
 
     /**
      * <p>
-     * If present in the response, this value indicates there's more output available that what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
      * @param nextToken
-     *        If present in the response, this value indicates there's more output available that what's included in the
-     *        current response. This can occur even when the response includes no values at all, such as when you ask
-     *        for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in
-     *        a subsequent call to the operation to continue processing and get the next part of the output. You should
-     *        repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -63,19 +54,12 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If present in the response, this value indicates there's more output available that what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
-     * @return If present in the response, this value indicates there's more output available that what's included in
-     *         the current response. This can occur even when the response includes no values at all, such as when you
-     *         ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request
-     *         parameter in a subsequent call to the operation to continue processing and get the next part of the
-     *         output. You should repeat this until the <code>NextToken</code> response element comes back empty (as
-     *         <code>null</code>).
+     * @return The token to use to retrieve the next page of results. This value is null when there are no more results
+     *         to return.
      */
 
     public String getNextToken() {
@@ -84,19 +68,13 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If present in the response, this value indicates there's more output available that what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
      * @param nextToken
-     *        If present in the response, this value indicates there's more output available that what's included in the
-     *        current response. This can occur even when the response includes no values at all, such as when you ask
-     *        for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in
-     *        a subsequent call to the operation to continue processing and get the next part of the output. You should
-     *        repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,10 +85,10 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns a list of services.
+     * Information about the services.
      * </p>
      * 
-     * @return Returns a list of services.
+     * @return Information about the services.
      */
 
     public java.util.List<ServiceInfo> getServices() {
@@ -119,11 +97,11 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns a list of services.
+     * Information about the services.
      * </p>
      * 
      * @param services
-     *        Returns a list of services.
+     *        Information about the services.
      */
 
     public void setServices(java.util.Collection<ServiceInfo> services) {
@@ -137,7 +115,7 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns a list of services.
+     * Information about the services.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -146,7 +124,7 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param services
-     *        Returns a list of services.
+     *        Information about the services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +140,11 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns a list of services.
+     * Information about the services.
      * </p>
      * 
      * @param services
-     *        Returns a list of services.
+     *        Information about the services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

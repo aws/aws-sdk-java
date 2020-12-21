@@ -27,8 +27,8 @@ import com.amazonaws.services.outposts.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Outposts is a fully-managed service that extends AWS infrastructure, APIs, and tools to customer premises. By
- * providing local access to AWS-managed infrastructure, AWS Outposts enables customers to build and run applications on
+ * AWS Outposts is a fully managed service that extends AWS infrastructure, APIs, and tools to customer premises. By
+ * providing local access to AWS managed infrastructure, AWS Outposts enables customers to build and run applications on
  * premises using the same programming interfaces as in AWS Regions, while using local compute and storage resources for
  * lower latency and local data processing needs.
  * </p>
@@ -188,6 +188,63 @@ public interface AWSOutposts {
      *      Documentation</a>
      */
     ListSitesResult listSites(ListSitesRequest listSitesRequest);
+
+    /**
+     * <p>
+     * Lists the tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @sample AWSOutposts.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @sample AWSOutposts.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @sample AWSOutposts.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

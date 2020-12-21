@@ -26,24 +26,21 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is
-     * <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     * organization.
+     * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
+     * automatically applied to new accounts in your organization.
      * </p>
      */
     private String serviceQuotaTemplateAssociationStatus;
 
     /**
      * <p>
-     * Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is
-     * <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     * organization.
+     * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
+     * automatically applied to new accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
-     *        Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template
-     *        is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     *        organization.
+     *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
+     *        template are automatically applied to new accounts in your organization.
      * @see ServiceQuotaTemplateAssociationStatus
      */
 
@@ -53,14 +50,12 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is
-     * <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     * organization.
+     * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
+     * automatically applied to new accounts in your organization.
      * </p>
      * 
-     * @return Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template
-     *         is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     *         organization.
+     * @return The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
+     *         template are automatically applied to new accounts in your organization.
      * @see ServiceQuotaTemplateAssociationStatus
      */
 
@@ -70,15 +65,13 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is
-     * <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     * organization.
+     * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
+     * automatically applied to new accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
-     *        Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template
-     *        is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     *        organization.
+     *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
+     *        template are automatically applied to new accounts in your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceQuotaTemplateAssociationStatus
      */
@@ -90,15 +83,13 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is
-     * <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     * organization.
+     * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
+     * automatically applied to new accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
-     *        Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template
-     *        is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your
-     *        organization.
+     *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
+     *        template are automatically applied to new accounts in your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceQuotaTemplateAssociationStatus
      */

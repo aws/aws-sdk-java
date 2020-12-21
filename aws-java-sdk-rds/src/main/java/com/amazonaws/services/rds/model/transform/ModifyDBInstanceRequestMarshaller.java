@@ -248,15 +248,17 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             int processorFeaturesListIndex = 1;
 
             for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+                if (processorFeaturesListValue != null) {
 
-                if (processorFeaturesListValue.getName() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
-                            StringUtils.fromString(processorFeaturesListValue.getName()));
-                }
+                    if (processorFeaturesListValue.getName() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                                StringUtils.fromString(processorFeaturesListValue.getName()));
+                    }
 
-                if (processorFeaturesListValue.getValue() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
-                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    if (processorFeaturesListValue.getValue() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                                StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    }
                 }
                 processorFeaturesListIndex++;
             }

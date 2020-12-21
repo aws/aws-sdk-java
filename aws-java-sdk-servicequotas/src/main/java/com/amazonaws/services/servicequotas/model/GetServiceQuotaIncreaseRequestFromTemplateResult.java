@@ -27,18 +27,18 @@ public class GetServiceQuotaIncreaseRequestFromTemplateResult extends com.amazon
 
     /**
      * <p>
-     * This object contains the details about the quota increase request.
+     * Information about the quota increase request.
      * </p>
      */
     private ServiceQuotaIncreaseRequestInTemplate serviceQuotaIncreaseRequestInTemplate;
 
     /**
      * <p>
-     * This object contains the details about the quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param serviceQuotaIncreaseRequestInTemplate
-     *        This object contains the details about the quota increase request.
+     *        Information about the quota increase request.
      */
 
     public void setServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate serviceQuotaIncreaseRequestInTemplate) {
@@ -47,10 +47,10 @@ public class GetServiceQuotaIncreaseRequestFromTemplateResult extends com.amazon
 
     /**
      * <p>
-     * This object contains the details about the quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
-     * @return This object contains the details about the quota increase request.
+     * @return Information about the quota increase request.
      */
 
     public ServiceQuotaIncreaseRequestInTemplate getServiceQuotaIncreaseRequestInTemplate() {
@@ -59,11 +59,11 @@ public class GetServiceQuotaIncreaseRequestFromTemplateResult extends com.amazon
 
     /**
      * <p>
-     * This object contains the details about the quota increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param serviceQuotaIncreaseRequestInTemplate
-     *        This object contains the details about the quota increase request.
+     *        Information about the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

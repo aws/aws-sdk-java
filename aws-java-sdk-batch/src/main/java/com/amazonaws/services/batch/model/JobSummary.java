@@ -82,7 +82,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private Long stoppedAt;
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      */
     private ContainerSummary container;
@@ -472,11 +472,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      */
 
     public void setContainer(ContainerSummary container) {
@@ -485,10 +485,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
-     * @return An object representing the details of the container that is associated with the job.
+     * @return An object representing the details of the container that's associated with the job.
      */
 
     public ContainerSummary getContainer() {
@@ -497,11 +497,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

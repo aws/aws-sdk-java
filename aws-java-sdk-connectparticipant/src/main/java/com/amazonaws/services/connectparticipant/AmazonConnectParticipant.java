@@ -50,11 +50,37 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
+     * Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in
+     * StartAttachmentUpload API.
+     * </p>
+     * 
+     * @param completeAttachmentUploadRequest
+     * @return Result of the CompleteAttachmentUpload operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ServiceQuotaExceededException
+     *         The number of attachments per contact exceeds the quota.
+     * @throws ConflictException
+     *         An attachment with that identifier is already being uploaded.
+     * @sample AmazonConnectParticipant.CompleteAttachmentUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CompleteAttachmentUploadResult completeAttachmentUpload(CompleteAttachmentUploadRequest completeAttachmentUploadRequest);
+
+    /**
+     * <p>
      * Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of
      * ConnectionToken.
      * </p>
      * <p>
-     * The participant token is valid for the lifetime of the participant – until the they are part of a contact.
+     * The participant token is valid for the lifetime of the participant – until they are part of a contact.
      * </p>
      * <p>
      * The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s. Clients must manually
@@ -70,6 +96,13 @@ public interface AmazonConnectParticipant {
      * Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter, clients need to call this API
      * again to obtain a new websocket URL and perform the same steps as before.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
+     * </note>
      * 
      * @param createParticipantConnectionRequest
      * @return Result of the CreateParticipantConnection operation returned by the service.
@@ -91,6 +124,11 @@ public interface AmazonConnectParticipant {
      * <p>
      * Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
      * 
      * @param disconnectParticipantRequest
      * @return Result of the DisconnectParticipant operation returned by the service.
@@ -110,8 +148,35 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
-     * Retrieves a transcript of the session. Note that ConnectionToken is used for invoking this API instead of
-     * ParticipantToken.
+     * Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active
+     * contacts.
+     * </p>
+     * 
+     * @param getAttachmentRequest
+     * @return Result of the GetAttachment operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @sample AmazonConnectParticipant.GetAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAttachmentResult getAttachment(GetAttachmentRequest getAttachmentRequest);
+
+    /**
+     * <p>
+     * Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used
+     * for invoking this API instead of ParticipantToken.
+     * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
      * </p>
      * 
      * @param getTranscriptRequest
@@ -134,6 +199,11 @@ public interface AmazonConnectParticipant {
      * <p>
      * Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
      * 
      * @param sendEventRequest
      * @return Result of the SendEvent operation returned by the service.
@@ -155,6 +225,13 @@ public interface AmazonConnectParticipant {
      * <p>
      * Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
+     * </note>
      * 
      * @param sendMessageRequest
      * @return Result of the SendMessage operation returned by the service.
@@ -171,6 +248,29 @@ public interface AmazonConnectParticipant {
      *      API Documentation</a>
      */
     SendMessageResult sendMessage(SendMessageRequest sendMessageRequest);
+
+    /**
+     * <p>
+     * Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.
+     * </p>
+     * 
+     * @param startAttachmentUploadRequest
+     * @return Result of the StartAttachmentUpload operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ServiceQuotaExceededException
+     *         The number of attachments per contact exceeds the quota.
+     * @sample AmazonConnectParticipant.StartAttachmentUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartAttachmentUploadResult startAttachmentUpload(StartAttachmentUploadRequest startAttachmentUploadRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -51,34 +51,38 @@ public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<B
             int itemsListIndex = 1;
 
             for (ReplaceableItem itemsListValue : itemsList) {
+                if (itemsListValue != null) {
 
-                if (itemsListValue.getName() != null) {
-                    request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
-                }
+                    if (itemsListValue.getName() != null) {
+                        request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
+                    }
 
-                if (!itemsListValue.getAttributes().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue.getAttributes()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue
-                            .getAttributes();
-                    int attributesListIndex = 1;
+                    if (!itemsListValue.getAttributes().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue.getAttributes()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue
+                                .getAttributes();
+                        int attributesListIndex = 1;
 
-                    for (ReplaceableAttribute attributesListValue : attributesList) {
+                        for (ReplaceableAttribute attributesListValue : attributesList) {
+                            if (attributesListValue != null) {
 
-                        if (attributesListValue.getName() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name",
-                                    StringUtils.fromString(attributesListValue.getName()));
+                                if (attributesListValue.getName() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name",
+                                            StringUtils.fromString(attributesListValue.getName()));
+                                }
+
+                                if (attributesListValue.getValue() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value",
+                                            StringUtils.fromString(attributesListValue.getValue()));
+                                }
+
+                                if (attributesListValue.getReplace() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Replace",
+                                            StringUtils.fromBoolean(attributesListValue.getReplace()));
+                                }
+                            }
+                            attributesListIndex++;
                         }
-
-                        if (attributesListValue.getValue() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value",
-                                    StringUtils.fromString(attributesListValue.getValue()));
-                        }
-
-                        if (attributesListValue.getReplace() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Replace",
-                                    StringUtils.fromBoolean(attributesListValue.getReplace()));
-                        }
-                        attributesListIndex++;
                     }
                 }
                 itemsListIndex++;

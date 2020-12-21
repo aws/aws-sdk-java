@@ -126,6 +126,33 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String slotName;
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     */
+    private String secretsManagerAccessRoleArn;
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL
+     * endpoint connection details.
+     * </p>
+     */
+    private String secretsManagerSecretId;
 
     /**
      * <p>
@@ -793,6 +820,176 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param secretsManagerAccessRoleArn
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *        the PostgreSQL endpoint.</p> <note>
+     *        <p>
+     *        You can specify one of two sets of values for these permissions. You can specify the values for this
+     *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *        Service User Guide</i>.
+     *        </p>
+     */
+
+    public void setSecretsManagerAccessRoleArn(String secretsManagerAccessRoleArn) {
+        this.secretsManagerAccessRoleArn = secretsManagerAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *         the PostgreSQL endpoint.</p> <note>
+     *         <p>
+     *         You can specify one of two sets of values for these permissions. You can specify the values for this
+     *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *         Service User Guide</i>.
+     *         </p>
+     */
+
+    public String getSecretsManagerAccessRoleArn() {
+        return this.secretsManagerAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param secretsManagerAccessRoleArn
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *        the PostgreSQL endpoint.</p> <note>
+     *        <p>
+     *        You can specify one of two sets of values for these permissions. You can specify the values for this
+     *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *        Service User Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withSecretsManagerAccessRoleArn(String secretsManagerAccessRoleArn) {
+        setSecretsManagerAccessRoleArn(secretsManagerAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL
+     * endpoint connection details.
+     * </p>
+     * 
+     * @param secretsManagerSecretId
+     *        The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *        PostgreSQL endpoint connection details.
+     */
+
+    public void setSecretsManagerSecretId(String secretsManagerSecretId) {
+        this.secretsManagerSecretId = secretsManagerSecretId;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL
+     * endpoint connection details.
+     * </p>
+     * 
+     * @return The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *         PostgreSQL endpoint connection details.
+     */
+
+    public String getSecretsManagerSecretId() {
+        return this.secretsManagerSecretId;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL
+     * endpoint connection details.
+     * </p>
+     * 
+     * @param secretsManagerSecretId
+     *        The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *        PostgreSQL endpoint connection details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withSecretsManagerSecretId(String secretsManagerSecretId) {
+        setSecretsManagerSecretId(secretsManagerSecretId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -827,7 +1024,11 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getSlotName() != null)
-            sb.append("SlotName: ").append(getSlotName());
+            sb.append("SlotName: ").append(getSlotName()).append(",");
+        if (getSecretsManagerAccessRoleArn() != null)
+            sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
+        if (getSecretsManagerSecretId() != null)
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
         sb.append("}");
         return sb.toString();
     }
@@ -890,6 +1091,14 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSlotName() != null && other.getSlotName().equals(this.getSlotName()) == false)
             return false;
+        if (other.getSecretsManagerAccessRoleArn() == null ^ this.getSecretsManagerAccessRoleArn() == null)
+            return false;
+        if (other.getSecretsManagerAccessRoleArn() != null && other.getSecretsManagerAccessRoleArn().equals(this.getSecretsManagerAccessRoleArn()) == false)
+            return false;
+        if (other.getSecretsManagerSecretId() == null ^ this.getSecretsManagerSecretId() == null)
+            return false;
+        if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
+            return false;
         return true;
     }
 
@@ -910,6 +1119,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSlotName() == null) ? 0 : getSlotName().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         return hashCode;
     }
 

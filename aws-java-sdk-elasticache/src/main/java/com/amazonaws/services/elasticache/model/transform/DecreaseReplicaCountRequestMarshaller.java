@@ -55,46 +55,49 @@ public class DecreaseReplicaCountRequestMarshaller implements Marshaller<Request
             int replicaConfigurationListIndex = 1;
 
             for (ConfigureShard replicaConfigurationListValue : replicaConfigurationList) {
+                if (replicaConfigurationListValue != null) {
 
-                if (replicaConfigurationListValue.getNodeGroupId() != null) {
-                    request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NodeGroupId",
-                            StringUtils.fromString(replicaConfigurationListValue.getNodeGroupId()));
-                }
-
-                if (replicaConfigurationListValue.getNewReplicaCount() != null) {
-                    request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NewReplicaCount",
-                            StringUtils.fromInteger(replicaConfigurationListValue.getNewReplicaCount()));
-                }
-
-                if (!replicaConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredAvailabilityZones()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
-                            .getPreferredAvailabilityZones();
-                    int preferredAvailabilityZonesListIndex = 1;
-
-                    for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
-                        if (preferredAvailabilityZonesListValue != null) {
-                            request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
-                                    + ".PreferredAvailabilityZones.PreferredAvailabilityZone." + preferredAvailabilityZonesListIndex,
-                                    StringUtils.fromString(preferredAvailabilityZonesListValue));
-                        }
-                        preferredAvailabilityZonesListIndex++;
+                    if (replicaConfigurationListValue.getNodeGroupId() != null) {
+                        request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NodeGroupId",
+                                StringUtils.fromString(replicaConfigurationListValue.getNodeGroupId()));
                     }
-                }
 
-                if (!replicaConfigurationListValue.getPreferredOutpostArns().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredOutpostArns()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
-                            .getPreferredOutpostArns();
-                    int preferredOutpostArnsListIndex = 1;
+                    if (replicaConfigurationListValue.getNewReplicaCount() != null) {
+                        request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NewReplicaCount",
+                                StringUtils.fromInteger(replicaConfigurationListValue.getNewReplicaCount()));
+                    }
 
-                    for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
-                        if (preferredOutpostArnsListValue != null) {
-                            request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
-                                    + ".PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
-                                    StringUtils.fromString(preferredOutpostArnsListValue));
+                    if (!replicaConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredAvailabilityZones())
+                                    .isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
+                                .getPreferredAvailabilityZones();
+                        int preferredAvailabilityZonesListIndex = 1;
+
+                        for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
+                            if (preferredAvailabilityZonesListValue != null) {
+                                request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
+                                        + ".PreferredAvailabilityZones.PreferredAvailabilityZone." + preferredAvailabilityZonesListIndex,
+                                        StringUtils.fromString(preferredAvailabilityZonesListValue));
+                            }
+                            preferredAvailabilityZonesListIndex++;
                         }
-                        preferredOutpostArnsListIndex++;
+                    }
+
+                    if (!replicaConfigurationListValue.getPreferredOutpostArns().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredOutpostArns()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
+                                .getPreferredOutpostArns();
+                        int preferredOutpostArnsListIndex = 1;
+
+                        for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
+                            if (preferredOutpostArnsListValue != null) {
+                                request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
+                                        + ".PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
+                                        StringUtils.fromString(preferredOutpostArnsListValue));
+                            }
+                            preferredOutpostArnsListIndex++;
+                        }
                     }
                 }
                 replicaConfigurationListIndex++;

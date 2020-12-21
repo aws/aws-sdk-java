@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of a container that is part of a job.
+ * An object representing the details of a container that's part of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail" target="_top">AWS API
@@ -63,7 +63,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private Integer memory;
     /**
      * <p>
-     * The command that is passed to the container.
+     * The command that's passed to the container.
      * </p>
      */
     private java.util.List<String> command;
@@ -172,7 +172,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String containerInstanceArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container
      * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      */
@@ -235,8 +235,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
-     * container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
+     * ECS container agent.
      * </p>
      * </note>
      * <p>
@@ -488,10 +488,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The command that is passed to the container.
+     * The command that's passed to the container.
      * </p>
      * 
-     * @return The command that is passed to the container.
+     * @return The command that's passed to the container.
      */
 
     public java.util.List<String> getCommand() {
@@ -500,11 +500,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The command that is passed to the container.
+     * The command that's passed to the container.
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container.
+     *        The command that's passed to the container.
      */
 
     public void setCommand(java.util.Collection<String> command) {
@@ -518,7 +518,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The command that is passed to the container.
+     * The command that's passed to the container.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -527,7 +527,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container.
+     *        The command that's passed to the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,11 +543,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The command that is passed to the container.
+     * The command that's passed to the container.
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container.
+     *        The command that's passed to the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1402,12 +1402,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container
      * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each
      *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      */
 
@@ -1417,11 +1417,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container
      * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each
      *         container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      */
 
@@ -1431,12 +1431,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container
      * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each
      *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1770,8 +1770,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
-     * container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
+     * ECS container agent.
      * </p>
      * </note>
      * <p>
@@ -1807,7 +1807,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <note>
      *        <p>
      *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
      *        </note>
@@ -1850,8 +1850,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
-     * container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
+     * ECS container agent.
      * </p>
      * </note>
      * <p>
@@ -1886,7 +1886,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         <note>
      *         <p>
      *         AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *         <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *         <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *         Amazon ECS container agent.
      *         </p>
      *         </note>
@@ -1929,8 +1929,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
-     * container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
+     * ECS container agent.
      * </p>
      * </note>
      * <p>
@@ -1966,7 +1966,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <note>
      *        <p>
      *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
      *        </note>

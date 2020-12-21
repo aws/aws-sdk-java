@@ -125,13 +125,15 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
             int tagsListIndex = 1;
 
             for (MessageTag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getName() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Name", StringUtils.fromString(tagsListValue.getName()));
-                }
+                    if (tagsListValue.getName() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Name", StringUtils.fromString(tagsListValue.getName()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }

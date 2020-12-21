@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details
- * of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.
+ * Information about a service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceInfo" target="_top">AWS API
@@ -31,24 +30,24 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      */
     private String serviceName;
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -57,10 +56,10 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -69,11 +68,11 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +83,11 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -97,10 +96,10 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
-     * @return The name of the AWS service specified in the increase request.
+     * @return The service name.
      */
 
     public String getServiceName() {
@@ -109,11 +108,11 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

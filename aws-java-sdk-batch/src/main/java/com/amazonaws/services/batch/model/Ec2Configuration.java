@@ -62,7 +62,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
      * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
@@ -106,7 +106,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
      * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
@@ -139,7 +139,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
+     *        Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
      *        end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
@@ -178,7 +178,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
      * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
@@ -212,7 +212,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *         <dd>
      *         <p>
      *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *         Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
+     *         Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
      *         end-of-life of standard support. For more information, see <a
      *         href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *         </p>
@@ -251,7 +251,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
      * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
@@ -284,7 +284,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
+     *        Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
      *        end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>

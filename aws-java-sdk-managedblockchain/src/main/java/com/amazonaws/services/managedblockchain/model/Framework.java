@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Framework {
 
-    HYPERLEDGER_FABRIC("HYPERLEDGER_FABRIC");
+    HYPERLEDGER_FABRIC("HYPERLEDGER_FABRIC"),
+    ETHEREUM("ETHEREUM");
 
     private String value;
 

@@ -29,6 +29,10 @@ public class ExecuteStatementResultMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> FIRSTPAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirstPage").build();
+    private static final MarshallingInfo<StructuredPojo> TIMINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimingInformation").build();
+    private static final MarshallingInfo<StructuredPojo> CONSUMEDIOS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumedIOs").build();
 
     private static final ExecuteStatementResultMarshaller instance = new ExecuteStatementResultMarshaller();
 
@@ -47,6 +51,8 @@ public class ExecuteStatementResultMarshaller {
 
         try {
             protocolMarshaller.marshall(executeStatementResult.getFirstPage(), FIRSTPAGE_BINDING);
+            protocolMarshaller.marshall(executeStatementResult.getTimingInformation(), TIMINGINFORMATION_BINDING);
+            protocolMarshaller.marshall(executeStatementResult.getConsumedIOs(), CONSUMEDIOS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

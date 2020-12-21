@@ -52,6 +52,14 @@ public class FetchPageResultJsonUnmarshaller implements Unmarshaller<FetchPageRe
                     context.nextToken();
                     fetchPageResult.setPage(PageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimingInformation", targetDepth)) {
+                    context.nextToken();
+                    fetchPageResult.setTimingInformation(TimingInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConsumedIOs", targetDepth)) {
+                    context.nextToken();
+                    fetchPageResult.setConsumedIOs(IOUsageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

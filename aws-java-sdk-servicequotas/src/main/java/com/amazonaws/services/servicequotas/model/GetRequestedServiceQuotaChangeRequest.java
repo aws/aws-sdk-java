@@ -27,18 +27,18 @@ public class GetRequestedServiceQuotaChangeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Identifies the quota increase request.
+     * The ID of the quota increase request.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * Identifies the quota increase request.
+     * The ID of the quota increase request.
      * </p>
      * 
      * @param requestId
-     *        Identifies the quota increase request.
+     *        The ID of the quota increase request.
      */
 
     public void setRequestId(String requestId) {
@@ -47,10 +47,10 @@ public class GetRequestedServiceQuotaChangeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Identifies the quota increase request.
+     * The ID of the quota increase request.
      * </p>
      * 
-     * @return Identifies the quota increase request.
+     * @return The ID of the quota increase request.
      */
 
     public String getRequestId() {
@@ -59,11 +59,11 @@ public class GetRequestedServiceQuotaChangeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Identifies the quota increase request.
+     * The ID of the quota increase request.
      * </p>
      * 
      * @param requestId
-     *        Identifies the quota increase request.
+     *        The ID of the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

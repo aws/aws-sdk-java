@@ -45,25 +45,28 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getResourceId() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagsListValue.getResourceId()));
-                }
+                    if (tagsListValue.getResourceId() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagsListValue.getResourceId()));
+                    }
 
-                if (tagsListValue.getResourceType() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagsListValue.getResourceType()));
-                }
+                    if (tagsListValue.getResourceType() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagsListValue.getResourceType()));
+                    }
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
-                }
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
 
-                if (tagsListValue.getPropagateAtLaunch() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.fromBoolean(tagsListValue.getPropagateAtLaunch()));
+                    if (tagsListValue.getPropagateAtLaunch() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch",
+                                StringUtils.fromBoolean(tagsListValue.getPropagateAtLaunch()));
+                    }
                 }
                 tagsListIndex++;
             }

@@ -45,6 +45,10 @@ public class DocDbSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocsToInvestigate").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final DocDbSettingsMarshaller instance = new DocDbSettingsMarshaller();
 
@@ -71,6 +75,8 @@ public class DocDbSettingsMarshaller {
             protocolMarshaller.marshall(docDbSettings.getExtractDocId(), EXTRACTDOCID_BINDING);
             protocolMarshaller.marshall(docDbSettings.getDocsToInvestigate(), DOCSTOINVESTIGATE_BINDING);
             protocolMarshaller.marshall(docDbSettings.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(docDbSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(docDbSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

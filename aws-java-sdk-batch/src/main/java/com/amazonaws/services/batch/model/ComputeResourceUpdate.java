@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the attributes of a compute environment that can be updated.
+ * An object representing the attributes of a compute environment that can be updated. For more information, see <a
+ * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
+ * <i>AWS Batch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate" target="_top">AWS API
@@ -34,7 +36,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      */
@@ -43,6 +45,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
+     * <note>
+     * <p>
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
+     * Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
+     * will never go above <code>maxvCpus</code> by more than a single instance (e.g., no more than a single instance
+     * from among those specified in your compute environment).
+     * </p>
+     * </note>
      */
     private Integer maxvCpus;
     /**
@@ -70,7 +80,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
      * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
-     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
      * made.
      * </p>
      */
@@ -82,14 +92,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param minvCpus
      *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *        <p>
-     *        This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      *        </p>
      */
 
@@ -103,13 +113,13 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *         <p>
-     *         This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *         This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      *         </p>
      */
 
@@ -123,14 +133,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param minvCpus
      *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *        <p>
-     *        This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,9 +154,23 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
+     * <note>
+     * <p>
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
+     * Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
+     * will never go above <code>maxvCpus</code> by more than a single instance (e.g., no more than a single instance
+     * from among those specified in your compute environment).
+     * </p>
+     * </note>
      * 
      * @param maxvCpus
-     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
+     *        <p>
+     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
+     *        strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In
+     *        this event, AWS Batch will never go above <code>maxvCpus</code> by more than a single instance (e.g., no
+     *        more than a single instance from among those specified in your compute environment).
+     *        </p>
      */
 
     public void setMaxvCpus(Integer maxvCpus) {
@@ -157,8 +181,22 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
+     * <note>
+     * <p>
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
+     * Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
+     * will never go above <code>maxvCpus</code> by more than a single instance (e.g., no more than a single instance
+     * from among those specified in your compute environment).
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.
+     * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
+     *         <p>
+     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
+     *         strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In
+     *         this event, AWS Batch will never go above <code>maxvCpus</code> by more than a single instance (e.g., no
+     *         more than a single instance from among those specified in your compute environment).
+     *         </p>
      */
 
     public Integer getMaxvCpus() {
@@ -169,9 +207,23 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
+     * <note>
+     * <p>
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
+     * Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
+     * will never go above <code>maxvCpus</code> by more than a single instance (e.g., no more than a single instance
+     * from among those specified in your compute environment).
+     * </p>
+     * </note>
      * 
      * @param maxvCpus
-     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
+     *        <p>
+     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
+     *        strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your capacity requirements. In
+     *        this event, AWS Batch will never go above <code>maxvCpus</code> by more than a single instance (e.g., no
+     *        more than a single instance from among those specified in your compute environment).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,14 +402,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
      * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
-     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
      * made.
      * </p>
      * 
      * @return The Amazon EC2 security groups associated with instances launched in the compute environment. This
      *         parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
      *         can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
-     *         wasn't specified and no changeis made.
+     *         wasn't specified and no change is made.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -368,7 +420,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
      * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
-     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
      * made.
      * </p>
      * 
@@ -376,7 +428,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
      *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
      *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
-     *        wasn't specified and no changeis made.
+     *        wasn't specified and no change is made.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -392,7 +444,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
      * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
-     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
      * made.
      * </p>
      * <p>
@@ -405,7 +457,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
      *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
      *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
-     *        wasn't specified and no changeis made.
+     *        wasn't specified and no change is made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,7 +475,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
      * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
-     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
      * made.
      * </p>
      * 
@@ -431,7 +483,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
      *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
      *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
-     *        wasn't specified and no changeis made.
+     *        wasn't specified and no change is made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

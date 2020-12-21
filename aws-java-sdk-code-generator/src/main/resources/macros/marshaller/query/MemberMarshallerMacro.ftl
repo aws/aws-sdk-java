@@ -81,13 +81,13 @@
                 int ${listIndex} = 1;
 
                 for (${listModel.memberType} ${loopVariable} : ${listVariable}) {
-                    <#if listModel.simple>
                     if (${loopVariable} != null) {
+                    <#if listModel.simple>
                         request.addParameter("${parameterPath}." + ${listIndex}, StringUtils.from${listModel.simpleType}(${loopVariable}));
-                    }
                     <#else>
                     <@MemberMarshallerMacro.content customConfig listModel.memberType loopVariable shapes parameterPath + ".\" + " + listIndex + " + \""/>
                     </#if>
+                    }
                     ${listIndex}++;
                 }
     <#if !customConfig.useAutoConstructList>
@@ -114,15 +114,15 @@
     </#if>
             int ${listIndex} = 1;
             for (Map.Entry<${mapModel.keyType},${mapModel.valueType}> entry : ${variable.variableName}.entrySet()) {
-                if (entry.getKey() != null) {
+                if (entry != null && entry.getKey() != null) {
                     request.addParameter("${parameterPath}." + ${listIndex} + ".${mapModel.keyLocationName}", StringUtils.from${mapModel.keyType}(entry.getKey()));
                 }
                 <#if mapModel.valueSimple>
-                if (entry.getValue() != null) {
+                if (entry != null && entry.getValue() != null) {
                     request.addParameter("${parameterPath}." + ${listIndex} + ".${mapModel.valueLocationName}", StringUtils.from${mapModel.valueModel.variable.simpleType}(entry.getValue()));
                 }
                 <#else>
-                if (entry.getValue() != null) {
+                if (entry != null && entry.getValue() != null) {
                     <#local path = parameterPath + ".\" + " + listIndex + " + \"" + ".${mapModel.valueLocationName}"/>
                     <@MemberMarshallerMacro.content customConfig mapModel.valueType "entry.getValue()" shapes path/>
                 }

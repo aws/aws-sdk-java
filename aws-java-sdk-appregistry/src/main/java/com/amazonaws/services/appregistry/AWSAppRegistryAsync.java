@@ -531,11 +531,49 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
+     * Syncs the resource with what is currently recorded in App registry. Specifically, the resource’s App registry
+     * system tags are synced with its associated application. The resource is removed if it is not associated with the
+     * application. The caller must have permissions to read and update the resource.
+     * </p>
+     * 
+     * @param syncResourceRequest
+     * @return A Java Future containing the result of the SyncResource operation returned by the service.
+     * @sample AWSAppRegistryAsync.SyncResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(SyncResourceRequest syncResourceRequest);
+
+    /**
+     * <p>
+     * Syncs the resource with what is currently recorded in App registry. Specifically, the resource’s App registry
+     * system tags are synced with its associated application. The resource is removed if it is not associated with the
+     * application. The caller must have permissions to read and update the resource.
+     * </p>
+     * 
+     * @param syncResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SyncResource operation returned by the service.
+     * @sample AWSAppRegistryAsyncHandler.SyncResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(SyncResourceRequest syncResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<SyncResourceRequest, SyncResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified resource.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
      * resource, this action updates its value.
+     * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
      * </p>
      * 
      * @param tagResourceRequest
@@ -553,6 +591,9 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      * <p>
      * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
      * resource, this action updates its value.
+     * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
      * </p>
      * 
      * @param tagResourceRequest
@@ -572,6 +613,9 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      * <p>
      * Removes tags from a resource.
      * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -584,6 +628,9 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
     /**
      * <p>
      * Removes tags from a resource.
+     * </p>
+     * <p>
+     * This operation returns an empty response if the call was successful.
      * </p>
      * 
      * @param untagResourceRequest

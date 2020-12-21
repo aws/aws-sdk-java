@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+ * Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride" target="_top">AWS API

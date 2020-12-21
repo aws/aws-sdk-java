@@ -48,10 +48,10 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
         java.util.Map<String, String> attributes = createQueueRequest.getAttributes();
         int attributesListIndex = 1;
         for (Map.Entry<String, String> entry : attributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
                 request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(entry.getValue()));
             }
             attributesListIndex++;
@@ -60,10 +60,10 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
         java.util.Map<String, String> tags = createQueueRequest.getTags();
         int tagsListIndex = 1;
         for (Map.Entry<String, String> entry : tags.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
                 request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(entry.getValue()));
             }
             tagsListIndex++;

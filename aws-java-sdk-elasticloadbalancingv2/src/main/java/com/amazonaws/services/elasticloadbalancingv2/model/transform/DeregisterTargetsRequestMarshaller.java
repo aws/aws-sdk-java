@@ -54,18 +54,20 @@ public class DeregisterTargetsRequestMarshaller implements Marshaller<Request<De
                 int targetsListIndex = 1;
 
                 for (TargetDescription targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
 
-                    if (targetsListValue.getId() != null) {
-                        request.addParameter("Targets.member." + targetsListIndex + ".Id", StringUtils.fromString(targetsListValue.getId()));
-                    }
+                        if (targetsListValue.getId() != null) {
+                            request.addParameter("Targets.member." + targetsListIndex + ".Id", StringUtils.fromString(targetsListValue.getId()));
+                        }
 
-                    if (targetsListValue.getPort() != null) {
-                        request.addParameter("Targets.member." + targetsListIndex + ".Port", StringUtils.fromInteger(targetsListValue.getPort()));
-                    }
+                        if (targetsListValue.getPort() != null) {
+                            request.addParameter("Targets.member." + targetsListIndex + ".Port", StringUtils.fromInteger(targetsListValue.getPort()));
+                        }
 
-                    if (targetsListValue.getAvailabilityZone() != null) {
-                        request.addParameter("Targets.member." + targetsListIndex + ".AvailabilityZone",
-                                StringUtils.fromString(targetsListValue.getAvailabilityZone()));
+                        if (targetsListValue.getAvailabilityZone() != null) {
+                            request.addParameter("Targets.member." + targetsListIndex + ".AvailabilityZone",
+                                    StringUtils.fromString(targetsListValue.getAvailabilityZone()));
+                        }
                     }
                     targetsListIndex++;
                 }

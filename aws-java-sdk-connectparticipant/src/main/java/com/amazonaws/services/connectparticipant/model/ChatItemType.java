@@ -20,8 +20,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ChatItemType {
 
+    TYPING("TYPING"),
+    PARTICIPANT_JOINED("PARTICIPANT_JOINED"),
+    PARTICIPANT_LEFT("PARTICIPANT_LEFT"),
+    CHAT_ENDED("CHAT_ENDED"),
+    TRANSFER_SUCCEEDED("TRANSFER_SUCCEEDED"),
+    TRANSFER_FAILED("TRANSFER_FAILED"),
     MESSAGE("MESSAGE"),
     EVENT("EVENT"),
+    ATTACHMENT("ATTACHMENT"),
     CONNECTION_ACK("CONNECTION_ACK");
 
     private String value;

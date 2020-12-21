@@ -62,7 +62,12 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      * </p>
      */
     private Integer priority;
@@ -75,7 +80,9 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
     /**
      * <p>
-     * The tags applied to the job queue.
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -368,11 +375,21 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -381,10 +398,20 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      * </p>
      * 
-     * @return The priority of the job queue.
+     * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *         Priority is determined in descending order, for example, a job queue with a priority value of
+     *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      */
 
     public Integer getPriority() {
@@ -393,11 +420,21 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,10 +523,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue.
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The tags applied to the job queue.
+     * @return The tags applied to the job queue. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *         resources</a> in <i>AWS Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -498,11 +539,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue.
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job queue.
+     *        The tags applied to the job queue. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *        resources</a> in <i>AWS Batch User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -511,11 +556,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue.
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job queue.
+     *        The tags applied to the job queue. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *        resources</a> in <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

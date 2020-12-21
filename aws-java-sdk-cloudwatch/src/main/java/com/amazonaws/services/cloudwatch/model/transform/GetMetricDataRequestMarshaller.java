@@ -47,90 +47,94 @@ public class GetMetricDataRequestMarshaller implements Marshaller<Request<GetMet
             int metricDataQueriesListIndex = 1;
 
             for (MetricDataQuery metricDataQueriesListValue : metricDataQueriesList) {
+                if (metricDataQueriesListValue != null) {
 
-                if (metricDataQueriesListValue.getId() != null) {
-                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Id",
-                            StringUtils.fromString(metricDataQueriesListValue.getId()));
-                }
+                    if (metricDataQueriesListValue.getId() != null) {
+                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Id",
+                                StringUtils.fromString(metricDataQueriesListValue.getId()));
+                    }
 
-                {
-                    MetricStat metricStat = metricDataQueriesListValue.getMetricStat();
-                    if (metricStat != null) {
+                    {
+                        MetricStat metricStat = metricDataQueriesListValue.getMetricStat();
+                        if (metricStat != null) {
 
-                        {
-                            Metric metric = metricStat.getMetric();
-                            if (metric != null) {
+                            {
+                                Metric metric = metricStat.getMetric();
+                                if (metric != null) {
 
-                                if (metric.getNamespace() != null) {
-                                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Metric.Namespace",
-                                            StringUtils.fromString(metric.getNamespace()));
-                                }
+                                    if (metric.getNamespace() != null) {
+                                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Metric.Namespace",
+                                                StringUtils.fromString(metric.getNamespace()));
+                                    }
 
-                                if (metric.getMetricName() != null) {
-                                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Metric.MetricName",
-                                            StringUtils.fromString(metric.getMetricName()));
-                                }
+                                    if (metric.getMetricName() != null) {
+                                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Metric.MetricName",
+                                                StringUtils.fromString(metric.getMetricName()));
+                                    }
 
-                                if (!metric.getDimensions().isEmpty()
-                                        || !((com.amazonaws.internal.SdkInternalList<Dimension>) metric.getDimensions()).isAutoConstruct()) {
-                                    com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) metric
-                                            .getDimensions();
-                                    int dimensionsListIndex = 1;
+                                    if (!metric.getDimensions().isEmpty()
+                                            || !((com.amazonaws.internal.SdkInternalList<Dimension>) metric.getDimensions()).isAutoConstruct()) {
+                                        com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) metric
+                                                .getDimensions();
+                                        int dimensionsListIndex = 1;
 
-                                    for (Dimension dimensionsListValue : dimensionsList) {
+                                        for (Dimension dimensionsListValue : dimensionsList) {
+                                            if (dimensionsListValue != null) {
 
-                                        if (dimensionsListValue.getName() != null) {
-                                            request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex
-                                                    + ".MetricStat.Metric.Dimensions.member." + dimensionsListIndex + ".Name",
-                                                    StringUtils.fromString(dimensionsListValue.getName()));
+                                                if (dimensionsListValue.getName() != null) {
+                                                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex
+                                                            + ".MetricStat.Metric.Dimensions.member." + dimensionsListIndex + ".Name",
+                                                            StringUtils.fromString(dimensionsListValue.getName()));
+                                                }
+
+                                                if (dimensionsListValue.getValue() != null) {
+                                                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex
+                                                            + ".MetricStat.Metric.Dimensions.member." + dimensionsListIndex + ".Value",
+                                                            StringUtils.fromString(dimensionsListValue.getValue()));
+                                                }
+                                            }
+                                            dimensionsListIndex++;
                                         }
-
-                                        if (dimensionsListValue.getValue() != null) {
-                                            request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex
-                                                    + ".MetricStat.Metric.Dimensions.member." + dimensionsListIndex + ".Value",
-                                                    StringUtils.fromString(dimensionsListValue.getValue()));
-                                        }
-                                        dimensionsListIndex++;
                                     }
                                 }
                             }
-                        }
 
-                        if (metricStat.getPeriod() != null) {
-                            request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Period",
-                                    StringUtils.fromInteger(metricStat.getPeriod()));
-                        }
+                            if (metricStat.getPeriod() != null) {
+                                request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Period",
+                                        StringUtils.fromInteger(metricStat.getPeriod()));
+                            }
 
-                        if (metricStat.getStat() != null) {
-                            request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Stat",
-                                    StringUtils.fromString(metricStat.getStat()));
-                        }
+                            if (metricStat.getStat() != null) {
+                                request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Stat",
+                                        StringUtils.fromString(metricStat.getStat()));
+                            }
 
-                        if (metricStat.getUnit() != null) {
-                            request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Unit",
-                                    StringUtils.fromString(metricStat.getUnit()));
+                            if (metricStat.getUnit() != null) {
+                                request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".MetricStat.Unit",
+                                        StringUtils.fromString(metricStat.getUnit()));
+                            }
                         }
                     }
-                }
 
-                if (metricDataQueriesListValue.getExpression() != null) {
-                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Expression",
-                            StringUtils.fromString(metricDataQueriesListValue.getExpression()));
-                }
+                    if (metricDataQueriesListValue.getExpression() != null) {
+                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Expression",
+                                StringUtils.fromString(metricDataQueriesListValue.getExpression()));
+                    }
 
-                if (metricDataQueriesListValue.getLabel() != null) {
-                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Label",
-                            StringUtils.fromString(metricDataQueriesListValue.getLabel()));
-                }
+                    if (metricDataQueriesListValue.getLabel() != null) {
+                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Label",
+                                StringUtils.fromString(metricDataQueriesListValue.getLabel()));
+                    }
 
-                if (metricDataQueriesListValue.getReturnData() != null) {
-                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".ReturnData",
-                            StringUtils.fromBoolean(metricDataQueriesListValue.getReturnData()));
-                }
+                    if (metricDataQueriesListValue.getReturnData() != null) {
+                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".ReturnData",
+                                StringUtils.fromBoolean(metricDataQueriesListValue.getReturnData()));
+                    }
 
-                if (metricDataQueriesListValue.getPeriod() != null) {
-                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Period",
-                            StringUtils.fromInteger(metricDataQueriesListValue.getPeriod()));
+                    if (metricDataQueriesListValue.getPeriod() != null) {
+                        request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Period",
+                                StringUtils.fromInteger(metricDataQueriesListValue.getPeriod()));
+                    }
                 }
                 metricDataQueriesListIndex++;
             }

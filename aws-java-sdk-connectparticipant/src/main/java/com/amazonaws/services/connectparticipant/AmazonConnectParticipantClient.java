@@ -91,6 +91,12 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connectparticipant.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connectparticipant.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connectparticipant.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connectparticipant.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -146,11 +152,80 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in
+     * StartAttachmentUpload API.
+     * </p>
+     * 
+     * @param completeAttachmentUploadRequest
+     * @return Result of the CompleteAttachmentUpload operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ServiceQuotaExceededException
+     *         The number of attachments per contact exceeds the quota.
+     * @throws ConflictException
+     *         An attachment with that identifier is already being uploaded.
+     * @sample AmazonConnectParticipant.CompleteAttachmentUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CompleteAttachmentUploadResult completeAttachmentUpload(CompleteAttachmentUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteAttachmentUpload(request);
+    }
+
+    @SdkInternalApi
+    final CompleteAttachmentUploadResult executeCompleteAttachmentUpload(CompleteAttachmentUploadRequest completeAttachmentUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(completeAttachmentUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CompleteAttachmentUploadRequest> request = null;
+        Response<CompleteAttachmentUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CompleteAttachmentUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(completeAttachmentUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteAttachmentUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CompleteAttachmentUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CompleteAttachmentUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of
      * ConnectionToken.
      * </p>
      * <p>
-     * The participant token is valid for the lifetime of the participant – until the they are part of a contact.
+     * The participant token is valid for the lifetime of the participant – until they are part of a contact.
      * </p>
      * <p>
      * The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s. Clients must manually
@@ -166,6 +241,13 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
      * Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter, clients need to call this API
      * again to obtain a new websocket URL and perform the same steps as before.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
+     * </note>
      * 
      * @param createParticipantConnectionRequest
      * @return Result of the CreateParticipantConnection operation returned by the service.
@@ -230,6 +312,11 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
      * <p>
      * Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
      * 
      * @param disconnectParticipantRequest
      * @return Result of the DisconnectParticipant operation returned by the service.
@@ -291,8 +378,76 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Retrieves a transcript of the session. Note that ConnectionToken is used for invoking this API instead of
-     * ParticipantToken.
+     * Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active
+     * contacts.
+     * </p>
+     * 
+     * @param getAttachmentRequest
+     * @return Result of the GetAttachment operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @sample AmazonConnectParticipant.GetAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAttachmentResult getAttachment(GetAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAttachment(request);
+    }
+
+    @SdkInternalApi
+    final GetAttachmentResult executeGetAttachment(GetAttachmentRequest getAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAttachmentRequest> request = null;
+        Response<GetAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used
+     * for invoking this API instead of ParticipantToken.
+     * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
      * </p>
      * 
      * @param getTranscriptRequest
@@ -356,6 +511,11 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
      * <p>
      * Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
      * 
      * @param sendEventRequest
      * @return Result of the SendEvent operation returned by the service.
@@ -418,6 +578,13 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
      * <p>
      * Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon Connect Participant Service APIs do not use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+     * authentication</a>.
+     * </p>
+     * </note>
      * 
      * @param sendMessageRequest
      * @return Result of the SendMessage operation returned by the service.
@@ -466,6 +633,71 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<SendMessageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.
+     * </p>
+     * 
+     * @param startAttachmentUploadRequest
+     * @return Result of the StartAttachmentUpload operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ServiceQuotaExceededException
+     *         The number of attachments per contact exceeds the quota.
+     * @sample AmazonConnectParticipant.StartAttachmentUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartAttachmentUploadResult startAttachmentUpload(StartAttachmentUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAttachmentUpload(request);
+    }
+
+    @SdkInternalApi
+    final StartAttachmentUploadResult executeStartAttachmentUpload(StartAttachmentUploadRequest startAttachmentUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startAttachmentUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartAttachmentUploadRequest> request = null;
+        Response<StartAttachmentUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartAttachmentUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAttachmentUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAttachmentUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartAttachmentUploadResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartAttachmentUploadResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

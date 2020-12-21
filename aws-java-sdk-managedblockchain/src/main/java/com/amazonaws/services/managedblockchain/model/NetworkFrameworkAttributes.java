@@ -34,6 +34,12 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
      * </p>
      */
     private NetworkFabricAttributes fabric;
+    /**
+     * <p>
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     * </p>
+     */
+    private NetworkEthereumAttributes ethereum;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     * </p>
+     * 
+     * @param ethereum
+     *        Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     */
+
+    public void setEthereum(NetworkEthereumAttributes ethereum) {
+        this.ethereum = ethereum;
+    }
+
+    /**
+     * <p>
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     * </p>
+     * 
+     * @return Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     */
+
+    public NetworkEthereumAttributes getEthereum() {
+        return this.ethereum;
+    }
+
+    /**
+     * <p>
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     * </p>
+     * 
+     * @param ethereum
+     *        Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkFrameworkAttributes withEthereum(NetworkEthereumAttributes ethereum) {
+        setEthereum(ethereum);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFabric() != null)
-            sb.append("Fabric: ").append(getFabric());
+            sb.append("Fabric: ").append(getFabric()).append(",");
+        if (getEthereum() != null)
+            sb.append("Ethereum: ").append(getEthereum());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
             return false;
         if (other.getFabric() != null && other.getFabric().equals(this.getFabric()) == false)
             return false;
+        if (other.getEthereum() == null ^ this.getEthereum() == null)
+            return false;
+        if (other.getEthereum() != null && other.getEthereum().equals(this.getEthereum()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFabric() == null) ? 0 : getFabric().hashCode());
+        hashCode = prime * hashCode + ((getEthereum() == null) ? 0 : getEthereum().hashCode());
         return hashCode;
     }
 

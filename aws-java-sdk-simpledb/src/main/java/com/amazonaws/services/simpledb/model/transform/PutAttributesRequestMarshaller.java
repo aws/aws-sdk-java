@@ -55,17 +55,19 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
             int attributesListIndex = 1;
 
             for (ReplaceableAttribute attributesListValue : attributesList) {
+                if (attributesListValue != null) {
 
-                if (attributesListValue.getName() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
-                }
+                    if (attributesListValue.getName() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
+                    }
 
-                if (attributesListValue.getValue() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                }
+                    if (attributesListValue.getValue() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                    }
 
-                if (attributesListValue.getReplace() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Replace", StringUtils.fromBoolean(attributesListValue.getReplace()));
+                    if (attributesListValue.getReplace() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Replace", StringUtils.fromBoolean(attributesListValue.getReplace()));
+                    }
                 }
                 attributesListIndex++;
             }

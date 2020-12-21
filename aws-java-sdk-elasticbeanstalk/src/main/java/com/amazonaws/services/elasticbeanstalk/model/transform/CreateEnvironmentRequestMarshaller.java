@@ -84,13 +84,15 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -119,25 +121,27 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+                if (optionSettingsListValue != null) {
 
-                if (optionSettingsListValue.getResourceName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
-                            StringUtils.fromString(optionSettingsListValue.getResourceName()));
-                }
+                    if (optionSettingsListValue.getResourceName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
+                                StringUtils.fromString(optionSettingsListValue.getResourceName()));
+                    }
 
-                if (optionSettingsListValue.getNamespace() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
-                            StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                }
+                    if (optionSettingsListValue.getNamespace() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
+                                StringUtils.fromString(optionSettingsListValue.getNamespace()));
+                    }
 
-                if (optionSettingsListValue.getOptionName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
-                            StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                }
+                    if (optionSettingsListValue.getOptionName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
+                                StringUtils.fromString(optionSettingsListValue.getOptionName()));
+                    }
 
-                if (optionSettingsListValue.getValue() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
-                            StringUtils.fromString(optionSettingsListValue.getValue()));
+                    if (optionSettingsListValue.getValue() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
+                                StringUtils.fromString(optionSettingsListValue.getValue()));
+                    }
                 }
                 optionSettingsListIndex++;
             }
@@ -150,20 +154,22 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
+                if (optionsToRemoveListValue != null) {
 
-                if (optionsToRemoveListValue.getResourceName() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".ResourceName",
-                            StringUtils.fromString(optionsToRemoveListValue.getResourceName()));
-                }
+                    if (optionsToRemoveListValue.getResourceName() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".ResourceName",
+                                StringUtils.fromString(optionsToRemoveListValue.getResourceName()));
+                    }
 
-                if (optionsToRemoveListValue.getNamespace() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace",
-                            StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
-                }
+                    if (optionsToRemoveListValue.getNamespace() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace",
+                                StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
+                    }
 
-                if (optionsToRemoveListValue.getOptionName() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName",
-                            StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
+                    if (optionsToRemoveListValue.getOptionName() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName",
+                                StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
+                    }
                 }
                 optionsToRemoveListIndex++;
             }

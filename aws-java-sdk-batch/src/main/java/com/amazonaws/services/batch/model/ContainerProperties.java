@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Container properties are used in job definitions to describe the container that is launched as part of a job.
+ * Container properties are used in job definitions to describe the container that's launched as part of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties" target="_top">AWS API
@@ -118,7 +118,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private Integer memory;
     /**
      * <p>
-     * The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a
@@ -839,7 +839,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a
@@ -847,7 +847,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * >https://docs.docker.com/engine/reference/builder/#cmd</a>.
      * </p>
      * 
-     * @return The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * @return The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code>
      *         parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
@@ -862,7 +862,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a
@@ -871,7 +871,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     *        The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code>
      *        parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information,
@@ -891,7 +891,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a
@@ -905,7 +905,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     *        The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code>
      *        parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information,
@@ -927,7 +927,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     * The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a
@@ -936,7 +936,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param command
-     *        The command that is passed to the container. This parameter maps to <code>Cmd</code> in the <a
+     *        The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code>
      *        parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information,

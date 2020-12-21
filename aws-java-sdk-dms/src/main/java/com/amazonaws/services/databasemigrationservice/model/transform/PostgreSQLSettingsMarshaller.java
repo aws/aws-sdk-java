@@ -51,6 +51,10 @@ public class PostgreSQLSettingsMarshaller {
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SlotName").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final PostgreSQLSettingsMarshaller instance = new PostgreSQLSettingsMarshaller();
 
@@ -80,6 +84,8 @@ public class PostgreSQLSettingsMarshaller {
             protocolMarshaller.marshall(postgreSQLSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getSlotName(), SLOTNAME_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -52,6 +52,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param cancelJobRequest
+     *        Contains the parameters for <code>CancelJob</code>.
      * @return A Java Future containing the result of the CancelJob operation returned by the service.
      * @sample AWSBatchAsync.CancelJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob" target="_top">AWS API
@@ -68,6 +69,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param cancelJobRequest
+     *        Contains the parameters for <code>CancelJob</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -92,7 +94,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
      * specify when you create the compute environment. You can choose either to use EC2 On-Demand Instances and EC2
      * Spot Instances, or to use Fargate and Fargate Spot capacity in your managed compute environment. You can
-     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is below a
+     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
      * specified percentage of the On-Demand price.
      * </p>
      * <note>
@@ -107,7 +109,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
-     * ECS cluster that is associated with it. Then, manually launch your container instances into that Amazon ECS
+     * ECS cluster that's associated with it. Then, manually launch your container instances into that Amazon ECS
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
      * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -145,6 +147,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </note>
      * 
      * @param createComputeEnvironmentRequest
+     *        Contains the parameters for <code>CreateComputeEnvironment</code>.
      * @return A Java Future containing the result of the CreateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.CreateComputeEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment" target="_top">AWS
@@ -164,7 +167,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
      * specify when you create the compute environment. You can choose either to use EC2 On-Demand Instances and EC2
      * Spot Instances, or to use Fargate and Fargate Spot capacity in your managed compute environment. You can
-     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is below a
+     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
      * specified percentage of the On-Demand price.
      * </p>
      * <note>
@@ -179,7 +182,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
-     * ECS cluster that is associated with it. Then, manually launch your container instances into that Amazon ECS
+     * ECS cluster that's associated with it. Then, manually launch your container instances into that Amazon ECS
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
      * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -217,6 +220,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </note>
      * 
      * @param createComputeEnvironmentRequest
+     *        Contains the parameters for <code>CreateComputeEnvironment</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -242,6 +246,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param createJobQueueRequest
+     *        Contains the parameters for <code>CreateJobQueue</code>.
      * @return A Java Future containing the result of the CreateJobQueue operation returned by the service.
      * @sample AWSBatchAsync.CreateJobQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue" target="_top">AWS API
@@ -262,6 +267,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param createJobQueueRequest
+     *        Contains the parameters for <code>CreateJobQueue</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -287,6 +293,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param deleteComputeEnvironmentRequest
+     *        Contains the parameters for <code>DeleteComputeEnvironment</code>.
      * @return A Java Future containing the result of the DeleteComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.DeleteComputeEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment" target="_top">AWS
@@ -307,6 +314,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param deleteComputeEnvironmentRequest
+     *        Contains the parameters for <code>DeleteComputeEnvironment</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -322,7 +330,8 @@ public interface AWSBatchAsync extends AWSBatch {
     /**
      * <p>
      * Deletes the specified job queue. You must first disable submissions for a queue with the <a>UpdateJobQueue</a>
-     * operation. All jobs in the queue are terminated when you delete a job queue.
+     * operation. All jobs in the queue are eventually terminated when you delete a job queue. The jobs are terminated
+     * at a rate of about 16 jobs each second.
      * </p>
      * <p>
      * It's not necessary to disassociate compute environments from a queue before submitting a
@@ -330,6 +339,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param deleteJobQueueRequest
+     *        Contains the parameters for <code>DeleteJobQueue</code>.
      * @return A Java Future containing the result of the DeleteJobQueue operation returned by the service.
      * @sample AWSBatchAsync.DeleteJobQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue" target="_top">AWS API
@@ -340,7 +350,8 @@ public interface AWSBatchAsync extends AWSBatch {
     /**
      * <p>
      * Deletes the specified job queue. You must first disable submissions for a queue with the <a>UpdateJobQueue</a>
-     * operation. All jobs in the queue are terminated when you delete a job queue.
+     * operation. All jobs in the queue are eventually terminated when you delete a job queue. The jobs are terminated
+     * at a rate of about 16 jobs each second.
      * </p>
      * <p>
      * It's not necessary to disassociate compute environments from a queue before submitting a
@@ -348,6 +359,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param deleteJobQueueRequest
+     *        Contains the parameters for <code>DeleteJobQueue</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -402,6 +414,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeComputeEnvironmentsRequest
+     *        Contains the parameters for <code>DescribeComputeEnvironments</code>.
      * @return A Java Future containing the result of the DescribeComputeEnvironments operation returned by the service.
      * @sample AWSBatchAsync.DescribeComputeEnvironments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments"
@@ -421,6 +434,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeComputeEnvironmentsRequest
+     *        Contains the parameters for <code>DescribeComputeEnvironments</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -441,6 +455,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobDefinitionsRequest
+     *        Contains the parameters for <code>DescribeJobDefinitions</code>.
      * @return A Java Future containing the result of the DescribeJobDefinitions operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobDefinitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions" target="_top">AWS
@@ -455,6 +470,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobDefinitionsRequest
+     *        Contains the parameters for <code>DescribeJobDefinitions</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -473,6 +489,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobQueuesRequest
+     *        Contains the parameters for <code>DescribeJobQueues</code>.
      * @return A Java Future containing the result of the DescribeJobQueues operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues" target="_top">AWS API
@@ -486,6 +503,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobQueuesRequest
+     *        Contains the parameters for <code>DescribeJobQueues</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -504,6 +522,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobsRequest
+     *        Contains the parameters for <code>DescribeJobs</code>.
      * @return A Java Future containing the result of the DescribeJobs operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs" target="_top">AWS API
@@ -517,6 +536,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param describeJobsRequest
+     *        Contains the parameters for <code>DescribeJobs</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -559,6 +579,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param listJobsRequest
+     *        Contains the parameters for <code>ListJobs</code>.
      * @return A Java Future containing the result of the ListJobs operation returned by the service.
      * @sample AWSBatchAsync.ListJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs" target="_top">AWS API
@@ -596,6 +617,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param listJobsRequest
+     *        Contains the parameters for <code>ListJobs</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -649,6 +671,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param registerJobDefinitionRequest
+     *        Contains the parameters for <code>RegisterJobDefinition</code>.
      * @return A Java Future containing the result of the RegisterJobDefinition operation returned by the service.
      * @sample AWSBatchAsync.RegisterJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition" target="_top">AWS
@@ -662,6 +685,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param registerJobDefinitionRequest
+     *        Contains the parameters for <code>RegisterJobDefinition</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -687,6 +711,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </important>
      * 
      * @param submitJobRequest
+     *        Contains the parameters for <code>SubmitJob</code>.
      * @return A Java Future containing the result of the SubmitJob operation returned by the service.
      * @sample AWSBatchAsync.SubmitJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob" target="_top">AWS API
@@ -707,6 +732,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </important>
      * 
      * @param submitJobRequest
+     *        Contains the parameters for <code>SubmitJob</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -766,6 +792,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param terminateJobRequest
+     *        Contains the parameters for <code>TerminateJob</code>.
      * @return A Java Future containing the result of the TerminateJob operation returned by the service.
      * @sample AWSBatchAsync.TerminateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob" target="_top">AWS API
@@ -781,6 +808,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param terminateJobRequest
+     *        Contains the parameters for <code>TerminateJob</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -830,6 +858,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param updateComputeEnvironmentRequest
+     *        Contains the parameters for <code>UpdateComputeEnvironment</code>.
      * @return A Java Future containing the result of the UpdateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.UpdateComputeEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment" target="_top">AWS
@@ -843,6 +872,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param updateComputeEnvironmentRequest
+     *        Contains the parameters for <code>UpdateComputeEnvironment</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -861,6 +891,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param updateJobQueueRequest
+     *        Contains the parameters for <code>UpdateJobQueue</code>.
      * @return A Java Future containing the result of the UpdateJobQueue operation returned by the service.
      * @sample AWSBatchAsync.UpdateJobQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue" target="_top">AWS API
@@ -874,6 +905,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * 
      * @param updateJobQueueRequest
+     *        Contains the parameters for <code>UpdateJobQueue</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

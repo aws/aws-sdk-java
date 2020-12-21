@@ -83,6 +83,10 @@ public class RedshiftSettingsMarshaller {
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<Integer> WRITEBUFFERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WriteBufferSize").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final RedshiftSettingsMarshaller instance = new RedshiftSettingsMarshaller();
 
@@ -128,6 +132,8 @@ public class RedshiftSettingsMarshaller {
             protocolMarshaller.marshall(redshiftSettings.getTruncateColumns(), TRUNCATECOLUMNS_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getWriteBufferSize(), WRITEBUFFERSIZE_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

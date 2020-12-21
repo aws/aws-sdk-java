@@ -35,13 +35,36 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String clientRequestToken;
     /**
      * <p>
-     * The unique identifier of the network in which this node runs.
+     * The unique identifier of the network for the node.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String networkId;
     /**
      * <p>
      * The unique identifier of the member that owns this node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -109,11 +132,50 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network in which this node runs.
+     * The unique identifier of the network for the node.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkId
-     *        The unique identifier of the network in which this node runs.
+     *        The unique identifier of the network for the node.</p>
+     *        <p>
+     *        Ethereum public networks have the following <code>NetworkId</code>s:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-rinkeby</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-ropsten</code>
+     *        </p>
+     *        </li>
      */
 
     public void setNetworkId(String networkId) {
@@ -122,10 +184,49 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network in which this node runs.
+     * The unique identifier of the network for the node.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The unique identifier of the network in which this node runs.
+     * @return The unique identifier of the network for the node.</p>
+     *         <p>
+     *         Ethereum public networks have the following <code>NetworkId</code>s:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-mainnet</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-rinkeby</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-ropsten</code>
+     *         </p>
+     *         </li>
      */
 
     public String getNetworkId() {
@@ -134,11 +235,50 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network in which this node runs.
+     * The unique identifier of the network for the node.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkId
-     *        The unique identifier of the network in which this node runs.
+     *        The unique identifier of the network for the node.</p>
+     *        <p>
+     *        Ethereum public networks have the following <code>NetworkId</code>s:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-rinkeby</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-ropsten</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,9 +291,14 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns this node.
+     *        The unique identifier of the member that owns this node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -164,8 +309,13 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member that owns this node.
+     * @return The unique identifier of the member that owns this node.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -176,9 +326,14 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns this node.
+     *        The unique identifier of the member that owns this node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

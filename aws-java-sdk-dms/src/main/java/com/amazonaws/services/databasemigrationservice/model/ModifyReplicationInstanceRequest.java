@@ -115,7 +115,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A value that indicates that minor version upgrades are applied automatically to the replication instance during
-     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case described
      * following. The change is asynchronously applied as soon as possible.
      * </p>
      * <p>
@@ -778,7 +778,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A value that indicates that minor version upgrades are applied automatically to the replication instance during
-     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case described
      * following. The change is asynchronously applied as soon as possible.
      * </p>
      * <p>
@@ -805,7 +805,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * @param autoMinorVersionUpgrade
      *        A value that indicates that minor version upgrades are applied automatically to the replication instance
      *        during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
-     *        dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *        described following. The change is asynchronously applied as soon as possible. </p>
      *        <p>
      *        An outage does result if these factors apply:
      *        </p>
@@ -834,7 +834,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A value that indicates that minor version upgrades are applied automatically to the replication instance during
-     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case described
      * following. The change is asynchronously applied as soon as possible.
      * </p>
      * <p>
@@ -860,7 +860,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return A value that indicates that minor version upgrades are applied automatically to the replication instance
      *         during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
-     *         dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *         described following. The change is asynchronously applied as soon as possible. </p>
      *         <p>
      *         An outage does result if these factors apply:
      *         </p>
@@ -889,7 +889,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A value that indicates that minor version upgrades are applied automatically to the replication instance during
-     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case described
      * following. The change is asynchronously applied as soon as possible.
      * </p>
      * <p>
@@ -916,7 +916,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * @param autoMinorVersionUpgrade
      *        A value that indicates that minor version upgrades are applied automatically to the replication instance
      *        during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
-     *        dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *        described following. The change is asynchronously applied as soon as possible. </p>
      *        <p>
      *        An outage does result if these factors apply:
      *        </p>
@@ -947,7 +947,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A value that indicates that minor version upgrades are applied automatically to the replication instance during
-     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case described
      * following. The change is asynchronously applied as soon as possible.
      * </p>
      * <p>
@@ -973,7 +973,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return A value that indicates that minor version upgrades are applied automatically to the replication instance
      *         during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
-     *         dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *         described following. The change is asynchronously applied as soon as possible. </p>
      *         <p>
      *         An outage does result if these factors apply:
      *         </p>

@@ -51,13 +51,15 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             int tagsToAddListIndex = 1;
 
             for (Tag tagsToAddListValue : tagsToAddList) {
+                if (tagsToAddListValue != null) {
 
-                if (tagsToAddListValue.getKey() != null) {
-                    request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Key", StringUtils.fromString(tagsToAddListValue.getKey()));
-                }
+                    if (tagsToAddListValue.getKey() != null) {
+                        request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Key", StringUtils.fromString(tagsToAddListValue.getKey()));
+                    }
 
-                if (tagsToAddListValue.getValue() != null) {
-                    request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Value", StringUtils.fromString(tagsToAddListValue.getValue()));
+                    if (tagsToAddListValue.getValue() != null) {
+                        request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Value", StringUtils.fromString(tagsToAddListValue.getValue()));
+                    }
                 }
                 tagsToAddListIndex++;
             }

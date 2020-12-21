@@ -35,6 +35,12 @@ public class StartSessionResult implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String sessionToken;
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     */
+    private TimingInformation timingInformation;
 
     /**
      * <p>
@@ -83,6 +89,46 @@ public class StartSessionResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     */
+
+    public void setTimingInformation(TimingInformation timingInformation) {
+        this.timingInformation = timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @return Contains server-side performance information for the command.
+     */
+
+    public TimingInformation getTimingInformation() {
+        return this.timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartSessionResult withTimingInformation(TimingInformation timingInformation) {
+        setTimingInformation(timingInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +141,9 @@ public class StartSessionResult implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSessionToken() != null)
-            sb.append("SessionToken: ").append(getSessionToken());
+            sb.append("SessionToken: ").append(getSessionToken()).append(",");
+        if (getTimingInformation() != null)
+            sb.append("TimingInformation: ").append(getTimingInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +162,10 @@ public class StartSessionResult implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSessionToken() != null && other.getSessionToken().equals(this.getSessionToken()) == false)
             return false;
+        if (other.getTimingInformation() == null ^ this.getTimingInformation() == null)
+            return false;
+        if (other.getTimingInformation() != null && other.getTimingInformation().equals(this.getTimingInformation()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +175,7 @@ public class StartSessionResult implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSessionToken() == null) ? 0 : getSessionToken().hashCode());
+        hashCode = prime * hashCode + ((getTimingInformation() == null) ? 0 : getTimingInformation().hashCode());
         return hashCode;
     }
 

@@ -80,6 +80,12 @@ public class ItemJsonUnmarshaller implements Unmarshaller<Item, JsonUnmarshaller
                     context.nextToken();
                     item.setParticipantRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Attachments", targetDepth)) {
+                    context.nextToken();
+                    item.setAttachments(new ListUnmarshaller<AttachmentItem>(AttachmentItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

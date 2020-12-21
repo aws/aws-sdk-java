@@ -26,30 +26,19 @@ import com.amazonaws.services.servicequotas.model.*;
  * </p>
  * <p>
  * <p>
- * Service Quotas is a web service that you can use to manage many of your AWS service quotas. Quotas, also referred to
- * as limits, are the maximum values for a resource, item, or operation. This guide provide descriptions of the Service
- * Quotas actions that you can call from an API. For the Service Quotas user guide, which explains how to use Service
- * Quotas from the console, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">What is
- * Service Quotas</a>.
+ * With Service Quotas, you can view and manage your quotas easily as your AWS workloads grow. Quotas, also referred to
+ * as limits, are the maximum number of resources that you can create in your AWS account. For more information, see the
+ * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service Quotas User Guide</a>.
  * </p>
- * <note>
- * <p>
- * AWS provides SDKs that consist of libraries and sample code for programming languages and platforms (Java, Ruby,
- * .NET, iOS, Android, etc...,). The SDKs provide a convenient way to create programmatic access to Service Quotas and
- * AWS. For information about the AWS SDKs, including how to download and install them, see the <a
- * href="https://docs.aws.amazon.com/aws.amazon.com/tools">Tools for Amazon Web Services</a> page.
- * </p>
- * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Associates the Service Quotas template with your organization so that when new accounts are created in your
-     * organization, the template submits increase requests for the specified service quotas. Use the Service Quotas
-     * template to request an increase for any adjustable quota value. After you define the Service Quotas template, use
-     * this operation to associate, or enable, the template.
+     * Associates your quota request template with your organization. When a new account is created in your
+     * organization, the quota increase requests in the template are automatically applied to the account. You can add a
+     * quota increase request for any adjustable quota to your template.
      * </p>
      * 
      * @param associateServiceQuotaTemplateRequest
@@ -64,10 +53,9 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Associates the Service Quotas template with your organization so that when new accounts are created in your
-     * organization, the template submits increase requests for the specified service quotas. Use the Service Quotas
-     * template to request an increase for any adjustable quota value. After you define the Service Quotas template, use
-     * this operation to associate, or enable, the template.
+     * Associates your quota request template with your organization. When a new account is created in your
+     * organization, the quota increase requests in the template are automatically applied to the account. You can add a
+     * quota increase request for any adjustable quota to your template.
      * </p>
      * 
      * @param associateServiceQuotaTemplateRequest
@@ -87,7 +75,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Removes a service quota increase request from the Service Quotas template.
+     * Deletes the quota increase request for the specified quota from your quota request template.
      * </p>
      * 
      * @param deleteServiceQuotaIncreaseRequestFromTemplateRequest
@@ -103,7 +91,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Removes a service quota increase request from the Service Quotas template.
+     * Deletes the quota increase request for the specified quota from your quota request template.
      * </p>
      * 
      * @param deleteServiceQuotaIncreaseRequestFromTemplateRequest
@@ -124,25 +112,10 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Disables the Service Quotas template. Once the template is disabled, it does not request quota increases for new
-     * accounts in your organization. Disabling the quota template does not apply the quota increase requests from the
-     * template.
+     * Disables your quota request template. After a template is disabled, the quota increase requests in the template
+     * are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota
+     * increase requests.
      * </p>
-     * <p>
-     * <b>Related operations</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To enable the quota template, call <a>AssociateServiceQuotaTemplate</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * To delete a specific service quota from the template, use <a>DeleteServiceQuotaIncreaseRequestFromTemplate</a>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param disassociateServiceQuotaTemplateRequest
      * @return A Java Future containing the result of the DisassociateServiceQuotaTemplate operation returned by the
@@ -156,25 +129,10 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Disables the Service Quotas template. Once the template is disabled, it does not request quota increases for new
-     * accounts in your organization. Disabling the quota template does not apply the quota increase requests from the
-     * template.
+     * Disables your quota request template. After a template is disabled, the quota increase requests in the template
+     * are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota
+     * increase requests.
      * </p>
-     * <p>
-     * <b>Related operations</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To enable the quota template, call <a>AssociateServiceQuotaTemplate</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * To delete a specific service quota from the template, use <a>DeleteServiceQuotaIncreaseRequestFromTemplate</a>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param disassociateServiceQuotaTemplateRequest
      * @param asyncHandler
@@ -193,8 +151,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the default service quotas values. The Value returned for each quota is the AWS default value, even if
-     * the quotas have been increased..
+     * Retrieves the default value for the specified quota. The default value does not reflect any quota increases.
      * </p>
      * 
      * @param getAWSDefaultServiceQuotaRequest
@@ -208,8 +165,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the default service quotas values. The Value returned for each quota is the AWS default value, even if
-     * the quotas have been increased..
+     * Retrieves the default value for the specified quota. The default value does not reflect any quota increases.
      * </p>
      * 
      * @param getAWSDefaultServiceQuotaRequest
@@ -228,8 +184,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the <code>ServiceQuotaTemplateAssociationStatus</code> value from the service. Use this action to
-     * determine if the Service Quota template is associated, or enabled.
+     * Retrieves the status of the association for the quota request template.
      * </p>
      * 
      * @param getAssociationForServiceQuotaTemplateRequest
@@ -245,8 +200,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the <code>ServiceQuotaTemplateAssociationStatus</code> value from the service. Use this action to
-     * determine if the Service Quota template is associated, or enabled.
+     * Retrieves the status of the association for the quota request template.
      * </p>
      * 
      * @param getAssociationForServiceQuotaTemplateRequest
@@ -267,7 +221,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the details for a particular increase request.
+     * Retrieves information about the specified quota increase request.
      * </p>
      * 
      * @param getRequestedServiceQuotaChangeRequest
@@ -282,7 +236,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the details for a particular increase request.
+     * Retrieves information about the specified quota increase request.
      * </p>
      * 
      * @param getRequestedServiceQuotaChangeRequest
@@ -302,9 +256,8 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns the details for the specified service quota. This operation provides a different Value than the
-     * <code>GetAWSDefaultServiceQuota</code> operation. This operation returns the applied value for each quota.
-     * <code>GetAWSDefaultServiceQuota</code> returns the default AWS value for each quota.
+     * Retrieves the applied quota value for the specified quota. For some quotas, only the default values are
+     * available. If the applied quota value is not available for a quota, the quota is not retrieved.
      * </p>
      * 
      * @param getServiceQuotaRequest
@@ -317,9 +270,8 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns the details for the specified service quota. This operation provides a different Value than the
-     * <code>GetAWSDefaultServiceQuota</code> operation. This operation returns the applied value for each quota.
-     * <code>GetAWSDefaultServiceQuota</code> returns the default AWS value for each quota.
+     * Retrieves the applied quota value for the specified quota. For some quotas, only the default values are
+     * available. If the applied quota value is not available for a quota, the quota is not retrieved.
      * </p>
      * 
      * @param getServiceQuotaRequest
@@ -337,7 +289,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns the details of the service quota increase request in your template.
+     * Retrieves information about the specified quota increase request in your quota request template.
      * </p>
      * 
      * @param getServiceQuotaIncreaseRequestFromTemplateRequest
@@ -353,7 +305,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns the details of the service quota increase request in your template.
+     * Retrieves information about the specified quota increase request in your quota request template.
      * </p>
      * 
      * @param getServiceQuotaIncreaseRequestFromTemplateRequest
@@ -374,20 +326,9 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists all default service quotas for the specified AWS service or all AWS services. ListAWSDefaultServiceQuotas
-     * is similar to <a>ListServiceQuotas</a> except for the Value object. The Value object returned by
-     * <code>ListAWSDefaultServiceQuotas</code> is the default value assigned by AWS. This request returns a list of all
-     * service quotas for the specified service. The listing of each you'll see the default values are the values that
-     * AWS provides for the quotas.
+     * Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota
+     * increases.
      * </p>
-     * <note>
-     * <p>
-     * Always check the <code>NextToken</code> response parameter when calling any of the <code>List*</code> operations.
-     * These operations can return an unexpected list of results, even when there are more results available. When this
-     * happens, the <code>NextToken</code> response parameter contains a value to pass the next call to the same API to
-     * request the next part of the list.
-     * </p>
-     * </note>
      * 
      * @param listAWSDefaultServiceQuotasRequest
      * @return A Java Future containing the result of the ListAWSDefaultServiceQuotas operation returned by the service.
@@ -400,20 +341,9 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists all default service quotas for the specified AWS service or all AWS services. ListAWSDefaultServiceQuotas
-     * is similar to <a>ListServiceQuotas</a> except for the Value object. The Value object returned by
-     * <code>ListAWSDefaultServiceQuotas</code> is the default value assigned by AWS. This request returns a list of all
-     * service quotas for the specified service. The listing of each you'll see the default values are the values that
-     * AWS provides for the quotas.
+     * Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota
+     * increases.
      * </p>
-     * <note>
-     * <p>
-     * Always check the <code>NextToken</code> response parameter when calling any of the <code>List*</code> operations.
-     * These operations can return an unexpected list of results, even when there are more results available. When this
-     * happens, the <code>NextToken</code> response parameter contains a value to pass the next call to the same API to
-     * request the next part of the list.
-     * </p>
-     * </note>
      * 
      * @param listAWSDefaultServiceQuotasRequest
      * @param asyncHandler
@@ -431,7 +361,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Requests a list of the changes to quotas for a service.
+     * Retrieves the quota increase requests for the specified service.
      * </p>
      * 
      * @param listRequestedServiceQuotaChangeHistoryRequest
@@ -447,7 +377,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Requests a list of the changes to quotas for a service.
+     * Retrieves the quota increase requests for the specified service.
      * </p>
      * 
      * @param listRequestedServiceQuotaChangeHistoryRequest
@@ -468,9 +398,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Requests a list of the changes to specific service quotas. This command provides additional granularity over the
-     * <code>ListRequestedServiceQuotaChangeHistory</code> command. Once a quota change request has reached
-     * <code>CASE_CLOSED, APPROVED,</code> or <code>DENIED</code>, the history has been kept for 90 days.
+     * Retrieves the quota increase requests for the specified quota.
      * </p>
      * 
      * @param listRequestedServiceQuotaChangeHistoryByQuotaRequest
@@ -486,9 +414,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Requests a list of the changes to specific service quotas. This command provides additional granularity over the
-     * <code>ListRequestedServiceQuotaChangeHistory</code> command. Once a quota change request has reached
-     * <code>CASE_CLOSED, APPROVED,</code> or <code>DENIED</code>, the history has been kept for 90 days.
+     * Retrieves the quota increase requests for the specified quota.
      * </p>
      * 
      * @param listRequestedServiceQuotaChangeHistoryByQuotaRequest
@@ -509,7 +435,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns a list of the quota increase requests in the template.
+     * Lists the quota increase requests in the specified quota request template.
      * </p>
      * 
      * @param listServiceQuotaIncreaseRequestsInTemplateRequest
@@ -525,7 +451,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Returns a list of the quota increase requests in the template.
+     * Lists the quota increase requests in the specified quota request template.
      * </p>
      * 
      * @param listServiceQuotaIncreaseRequestsInTemplateRequest
@@ -546,17 +472,9 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists all service quotas for the specified AWS service. This request returns a list of the service quotas for the
-     * specified service. you'll see the default values are the values that AWS provides for the quotas.
+     * Lists the applied quota values for the specified AWS service. For some quotas, only the default values are
+     * available. If the applied quota value is not available for a quota, the quota is not retrieved.
      * </p>
-     * <note>
-     * <p>
-     * Always check the <code>NextToken</code> response parameter when calling any of the <code>List*</code> operations.
-     * These operations can return an unexpected list of results, even when there are more results available. When this
-     * happens, the <code>NextToken</code> response parameter contains a value to pass the next call to the same API to
-     * request the next part of the list.
-     * </p>
-     * </note>
      * 
      * @param listServiceQuotasRequest
      * @return A Java Future containing the result of the ListServiceQuotas operation returned by the service.
@@ -568,17 +486,9 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists all service quotas for the specified AWS service. This request returns a list of the service quotas for the
-     * specified service. you'll see the default values are the values that AWS provides for the quotas.
+     * Lists the applied quota values for the specified AWS service. For some quotas, only the default values are
+     * available. If the applied quota value is not available for a quota, the quota is not retrieved.
      * </p>
-     * <note>
-     * <p>
-     * Always check the <code>NextToken</code> response parameter when calling any of the <code>List*</code> operations.
-     * These operations can return an unexpected list of results, even when there are more results available. When this
-     * happens, the <code>NextToken</code> response parameter contains a value to pass the next call to the same API to
-     * request the next part of the list.
-     * </p>
-     * </note>
      * 
      * @param listServiceQuotasRequest
      * @param asyncHandler
@@ -595,8 +505,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists the AWS services available in Service Quotas. Not all AWS services are available in Service Quotas. To list
-     * the see the list of the service quotas for a specific service, use <a>ListServiceQuotas</a>.
+     * Lists the names and codes for the services integrated with Service Quotas.
      * </p>
      * 
      * @param listServicesRequest
@@ -609,8 +518,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Lists the AWS services available in Service Quotas. Not all AWS services are available in Service Quotas. To list
-     * the see the list of the service quotas for a specific service, use <a>ListServiceQuotas</a>.
+     * Lists the names and codes for the services integrated with Service Quotas.
      * </p>
      * 
      * @param listServicesRequest
@@ -628,10 +536,38 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Defines and adds a quota to the service quota template. To add a quota to the template, you must provide the
-     * <code>ServiceCode</code>, <code>QuotaCode</code>, <code>AwsRegion</code>, and <code>DesiredValue</code>. Once you
-     * add a quota to the template, use <a>ListServiceQuotaIncreaseRequestsInTemplate</a> to see the list of quotas in
-     * the template.
+     * Returns a list of the tags assigned to the specified applied quota.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSServiceQuotasAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of the tags assigned to the specified applied quota.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSServiceQuotasAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a quota increase request to your quota request template.
      * </p>
      * 
      * @param putServiceQuotaIncreaseRequestIntoTemplateRequest
@@ -647,10 +583,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Defines and adds a quota to the service quota template. To add a quota to the template, you must provide the
-     * <code>ServiceCode</code>, <code>QuotaCode</code>, <code>AwsRegion</code>, and <code>DesiredValue</code>. Once you
-     * add a quota to the template, use <a>ListServiceQuotaIncreaseRequestsInTemplate</a> to see the list of quotas in
-     * the template.
+     * Adds a quota increase request to your quota request template.
      * </p>
      * 
      * @param putServiceQuotaIncreaseRequestIntoTemplateRequest
@@ -671,8 +604,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the details of a service quota increase request. The response to this command provides the details in
-     * the <a>RequestedServiceQuotaChange</a> object.
+     * Submits a quota increase request for the specified quota.
      * </p>
      * 
      * @param requestServiceQuotaIncreaseRequest
@@ -686,8 +618,7 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
 
     /**
      * <p>
-     * Retrieves the details of a service quota increase request. The response to this command provides the details in
-     * the <a>RequestedServiceQuotaChange</a> object.
+     * Submits a quota increase request for the specified quota.
      * </p>
      * 
      * @param requestServiceQuotaIncreaseRequest
@@ -703,5 +634,67 @@ public interface AWSServiceQuotasAsync extends AWSServiceQuotas {
     java.util.concurrent.Future<RequestServiceQuotaIncreaseResult> requestServiceQuotaIncreaseAsync(
             RequestServiceQuotaIncreaseRequest requestServiceQuotaIncreaseRequest,
             com.amazonaws.handlers.AsyncHandler<RequestServiceQuotaIncreaseRequest, RequestServiceQuotaIncreaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds tags to the specified applied quota. You can include one or more tags to add to the quota.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSServiceQuotasAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds tags to the specified applied quota. You can include one or more tags to add to the quota.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSServiceQuotasAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from the specified applied quota. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSServiceQuotasAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from the specified applied quota. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSServiceQuotasAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

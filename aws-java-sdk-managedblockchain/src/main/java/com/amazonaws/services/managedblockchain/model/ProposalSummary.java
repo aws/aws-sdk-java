@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Properties of a proposal.
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalSummary" target="_top">AWS
  *      API Documentation</a>

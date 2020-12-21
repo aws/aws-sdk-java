@@ -103,6 +103,11 @@ public class AbstractAWSAppRegistry implements AWSAppRegistry {
     }
 
     @Override
+    public SyncResourceResult syncResource(SyncResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

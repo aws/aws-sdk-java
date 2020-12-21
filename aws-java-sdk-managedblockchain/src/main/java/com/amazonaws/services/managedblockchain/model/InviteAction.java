@@ -22,6 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is
  * carried out when a <code>Proposal</code> is <code>APPROVED</code>.
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/InviteAction" target="_top">AWS API
  *      Documentation</a>

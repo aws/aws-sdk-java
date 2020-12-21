@@ -54,40 +54,42 @@ public class BatchPutScheduledUpdateGroupActionRequestMarshaller implements
             int scheduledUpdateGroupActionsListIndex = 1;
 
             for (ScheduledUpdateGroupActionRequest scheduledUpdateGroupActionsListValue : scheduledUpdateGroupActionsList) {
+                if (scheduledUpdateGroupActionsListValue != null) {
 
-                if (scheduledUpdateGroupActionsListValue.getScheduledActionName() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".ScheduledActionName",
-                            StringUtils.fromString(scheduledUpdateGroupActionsListValue.getScheduledActionName()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getScheduledActionName() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".ScheduledActionName",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getScheduledActionName()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getStartTime() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".StartTime",
-                            StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getStartTime()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getStartTime() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".StartTime",
+                                StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getStartTime()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getEndTime() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".EndTime",
-                            StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getEndTime()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getEndTime() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".EndTime",
+                                StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getEndTime()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getRecurrence() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".Recurrence",
-                            StringUtils.fromString(scheduledUpdateGroupActionsListValue.getRecurrence()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getRecurrence() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".Recurrence",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getRecurrence()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getMinSize() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MinSize",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMinSize()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getMinSize() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MinSize",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMinSize()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getMaxSize() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MaxSize",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMaxSize()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getMaxSize() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MaxSize",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMaxSize()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getDesiredCapacity() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".DesiredCapacity",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getDesiredCapacity()));
+                    if (scheduledUpdateGroupActionsListValue.getDesiredCapacity() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".DesiredCapacity",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getDesiredCapacity()));
+                    }
                 }
                 scheduledUpdateGroupActionsListIndex++;
             }

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
  * <p>
  * The quota request template is not associated with your organization.
  * </p>
- * <p>
- * To use the template, call <a>AssociateServiceQuotaTemplate</a>.
- * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceQuotaTemplateNotInUseException extends com.amazonaws.services.servicequotas.model.AWSServiceQuotasException {

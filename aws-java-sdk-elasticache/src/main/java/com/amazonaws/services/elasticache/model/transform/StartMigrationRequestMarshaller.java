@@ -51,15 +51,17 @@ public class StartMigrationRequestMarshaller implements Marshaller<Request<Start
             int customerNodeEndpointListListIndex = 1;
 
             for (CustomerNodeEndpoint customerNodeEndpointListListValue : customerNodeEndpointListList) {
+                if (customerNodeEndpointListListValue != null) {
 
-                if (customerNodeEndpointListListValue.getAddress() != null) {
-                    request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Address",
-                            StringUtils.fromString(customerNodeEndpointListListValue.getAddress()));
-                }
+                    if (customerNodeEndpointListListValue.getAddress() != null) {
+                        request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Address",
+                                StringUtils.fromString(customerNodeEndpointListListValue.getAddress()));
+                    }
 
-                if (customerNodeEndpointListListValue.getPort() != null) {
-                    request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Port",
-                            StringUtils.fromInteger(customerNodeEndpointListListValue.getPort()));
+                    if (customerNodeEndpointListListValue.getPort() != null) {
+                        request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Port",
+                                StringUtils.fromInteger(customerNodeEndpointListListValue.getPort()));
+                    }
                 }
                 customerNodeEndpointListListIndex++;
             }

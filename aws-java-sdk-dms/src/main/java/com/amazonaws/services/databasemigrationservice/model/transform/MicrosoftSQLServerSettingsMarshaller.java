@@ -47,6 +47,10 @@ public class MicrosoftSQLServerSettingsMarshaller {
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<Boolean> USEBCPFULLLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseBcpFullLoad").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final MicrosoftSQLServerSettingsMarshaller instance = new MicrosoftSQLServerSettingsMarshaller();
 
@@ -74,6 +78,8 @@ public class MicrosoftSQLServerSettingsMarshaller {
             protocolMarshaller.marshall(microsoftSQLServerSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUseBcpFullLoad(), USEBCPFULLLOAD_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

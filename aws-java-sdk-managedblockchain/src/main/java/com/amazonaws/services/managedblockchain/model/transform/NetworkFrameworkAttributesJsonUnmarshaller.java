@@ -52,6 +52,10 @@ public class NetworkFrameworkAttributesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     networkFrameworkAttributes.setFabric(NetworkFabricAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Ethereum", targetDepth)) {
+                    context.nextToken();
+                    networkFrameworkAttributes.setEthereum(NetworkEthereumAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

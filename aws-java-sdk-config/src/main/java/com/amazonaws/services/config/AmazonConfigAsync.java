@@ -770,6 +770,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Deletes the stored query for an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @return A Java Future containing the result of the DeleteStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStoredQueryResult> deleteStoredQueryAsync(DeleteStoredQueryRequest deleteStoredQueryRequest);
+
+    /**
+     * <p>
+     * Deletes the stored query for an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStoredQueryResult> deleteStoredQueryAsync(DeleteStoredQueryRequest deleteStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStoredQueryRequest, DeleteStoredQueryResult> asyncHandler);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After
      * the delivery has started, AWS Config sends the following notifications using an Amazon SNS topic that you have
      * specified.
@@ -2882,6 +2913,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @return A Java Future containing the result of the GetStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest getStoredQueryRequest);
+
+    /**
+     * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest getStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStoredQueryRequest, GetStoredQueryResult> asyncHandler);
+
+    /**
+     * <p>
      * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource
      * type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom
      * resource name, source account, and source region. You can narrow the results to include only resources that have
@@ -2987,6 +3049,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @return A Java Future containing the result of the ListStoredQueries operation returned by the service.
+     * @sample AmazonConfigAsync.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStoredQueriesResult> listStoredQueriesAsync(ListStoredQueriesRequest listStoredQueriesRequest);
+
+    /**
+     * <p>
+     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStoredQueries operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStoredQueriesResult> listStoredQueriesAsync(ListStoredQueriesRequest listStoredQueriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStoredQueriesRequest, ListStoredQueriesResult> asyncHandler);
 
     /**
      * <p>
@@ -3719,7 +3812,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -3739,7 +3832,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -3870,6 +3963,39 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<PutRetentionConfigurationResult> putRetentionConfigurationAsync(
             PutRetentionConfigurationRequest putRetentionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutRetentionConfigurationRequest, PutRetentionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
+     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @return A Java Future containing the result of the PutStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutStoredQueryResult> putStoredQueryAsync(PutStoredQueryRequest putStoredQueryRequest);
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
+     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutStoredQueryResult> putStoredQueryAsync(PutStoredQueryRequest putStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<PutStoredQueryRequest, PutStoredQueryResult> asyncHandler);
 
     /**
      * <p>

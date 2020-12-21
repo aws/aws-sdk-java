@@ -48,10 +48,10 @@ public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<S
         java.util.Map<String, String> attributes = setQueueAttributesRequest.getAttributes();
         int attributesListIndex = 1;
         for (Map.Entry<String, String> entry : attributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
                 request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(entry.getValue()));
             }
             attributesListIndex++;

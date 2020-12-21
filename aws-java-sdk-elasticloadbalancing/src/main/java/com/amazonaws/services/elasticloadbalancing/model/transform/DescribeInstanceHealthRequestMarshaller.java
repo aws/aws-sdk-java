@@ -52,9 +52,12 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
             int instancesListIndex = 1;
 
             for (Instance instancesListValue : instancesList) {
+                if (instancesListValue != null) {
 
-                if (instancesListValue.getInstanceId() != null) {
-                    request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instancesListValue.getInstanceId()));
+                    if (instancesListValue.getInstanceId() != null) {
+                        request.addParameter("Instances.member." + instancesListIndex + ".InstanceId",
+                                StringUtils.fromString(instancesListValue.getInstanceId()));
+                    }
                 }
                 instancesListIndex++;
             }

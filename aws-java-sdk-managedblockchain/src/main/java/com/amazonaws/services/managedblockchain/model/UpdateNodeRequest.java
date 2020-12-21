@@ -27,19 +27,22 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      */
     private String networkId;
     /**
      * <p>
-     * The unique ID of the member that owns the node.
+     * The unique identifier of the member that owns the node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String memberId;
     /**
      * <p>
-     * The unique ID of the node.
+     * The unique identifier of the node.
      * </p>
      */
     private String nodeId;
@@ -52,11 +55,11 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique ID of the Managed Blockchain network to which the node belongs.
+     *        The unique identifier of the network that the node is on.
      */
 
     public void setNetworkId(String networkId) {
@@ -65,10 +68,10 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
-     * @return The unique ID of the Managed Blockchain network to which the node belongs.
+     * @return The unique identifier of the network that the node is on.
      */
 
     public String getNetworkId() {
@@ -77,11 +80,11 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique ID of the Managed Blockchain network to which the node belongs.
+     *        The unique identifier of the network that the node is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +95,16 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the member that owns the node.
+     * The unique identifier of the member that owns the node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param memberId
-     *        The unique ID of the member that owns the node.
+     *        The unique identifier of the member that owns the node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -105,10 +113,15 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the member that owns the node.
+     * The unique identifier of the member that owns the node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
-     * @return The unique ID of the member that owns the node.
+     * @return The unique identifier of the member that owns the node.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -117,11 +130,16 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the member that owns the node.
+     * The unique identifier of the member that owns the node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param memberId
-     *        The unique ID of the member that owns the node.
+     *        The unique identifier of the member that owns the node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +150,11 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the node.
+     * The unique identifier of the node.
      * </p>
      * 
      * @param nodeId
-     *        The unique ID of the node.
+     *        The unique identifier of the node.
      */
 
     public void setNodeId(String nodeId) {
@@ -145,10 +163,10 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the node.
+     * The unique identifier of the node.
      * </p>
      * 
-     * @return The unique ID of the node.
+     * @return The unique identifier of the node.
      */
 
     public String getNodeId() {
@@ -157,11 +175,11 @@ public class UpdateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the node.
+     * The unique identifier of the node.
      * </p>
      * 
      * @param nodeId
-     *        The unique ID of the node.
+     *        The unique identifier of the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

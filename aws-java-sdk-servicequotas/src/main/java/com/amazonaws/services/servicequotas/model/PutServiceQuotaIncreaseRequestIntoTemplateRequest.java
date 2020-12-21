@@ -28,36 +28,36 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * Specifies the AWS Region for the quota.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
     /**
      * <p>
-     * Specifies the new, increased value for the quota.
+     * The new, increased value for the quota.
      * </p>
      */
     private Double desiredValue;
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -66,10 +66,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
-     * @return Specifies the service quota that you want to use.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -78,11 +78,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -106,10 +106,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -118,11 +118,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        Specifies the AWS Region for the quota.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -146,10 +146,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota.
+     * The AWS Region.
      * </p>
      * 
-     * @return Specifies the AWS Region for the quota.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -158,11 +158,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the AWS Region for the quota.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        Specifies the AWS Region for the quota.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +173,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the new, increased value for the quota.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Specifies the new, increased value for the quota.
+     *        The new, increased value for the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -186,10 +186,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the new, increased value for the quota.
+     * The new, increased value for the quota.
      * </p>
      * 
-     * @return Specifies the new, increased value for the quota.
+     * @return The new, increased value for the quota.
      */
 
     public Double getDesiredValue() {
@@ -198,11 +198,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * Specifies the new, increased value for the quota.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Specifies the new, increased value for the quota.
+     *        The new, increased value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,14 +51,16 @@ public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<D
             int entriesListIndex = 1;
 
             for (DeleteMessageBatchRequestEntry entriesListValue : entriesList) {
+                if (entriesListValue != null) {
 
-                if (entriesListValue.getId() != null) {
-                    request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.fromString(entriesListValue.getId()));
-                }
+                    if (entriesListValue.getId() != null) {
+                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.fromString(entriesListValue.getId()));
+                    }
 
-                if (entriesListValue.getReceiptHandle() != null) {
-                    request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
-                            StringUtils.fromString(entriesListValue.getReceiptHandle()));
+                    if (entriesListValue.getReceiptHandle() != null) {
+                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
+                                StringUtils.fromString(entriesListValue.getReceiptHandle()));
+                    }
                 }
                 entriesListIndex++;
             }

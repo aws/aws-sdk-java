@@ -118,6 +118,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteStoredQueryResult deleteStoredQuery(DeleteStoredQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,12 +371,22 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetStoredQueryResult getStoredQuery(GetStoredQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAggregateDiscoveredResourcesResult listAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStoredQueriesResult listStoredQueries(ListStoredQueriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -447,6 +462,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutStoredQueryResult putStoredQuery(PutStoredQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

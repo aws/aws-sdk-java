@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains information about the quota period.
+ * Information about the quota period.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/QuotaPeriod" target="_top">AWS API
@@ -30,24 +30,24 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a period.
+     * The value.
      * </p>
      */
     private Integer periodValue;
     /**
      * <p>
-     * The time unit of a period.
+     * The time unit.
      * </p>
      */
     private String periodUnit;
 
     /**
      * <p>
-     * The value of a period.
+     * The value.
      * </p>
      * 
      * @param periodValue
-     *        The value of a period.
+     *        The value.
      */
 
     public void setPeriodValue(Integer periodValue) {
@@ -56,10 +56,10 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a period.
+     * The value.
      * </p>
      * 
-     * @return The value of a period.
+     * @return The value.
      */
 
     public Integer getPeriodValue() {
@@ -68,11 +68,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a period.
+     * The value.
      * </p>
      * 
      * @param periodValue
-     *        The value of a period.
+     *        The value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time unit of a period.
+     * The time unit.
      * </p>
      * 
      * @param periodUnit
-     *        The time unit of a period.
+     *        The time unit.
      * @see PeriodUnit
      */
 
@@ -97,10 +97,10 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time unit of a period.
+     * The time unit.
      * </p>
      * 
-     * @return The time unit of a period.
+     * @return The time unit.
      * @see PeriodUnit
      */
 
@@ -110,11 +110,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time unit of a period.
+     * The time unit.
      * </p>
      * 
      * @param periodUnit
-     *        The time unit of a period.
+     *        The time unit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PeriodUnit
      */
@@ -126,11 +126,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time unit of a period.
+     * The time unit.
      * </p>
      * 
      * @param periodUnit
-     *        The time unit of a period.
+     *        The time unit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PeriodUnit
      */

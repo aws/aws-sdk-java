@@ -68,6 +68,14 @@ public class SybaseSettingsJsonUnmarshaller implements Unmarshaller<SybaseSettin
                     context.nextToken();
                     sybaseSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    sybaseSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    context.nextToken();
+                    sybaseSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

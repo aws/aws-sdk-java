@@ -224,6 +224,20 @@
       ],
       "documentation":"<p>Deletes the retention configuration.</p>"
     },
+    "DeleteStoredQuery":{
+      "name":"DeleteStoredQuery",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteStoredQueryRequest"},
+      "output":{"shape":"DeleteStoredQueryResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes the stored query for an AWS account in an AWS Region. </p>"
+    },
     "DeliverConfigSnapshot":{
       "name":"DeliverConfigSnapshot",
       "http":{
@@ -803,6 +817,20 @@
       ],
       "documentation":"<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval. If you specified a retention period to retain your <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the <code>ConfigurationItems</code> for the specified retention period. </p> <p>The response is paginated. By default, AWS Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p> </note>"
     },
+    "GetStoredQuery":{
+      "name":"GetStoredQuery",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetStoredQueryRequest"},
+      "output":{"shape":"GetStoredQueryResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Returns the details of a specific stored query.</p>"
+    },
     "ListAggregateDiscoveredResources":{
       "name":"ListAggregateDiscoveredResources",
       "http":{
@@ -834,6 +862,20 @@
         {"shape":"NoAvailableConfigurationRecorderException"}
       ],
       "documentation":"<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note> <p>You can specify either resource IDs or a resource name, but not both, in the same request.</p> </note> <p>The response is paginated. By default, AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p>"
+    },
+    "ListStoredQueries":{
+      "name":"ListStoredQueries",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListStoredQueriesRequest"},
+      "output":{"shape":"ListStoredQueriesResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"InvalidNextTokenException"}
+      ],
+      "documentation":"<p>List the stored queries for an AWS account in an AWS Region. The default is 100. </p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -1042,7 +1084,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"InsufficientPermissionsException"}
       ],
-      "documentation":"<p>A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specific resource with a specific AWS Config rule. </p> <note> <p>AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p> </note>"
+      "documentation":"<p>A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule. </p> <note> <p>AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p> </note>"
     },
     "PutResourceConfig":{
       "name":"PutResourceConfig",
@@ -1072,6 +1114,21 @@
         {"shape":"MaxNumberOfRetentionConfigurationsExceededException"}
       ],
       "documentation":"<p>Creates and updates the retention configuration with details about retention period (number of days) that AWS Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object. </p> <note> <p>Currently, AWS Config supports only one retention configuration per region in your account.</p> </note>"
+    },
+    "PutStoredQuery":{
+      "name":"PutStoredQuery",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutStoredQueryRequest"},
+      "output":{"shape":"PutStoredQueryResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"TooManyTagsException"},
+        {"shape":"ResourceConcurrentModificationException"}
+      ],
+      "documentation":"<p>Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.</p>"
     },
     "SelectAggregateResourceConfig":{
       "name":"SelectAggregateResourceConfig",
@@ -2037,7 +2094,7 @@
         },
         "arn":{
           "shape":"ARN",
-          "documentation":"<p>Amazon Resource Name (ARN) associated with the resource.</p>"
+          "documentation":"<p>accoun</p>"
         },
         "resourceType":{
           "shape":"ResourceType",
@@ -2255,11 +2312,11 @@
         },
         "DeliveryS3Bucket":{
           "shape":"DeliveryS3Bucket",
-          "documentation":"<p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>Conformance pack template that is used to create a pack. The delivery bucket name should start with awsconfigconforms. For example: \"Resource\": \"arn:aws:s3:::your_bucket_name/*\".</p>"
         },
         "DeliveryS3KeyPrefix":{
           "shape":"DeliveryS3KeyPrefix",
-          "documentation":"<p>The prefix for the Amazon S3 bucket.</p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>The prefix for the Amazon S3 bucket.</p>"
         },
         "ConformancePackInputParameters":{
           "shape":"ConformancePackInputParameters",
@@ -2680,6 +2737,21 @@
           "shape":"RetentionConfigurationName",
           "documentation":"<p>The name of the retention configuration to delete.</p>"
         }
+      }
+    },
+    "DeleteStoredQueryRequest":{
+      "type":"structure",
+      "required":["QueryName"],
+      "members":{
+        "QueryName":{
+          "shape":"QueryName",
+          "documentation":"<p>The name of the query that you want to delete.</p>"
+        }
+      }
+    },
+    "DeleteStoredQueryResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeliverConfigSnapshotRequest":{
@@ -3503,6 +3575,7 @@
       "max":256,
       "min":0
     },
+    "ErrorMessage":{"type":"string"},
     "Evaluation":{
       "type":"structure",
       "required":[
@@ -4225,6 +4298,25 @@
       },
       "documentation":"<p>The output for the <a>GetResourceConfigHistory</a> action.</p>"
     },
+    "GetStoredQueryRequest":{
+      "type":"structure",
+      "required":["QueryName"],
+      "members":{
+        "QueryName":{
+          "shape":"QueryName",
+          "documentation":"<p>The name of the query.</p>"
+        }
+      }
+    },
+    "GetStoredQueryResponse":{
+      "type":"structure",
+      "members":{
+        "StoredQuery":{
+          "shape":"StoredQuery",
+          "documentation":"<p>Returns a <code>StoredQuery</code> object.</p>"
+        }
+      }
+    },
     "GroupByAPILimit":{
       "type":"integer",
       "max":1000,
@@ -4393,7 +4485,7 @@
         },
         "Limit":{
           "shape":"Limit",
-          "documentation":"<p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, AWS Config uses the default.</p>"
+          "documentation":"<p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, AWS Config uses the default.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -4458,6 +4550,34 @@
         }
       },
       "documentation":"<p/>"
+    },
+    "ListStoredQueriesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>",
+          "box":true
+        },
+        "MaxResults":{
+          "shape":"Limit",
+          "documentation":"<p>The maximum number of results to be returned with a single call.</p>",
+          "box":true
+        }
+      }
+    },
+    "ListStoredQueriesResponse":{
+      "type":"structure",
+      "members":{
+        "StoredQueryMetadata":{
+          "shape":"StoredQueryMetadataList",
+          "documentation":"<p>A list of <code>StoredQueryMetadata</code> objects.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>"
+        }
+      }
     },
     "ListTagsForResourceRequest":{
       "type":"structure",
@@ -4881,11 +5001,11 @@
         },
         "DeliveryS3Bucket":{
           "shape":"DeliveryS3Bucket",
-          "documentation":"<p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template that is used to create a pack. </p>"
         },
         "DeliveryS3KeyPrefix":{
           "shape":"DeliveryS3KeyPrefix",
-          "documentation":"<p>Any folder structure you want to add to an Amazon S3 bucket.</p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>Any folder structure you want to add to an Amazon S3 bucket.</p>"
         },
         "ConformancePackInputParameters":{
           "shape":"ConformancePackInputParameters",
@@ -5296,11 +5416,11 @@
         },
         "DeliveryS3Bucket":{
           "shape":"DeliveryS3Bucket",
-          "documentation":"<p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>AWS Config stores intermediate files while processing conformance pack template.</p>"
         },
         "DeliveryS3KeyPrefix":{
           "shape":"DeliveryS3KeyPrefix",
-          "documentation":"<p>The prefix for the Amazon S3 bucket. </p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>The prefix for the Amazon S3 bucket. </p>"
         },
         "ConformancePackInputParameters":{
           "shape":"ConformancePackInputParameters",
@@ -5422,11 +5542,11 @@
         },
         "DeliveryS3Bucket":{
           "shape":"DeliveryS3Bucket",
-          "documentation":"<p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate files while processing conformance pack template. </p> <p>The delivery bucket name should start with awsconfigconforms. For example: \"Resource\": \"arn:aws:s3:::your_bucket_name/*\". For more information, see <a href=\"https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html\">Permissions for cross account bucket access</a>.</p>"
         },
         "DeliveryS3KeyPrefix":{
           "shape":"DeliveryS3KeyPrefix",
-          "documentation":"<p>The prefix for the Amazon S3 bucket.</p> <note> <p>This field is optional.</p> </note>"
+          "documentation":"<p>The prefix for the Amazon S3 bucket.</p>"
         },
         "ConformancePackInputParameters":{
           "shape":"ConformancePackInputParameters",
@@ -5554,6 +5674,53 @@
         }
       }
     },
+    "PutStoredQueryRequest":{
+      "type":"structure",
+      "required":["StoredQuery"],
+      "members":{
+        "StoredQuery":{
+          "shape":"StoredQuery",
+          "documentation":"<p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>"
+        },
+        "Tags":{
+          "shape":"TagsList",
+          "documentation":"<p>A list of <code>Tags</code> object.</p>"
+        }
+      }
+    },
+    "PutStoredQueryResponse":{
+      "type":"structure",
+      "members":{
+        "QueryArn":{
+          "shape":"QueryArn",
+          "documentation":"<p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-id.</p>"
+        }
+      }
+    },
+    "QueryArn":{
+      "type":"string",
+      "max":500,
+      "min":1,
+      "pattern":"^arn:aws[a-z\\-]*:config:[a-z\\-\\d]+:\\d+:stored-query/[a-zA-Z0-9-_]+/query-[a-zA-Z\\d-_/]+$"
+    },
+    "QueryDescription":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"[\\s\\S]*"
+    },
+    "QueryExpression":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "pattern":"[\\s\\S]*"
+    },
+    "QueryId":{
+      "type":"string",
+      "max":36,
+      "min":1,
+      "pattern":"^\\S+$"
+    },
     "QueryInfo":{
       "type":"structure",
       "members":{
@@ -5563,6 +5730,12 @@
         }
       },
       "documentation":"<p>Details about the query.</p>"
+    },
+    "QueryName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9-_]+$"
     },
     "RecorderName":{
       "type":"string",
@@ -5861,6 +6034,14 @@
       "type":"string",
       "enum":["SSM_DOCUMENT"]
     },
+    "ResourceConcurrentModificationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>Two users are trying to modify the same query at the same time. Wait for a moment and try again.</p>",
+      "exception":true
+    },
     "ResourceCount":{
       "type":"structure",
       "members":{
@@ -6084,6 +6265,9 @@
         "AWS::CloudFront::Distribution",
         "AWS::CloudFront::StreamingDistribution",
         "AWS::Lambda::Function",
+        "AWS::NetworkFirewall::Firewall",
+        "AWS::NetworkFirewall::FirewallPolicy",
+        "AWS::NetworkFirewall::RuleGroup",
         "AWS::ElasticBeanstalk::Application",
         "AWS::ElasticBeanstalk::ApplicationVersion",
         "AWS::ElasticBeanstalk::Environment",
@@ -6467,6 +6651,68 @@
         }
       },
       "documentation":"<p>The input for the <a>StopConfigurationRecorder</a> action.</p>"
+    },
+    "StoredQuery":{
+      "type":"structure",
+      "required":["QueryName"],
+      "members":{
+        "QueryId":{
+          "shape":"QueryId",
+          "documentation":"<p>The ID of the query.</p>",
+          "box":true
+        },
+        "QueryArn":{
+          "shape":"QueryArn",
+          "documentation":"<p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-id.</p>",
+          "box":true
+        },
+        "QueryName":{
+          "shape":"QueryName",
+          "documentation":"<p>The name of the query.</p>"
+        },
+        "Description":{
+          "shape":"QueryDescription",
+          "documentation":"<p>A unique description for the query.</p>",
+          "box":true
+        },
+        "Expression":{
+          "shape":"QueryExpression",
+          "documentation":"<p>The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code> </p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>Provides the details of a stored query.</p>"
+    },
+    "StoredQueryMetadata":{
+      "type":"structure",
+      "required":[
+        "QueryId",
+        "QueryArn",
+        "QueryName"
+      ],
+      "members":{
+        "QueryId":{
+          "shape":"QueryId",
+          "documentation":"<p>The ID of the query. </p>"
+        },
+        "QueryArn":{
+          "shape":"QueryArn",
+          "documentation":"<p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-id.</p>"
+        },
+        "QueryName":{
+          "shape":"QueryName",
+          "documentation":"<p>The name of the query.</p>"
+        },
+        "Description":{
+          "shape":"QueryDescription",
+          "documentation":"<p>A unique description for the query.</p>"
+        }
+      },
+      "documentation":"<p>Returns details of a specific query. </p>"
+    },
+    "StoredQueryMetadataList":{
+      "type":"list",
+      "member":{"shape":"StoredQueryMetadata"}
     },
     "String":{"type":"string"},
     "StringWithCharLimit1024":{

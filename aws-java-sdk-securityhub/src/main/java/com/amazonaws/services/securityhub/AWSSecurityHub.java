@@ -199,32 +199,7 @@ public interface AWSSecurityHub {
      * <ul>
      * <li>
      * <p>
-     * <code>Confidence</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Criticality</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Note</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>RelatedFindings</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Severity</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Types</code>
      * </p>
      * </li>
      * <li>
@@ -240,6 +215,38 @@ public interface AWSSecurityHub {
      * <li>
      * <p>
      * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <code>BatchImportFindings</code> can be used to update the following finding fields and objects only if they have
+     * not been updated using <code>BatchUpdateFindings</code>. After they are updated using
+     * <code>BatchUpdateFindings</code>, these fields cannot be updated using <code>BatchImportFindings</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
      * </p>
      * </li>
      * </ul>

@@ -27,13 +27,16 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The unique identifier of the network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      */
     private String networkId;
     /**
      * <p>
      * The unique identifier of the member that owns the node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -46,11 +49,11 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The unique identifier of the network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network to which the node belongs.
+     *        The unique identifier of the network that the node is on.
      */
 
     public void setNetworkId(String networkId) {
@@ -59,10 +62,10 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The unique identifier of the network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
-     * @return The unique identifier of the network to which the node belongs.
+     * @return The unique identifier of the network that the node is on.
      */
 
     public String getNetworkId() {
@@ -71,11 +74,11 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The unique identifier of the network to which the node belongs.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network to which the node belongs.
+     *        The unique identifier of the network that the node is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,9 +91,14 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The unique identifier of the member that owns the node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns the node.
+     *        The unique identifier of the member that owns the node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -101,8 +109,13 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The unique identifier of the member that owns the node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member that owns the node.
+     * @return The unique identifier of the member that owns the node.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -113,9 +126,14 @@ public class GetNodeRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The unique identifier of the member that owns the node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns the node.
+     *        The unique identifier of the member that owns the node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -63,13 +63,15 @@ public class ListStackInstancesRequestMarshaller implements Marshaller<Request<L
             int filtersListIndex = 1;
 
             for (StackInstanceFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters.member." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                }
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
 
-                if (filtersListValue.getValues() != null) {
-                    request.addParameter("Filters.member." + filtersListIndex + ".Values", StringUtils.fromString(filtersListValue.getValues()));
+                    if (filtersListValue.getValues() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Values", StringUtils.fromString(filtersListValue.getValues()));
+                    }
                 }
                 filtersListIndex++;
             }

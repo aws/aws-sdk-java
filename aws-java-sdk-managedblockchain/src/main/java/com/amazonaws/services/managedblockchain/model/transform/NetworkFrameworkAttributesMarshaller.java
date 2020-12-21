@@ -29,6 +29,8 @@ public class NetworkFrameworkAttributesMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> FABRIC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Fabric").build();
+    private static final MarshallingInfo<StructuredPojo> ETHEREUM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ethereum").build();
 
     private static final NetworkFrameworkAttributesMarshaller instance = new NetworkFrameworkAttributesMarshaller();
 
@@ -47,6 +49,7 @@ public class NetworkFrameworkAttributesMarshaller {
 
         try {
             protocolMarshaller.marshall(networkFrameworkAttributes.getFabric(), FABRIC_BINDING);
+            protocolMarshaller.marshall(networkFrameworkAttributes.getEthereum(), ETHEREUM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -63,13 +63,15 @@ public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Requ
             int dimensionsListIndex = 1;
 
             for (Dimension dimensionsListValue : dimensionsList) {
+                if (dimensionsListValue != null) {
 
-                if (dimensionsListValue.getName() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                }
+                    if (dimensionsListValue.getName() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
+                    }
 
-                if (dimensionsListValue.getValue() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                    if (dimensionsListValue.getValue() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                    }
                 }
                 dimensionsListIndex++;
             }

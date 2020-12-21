@@ -23,6 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy
  * applies to all proposals and is specified when the network is created.
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ApprovalThresholdPolicy"
  *      target="_top">AWS API Documentation</a>

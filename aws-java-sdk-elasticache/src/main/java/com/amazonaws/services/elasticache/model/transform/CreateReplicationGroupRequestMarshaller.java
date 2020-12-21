@@ -99,60 +99,63 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             int nodeGroupConfigurationListIndex = 1;
 
             for (NodeGroupConfiguration nodeGroupConfigurationListValue : nodeGroupConfigurationList) {
+                if (nodeGroupConfigurationListValue != null) {
 
-                if (nodeGroupConfigurationListValue.getNodeGroupId() != null) {
-                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".NodeGroupId",
-                            StringUtils.fromString(nodeGroupConfigurationListValue.getNodeGroupId()));
-                }
-
-                if (nodeGroupConfigurationListValue.getSlots() != null) {
-                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".Slots",
-                            StringUtils.fromString(nodeGroupConfigurationListValue.getSlots()));
-                }
-
-                if (nodeGroupConfigurationListValue.getReplicaCount() != null) {
-                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".ReplicaCount",
-                            StringUtils.fromInteger(nodeGroupConfigurationListValue.getReplicaCount()));
-                }
-
-                if (nodeGroupConfigurationListValue.getPrimaryAvailabilityZone() != null) {
-                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryAvailabilityZone",
-                            StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryAvailabilityZone()));
-                }
-
-                if (!nodeGroupConfigurationListValue.getReplicaAvailabilityZones().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaAvailabilityZones()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
-                            .getReplicaAvailabilityZones();
-                    int replicaAvailabilityZonesListIndex = 1;
-
-                    for (String replicaAvailabilityZonesListValue : replicaAvailabilityZonesList) {
-                        if (replicaAvailabilityZonesListValue != null) {
-                            request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
-                                    + ".ReplicaAvailabilityZones.AvailabilityZone." + replicaAvailabilityZonesListIndex,
-                                    StringUtils.fromString(replicaAvailabilityZonesListValue));
-                        }
-                        replicaAvailabilityZonesListIndex++;
+                    if (nodeGroupConfigurationListValue.getNodeGroupId() != null) {
+                        request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".NodeGroupId",
+                                StringUtils.fromString(nodeGroupConfigurationListValue.getNodeGroupId()));
                     }
-                }
 
-                if (nodeGroupConfigurationListValue.getPrimaryOutpostArn() != null) {
-                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryOutpostArn",
-                            StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryOutpostArn()));
-                }
+                    if (nodeGroupConfigurationListValue.getSlots() != null) {
+                        request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".Slots",
+                                StringUtils.fromString(nodeGroupConfigurationListValue.getSlots()));
+                    }
 
-                if (!nodeGroupConfigurationListValue.getReplicaOutpostArns().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaOutpostArns()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> replicaOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
-                            .getReplicaOutpostArns();
-                    int replicaOutpostArnsListIndex = 1;
+                    if (nodeGroupConfigurationListValue.getReplicaCount() != null) {
+                        request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".ReplicaCount",
+                                StringUtils.fromInteger(nodeGroupConfigurationListValue.getReplicaCount()));
+                    }
 
-                    for (String replicaOutpostArnsListValue : replicaOutpostArnsList) {
-                        if (replicaOutpostArnsListValue != null) {
-                            request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
-                                    + ".ReplicaOutpostArns.OutpostArn." + replicaOutpostArnsListIndex, StringUtils.fromString(replicaOutpostArnsListValue));
+                    if (nodeGroupConfigurationListValue.getPrimaryAvailabilityZone() != null) {
+                        request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryAvailabilityZone",
+                                StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryAvailabilityZone()));
+                    }
+
+                    if (!nodeGroupConfigurationListValue.getReplicaAvailabilityZones().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaAvailabilityZones())
+                                    .isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
+                                .getReplicaAvailabilityZones();
+                        int replicaAvailabilityZonesListIndex = 1;
+
+                        for (String replicaAvailabilityZonesListValue : replicaAvailabilityZonesList) {
+                            if (replicaAvailabilityZonesListValue != null) {
+                                request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
+                                        + ".ReplicaAvailabilityZones.AvailabilityZone." + replicaAvailabilityZonesListIndex,
+                                        StringUtils.fromString(replicaAvailabilityZonesListValue));
+                            }
+                            replicaAvailabilityZonesListIndex++;
                         }
-                        replicaOutpostArnsListIndex++;
+                    }
+
+                    if (nodeGroupConfigurationListValue.getPrimaryOutpostArn() != null) {
+                        request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryOutpostArn",
+                                StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryOutpostArn()));
+                    }
+
+                    if (!nodeGroupConfigurationListValue.getReplicaOutpostArns().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaOutpostArns()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> replicaOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
+                                .getReplicaOutpostArns();
+                        int replicaOutpostArnsListIndex = 1;
+
+                        for (String replicaOutpostArnsListValue : replicaOutpostArnsList) {
+                            if (replicaOutpostArnsListValue != null) {
+                                request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
+                                        + ".ReplicaOutpostArns.OutpostArn." + replicaOutpostArnsListIndex, StringUtils.fromString(replicaOutpostArnsListValue));
+                            }
+                            replicaOutpostArnsListIndex++;
+                        }
                     }
                 }
                 nodeGroupConfigurationListIndex++;
@@ -214,13 +217,15 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }

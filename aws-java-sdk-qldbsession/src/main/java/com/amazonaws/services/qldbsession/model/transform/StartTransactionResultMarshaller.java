@@ -29,6 +29,8 @@ public class StartTransactionResultMarshaller {
 
     private static final MarshallingInfo<String> TRANSACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransactionId").build();
+    private static final MarshallingInfo<StructuredPojo> TIMINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimingInformation").build();
 
     private static final StartTransactionResultMarshaller instance = new StartTransactionResultMarshaller();
 
@@ -47,6 +49,7 @@ public class StartTransactionResultMarshaller {
 
         try {
             protocolMarshaller.marshall(startTransactionResult.getTransactionId(), TRANSACTIONID_BINDING);
+            protocolMarshaller.marshall(startTransactionResult.getTimingInformation(), TIMINGINFORMATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

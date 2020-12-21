@@ -56,13 +56,15 @@ public class ModifyTargetGroupAttributesRequestMarshaller implements
                 int attributesListIndex = 1;
 
                 for (TargetGroupAttribute attributesListValue : attributesList) {
+                    if (attributesListValue != null) {
 
-                    if (attributesListValue.getKey() != null) {
-                        request.addParameter("Attributes.member." + attributesListIndex + ".Key", StringUtils.fromString(attributesListValue.getKey()));
-                    }
+                        if (attributesListValue.getKey() != null) {
+                            request.addParameter("Attributes.member." + attributesListIndex + ".Key", StringUtils.fromString(attributesListValue.getKey()));
+                        }
 
-                    if (attributesListValue.getValue() != null) {
-                        request.addParameter("Attributes.member." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                        if (attributesListValue.getValue() != null) {
+                            request.addParameter("Attributes.member." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                        }
                     }
                     attributesListIndex++;
                 }

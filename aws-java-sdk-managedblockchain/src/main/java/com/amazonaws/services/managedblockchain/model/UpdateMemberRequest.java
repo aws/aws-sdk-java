@@ -27,13 +27,13 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the member belongs.
+     * The unique identifier of the Managed Blockchain network to which the member belongs.
      * </p>
      */
     private String networkId;
     /**
      * <p>
-     * The unique ID of the member.
+     * The unique identifier of the member.
      * </p>
      */
     private String memberId;
@@ -46,11 +46,11 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the member belongs.
+     * The unique identifier of the Managed Blockchain network to which the member belongs.
      * </p>
      * 
      * @param networkId
-     *        The unique ID of the Managed Blockchain network to which the member belongs.
+     *        The unique identifier of the Managed Blockchain network to which the member belongs.
      */
 
     public void setNetworkId(String networkId) {
@@ -59,10 +59,10 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the member belongs.
+     * The unique identifier of the Managed Blockchain network to which the member belongs.
      * </p>
      * 
-     * @return The unique ID of the Managed Blockchain network to which the member belongs.
+     * @return The unique identifier of the Managed Blockchain network to which the member belongs.
      */
 
     public String getNetworkId() {
@@ -71,11 +71,11 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the Managed Blockchain network to which the member belongs.
+     * The unique identifier of the Managed Blockchain network to which the member belongs.
      * </p>
      * 
      * @param networkId
-     *        The unique ID of the Managed Blockchain network to which the member belongs.
+     *        The unique identifier of the Managed Blockchain network to which the member belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the member.
+     * The unique identifier of the member.
      * </p>
      * 
      * @param memberId
-     *        The unique ID of the member.
+     *        The unique identifier of the member.
      */
 
     public void setMemberId(String memberId) {
@@ -99,10 +99,10 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the member.
+     * The unique identifier of the member.
      * </p>
      * 
-     * @return The unique ID of the member.
+     * @return The unique identifier of the member.
      */
 
     public String getMemberId() {
@@ -111,11 +111,11 @@ public class UpdateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the member.
+     * The unique identifier of the member.
      * </p>
      * 
      * @param memberId
-     *        The unique ID of the member.
+     *        The unique identifier of the member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,10 +50,10 @@ public class SetPlatformApplicationAttributesRequestMarshaller implements
         java.util.Map<String, String> attributes = setPlatformApplicationAttributesRequest.getAttributes();
         int attributesListIndex = 1;
         for (Map.Entry<String, String> entry : attributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("Attributes.entry." + attributesListIndex + ".key", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
                 request.addParameter("Attributes.entry." + attributesListIndex + ".value", StringUtils.fromString(entry.getValue()));
             }
             attributesListIndex++;

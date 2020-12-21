@@ -34,6 +34,18 @@ public class FetchPageResult implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Page page;
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     */
+    private TimingInformation timingInformation;
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     */
+    private IOUsage consumedIOs;
 
     /**
      * <p>
@@ -76,6 +88,86 @@ public class FetchPageResult implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     */
+
+    public void setTimingInformation(TimingInformation timingInformation) {
+        this.timingInformation = timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @return Contains server-side performance information for the command.
+     */
+
+    public TimingInformation getTimingInformation() {
+        return this.timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FetchPageResult withTimingInformation(TimingInformation timingInformation) {
+        setTimingInformation(timingInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @param consumedIOs
+     *        Contains metrics about the number of I/O requests that were consumed.
+     */
+
+    public void setConsumedIOs(IOUsage consumedIOs) {
+        this.consumedIOs = consumedIOs;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @return Contains metrics about the number of I/O requests that were consumed.
+     */
+
+    public IOUsage getConsumedIOs() {
+        return this.consumedIOs;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @param consumedIOs
+     *        Contains metrics about the number of I/O requests that were consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FetchPageResult withConsumedIOs(IOUsage consumedIOs) {
+        setConsumedIOs(consumedIOs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +180,11 @@ public class FetchPageResult implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPage() != null)
-            sb.append("Page: ").append(getPage());
+            sb.append("Page: ").append(getPage()).append(",");
+        if (getTimingInformation() != null)
+            sb.append("TimingInformation: ").append(getTimingInformation()).append(",");
+        if (getConsumedIOs() != null)
+            sb.append("ConsumedIOs: ").append(getConsumedIOs());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +203,14 @@ public class FetchPageResult implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPage() != null && other.getPage().equals(this.getPage()) == false)
             return false;
+        if (other.getTimingInformation() == null ^ this.getTimingInformation() == null)
+            return false;
+        if (other.getTimingInformation() != null && other.getTimingInformation().equals(this.getTimingInformation()) == false)
+            return false;
+        if (other.getConsumedIOs() == null ^ this.getConsumedIOs() == null)
+            return false;
+        if (other.getConsumedIOs() != null && other.getConsumedIOs().equals(this.getConsumedIOs()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +220,8 @@ public class FetchPageResult implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPage() == null) ? 0 : getPage().hashCode());
+        hashCode = prime * hashCode + ((getTimingInformation() == null) ? 0 : getTimingInformation().hashCode());
+        hashCode = prime * hashCode + ((getConsumedIOs() == null) ? 0 : getConsumedIOs().hashCode());
         return hashCode;
     }
 

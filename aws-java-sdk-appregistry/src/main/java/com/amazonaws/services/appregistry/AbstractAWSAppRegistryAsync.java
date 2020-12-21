@@ -223,6 +223,19 @@ public class AbstractAWSAppRegistryAsync extends AbstractAWSAppRegistry implemen
     }
 
     @Override
+    public java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(SyncResourceRequest request) {
+
+        return syncResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(SyncResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<SyncResourceRequest, SyncResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

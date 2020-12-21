@@ -16,9 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The organization that your account belongs to, is not in All Features mode. To enable all features mode, see <a
- * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html"
- * >EnableAllFeatures</a>.
+ * The organization that your account belongs to is not in All Features mode.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the properties of a node that is associated with a multi-node parallel job.
+ * An object representing the properties of a node that's associated with a multi-node parallel job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertiesSummary" target="_top">AWS API

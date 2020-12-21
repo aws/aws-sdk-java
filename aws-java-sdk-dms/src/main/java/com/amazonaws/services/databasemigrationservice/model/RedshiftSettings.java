@@ -56,8 +56,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * For full load mode, AWS DMS converts source records into .csv files and loads them to the
      * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
      * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
-     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
-     * Guide</a>
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift
+     * Database Developer Guide</i>.
      * </p>
      * <p>
      * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
@@ -268,6 +268,33 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Integer writeBufferSize;
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the Amazon Redshift endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     */
+    private String secretsManagerAccessRoleArn;
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon
+     * Redshift endpoint connection details.
+     * </p>
+     */
+    private String secretsManagerSecretId;
 
     /**
      * <p>
@@ -424,8 +451,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * For full load mode, AWS DMS converts source records into .csv files and loads them to the
      * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
      * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
-     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
-     * Guide</a>
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift
+     * Database Developer Guide</i>.
      * </p>
      * <p>
      * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
@@ -439,8 +466,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      *        For full load mode, AWS DMS converts source records into .csv files and loads them to the
      *        <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
      *        files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
-     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     *        Database Developer Guide</a>
+     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the
+     *        <i>Amazon Redshift Database Developer Guide</i>.
      *        </p>
      *        <p>
      *        For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
@@ -460,8 +487,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * For full load mode, AWS DMS converts source records into .csv files and loads them to the
      * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
      * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
-     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
-     * Guide</a>
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift
+     * Database Developer Guide</i>.
      * </p>
      * <p>
      * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
@@ -474,8 +501,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      *         For full load mode, AWS DMS converts source records into .csv files and loads them to the
      *         <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
      *         files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
-     *         more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     *         Redshift Database Developer Guide</a>
+     *         more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     *         the <i>Amazon Redshift Database Developer Guide</i>.
      *         </p>
      *         <p>
      *         For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files
@@ -495,8 +522,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * For full load mode, AWS DMS converts source records into .csv files and loads them to the
      * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
      * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
-     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
-     * Guide</a>
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift
+     * Database Developer Guide</i>.
      * </p>
      * <p>
      * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
@@ -510,8 +537,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      *        For full load mode, AWS DMS converts source records into .csv files and loads them to the
      *        <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
      *        files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
-     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     *        Database Developer Guide</a>
+     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the
+     *        <i>Amazon Redshift Database Developer Guide</i>.
      *        </p>
      *        <p>
      *        For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
@@ -1997,6 +2024,176 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the Amazon Redshift endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param secretsManagerAccessRoleArn
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *        the Amazon Redshift endpoint.</p> <note>
+     *        <p>
+     *        You can specify one of two sets of values for these permissions. You can specify the values for this
+     *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *        Service User Guide</i>.
+     *        </p>
+     */
+
+    public void setSecretsManagerAccessRoleArn(String secretsManagerAccessRoleArn) {
+        this.secretsManagerAccessRoleArn = secretsManagerAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the Amazon Redshift endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *         the Amazon Redshift endpoint.</p> <note>
+     *         <p>
+     *         You can specify one of two sets of values for these permissions. You can specify the values for this
+     *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *         Service User Guide</i>.
+     *         </p>
+     */
+
+    public String getSecretsManagerAccessRoleArn() {
+        return this.secretsManagerAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
+     * has the value of the AWS Secrets Manager secret that allows access to the Amazon Redshift endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
+     * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+     * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param secretsManagerAccessRoleArn
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
+     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
+     *        the Amazon Redshift endpoint.</p> <note>
+     *        <p>
+     *        You can specify one of two sets of values for these permissions. You can specify the values for this
+     *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
+     *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
+     *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
+     *        Service User Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withSecretsManagerAccessRoleArn(String secretsManagerAccessRoleArn) {
+        setSecretsManagerAccessRoleArn(secretsManagerAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon
+     * Redshift endpoint connection details.
+     * </p>
+     * 
+     * @param secretsManagerSecretId
+     *        The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *        Amazon Redshift endpoint connection details.
+     */
+
+    public void setSecretsManagerSecretId(String secretsManagerSecretId) {
+        this.secretsManagerSecretId = secretsManagerSecretId;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon
+     * Redshift endpoint connection details.
+     * </p>
+     * 
+     * @return The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *         Amazon Redshift endpoint connection details.
+     */
+
+    public String getSecretsManagerSecretId() {
+        return this.secretsManagerSecretId;
+    }
+
+    /**
+     * <p>
+     * The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon
+     * Redshift endpoint connection details.
+     * </p>
+     * 
+     * @param secretsManagerSecretId
+     *        The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the
+     *        Amazon Redshift endpoint connection details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withSecretsManagerSecretId(String secretsManagerSecretId) {
+        setSecretsManagerSecretId(secretsManagerSecretId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2063,7 +2260,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getWriteBufferSize() != null)
-            sb.append("WriteBufferSize: ").append(getWriteBufferSize());
+            sb.append("WriteBufferSize: ").append(getWriteBufferSize()).append(",");
+        if (getSecretsManagerAccessRoleArn() != null)
+            sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
+        if (getSecretsManagerSecretId() != null)
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
         sb.append("}");
         return sb.toString();
     }
@@ -2190,6 +2391,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getWriteBufferSize() != null && other.getWriteBufferSize().equals(this.getWriteBufferSize()) == false)
             return false;
+        if (other.getSecretsManagerAccessRoleArn() == null ^ this.getSecretsManagerAccessRoleArn() == null)
+            return false;
+        if (other.getSecretsManagerAccessRoleArn() != null && other.getSecretsManagerAccessRoleArn().equals(this.getSecretsManagerAccessRoleArn()) == false)
+            return false;
+        if (other.getSecretsManagerSecretId() == null ^ this.getSecretsManagerSecretId() == null)
+            return false;
+        if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
+            return false;
         return true;
     }
 
@@ -2226,6 +2435,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTruncateColumns() == null) ? 0 : getTruncateColumns().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getWriteBufferSize() == null) ? 0 : getWriteBufferSize().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         return hashCode;
     }
 

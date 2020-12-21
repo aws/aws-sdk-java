@@ -53,29 +53,31 @@ public class CreateLoadBalancerListenersRequestMarshaller implements
             int listenersListIndex = 1;
 
             for (Listener listenersListValue : listenersList) {
+                if (listenersListValue != null) {
 
-                if (listenersListValue.getProtocol() != null) {
-                    request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
-                }
+                    if (listenersListValue.getProtocol() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
+                    }
 
-                if (listenersListValue.getLoadBalancerPort() != null) {
-                    request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort",
-                            StringUtils.fromInteger(listenersListValue.getLoadBalancerPort()));
-                }
+                    if (listenersListValue.getLoadBalancerPort() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort",
+                                StringUtils.fromInteger(listenersListValue.getLoadBalancerPort()));
+                    }
 
-                if (listenersListValue.getInstanceProtocol() != null) {
-                    request.addParameter("Listeners.member." + listenersListIndex + ".InstanceProtocol",
-                            StringUtils.fromString(listenersListValue.getInstanceProtocol()));
-                }
+                    if (listenersListValue.getInstanceProtocol() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".InstanceProtocol",
+                                StringUtils.fromString(listenersListValue.getInstanceProtocol()));
+                    }
 
-                if (listenersListValue.getInstancePort() != null) {
-                    request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort",
-                            StringUtils.fromInteger(listenersListValue.getInstancePort()));
-                }
+                    if (listenersListValue.getInstancePort() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort",
+                                StringUtils.fromInteger(listenersListValue.getInstancePort()));
+                    }
 
-                if (listenersListValue.getSSLCertificateId() != null) {
-                    request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId",
-                            StringUtils.fromString(listenersListValue.getSSLCertificateId()));
+                    if (listenersListValue.getSSLCertificateId() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId",
+                                StringUtils.fromString(listenersListValue.getSSLCertificateId()));
+                    }
                 }
                 listenersListIndex++;
             }

@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Service Quotas template is not available in the Region where you are making the request. Please make the request
- * in us-east-1.
+ * The Service Quotas template is not available in this AWS Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -101,25 +101,27 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+                if (optionSettingsListValue != null) {
 
-                if (optionSettingsListValue.getResourceName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
-                            StringUtils.fromString(optionSettingsListValue.getResourceName()));
-                }
+                    if (optionSettingsListValue.getResourceName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
+                                StringUtils.fromString(optionSettingsListValue.getResourceName()));
+                    }
 
-                if (optionSettingsListValue.getNamespace() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
-                            StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                }
+                    if (optionSettingsListValue.getNamespace() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
+                                StringUtils.fromString(optionSettingsListValue.getNamespace()));
+                    }
 
-                if (optionSettingsListValue.getOptionName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
-                            StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                }
+                    if (optionSettingsListValue.getOptionName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
+                                StringUtils.fromString(optionSettingsListValue.getOptionName()));
+                    }
 
-                if (optionSettingsListValue.getValue() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
-                            StringUtils.fromString(optionSettingsListValue.getValue()));
+                    if (optionSettingsListValue.getValue() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
+                                StringUtils.fromString(optionSettingsListValue.getValue()));
+                    }
                 }
                 optionSettingsListIndex++;
             }
@@ -132,20 +134,22 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
+                if (optionsToRemoveListValue != null) {
 
-                if (optionsToRemoveListValue.getResourceName() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".ResourceName",
-                            StringUtils.fromString(optionsToRemoveListValue.getResourceName()));
-                }
+                    if (optionsToRemoveListValue.getResourceName() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".ResourceName",
+                                StringUtils.fromString(optionsToRemoveListValue.getResourceName()));
+                    }
 
-                if (optionsToRemoveListValue.getNamespace() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace",
-                            StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
-                }
+                    if (optionsToRemoveListValue.getNamespace() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace",
+                                StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
+                    }
 
-                if (optionsToRemoveListValue.getOptionName() != null) {
-                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName",
-                            StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
+                    if (optionsToRemoveListValue.getOptionName() != null) {
+                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName",
+                                StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
+                    }
                 }
                 optionsToRemoveListIndex++;
             }

@@ -60,15 +60,17 @@ public class CreateLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
             int policyAttributesListIndex = 1;
 
             for (PolicyAttribute policyAttributesListValue : policyAttributesList) {
+                if (policyAttributesListValue != null) {
 
-                if (policyAttributesListValue.getAttributeName() != null) {
-                    request.addParameter("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeName",
-                            StringUtils.fromString(policyAttributesListValue.getAttributeName()));
-                }
+                    if (policyAttributesListValue.getAttributeName() != null) {
+                        request.addParameter("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeName",
+                                StringUtils.fromString(policyAttributesListValue.getAttributeName()));
+                    }
 
-                if (policyAttributesListValue.getAttributeValue() != null) {
-                    request.addParameter("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeValue",
-                            StringUtils.fromString(policyAttributesListValue.getAttributeValue()));
+                    if (policyAttributesListValue.getAttributeValue() != null) {
+                        request.addParameter("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeValue",
+                                StringUtils.fromString(policyAttributesListValue.getAttributeValue()));
+                    }
                 }
                 policyAttributesListIndex++;
             }

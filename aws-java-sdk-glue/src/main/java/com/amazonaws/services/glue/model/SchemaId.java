@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The unique ID of the schema in the AWS Glue schema registry.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaId" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +28,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SchemaId implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
+     * provided.
+     * </p>
+     */
     private String schemaArn;
-
+    /**
+     * <p>
+     * The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+     * </p>
+     */
     private String schemaName;
-
+    /**
+     * <p>
+     * The name of the schema registry that contains the schema.
+     * </p>
+     */
     private String registryName;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
+     * provided.
+     * </p>
+     * 
      * @param schemaArn
+     *        The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has
+     *        to be provided.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -40,7 +64,13 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
+     * provided.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code>
+     *         has to be provided.
      */
 
     public String getSchemaArn() {
@@ -48,7 +78,14 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
+     * provided.
+     * </p>
+     * 
      * @param schemaArn
+     *        The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has
+     *        to be provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +95,12 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
      */
 
     public void setSchemaName(String schemaName) {
@@ -66,7 +108,11 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+     * </p>
+     * 
+     * @return The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
      */
 
     public String getSchemaName() {
@@ -74,7 +120,12 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +135,12 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the schema registry that contains the schema.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the schema registry that contains the schema.
      */
 
     public void setRegistryName(String registryName) {
@@ -92,7 +148,11 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the schema registry that contains the schema.
+     * </p>
+     * 
+     * @return The name of the schema registry that contains the schema.
      */
 
     public String getRegistryName() {
@@ -100,7 +160,12 @@ public class SchemaId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the schema registry that contains the schema.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the schema registry that contains the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

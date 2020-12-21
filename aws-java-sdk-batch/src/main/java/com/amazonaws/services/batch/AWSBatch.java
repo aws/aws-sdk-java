@@ -112,10 +112,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param cancelJobRequest
+     *        Contains the parameters for <code>CancelJob</code>.
      * @return Result of the CancelJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -137,7 +138,7 @@ public interface AWSBatch {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
      * specify when you create the compute environment. You can choose either to use EC2 On-Demand Instances and EC2
      * Spot Instances, or to use Fargate and Fargate Spot capacity in your managed compute environment. You can
-     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is below a
+     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
      * specified percentage of the On-Demand price.
      * </p>
      * <note>
@@ -152,7 +153,7 @@ public interface AWSBatch {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
-     * ECS cluster that is associated with it. Then, manually launch your container instances into that Amazon ECS
+     * ECS cluster that's associated with it. Then, manually launch your container instances into that Amazon ECS
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
      * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -190,10 +191,11 @@ public interface AWSBatch {
      * </note>
      * 
      * @param createComputeEnvironmentRequest
+     *        Contains the parameters for <code>CreateComputeEnvironment</code>.
      * @return Result of the CreateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -216,10 +218,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param createJobQueueRequest
+     *        Contains the parameters for <code>CreateJobQueue</code>.
      * @return Result of the CreateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -242,10 +245,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param deleteComputeEnvironmentRequest
+     *        Contains the parameters for <code>DeleteComputeEnvironment</code>.
      * @return Result of the DeleteComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -258,7 +262,8 @@ public interface AWSBatch {
     /**
      * <p>
      * Deletes the specified job queue. You must first disable submissions for a queue with the <a>UpdateJobQueue</a>
-     * operation. All jobs in the queue are terminated when you delete a job queue.
+     * operation. All jobs in the queue are eventually terminated when you delete a job queue. The jobs are terminated
+     * at a rate of about 16 jobs each second.
      * </p>
      * <p>
      * It's not necessary to disassociate compute environments from a queue before submitting a
@@ -266,10 +271,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param deleteJobQueueRequest
+     *        Contains the parameters for <code>DeleteJobQueue</code>.
      * @return Result of the DeleteJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -288,7 +294,7 @@ public interface AWSBatch {
      * @return Result of the DeregisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -309,10 +315,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param describeComputeEnvironmentsRequest
+     *        Contains the parameters for <code>DescribeComputeEnvironments</code>.
      * @return Result of the DescribeComputeEnvironments operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -329,10 +336,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param describeJobDefinitionsRequest
+     *        Contains the parameters for <code>DescribeJobDefinitions</code>.
      * @return Result of the DescribeJobDefinitions operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -348,10 +356,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param describeJobQueuesRequest
+     *        Contains the parameters for <code>DescribeJobQueues</code>.
      * @return Result of the DescribeJobQueues operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -367,10 +376,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param describeJobsRequest
+     *        Contains the parameters for <code>DescribeJobs</code>.
      * @return Result of the DescribeJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -410,10 +420,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param listJobsRequest
+     *        Contains the parameters for <code>ListJobs</code>.
      * @return Result of the ListJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -434,7 +445,7 @@ public interface AWSBatch {
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -450,10 +461,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param registerJobDefinitionRequest
+     *        Contains the parameters for <code>RegisterJobDefinition</code>.
      * @return Result of the RegisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -476,10 +488,11 @@ public interface AWSBatch {
      * </important>
      * 
      * @param submitJobRequest
+     *        Contains the parameters for <code>SubmitJob</code>.
      * @return Result of the SubmitJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -502,7 +515,7 @@ public interface AWSBatch {
      * @return Result of the TagResource operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -520,10 +533,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param terminateJobRequest
+     *        Contains the parameters for <code>TerminateJob</code>.
      * @return Result of the TerminateJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -542,7 +556,7 @@ public interface AWSBatch {
      * @return Result of the UntagResource operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -558,10 +572,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param updateComputeEnvironmentRequest
+     *        Contains the parameters for <code>UpdateComputeEnvironment</code>.
      * @return Result of the UpdateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -577,10 +592,11 @@ public interface AWSBatch {
      * </p>
      * 
      * @param updateJobQueueRequest
+     *        Contains the parameters for <code>UpdateJobQueue</code>.
      * @return Result of the UpdateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that isn't
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.

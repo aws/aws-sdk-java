@@ -68,25 +68,27 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
+                if (parametersListValue != null) {
 
-                if (parametersListValue.getParameterKey() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
-                            StringUtils.fromString(parametersListValue.getParameterKey()));
-                }
+                    if (parametersListValue.getParameterKey() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
+                                StringUtils.fromString(parametersListValue.getParameterKey()));
+                    }
 
-                if (parametersListValue.getParameterValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
-                            StringUtils.fromString(parametersListValue.getParameterValue()));
-                }
+                    if (parametersListValue.getParameterValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
+                                StringUtils.fromString(parametersListValue.getParameterValue()));
+                    }
 
-                if (parametersListValue.getUsePreviousValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
-                            StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
-                }
+                    if (parametersListValue.getUsePreviousValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
+                                StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
+                    }
 
-                if (parametersListValue.getResolvedValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
-                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    if (parametersListValue.getResolvedValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                                StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    }
                 }
                 parametersListIndex++;
             }
@@ -147,15 +149,17 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
                     int rollbackTriggersListIndex = 1;
 
                     for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
+                        if (rollbackTriggersListValue != null) {
 
-                        if (rollbackTriggersListValue.getArn() != null) {
-                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
-                                    StringUtils.fromString(rollbackTriggersListValue.getArn()));
-                        }
+                            if (rollbackTriggersListValue.getArn() != null) {
+                                request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
+                                        StringUtils.fromString(rollbackTriggersListValue.getArn()));
+                            }
 
-                        if (rollbackTriggersListValue.getType() != null) {
-                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
-                                    StringUtils.fromString(rollbackTriggersListValue.getType()));
+                            if (rollbackTriggersListValue.getType() != null) {
+                                request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
+                                        StringUtils.fromString(rollbackTriggersListValue.getType()));
+                            }
                         }
                         rollbackTriggersListIndex++;
                     }
@@ -194,13 +198,15 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -233,33 +239,35 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             int resourcesToImportListIndex = 1;
 
             for (ResourceToImport resourcesToImportListValue : resourcesToImportList) {
+                if (resourcesToImportListValue != null) {
 
-                if (resourcesToImportListValue.getResourceType() != null) {
-                    request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceType",
-                            StringUtils.fromString(resourcesToImportListValue.getResourceType()));
-                }
-
-                if (resourcesToImportListValue.getLogicalResourceId() != null) {
-                    request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".LogicalResourceId",
-                            StringUtils.fromString(resourcesToImportListValue.getLogicalResourceId()));
-                }
-
-                java.util.Map<String, String> resourceIdentifier = resourcesToImportListValue.getResourceIdentifier();
-                if (resourceIdentifier != null) {
-                    int resourceIdentifierListIndex = 1;
-                    for (Map.Entry<String, String> entry : resourceIdentifier.entrySet()) {
-                        if (entry.getKey() != null) {
-                            request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
-                                    + resourceIdentifierListIndex + ".key", StringUtils.fromString(entry.getKey()));
-                        }
-                        if (entry.getValue() != null) {
-                            request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
-                                    + resourceIdentifierListIndex + ".value", StringUtils.fromString(entry.getValue()));
-                        }
-                        resourceIdentifierListIndex++;
+                    if (resourcesToImportListValue.getResourceType() != null) {
+                        request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceType",
+                                StringUtils.fromString(resourcesToImportListValue.getResourceType()));
                     }
-                }
 
+                    if (resourcesToImportListValue.getLogicalResourceId() != null) {
+                        request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".LogicalResourceId",
+                                StringUtils.fromString(resourcesToImportListValue.getLogicalResourceId()));
+                    }
+
+                    java.util.Map<String, String> resourceIdentifier = resourcesToImportListValue.getResourceIdentifier();
+                    if (resourceIdentifier != null) {
+                        int resourceIdentifierListIndex = 1;
+                        for (Map.Entry<String, String> entry : resourceIdentifier.entrySet()) {
+                            if (entry != null && entry.getKey() != null) {
+                                request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
+                                        + resourceIdentifierListIndex + ".key", StringUtils.fromString(entry.getKey()));
+                            }
+                            if (entry != null && entry.getValue() != null) {
+                                request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
+                                        + resourceIdentifierListIndex + ".value", StringUtils.fromString(entry.getValue()));
+                            }
+                            resourceIdentifierListIndex++;
+                        }
+                    }
+
+                }
                 resourcesToImportListIndex++;
             }
         }

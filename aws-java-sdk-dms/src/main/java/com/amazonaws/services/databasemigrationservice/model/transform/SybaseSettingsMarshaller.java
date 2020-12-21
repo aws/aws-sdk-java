@@ -37,6 +37,10 @@ public class SybaseSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final SybaseSettingsMarshaller instance = new SybaseSettingsMarshaller();
 
@@ -59,6 +63,8 @@ public class SybaseSettingsMarshaller {
             protocolMarshaller.marshall(sybaseSettings.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(sybaseSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(sybaseSettings.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(sybaseSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(sybaseSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

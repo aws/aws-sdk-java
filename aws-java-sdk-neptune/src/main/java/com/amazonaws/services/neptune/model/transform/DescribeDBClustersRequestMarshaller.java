@@ -54,24 +54,26 @@ public class DescribeDBClustersRequestMarshaller implements Marshaller<Request<D
                 int filtersListIndex = 1;
 
                 for (Filter filtersListValue : filtersList) {
+                    if (filtersListValue != null) {
 
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                    }
+                        if (filtersListValue.getName() != null) {
+                            request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                        }
 
-                    if (filtersListValue.getValues() != null) {
-                        java.util.List<String> valuesList = filtersListValue.getValues();
-                        if (valuesList.isEmpty()) {
-                            request.addParameter("Filters.Filter." + filtersListIndex + ".Values", "");
-                        } else {
-                            int valuesListIndex = 1;
+                        if (filtersListValue.getValues() != null) {
+                            java.util.List<String> valuesList = filtersListValue.getValues();
+                            if (valuesList.isEmpty()) {
+                                request.addParameter("Filters.Filter." + filtersListIndex + ".Values", "");
+                            } else {
+                                int valuesListIndex = 1;
 
-                            for (String valuesListValue : valuesList) {
-                                if (valuesListValue != null) {
-                                    request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
-                                            StringUtils.fromString(valuesListValue));
+                                for (String valuesListValue : valuesList) {
+                                    if (valuesListValue != null) {
+                                        request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
+                                                StringUtils.fromString(valuesListValue));
+                                    }
+                                    valuesListIndex++;
                                 }
-                                valuesListIndex++;
                             }
                         }
                     }

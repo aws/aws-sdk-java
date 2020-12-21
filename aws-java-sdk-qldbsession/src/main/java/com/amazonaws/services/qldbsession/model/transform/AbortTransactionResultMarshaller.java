@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AbortTransactionResultMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> TIMINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimingInformation").build();
+
     private static final AbortTransactionResultMarshaller instance = new AbortTransactionResultMarshaller();
 
     public static AbortTransactionResultMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class AbortTransactionResultMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(abortTransactionResult.getTimingInformation(), TIMINGINFORMATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

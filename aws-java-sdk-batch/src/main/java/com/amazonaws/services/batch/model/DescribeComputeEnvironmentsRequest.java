@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for <code>DescribeComputeEnvironments</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments" target="_top">AWS
  *      API Documentation</a>
@@ -52,7 +55,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -217,7 +220,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -229,8 +232,8 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
-     *        list and not for other programmatic purposes.
+     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
+     *        and not for other programmatic purposes.
      *        </p>
      */
 
@@ -247,7 +250,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -258,7 +261,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *         returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *         to return.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         This token should be treated as an opaque identifier that's only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
      *         </p>
      */
@@ -276,7 +279,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -288,8 +291,8 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
-     *        list and not for other programmatic purposes.
+     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
+     *        and not for other programmatic purposes.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

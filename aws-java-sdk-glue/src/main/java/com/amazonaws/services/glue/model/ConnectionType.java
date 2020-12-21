@@ -24,7 +24,9 @@ public enum ConnectionType {
     SFTP("SFTP"),
     MONGODB("MONGODB"),
     KAFKA("KAFKA"),
-    NETWORK("NETWORK");
+    NETWORK("NETWORK"),
+    MARKETPLACE("MARKETPLACE"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

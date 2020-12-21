@@ -25,7 +25,8 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      */
     private String computeEnvironmentName;
@@ -38,11 +39,13 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment.
+     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.
      */
 
     public void setComputeEnvironmentName(String computeEnvironmentName) {
@@ -51,10 +54,12 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
-     * @return The name of the compute environment.
+     * @return The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.
      */
 
     public String getComputeEnvironmentName() {
@@ -63,11 +68,13 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment.
+     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

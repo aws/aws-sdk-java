@@ -48,10 +48,10 @@ public class TagQueueRequestMarshaller implements Marshaller<Request<TagQueueReq
         java.util.Map<String, String> tags = tagQueueRequest.getTags();
         int tagsListIndex = 1;
         for (Map.Entry<String, String> entry : tags.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("Tags." + tagsListIndex + ".Key", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
                 request.addParameter("Tags." + tagsListIndex + ".Value", StringUtils.fromString(entry.getValue()));
             }
             tagsListIndex++;

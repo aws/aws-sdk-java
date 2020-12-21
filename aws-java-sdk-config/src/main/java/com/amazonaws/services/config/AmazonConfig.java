@@ -734,6 +734,23 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Deletes the stored query for an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @return Result of the DeleteStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws ResourceNotFoundException
+     *         You have specified a resource that does not exist.
+     * @sample AmazonConfig.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteStoredQueryResult deleteStoredQuery(DeleteStoredQueryRequest deleteStoredQueryRequest);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After
      * the delivery has started, AWS Config sends the following notifications using an Amazon SNS topic that you have
      * specified.
@@ -1932,6 +1949,23 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @return Result of the GetStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws ResourceNotFoundException
+     *         You have specified a resource that does not exist.
+     * @sample AmazonConfig.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetStoredQueryResult getStoredQuery(GetStoredQueryRequest getStoredQueryRequest);
+
+    /**
+     * <p>
      * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource
      * type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom
      * resource name, source account, and source region. You can narrow the results to include only resources that have
@@ -1995,6 +2029,24 @@ public interface AmazonConfig {
      *      API Documentation</a>
      */
     ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
+
+    /**
+     * <p>
+     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @return Result of the ListStoredQueries operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListStoredQueriesResult listStoredQueries(ListStoredQueriesRequest listStoredQueriesRequest);
 
     /**
      * <p>
@@ -2814,7 +2866,7 @@ public interface AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -2971,6 +3023,26 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest putRetentionConfigurationRequest);
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
+     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @return Result of the PutStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws TooManyTagsException
+     *         You have reached the limit of the number of tags you can use. You have more than 50 tags.
+     * @throws ResourceConcurrentModificationException
+     *         Two users are trying to modify the same query at the same time. Wait for a moment and try again.
+     * @sample AmazonConfig.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutStoredQueryResult putStoredQuery(PutStoredQueryRequest putStoredQueryRequest);
 
     /**
      * <p>

@@ -50,22 +50,25 @@ public class DescribeDBProxiesRequestMarshaller implements Marshaller<Request<De
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                }
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
 
-                if (!filtersListValue.getValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                    int valuesListIndex = 1;
+                    if (!filtersListValue.getValues().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                                .getValues();
+                        int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                        for (String valuesListValue : valuesList) {
+                            if (valuesListValue != null) {
+                                request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
+                                        StringUtils.fromString(valuesListValue));
+                            }
+                            valuesListIndex++;
                         }
-                        valuesListIndex++;
                     }
                 }
                 filtersListIndex++;

@@ -47,26 +47,29 @@ public class ListPlatformVersionsRequestMarshaller implements Marshaller<Request
             int filtersListIndex = 1;
 
             for (PlatformFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
 
-                if (filtersListValue.getType() != null) {
-                    request.addParameter("Filters.member." + filtersListIndex + ".Type", StringUtils.fromString(filtersListValue.getType()));
-                }
+                    if (filtersListValue.getType() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Type", StringUtils.fromString(filtersListValue.getType()));
+                    }
 
-                if (filtersListValue.getOperator() != null) {
-                    request.addParameter("Filters.member." + filtersListIndex + ".Operator", StringUtils.fromString(filtersListValue.getOperator()));
-                }
+                    if (filtersListValue.getOperator() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Operator", StringUtils.fromString(filtersListValue.getOperator()));
+                    }
 
-                if (!filtersListValue.getValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                    int valuesListIndex = 1;
+                    if (!filtersListValue.getValues().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                                .getValues();
+                        int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filters.member." + filtersListIndex + ".Values.member." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                        for (String valuesListValue : valuesList) {
+                            if (valuesListValue != null) {
+                                request.addParameter("Filters.member." + filtersListIndex + ".Values.member." + valuesListIndex,
+                                        StringUtils.fromString(valuesListValue));
+                            }
+                            valuesListIndex++;
                         }
-                        valuesListIndex++;
                     }
                 }
                 filtersListIndex++;

@@ -572,6 +572,39 @@ public class AWSAppRegistryAsyncClient extends AWSAppRegistryClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(SyncResourceRequest request) {
+
+        return syncResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SyncResourceResult> syncResourceAsync(final SyncResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SyncResourceRequest, SyncResourceResult> asyncHandler) {
+        final SyncResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SyncResourceResult>() {
+            @Override
+            public SyncResourceResult call() throws Exception {
+                SyncResourceResult result = null;
+
+                try {
+                    result = executeSyncResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

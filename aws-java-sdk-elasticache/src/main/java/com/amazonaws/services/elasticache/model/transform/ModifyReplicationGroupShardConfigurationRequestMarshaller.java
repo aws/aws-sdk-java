@@ -63,26 +63,28 @@ public class ModifyReplicationGroupShardConfigurationRequestMarshaller implement
             int reshardingConfigurationListIndex = 1;
 
             for (ReshardingConfiguration reshardingConfigurationListValue : reshardingConfigurationList) {
+                if (reshardingConfigurationListValue != null) {
 
-                if (reshardingConfigurationListValue.getNodeGroupId() != null) {
-                    request.addParameter("ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex + ".NodeGroupId",
-                            StringUtils.fromString(reshardingConfigurationListValue.getNodeGroupId()));
-                }
+                    if (reshardingConfigurationListValue.getNodeGroupId() != null) {
+                        request.addParameter("ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex + ".NodeGroupId",
+                                StringUtils.fromString(reshardingConfigurationListValue.getNodeGroupId()));
+                    }
 
-                if (!reshardingConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue.getPreferredAvailabilityZones())
-                                .isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
-                            .getPreferredAvailabilityZones();
-                    int preferredAvailabilityZonesListIndex = 1;
+                    if (!reshardingConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue.getPreferredAvailabilityZones())
+                                    .isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
+                                .getPreferredAvailabilityZones();
+                        int preferredAvailabilityZonesListIndex = 1;
 
-                    for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
-                        if (preferredAvailabilityZonesListValue != null) {
-                            request.addParameter("ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex
-                                    + ".PreferredAvailabilityZones.AvailabilityZone." + preferredAvailabilityZonesListIndex,
-                                    StringUtils.fromString(preferredAvailabilityZonesListValue));
+                        for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
+                            if (preferredAvailabilityZonesListValue != null) {
+                                request.addParameter("ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex
+                                        + ".PreferredAvailabilityZones.AvailabilityZone." + preferredAvailabilityZonesListIndex,
+                                        StringUtils.fromString(preferredAvailabilityZonesListValue));
+                            }
+                            preferredAvailabilityZonesListIndex++;
                         }
-                        preferredAvailabilityZonesListIndex++;
                     }
                 }
                 reshardingConfigurationListIndex++;

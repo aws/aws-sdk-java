@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A structure containing the schema version information.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaVersionNumber" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SchemaVersionNumber implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The latest version available for the schema.
+     * </p>
+     */
     private Boolean latestVersion;
-
+    /**
+     * <p>
+     * The version number of the schema.
+     * </p>
+     */
     private Long versionNumber;
 
     /**
+     * <p>
+     * The latest version available for the schema.
+     * </p>
+     * 
      * @param latestVersion
+     *        The latest version available for the schema.
      */
 
     public void setLatestVersion(Boolean latestVersion) {
@@ -38,7 +55,11 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The latest version available for the schema.
+     * </p>
+     * 
+     * @return The latest version available for the schema.
      */
 
     public Boolean getLatestVersion() {
@@ -46,7 +67,12 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The latest version available for the schema.
+     * </p>
+     * 
      * @param latestVersion
+     *        The latest version available for the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,11 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The latest version available for the schema.
+     * </p>
+     * 
+     * @return The latest version available for the schema.
      */
 
     public Boolean isLatestVersion() {
@@ -64,7 +94,12 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The version number of the schema.
+     * </p>
+     * 
      * @param versionNumber
+     *        The version number of the schema.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -72,7 +107,11 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The version number of the schema.
+     * </p>
+     * 
+     * @return The version number of the schema.
      */
 
     public Long getVersionNumber() {
@@ -80,7 +119,12 @@ public class SchemaVersionNumber implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The version number of the schema.
+     * </p>
+     * 
      * @param versionNumber
+     *        The version number of the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,67 +57,70 @@ public class ResetDBClusterParameterGroupRequestMarshaller implements
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
+                if (parametersListValue != null) {
 
-                if (parametersListValue.getParameterName() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterName",
-                            StringUtils.fromString(parametersListValue.getParameterName()));
-                }
+                    if (parametersListValue.getParameterName() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterName",
+                                StringUtils.fromString(parametersListValue.getParameterName()));
+                    }
 
-                if (parametersListValue.getParameterValue() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterValue",
-                            StringUtils.fromString(parametersListValue.getParameterValue()));
-                }
+                    if (parametersListValue.getParameterValue() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterValue",
+                                StringUtils.fromString(parametersListValue.getParameterValue()));
+                    }
 
-                if (parametersListValue.getDescription() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Description",
-                            StringUtils.fromString(parametersListValue.getDescription()));
-                }
+                    if (parametersListValue.getDescription() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".Description",
+                                StringUtils.fromString(parametersListValue.getDescription()));
+                    }
 
-                if (parametersListValue.getSource() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Source", StringUtils.fromString(parametersListValue.getSource()));
-                }
+                    if (parametersListValue.getSource() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".Source", StringUtils.fromString(parametersListValue.getSource()));
+                    }
 
-                if (parametersListValue.getApplyType() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyType",
-                            StringUtils.fromString(parametersListValue.getApplyType()));
-                }
+                    if (parametersListValue.getApplyType() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyType",
+                                StringUtils.fromString(parametersListValue.getApplyType()));
+                    }
 
-                if (parametersListValue.getDataType() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".DataType", StringUtils.fromString(parametersListValue.getDataType()));
-                }
+                    if (parametersListValue.getDataType() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".DataType",
+                                StringUtils.fromString(parametersListValue.getDataType()));
+                    }
 
-                if (parametersListValue.getAllowedValues() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".AllowedValues",
-                            StringUtils.fromString(parametersListValue.getAllowedValues()));
-                }
+                    if (parametersListValue.getAllowedValues() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".AllowedValues",
+                                StringUtils.fromString(parametersListValue.getAllowedValues()));
+                    }
 
-                if (parametersListValue.getIsModifiable() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".IsModifiable",
-                            StringUtils.fromBoolean(parametersListValue.getIsModifiable()));
-                }
+                    if (parametersListValue.getIsModifiable() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".IsModifiable",
+                                StringUtils.fromBoolean(parametersListValue.getIsModifiable()));
+                    }
 
-                if (parametersListValue.getMinimumEngineVersion() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".MinimumEngineVersion",
-                            StringUtils.fromString(parametersListValue.getMinimumEngineVersion()));
-                }
+                    if (parametersListValue.getMinimumEngineVersion() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".MinimumEngineVersion",
+                                StringUtils.fromString(parametersListValue.getMinimumEngineVersion()));
+                    }
 
-                if (parametersListValue.getApplyMethod() != null) {
-                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod",
-                            StringUtils.fromString(parametersListValue.getApplyMethod()));
-                }
+                    if (parametersListValue.getApplyMethod() != null) {
+                        request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod",
+                                StringUtils.fromString(parametersListValue.getApplyMethod()));
+                    }
 
-                if (!parametersListValue.getSupportedEngineModes().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) parametersListValue.getSupportedEngineModes()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> supportedEngineModesList = (com.amazonaws.internal.SdkInternalList<String>) parametersListValue
-                            .getSupportedEngineModes();
-                    int supportedEngineModesListIndex = 1;
+                    if (!parametersListValue.getSupportedEngineModes().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) parametersListValue.getSupportedEngineModes()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> supportedEngineModesList = (com.amazonaws.internal.SdkInternalList<String>) parametersListValue
+                                .getSupportedEngineModes();
+                        int supportedEngineModesListIndex = 1;
 
-                    for (String supportedEngineModesListValue : supportedEngineModesList) {
-                        if (supportedEngineModesListValue != null) {
-                            request.addParameter("Parameters.Parameter." + parametersListIndex + ".SupportedEngineModes.member."
-                                    + supportedEngineModesListIndex, StringUtils.fromString(supportedEngineModesListValue));
+                        for (String supportedEngineModesListValue : supportedEngineModesList) {
+                            if (supportedEngineModesListValue != null) {
+                                request.addParameter("Parameters.Parameter." + parametersListIndex + ".SupportedEngineModes.member."
+                                        + supportedEngineModesListIndex, StringUtils.fromString(supportedEngineModesListValue));
+                            }
+                            supportedEngineModesListIndex++;
                         }
-                        supportedEngineModesListIndex++;
                     }
                 }
                 parametersListIndex++;

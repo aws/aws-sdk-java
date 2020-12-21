@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration properties of a peer node.
+ * Configuration properties of a node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeConfiguration"
@@ -42,8 +42,8 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
     private String availabilityZone;
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      */
     private NodeLogPublishingConfiguration logPublishingConfiguration;
@@ -52,6 +52,9 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
      * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
      * <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String stateDB;
@@ -138,13 +141,13 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
      * @param logPublishingConfiguration
-     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *        Blockchain network.
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      */
 
     public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
@@ -153,12 +156,12 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
-     * @return Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *         Blockchain network.
+     * @return Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network
+     *         on Managed Blockchain.
      */
 
     public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -167,13 +170,13 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
      * @param logPublishingConfiguration
-     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *        Blockchain network.
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +191,16 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
      * <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
      *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
      *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
-     *        <code>CouchDB</code>.
+     *        <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @see StateDBType
      */
 
@@ -206,10 +214,15 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
      * <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When
      *         using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
-     *         <code>CouchDB</code>.
+     *         <code>CouchDB</code>.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      * @see StateDBType
      */
 
@@ -223,11 +236,16 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
      * <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
      *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
      *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
-     *        <code>CouchDB</code>.
+     *        <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateDBType
      */
@@ -243,11 +261,16 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
      * <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
      *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
      *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
-     *        <code>CouchDB</code>.
+     *        <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateDBType
      */

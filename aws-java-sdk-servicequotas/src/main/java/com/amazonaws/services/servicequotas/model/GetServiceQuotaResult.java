@@ -25,18 +25,18 @@ public class GetServiceQuotaResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      */
     private ServiceQuota quota;
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
      * @param quota
-     *        Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     *        Information about the quota.
      */
 
     public void setQuota(ServiceQuota quota) {
@@ -45,10 +45,10 @@ public class GetServiceQuotaResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
-     * @return Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * @return Information about the quota.
      */
 
     public ServiceQuota getQuota() {
@@ -57,11 +57,11 @@ public class GetServiceQuotaResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
      * @param quota
-     *        Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     *        Information about the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

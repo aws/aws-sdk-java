@@ -56,15 +56,17 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
             int parameterNameValuesListIndex = 1;
 
             for (ParameterNameValue parameterNameValuesListValue : parameterNameValuesList) {
+                if (parameterNameValuesListValue != null) {
 
-                if (parameterNameValuesListValue.getParameterName() != null) {
-                    request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterName",
-                            StringUtils.fromString(parameterNameValuesListValue.getParameterName()));
-                }
+                    if (parameterNameValuesListValue.getParameterName() != null) {
+                        request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterName",
+                                StringUtils.fromString(parameterNameValuesListValue.getParameterName()));
+                    }
 
-                if (parameterNameValuesListValue.getParameterValue() != null) {
-                    request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterValue",
-                            StringUtils.fromString(parameterNameValuesListValue.getParameterValue()));
+                    if (parameterNameValuesListValue.getParameterValue() != null) {
+                        request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterValue",
+                                StringUtils.fromString(parameterNameValuesListValue.getParameterValue()));
+                    }
                 }
                 parameterNameValuesListIndex++;
             }

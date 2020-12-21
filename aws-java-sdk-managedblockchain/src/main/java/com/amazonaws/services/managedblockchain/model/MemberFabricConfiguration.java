@@ -39,8 +39,8 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * <p>
      * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/), backward slash(\), @,
-     * or a space.
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
+     * slash(/), a backward slash(\), @, or a space.
      * </p>
      */
     private String adminPassword;
@@ -89,15 +89,15 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * <p>
      * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/), backward slash(\), @,
-     * or a space.
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
+     * slash(/), a backward slash(\), @, or a space.
      * </p>
      * 
      * @param adminPassword
      *        The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least
      *        eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one
-     *        lowercase letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/),
-     *        backward slash(\), @, or a space.
+     *        lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“),
+     *        a forward slash(/), a backward slash(\), @, or a space.
      */
 
     public void setAdminPassword(String adminPassword) {
@@ -108,14 +108,14 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * <p>
      * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/), backward slash(\), @,
-     * or a space.
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
+     * slash(/), a backward slash(\), @, or a space.
      * </p>
      * 
      * @return The password for the member's initial administrative user. The <code>AdminPassword</code> must be at
      *         least eight characters long and no more than 32 characters. It must contain at least one uppercase
-     *         letter, one lowercase letter, and one digit. It cannot have a single quote(‘), double quote(“), forward
-     *         slash(/), backward slash(\), @, or a space.
+     *         letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double
+     *         quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.
      */
 
     public String getAdminPassword() {
@@ -126,15 +126,15 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * <p>
      * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/), backward slash(\), @,
-     * or a space.
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
+     * slash(/), a backward slash(\), @, or a space.
      * </p>
      * 
      * @param adminPassword
      *        The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least
      *        eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one
-     *        lowercase letter, and one digit. It cannot have a single quote(‘), double quote(“), forward slash(/),
-     *        backward slash(\), @, or a space.
+     *        lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“),
+     *        a forward slash(/), a backward slash(\), @, or a space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,8 @@ public class StartSessionResultMarshaller {
 
     private static final MarshallingInfo<String> SESSIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionToken").build();
+    private static final MarshallingInfo<StructuredPojo> TIMINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimingInformation").build();
 
     private static final StartSessionResultMarshaller instance = new StartSessionResultMarshaller();
 
@@ -47,6 +49,7 @@ public class StartSessionResultMarshaller {
 
         try {
             protocolMarshaller.marshall(startSessionResult.getSessionToken(), SESSIONTOKEN_BINDING);
+            protocolMarshaller.marshall(startSessionResult.getTimingInformation(), TIMINGINFORMATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

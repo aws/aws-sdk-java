@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for <code>CreateComputeEnvironment</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment" target="_top">AWS API
  *      Documentation</a>
@@ -45,6 +48,17 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      */
     private String state;
     /**
@@ -59,7 +73,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf.
+     * your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
@@ -67,8 +83,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
+     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -236,10 +252,31 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      * 
      * @param state
      *        The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
-     *        accepts jobs from a queue and can scale out automatically based on queues.
+     *        accepts jobs from a queue and can scale out automatically based on queues.</p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
+     *        scale in to <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -252,9 +289,30 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      * 
      * @return The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
-     *         accepts jobs from a queue and can scale out automatically based on queues.
+     *         accepts jobs from a queue and can scale out automatically based on queues.</p>
+     *         <p>
+     *         If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *         associated job queue on the compute resources within the environment. If the compute environment is
+     *         managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *         </p>
+     *         <p>
+     *         If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
+     *         the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *         normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
+     *         scale in to <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -267,10 +325,31 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      * 
      * @param state
      *        The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
-     *        accepts jobs from a queue and can scale out automatically based on queues.
+     *        accepts jobs from a queue and can scale out automatically based on queues.</p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
+     *        scale in to <code>minvCpus</code> value after instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -285,10 +364,31 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      * 
      * @param state
      *        The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
-     *        accepts jobs from a queue and can scale out automatically based on queues.
+     *        accepts jobs from a queue and can scale out automatically based on queues.</p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
+     *        scale in to <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -301,10 +401,31 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
      * jobs from a queue and can scale out automatically based on queues.
      * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on the job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.
+     * </p>
      * 
      * @param state
      *        The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
-     *        accepts jobs from a queue and can scale out automatically based on queues.
+     *        accepts jobs from a queue and can scale out automatically based on queues.</p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
+     *        scale in to <code>minvCpus</code> value after instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -375,7 +496,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf.
+     * your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
@@ -383,8 +506,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
+     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -392,14 +515,16 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param serviceRole
      *        The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *        services on your behalf.</p>
+     *        services on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
+     *        role</a> in the <i>AWS Batch User Guide</i>.</p>
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *        ARN (this is recommended) or prefix the role name with the path.
      *        </p>
      *        <note>
      *        <p>
-     *        Depending on how you created your AWS Batch service role, its ARN may contain the
+     *        Depending on how you created your AWS Batch service role, its ARN might contain the
      *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
      *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
      *        that you specify the full ARN of your service role when you create compute environments.
@@ -413,7 +538,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf.
+     * your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
@@ -421,22 +548,24 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
+     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
      * </note>
      * 
      * @return The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *         services on your behalf.</p>
+     *         services on your behalf. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
+     *         role</a> in the <i>AWS Batch User Guide</i>.</p>
      *         <p>
      *         If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *         ARN (this is recommended) or prefix the role name with the path.
      *         </p>
      *         <note>
      *         <p>
-     *         Depending on how you created your AWS Batch service role, its ARN may contain the
+     *         Depending on how you created your AWS Batch service role, its ARN might contain the
      *         <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
      *         assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
      *         recommend that you specify the full ARN of your service role when you create compute environments.
@@ -450,7 +579,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf.
+     * your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
@@ -458,8 +589,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
+     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -467,14 +598,16 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param serviceRole
      *        The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *        services on your behalf.</p>
+     *        services on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
+     *        role</a> in the <i>AWS Batch User Guide</i>.</p>
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *        ARN (this is recommended) or prefix the role name with the path.
      *        </p>
      *        <note>
      *        <p>
-     *        Depending on how you created your AWS Batch service role, its ARN may contain the
+     *        Depending on how you created your AWS Batch service role, its ARN might contain the
      *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
      *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
      *        that you specify the full ARN of your service role when you create compute environments.

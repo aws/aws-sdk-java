@@ -27,30 +27,30 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * Specifies the value submitted in the service quota increase request.
+     * The new, increased value for the quota.
      * </p>
      */
     private Double desiredValue;
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -59,10 +59,10 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -71,11 +71,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -99,10 +99,10 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
-     * @return Specifies the service quota that you want to use.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -111,11 +111,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the value submitted in the service quota increase request.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Specifies the value submitted in the service quota increase request.
+     *        The new, increased value for the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -139,10 +139,10 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the value submitted in the service quota increase request.
+     * The new, increased value for the quota.
      * </p>
      * 
-     * @return Specifies the value submitted in the service quota increase request.
+     * @return The new, increased value for the quota.
      */
 
     public Double getDesiredValue() {
@@ -151,11 +151,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the value submitted in the service quota increase request.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Specifies the value submitted in the service quota increase request.
+     *        The new, increased value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

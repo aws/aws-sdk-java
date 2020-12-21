@@ -83,20 +83,22 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
             int stepAdjustmentsListIndex = 1;
 
             for (StepAdjustment stepAdjustmentsListValue : stepAdjustmentsList) {
+                if (stepAdjustmentsListValue != null) {
 
-                if (stepAdjustmentsListValue.getMetricIntervalLowerBound() != null) {
-                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalLowerBound",
-                            StringUtils.fromDouble(stepAdjustmentsListValue.getMetricIntervalLowerBound()));
-                }
+                    if (stepAdjustmentsListValue.getMetricIntervalLowerBound() != null) {
+                        request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalLowerBound",
+                                StringUtils.fromDouble(stepAdjustmentsListValue.getMetricIntervalLowerBound()));
+                    }
 
-                if (stepAdjustmentsListValue.getMetricIntervalUpperBound() != null) {
-                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalUpperBound",
-                            StringUtils.fromDouble(stepAdjustmentsListValue.getMetricIntervalUpperBound()));
-                }
+                    if (stepAdjustmentsListValue.getMetricIntervalUpperBound() != null) {
+                        request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalUpperBound",
+                                StringUtils.fromDouble(stepAdjustmentsListValue.getMetricIntervalUpperBound()));
+                    }
 
-                if (stepAdjustmentsListValue.getScalingAdjustment() != null) {
-                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".ScalingAdjustment",
-                            StringUtils.fromInteger(stepAdjustmentsListValue.getScalingAdjustment()));
+                    if (stepAdjustmentsListValue.getScalingAdjustment() != null) {
+                        request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".ScalingAdjustment",
+                                StringUtils.fromInteger(stepAdjustmentsListValue.getScalingAdjustment()));
+                    }
                 }
                 stepAdjustmentsListIndex++;
             }
@@ -147,15 +149,17 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
                             int dimensionsListIndex = 1;
 
                             for (MetricDimension dimensionsListValue : dimensionsList) {
+                                if (dimensionsListValue != null) {
 
-                                if (dimensionsListValue.getName() != null) {
-                                    request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member." + dimensionsListIndex
-                                            + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                                }
+                                    if (dimensionsListValue.getName() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member."
+                                                + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
+                                    }
 
-                                if (dimensionsListValue.getValue() != null) {
-                                    request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member." + dimensionsListIndex
-                                            + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                                    if (dimensionsListValue.getValue() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member."
+                                                + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                                    }
                                 }
                                 dimensionsListIndex++;
                             }

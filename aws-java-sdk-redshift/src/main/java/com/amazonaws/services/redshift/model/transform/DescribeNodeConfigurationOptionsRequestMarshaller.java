@@ -66,28 +66,31 @@ public class DescribeNodeConfigurationOptionsRequestMarshaller implements
             int filtersListIndex = 1;
 
             for (NodeConfigurationOptionsFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
-                }
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Name",
+                                StringUtils.fromString(filtersListValue.getName()));
+                    }
 
-                if (filtersListValue.getOperator() != null) {
-                    request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Operator",
-                            StringUtils.fromString(filtersListValue.getOperator()));
-                }
+                    if (filtersListValue.getOperator() != null) {
+                        request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Operator",
+                                StringUtils.fromString(filtersListValue.getOperator()));
+                    }
 
-                if (!filtersListValue.getValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                    int valuesListIndex = 1;
+                    if (!filtersListValue.getValues().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                                .getValues();
+                        int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Value.item." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                        for (String valuesListValue : valuesList) {
+                            if (valuesListValue != null) {
+                                request.addParameter("Filter.NodeConfigurationOptionsFilter." + filtersListIndex + ".Value.item." + valuesListIndex,
+                                        StringUtils.fromString(valuesListValue));
+                            }
+                            valuesListIndex++;
                         }
-                        valuesListIndex++;
                     }
                 }
                 filtersListIndex++;

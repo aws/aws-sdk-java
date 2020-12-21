@@ -26,18 +26,18 @@ public class GetRequestedServiceQuotaChangeResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     * Information about the quota increase request.
      * </p>
      */
     private RequestedServiceQuotaChange requestedQuota;
 
     /**
      * <p>
-     * Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param requestedQuota
-     *        Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     *        Information about the quota increase request.
      */
 
     public void setRequestedQuota(RequestedServiceQuotaChange requestedQuota) {
@@ -46,10 +46,10 @@ public class GetRequestedServiceQuotaChangeResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     * Information about the quota increase request.
      * </p>
      * 
-     * @return Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     * @return Information about the quota increase request.
      */
 
     public RequestedServiceQuotaChange getRequestedQuota() {
@@ -58,11 +58,11 @@ public class GetRequestedServiceQuotaChangeResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param requestedQuota
-     *        Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.
+     *        Information about the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

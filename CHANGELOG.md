@@ -1,3 +1,60 @@
+# __1.11.924__ __2020-12-21__
+## __AWS Batch__
+  - ### Features
+    - Documentation updates for batch
+
+## __AWS Config__
+  - ### Features
+    - AWS Config adds support to save advanced queries. New API operations - GetStoredQuery, PutStoredQuery, ListStoredQueries, DeleteStoredQuery
+
+## __AWS Database Migration Service__
+  - ### Features
+    - AWS DMS launches support for AWS Secrets Manager to manage source and target database credentials.
+
+## __AWS Glue__
+  - ### Features
+    - Add 4 connection properties: SECRET_ID, CONNECTOR_URL, CONNECTOR_TYPE, CONNECTOR_CLASS_NAME. Add two connection types: MARKETPLACE, CUSTOM
+
+## __AWS Outposts__
+  - ### Features
+    - In this release, AWS Outposts adds support for three new APIs: TagResource, UntagResource, and ListTagsForResource. Customers can now manage tags for their resources through the SDK.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Finding providers can now use BatchImportFindings to update Confidence, Criticality, RelatedFindings, Severity, and Types.
+
+## __AWS Service Catalog App Registry__
+  - ### Features
+    - New API `SyncResouce` to update AppRegistry system tags.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Documentation updates for Amazon API Gateway.
+
+## __Amazon Connect Participant Service__
+  - ### Features
+    - This release adds three new APIs: StartAttachmentUpload, CompleteAttachmentUpload, and GetAttachment. For Amazon Connect Chat, you can use these APIs to share files in chat conversations.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds Tag On Create feature support for the AllocateAddress API.
+
+## __Amazon Managed Blockchain__
+  - ### Features
+    - Added support for provisioning and managing public Ethereum nodes on main and test networks supporting secure access using Sigv4 and standard open-source Ethereum APIs.
+
+## __Amazon QLDB Session__
+  - ### Features
+    - Adds "TimingInformation" to all SendCommand API results and "IOUsage" to ExecuteStatementResult, FetchPageResult and CommitTransactionResult.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Format GetObject's Expires header to be an http-date instead of iso8601
+
+## __Service Quotas__
+  - ### Features
+    - Added the ability to tag applied quotas.
+
 # __1.11.923__ __2020-12-18__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

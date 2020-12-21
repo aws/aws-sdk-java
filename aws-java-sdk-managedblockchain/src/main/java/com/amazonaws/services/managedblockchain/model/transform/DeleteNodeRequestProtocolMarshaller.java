@@ -33,8 +33,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteNodeRequestProtocolMarshaller implements Marshaller<Request<DeleteNodeRequest>, DeleteNodeRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/networks/{networkId}/members/{memberId}/nodes/{nodeId}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).serviceName("AmazonManagedBlockchain").build();
+            .requestUri("/networks/{networkId}/nodes/{nodeId}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .serviceName("AmazonManagedBlockchain").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

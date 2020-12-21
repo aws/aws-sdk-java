@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration properties of a peer node.
+ * Configuration properties of a node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Node" target="_top">AWS API
@@ -30,13 +30,16 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      */
     private String networkId;
     /**
      * <p>
      * The unique identifier of the member to which the node belongs.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -66,14 +69,17 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private NodeFrameworkAttributes frameworkAttributes;
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      */
     private NodeLogPublishingConfiguration logPublishingConfiguration;
     /**
      * <p>
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String stateDB;
@@ -92,11 +98,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node is in.
+     *        The unique identifier of the network that the node is on.
      */
 
     public void setNetworkId(String networkId) {
@@ -105,10 +111,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
-     * @return The unique identifier of the network that the node is in.
+     * @return The unique identifier of the network that the node is on.
      */
 
     public String getNetworkId() {
@@ -117,11 +123,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node is in.
+     *        The unique identifier of the network that the node is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,9 +140,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member to which the node belongs.
+     *        The unique identifier of the member to which the node belongs.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -147,8 +158,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member to which the node belongs.
+     * @return The unique identifier of the member to which the node belongs.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -159,9 +175,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member to which the node belongs.
+     *        The unique identifier of the member to which the node belongs.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,13 +353,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
      * @param logPublishingConfiguration
-     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *        Blockchain network.
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      */
 
     public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
@@ -347,12 +368,12 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
-     * @return Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *         Blockchain network.
+     * @return Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network
+     *         on Managed Blockchain.
      */
 
     public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -361,13 +382,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
-     * network.
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
      * </p>
      * 
      * @param logPublishingConfiguration
-     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
-     *        Blockchain network.
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,9 +401,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
-     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @see StateDBType
      */
 
@@ -394,8 +420,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
-     * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      * @see StateDBType
      */
 
@@ -407,9 +438,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
-     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateDBType
      */
@@ -423,9 +459,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param stateDB
-     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateDBType
      */

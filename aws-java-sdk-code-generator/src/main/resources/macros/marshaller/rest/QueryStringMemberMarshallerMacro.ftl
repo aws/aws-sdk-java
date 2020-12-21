@@ -11,7 +11,7 @@
             ${mapModel.templateType} ${variable.variableName} = ${getMember}();
             if(${variable.variableName} != null) {
                 for (Map.Entry<${mapModel.keyType},${mapModel.valueType}> entry : ${variable.variableName}.entrySet()) {
-                    if (entry.getValue() != null) {
+                    if (entry != null && entry.getValue() != null) {
                         <#if mapModel.valueModel.list>
                             request.addParameters(StringUtils.from${mapModel.keyType}(entry.getKey()), entry.getValue());
                         <#else>

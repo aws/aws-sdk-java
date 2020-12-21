@@ -52,6 +52,14 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                     context.nextToken();
                     executeStatementResult.setFirstPage(PageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimingInformation", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setTimingInformation(TimingInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConsumedIOs", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setConsumedIOs(IOUsageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

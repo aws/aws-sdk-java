@@ -50,15 +50,17 @@ public class SetRulePrioritiesRequestMarshaller implements Marshaller<Request<Se
                 int rulePrioritiesListIndex = 1;
 
                 for (RulePriorityPair rulePrioritiesListValue : rulePrioritiesList) {
+                    if (rulePrioritiesListValue != null) {
 
-                    if (rulePrioritiesListValue.getRuleArn() != null) {
-                        request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".RuleArn",
-                                StringUtils.fromString(rulePrioritiesListValue.getRuleArn()));
-                    }
+                        if (rulePrioritiesListValue.getRuleArn() != null) {
+                            request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".RuleArn",
+                                    StringUtils.fromString(rulePrioritiesListValue.getRuleArn()));
+                        }
 
-                    if (rulePrioritiesListValue.getPriority() != null) {
-                        request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".Priority",
-                                StringUtils.fromInteger(rulePrioritiesListValue.getPriority()));
+                        if (rulePrioritiesListValue.getPriority() != null) {
+                            request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".Priority",
+                                    StringUtils.fromInteger(rulePrioritiesListValue.getPriority()));
+                        }
                     }
                     rulePrioritiesListIndex++;
                 }

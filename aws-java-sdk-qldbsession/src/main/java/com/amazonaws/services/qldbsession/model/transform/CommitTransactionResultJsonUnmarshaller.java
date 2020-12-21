@@ -56,6 +56,14 @@ public class CommitTransactionResultJsonUnmarshaller implements Unmarshaller<Com
                     context.nextToken();
                     commitTransactionResult.setCommitDigest(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
+                if (context.testExpression("TimingInformation", targetDepth)) {
+                    context.nextToken();
+                    commitTransactionResult.setTimingInformation(TimingInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConsumedIOs", targetDepth)) {
+                    context.nextToken();
+                    commitTransactionResult.setConsumedIOs(IOUsageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

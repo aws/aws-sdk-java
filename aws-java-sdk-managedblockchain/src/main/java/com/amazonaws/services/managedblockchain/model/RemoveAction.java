@@ -22,6 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is
  * <code>APPROVED</code>. The member and all associated resources are deleted from the network.
  * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RemoveAction" target="_top">AWS API
  *      Documentation</a>

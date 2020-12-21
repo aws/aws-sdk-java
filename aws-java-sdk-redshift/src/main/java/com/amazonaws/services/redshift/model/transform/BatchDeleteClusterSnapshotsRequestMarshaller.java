@@ -50,15 +50,17 @@ public class BatchDeleteClusterSnapshotsRequestMarshaller implements
             int identifiersListIndex = 1;
 
             for (DeleteClusterSnapshotMessage identifiersListValue : identifiersList) {
+                if (identifiersListValue != null) {
 
-                if (identifiersListValue.getSnapshotIdentifier() != null) {
-                    request.addParameter("Identifiers.DeleteClusterSnapshotMessage." + identifiersListIndex + ".SnapshotIdentifier",
-                            StringUtils.fromString(identifiersListValue.getSnapshotIdentifier()));
-                }
+                    if (identifiersListValue.getSnapshotIdentifier() != null) {
+                        request.addParameter("Identifiers.DeleteClusterSnapshotMessage." + identifiersListIndex + ".SnapshotIdentifier",
+                                StringUtils.fromString(identifiersListValue.getSnapshotIdentifier()));
+                    }
 
-                if (identifiersListValue.getSnapshotClusterIdentifier() != null) {
-                    request.addParameter("Identifiers.DeleteClusterSnapshotMessage." + identifiersListIndex + ".SnapshotClusterIdentifier",
-                            StringUtils.fromString(identifiersListValue.getSnapshotClusterIdentifier()));
+                    if (identifiersListValue.getSnapshotClusterIdentifier() != null) {
+                        request.addParameter("Identifiers.DeleteClusterSnapshotMessage." + identifiersListIndex + ".SnapshotClusterIdentifier",
+                                StringUtils.fromString(identifiersListValue.getSnapshotClusterIdentifier()));
+                    }
                 }
                 identifiersListIndex++;
             }

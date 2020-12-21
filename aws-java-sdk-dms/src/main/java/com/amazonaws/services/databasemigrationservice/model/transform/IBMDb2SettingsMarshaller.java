@@ -43,6 +43,10 @@ public class IBMDb2SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxKBytesPerRead").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final IBMDb2SettingsMarshaller instance = new IBMDb2SettingsMarshaller();
 
@@ -68,6 +72,8 @@ public class IBMDb2SettingsMarshaller {
             protocolMarshaller.marshall(iBMDb2Settings.getCurrentLsn(), CURRENTLSN_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getMaxKBytesPerRead(), MAXKBYTESPERREAD_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

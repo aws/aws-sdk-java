@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains information about one service quota increase request.
+ * Information about a quota increase request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceQuotaIncreaseRequestInTemplate"
@@ -30,60 +30,60 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the AWS service specified in the increase request.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      */
     private String serviceName;
     /**
      * <p>
-     * The code identifier for the service quota specified in the increase request.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * The name of the service quota in the increase request.
+     * The quota name.
      * </p>
      */
     private String quotaName;
     /**
      * <p>
-     * Identifies the new, increased value of the service quota in the increase request.
+     * The new, increased value of the quota.
      * </p>
      */
     private Double desiredValue;
     /**
      * <p>
-     * The AWS Region where the increase request occurs.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
     /**
      * <p>
-     * The unit of measure for the increase request.
+     * The unit of measurement.
      * </p>
      */
     private String unit;
     /**
      * <p>
-     * Specifies if the quota is a global quota.
+     * Indicates whether the quota is global.
      * </p>
      */
     private Boolean globalQuota;
 
     /**
      * <p>
-     * The code identifier for the AWS service specified in the increase request.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        The code identifier for the AWS service specified in the increase request.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -92,10 +92,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the AWS service specified in the increase request.
+     * The service identifier.
      * </p>
      * 
-     * @return The code identifier for the AWS service specified in the increase request.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -104,11 +104,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the AWS service specified in the increase request.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        The code identifier for the AWS service specified in the increase request.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -132,10 +132,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
-     * @return The name of the AWS service specified in the increase request.
+     * @return The service name.
      */
 
     public String getServiceName() {
@@ -144,11 +144,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +159,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the service quota specified in the increase request.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        The code identifier for the service quota specified in the increase request.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -172,10 +172,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the service quota specified in the increase request.
+     * The quota identifier.
      * </p>
      * 
-     * @return The code identifier for the service quota specified in the increase request.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -184,11 +184,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The code identifier for the service quota specified in the increase request.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        The code identifier for the service quota specified in the increase request.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +199,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the service quota in the increase request.
+     * The quota name.
      * </p>
      * 
      * @param quotaName
-     *        The name of the service quota in the increase request.
+     *        The quota name.
      */
 
     public void setQuotaName(String quotaName) {
@@ -212,10 +212,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the service quota in the increase request.
+     * The quota name.
      * </p>
      * 
-     * @return The name of the service quota in the increase request.
+     * @return The quota name.
      */
 
     public String getQuotaName() {
@@ -224,11 +224,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the service quota in the increase request.
+     * The quota name.
      * </p>
      * 
      * @param quotaName
-     *        The name of the service quota in the increase request.
+     *        The quota name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +239,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Identifies the new, increased value of the service quota in the increase request.
+     * The new, increased value of the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Identifies the new, increased value of the service quota in the increase request.
+     *        The new, increased value of the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -252,10 +252,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Identifies the new, increased value of the service quota in the increase request.
+     * The new, increased value of the quota.
      * </p>
      * 
-     * @return Identifies the new, increased value of the service quota in the increase request.
+     * @return The new, increased value of the quota.
      */
 
     public Double getDesiredValue() {
@@ -264,11 +264,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Identifies the new, increased value of the service quota in the increase request.
+     * The new, increased value of the quota.
      * </p>
      * 
      * @param desiredValue
-     *        Identifies the new, increased value of the service quota in the increase request.
+     *        The new, increased value of the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The AWS Region where the increase request occurs.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS Region where the increase request occurs.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -292,10 +292,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The AWS Region where the increase request occurs.
+     * The AWS Region.
      * </p>
      * 
-     * @return The AWS Region where the increase request occurs.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -304,11 +304,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The AWS Region where the increase request occurs.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS Region where the increase request occurs.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The unit of measure for the increase request.
+     * The unit of measurement.
      * </p>
      * 
      * @param unit
-     *        The unit of measure for the increase request.
+     *        The unit of measurement.
      */
 
     public void setUnit(String unit) {
@@ -332,10 +332,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The unit of measure for the increase request.
+     * The unit of measurement.
      * </p>
      * 
-     * @return The unit of measure for the increase request.
+     * @return The unit of measurement.
      */
 
     public String getUnit() {
@@ -344,11 +344,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * The unit of measure for the increase request.
+     * The unit of measurement.
      * </p>
      * 
      * @param unit
-     *        The unit of measure for the increase request.
+     *        The unit of measurement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +359,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Specifies if the quota is a global quota.
+     * Indicates whether the quota is global.
      * </p>
      * 
      * @param globalQuota
-     *        Specifies if the quota is a global quota.
+     *        Indicates whether the quota is global.
      */
 
     public void setGlobalQuota(Boolean globalQuota) {
@@ -372,10 +372,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Specifies if the quota is a global quota.
+     * Indicates whether the quota is global.
      * </p>
      * 
-     * @return Specifies if the quota is a global quota.
+     * @return Indicates whether the quota is global.
      */
 
     public Boolean getGlobalQuota() {
@@ -384,11 +384,11 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Specifies if the quota is a global quota.
+     * Indicates whether the quota is global.
      * </p>
      * 
      * @param globalQuota
-     *        Specifies if the quota is a global quota.
+     *        Indicates whether the quota is global.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,10 +399,10 @@ public class ServiceQuotaIncreaseRequestInTemplate implements Serializable, Clon
 
     /**
      * <p>
-     * Specifies if the quota is a global quota.
+     * Indicates whether the quota is global.
      * </p>
      * 
-     * @return Specifies if the quota is a global quota.
+     * @return Indicates whether the quota is global.
      */
 
     public Boolean isGlobalQuota() {

@@ -55,15 +55,17 @@ public class RemoveListenerCertificatesRequestMarshaller implements Marshaller<R
                 int certificatesListIndex = 1;
 
                 for (Certificate certificatesListValue : certificatesList) {
+                    if (certificatesListValue != null) {
 
-                    if (certificatesListValue.getCertificateArn() != null) {
-                        request.addParameter("Certificates.member." + certificatesListIndex + ".CertificateArn",
-                                StringUtils.fromString(certificatesListValue.getCertificateArn()));
-                    }
+                        if (certificatesListValue.getCertificateArn() != null) {
+                            request.addParameter("Certificates.member." + certificatesListIndex + ".CertificateArn",
+                                    StringUtils.fromString(certificatesListValue.getCertificateArn()));
+                        }
 
-                    if (certificatesListValue.getIsDefault() != null) {
-                        request.addParameter("Certificates.member." + certificatesListIndex + ".IsDefault",
-                                StringUtils.fromBoolean(certificatesListValue.getIsDefault()));
+                        if (certificatesListValue.getIsDefault() != null) {
+                            request.addParameter("Certificates.member." + certificatesListIndex + ".IsDefault",
+                                    StringUtils.fromBoolean(certificatesListValue.getIsDefault()));
+                        }
                     }
                     certificatesListIndex++;
                 }
