@@ -68,6 +68,12 @@ public class FindMatchesMetricsJsonUnmarshaller implements Unmarshaller<FindMatc
                     context.nextToken();
                     findMatchesMetrics.setConfusionMatrix(ConfusionMatrixJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ColumnImportances", targetDepth)) {
+                    context.nextToken();
+                    findMatchesMetrics.setColumnImportances(new ListUnmarshaller<ColumnImportance>(ColumnImportanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * LoRa object for create functions.
+ * LoRaWAN object for create functions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDevice" target="_top">AWS API
@@ -66,7 +66,7 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
     private AbpV11 abpV1_1;
     /**
      * <p>
-     * LoRa object for create APIs
+     * LoRaWAN object for create APIs
      * </p>
      */
     private AbpV10X abpV1_0_x;
@@ -313,11 +313,11 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LoRa object for create APIs
+     * LoRaWAN object for create APIs
      * </p>
      * 
      * @param abpV1_0_x
-     *        LoRa object for create APIs
+     *        LoRaWAN object for create APIs
      */
 
     public void setAbpV1_0_x(AbpV10X abpV1_0_x) {
@@ -326,10 +326,10 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LoRa object for create APIs
+     * LoRaWAN object for create APIs
      * </p>
      * 
-     * @return LoRa object for create APIs
+     * @return LoRaWAN object for create APIs
      */
 
     public AbpV10X getAbpV1_0_x() {
@@ -338,11 +338,11 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LoRa object for create APIs
+     * LoRaWAN object for create APIs
      * </p>
      * 
      * @param abpV1_0_x
-     *        LoRa object for create APIs
+     *        LoRaWAN object for create APIs
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates an approved origin to an Amazon Connect instance.
      * </p>
      * 
@@ -90,6 +93,9 @@ public interface AmazonConnect {
     AssociateApprovedOriginResult associateApprovedOrigin(AssociateApprovedOriginRequest associateApprovedOriginRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
@@ -123,6 +129,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Allows the specified Amazon Connect instance to access the specified Lambda function.
      * </p>
      * 
@@ -149,6 +158,9 @@ public interface AmazonConnect {
     AssociateLambdaFunctionResult associateLambdaFunction(AssociateLambdaFunctionRequest associateLambdaFunctionRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
      * </p>
@@ -199,6 +211,9 @@ public interface AmazonConnect {
     AssociateRoutingProfileQueuesResult associateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest associateRoutingProfileQueuesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a security key to the instance.
      * </p>
@@ -291,7 +306,7 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Create an AppIntegration association with anAmazon Connect instance.
+     * Create an AppIntegration association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -311,6 +326,36 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest createIntegrationAssociationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a quick connect for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQuickConnectRequest
+     * @return Result of the CreateQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateQuickConnectResult createQuickConnect(CreateQuickConnectRequest createQuickConnectRequest);
 
     /**
      * <p>
@@ -476,6 +521,32 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Deletes a quick connect.
+     * </p>
+     * 
+     * @param deleteQuickConnectRequest
+     * @return Result of the DeleteQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DeleteQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteQuickConnectResult deleteQuickConnect(DeleteQuickConnectRequest deleteQuickConnectRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes a use case from an AppIntegration association.
      * </p>
      * 
@@ -580,6 +651,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
      * and returns an error status if applicable.
      * </p>
@@ -604,6 +678,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Describes the specified instance attribute.
      * </p>
      * 
@@ -627,6 +704,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
      * </p>
      * 
@@ -647,6 +727,32 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the quick connect.
+     * </p>
+     * 
+     * @param describeQuickConnectRequest
+     * @return Result of the DescribeQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeQuickConnectResult describeQuickConnect(DescribeQuickConnectRequest describeQuickConnectRequest);
 
     /**
      * <p>
@@ -743,6 +849,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Revokes access to integrated applications from Amazon Connect.
      * </p>
      * 
@@ -765,6 +874,9 @@ public interface AmazonConnect {
     DisassociateApprovedOriginResult disassociateApprovedOrigin(DisassociateApprovedOriginRequest disassociateApprovedOriginRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
@@ -789,6 +901,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
      * </p>
      * 
@@ -811,6 +926,9 @@ public interface AmazonConnect {
     DisassociateLambdaFunctionResult disassociateLambdaFunction(DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
      * </p>
@@ -857,6 +975,9 @@ public interface AmazonConnect {
     DisassociateRoutingProfileQueuesResult disassociateRoutingProfileQueues(DisassociateRoutingProfileQueuesRequest disassociateRoutingProfileQueuesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Deletes the specified security key.
      * </p>
@@ -980,6 +1101,9 @@ public interface AmazonConnect {
     GetMetricDataResult getMetricData(GetMetricDataRequest getMetricDataRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all approved origins associated with the instance.
      * </p>
@@ -1162,6 +1286,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
      * contact flow blocks.
      * </p>
@@ -1185,6 +1312,9 @@ public interface AmazonConnect {
     ListLambdaFunctionsResult listLambdaFunctions(ListLambdaFunctionsRequest listLambdaFunctionsRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
      * </p>
@@ -1288,6 +1418,32 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides information about the quick connects for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listQuickConnectsRequest
+     * @return Result of the ListQuickConnects operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListQuickConnectsResult listQuickConnects(ListQuickConnectsRequest listQuickConnectsRequest);
+
+    /**
+     * <p>
      * List the queues associated with a routing profile.
      * </p>
      * 
@@ -1339,6 +1495,9 @@ public interface AmazonConnect {
     ListRoutingProfilesResult listRoutingProfiles(ListRoutingProfilesRequest listRoutingProfilesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all security keys associated with the instance.
      * </p>
@@ -1754,7 +1913,7 @@ public interface AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, and contact flows.
+     * The supported resource types are users, routing profiles, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -1950,6 +2109,59 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the configuration settings for the specified quick connect.
+     * </p>
+     * 
+     * @param updateQuickConnectConfigRequest
+     * @return Result of the UpdateQuickConnectConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateQuickConnectConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateQuickConnectConfigResult updateQuickConnectConfig(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
+     * least Name or Description must be provided.
+     * </p>
+     * 
+     * @param updateQuickConnectNameRequest
+     * @return Result of the UpdateQuickConnectName operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateQuickConnectName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateQuickConnectNameResult updateQuickConnectName(UpdateQuickConnectNameRequest updateQuickConnectNameRequest);
 
     /**
      * <p>

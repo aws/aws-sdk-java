@@ -145,6 +145,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest request) {
+
+        return createQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateQuickConnectRequest, CreateQuickConnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest request) {
 
         return createRoutingProfileAsync(request, null);
@@ -218,6 +231,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DeleteIntegrationAssociationResult> deleteIntegrationAssociationAsync(DeleteIntegrationAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIntegrationAssociationRequest, DeleteIntegrationAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest request) {
+
+        return deleteQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQuickConnectRequest, DeleteQuickConnectResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -309,6 +335,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DescribeInstanceStorageConfigResult> describeInstanceStorageConfigAsync(DescribeInstanceStorageConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceStorageConfigRequest, DescribeInstanceStorageConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest request) {
+
+        return describeQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuickConnectRequest, DescribeQuickConnectResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -656,6 +695,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest request) {
+
+        return listQuickConnectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListQuickConnectsRequest, ListQuickConnectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRoutingProfileQueuesResult> listRoutingProfileQueuesAsync(ListRoutingProfileQueuesRequest request) {
 
         return listRoutingProfileQueuesAsync(request, null);
@@ -950,6 +1002,32 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<UpdateInstanceStorageConfigResult> updateInstanceStorageConfigAsync(UpdateInstanceStorageConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceStorageConfigRequest, UpdateInstanceStorageConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest request) {
+
+        return updateQuickConnectConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectConfigRequest, UpdateQuickConnectConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest request) {
+
+        return updateQuickConnectNameAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectNameRequest, UpdateQuickConnectNameResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

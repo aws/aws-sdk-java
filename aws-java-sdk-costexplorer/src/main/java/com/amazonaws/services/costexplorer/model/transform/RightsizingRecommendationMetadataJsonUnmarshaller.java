@@ -60,6 +60,10 @@ public class RightsizingRecommendationMetadataJsonUnmarshaller implements Unmars
                     context.nextToken();
                     rightsizingRecommendationMetadata.setLookbackPeriodInDays(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AdditionalMetadata", targetDepth)) {
+                    context.nextToken();
+                    rightsizingRecommendationMetadata.setAdditionalMetadata(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

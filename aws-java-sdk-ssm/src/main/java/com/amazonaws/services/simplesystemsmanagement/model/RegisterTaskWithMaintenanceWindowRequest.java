@@ -35,6 +35,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The targets (either instances or maintenance window targets).
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Specify instances using the following format:
      * </p>
@@ -121,12 +130,24 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of targets this task can be run for in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      */
     private String maxConcurrency;
     /**
      * <p>
      * The maximum number of errors allowed before this task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      */
     private String maxErrors;
     /**
@@ -206,6 +227,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The targets (either instances or maintenance window targets).
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Specify instances using the following format:
      * </p>
@@ -219,7 +249,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <code>Key=WindowTargetIds,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
-     * @return The targets (either instances or maintenance window targets).</p>
+     * @return The targets (either instances or maintenance window targets).</p> <note>
+     *         <p>
+     *         One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *         task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *         Functions). For more information about running tasks that do not specify targets, see see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *         >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Specify instances using the following format:
      *         </p>
@@ -244,6 +282,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The targets (either instances or maintenance window targets).
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Specify instances using the following format:
      * </p>
@@ -258,7 +305,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or maintenance window targets).</p>
+     *        The targets (either instances or maintenance window targets).</p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Specify instances using the following format:
      *        </p>
@@ -285,6 +340,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The targets (either instances or maintenance window targets).
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Specify instances using the following format:
      * </p>
@@ -304,7 +368,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or maintenance window targets).</p>
+     *        The targets (either instances or maintenance window targets).</p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Specify instances using the following format:
      *        </p>
@@ -333,6 +405,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The targets (either instances or maintenance window targets).
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Specify instances using the following format:
      * </p>
@@ -347,7 +428,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or maintenance window targets).</p>
+     *        The targets (either instances or maintenance window targets).</p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Specify instances using the following format:
      *        </p>
@@ -858,9 +947,20 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of targets this task can be run for in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        of your task.
+     *        </p>
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -871,8 +971,19 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of targets this task can be run for in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of targets this task can be run for in parallel.
+     * @return The maximum number of targets this task can be run for in parallel.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *         of your task.
+     *         </p>
      */
 
     public String getMaxConcurrency() {
@@ -883,9 +994,20 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of targets this task can be run for in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        of your task.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -898,9 +1020,20 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of errors allowed before this task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
-     *        The maximum number of errors allowed before this task stops being scheduled.
+     *        The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        of your task.
+     *        </p>
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -911,8 +1044,19 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of errors allowed before this task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of errors allowed before this task stops being scheduled.
+     * @return The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *         of your task.
+     *         </p>
      */
 
     public String getMaxErrors() {
@@ -923,9 +1067,20 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * The maximum number of errors allowed before this task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
-     *        The maximum number of errors allowed before this task stops being scheduled.
+     *        The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        of your task.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

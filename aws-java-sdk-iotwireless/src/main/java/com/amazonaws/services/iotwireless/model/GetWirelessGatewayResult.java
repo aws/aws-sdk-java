@@ -55,7 +55,8 @@ public class GetWirelessGatewayResult extends com.amazonaws.AmazonWebServiceResu
     private String arn;
     /**
      * <p>
-     * The name of the thing associated with the wireless gateway.
+     * The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with
+     * the gateway.
      * </p>
      */
     private String thingName;
@@ -268,11 +269,13 @@ public class GetWirelessGatewayResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the thing associated with the wireless gateway.
+     * The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with
+     * the gateway.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing associated with the wireless gateway.
+     *        The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated
+     *        with the gateway.
      */
 
     public void setThingName(String thingName) {
@@ -281,10 +284,12 @@ public class GetWirelessGatewayResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the thing associated with the wireless gateway.
+     * The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with
+     * the gateway.
      * </p>
      * 
-     * @return The name of the thing associated with the wireless gateway.
+     * @return The name of the thing associated with the wireless gateway. The value is empty if a thing isn't
+     *         associated with the gateway.
      */
 
     public String getThingName() {
@@ -293,11 +298,13 @@ public class GetWirelessGatewayResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the thing associated with the wireless gateway.
+     * The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with
+     * the gateway.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing associated with the wireless gateway.
+     *        The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated
+     *        with the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

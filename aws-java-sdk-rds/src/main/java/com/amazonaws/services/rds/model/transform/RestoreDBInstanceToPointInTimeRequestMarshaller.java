@@ -234,6 +234,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
                     StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceAutomatedBackupsArn()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getEnableCustomerOwnedIp()));
+        }
+
         return request;
     }
 

@@ -284,6 +284,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("ReplicaMode", StringUtils.fromString(modifyDBInstanceRequest.getReplicaMode()));
         }
 
+        if (modifyDBInstanceRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(modifyDBInstanceRequest.getEnableCustomerOwnedIp()));
+        }
+
         return request;
     }
 

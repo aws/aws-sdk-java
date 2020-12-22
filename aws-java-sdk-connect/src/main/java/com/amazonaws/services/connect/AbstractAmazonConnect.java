@@ -73,6 +73,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateQuickConnectResult createQuickConnect(CreateQuickConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRoutingProfileResult createRoutingProfile(CreateRoutingProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteIntegrationAssociationResult deleteIntegrationAssociation(DeleteIntegrationAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteQuickConnectResult deleteQuickConnect(DeleteQuickConnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,6 +144,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQuickConnectResult describeQuickConnect(DescribeQuickConnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,6 +283,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListQuickConnectsResult listQuickConnects(ListQuickConnectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRoutingProfileQueuesResult listRoutingProfileQueues(ListRoutingProfileQueuesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -379,6 +399,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuickConnectConfigResult updateQuickConnectConfig(UpdateQuickConnectConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuickConnectNameResult updateQuickConnectName(UpdateQuickConnectNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -36,10 +36,10 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
     private String amazonId;
     /**
      * <p>
-     * The Sidewalk application server private key.
+     * Fingerprint for Sidewalk application server private key.
      * </p>
      */
-    private String appServerPrivateKey;
+    private String fingerprint;
 
     /**
      * <p>
@@ -83,41 +83,41 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
 
     /**
      * <p>
-     * The Sidewalk application server private key.
+     * Fingerprint for Sidewalk application server private key.
      * </p>
      * 
-     * @param appServerPrivateKey
-     *        The Sidewalk application server private key.
+     * @param fingerprint
+     *        Fingerprint for Sidewalk application server private key.
      */
 
-    public void setAppServerPrivateKey(String appServerPrivateKey) {
-        this.appServerPrivateKey = appServerPrivateKey;
+    public void setFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
     }
 
     /**
      * <p>
-     * The Sidewalk application server private key.
+     * Fingerprint for Sidewalk application server private key.
      * </p>
      * 
-     * @return The Sidewalk application server private key.
+     * @return Fingerprint for Sidewalk application server private key.
      */
 
-    public String getAppServerPrivateKey() {
-        return this.appServerPrivateKey;
+    public String getFingerprint() {
+        return this.fingerprint;
     }
 
     /**
      * <p>
-     * The Sidewalk application server private key.
+     * Fingerprint for Sidewalk application server private key.
      * </p>
      * 
-     * @param appServerPrivateKey
-     *        The Sidewalk application server private key.
+     * @param fingerprint
+     *        Fingerprint for Sidewalk application server private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SidewalkAccountInfoWithFingerprint withAppServerPrivateKey(String appServerPrivateKey) {
-        setAppServerPrivateKey(appServerPrivateKey);
+    public SidewalkAccountInfoWithFingerprint withFingerprint(String fingerprint) {
+        setFingerprint(fingerprint);
         return this;
     }
 
@@ -135,8 +135,8 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
         sb.append("{");
         if (getAmazonId() != null)
             sb.append("AmazonId: ").append(getAmazonId()).append(",");
-        if (getAppServerPrivateKey() != null)
-            sb.append("AppServerPrivateKey: ").append("***Sensitive Data Redacted***");
+        if (getFingerprint() != null)
+            sb.append("Fingerprint: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -155,9 +155,9 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
             return false;
         if (other.getAmazonId() != null && other.getAmazonId().equals(this.getAmazonId()) == false)
             return false;
-        if (other.getAppServerPrivateKey() == null ^ this.getAppServerPrivateKey() == null)
+        if (other.getFingerprint() == null ^ this.getFingerprint() == null)
             return false;
-        if (other.getAppServerPrivateKey() != null && other.getAppServerPrivateKey().equals(this.getAppServerPrivateKey()) == false)
+        if (other.getFingerprint() != null && other.getFingerprint().equals(this.getFingerprint()) == false)
             return false;
         return true;
     }
@@ -168,7 +168,7 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
-        hashCode = prime * hashCode + ((getAppServerPrivateKey() == null) ? 0 : getAppServerPrivateKey().hashCode());
+        hashCode = prime * hashCode + ((getFingerprint() == null) ? 0 : getFingerprint().hashCode());
         return hashCode;
     }
 

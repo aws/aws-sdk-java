@@ -85,8 +85,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
      * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String optionGroupName;
@@ -424,8 +424,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
      * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param optionGroupName
@@ -434,8 +434,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
      *        considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     *        >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *        >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -449,8 +449,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
      * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The option group to identify with the upgraded DB snapshot. </p>
@@ -458,8 +458,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *         You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
      *         considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
      *         see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     *         >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *         >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getOptionGroupName() {
@@ -473,8 +473,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
      * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param optionGroupName
@@ -483,8 +483,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
      *        considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
-     *        >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *        >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

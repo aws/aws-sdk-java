@@ -63,7 +63,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      * </p>
      * </li>
      * <li>
@@ -75,15 +75,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB instances.
-     * The results list includes only information about the DB instance automated backupss identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance automated backups identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names (ARNs) for
-     * DB instances. The results list includes only information about the DB instance resources identified by these
-     * ARNs.
+     * <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance resources identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -233,7 +232,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      * </p>
      * </li>
      * <li>
@@ -245,15 +244,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB instances.
-     * The results list includes only information about the DB instance automated backupss identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance automated backups identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names (ARNs) for
-     * DB instances. The results list includes only information about the DB instance resources identified by these
-     * ARNs.
+     * <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance resources identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -278,7 +276,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *         </li>
      *         <li>
      *         <p>
-     *         <code>retained</code> - automated backups for deleted instances
+     *         <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      *         </p>
      *         </li>
      *         <li>
@@ -291,16 +289,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *         </li>
      *         <li>
      *         <p>
-     *         <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB
-     *         instances. The results list includes only information about the DB instance automated backupss identified
-     *         by these ARNs.
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The
+     *         results list includes only information about the DB instance automated backups identified by these ARNs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names
-     *         (ARNs) for DB instances. The results list includes only information about the DB instance resources
-     *         identified by these ARNs.
+     *         <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The
+     *         results list includes only information about the DB instance resources identified by these ARNs.
      *         </p>
      *         </li>
      *         </ul>
@@ -335,7 +331,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      * </p>
      * </li>
      * <li>
@@ -347,15 +343,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB instances.
-     * The results list includes only information about the DB instance automated backupss identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance automated backups identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names (ARNs) for
-     * DB instances. The results list includes only information about the DB instance resources identified by these
-     * ARNs.
+     * <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance resources identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -381,7 +376,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances
+     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      *        </p>
      *        </li>
      *        <li>
@@ -394,16 +389,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB
-     *        instances. The results list includes only information about the DB instance automated backupss identified
-     *        by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance automated backups identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names
-     *        (ARNs) for DB instances. The results list includes only information about the DB instance resources
-     *        identified by these ARNs.
+     *        <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance resources identified by these ARNs.
      *        </p>
      *        </li>
      *        </ul>
@@ -440,7 +433,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      * </p>
      * </li>
      * <li>
@@ -452,15 +445,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB instances.
-     * The results list includes only information about the DB instance automated backupss identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance automated backups identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names (ARNs) for
-     * DB instances. The results list includes only information about the DB instance resources identified by these
-     * ARNs.
+     * <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance resources identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -491,7 +483,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances
+     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      *        </p>
      *        </li>
      *        <li>
@@ -504,16 +496,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB
-     *        instances. The results list includes only information about the DB instance automated backupss identified
-     *        by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance automated backups identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names
-     *        (ARNs) for DB instances. The results list includes only information about the DB instance resources
-     *        identified by these ARNs.
+     *        <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance resources identified by these ARNs.
      *        </p>
      *        </li>
      *        </ul>
@@ -552,7 +542,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      * </p>
      * </li>
      * <li>
@@ -564,15 +554,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB instances.
-     * The results list includes only information about the DB instance automated backupss identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance automated backups identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names (ARNs) for
-     * DB instances. The results list includes only information about the DB instance resources identified by these
-     * ARNs.
+     * <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list
+     * includes only information about the DB instance resources identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -598,7 +587,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances
+     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
      *        </p>
      *        </li>
      *        <li>
@@ -611,16 +600,14 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs) for DB
-     *        instances. The results list includes only information about the DB instance automated backupss identified
-     *        by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance automated backups identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon Resource Names
-     *        (ARNs) for DB instances. The results list includes only information about the DB instance resources
-     *        identified by these ARNs.
+     *        <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The
+     *        results list includes only information about the DB instance resources identified by these ARNs.
      *        </p>
      *        </li>
      *        </ul>

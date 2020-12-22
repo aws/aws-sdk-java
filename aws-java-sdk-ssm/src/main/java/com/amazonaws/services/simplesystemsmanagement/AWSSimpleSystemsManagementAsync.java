@@ -1911,6 +1911,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
@@ -1926,6 +1934,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @param asyncHandler
@@ -2866,6 +2882,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @return A Java Future containing the result of the GetMaintenanceWindowTask operation returned by the service.
@@ -2879,6 +2903,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @param asyncHandler
@@ -5183,6 +5215,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
      * not modified. If you set <code>Replace</code> to true, then all fields required by the
@@ -5247,6 +5288,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
      * not modified. If you set <code>Replace</code> to true, then all fields required by the

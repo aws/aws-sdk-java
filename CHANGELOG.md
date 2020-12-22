@@ -1,3 +1,32 @@
+# __1.11.925__ __2020-12-22__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This release adds additional metadata that may be applicable to the Rightsizing Recommendations.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue Find Matches machine learning transforms now support column importance scores.
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Adding the ability to use Fingerprint in GetPartnerAccount and ListPartnerAccounts API responses to protect sensitive customer account information.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds support for quick connects. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds customer-owned IP address (CoIP) support to Amazon RDS on AWS Outposts.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - SSM Maintenance Window support for registering/updating maintenance window tasks without targets.
+
 # __1.11.924__ __2020-12-21__
 ## __AWS Batch__
   - ### Features

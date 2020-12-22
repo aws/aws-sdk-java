@@ -196,6 +196,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates an approved origin to an Amazon Connect instance.
      * </p>
      * 
@@ -265,6 +268,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
@@ -341,6 +347,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Allows the specified Amazon Connect instance to access the specified Lambda function.
      * </p>
      * 
@@ -410,6 +419,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
      * </p>
@@ -544,6 +556,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a security key to the instance.
      * </p>
@@ -759,7 +774,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Create an AppIntegration association with anAmazon Connect instance.
+     * Create an AppIntegration association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -813,6 +828,77 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<CreateIntegrationAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateIntegrationAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a quick connect for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQuickConnectRequest
+     * @return Result of the CreateQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateQuickConnectResult createQuickConnect(CreateQuickConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateQuickConnect(request);
+    }
+
+    @SdkInternalApi
+    final CreateQuickConnectResult executeCreateQuickConnect(CreateQuickConnectRequest createQuickConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createQuickConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateQuickConnectRequest> request = null;
+        Response<CreateQuickConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateQuickConnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createQuickConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQuickConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateQuickConnectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateQuickConnectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1237,6 +1323,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Deletes a quick connect.
+     * </p>
+     * 
+     * @param deleteQuickConnectRequest
+     * @return Result of the DeleteQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DeleteQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteQuickConnectResult deleteQuickConnect(DeleteQuickConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQuickConnect(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQuickConnectResult executeDeleteQuickConnect(DeleteQuickConnectRequest deleteQuickConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteQuickConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteQuickConnectRequest> request = null;
+        Response<DeleteQuickConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteQuickConnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteQuickConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQuickConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteQuickConnectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteQuickConnectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes a use case from an AppIntegration association.
      * </p>
      * 
@@ -1507,6 +1660,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
      * and returns an error status if applicable.
      * </p>
@@ -1571,6 +1727,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Describes the specified instance attribute.
      * </p>
@@ -1638,6 +1797,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
      * </p>
      * 
@@ -1692,6 +1854,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeInstanceStorageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the quick connect.
+     * </p>
+     * 
+     * @param describeQuickConnectRequest
+     * @return Result of the DescribeQuickConnect operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeQuickConnectResult describeQuickConnect(DescribeQuickConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeQuickConnect(request);
+    }
+
+    @SdkInternalApi
+    final DescribeQuickConnectResult executeDescribeQuickConnect(DescribeQuickConnectRequest describeQuickConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeQuickConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeQuickConnectRequest> request = null;
+        Response<DescribeQuickConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeQuickConnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeQuickConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeQuickConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeQuickConnectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeQuickConnectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1966,6 +2195,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Revokes access to integrated applications from Amazon Connect.
      * </p>
      * 
@@ -2031,6 +2263,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
@@ -2099,6 +2334,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
      * </p>
      * 
@@ -2164,6 +2402,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
      * </p>
@@ -2295,6 +2536,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Deletes the specified security key.
      * </p>
@@ -2625,6 +2869,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all approved origins associated with the instance.
      * </p>
@@ -3100,6 +3347,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
      * contact flow blocks.
      * </p>
@@ -3164,6 +3414,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
      * </p>
@@ -3431,6 +3684,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides information about the quick connects for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listQuickConnectsRequest
+     * @return Result of the ListQuickConnects operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListQuickConnectsResult listQuickConnects(ListQuickConnectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQuickConnects(request);
+    }
+
+    @SdkInternalApi
+    final ListQuickConnectsResult executeListQuickConnects(ListQuickConnectsRequest listQuickConnectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listQuickConnectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListQuickConnectsRequest> request = null;
+        Response<ListQuickConnectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListQuickConnectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listQuickConnectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQuickConnects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListQuickConnectsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListQuickConnectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the queues associated with a routing profile.
      * </p>
      * 
@@ -3566,6 +3886,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all security keys associated with the instance.
      * </p>
@@ -4563,7 +4886,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, and contact flows.
+     * The supported resource types are users, routing profiles, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -5046,6 +5369,144 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateInstanceStorageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the configuration settings for the specified quick connect.
+     * </p>
+     * 
+     * @param updateQuickConnectConfigRequest
+     * @return Result of the UpdateQuickConnectConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateQuickConnectConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateQuickConnectConfigResult updateQuickConnectConfig(UpdateQuickConnectConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateQuickConnectConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateQuickConnectConfigResult executeUpdateQuickConnectConfig(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateQuickConnectConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateQuickConnectConfigRequest> request = null;
+        Response<UpdateQuickConnectConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateQuickConnectConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateQuickConnectConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateQuickConnectConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateQuickConnectConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateQuickConnectConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
+     * least Name or Description must be provided.
+     * </p>
+     * 
+     * @param updateQuickConnectNameRequest
+     * @return Result of the UpdateQuickConnectName operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateQuickConnectName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateQuickConnectNameResult updateQuickConnectName(UpdateQuickConnectNameRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateQuickConnectName(request);
+    }
+
+    @SdkInternalApi
+    final UpdateQuickConnectNameResult executeUpdateQuickConnectName(UpdateQuickConnectNameRequest updateQuickConnectNameRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateQuickConnectNameRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateQuickConnectNameRequest> request = null;
+        Response<UpdateQuickConnectNameResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateQuickConnectNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateQuickConnectNameRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateQuickConnectName");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateQuickConnectNameResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateQuickConnectNameResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

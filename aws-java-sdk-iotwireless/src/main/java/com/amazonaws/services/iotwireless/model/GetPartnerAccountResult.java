@@ -27,9 +27,6 @@ public class GetPartnerAccountResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      */
     private SidewalkAccountInfoWithFingerprint sidewalk;
     /**
@@ -43,14 +40,9 @@ public class GetPartnerAccountResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
      * @param sidewalk
-     *        The Sidewalk account credentials.</p>
-     *        <p>
-     *        The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     *        The Sidewalk account credentials.
      */
 
     public void setSidewalk(SidewalkAccountInfoWithFingerprint sidewalk) {
@@ -61,13 +53,8 @@ public class GetPartnerAccountResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
-     * @return The Sidewalk account credentials.</p>
-     *         <p>
-     *         The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     * @return The Sidewalk account credentials.
      */
 
     public SidewalkAccountInfoWithFingerprint getSidewalk() {
@@ -78,14 +65,9 @@ public class GetPartnerAccountResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
      * @param sidewalk
-     *        The Sidewalk account credentials.</p>
-     *        <p>
-     *        The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     *        The Sidewalk account credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

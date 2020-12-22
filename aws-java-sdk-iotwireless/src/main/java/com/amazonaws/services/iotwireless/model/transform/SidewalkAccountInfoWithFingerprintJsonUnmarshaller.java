@@ -52,9 +52,9 @@ public class SidewalkAccountInfoWithFingerprintJsonUnmarshaller implements Unmar
                     context.nextToken();
                     sidewalkAccountInfoWithFingerprint.setAmazonId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("AppServerPrivateKey", targetDepth)) {
+                if (context.testExpression("Fingerprint", targetDepth)) {
                     context.nextToken();
-                    sidewalkAccountInfoWithFingerprint.setAppServerPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
+                    sidewalkAccountInfoWithFingerprint.setFingerprint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

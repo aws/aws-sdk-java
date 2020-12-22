@@ -295,6 +295,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(createDBInstanceRequest.getMaxAllocatedStorage()));
         }
 
+        if (createDBInstanceRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(createDBInstanceRequest.getEnableCustomerOwnedIp()));
+        }
+
         return request;
     }
 

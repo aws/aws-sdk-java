@@ -72,7 +72,7 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
     private Integer classCTimeout;
     /**
      * <p>
-     * The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     * The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      * </p>
      */
     private String macVersion;
@@ -449,11 +449,11 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     * The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      * </p>
      * 
      * @param macVersion
-     *        The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     *        The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      */
 
     public void setMacVersion(String macVersion) {
@@ -462,10 +462,10 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     * The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      * </p>
      * 
-     * @return The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     * @return The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      */
 
     public String getMacVersion() {
@@ -474,11 +474,11 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     * The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      * </p>
      * 
      * @param macVersion
-     *        The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+     *        The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

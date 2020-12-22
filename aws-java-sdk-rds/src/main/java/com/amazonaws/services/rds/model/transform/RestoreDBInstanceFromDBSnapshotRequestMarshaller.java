@@ -216,6 +216,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection()));
         }
 
+        if (restoreDBInstanceFromDBSnapshotRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getEnableCustomerOwnedIp()));
+        }
+
         return request;
     }
 

@@ -394,6 +394,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest request) {
+
+        return createQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(final CreateQuickConnectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateQuickConnectRequest, CreateQuickConnectResult> asyncHandler) {
+        final CreateQuickConnectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateQuickConnectResult>() {
+            @Override
+            public CreateQuickConnectResult call() throws Exception {
+                CreateQuickConnectResult result = null;
+
+                try {
+                    result = executeCreateQuickConnect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest request) {
 
         return createRoutingProfileAsync(request, null);
@@ -576,6 +609,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDeleteIntegrationAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest request) {
+
+        return deleteQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(final DeleteQuickConnectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQuickConnectRequest, DeleteQuickConnectResult> asyncHandler) {
+        final DeleteQuickConnectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQuickConnectResult>() {
+            @Override
+            public DeleteQuickConnectResult call() throws Exception {
+                DeleteQuickConnectResult result = null;
+
+                try {
+                    result = executeDeleteQuickConnect(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -808,6 +874,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDescribeInstanceStorageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest request) {
+
+        return describeQuickConnectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(final DescribeQuickConnectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQuickConnectRequest, DescribeQuickConnectResult> asyncHandler) {
+        final DescribeQuickConnectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQuickConnectResult>() {
+            @Override
+            public DescribeQuickConnectResult call() throws Exception {
+                DescribeQuickConnectResult result = null;
+
+                try {
+                    result = executeDescribeQuickConnect(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1687,6 +1786,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest request) {
+
+        return listQuickConnectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(final ListQuickConnectsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListQuickConnectsRequest, ListQuickConnectsResult> asyncHandler) {
+        final ListQuickConnectsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListQuickConnectsResult>() {
+            @Override
+            public ListQuickConnectsResult call() throws Exception {
+                ListQuickConnectsResult result = null;
+
+                try {
+                    result = executeListQuickConnects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRoutingProfileQueuesResult> listRoutingProfileQueuesAsync(ListRoutingProfileQueuesRequest request) {
 
         return listRoutingProfileQueuesAsync(request, null);
@@ -2430,6 +2562,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeUpdateInstanceStorageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest request) {
+
+        return updateQuickConnectConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(final UpdateQuickConnectConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectConfigRequest, UpdateQuickConnectConfigResult> asyncHandler) {
+        final UpdateQuickConnectConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateQuickConnectConfigResult>() {
+            @Override
+            public UpdateQuickConnectConfigResult call() throws Exception {
+                UpdateQuickConnectConfigResult result = null;
+
+                try {
+                    result = executeUpdateQuickConnectConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest request) {
+
+        return updateQuickConnectNameAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(final UpdateQuickConnectNameRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectNameRequest, UpdateQuickConnectNameResult> asyncHandler) {
+        final UpdateQuickConnectNameRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateQuickConnectNameResult>() {
+            @Override
+            public UpdateQuickConnectNameResult call() throws Exception {
+                UpdateQuickConnectNameResult result = null;
+
+                try {
+                    result = executeUpdateQuickConnectName(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

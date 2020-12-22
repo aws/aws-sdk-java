@@ -33,6 +33,8 @@ public class RightsizingRecommendationMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerationTimestamp").build();
     private static final MarshallingInfo<String> LOOKBACKPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LookbackPeriodInDays").build();
+    private static final MarshallingInfo<String> ADDITIONALMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalMetadata").build();
 
     private static final RightsizingRecommendationMetadataMarshaller instance = new RightsizingRecommendationMetadataMarshaller();
 
@@ -53,6 +55,7 @@ public class RightsizingRecommendationMetadataMarshaller {
             protocolMarshaller.marshall(rightsizingRecommendationMetadata.getRecommendationId(), RECOMMENDATIONID_BINDING);
             protocolMarshaller.marshall(rightsizingRecommendationMetadata.getGenerationTimestamp(), GENERATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(rightsizingRecommendationMetadata.getLookbackPeriodInDays(), LOOKBACKPERIODINDAYS_BINDING);
+            protocolMarshaller.marshall(rightsizingRecommendationMetadata.getAdditionalMetadata(), ADDITIONALMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

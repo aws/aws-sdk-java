@@ -34,7 +34,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the AWS
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
      * CLI with Global Datastores </a>.
      * </p>
      */
@@ -61,7 +61,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the AWS
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
      * CLI with Global Datastores </a>.
      * </p>
      * 
@@ -73,8 +73,8 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      *        multiple regions. </p>
      *        <p>
      *        For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the
-     *        AWS CLI with Global Datastores </a>.
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
+     *        the AWS CLI with Global Datastores </a>.
      */
 
     public void setGlobalReplicationGroupIdSuffix(String globalReplicationGroupIdSuffix) {
@@ -90,7 +90,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the AWS
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
      * CLI with Global Datastores </a>.
      * </p>
      * 
@@ -101,7 +101,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      *         across multiple regions. </p>
      *         <p>
      *         For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      *         the AWS CLI with Global Datastores </a>.
      */
 
@@ -118,7 +118,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the AWS
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
      * CLI with Global Datastores </a>.
      * </p>
      * 
@@ -130,8 +130,8 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
      *        multiple regions. </p>
      *        <p>
      *        For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using the
-     *        AWS CLI with Global Datastores </a>.
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
+     *        the AWS CLI with Global Datastores </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

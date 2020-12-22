@@ -46,6 +46,12 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
      * </p>
      */
     private String lookbackPeriodInDays;
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     */
+    private String additionalMetadata;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that may be applicable to the recommendation.
+     */
+
+    public void setAdditionalMetadata(String additionalMetadata) {
+        this.additionalMetadata = additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @return Additional metadata that may be applicable to the recommendation.
+     */
+
+    public String getAdditionalMetadata() {
+        return this.additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that may be applicable to the recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RightsizingRecommendationMetadata withAdditionalMetadata(String additionalMetadata) {
+        setAdditionalMetadata(additionalMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
         if (getGenerationTimestamp() != null)
             sb.append("GenerationTimestamp: ").append(getGenerationTimestamp()).append(",");
         if (getLookbackPeriodInDays() != null)
-            sb.append("LookbackPeriodInDays: ").append(getLookbackPeriodInDays());
+            sb.append("LookbackPeriodInDays: ").append(getLookbackPeriodInDays()).append(",");
+        if (getAdditionalMetadata() != null)
+            sb.append("AdditionalMetadata: ").append(getAdditionalMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +278,10 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
             return false;
         if (other.getLookbackPeriodInDays() != null && other.getLookbackPeriodInDays().equals(this.getLookbackPeriodInDays()) == false)
             return false;
+        if (other.getAdditionalMetadata() == null ^ this.getAdditionalMetadata() == null)
+            return false;
+        if (other.getAdditionalMetadata() != null && other.getAdditionalMetadata().equals(this.getAdditionalMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +293,7 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getGenerationTimestamp() == null) ? 0 : getGenerationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLookbackPeriodInDays() == null) ? 0 : getLookbackPeriodInDays().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMetadata() == null) ? 0 : getAdditionalMetadata().hashCode());
         return hashCode;
     }
 

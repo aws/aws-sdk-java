@@ -203,7 +203,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
      * Server, you must specify this option when copying across AWS Regions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String optionGroupName;
@@ -1313,7 +1313,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
      * Server, you must specify this option when copying across AWS Regions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param optionGroupName
@@ -1324,7 +1324,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Microsoft SQL Server, you must specify this option when copying across AWS Regions. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     *        >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *        >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1340,7 +1340,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
      * Server, you must specify this option when copying across AWS Regions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The name of an option group to associate with the copy of the snapshot.</p>
@@ -1350,7 +1350,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Microsoft SQL Server, you must specify this option when copying across AWS Regions. For more information,
      *         see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     *         >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *         >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getOptionGroupName() {
@@ -1366,7 +1366,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
      * Server, you must specify this option when copying across AWS Regions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     * >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     * >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param optionGroupName
@@ -1377,7 +1377,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Microsoft SQL Server, you must specify this option when copying across AWS Regions. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
-     *        >Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i>
+     *        >Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

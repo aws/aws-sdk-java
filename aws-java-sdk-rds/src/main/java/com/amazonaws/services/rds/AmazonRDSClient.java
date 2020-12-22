@@ -1424,8 +1424,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param createCustomAvailabilityZoneRequest
@@ -2587,8 +2587,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param deleteCustomAvailabilityZoneRequest
@@ -3830,8 +3830,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param describeCustomAvailabilityZonesRequest
@@ -6024,8 +6024,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica or copy a DB
-     * snapshot from. This API action supports pagination.
+     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica, copy a DB
+     * snapshot from, or replicate automated backups from. This API action supports pagination.
      * </p>
      * 
      * @param describeSourceRegionsRequest

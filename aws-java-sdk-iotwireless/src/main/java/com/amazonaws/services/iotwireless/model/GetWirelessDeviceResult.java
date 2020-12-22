@@ -61,7 +61,8 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
     private String arn;
     /**
      * <p>
-     * The name of the thing associated with the wireless device.
+     * The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with
+     * the device.
      * </p>
      */
     private String thingName;
@@ -339,11 +340,13 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the thing associated with the wireless device.
+     * The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with
+     * the device.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing associated with the wireless device.
+     *        The name of the thing associated with the wireless device. The value is empty if a thing isn't associated
+     *        with the device.
      */
 
     public void setThingName(String thingName) {
@@ -352,10 +355,12 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the thing associated with the wireless device.
+     * The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with
+     * the device.
      * </p>
      * 
-     * @return The name of the thing associated with the wireless device.
+     * @return The name of the thing associated with the wireless device. The value is empty if a thing isn't associated
+     *         with the device.
      */
 
     public String getThingName() {
@@ -364,11 +369,13 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the thing associated with the wireless device.
+     * The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with
+     * the device.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing associated with the wireless device.
+     *        The name of the thing associated with the wireless device. The value is empty if a thing isn't associated
+     *        with the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

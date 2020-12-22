@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class FindMatchesMetricsMarshaller {
             .marshallLocationName("F1").build();
     private static final MarshallingInfo<StructuredPojo> CONFUSIONMATRIX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfusionMatrix").build();
+    private static final MarshallingInfo<List> COLUMNIMPORTANCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnImportances").build();
 
     private static final FindMatchesMetricsMarshaller instance = new FindMatchesMetricsMarshaller();
 
@@ -59,6 +62,7 @@ public class FindMatchesMetricsMarshaller {
             protocolMarshaller.marshall(findMatchesMetrics.getRecall(), RECALL_BINDING);
             protocolMarshaller.marshall(findMatchesMetrics.getF1(), F1_BINDING);
             protocolMarshaller.marshall(findMatchesMetrics.getConfusionMatrix(), CONFUSIONMATRIX_BINDING);
+            protocolMarshaller.marshall(findMatchesMetrics.getColumnImportances(), COLUMNIMPORTANCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

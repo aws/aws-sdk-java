@@ -33,9 +33,6 @@ public class ListPartnerAccountsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      */
     private java.util.List<SidewalkAccountInfoWithFingerprint> sidewalk;
 
@@ -83,13 +80,8 @@ public class ListPartnerAccountsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
-     * @return The Sidewalk account credentials.</p>
-     *         <p>
-     *         The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     * @return The Sidewalk account credentials.
      */
 
     public java.util.List<SidewalkAccountInfoWithFingerprint> getSidewalk() {
@@ -100,14 +92,9 @@ public class ListPartnerAccountsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
      * @param sidewalk
-     *        The Sidewalk account credentials.</p>
-     *        <p>
-     *        The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     *        The Sidewalk account credentials.
      */
 
     public void setSidewalk(java.util.Collection<SidewalkAccountInfoWithFingerprint> sidewalk) {
@@ -124,18 +111,13 @@ public class ListPartnerAccountsResult extends com.amazonaws.AmazonWebServiceRes
      * The Sidewalk account credentials.
      * </p>
      * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSidewalk(java.util.Collection)} or {@link #withSidewalk(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param sidewalk
-     *        The Sidewalk account credentials.</p>
-     *        <p>
-     *        The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     *        The Sidewalk account credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,14 +135,9 @@ public class ListPartnerAccountsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The Sidewalk account credentials.
      * </p>
-     * <p>
-     * The <code>AppServerPrivateKey</code> value is empty to protect its security.
-     * </p>
      * 
      * @param sidewalk
-     *        The Sidewalk account credentials.</p>
-     *        <p>
-     *        The <code>AppServerPrivateKey</code> value is empty to protect its security.
+     *        The Sidewalk account credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

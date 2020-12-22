@@ -229,18 +229,23 @@ public class RegionMetadataParser {
      *         by Apache Xerces, false otherwise.
      */
     private static boolean isXerces(DocumentBuilderFactory factory) {
-        return factory.getClass().getCanonicalName()
-                .startsWith("org.apache.xerces.");
+        // The included implementation in the JDK is also Xerces, but a fork and under a different package:
+        // https://github.com/openjdk/jdk/blob/3f77a6002ea7c150308409600abd4f1140bfb36a/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/jaxp/DocumentBuilderFactoryImpl.java#L21
+        String canonicalName = factory.getClass().getCanonicalName();
+        return canonicalName.startsWith("org.apache.xerces.") || canonicalName.startsWith("com.sun.org.apache.xerces.");
     }
 
     private static void configureDocumentBuilderFactory(DocumentBuilderFactory factory) {
         try {
             if (isXerces(factory)) {
-                factory.setAttribute("http://xml.org/sax/features/external-general-entities", "");
-                factory.setAttribute("http://xml.org/sax/features/external-parameter-entities", "");
-                factory.setAttribute("http://apache.org/xml/features/nonvalidating/load-external-dtd", "");
-                factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", "");
+                // https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
+                factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+                factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+                factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+                factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
             } else {
+                // https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
+                // https://rules.sonarsource.com/java/tag/owasp/RSPEC-2755
                 factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
                 factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalSchema", "");
             }

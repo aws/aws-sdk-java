@@ -45,7 +45,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
     private String frequency;
     /**
      * <p>
-     * A list of cost anomaly subscription ARNs.
+     * A list of cost anomaly monitor ARNs.
      * </p>
      */
     private java.util.List<String> monitorArnList;
@@ -203,10 +203,10 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of cost anomaly subscription ARNs.
+     * A list of cost anomaly monitor ARNs.
      * </p>
      * 
-     * @return A list of cost anomaly subscription ARNs.
+     * @return A list of cost anomaly monitor ARNs.
      */
 
     public java.util.List<String> getMonitorArnList() {
@@ -215,11 +215,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of cost anomaly subscription ARNs.
+     * A list of cost anomaly monitor ARNs.
      * </p>
      * 
      * @param monitorArnList
-     *        A list of cost anomaly subscription ARNs.
+     *        A list of cost anomaly monitor ARNs.
      */
 
     public void setMonitorArnList(java.util.Collection<String> monitorArnList) {
@@ -233,7 +233,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of cost anomaly subscription ARNs.
+     * A list of cost anomaly monitor ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -242,7 +242,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param monitorArnList
-     *        A list of cost anomaly subscription ARNs.
+     *        A list of cost anomaly monitor ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +258,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of cost anomaly subscription ARNs.
+     * A list of cost anomaly monitor ARNs.
      * </p>
      * 
      * @param monitorArnList
-     *        A list of cost anomaly subscription ARNs.
+     *        A list of cost anomaly monitor ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

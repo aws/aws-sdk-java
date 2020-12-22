@@ -55,6 +55,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates an approved origin to an Amazon Connect instance.
      * </p>
      * 
@@ -67,6 +70,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<AssociateApprovedOriginResult> associateApprovedOriginAsync(AssociateApprovedOriginRequest associateApprovedOriginRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates an approved origin to an Amazon Connect instance.
      * </p>
@@ -85,6 +91,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             com.amazonaws.handlers.AsyncHandler<AssociateApprovedOriginRequest, AssociateApprovedOriginResult> asyncHandler);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
@@ -107,6 +116,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             AssociateInstanceStorageConfigRequest associateInstanceStorageConfigRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
@@ -135,6 +147,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Allows the specified Amazon Connect instance to access the specified Lambda function.
      * </p>
      * 
@@ -147,6 +162,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<AssociateLambdaFunctionResult> associateLambdaFunctionAsync(AssociateLambdaFunctionRequest associateLambdaFunctionRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Allows the specified Amazon Connect instance to access the specified Lambda function.
      * </p>
@@ -166,6 +184,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
      * </p>
      * 
@@ -178,6 +199,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<AssociateLexBotResult> associateLexBotAsync(AssociateLexBotRequest associateLexBotRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
      * </p>
@@ -232,6 +256,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates a security key to the instance.
      * </p>
      * 
@@ -244,6 +271,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<AssociateSecurityKeyResult> associateSecurityKeyAsync(AssociateSecurityKeyRequest associateSecurityKeyRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Associates a security key to the instance.
      * </p>
@@ -346,7 +376,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Create an AppIntegration association with anAmazon Connect instance.
+     * Create an AppIntegration association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -364,7 +394,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Create an AppIntegration association with anAmazon Connect instance.
+     * Create an AppIntegration association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -381,6 +411,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(
             CreateIntegrationAssociationRequest createIntegrationAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIntegrationAssociationRequest, CreateIntegrationAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a quick connect for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQuickConnectRequest
+     * @return A Java Future containing the result of the CreateQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsync.CreateQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest createQuickConnectRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a quick connect for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQuickConnectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest createQuickConnectRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateQuickConnectRequest, CreateQuickConnectResult> asyncHandler);
 
     /**
      * <p>
@@ -607,6 +674,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Deletes a quick connect.
+     * </p>
+     * 
+     * @param deleteQuickConnectRequest
+     * @return A Java Future containing the result of the DeleteQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest deleteQuickConnectRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a quick connect.
+     * </p>
+     * 
+     * @param deleteQuickConnectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest deleteQuickConnectRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteQuickConnectRequest, DeleteQuickConnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes a use case from an AppIntegration association.
      * </p>
      * 
@@ -754,6 +858,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
      * and returns an error status if applicable.
      * </p>
@@ -771,6 +878,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest describeInstanceRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
      * and returns an error status if applicable.
@@ -795,6 +905,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Describes the specified instance attribute.
      * </p>
      * 
@@ -808,6 +921,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             DescribeInstanceAttributeRequest describeInstanceAttributeRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Describes the specified instance attribute.
      * </p>
@@ -828,6 +944,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
      * </p>
      * 
@@ -842,6 +961,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
      * </p>
@@ -860,6 +982,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeInstanceStorageConfigResult> describeInstanceStorageConfigAsync(
             DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceStorageConfigRequest, DescribeInstanceStorageConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the quick connect.
+     * </p>
+     * 
+     * @param describeQuickConnectRequest
+     * @return A Java Future containing the result of the DescribeQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest describeQuickConnectRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the quick connect.
+     * </p>
+     * 
+     * @param describeQuickConnectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeQuickConnect operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeQuickConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest describeQuickConnectRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuickConnectRequest, DescribeQuickConnectResult> asyncHandler);
 
     /**
      * <p>
@@ -995,6 +1154,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Revokes access to integrated applications from Amazon Connect.
      * </p>
      * 
@@ -1008,6 +1170,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             DisassociateApprovedOriginRequest disassociateApprovedOriginRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Revokes access to integrated applications from Amazon Connect.
      * </p>
@@ -1028,6 +1193,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
      * 
@@ -1042,6 +1210,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             DisassociateInstanceStorageConfigRequest disassociateInstanceStorageConfigRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
@@ -1063,6 +1234,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
      * </p>
      * 
@@ -1076,6 +1250,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
      * </p>
@@ -1096,6 +1273,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
      * </p>
      * 
@@ -1108,6 +1288,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DisassociateLexBotResult> disassociateLexBotAsync(DisassociateLexBotRequest disassociateLexBotRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
      * </p>
@@ -1162,6 +1345,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes the specified security key.
      * </p>
      * 
@@ -1174,6 +1360,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DisassociateSecurityKeyResult> disassociateSecurityKeyAsync(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Deletes the specified security key.
      * </p>
@@ -1337,6 +1526,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all approved origins associated with the instance.
      * </p>
      * 
@@ -1349,6 +1541,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListApprovedOriginsResult> listApprovedOriginsAsync(ListApprovedOriginsRequest listApprovedOriginsRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all approved origins associated with the instance.
      * </p>
@@ -1614,6 +1809,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
      * contact flow blocks.
      * </p>
@@ -1627,6 +1825,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListLambdaFunctionsResult> listLambdaFunctionsAsync(ListLambdaFunctionsRequest listLambdaFunctionsRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
      * contact flow blocks.
@@ -1647,6 +1848,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
      * </p>
      * 
@@ -1659,6 +1863,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListLexBotsResult> listLexBotsAsync(ListLexBotsRequest listLexBotsRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
      * </p>
@@ -1791,6 +1998,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides information about the quick connects for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listQuickConnectsRequest
+     * @return A Java Future containing the result of the ListQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsync.ListQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest listQuickConnectsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides information about the quick connects for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listQuickConnectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest listQuickConnectsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListQuickConnectsRequest, ListQuickConnectsResult> asyncHandler);
+
+    /**
+     * <p>
      * List the queues associated with a routing profile.
      * </p>
      * 
@@ -1865,6 +2109,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all security keys associated with the instance.
      * </p>
      * 
@@ -1877,6 +2124,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListSecurityKeysResult> listSecurityKeysAsync(ListSecurityKeysRequest listSecurityKeysRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all security keys associated with the instance.
      * </p>
@@ -2502,7 +2752,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, and contact flows.
+     * The supported resource types are users, routing profiles, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -2523,7 +2773,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, and contact flows.
+     * The supported resource types are users, routing profiles, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -2793,6 +3043,82 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateInstanceStorageConfigResult> updateInstanceStorageConfigAsync(
             UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceStorageConfigRequest, UpdateInstanceStorageConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the configuration settings for the specified quick connect.
+     * </p>
+     * 
+     * @param updateQuickConnectConfigRequest
+     * @return A Java Future containing the result of the UpdateQuickConnectConfig operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQuickConnectConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the configuration settings for the specified quick connect.
+     * </p>
+     * 
+     * @param updateQuickConnectConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQuickConnectConfig operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQuickConnectConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectConfigRequest, UpdateQuickConnectConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
+     * least Name or Description must be provided.
+     * </p>
+     * 
+     * @param updateQuickConnectNameRequest
+     * @return A Java Future containing the result of the UpdateQuickConnectName operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQuickConnectName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest updateQuickConnectNameRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
+     * least Name or Description must be provided.
+     * </p>
+     * 
+     * @param updateQuickConnectNameRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQuickConnectName operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQuickConnectName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest updateQuickConnectNameRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuickConnectNameRequest, UpdateQuickConnectNameResult> asyncHandler);
 
     /**
      * <p>
