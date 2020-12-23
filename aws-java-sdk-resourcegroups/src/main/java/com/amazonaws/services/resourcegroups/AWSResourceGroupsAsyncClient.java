@@ -417,6 +417,39 @@ public class AWSResourceGroupsAsyncClient extends AWSResourceGroupsClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest request) {
+
+        return putGroupConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(final PutGroupConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutGroupConfigurationRequest, PutGroupConfigurationResult> asyncHandler) {
+        final PutGroupConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutGroupConfigurationResult>() {
+            @Override
+            public PutGroupConfigurationResult call() throws Exception {
+                PutGroupConfigurationResult result = null;
+
+                try {
+                    result = executePutGroupConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
 
         return searchResourcesAsync(request, null);

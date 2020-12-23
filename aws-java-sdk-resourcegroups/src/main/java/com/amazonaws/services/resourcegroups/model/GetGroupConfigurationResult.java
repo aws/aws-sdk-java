@@ -25,18 +25,24 @@ public class GetGroupConfigurationResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration associated with the specified group.
+     * The service configuration associated with the specified group. For details about the service configuration
+     * syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations
+     * for resource groups</a>.
      * </p>
      */
     private GroupConfiguration groupConfiguration;
 
     /**
      * <p>
-     * The configuration associated with the specified group.
+     * The service configuration associated with the specified group. For details about the service configuration
+     * syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations
+     * for resource groups</a>.
      * </p>
      * 
      * @param groupConfiguration
-     *        The configuration associated with the specified group.
+     *        The service configuration associated with the specified group. For details about the service configuration
+     *        syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
      */
 
     public void setGroupConfiguration(GroupConfiguration groupConfiguration) {
@@ -45,10 +51,15 @@ public class GetGroupConfigurationResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration associated with the specified group.
+     * The service configuration associated with the specified group. For details about the service configuration
+     * syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations
+     * for resource groups</a>.
      * </p>
      * 
-     * @return The configuration associated with the specified group.
+     * @return The service configuration associated with the specified group. For details about the service
+     *         configuration syntax, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *         resource groups</a>.
      */
 
     public GroupConfiguration getGroupConfiguration() {
@@ -57,11 +68,15 @@ public class GetGroupConfigurationResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration associated with the specified group.
+     * The service configuration associated with the specified group. For details about the service configuration
+     * syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations
+     * for resource groups</a>.
      * </p>
      * 
      * @param groupConfiguration
-     *        The configuration associated with the specified group.
+     *        The service configuration associated with the specified group. For details about the service configuration
+     *        syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

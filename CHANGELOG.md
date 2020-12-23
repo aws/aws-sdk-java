@@ -1,3 +1,16 @@
+# __1.11.926__ __2020-12-23__
+## __AWS Compute Optimizer__
+  - ### Features
+    - This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for lambda functions.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - AWS DMS launches support for AWS Secrets Manager to manage Oracle ASM Database credentials
+
+## __AWS Resource Groups__
+  - ### Features
+    - Add operation `PutGroupConfiguration`. Support dedicated hosts and add `Pending` in operations `Un/GroupResources`. Add `Resources` in `ListGroupResources` and deprecate `ResourceIdentifiers`.
+
 # __1.11.925__ __2020-12-22__
 ## __AWS Cost Explorer Service__
   - ### Features

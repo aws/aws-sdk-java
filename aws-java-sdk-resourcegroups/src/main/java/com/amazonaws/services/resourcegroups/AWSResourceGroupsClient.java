@@ -195,8 +195,25 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Creates a resource group with the specified name and description. You can optionally include a resource query, or
-     * a service configuration.
+     * a service configuration. For more information about constructing a resource query, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:CreateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createGroupRequest
      * @return Result of the CreateGroup operation returned by the service.
@@ -262,6 +279,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of
      * the group; it only deletes the group structure.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DeleteGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
@@ -328,6 +358,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns information about a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupRequest
      * @return Result of the GetGroup operation returned by the service.
@@ -392,15 +435,20 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns the service configuration associated with the specified resource group. AWS Resource Groups supports
-     * configurations for the following resource group types:
+     * Returns the service configuration associated with the specified resource group. For details about the service
+     * configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
-     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * <code>resource-groups:GetGroupConfiguration</code>
      * </p>
      * </li>
      * </ul>
@@ -469,8 +517,24 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves the resource query associated with the specified resource group.
+     * Retrieves the resource query associated with the specified resource group. For more information about resource
+     * queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupQueryRequest
      * @return Result of the GetGroupQuery operation returned by the service.
@@ -537,6 +601,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns a list of tags that are associated with a resource group, specified by an ARN.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetTags</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getTagsRequest
      * @return Result of the GetTags operation returned by the service.
@@ -603,6 +680,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Adds the specified resources to the specified group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupResourcesRequest
      * @return Result of the GroupResources operation returned by the service.
@@ -669,6 +759,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns a list of ARNs of the resources that are members of a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupResourcesRequest
      * @return Result of the ListGroupResources operation returned by the service.
@@ -737,6 +840,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns a list of existing resource groups in your account.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroups</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupsRequest
      * @return Result of the ListGroups operation returned by the service.
@@ -799,9 +915,103 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to
+     * complete. You can use <a>GetGroupConfiguration</a> to check the status of the update.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:PutGroupConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putGroupConfigurationRequest
+     * @return Result of the PutGroupConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws NotFoundException
+     *         One or more of the specified resources don't exist.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.PutGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutGroupConfigurationResult putGroupConfiguration(PutGroupConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutGroupConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutGroupConfigurationResult executePutGroupConfiguration(PutGroupConfigurationRequest putGroupConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putGroupConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutGroupConfigurationRequest> request = null;
+        Response<PutGroupConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutGroupConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putGroupConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutGroupConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutGroupConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutGroupConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:SearchResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param searchResourcesRequest
      * @return Result of the SearchResources operation returned by the service.
@@ -876,6 +1086,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * sensitive data.
      * </p>
      * </important>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Tag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param tagRequest
      * @return Result of the Tag operation returned by the service.
@@ -942,6 +1165,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Removes the specified resources from the specified group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UngroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param ungroupResourcesRequest
      * @return Result of the UngroupResources operation returned by the service.
@@ -1008,6 +1244,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Deletes tags from a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Untag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param untagRequest
      * @return Result of the Untag operation returned by the service.
@@ -1074,6 +1323,19 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Updates the description for an existing group. You cannot update the name of a resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
@@ -1138,8 +1400,23 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the resource query of a group.
+     * Updates the resource query of a group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupQueryRequest
      * @return Result of the UpdateGroupQuery operation returned by the service.

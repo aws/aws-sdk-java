@@ -142,6 +142,21 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<GetLambdaFunctionRecommendationsResult> getLambdaFunctionRecommendationsAsync(
+            GetLambdaFunctionRecommendationsRequest request) {
+
+        return getLambdaFunctionRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLambdaFunctionRecommendationsResult> getLambdaFunctionRecommendationsAsync(
+            GetLambdaFunctionRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLambdaFunctionRecommendationsRequest, GetLambdaFunctionRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRecommendationSummariesResult> getRecommendationSummariesAsync(GetRecommendationSummariesRequest request) {
 
         return getRecommendationSummariesAsync(request, null);

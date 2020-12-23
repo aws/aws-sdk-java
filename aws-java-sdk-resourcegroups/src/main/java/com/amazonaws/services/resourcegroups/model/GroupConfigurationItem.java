@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An item in a group configuration. A group configuration can have one or more items.
+ * An item in a group configuration. A group service configuration can have one or more items. For details about group
+ * service configuration syntax, see <a
+ * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+ * groups</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupConfigurationItem"
@@ -30,87 +33,36 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the
+     * list of types that you can specify for a configuration item, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
-     * <p>
-     * You can specify the following string values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code>
-     * </p>
-     * <p>
-     * For more information about EC2 capacity reservation groups, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     * >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource groups of
-     * any type.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
     /**
      * <p>
-     * A collection of parameters for this group configuration item.
+     * A collection of parameters for this group configuration item. For the list of parameters that you can use with
+     * each configuration item type, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
      */
     private java.util.List<GroupConfigurationParameter> parameters;
 
     /**
      * <p>
-     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the
+     * list of types that you can specify for a configuration item, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
-     * <p>
-     * You can specify the following string values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code>
-     * </p>
-     * <p>
-     * For more information about EC2 capacity reservation groups, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     * >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource groups of
-     * any type.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>
-     *        .</p>
-     *        <p>
-     *        You can specify the following string values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::CapacityReservationPool</code>
-     *        </p>
-     *        <p>
-     *        For more information about EC2 capacity reservation groups, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource
-     *        groups of any type.
-     *        </p>
-     *        </li>
+     *        Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     *        For the list of types that you can specify for a configuration item, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *        resource types and parameters</a>.
      */
 
     public void setType(String type) {
@@ -119,52 +71,16 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the
+     * list of types that you can specify for a configuration item, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
-     * <p>
-     * You can specify the following string values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code>
-     * </p>
-     * <p>
-     * For more information about EC2 capacity reservation groups, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     * >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource groups of
-     * any type.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>
-     *         .</p>
-     *         <p>
-     *         You can specify the following string values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>AWS::EC2::CapacityReservationPool</code>
-     *         </p>
-     *         <p>
-     *         For more information about EC2 capacity reservation groups, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *         >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource
-     *         groups of any type.
-     *         </p>
-     *         </li>
+     * @return Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     *         For the list of types that you can specify for a configuration item, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *         resource types and parameters</a>.
      */
 
     public String getType() {
@@ -173,53 +89,17 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     * Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the
+     * list of types that you can specify for a configuration item, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
-     * <p>
-     * You can specify the following string values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code>
-     * </p>
-     * <p>
-     * For more information about EC2 capacity reservation groups, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     * >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource groups of
-     * any type.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>
-     *        .</p>
-     *        <p>
-     *        You can specify the following string values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::CapacityReservationPool</code>
-     *        </p>
-     *        <p>
-     *        For more information about EC2 capacity reservation groups, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::ResourceGroups::Generic</code> - Supports parameters that configure the behavior of resource
-     *        groups of any type.
-     *        </p>
-     *        </li>
+     *        Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>.
+     *        For the list of types that you can specify for a configuration item, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *        resource types and parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,10 +110,16 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A collection of parameters for this group configuration item.
+     * A collection of parameters for this group configuration item. For the list of parameters that you can use with
+     * each configuration item type, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
      * 
-     * @return A collection of parameters for this group configuration item.
+     * @return A collection of parameters for this group configuration item. For the list of parameters that you can use
+     *         with each configuration item type, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *         resource types and parameters</a>.
      */
 
     public java.util.List<GroupConfigurationParameter> getParameters() {
@@ -242,11 +128,17 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A collection of parameters for this group configuration item.
+     * A collection of parameters for this group configuration item. For the list of parameters that you can use with
+     * each configuration item type, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
      * 
      * @param parameters
-     *        A collection of parameters for this group configuration item.
+     *        A collection of parameters for this group configuration item. For the list of parameters that you can use
+     *        with each configuration item type, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *        resource types and parameters</a>.
      */
 
     public void setParameters(java.util.Collection<GroupConfigurationParameter> parameters) {
@@ -260,7 +152,10 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A collection of parameters for this group configuration item.
+     * A collection of parameters for this group configuration item. For the list of parameters that you can use with
+     * each configuration item type, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -269,7 +164,10 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param parameters
-     *        A collection of parameters for this group configuration item.
+     *        A collection of parameters for this group configuration item. For the list of parameters that you can use
+     *        with each configuration item type, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *        resource types and parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +183,17 @@ public class GroupConfigurationItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A collection of parameters for this group configuration item.
+     * A collection of parameters for this group configuration item. For the list of parameters that you can use with
+     * each configuration item type, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource
+     * types and parameters</a>.
      * </p>
      * 
      * @param parameters
-     *        A collection of parameters for this group configuration item.
+     *        A collection of parameters for this group configuration item. For the list of parameters that you can use
+     *        with each configuration item type, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+     *        resource types and parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

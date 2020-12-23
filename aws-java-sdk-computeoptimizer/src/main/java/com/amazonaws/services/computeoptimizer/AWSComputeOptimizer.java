@@ -28,14 +28,14 @@ import com.amazonaws.services.computeoptimizer.model.*;
  * <p>
  * <p>
  * AWS Compute Optimizer is a service that analyzes the configuration and utilization metrics of your AWS compute
- * resources, such as EC2 instances, Auto Scaling groups, and Amazon EBS volumes. It reports whether your resources are
- * optimal, and generates optimization recommendations to reduce the cost and improve the performance of your workloads.
- * Compute Optimizer also provides recent utilization metric data, as well as projected utilization metric data for the
- * recommendations, which you can use to evaluate which recommendation provides the best price-performance trade-off.
- * The analysis of your usage patterns can help you decide when to move or resize your running resources, and still meet
- * your performance and capacity requirements. For more information about Compute Optimizer, including the required
- * permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
- * Compute Optimizer User Guide</a>.
+ * resources, such as EC2 instances, Auto Scaling groups, AWS Lambda functions, and Amazon EBS volumes. It reports
+ * whether your resources are optimal, and generates optimization recommendations to reduce the cost and improve the
+ * performance of your workloads. Compute Optimizer also provides recent utilization metric data, as well as projected
+ * utilization metric data for the recommendations, which you can use to evaluate which recommendation provides the best
+ * price-performance trade-off. The analysis of your usage patterns can help you decide when to move or resize your
+ * running resources, and still meet your performance and capacity requirements. For more information about Compute
+ * Optimizer, including the required permissions to use the service, see the <a
+ * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -340,6 +340,42 @@ public interface AWSComputeOptimizer {
      *      target="_top">AWS API Documentation</a>
      */
     GetEnrollmentStatusResult getEnrollmentStatus(GetEnrollmentStatusRequest getEnrollmentStatusRequest);
+
+    /**
+     * <p>
+     * Returns AWS Lambda function recommendations.
+     * </p>
+     * <p>
+     * AWS Compute Optimizer generates recommendations for functions that meet a specific set of requirements. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getLambdaFunctionRecommendationsRequest
+     * @return Result of the GetLambdaFunctionRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.GetLambdaFunctionRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLambdaFunctionRecommendationsResult getLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest getLambdaFunctionRecommendationsRequest);
 
     /**
      * <p>

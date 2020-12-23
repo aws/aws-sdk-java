@@ -91,6 +91,10 @@ public class OracleSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERORACLEASMACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerOracleAsmAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERORACLEASMSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerOracleAsmSecretId").build();
 
     private static final OracleSettingsMarshaller instance = new OracleSettingsMarshaller();
 
@@ -140,6 +144,8 @@ public class OracleSettingsMarshaller {
             protocolMarshaller.marshall(oracleSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmAccessRoleArn(), SECRETSMANAGERORACLEASMACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmSecretId(), SECRETSMANAGERORACLEASMSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

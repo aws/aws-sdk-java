@@ -43,11 +43,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
      * </p>
      * </note>
      */
@@ -61,11 +64,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A configuration associates the resource group with an AWS service and specifies how the service can interact with
-     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not both.
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
      * </p>
      * </note>
      */
@@ -177,18 +183,25 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
      * </p>
      * </note>
      * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of this group.</p> <note>
+     *        The resource query that determines which AWS resources are members of this group. For more information
+     *        about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>. </p> <note>
      *        <p>
-     *        You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     *        A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *        both.
      *        </p>
      */
 
@@ -198,17 +211,24 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
      * </p>
      * </note>
      * 
-     * @return The resource query that determines which AWS resources are members of this group.</p> <note>
+     * @return The resource query that determines which AWS resources are members of this group. For more information
+     *         about resource queries, see <a href=
+     *         "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *         >Create a tag-based group in Resource Groups</a>. </p> <note>
      *         <p>
-     *         You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     *         A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *         both.
      *         </p>
      */
 
@@ -218,18 +238,25 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
      * </p>
      * </note>
      * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of this group.</p> <note>
+     *        The resource query that determines which AWS resources are members of this group. For more information
+     *        about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>. </p> <note>
      *        <p>
-     *        You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     *        A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *        both.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -310,19 +337,24 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A configuration associates the resource group with an AWS service and specifies how the service can interact with
-     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not both.
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
      * </p>
      * </note>
      * 
      * @return A configuration associates the resource group with an AWS service and specifies how the service can
      *         interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
-     *         elements.</p> <note>
+     *         elements. For details about the syntax of service configurations, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *         resource groups</a>.</p> <note>
      *         <p>
-     *         You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not
+     *         A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *         both.
      *         </p>
      */
@@ -334,20 +366,25 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A configuration associates the resource group with an AWS service and specifies how the service can interact with
-     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not both.
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
      * </p>
      * </note>
      * 
      * @param configuration
      *        A configuration associates the resource group with an AWS service and specifies how the service can
      *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
-     *        elements.</p> <note>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
      *        <p>
-     *        You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *        both.
      *        </p>
      */
@@ -364,11 +401,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A configuration associates the resource group with an AWS service and specifies how the service can interact with
-     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not both.
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
      * </p>
      * </note>
      * <p>
@@ -380,9 +420,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param configuration
      *        A configuration associates the resource group with an AWS service and specifies how the service can
      *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
-     *        elements.</p> <note>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
      *        <p>
-     *        You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *        both.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -401,20 +443,25 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A configuration associates the resource group with an AWS service and specifies how the service can interact with
-     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not both.
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
      * </p>
      * </note>
      * 
      * @param configuration
      *        A configuration associates the resource group with an AWS service and specifies how the service can
      *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
-     *        elements.</p> <note>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
      *        <p>
-     *        You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code> in a group, but not
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *        both.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

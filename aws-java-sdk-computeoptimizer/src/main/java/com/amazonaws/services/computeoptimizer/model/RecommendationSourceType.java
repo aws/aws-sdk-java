@@ -22,7 +22,8 @@ public enum RecommendationSourceType {
 
     Ec2Instance("Ec2Instance"),
     AutoScalingGroup("AutoScalingGroup"),
-    EbsVolume("EbsVolume");
+    EbsVolume("EbsVolume"),
+    LambdaFunction("LambdaFunction");
 
     private String value;
 

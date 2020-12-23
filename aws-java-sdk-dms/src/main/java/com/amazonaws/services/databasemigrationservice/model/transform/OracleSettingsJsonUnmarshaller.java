@@ -176,6 +176,14 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                     context.nextToken();
                     oracleSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerOracleAsmAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setSecretsManagerOracleAsmAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SecretsManagerOracleAsmSecretId", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setSecretsManagerOracleAsmSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

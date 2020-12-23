@@ -73,6 +73,11 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
     }
 
     @Override
+    public PutGroupConfigurationResult putGroupConfiguration(PutGroupConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchResourcesResult searchResources(SearchResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

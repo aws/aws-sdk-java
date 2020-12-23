@@ -31,7 +31,9 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Group group;
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      */
     private ResourceQuery resourceQuery;
@@ -43,18 +45,10 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     * configurations for the following resource group types:
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
-     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      */
     private GroupConfiguration groupConfiguration;
 
@@ -100,11 +94,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query associated with the group.
+     *        The resource query associated with the group. For more information about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -113,10 +111,14 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
-     * @return The resource query associated with the group.
+     * @return The resource query associated with the group. For more information about resource queries, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *         >Create a tag-based group in Resource Groups</a>.
      */
 
     public ResourceQuery getResourceQuery() {
@@ -125,11 +127,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query associated with the group.
+     *        The resource query associated with the group. For more information about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,31 +214,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     * configurations for the following resource group types:
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
-     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param groupConfiguration
-     *        The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     *        configurations for the following resource group types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *        </p>
-     *        </li>
+     *        The service configuration associated with the resource group. For details about the syntax of a service
+     *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
      */
 
     public void setGroupConfiguration(GroupConfiguration groupConfiguration) {
@@ -241,30 +231,14 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     * configurations for the following resource group types:
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
-     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     *         configurations for the following resource group types:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *         >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *         </p>
-     *         </li>
+     * @return The service configuration associated with the resource group. For details about the syntax of a service
+     *         configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *         configurations for resource groups</a>.
      */
 
     public GroupConfiguration getGroupConfiguration() {
@@ -273,31 +247,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     * configurations for the following resource group types:
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
-     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param groupConfiguration
-     *        The service configuration associated with the resource group. AWS Resource Groups supports adding service
-     *        configurations for the following resource group types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
-     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-     *        </p>
-     *        </li>
+     *        The service configuration associated with the resource group. For details about the syntax of a service
+     *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,9 +31,11 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
     private java.util.List<GroupIdentifier> groupIdentifiers;
     /**
+     * <important>
      * <p>
-     * This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      */
     @Deprecated
     private java.util.List<Group> groups;
@@ -125,11 +127,16 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
-     * @return This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * @return <p>
+     *         <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *         instead.</b> </i>
+     *         </p>
      */
     @Deprecated
     public java.util.List<Group> getGroups() {
@@ -137,12 +144,17 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groups
-     *        This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      */
     @Deprecated
     public void setGroups(java.util.Collection<Group> groups) {
@@ -155,9 +167,11 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -165,7 +179,10 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param groups
-     *        This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -180,12 +197,17 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groups
-     *        This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code> instead.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

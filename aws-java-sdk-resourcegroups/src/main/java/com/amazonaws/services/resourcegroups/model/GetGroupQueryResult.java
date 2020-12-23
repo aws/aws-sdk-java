@@ -25,18 +25,25 @@ public class GetGroupQueryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resource query associated with the specified group.
+     * The resource query associated with the specified group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      */
     private GroupQuery groupQuery;
 
     /**
      * <p>
-     * The resource query associated with the specified group.
+     * The resource query associated with the specified group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param groupQuery
-     *        The resource query associated with the specified group.
+     *        The resource query associated with the specified group. For more information about resource queries, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      */
 
     public void setGroupQuery(GroupQuery groupQuery) {
@@ -45,10 +52,15 @@ public class GetGroupQueryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resource query associated with the specified group.
+     * The resource query associated with the specified group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
-     * @return The resource query associated with the specified group.
+     * @return The resource query associated with the specified group. For more information about resource queries, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *         >Create a tag-based group in Resource Groups</a>.
      */
 
     public GroupQuery getGroupQuery() {
@@ -57,11 +69,16 @@ public class GetGroupQueryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resource query associated with the specified group.
+     * The resource query associated with the specified group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param groupQuery
-     *        The resource query associated with the specified group.
+     *        The resource query associated with the specified group. For more information about resource queries, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

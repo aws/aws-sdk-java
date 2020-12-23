@@ -56,6 +56,12 @@ public class SummaryJsonUnmarshaller implements Unmarshaller<Summary, JsonUnmars
                     context.nextToken();
                     summary.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("reasonCodeSummaries", targetDepth)) {
+                    context.nextToken();
+                    summary.setReasonCodeSummaries(new ListUnmarshaller<ReasonCodeSummary>(ReasonCodeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

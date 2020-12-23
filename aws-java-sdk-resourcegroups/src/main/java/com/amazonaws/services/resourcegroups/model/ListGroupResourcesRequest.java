@@ -26,9 +26,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <important>
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
      * </p>
+     * </important>
      */
     @Deprecated
     private String groupName;
@@ -94,12 +96,16 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
     private String nextToken;
 
     /**
+     * <important>
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groupName
-     *        Don't use this parameter. Use <code>Group</code> instead.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
+     *        </p>
      */
     @Deprecated
     public void setGroupName(String groupName) {
@@ -107,11 +113,15 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <important>
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
      * </p>
+     * </important>
      * 
-     * @return Don't use this parameter. Use <code>Group</code> instead.
+     * @return <p>
+     *         <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
+     *         </p>
      */
     @Deprecated
     public String getGroupName() {
@@ -119,12 +129,16 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <important>
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groupName
-     *        Don't use this parameter. Use <code>Group</code> instead.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

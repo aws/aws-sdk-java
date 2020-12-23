@@ -40,6 +40,12 @@ public class Summary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double value;
+    /**
+     * <p>
+     * An array of objects that summarize a finding reason code.
+     * </p>
+     */
+    private java.util.List<ReasonCodeSummary> reasonCodeSummaries;
 
     /**
      * <p>
@@ -141,6 +147,76 @@ public class Summary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An array of objects that summarize a finding reason code.
+     * </p>
+     * 
+     * @return An array of objects that summarize a finding reason code.
+     */
+
+    public java.util.List<ReasonCodeSummary> getReasonCodeSummaries() {
+        return reasonCodeSummaries;
+    }
+
+    /**
+     * <p>
+     * An array of objects that summarize a finding reason code.
+     * </p>
+     * 
+     * @param reasonCodeSummaries
+     *        An array of objects that summarize a finding reason code.
+     */
+
+    public void setReasonCodeSummaries(java.util.Collection<ReasonCodeSummary> reasonCodeSummaries) {
+        if (reasonCodeSummaries == null) {
+            this.reasonCodeSummaries = null;
+            return;
+        }
+
+        this.reasonCodeSummaries = new java.util.ArrayList<ReasonCodeSummary>(reasonCodeSummaries);
+    }
+
+    /**
+     * <p>
+     * An array of objects that summarize a finding reason code.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReasonCodeSummaries(java.util.Collection)} or {@link #withReasonCodeSummaries(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param reasonCodeSummaries
+     *        An array of objects that summarize a finding reason code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Summary withReasonCodeSummaries(ReasonCodeSummary... reasonCodeSummaries) {
+        if (this.reasonCodeSummaries == null) {
+            setReasonCodeSummaries(new java.util.ArrayList<ReasonCodeSummary>(reasonCodeSummaries.length));
+        }
+        for (ReasonCodeSummary ele : reasonCodeSummaries) {
+            this.reasonCodeSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that summarize a finding reason code.
+     * </p>
+     * 
+     * @param reasonCodeSummaries
+     *        An array of objects that summarize a finding reason code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Summary withReasonCodeSummaries(java.util.Collection<ReasonCodeSummary> reasonCodeSummaries) {
+        setReasonCodeSummaries(reasonCodeSummaries);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +231,9 @@ public class Summary implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getReasonCodeSummaries() != null)
+            sb.append("ReasonCodeSummaries: ").append(getReasonCodeSummaries());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +256,10 @@ public class Summary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getReasonCodeSummaries() == null ^ this.getReasonCodeSummaries() == null)
+            return false;
+        if (other.getReasonCodeSummaries() != null && other.getReasonCodeSummaries().equals(this.getReasonCodeSummaries()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +270,7 @@ public class Summary implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getReasonCodeSummaries() == null) ? 0 : getReasonCodeSummaries().hashCode());
         return hashCode;
     }
 

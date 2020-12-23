@@ -27,7 +27,7 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * Deprecated - don't use this parameter. Use <code>Group</code> instead.
      * </p>
      */
     @Deprecated
@@ -41,11 +41,11 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * Deprecated - don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        Don't use this parameter. Use <code>Group</code> instead.
+     *        Deprecated - don't use this parameter. Use <code>Group</code> instead.
      */
     @Deprecated
     public void setGroupName(String groupName) {
@@ -54,10 +54,10 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * Deprecated - don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
-     * @return Don't use this parameter. Use <code>Group</code> instead.
+     * @return Deprecated - don't use this parameter. Use <code>Group</code> instead.
      */
     @Deprecated
     public String getGroupName() {
@@ -66,11 +66,11 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Don't use this parameter. Use <code>Group</code> instead.
+     * Deprecated - don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        Don't use this parameter. Use <code>Group</code> instead.
+     *        Deprecated - don't use this parameter. Use <code>Group</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

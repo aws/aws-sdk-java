@@ -48,6 +48,12 @@ public class ListGroupResourcesResultJsonUnmarshaller implements Unmarshaller<Li
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Resources", targetDepth)) {
+                    context.nextToken();
+                    listGroupResourcesResult.setResources(new ListUnmarshaller<ListGroupResourcesItem>(ListGroupResourcesItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ResourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     listGroupResourcesResult.setResourceIdentifiers(new ListUnmarshaller<ResourceIdentifier>(ResourceIdentifierJsonUnmarshaller.getInstance())

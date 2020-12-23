@@ -145,6 +145,19 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     }
 
     @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest request) {
+
+        return putGroupConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutGroupConfigurationRequest, PutGroupConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
 
         return searchResourcesAsync(request, null);

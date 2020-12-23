@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.computeoptimizer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class SummaryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Double> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("value").build();
+    private static final MarshallingInfo<List> REASONCODESUMMARIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reasonCodeSummaries").build();
 
     private static final SummaryMarshaller instance = new SummaryMarshaller();
 
@@ -50,6 +53,7 @@ public class SummaryMarshaller {
         try {
             protocolMarshaller.marshall(summary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(summary.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(summary.getReasonCodeSummaries(), REASONCODESUMMARIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

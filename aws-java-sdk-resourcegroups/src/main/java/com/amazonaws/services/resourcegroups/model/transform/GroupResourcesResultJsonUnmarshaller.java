@@ -60,6 +60,12 @@ public class GroupResourcesResultJsonUnmarshaller implements Unmarshaller<GroupR
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Pending", targetDepth)) {
+                    context.nextToken();
+                    groupResourcesResult.setPending(new ListUnmarshaller<PendingResource>(PendingResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
