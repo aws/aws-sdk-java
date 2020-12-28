@@ -136,7 +136,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      */
@@ -149,7 +149,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      */
@@ -508,7 +508,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -518,7 +518,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
      *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
-     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
      */
 
@@ -533,7 +533,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -543,7 +543,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *         <p>
      *         If you specify an IAM certificate ID, you must also specify values for
-     *         <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public String getIAMCertificateId() {
@@ -557,7 +557,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -567,7 +567,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
      *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
-     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -585,7 +585,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -596,7 +596,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
-     *        <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public void setACMCertificateArn(String aCMCertificateArn) {
@@ -611,7 +611,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -621,7 +621,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *         <p>
      *         If you specify an ACM certificate ARN, you must also specify values for
-     *         <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public String getACMCertificateArn() {
@@ -636,7 +636,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -647,7 +647,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
-     *        <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
