@@ -1,3 +1,12 @@
+# __1.11.928__ __2020-12-29__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - This release adds a new parameter "CsrExtensions" in the "CertificateAuthorityConfiguration" data structure, which allows customers to add the addition of KU and SIA into the CA CSR.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Amazon API Gateway now supports data mapping for HTTP APIs which allows customers to modify HTTP Request before sending it to their integration and HTTP Response before sending it to the invoker.
+
 # __1.11.927__ __2020-12-28__
 ## __Amazon CloudFront__
   - ### Features

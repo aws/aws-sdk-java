@@ -59,6 +59,8 @@ public class UpdateIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
     private static final MarshallingInfo<Map> REQUESTTEMPLATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestTemplates").build();
+    private static final MarshallingInfo<Map> RESPONSEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseParameters").build();
     private static final MarshallingInfo<String> TEMPLATESELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateSelectionExpression").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -97,6 +99,7 @@ public class UpdateIntegrationRequestMarshaller {
             protocolMarshaller.marshall(updateIntegrationRequest.getPayloadFormatVersion(), PAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
+            protocolMarshaller.marshall(updateIntegrationRequest.getResponseParameters(), RESPONSEPARAMETERS_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getTemplateSelectionExpression(), TEMPLATESELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getTlsConfig(), TLSCONFIG_BINDING);

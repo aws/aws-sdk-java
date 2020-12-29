@@ -56,6 +56,12 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * </p>
      */
     private ASN1Subject subject;
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     */
+    private CsrExtensions csrExtensions;
 
     /**
      * <p>
@@ -252,6 +258,46 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @param csrExtensions
+     *        Specifies information to be added to the extension section of the certificate signing request (CSR).
+     */
+
+    public void setCsrExtensions(CsrExtensions csrExtensions) {
+        this.csrExtensions = csrExtensions;
+    }
+
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @return Specifies information to be added to the extension section of the certificate signing request (CSR).
+     */
+
+    public CsrExtensions getCsrExtensions() {
+        return this.csrExtensions;
+    }
+
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @param csrExtensions
+     *        Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateAuthorityConfiguration withCsrExtensions(CsrExtensions csrExtensions) {
+        setCsrExtensions(csrExtensions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +314,9 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
         if (getSigningAlgorithm() != null)
             sb.append("SigningAlgorithm: ").append(getSigningAlgorithm()).append(",");
         if (getSubject() != null)
-            sb.append("Subject: ").append(getSubject());
+            sb.append("Subject: ").append(getSubject()).append(",");
+        if (getCsrExtensions() != null)
+            sb.append("CsrExtensions: ").append(getCsrExtensions());
         sb.append("}");
         return sb.toString();
     }
@@ -295,6 +343,10 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
             return false;
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
             return false;
+        if (other.getCsrExtensions() == null ^ this.getCsrExtensions() == null)
+            return false;
+        if (other.getCsrExtensions() != null && other.getCsrExtensions().equals(this.getCsrExtensions()) == false)
+            return false;
         return true;
     }
 
@@ -306,6 +358,7 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getKeyAlgorithm() == null) ? 0 : getKeyAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getSigningAlgorithm() == null) ? 0 : getSigningAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
+        hashCode = prime * hashCode + ((getCsrExtensions() == null) ? 0 : getCsrExtensions().hashCode());
         return hashCode;
     }
 

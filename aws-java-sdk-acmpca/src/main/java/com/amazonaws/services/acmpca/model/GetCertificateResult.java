@@ -31,8 +31,8 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
     private String certificate;
     /**
      * <p>
-     * The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to
-     * sign your private CA certificate.
+     * The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your
+     * private CA certificate.
      * </p>
      */
     private String certificateChain;
@@ -79,13 +79,13 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to
-     * sign your private CA certificate.
+     * The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your
+     * private CA certificate.
      * </p>
      * 
      * @param certificateChain
-     *        The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you
-     *        used to sign your private CA certificate.
+     *        The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign
+     *        your private CA certificate.
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -94,12 +94,12 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to
-     * sign your private CA certificate.
+     * The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your
+     * private CA certificate.
      * </p>
      * 
-     * @return The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you
-     *         used to sign your private CA certificate.
+     * @return The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign
+     *         your private CA certificate.
      */
 
     public String getCertificateChain() {
@@ -108,13 +108,13 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to
-     * sign your private CA certificate.
+     * The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your
+     * private CA certificate.
      * </p>
      * 
      * @param certificateChain
-     *        The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you
-     *        used to sign your private CA certificate.
+     *        The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign
+     *        your private CA certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

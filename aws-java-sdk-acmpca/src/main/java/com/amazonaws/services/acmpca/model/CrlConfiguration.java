@@ -151,7 +151,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     private Boolean enabled;
     /**
      * <p>
-     * Number of days until a certificate expires.
+     * Validity period of the CRL in days.
      * </p>
      */
     private Integer expirationInDays;
@@ -268,11 +268,11 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of days until a certificate expires.
+     * Validity period of the CRL in days.
      * </p>
      * 
      * @param expirationInDays
-     *        Number of days until a certificate expires.
+     *        Validity period of the CRL in days.
      */
 
     public void setExpirationInDays(Integer expirationInDays) {
@@ -281,10 +281,10 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of days until a certificate expires.
+     * Validity period of the CRL in days.
      * </p>
      * 
-     * @return Number of days until a certificate expires.
+     * @return Validity period of the CRL in days.
      */
 
     public Integer getExpirationInDays() {
@@ -293,11 +293,11 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of days until a certificate expires.
+     * Validity period of the CRL in days.
      * </p>
      * 
      * @param expirationInDays
-     *        Number of days until a certificate expires.
+     *        Validity period of the CRL in days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

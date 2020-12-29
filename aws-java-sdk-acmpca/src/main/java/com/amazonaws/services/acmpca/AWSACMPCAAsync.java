@@ -25,9 +25,6 @@ import com.amazonaws.services.acmpca.model.*;
  * {@link com.amazonaws.services.acmpca.AbstractAWSACMPCAAsync} instead.
  * </p>
  * <p>
- * <note>
- * <p/>
- * </note>
  * <p>
  * This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax, and usage examples for each of the
  * actions and data types involved in creating and managing private certificate authorities (CA) for your organization.
@@ -225,7 +222,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -272,7 +270,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -424,7 +423,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -474,7 +474,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -518,7 +519,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -538,7 +540,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>
@@ -577,7 +580,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -597,7 +601,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>
@@ -922,7 +927,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * The policy can be attached or updated with <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a> and removed with
-     * <a href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+     * <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
      * </p>
      * <p class="title">
      * <b>About Policies</b>
@@ -932,7 +937,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -952,7 +958,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>
@@ -973,7 +980,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * The policy can be attached or updated with <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a> and removed with
-     * <a href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+     * <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
      * </p>
      * <p class="title">
      * <b>About Policies</b>
@@ -983,7 +990,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -1003,7 +1011,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>
@@ -1054,17 +1063,37 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * </ol>
      * <p>
-     * The following requirements apply when you import a CA certificate.
+     * ACM Private CA supports three scenarios for installing a CA certificate:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You cannot import a non-self-signed certificate for use as a root CA.
+     * Installing a certificate for a root CA hosted by ACM Private CA.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You cannot import a self-signed certificate for use as a subordinate CA.
+     * Installing a subordinate CA certificate whose parent authority is hosted by ACM Private CA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Installing a subordinate CA certificate whose parent authority is externally hosted.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following addtitional requirements apply when you import a CA certificate.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Only a self-signed certificate can be imported as a root CA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A self-signed certificate cannot be imported as a subordinate CA.
      * </p>
      * </li>
      * <li>
@@ -1074,9 +1103,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * <li>
      * <p>
-     * Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate in your chain. The
-     * subordinate certificate, if any, that your root CA signed must be next to last. The subordinate certificate
-     * signed by the preceding subordinate CA must come next, and so on until your chain is built.
+     * Your root CA must be the last certificate in your chain. The subordinate certificate, if any, that your root CA
+     * signed must be next to last. The subordinate certificate signed by the preceding subordinate CA must come next,
+     * and so on until your chain is built.
      * </p>
      * </li>
      * <li>
@@ -1243,17 +1272,37 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * </ol>
      * <p>
-     * The following requirements apply when you import a CA certificate.
+     * ACM Private CA supports three scenarios for installing a CA certificate:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You cannot import a non-self-signed certificate for use as a root CA.
+     * Installing a certificate for a root CA hosted by ACM Private CA.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You cannot import a self-signed certificate for use as a subordinate CA.
+     * Installing a subordinate CA certificate whose parent authority is hosted by ACM Private CA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Installing a subordinate CA certificate whose parent authority is externally hosted.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following addtitional requirements apply when you import a CA certificate.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Only a self-signed certificate can be imported as a root CA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A self-signed certificate cannot be imported as a subordinate CA.
      * </p>
      * </li>
      * <li>
@@ -1263,9 +1312,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * <li>
      * <p>
-     * Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate in your chain. The
-     * subordinate certificate, if any, that your root CA signed must be next to last. The subordinate certificate
-     * signed by the preceding subordinate CA must come next, and so on until your chain is built.
+     * Your root CA must be the last certificate in your chain. The subordinate certificate, if any, that your root CA
+     * signed must be next to last. The subordinate certificate signed by the preceding subordinate CA must come next,
+     * and so on until your chain is built.
      * </p>
      * </li>
      * <li>
@@ -1528,7 +1577,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -1577,7 +1627,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to
      * enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable
      * cross-account issuance and renewals. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * </ul>
@@ -1641,9 +1692,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * Attaches a resource-based policy to a private CA.
      * </p>
      * <p>
-     * A policy can also be applied by <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a> a private CA through AWS
-     * Resource Access Manager (RAM).
+     * A policy can also be applied by sharing a private CA through AWS Resource Access Manager (RAM). For more
+     * information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for
+     * Cross-Account Access</a>.
      * </p>
      * <p>
      * The policy can be displayed with <a
@@ -1658,7 +1709,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -1678,7 +1730,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>
@@ -1696,9 +1749,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * Attaches a resource-based policy to a private CA.
      * </p>
      * <p>
-     * A policy can also be applied by <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a> a private CA through AWS
-     * Resource Access Manager (RAM).
+     * A policy can also be applied by sharing a private CA through AWS Resource Access Manager (RAM). For more
+     * information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for
+     * Cross-Account Access</a>.
      * </p>
      * <p>
      * The policy can be displayed with <a
@@ -1713,7 +1766,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
      * Organizations unit. Policies are under the control of a CA administrator. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM
+     * Private CA</a>.
      * </p>
      * </li>
      * <li>
@@ -1733,7 +1787,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a
-     * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager (RAM) with ACM Private CA</a>.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account
+     * Access</a>.
      * </p>
      * </li>
      * </ul>

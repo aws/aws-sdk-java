@@ -175,11 +175,20 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * be a valid and unique method request parameter name.
      * </p>
      * <p>
-     * For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     * integrations with a specified integrationSubtype. You can provide static values, or map request data, stage
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
      * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
+     * For values, you can provide static values, or map request data, stage variables, or context variables that are
+     * evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      */
     private java.util.Map<String, String> requestParameters;
@@ -191,6 +200,19 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> responseParameters;
     /**
      * <p>
      * The template selection expression for the integration.
@@ -1274,11 +1296,20 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * be a valid and unique method request parameter name.
      * </p>
      * <p>
-     * For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     * integrations with a specified integrationSubtype. You can provide static values, or map request data, stage
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
      * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
+     * For values, you can provide static values, or map request data, stage variables, or context variables that are
+     * evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @return For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request
@@ -1289,11 +1320,21 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <replaceable>{location}</replaceable> is querystring, path, or header; and
      *         <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
      *         <p>
-     *         For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     *         integrations with a specified integrationSubtype. You can provide static values, or map request data,
-     *         stage variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     *         For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *         specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *         request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      *         >Working with AWS service integrations for HTTP APIs</a>.
+     *         </p>
+     *         <p>
+     *         For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     *         specifying how to transform HTTP requests before sending them to the backend. The key should follow the
+     *         pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
+     *         overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
+     *         context variables that are evaluated at runtime. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *         >Transforming API requests and responses</a>.
      */
 
     public java.util.Map<String, String> getRequestParameters() {
@@ -1311,11 +1352,20 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * be a valid and unique method request parameter name.
      * </p>
      * <p>
-     * For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     * integrations with a specified integrationSubtype. You can provide static values, or map request data, stage
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
      * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
+     * For values, you can provide static values, or map request data, stage variables, or context variables that are
+     * evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
@@ -1327,11 +1377,21 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <replaceable>{location}</replaceable> is querystring, path, or header; and
      *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
      *        <p>
-     *        For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     *        integrations with a specified integrationSubtype. You can provide static values, or map request data,
-     *        stage variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     *        For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *        specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *        request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      *        >Working with AWS service integrations for HTTP APIs</a>.
+     *        </p>
+     *        <p>
+     *        For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     *        specifying how to transform HTTP requests before sending them to the backend. The key should follow the
+     *        pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
+     *        overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
+     *        context variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
      */
 
     public void setRequestParameters(java.util.Map<String, String> requestParameters) {
@@ -1349,11 +1409,20 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * be a valid and unique method request parameter name.
      * </p>
      * <p>
-     * For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     * integrations with a specified integrationSubtype. You can provide static values, or map request data, stage
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
      * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
+     * For values, you can provide static values, or map request data, stage variables, or context variables that are
+     * evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
@@ -1365,11 +1434,21 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <replaceable>{location}</replaceable> is querystring, path, or header; and
      *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
      *        <p>
-     *        For HTTP APIs, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY
-     *        integrations with a specified integrationSubtype. You can provide static values, or map request data,
-     *        stage variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     *        For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *        specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *        request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
      *        >Working with AWS service integrations for HTTP APIs</a>.
+     *        </p>
+     *        <p>
+     *        For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map
+     *        specifying how to transform HTTP requests before sending them to the backend. The key should follow the
+     *        pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
+     *        overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
+     *        context variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1483,6 +1562,119 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateIntegrationRequest clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @return Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *         integration before returning the response to clients. Specify a key-value map from a selection key to
+     *         response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *         Response parameters are a key-value map. The key must match pattern
+     *         &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *         overwrite or remove. The value can be a static value, or map to response data, stage variables, or
+     *         context variables that are evaluated at runtime. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *         >Transforming API requests and responses</a>.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getResponseParameters() {
+        return responseParameters;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @param responseParameters
+     *        Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *        integration before returning the response to clients. Specify a key-value map from a selection key to
+     *        response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *        Response parameters are a key-value map. The key must match pattern
+     *        &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *        overwrite or remove. The value can be a static value, or map to response data, stage variables, or context
+     *        variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
+     */
+
+    public void setResponseParameters(java.util.Map<String, java.util.Map<String, String>> responseParameters) {
+        this.responseParameters = responseParameters;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @param responseParameters
+     *        Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *        integration before returning the response to clients. Specify a key-value map from a selection key to
+     *        response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *        Response parameters are a key-value map. The key must match pattern
+     *        &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *        overwrite or remove. The value can be a static value, or map to response data, stage variables, or context
+     *        variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest withResponseParameters(java.util.Map<String, java.util.Map<String, String>> responseParameters) {
+        setResponseParameters(responseParameters);
+        return this;
+    }
+
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see CreateIntegrationRequest#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest addResponseParametersEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.responseParameters) {
+            this.responseParameters = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.responseParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.responseParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ResponseParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest clearResponseParametersEntries() {
+        this.responseParameters = null;
         return this;
     }
 
@@ -1661,6 +1853,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: ").append(getRequestTemplates()).append(",");
+        if (getResponseParameters() != null)
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getTemplateSelectionExpression() != null)
             sb.append("TemplateSelectionExpression: ").append(getTemplateSelectionExpression()).append(",");
         if (getTimeoutInMillis() != null)
@@ -1737,6 +1931,10 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getRequestTemplates() != null && other.getRequestTemplates().equals(this.getRequestTemplates()) == false)
             return false;
+        if (other.getResponseParameters() == null ^ this.getResponseParameters() == null)
+            return false;
+        if (other.getResponseParameters() != null && other.getResponseParameters().equals(this.getResponseParameters()) == false)
+            return false;
         if (other.getTemplateSelectionExpression() == null ^ this.getTemplateSelectionExpression() == null)
             return false;
         if (other.getTemplateSelectionExpression() != null && other.getTemplateSelectionExpression().equals(this.getTemplateSelectionExpression()) == false)
@@ -1771,6 +1969,7 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getPayloadFormatVersion() == null) ? 0 : getPayloadFormatVersion().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestTemplates() == null) ? 0 : getRequestTemplates().hashCode());
+        hashCode = prime * hashCode + ((getResponseParameters() == null) ? 0 : getResponseParameters().hashCode());
         hashCode = prime * hashCode + ((getTemplateSelectionExpression() == null) ? 0 : getTemplateSelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
         hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());

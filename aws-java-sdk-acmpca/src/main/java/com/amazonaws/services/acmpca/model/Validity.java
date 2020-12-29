@@ -99,6 +99,10 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
+     * </p>
      */
     private String type;
 
@@ -201,6 +205,10 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
+     * </p>
      * 
      * @param type
      *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
@@ -258,6 +266,11 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        Output expiration date: 01/10/2020 12:34:54 UTC
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The
+     *        minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is
+     *        one second.
      * @see ValidityPeriodType
      */
 
@@ -324,6 +337,10 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
+     * </p>
      * 
      * @return Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
      *         validity types include those listed below. Type definitions with values include a sample input value and
@@ -380,6 +397,11 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *         Output expiration date: 01/10/2020 12:34:54 UTC
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The
+     *         minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     *         is one second.
      * @see ValidityPeriodType
      */
 
@@ -446,6 +468,10 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
+     * </p>
      * 
      * @param type
      *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
@@ -503,6 +529,11 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        Output expiration date: 01/10/2020 12:34:54 UTC
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The
+     *        minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is
+     *        one second.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidityPeriodType
      */
@@ -571,6 +602,10 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
+     * </p>
      * 
      * @param type
      *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
@@ -628,6 +663,11 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        Output expiration date: 01/10/2020 12:34:54 UTC
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The
+     *        minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is
+     *        one second.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidityPeriodType
      */

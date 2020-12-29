@@ -50,9 +50,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      */
     private String credentialsArn;
@@ -251,9 +251,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param credentialsArn
@@ -261,8 +261,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
-     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *        don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *        this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *        APIs.
      */
 
     public void setCredentialsArn(String credentialsArn) {
@@ -274,17 +275,18 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @return This property is part of quick create. It specifies the credentials required for the integration, if any.
      *         For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *         use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *         the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *         specify null. Currently, this property is not used for HTTP integrations. If provided, this value
-     *         replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *         don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *         this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *         APIs.
      */
 
     public String getCredentialsArn() {
@@ -296,9 +298,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param credentialsArn
@@ -306,8 +308,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
-     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *        don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *        this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *        APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

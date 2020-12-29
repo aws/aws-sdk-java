@@ -32,9 +32,9 @@ public class GetCertificateAuthorityCertificateResult extends com.amazonaws.Amaz
     private String certificate;
     /**
      * <p>
-     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises
-     * certificate that you used to sign your private CA certificate. The chain does not include your private CA
-     * certificate. If this is a root CA, the value will be null.
+     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate
+     * that you used to sign your private CA certificate. The chain does not include your private CA certificate. If
+     * this is a root CA, the value will be null.
      * </p>
      */
     private String certificateChain;
@@ -81,15 +81,15 @@ public class GetCertificateAuthorityCertificateResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises
-     * certificate that you used to sign your private CA certificate. The chain does not include your private CA
-     * certificate. If this is a root CA, the value will be null.
+     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate
+     * that you used to sign your private CA certificate. The chain does not include your private CA certificate. If
+     * this is a root CA, the value will be null.
      * </p>
      * 
      * @param certificateChain
      *        Base64-encoded certificate chain that includes any intermediate certificates and chains up to root
-     *        on-premises certificate that you used to sign your private CA certificate. The chain does not include your
-     *        private CA certificate. If this is a root CA, the value will be null.
+     *        certificate that you used to sign your private CA certificate. The chain does not include your private CA
+     *        certificate. If this is a root CA, the value will be null.
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -98,14 +98,14 @@ public class GetCertificateAuthorityCertificateResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises
-     * certificate that you used to sign your private CA certificate. The chain does not include your private CA
-     * certificate. If this is a root CA, the value will be null.
+     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate
+     * that you used to sign your private CA certificate. The chain does not include your private CA certificate. If
+     * this is a root CA, the value will be null.
      * </p>
      * 
      * @return Base64-encoded certificate chain that includes any intermediate certificates and chains up to root
-     *         on-premises certificate that you used to sign your private CA certificate. The chain does not include
-     *         your private CA certificate. If this is a root CA, the value will be null.
+     *         certificate that you used to sign your private CA certificate. The chain does not include your private CA
+     *         certificate. If this is a root CA, the value will be null.
      */
 
     public String getCertificateChain() {
@@ -114,15 +114,15 @@ public class GetCertificateAuthorityCertificateResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises
-     * certificate that you used to sign your private CA certificate. The chain does not include your private CA
-     * certificate. If this is a root CA, the value will be null.
+     * Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate
+     * that you used to sign your private CA certificate. The chain does not include your private CA certificate. If
+     * this is a root CA, the value will be null.
      * </p>
      * 
      * @param certificateChain
      *        Base64-encoded certificate chain that includes any intermediate certificates and chains up to root
-     *        on-premises certificate that you used to sign your private CA certificate. The chain does not include your
-     *        private CA certificate. If this is a root CA, the value will be null.
+     *        certificate that you used to sign your private CA certificate. The chain does not include your private CA
+     *        certificate. If this is a root CA, the value will be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

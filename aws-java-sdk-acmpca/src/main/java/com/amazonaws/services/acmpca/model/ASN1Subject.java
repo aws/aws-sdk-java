@@ -66,7 +66,12 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * Fully qualified domain name (FQDN) associated with the certificate subject.
+     * For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length
+     * limit.
+     * </p>
+     * <p>
+     * Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated
+     * with the certificate subject.
      * </p>
      */
     private String commonName;
@@ -331,11 +336,20 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN) associated with the certificate subject.
+     * For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length
+     * limit.
+     * </p>
+     * <p>
+     * Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated
+     * with the certificate subject.
      * </p>
      * 
      * @param commonName
-     *        Fully qualified domain name (FQDN) associated with the certificate subject.
+     *        For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the
+     *        length limit. </p>
+     *        <p>
+     *        Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN)
+     *        associated with the certificate subject.
      */
 
     public void setCommonName(String commonName) {
@@ -344,10 +358,19 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN) associated with the certificate subject.
+     * For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length
+     * limit.
+     * </p>
+     * <p>
+     * Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated
+     * with the certificate subject.
      * </p>
      * 
-     * @return Fully qualified domain name (FQDN) associated with the certificate subject.
+     * @return For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the
+     *         length limit. </p>
+     *         <p>
+     *         Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN)
+     *         associated with the certificate subject.
      */
 
     public String getCommonName() {
@@ -356,11 +379,20 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN) associated with the certificate subject.
+     * For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length
+     * limit.
+     * </p>
+     * <p>
+     * Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated
+     * with the certificate subject.
      * </p>
      * 
      * @param commonName
-     *        Fully qualified domain name (FQDN) associated with the certificate subject.
+     *        For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the
+     *        length limit. </p>
+     *        <p>
+     *        Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN)
+     *        associated with the certificate subject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

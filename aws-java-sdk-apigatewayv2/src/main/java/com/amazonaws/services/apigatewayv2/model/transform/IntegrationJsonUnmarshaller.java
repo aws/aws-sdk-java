@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigatewayv2.model.transform;
 
+import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -113,6 +114,12 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                     context.nextToken();
                     integration.setRequestTemplates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("responseParameters", targetDepth)) {
+                    context.nextToken();
+                    integration.setResponseParameters(new MapUnmarshaller<String, java.util.Map<String, String>>(context.getUnmarshaller(String.class),
+                            new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("templateSelectionExpression", targetDepth)) {
                     context.nextToken();

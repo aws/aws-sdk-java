@@ -60,6 +60,10 @@ public class CertificateAuthorityConfigurationJsonUnmarshaller implements Unmars
                     context.nextToken();
                     certificateAuthorityConfiguration.setSubject(ASN1SubjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CsrExtensions", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthorityConfiguration.setCsrExtensions(CsrExtensionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
