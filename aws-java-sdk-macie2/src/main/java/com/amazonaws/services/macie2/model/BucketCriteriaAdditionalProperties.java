@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the operator to use in an attribute-based condition that filters the results of a query for information
- * about S3 buckets.
+ * Specifies the operator to use in a property-based condition that filters the results of a query for information about
+ * S3 buckets.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCriteriaAdditionalProperties"
@@ -31,53 +31,57 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * An equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      */
     private java.util.List<String> eq;
     /**
      * <p>
-     * A greater than condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than the specified value.
      * </p>
      */
     private Long gt;
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      */
     private Long gte;
     /**
      * <p>
-     * A less than condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than the specified value.
      * </p>
      */
     private Long lt;
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      */
     private Long lte;
     /**
      * <p>
-     * A not equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Amazon Macie uses OR logic to join the values.
      * </p>
      */
     private java.util.List<String> neq;
     /**
      * <p>
-     * The prefix of the buckets to include in the results.
+     * The name of the bucket begins with the specified value.
      * </p>
      */
     private String prefix;
 
     /**
      * <p>
-     * An equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
-     * @return An equal to condition to apply to a specified attribute value for buckets.
+     * @return The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *         uses OR logic to join the values.
      */
 
     public java.util.List<String> getEq() {
@@ -86,11 +90,13 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * An equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      */
 
     public void setEq(java.util.Collection<String> eq) {
@@ -104,7 +110,8 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * An equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -113,7 +120,8 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +137,13 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * An equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +154,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
      * @param gt
-     *        A greater than condition to apply to a specified attribute value for buckets.
+     *        The value for the property is greater than the specified value.
      */
 
     public void setGt(Long gt) {
@@ -157,10 +167,10 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
-     * @return A greater than condition to apply to a specified attribute value for buckets.
+     * @return The value for the property is greater than the specified value.
      */
 
     public Long getGt() {
@@ -169,11 +179,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
      * @param gt
-     *        A greater than condition to apply to a specified attribute value for buckets.
+     *        The value for the property is greater than the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +194,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
      * @param gte
-     *        A greater than or equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property is greater than or equal to the specified value.
      */
 
     public void setGte(Long gte) {
@@ -197,10 +207,10 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
-     * @return A greater than or equal to condition to apply to a specified attribute value for buckets.
+     * @return The value for the property is greater than or equal to the specified value.
      */
 
     public Long getGte() {
@@ -209,11 +219,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
      * @param gte
-     *        A greater than or equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property is greater than or equal to the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +234,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than the specified value.
      * </p>
      * 
      * @param lt
-     *        A less than condition to apply to a specified attribute value for buckets.
+     *        The value for the property is less than the specified value.
      */
 
     public void setLt(Long lt) {
@@ -237,10 +247,10 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than the specified value.
      * </p>
      * 
-     * @return A less than condition to apply to a specified attribute value for buckets.
+     * @return The value for the property is less than the specified value.
      */
 
     public Long getLt() {
@@ -249,11 +259,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than the specified value.
      * </p>
      * 
      * @param lt
-     *        A less than condition to apply to a specified attribute value for buckets.
+     *        The value for the property is less than the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +274,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
      * @param lte
-     *        A less than or equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property is less than or equal to the specified value.
      */
 
     public void setLte(Long lte) {
@@ -277,10 +287,10 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
-     * @return A less than or equal to condition to apply to a specified attribute value for buckets.
+     * @return The value for the property is less than or equal to the specified value.
      */
 
     public Long getLte() {
@@ -289,11 +299,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
      * @param lte
-     *        A less than or equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property is less than or equal to the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,10 +314,12 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Amazon Macie uses OR logic to join the values.
      * </p>
      * 
-     * @return A not equal to condition to apply to a specified attribute value for buckets.
+     * @return The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *         values, Amazon Macie uses OR logic to join the values.
      */
 
     public java.util.List<String> getNeq() {
@@ -316,11 +328,13 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Amazon Macie uses OR logic to join the values.
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Amazon Macie uses OR logic to join the values.
      */
 
     public void setNeq(java.util.Collection<String> neq) {
@@ -334,7 +348,8 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Amazon Macie uses OR logic to join the values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -343,7 +358,8 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Amazon Macie uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +375,13 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified attribute value for buckets.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Amazon Macie uses OR logic to join the values.
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified attribute value for buckets.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Amazon Macie uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,11 +392,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The prefix of the buckets to include in the results.
+     * The name of the bucket begins with the specified value.
      * </p>
      * 
      * @param prefix
-     *        The prefix of the buckets to include in the results.
+     *        The name of the bucket begins with the specified value.
      */
 
     public void setPrefix(String prefix) {
@@ -387,10 +405,10 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The prefix of the buckets to include in the results.
+     * The name of the bucket begins with the specified value.
      * </p>
      * 
-     * @return The prefix of the buckets to include in the results.
+     * @return The name of the bucket begins with the specified value.
      */
 
     public String getPrefix() {
@@ -399,11 +417,11 @@ public class BucketCriteriaAdditionalProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The prefix of the buckets to include in the results.
+     * The name of the bucket begins with the specified value.
      * </p>
      * 
      * @param prefix
-     *        The prefix of the buckets to include in the results.
+     *        The name of the bucket begins with the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

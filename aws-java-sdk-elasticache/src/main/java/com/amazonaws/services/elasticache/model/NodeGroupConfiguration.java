@@ -64,7 +64,7 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZones;
     /**
      * <p>
-     * The output ARN of the primary node.
+     * The outpost ARN of the primary node.
      * </p>
      */
     private String primaryOutpostArn;
@@ -349,11 +349,11 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output ARN of the primary node.
+     * The outpost ARN of the primary node.
      * </p>
      * 
      * @param primaryOutpostArn
-     *        The output ARN of the primary node.
+     *        The outpost ARN of the primary node.
      */
 
     public void setPrimaryOutpostArn(String primaryOutpostArn) {
@@ -362,10 +362,10 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output ARN of the primary node.
+     * The outpost ARN of the primary node.
      * </p>
      * 
-     * @return The output ARN of the primary node.
+     * @return The outpost ARN of the primary node.
      */
 
     public String getPrimaryOutpostArn() {
@@ -374,11 +374,11 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output ARN of the primary node.
+     * The outpost ARN of the primary node.
      * </p>
      * 
      * @param primaryOutpostArn
-     *        The output ARN of the primary node.
+     *        The outpost ARN of the primary node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

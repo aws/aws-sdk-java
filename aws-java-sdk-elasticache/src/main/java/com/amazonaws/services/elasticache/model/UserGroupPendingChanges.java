@@ -28,7 +28,7 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs ro remove.
+     * The list of user IDs to remove.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userIdsToRemove;
@@ -41,10 +41,10 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs ro remove.
+     * The list of user IDs to remove.
      * </p>
      * 
-     * @return The list of user group IDs ro remove.
+     * @return The list of user IDs to remove.
      */
 
     public java.util.List<String> getUserIdsToRemove() {
@@ -56,11 +56,11 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs ro remove.
+     * The list of user IDs to remove.
      * </p>
      * 
      * @param userIdsToRemove
-     *        The list of user group IDs ro remove.
+     *        The list of user IDs to remove.
      */
 
     public void setUserIdsToRemove(java.util.Collection<String> userIdsToRemove) {
@@ -74,7 +74,7 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs ro remove.
+     * The list of user IDs to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
      * </p>
      * 
      * @param userIdsToRemove
-     *        The list of user group IDs ro remove.
+     *        The list of user IDs to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class UserGroupPendingChanges implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs ro remove.
+     * The list of user IDs to remove.
      * </p>
      * 
      * @param userIdsToRemove
-     *        The list of user group IDs ro remove.
+     *        The list of user IDs to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

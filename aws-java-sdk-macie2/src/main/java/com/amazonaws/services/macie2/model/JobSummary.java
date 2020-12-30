@@ -53,8 +53,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
-     * it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
@@ -82,9 +82,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
-     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
-     * the UserPausedDetails.jobExpiresAt property.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -123,8 +123,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
-     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
      * </p>
      */
     private UserPausedDetails userPausedDetails;
@@ -286,8 +287,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
-     * it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
@@ -315,9 +316,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
-     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
-     * the UserPausedDetails.jobExpiresAt property.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -327,8 +328,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
-     *        resume it within 30 days of pausing it.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
@@ -357,8 +358,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
-     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
-     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -375,8 +376,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
-     * it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
@@ -404,9 +405,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
-     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
-     * the UserPausedDetails.jobExpiresAt property.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -415,8 +416,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
-     *         resume it within 30 days of pausing it.
+     *         CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *         within 30 days.
      *         </p>
      *         </li>
      *         <li>
@@ -447,8 +448,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
-     *         resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
-     *         expiration date, refer to the UserPausedDetails.jobExpiresAt property.
+     *         resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *         job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -465,8 +466,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
-     * it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
@@ -494,9 +495,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
-     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
-     * the UserPausedDetails.jobExpiresAt property.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -506,8 +507,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
-     *        resume it within 30 days of pausing it.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
@@ -536,8 +537,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
-     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
-     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -556,8 +557,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
-     * it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
@@ -585,9 +586,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
-     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
-     * the UserPausedDetails.jobExpiresAt property.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -597,8 +598,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
-     *        resume it within 30 days of pausing it.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
@@ -627,8 +628,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
-     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
-     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -879,14 +880,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
-     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
      * </p>
      * 
      * @param userPausedDetails
-     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
-     *        expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
-     *        USER_PAUSED.
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job
+     *        run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *        jobStatus is USER_PAUSED.
      */
 
     public void setUserPausedDetails(UserPausedDetails userPausedDetails) {
@@ -895,13 +897,14 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
-     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
      * </p>
      * 
-     * @return If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
-     *         expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
-     *         USER_PAUSED.
+     * @return If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or
+     *         job run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *         jobStatus is USER_PAUSED.
      */
 
     public UserPausedDetails getUserPausedDetails() {
@@ -910,14 +913,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
-     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
      * </p>
      * 
      * @param userPausedDetails
-     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
-     *        expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
-     *        USER_PAUSED.
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job
+     *        run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *        jobStatus is USER_PAUSED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

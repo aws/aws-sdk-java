@@ -43,13 +43,13 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String status;
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      */
     private String accessString;
@@ -67,7 +67,7 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private Authentication authentication;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user account.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      */
     private String aRN;
@@ -194,11 +194,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      */
 
     public void setEngine(String engine) {
@@ -207,10 +207,10 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
-     * @return Must be Redis.
+     * @return The current supported value is Redis.
      */
 
     public String getEngine() {
@@ -219,11 +219,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +234,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      */
 
     public void setAccessString(String accessString) {
@@ -247,10 +247,10 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
-     * @return Access permissions string used for this user account.
+     * @return Access permissions string used for this user.
      */
 
     public String getAccessString() {
@@ -259,11 +259,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +387,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user account.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param aRN
-     *        The Amazon Resource Name (ARN) of the user account.
+     *        The Amazon Resource Name (ARN) of the user.
      */
 
     public void setARN(String aRN) {
@@ -400,10 +400,10 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user account.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the user account.
+     * @return The Amazon Resource Name (ARN) of the user.
      */
 
     public String getARN() {
@@ -412,11 +412,11 @@ public class DeleteUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user account.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param aRN
-     *        The Amazon Resource Name (ARN) of the user account.
+     *        The Amazon Resource Name (ARN) of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

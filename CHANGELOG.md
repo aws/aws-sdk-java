@@ -1,3 +1,12 @@
+# __1.11.929__ __2020-12-30__
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+
 # __1.11.928__ __2020-12-29__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

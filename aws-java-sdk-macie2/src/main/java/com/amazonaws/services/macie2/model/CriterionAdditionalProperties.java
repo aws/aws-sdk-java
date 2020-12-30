@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the operator to use in a property-based condition that filters the results of a query for findings.
+ * Specifies the operator to use in a property-based condition that filters the results of a query for findings. For
+ * detailed information and examples of each operator, see <a
+ * href="https://docs.aws.amazon.com/macie/latest/user/findings-filter-basics.html">Fundamentals of filtering
+ * findings</a> in the <i>Amazon Macie User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CriterionAdditionalProperties"
@@ -30,14 +33,18 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * An equal to condition to apply to a specified property value for findings.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      */
     private java.util.List<String> eq;
     /**
      * <p>
-     * A condition that requires an array field to exactly match the specified property values. You can use this
-     * operator with the following properties: customDataIdentifiers.detections.arn,
+     * The value for the property exclusively matches (equals an exact match for) all the specified values. If you
+     * specify multiple values, Amazon Macie uses AND logic to join the values.
+     * </p>
+     * <p>
+     * You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -46,41 +53,44 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
     private java.util.List<String> eqExactMatch;
     /**
      * <p>
-     * A greater than condition to apply to a specified property value for findings.
+     * The value for the property is greater than the specified value.
      * </p>
      */
     private Long gt;
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      */
     private Long gte;
     /**
      * <p>
-     * A less than condition to apply to a specified property value for findings.
+     * The value for the property is less than the specified value.
      * </p>
      */
     private Long lt;
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      */
     private Long lte;
     /**
      * <p>
-     * A not equal to condition to apply to a specified property value for findings.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Macie uses OR logic to join the values.
      * </p>
      */
     private java.util.List<String> neq;
 
     /**
      * <p>
-     * An equal to condition to apply to a specified property value for findings.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
-     * @return An equal to condition to apply to a specified property value for findings.
+     * @return The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *         uses OR logic to join the values.
      */
 
     public java.util.List<String> getEq() {
@@ -89,11 +99,13 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * An equal to condition to apply to a specified property value for findings.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified property value for findings.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      */
 
     public void setEq(java.util.Collection<String> eq) {
@@ -107,7 +119,8 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * An equal to condition to apply to a specified property value for findings.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -116,7 +129,8 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified property value for findings.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +146,13 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * An equal to condition to apply to a specified property value for findings.
+     * The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR
+     * logic to join the values.
      * </p>
      * 
      * @param eq
-     *        An equal to condition to apply to a specified property value for findings.
+     *        The value for the property matches (equals) the specified value. If you specify multiple values, Macie
+     *        uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,15 +163,20 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field to exactly match the specified property values. You can use this
-     * operator with the following properties: customDataIdentifiers.detections.arn,
+     * The value for the property exclusively matches (equals an exact match for) all the specified values. If you
+     * specify multiple values, Amazon Macie uses AND logic to join the values.
+     * </p>
+     * <p>
+     * You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
      * 
-     * @return A condition that requires an array field to exactly match the specified property values. You can use this
-     *         operator with the following properties: customDataIdentifiers.detections.arn,
+     * @return The value for the property exclusively matches (equals an exact match for) all the specified values. If
+     *         you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
+     *         <p>
+     *         You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *         customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *         resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      *         resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -167,16 +188,21 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field to exactly match the specified property values. You can use this
-     * operator with the following properties: customDataIdentifiers.detections.arn,
+     * The value for the property exclusively matches (equals an exact match for) all the specified values. If you
+     * specify multiple values, Amazon Macie uses AND logic to join the values.
+     * </p>
+     * <p>
+     * You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field to exactly match the specified property values. You can use this
-     *        operator with the following properties: customDataIdentifiers.detections.arn,
+     *        The value for the property exclusively matches (equals an exact match for) all the specified values. If
+     *        you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
+     *        <p>
+     *        You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -193,8 +219,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field to exactly match the specified property values. You can use this
-     * operator with the following properties: customDataIdentifiers.detections.arn,
+     * The value for the property exclusively matches (equals an exact match for) all the specified values. If you
+     * specify multiple values, Amazon Macie uses AND logic to join the values.
+     * </p>
+     * <p>
+     * You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -206,8 +235,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field to exactly match the specified property values. You can use this
-     *        operator with the following properties: customDataIdentifiers.detections.arn,
+     *        The value for the property exclusively matches (equals an exact match for) all the specified values. If
+     *        you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
+     *        <p>
+     *        You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -226,16 +257,21 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field to exactly match the specified property values. You can use this
-     * operator with the following properties: customDataIdentifiers.detections.arn,
+     * The value for the property exclusively matches (equals an exact match for) all the specified values. If you
+     * specify multiple values, Amazon Macie uses AND logic to join the values.
+     * </p>
+     * <p>
+     * You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field to exactly match the specified property values. You can use this
-     *        operator with the following properties: customDataIdentifiers.detections.arn,
+     *        The value for the property exclusively matches (equals an exact match for) all the specified values. If
+     *        you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
+     *        <p>
+     *        You can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
@@ -249,11 +285,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than condition to apply to a specified property value for findings.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
      * @param gt
-     *        A greater than condition to apply to a specified property value for findings.
+     *        The value for the property is greater than the specified value.
      */
 
     public void setGt(Long gt) {
@@ -262,10 +298,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than condition to apply to a specified property value for findings.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
-     * @return A greater than condition to apply to a specified property value for findings.
+     * @return The value for the property is greater than the specified value.
      */
 
     public Long getGt() {
@@ -274,11 +310,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than condition to apply to a specified property value for findings.
+     * The value for the property is greater than the specified value.
      * </p>
      * 
      * @param gt
-     *        A greater than condition to apply to a specified property value for findings.
+     *        The value for the property is greater than the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +325,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
      * @param gte
-     *        A greater than or equal to condition to apply to a specified property value for findings.
+     *        The value for the property is greater than or equal to the specified value.
      */
 
     public void setGte(Long gte) {
@@ -302,10 +338,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
-     * @return A greater than or equal to condition to apply to a specified property value for findings.
+     * @return The value for the property is greater than or equal to the specified value.
      */
 
     public Long getGte() {
@@ -314,11 +350,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A greater than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is greater than or equal to the specified value.
      * </p>
      * 
      * @param gte
-     *        A greater than or equal to condition to apply to a specified property value for findings.
+     *        The value for the property is greater than or equal to the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,11 +365,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than condition to apply to a specified property value for findings.
+     * The value for the property is less than the specified value.
      * </p>
      * 
      * @param lt
-     *        A less than condition to apply to a specified property value for findings.
+     *        The value for the property is less than the specified value.
      */
 
     public void setLt(Long lt) {
@@ -342,10 +378,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than condition to apply to a specified property value for findings.
+     * The value for the property is less than the specified value.
      * </p>
      * 
-     * @return A less than condition to apply to a specified property value for findings.
+     * @return The value for the property is less than the specified value.
      */
 
     public Long getLt() {
@@ -354,11 +390,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than condition to apply to a specified property value for findings.
+     * The value for the property is less than the specified value.
      * </p>
      * 
      * @param lt
-     *        A less than condition to apply to a specified property value for findings.
+     *        The value for the property is less than the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,11 +405,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
      * @param lte
-     *        A less than or equal to condition to apply to a specified property value for findings.
+     *        The value for the property is less than or equal to the specified value.
      */
 
     public void setLte(Long lte) {
@@ -382,10 +418,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
-     * @return A less than or equal to condition to apply to a specified property value for findings.
+     * @return The value for the property is less than or equal to the specified value.
      */
 
     public Long getLte() {
@@ -394,11 +430,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A less than or equal to condition to apply to a specified property value for findings.
+     * The value for the property is less than or equal to the specified value.
      * </p>
      * 
      * @param lte
-     *        A less than or equal to condition to apply to a specified property value for findings.
+     *        The value for the property is less than or equal to the specified value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,10 +445,12 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified property value for findings.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Macie uses OR logic to join the values.
      * </p>
      * 
-     * @return A not equal to condition to apply to a specified property value for findings.
+     * @return The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *         values, Macie uses OR logic to join the values.
      */
 
     public java.util.List<String> getNeq() {
@@ -421,11 +459,13 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified property value for findings.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Macie uses OR logic to join the values.
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified property value for findings.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Macie uses OR logic to join the values.
      */
 
     public void setNeq(java.util.Collection<String> neq) {
@@ -439,7 +479,8 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified property value for findings.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Macie uses OR logic to join the values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -448,7 +489,8 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified property value for findings.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Macie uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,11 +506,13 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A not equal to condition to apply to a specified property value for findings.
+     * The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values,
+     * Macie uses OR logic to join the values.
      * </p>
      * 
      * @param neq
-     *        A not equal to condition to apply to a specified property value for findings.
+     *        The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple
+     *        values, Macie uses OR logic to join the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

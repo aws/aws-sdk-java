@@ -39,25 +39,25 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String userName;
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * Passwords used for this user account. You can create up to two passwords for each user.
+     * Passwords used for this user. You can create up to two passwords for each user.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> passwords;
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      */
     private String accessString;
     /**
      * <p>
-     * Indicates a password is not required for this user account.
+     * Indicates a password is not required for this user.
      * </p>
      */
     private Boolean noPasswordRequired;
@@ -144,11 +144,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      */
 
     public void setEngine(String engine) {
@@ -157,10 +157,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
-     * @return Must be Redis.
+     * @return The current supported value is Redis.
      */
 
     public String getEngine() {
@@ -169,11 +169,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,10 +184,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Passwords used for this user account. You can create up to two passwords for each user.
+     * Passwords used for this user. You can create up to two passwords for each user.
      * </p>
      * 
-     * @return Passwords used for this user account. You can create up to two passwords for each user.
+     * @return Passwords used for this user. You can create up to two passwords for each user.
      */
 
     public java.util.List<String> getPasswords() {
@@ -199,11 +199,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Passwords used for this user account. You can create up to two passwords for each user.
+     * Passwords used for this user. You can create up to two passwords for each user.
      * </p>
      * 
      * @param passwords
-     *        Passwords used for this user account. You can create up to two passwords for each user.
+     *        Passwords used for this user. You can create up to two passwords for each user.
      */
 
     public void setPasswords(java.util.Collection<String> passwords) {
@@ -217,7 +217,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Passwords used for this user account. You can create up to two passwords for each user.
+     * Passwords used for this user. You can create up to two passwords for each user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -226,7 +226,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param passwords
-     *        Passwords used for this user account. You can create up to two passwords for each user.
+     *        Passwords used for this user. You can create up to two passwords for each user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +242,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Passwords used for this user account. You can create up to two passwords for each user.
+     * Passwords used for this user. You can create up to two passwords for each user.
      * </p>
      * 
      * @param passwords
-     *        Passwords used for this user account. You can create up to two passwords for each user.
+     *        Passwords used for this user. You can create up to two passwords for each user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      */
 
     public void setAccessString(String accessString) {
@@ -270,10 +270,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
-     * @return Access permissions string used for this user account.
+     * @return Access permissions string used for this user.
      */
 
     public String getAccessString() {
@@ -282,11 +282,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +297,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates a password is not required for this user account.
+     * Indicates a password is not required for this user.
      * </p>
      * 
      * @param noPasswordRequired
-     *        Indicates a password is not required for this user account.
+     *        Indicates a password is not required for this user.
      */
 
     public void setNoPasswordRequired(Boolean noPasswordRequired) {
@@ -310,10 +310,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates a password is not required for this user account.
+     * Indicates a password is not required for this user.
      * </p>
      * 
-     * @return Indicates a password is not required for this user account.
+     * @return Indicates a password is not required for this user.
      */
 
     public Boolean getNoPasswordRequired() {
@@ -322,11 +322,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates a password is not required for this user account.
+     * Indicates a password is not required for this user.
      * </p>
      * 
      * @param noPasswordRequired
-     *        Indicates a password is not required for this user account.
+     *        Indicates a password is not required for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,10 +337,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates a password is not required for this user account.
+     * Indicates a password is not required for this user.
      * </p>
      * 
-     * @return Indicates a password is not required for this user account.
+     * @return Indicates a password is not required for this user.
      */
 
     public Boolean isNoPasswordRequired() {

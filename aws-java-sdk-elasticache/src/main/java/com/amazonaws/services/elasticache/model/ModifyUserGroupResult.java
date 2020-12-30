@@ -37,7 +37,7 @@ public class ModifyUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
     private String status;
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      */
     private String engine;
@@ -148,11 +148,11 @@ public class ModifyUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      */
 
     public void setEngine(String engine) {
@@ -161,10 +161,10 @@ public class ModifyUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
-     * @return Must be Redis.
+     * @return The current supported value is Redis.
      */
 
     public String getEngine() {
@@ -173,11 +173,11 @@ public class ModifyUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Must be Redis.
+     * The current supported value is Redis.
      * </p>
      * 
      * @param engine
-     *        Must be Redis.
+     *        The current supported value is Redis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,17 +30,17 @@ public class FindingCriteria implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A condition that specifies the property, operator, and value to use to filter the results.
+     * A condition that specifies the property, operator, and one or more values to use to filter the results.
      * </p>
      */
     private java.util.Map<String, CriterionAdditionalProperties> criterion;
 
     /**
      * <p>
-     * A condition that specifies the property, operator, and value to use to filter the results.
+     * A condition that specifies the property, operator, and one or more values to use to filter the results.
      * </p>
      * 
-     * @return A condition that specifies the property, operator, and value to use to filter the results.
+     * @return A condition that specifies the property, operator, and one or more values to use to filter the results.
      */
 
     public java.util.Map<String, CriterionAdditionalProperties> getCriterion() {
@@ -49,11 +49,11 @@ public class FindingCriteria implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A condition that specifies the property, operator, and value to use to filter the results.
+     * A condition that specifies the property, operator, and one or more values to use to filter the results.
      * </p>
      * 
      * @param criterion
-     *        A condition that specifies the property, operator, and value to use to filter the results.
+     *        A condition that specifies the property, operator, and one or more values to use to filter the results.
      */
 
     public void setCriterion(java.util.Map<String, CriterionAdditionalProperties> criterion) {
@@ -62,11 +62,11 @@ public class FindingCriteria implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A condition that specifies the property, operator, and value to use to filter the results.
+     * A condition that specifies the property, operator, and one or more values to use to filter the results.
      * </p>
      * 
      * @param criterion
-     *        A condition that specifies the property, operator, and value to use to filter the results.
+     *        A condition that specifies the property, operator, and one or more values to use to filter the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

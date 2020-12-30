@@ -33,7 +33,7 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String userId;
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      */
     private String accessString;
@@ -45,13 +45,13 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String appendAccessString;
     /**
      * <p>
-     * The passwords belonging to the user account. You are allowed up to two.
+     * The passwords belonging to the user. You are allowed up to two.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> passwords;
     /**
      * <p>
-     * Indicates no password is required for the user account.
+     * Indicates no password is required for the user.
      * </p>
      */
     private Boolean noPasswordRequired;
@@ -98,11 +98,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      */
 
     public void setAccessString(String accessString) {
@@ -111,10 +111,10 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
-     * @return Access permissions string used for this user account.
+     * @return Access permissions string used for this user.
      */
 
     public String getAccessString() {
@@ -123,11 +123,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Access permissions string used for this user account.
+     * Access permissions string used for this user.
      * </p>
      * 
      * @param accessString
-     *        Access permissions string used for this user account.
+     *        Access permissions string used for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The passwords belonging to the user account. You are allowed up to two.
+     * The passwords belonging to the user. You are allowed up to two.
      * </p>
      * 
-     * @return The passwords belonging to the user account. You are allowed up to two.
+     * @return The passwords belonging to the user. You are allowed up to two.
      */
 
     public java.util.List<String> getPasswords() {
@@ -193,11 +193,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The passwords belonging to the user account. You are allowed up to two.
+     * The passwords belonging to the user. You are allowed up to two.
      * </p>
      * 
      * @param passwords
-     *        The passwords belonging to the user account. You are allowed up to two.
+     *        The passwords belonging to the user. You are allowed up to two.
      */
 
     public void setPasswords(java.util.Collection<String> passwords) {
@@ -211,7 +211,7 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The passwords belonging to the user account. You are allowed up to two.
+     * The passwords belonging to the user. You are allowed up to two.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,7 +220,7 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param passwords
-     *        The passwords belonging to the user account. You are allowed up to two.
+     *        The passwords belonging to the user. You are allowed up to two.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The passwords belonging to the user account. You are allowed up to two.
+     * The passwords belonging to the user. You are allowed up to two.
      * </p>
      * 
      * @param passwords
-     *        The passwords belonging to the user account. You are allowed up to two.
+     *        The passwords belonging to the user. You are allowed up to two.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +251,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates no password is required for the user account.
+     * Indicates no password is required for the user.
      * </p>
      * 
      * @param noPasswordRequired
-     *        Indicates no password is required for the user account.
+     *        Indicates no password is required for the user.
      */
 
     public void setNoPasswordRequired(Boolean noPasswordRequired) {
@@ -264,10 +264,10 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates no password is required for the user account.
+     * Indicates no password is required for the user.
      * </p>
      * 
-     * @return Indicates no password is required for the user account.
+     * @return Indicates no password is required for the user.
      */
 
     public Boolean getNoPasswordRequired() {
@@ -276,11 +276,11 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates no password is required for the user account.
+     * Indicates no password is required for the user.
      * </p>
      * 
      * @param noPasswordRequired
-     *        Indicates no password is required for the user account.
+     *        Indicates no password is required for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,10 +291,10 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Indicates no password is required for the user account.
+     * Indicates no password is required for the user.
      * </p>
      * 
-     * @return Indicates no password is required for the user account.
+     * @return Indicates no password is required for the user.
      */
 
     public Boolean isNoPasswordRequired() {

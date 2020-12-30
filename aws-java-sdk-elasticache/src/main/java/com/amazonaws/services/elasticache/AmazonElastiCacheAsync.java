@@ -694,8 +694,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region replication. Using Global
      * Datastore for Redis, you can create cross-region read replica clusters for ElastiCache for Redis to enable
      * low-latency reads and disaster recovery across regions. For more information, see <a
-     * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores.html">Replication Across Regions Using Global
-     * Datastore</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication Across
+     * Regions Using Global Datastore</a>.
      * </p>
      * <ul>
      * <li>
@@ -726,8 +726,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region replication. Using Global
      * Datastore for Redis, you can create cross-region read replica clusters for ElastiCache for Redis to enable
      * low-latency reads and disaster recovery across regions. For more information, see <a
-     * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores.html">Replication Across Regions Using Global
-     * Datastore</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication Across
+     * Regions Using Global Datastore</a>.
      * </p>
      * <ul>
      * <li>

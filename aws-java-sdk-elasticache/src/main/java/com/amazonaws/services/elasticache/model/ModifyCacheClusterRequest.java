@@ -468,7 +468,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      */
@@ -3693,7 +3693,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -3714,7 +3714,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @see AuthTokenUpdateStrategyType
      */
@@ -3742,7 +3742,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -3762,7 +3762,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *         Redis AUTH</a>
      * @see AuthTokenUpdateStrategyType
      */
@@ -3790,7 +3790,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -3811,7 +3811,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTokenUpdateStrategyType
@@ -3841,7 +3841,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -3862,7 +3862,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @see AuthTokenUpdateStrategyType
      */
@@ -3890,7 +3890,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -3911,7 +3911,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTokenUpdateStrategyType
