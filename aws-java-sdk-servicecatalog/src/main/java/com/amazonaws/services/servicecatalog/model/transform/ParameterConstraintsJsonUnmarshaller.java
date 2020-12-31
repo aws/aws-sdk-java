@@ -54,6 +54,30 @@ public class ParameterConstraintsJsonUnmarshaller implements Unmarshaller<Parame
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AllowedPattern", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setAllowedPattern(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ConstraintDescription", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setConstraintDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxLength", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setMaxLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MinLength", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setMinLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxValue", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setMaxValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MinValue", targetDepth)) {
+                    context.nextToken();
+                    parameterConstraints.setMinValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
