@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,19 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user generated name for the datastore.
+     * The user generated name for the Data Store.
      * </p>
      */
     private String datastoreName;
     /**
      * <p>
-     * The FHIR version of the datastore. The only supported version is R4.
+     * The FHIR version of the Data Store. The only supported version is R4.
      * </p>
      */
     private String datastoreTypeVersion;
     /**
      * <p>
-     * Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded data
+     * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
      */
@@ -53,11 +53,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user generated name for the datastore.
+     * The user generated name for the Data Store.
      * </p>
      * 
      * @param datastoreName
-     *        The user generated name for the datastore.
+     *        The user generated name for the Data Store.
      */
 
     public void setDatastoreName(String datastoreName) {
@@ -66,10 +66,10 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user generated name for the datastore.
+     * The user generated name for the Data Store.
      * </p>
      * 
-     * @return The user generated name for the datastore.
+     * @return The user generated name for the Data Store.
      */
 
     public String getDatastoreName() {
@@ -78,11 +78,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user generated name for the datastore.
+     * The user generated name for the Data Store.
      * </p>
      * 
      * @param datastoreName
-     *        The user generated name for the datastore.
+     *        The user generated name for the Data Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The FHIR version of the datastore. The only supported version is R4.
+     * The FHIR version of the Data Store. The only supported version is R4.
      * </p>
      * 
      * @param datastoreTypeVersion
-     *        The FHIR version of the datastore. The only supported version is R4.
+     *        The FHIR version of the Data Store. The only supported version is R4.
      * @see FHIRVersion
      */
 
@@ -107,10 +107,10 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The FHIR version of the datastore. The only supported version is R4.
+     * The FHIR version of the Data Store. The only supported version is R4.
      * </p>
      * 
-     * @return The FHIR version of the datastore. The only supported version is R4.
+     * @return The FHIR version of the Data Store. The only supported version is R4.
      * @see FHIRVersion
      */
 
@@ -120,11 +120,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The FHIR version of the datastore. The only supported version is R4.
+     * The FHIR version of the Data Store. The only supported version is R4.
      * </p>
      * 
      * @param datastoreTypeVersion
-     *        The FHIR version of the datastore. The only supported version is R4.
+     *        The FHIR version of the Data Store. The only supported version is R4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FHIRVersion
      */
@@ -136,11 +136,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The FHIR version of the datastore. The only supported version is R4.
+     * The FHIR version of the Data Store. The only supported version is R4.
      * </p>
      * 
      * @param datastoreTypeVersion
-     *        The FHIR version of the datastore. The only supported version is R4.
+     *        The FHIR version of the Data Store. The only supported version is R4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FHIRVersion
      */
@@ -152,13 +152,13 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded data
+     * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
      * 
      * @param preloadDataConfig
-     *        Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded
-     *        data is synthetic data generated from Synthea.
+     *        Optional parameter to preload data upon creation of the Data Store. Currently, the only supported
+     *        preloaded data is synthetic data generated from Synthea.
      */
 
     public void setPreloadDataConfig(PreloadDataConfig preloadDataConfig) {
@@ -167,11 +167,11 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded data
+     * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
      * 
-     * @return Optional parameter to preload data upon creation of the datastore. Currently, the only supported
+     * @return Optional parameter to preload data upon creation of the Data Store. Currently, the only supported
      *         preloaded data is synthetic data generated from Synthea.
      */
 
@@ -181,13 +181,13 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded data
+     * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
      * 
      * @param preloadDataConfig
-     *        Optional parameter to preload data upon creation of the datastore. Currently, the only supported preloaded
-     *        data is synthetic data generated from Synthea.
+     *        Optional parameter to preload data upon creation of the Data Store. Currently, the only supported
+     *        preloaded data is synthetic data generated from Synthea.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

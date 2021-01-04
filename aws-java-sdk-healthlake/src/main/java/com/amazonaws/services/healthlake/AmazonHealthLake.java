@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ import com.amazonaws.services.healthlake.model.*;
  * <p>
  * <p>
  * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
- * data in a consistent fashion in the cloud.
+ * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -44,7 +44,7 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
-     * Creates a datastore that can ingest and export FHIR data.
+     * Creates a Data Store that can ingest and export FHIR formatted data.
      * </p>
      * 
      * @param createFHIRDatastoreRequest
@@ -63,7 +63,7 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
-     * Deletes a datastore.
+     * Deletes a Data Store.
      * </p>
      * 
      * @param deleteFHIRDatastoreRequest
@@ -71,11 +71,11 @@ public interface AmazonHealthLake {
      * @throws AccessDeniedException
      *         Access is denied. Your account is not authorized to perform this operation.
      * @throws ConflictException
-     *         The datastore is in a transition state and the user requested action can not be performed.
+     *         The Data Store is in a transition state and the user requested action can not be performed.
      * @throws ValidationException
      *         The user input parameter was invalid.
      * @throws ResourceNotFoundException
-     *         The requested datastore was not found.
+     *         The requested Data Store was not found.
      * @throws ThrottlingException
      *         The user has exceeded their maximum number of allowed calls to the given API.
      * @throws InternalServerException
@@ -88,8 +88,8 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
-     * Gets the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore
-     * name, datastore status, created at, datastore type version, and datastore endpoint.
+     * Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store
+     * name, Data Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
      * @param describeFHIRDatastoreRequest
@@ -97,7 +97,7 @@ public interface AmazonHealthLake {
      * @throws ValidationException
      *         The user input parameter was invalid.
      * @throws ResourceNotFoundException
-     *         The requested datastore was not found.
+     *         The requested Data Store was not found.
      * @throws ThrottlingException
      *         The user has exceeded their maximum number of allowed calls to the given API.
      * @throws InternalServerException
@@ -110,7 +110,28 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
-     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the datastore.
+     * Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job.
+     * </p>
+     * 
+     * @param describeFHIRExportJobRequest
+     * @return Result of the DescribeFHIRExportJob operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @throws ThrottlingException
+     *         The user has exceeded their maximum number of allowed calls to the given API.
+     * @throws InternalServerException
+     *         Unknown error occurs in the service.
+     * @sample AmazonHealthLake.DescribeFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFHIRExportJobResult describeFHIRExportJob(DescribeFHIRExportJobRequest describeFHIRExportJobRequest);
+
+    /**
+     * <p>
+     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.
      * </p>
      * 
      * @param describeFHIRImportJobRequest
@@ -118,7 +139,7 @@ public interface AmazonHealthLake {
      * @throws ValidationException
      *         The user input parameter was invalid.
      * @throws ResourceNotFoundException
-     *         The requested datastore was not found.
+     *         The requested Data Store was not found.
      * @throws ThrottlingException
      *         The user has exceeded their maximum number of allowed calls to the given API.
      * @throws InternalServerException
@@ -131,7 +152,7 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
-     * Lists all FHIR datastores that are in the user’s account, regardless of datastore status.
+     * Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.
      * </p>
      * 
      * @param listFHIRDatastoresRequest
@@ -150,6 +171,29 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
+     * Begins a FHIR export job.
+     * </p>
+     * 
+     * @param startFHIRExportJobRequest
+     * @return Result of the StartFHIRExportJob operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ThrottlingException
+     *         The user has exceeded their maximum number of allowed calls to the given API.
+     * @throws AccessDeniedException
+     *         Access is denied. Your account is not authorized to perform this operation.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @throws InternalServerException
+     *         Unknown error occurs in the service.
+     * @sample AmazonHealthLake.StartFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartFHIRExportJobResult startFHIRExportJob(StartFHIRExportJobRequest startFHIRExportJobRequest);
+
+    /**
+     * <p>
      * Begins a FHIR Import job.
      * </p>
      * 
@@ -162,7 +206,7 @@ public interface AmazonHealthLake {
      * @throws AccessDeniedException
      *         Access is denied. Your account is not authorized to perform this operation.
      * @throws ResourceNotFoundException
-     *         The requested datastore was not found.
+     *         The requested Data Store was not found.
      * @throws InternalServerException
      *         Unknown error occurs in the service.
      * @sample AmazonHealthLake.StartFHIRImportJob

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,21 +25,21 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name, datastore
-     * status, created at, datastore type version, and datastore endpoint.
+     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
+     * Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      */
     private DatastoreProperties datastoreProperties;
 
     /**
      * <p>
-     * All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name, datastore
-     * status, created at, datastore type version, and datastore endpoint.
+     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
+     * Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
      * @param datastoreProperties
-     *        All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name,
-     *        datastore status, created at, datastore type version, and datastore endpoint.
+     *        All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name,
+     *        Data Store status, created at, Data Store type version, and Data Store endpoint.
      */
 
     public void setDatastoreProperties(DatastoreProperties datastoreProperties) {
@@ -48,12 +48,12 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name, datastore
-     * status, created at, datastore type version, and datastore endpoint.
+     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
+     * Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
-     * @return All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name,
-     *         datastore status, created at, datastore type version, and datastore endpoint.
+     * @return All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store
+     *         name, Data Store status, created at, Data Store type version, and Data Store endpoint.
      */
 
     public DatastoreProperties getDatastoreProperties() {
@@ -62,13 +62,13 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name, datastore
-     * status, created at, datastore type version, and datastore endpoint.
+     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
+     * Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
      * @param datastoreProperties
-     *        All properties associated with a datastore, including the datastore ID, datastore ARN, datastore name,
-     *        datastore status, created at, datastore type version, and datastore endpoint.
+     *        All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name,
+     *        Data Store status, created at, Data Store type version, and Data Store endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

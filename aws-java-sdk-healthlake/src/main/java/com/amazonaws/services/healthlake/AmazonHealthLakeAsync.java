@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.healthlake.model.*;
  * <p>
  * <p>
  * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
- * data in a consistent fashion in the cloud.
+ * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,7 +35,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Creates a datastore that can ingest and export FHIR data.
+     * Creates a Data Store that can ingest and export FHIR formatted data.
      * </p>
      * 
      * @param createFHIRDatastoreRequest
@@ -48,7 +48,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Creates a datastore that can ingest and export FHIR data.
+     * Creates a Data Store that can ingest and export FHIR formatted data.
      * </p>
      * 
      * @param createFHIRDatastoreRequest
@@ -66,7 +66,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Deletes a datastore.
+     * Deletes a Data Store.
      * </p>
      * 
      * @param deleteFHIRDatastoreRequest
@@ -79,7 +79,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Deletes a datastore.
+     * Deletes a Data Store.
      * </p>
      * 
      * @param deleteFHIRDatastoreRequest
@@ -97,8 +97,8 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Gets the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore
-     * name, datastore status, created at, datastore type version, and datastore endpoint.
+     * Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store
+     * name, Data Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
      * @param describeFHIRDatastoreRequest
@@ -111,8 +111,8 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Gets the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore
-     * name, datastore status, created at, datastore type version, and datastore endpoint.
+     * Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store
+     * name, Data Store status, created at, Data Store type version, and Data Store endpoint.
      * </p>
      * 
      * @param describeFHIRDatastoreRequest
@@ -130,7 +130,38 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the datastore.
+     * Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job.
+     * </p>
+     * 
+     * @param describeFHIRExportJobRequest
+     * @return A Java Future containing the result of the DescribeFHIRExportJob operation returned by the service.
+     * @sample AmazonHealthLakeAsync.DescribeFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFHIRExportJobResult> describeFHIRExportJobAsync(DescribeFHIRExportJobRequest describeFHIRExportJobRequest);
+
+    /**
+     * <p>
+     * Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job.
+     * </p>
+     * 
+     * @param describeFHIRExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFHIRExportJob operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.DescribeFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFHIRExportJobResult> describeFHIRExportJobAsync(DescribeFHIRExportJobRequest describeFHIRExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFHIRExportJobRequest, DescribeFHIRExportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.
      * </p>
      * 
      * @param describeFHIRImportJobRequest
@@ -143,7 +174,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the datastore.
+     * Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.
      * </p>
      * 
      * @param describeFHIRImportJobRequest
@@ -161,7 +192,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Lists all FHIR datastores that are in the user’s account, regardless of datastore status.
+     * Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.
      * </p>
      * 
      * @param listFHIRDatastoresRequest
@@ -174,7 +205,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Lists all FHIR datastores that are in the user’s account, regardless of datastore status.
+     * Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.
      * </p>
      * 
      * @param listFHIRDatastoresRequest
@@ -189,6 +220,37 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
      */
     java.util.concurrent.Future<ListFHIRDatastoresResult> listFHIRDatastoresAsync(ListFHIRDatastoresRequest listFHIRDatastoresRequest,
             com.amazonaws.handlers.AsyncHandler<ListFHIRDatastoresRequest, ListFHIRDatastoresResult> asyncHandler);
+
+    /**
+     * <p>
+     * Begins a FHIR export job.
+     * </p>
+     * 
+     * @param startFHIRExportJobRequest
+     * @return A Java Future containing the result of the StartFHIRExportJob operation returned by the service.
+     * @sample AmazonHealthLakeAsync.StartFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartFHIRExportJobResult> startFHIRExportJobAsync(StartFHIRExportJobRequest startFHIRExportJobRequest);
+
+    /**
+     * <p>
+     * Begins a FHIR export job.
+     * </p>
+     * 
+     * @param startFHIRExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartFHIRExportJob operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.StartFHIRExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartFHIRExportJobResult> startFHIRExportJobAsync(StartFHIRExportJobRequest startFHIRExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartFHIRExportJobRequest, StartFHIRExportJobResult> asyncHandler);
 
     /**
      * <p>

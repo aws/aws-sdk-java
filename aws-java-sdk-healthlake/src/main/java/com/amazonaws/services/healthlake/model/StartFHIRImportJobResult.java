@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
     private String jobStatus;
     /**
      * <p>
-     * The AWS-generated datastore ID.
+     * The AWS-generated Data Store ID.
      * </p>
      */
     private String datastoreId;
@@ -143,11 +143,11 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated datastore ID.
+     * The AWS-generated Data Store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated datastore ID.
+     *        The AWS-generated Data Store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -156,10 +156,10 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated datastore ID.
+     * The AWS-generated Data Store ID.
      * </p>
      * 
-     * @return The AWS-generated datastore ID.
+     * @return The AWS-generated Data Store ID.
      */
 
     public String getDatastoreId() {
@@ -168,11 +168,11 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated datastore ID.
+     * The AWS-generated Data Store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated datastore ID.
+     *        The AWS-generated Data Store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
- * data in a consistent fashion in the cloud.
+ * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */
 @ThreadSafe
@@ -174,6 +174,39 @@ public class AmazonHealthLakeAsyncClient extends AmazonHealthLakeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFHIRExportJobResult> describeFHIRExportJobAsync(DescribeFHIRExportJobRequest request) {
+
+        return describeFHIRExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFHIRExportJobResult> describeFHIRExportJobAsync(final DescribeFHIRExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFHIRExportJobRequest, DescribeFHIRExportJobResult> asyncHandler) {
+        final DescribeFHIRExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFHIRExportJobResult>() {
+            @Override
+            public DescribeFHIRExportJobResult call() throws Exception {
+                DescribeFHIRExportJobResult result = null;
+
+                try {
+                    result = executeDescribeFHIRExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFHIRImportJobResult> describeFHIRImportJobAsync(DescribeFHIRImportJobRequest request) {
 
         return describeFHIRImportJobAsync(request, null);
@@ -224,6 +257,39 @@ public class AmazonHealthLakeAsyncClient extends AmazonHealthLakeClient implemen
 
                 try {
                     result = executeListFHIRDatastores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFHIRExportJobResult> startFHIRExportJobAsync(StartFHIRExportJobRequest request) {
+
+        return startFHIRExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFHIRExportJobResult> startFHIRExportJobAsync(final StartFHIRExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartFHIRExportJobRequest, StartFHIRExportJobResult> asyncHandler) {
+        final StartFHIRExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartFHIRExportJobResult>() {
+            @Override
+            public StartFHIRExportJobResult call() throws Exception {
+                StartFHIRExportJobResult result = null;
+
+                try {
+                    result = executeStartFHIRExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

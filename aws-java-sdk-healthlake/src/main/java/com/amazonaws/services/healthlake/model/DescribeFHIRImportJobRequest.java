@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the datastore.
+     * The AWS-generated ID of the Data Store.
      * </p>
      */
     private String datastoreId;
@@ -40,11 +40,11 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the datastore.
+     * The AWS-generated ID of the Data Store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID of the datastore.
+     *        The AWS-generated ID of the Data Store.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -53,10 +53,10 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the datastore.
+     * The AWS-generated ID of the Data Store.
      * </p>
      * 
-     * @return The AWS-generated ID of the datastore.
+     * @return The AWS-generated ID of the Data Store.
      */
 
     public String getDatastoreId() {
@@ -65,11 +65,11 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the datastore.
+     * The AWS-generated ID of the Data Store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID of the datastore.
+     *        The AWS-generated ID of the Data Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Displays the properties of the datastore, including the ID, Arn, name, and the status of the datastore.
+ * Displays the properties of the Data Store, including the ID, Arn, name, and the status of the Data Store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreProperties" target="_top">AWS API
@@ -30,31 +30,31 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS-generated ID number for the datastore.
+     * The AWS-generated ID number for the Data Store.
      * </p>
      */
     private String datastoreId;
     /**
      * <p>
-     * The Amazon Resource Name used in the creation of the datastore.
+     * The Amazon Resource Name used in the creation of the Data Store.
      * </p>
      */
     private String datastoreArn;
     /**
      * <p>
-     * The user-generated name for the datastore.
+     * The user-generated name for the Data Store.
      * </p>
      */
     private String datastoreName;
     /**
      * <p>
-     * The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * </p>
      */
     private String datastoreStatus;
     /**
      * <p>
-     * The time that a datastore was created.
+     * The time that a Data Store was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -66,25 +66,25 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
     private String datastoreTypeVersion;
     /**
      * <p>
-     * The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the endpoint
-     * URL.
+     * The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
+     * endpoint URL.
      * </p>
      */
     private String datastoreEndpoint;
     /**
      * <p>
-     * The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      */
     private PreloadDataConfig preloadDataConfig;
 
     /**
      * <p>
-     * The AWS-generated ID number for the datastore.
+     * The AWS-generated ID number for the Data Store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID number for the datastore.
+     *        The AWS-generated ID number for the Data Store.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -93,10 +93,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS-generated ID number for the datastore.
+     * The AWS-generated ID number for the Data Store.
      * </p>
      * 
-     * @return The AWS-generated ID number for the datastore.
+     * @return The AWS-generated ID number for the Data Store.
      */
 
     public String getDatastoreId() {
@@ -105,11 +105,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS-generated ID number for the datastore.
+     * The AWS-generated ID number for the Data Store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID number for the datastore.
+     *        The AWS-generated ID number for the Data Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +120,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name used in the creation of the datastore.
+     * The Amazon Resource Name used in the creation of the Data Store.
      * </p>
      * 
      * @param datastoreArn
-     *        The Amazon Resource Name used in the creation of the datastore.
+     *        The Amazon Resource Name used in the creation of the Data Store.
      */
 
     public void setDatastoreArn(String datastoreArn) {
@@ -133,10 +133,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name used in the creation of the datastore.
+     * The Amazon Resource Name used in the creation of the Data Store.
      * </p>
      * 
-     * @return The Amazon Resource Name used in the creation of the datastore.
+     * @return The Amazon Resource Name used in the creation of the Data Store.
      */
 
     public String getDatastoreArn() {
@@ -145,11 +145,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name used in the creation of the datastore.
+     * The Amazon Resource Name used in the creation of the Data Store.
      * </p>
      * 
      * @param datastoreArn
-     *        The Amazon Resource Name used in the creation of the datastore.
+     *        The Amazon Resource Name used in the creation of the Data Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +160,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user-generated name for the datastore.
+     * The user-generated name for the Data Store.
      * </p>
      * 
      * @param datastoreName
-     *        The user-generated name for the datastore.
+     *        The user-generated name for the Data Store.
      */
 
     public void setDatastoreName(String datastoreName) {
@@ -173,10 +173,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user-generated name for the datastore.
+     * The user-generated name for the Data Store.
      * </p>
      * 
-     * @return The user-generated name for the datastore.
+     * @return The user-generated name for the Data Store.
      */
 
     public String getDatastoreName() {
@@ -185,11 +185,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user-generated name for the datastore.
+     * The user-generated name for the Data Store.
      * </p>
      * 
      * @param datastoreName
-     *        The user-generated name for the datastore.
+     *        The user-generated name for the Data Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     *        The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * @see DatastoreStatus
      */
 
@@ -214,10 +214,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * </p>
      * 
-     * @return The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * @return The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * @see DatastoreStatus
      */
 
@@ -227,11 +227,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     *        The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -243,11 +243,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     * The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
+     *        The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -259,11 +259,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time that a datastore was created.
+     * The time that a Data Store was created.
      * </p>
      * 
      * @param createdAt
-     *        The time that a datastore was created.
+     *        The time that a Data Store was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -272,10 +272,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time that a datastore was created.
+     * The time that a Data Store was created.
      * </p>
      * 
-     * @return The time that a datastore was created.
+     * @return The time that a Data Store was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -284,11 +284,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time that a datastore was created.
+     * The time that a Data Store was created.
      * </p>
      * 
      * @param createdAt
-     *        The time that a datastore was created.
+     *        The time that a Data Store was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,12 +358,12 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the endpoint
-     * URL.
+     * The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
+     * endpoint URL.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the
+     *        The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
      *        endpoint URL.
      */
 
@@ -373,12 +373,12 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the endpoint
-     * URL.
+     * The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
+     * endpoint URL.
      * </p>
      * 
-     * @return The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the
-     *         endpoint URL.
+     * @return The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in
+     *         the endpoint URL.
      */
 
     public String getDatastoreEndpoint() {
@@ -387,12 +387,12 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the endpoint
-     * URL.
+     * The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
+     * endpoint URL.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the datastore. Each datastore will have it's own endpoint with datastore ID in the
+     *        The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the
      *        endpoint URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -404,11 +404,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      * 
      * @param preloadDataConfig
-     *        The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     *        The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      */
 
     public void setPreloadDataConfig(PreloadDataConfig preloadDataConfig) {
@@ -417,10 +417,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      * 
-     * @return The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     * @return The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      */
 
     public PreloadDataConfig getPreloadDataConfig() {
@@ -429,11 +429,11 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      * 
      * @param preloadDataConfig
-     *        The preloaded data configuration for the datastore. Only data preloaded from Synthea is supported.
+     *        The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

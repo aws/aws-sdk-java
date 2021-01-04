@@ -1,3 +1,12 @@
+# __1.11.931__ __2021-01-04__
+## __Amazon CloudSearch__
+  - ### Features
+    - This release adds support for new Amazon CloudSearch instances.
+
+## __Amazon HealthLake__
+  - ### Features
+    - Amazon HealthLake now supports exporting data from FHIR Data Stores in Preview.
+
 # __1.11.930__ __2020-12-31__
 ## __AWS Service Catalog__
   - ### Features
