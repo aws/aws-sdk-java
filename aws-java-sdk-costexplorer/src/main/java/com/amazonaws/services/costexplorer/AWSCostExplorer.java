@@ -319,6 +319,35 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @return Result of the GetCostCategories operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
+     * @sample AWSCostExplorer.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostCategoriesResult getCostCategories(GetCostCategoriesRequest getCostCategoriesRequest);
+
+    /**
+     * <p>
      * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
      * that you select, based on your past costs.
      * </p>

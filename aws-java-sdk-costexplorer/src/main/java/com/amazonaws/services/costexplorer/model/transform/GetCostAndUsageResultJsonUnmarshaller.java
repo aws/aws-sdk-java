@@ -64,6 +64,13 @@ public class GetCostAndUsageResultJsonUnmarshaller implements Unmarshaller<GetCo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("DimensionValueAttributes", targetDepth)) {
+                    context.nextToken();
+                    getCostAndUsageResult.setDimensionValueAttributes(new ListUnmarshaller<DimensionValuesWithAttributes>(
+                            DimensionValuesWithAttributesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

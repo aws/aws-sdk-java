@@ -40,6 +40,10 @@ public class GetReservationCoverageRequestMarshaller {
             .marshallLocationName("Metrics").build();
     private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextPageToken").build();
+    private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final GetReservationCoverageRequestMarshaller instance = new GetReservationCoverageRequestMarshaller();
 
@@ -63,6 +67,8 @@ public class GetReservationCoverageRequestMarshaller {
             protocolMarshaller.marshall(getReservationCoverageRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(getReservationCoverageRequest.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(getReservationCoverageRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
+            protocolMarshaller.marshall(getReservationCoverageRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getReservationCoverageRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,3 +1,12 @@
+# __1.11.932__ __2021-01-05__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - - ### Features    - Add new GetCostcategories API - Support filter for GetDimensions, GetTags and GetCostcategories api - Support sortBy metrics for GetDimensions, GetTags and GetCostcategories api
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
 # __1.11.931__ __2021-01-04__
 ## __Amazon CloudSearch__
   - ### Features

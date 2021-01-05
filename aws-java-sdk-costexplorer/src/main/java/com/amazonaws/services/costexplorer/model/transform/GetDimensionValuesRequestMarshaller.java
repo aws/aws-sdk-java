@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,12 @@ public class GetDimensionValuesRequestMarshaller {
             .marshallLocationName("Dimension").build();
     private static final MarshallingInfo<String> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Context").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<List> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextPageToken").build();
 
@@ -58,6 +65,9 @@ public class GetDimensionValuesRequestMarshaller {
             protocolMarshaller.marshall(getDimensionValuesRequest.getTimePeriod(), TIMEPERIOD_BINDING);
             protocolMarshaller.marshall(getDimensionValuesRequest.getDimension(), DIMENSION_BINDING);
             protocolMarshaller.marshall(getDimensionValuesRequest.getContext(), CONTEXT_BINDING);
+            protocolMarshaller.marshall(getDimensionValuesRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getDimensionValuesRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getDimensionValuesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getDimensionValuesRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

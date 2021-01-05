@@ -117,6 +117,24 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
      * </p>
      */
     private String totalAmortizedFee;
+    /**
+     * <p>
+     * The cost of unused hours for your reservation.
+     * </p>
+     */
+    private String rICostForUnusedHours;
+    /**
+     * <p>
+     * The realized savings due to purchasing and using a reservation.
+     * </p>
+     */
+    private String realizedSavings;
+    /**
+     * <p>
+     * The unrealized savings due to purchasing and using a reservation.
+     * </p>
+     */
+    private String unrealizedSavings;
 
     /**
      * <p>
@@ -709,6 +727,126 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The cost of unused hours for your reservation.
+     * </p>
+     * 
+     * @param rICostForUnusedHours
+     *        The cost of unused hours for your reservation.
+     */
+
+    public void setRICostForUnusedHours(String rICostForUnusedHours) {
+        this.rICostForUnusedHours = rICostForUnusedHours;
+    }
+
+    /**
+     * <p>
+     * The cost of unused hours for your reservation.
+     * </p>
+     * 
+     * @return The cost of unused hours for your reservation.
+     */
+
+    public String getRICostForUnusedHours() {
+        return this.rICostForUnusedHours;
+    }
+
+    /**
+     * <p>
+     * The cost of unused hours for your reservation.
+     * </p>
+     * 
+     * @param rICostForUnusedHours
+     *        The cost of unused hours for your reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservationAggregates withRICostForUnusedHours(String rICostForUnusedHours) {
+        setRICostForUnusedHours(rICostForUnusedHours);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The realized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @param realizedSavings
+     *        The realized savings due to purchasing and using a reservation.
+     */
+
+    public void setRealizedSavings(String realizedSavings) {
+        this.realizedSavings = realizedSavings;
+    }
+
+    /**
+     * <p>
+     * The realized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @return The realized savings due to purchasing and using a reservation.
+     */
+
+    public String getRealizedSavings() {
+        return this.realizedSavings;
+    }
+
+    /**
+     * <p>
+     * The realized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @param realizedSavings
+     *        The realized savings due to purchasing and using a reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservationAggregates withRealizedSavings(String realizedSavings) {
+        setRealizedSavings(realizedSavings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unrealized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @param unrealizedSavings
+     *        The unrealized savings due to purchasing and using a reservation.
+     */
+
+    public void setUnrealizedSavings(String unrealizedSavings) {
+        this.unrealizedSavings = unrealizedSavings;
+    }
+
+    /**
+     * <p>
+     * The unrealized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @return The unrealized savings due to purchasing and using a reservation.
+     */
+
+    public String getUnrealizedSavings() {
+        return this.unrealizedSavings;
+    }
+
+    /**
+     * <p>
+     * The unrealized savings due to purchasing and using a reservation.
+     * </p>
+     * 
+     * @param unrealizedSavings
+     *        The unrealized savings due to purchasing and using a reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservationAggregates withUnrealizedSavings(String unrealizedSavings) {
+        setUnrealizedSavings(unrealizedSavings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -747,7 +885,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
         if (getAmortizedRecurringFee() != null)
             sb.append("AmortizedRecurringFee: ").append(getAmortizedRecurringFee()).append(",");
         if (getTotalAmortizedFee() != null)
-            sb.append("TotalAmortizedFee: ").append(getTotalAmortizedFee());
+            sb.append("TotalAmortizedFee: ").append(getTotalAmortizedFee()).append(",");
+        if (getRICostForUnusedHours() != null)
+            sb.append("RICostForUnusedHours: ").append(getRICostForUnusedHours()).append(",");
+        if (getRealizedSavings() != null)
+            sb.append("RealizedSavings: ").append(getRealizedSavings()).append(",");
+        if (getUnrealizedSavings() != null)
+            sb.append("UnrealizedSavings: ").append(getUnrealizedSavings());
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +962,18 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
             return false;
         if (other.getTotalAmortizedFee() != null && other.getTotalAmortizedFee().equals(this.getTotalAmortizedFee()) == false)
             return false;
+        if (other.getRICostForUnusedHours() == null ^ this.getRICostForUnusedHours() == null)
+            return false;
+        if (other.getRICostForUnusedHours() != null && other.getRICostForUnusedHours().equals(this.getRICostForUnusedHours()) == false)
+            return false;
+        if (other.getRealizedSavings() == null ^ this.getRealizedSavings() == null)
+            return false;
+        if (other.getRealizedSavings() != null && other.getRealizedSavings().equals(this.getRealizedSavings()) == false)
+            return false;
+        if (other.getUnrealizedSavings() == null ^ this.getUnrealizedSavings() == null)
+            return false;
+        if (other.getUnrealizedSavings() != null && other.getUnrealizedSavings().equals(this.getUnrealizedSavings()) == false)
+            return false;
         return true;
     }
 
@@ -840,6 +996,9 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAmortizedUpfrontFee() == null) ? 0 : getAmortizedUpfrontFee().hashCode());
         hashCode = prime * hashCode + ((getAmortizedRecurringFee() == null) ? 0 : getAmortizedRecurringFee().hashCode());
         hashCode = prime * hashCode + ((getTotalAmortizedFee() == null) ? 0 : getTotalAmortizedFee().hashCode());
+        hashCode = prime * hashCode + ((getRICostForUnusedHours() == null) ? 0 : getRICostForUnusedHours().hashCode());
+        hashCode = prime * hashCode + ((getRealizedSavings() == null) ? 0 : getRealizedSavings().hashCode());
+        hashCode = prime * hashCode + ((getUnrealizedSavings() == null) ? 0 : getUnrealizedSavings().hashCode());
         return hashCode;
     }
 

@@ -74,6 +74,12 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
     private Expression filter;
     /**
      * <p>
+     * The data type.
+     * </p>
+     */
+    private java.util.List<String> dataType;
+    /**
+     * <p>
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
@@ -86,6 +92,55 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedRecurringCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedUpfrontCommitment</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     */
+    private SortDefinition sortBy;
 
     /**
      * <p>
@@ -379,6 +434,104 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * The data type.
+     * </p>
+     * 
+     * @return The data type.
+     * @see SavingsPlansDataType
+     */
+
+    public java.util.List<String> getDataType() {
+        return dataType;
+    }
+
+    /**
+     * <p>
+     * The data type.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type.
+     * @see SavingsPlansDataType
+     */
+
+    public void setDataType(java.util.Collection<String> dataType) {
+        if (dataType == null) {
+            this.dataType = null;
+            return;
+        }
+
+        this.dataType = new java.util.ArrayList<String>(dataType);
+    }
+
+    /**
+     * <p>
+     * The data type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataType(java.util.Collection)} or {@link #withDataType(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SavingsPlansDataType
+     */
+
+    public GetSavingsPlansUtilizationDetailsRequest withDataType(String... dataType) {
+        if (this.dataType == null) {
+            setDataType(new java.util.ArrayList<String>(dataType.length));
+        }
+        for (String ele : dataType) {
+            this.dataType.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data type.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SavingsPlansDataType
+     */
+
+    public GetSavingsPlansUtilizationDetailsRequest withDataType(java.util.Collection<String> dataType) {
+        setDataType(dataType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data type.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SavingsPlansDataType
+     */
+
+    public GetSavingsPlansUtilizationDetailsRequest withDataType(SavingsPlansDataType... dataType) {
+        java.util.ArrayList<String> dataTypeCopy = new java.util.ArrayList<String>(dataType.length);
+        for (SavingsPlansDataType value : dataType) {
+            dataTypeCopy.add(value.toString());
+        }
+        if (getDataType() == null) {
+            setDataType(dataTypeCopy);
+        } else {
+            getDataType().addAll(dataTypeCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
@@ -470,6 +623,301 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedRecurringCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedUpfrontCommitment</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>UtilizationPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnusedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetSavings</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedRecurringCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedUpfrontCommitment</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public void setSortBy(SortDefinition sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedRecurringCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedUpfrontCommitment</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The following values are supported for <code>Key</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>UtilizationPercentage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TotalCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UsedCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UnusedCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetSavings</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AmortizedRecurringCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AmortizedUpfrontCommitment</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public SortDefinition getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedRecurringCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedUpfrontCommitment</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>UtilizationPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnusedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetSavings</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedRecurringCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedUpfrontCommitment</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSavingsPlansUtilizationDetailsRequest withSortBy(SortDefinition sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -485,10 +933,14 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
             sb.append("TimePeriod: ").append(getTimePeriod()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
+        if (getDataType() != null)
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +963,10 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
+        if (other.getDataType() == null ^ this.getDataType() == null)
+            return false;
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -518,6 +974,10 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
             return false;
         return true;
     }
@@ -529,8 +989,10 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
 
         hashCode = prime * hashCode + ((getTimePeriod() == null) ? 0 : getTimePeriod().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         return hashCode;
     }
 

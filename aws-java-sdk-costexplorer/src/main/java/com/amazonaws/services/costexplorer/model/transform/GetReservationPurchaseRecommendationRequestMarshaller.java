@@ -31,6 +31,8 @@ public class GetReservationPurchaseRecommendationRequestMarshaller {
             .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> SERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Service").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
     private static final MarshallingInfo<String> ACCOUNTSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountScope").build();
     private static final MarshallingInfo<String> LOOKBACKPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class GetReservationPurchaseRecommendationRequestMarshaller {
         try {
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getService(), SERVICE_BINDING);
+            protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getAccountScope(), ACCOUNTSCOPE_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getLookbackPeriodInDays(), LOOKBACKPERIODINDAYS_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getTermInYears(), TERMINYEARS_BINDING);

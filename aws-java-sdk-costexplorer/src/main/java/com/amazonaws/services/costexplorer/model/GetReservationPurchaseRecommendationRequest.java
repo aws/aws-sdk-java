@@ -37,6 +37,8 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
      * </p>
      */
     private String service;
+
+    private Expression filter;
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
@@ -160,6 +162,32 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     public GetReservationPurchaseRecommendationRequest withService(String service) {
         setService(service);
+        return this;
+    }
+
+    /**
+     * @param filter
+     */
+
+    public void setFilter(Expression filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * @return
+     */
+
+    public Expression getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * @param filter
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservationPurchaseRecommendationRequest withFilter(Expression filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -557,6 +585,8 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getService() != null)
             sb.append("Service: ").append(getService()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getAccountScope() != null)
             sb.append("AccountScope: ").append(getAccountScope()).append(",");
         if (getLookbackPeriodInDays() != null)
@@ -592,6 +622,10 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
         if (other.getService() == null ^ this.getService() == null)
             return false;
         if (other.getService() != null && other.getService().equals(this.getService()) == false)
+            return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         if (other.getAccountScope() == null ^ this.getAccountScope() == null)
             return false;
@@ -631,6 +665,7 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getAccountScope() == null) ? 0 : getAccountScope().hashCode());
         hashCode = prime * hashCode + ((getLookbackPeriodInDays() == null) ? 0 : getLookbackPeriodInDays().hashCode());
         hashCode = prime * hashCode + ((getTermInYears() == null) ? 0 : getTermInYears().hashCode());

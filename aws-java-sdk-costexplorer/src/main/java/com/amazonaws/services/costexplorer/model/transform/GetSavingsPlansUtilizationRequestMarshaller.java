@@ -33,6 +33,8 @@ public class GetSavingsPlansUtilizationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Granularity").build();
     private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortBy").build();
 
     private static final GetSavingsPlansUtilizationRequestMarshaller instance = new GetSavingsPlansUtilizationRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetSavingsPlansUtilizationRequestMarshaller {
             protocolMarshaller.marshall(getSavingsPlansUtilizationRequest.getTimePeriod(), TIMEPERIOD_BINDING);
             protocolMarshaller.marshall(getSavingsPlansUtilizationRequest.getGranularity(), GRANULARITY_BINDING);
             protocolMarshaller.marshall(getSavingsPlansUtilizationRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansUtilizationRequest.getSortBy(), SORTBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

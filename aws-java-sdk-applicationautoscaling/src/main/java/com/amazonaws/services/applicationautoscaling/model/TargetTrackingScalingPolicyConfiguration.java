@@ -31,8 +31,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      */
     private Double targetValue;
@@ -235,13 +237,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
      */
 
     public void setTargetValue(Double targetValue) {
@@ -250,12 +256,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
-     * @return The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *         (Base 2).
+     * @return The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *         values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *         must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *         the target value is a percent value that represents how much of the CPU can be used before scaling out.
      */
 
     public Double getTargetValue() {
@@ -264,13 +274,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

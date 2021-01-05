@@ -62,9 +62,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <note>
  * <p>
- * For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not
+ * For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not
  * supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also
  * limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+ * </p>
+ * <p>
+ * For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not
+ * supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
  * </p>
  * </note>
  * 

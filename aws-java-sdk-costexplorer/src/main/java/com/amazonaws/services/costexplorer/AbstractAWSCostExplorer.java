@@ -88,6 +88,11 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
     }
 
     @Override
+    public GetCostCategoriesResult getCostCategories(GetCostCategoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCostForecastResult getCostForecast(GetCostForecastRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -517,6 +517,47 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @return A Java Future containing the result of the GetCostCategories operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest getCostCategoriesRequest);
+
+    /**
+     * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostCategories operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest getCostCategoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostCategoriesRequest, GetCostCategoriesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
      * that you select, based on your past costs.
      * </p>

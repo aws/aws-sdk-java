@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum MatchOption {
 
     EQUALS("EQUALS"),
+    ABSENT("ABSENT"),
     STARTS_WITH("STARTS_WITH"),
     ENDS_WITH("ENDS_WITH"),
     CONTAINS("CONTAINS"),

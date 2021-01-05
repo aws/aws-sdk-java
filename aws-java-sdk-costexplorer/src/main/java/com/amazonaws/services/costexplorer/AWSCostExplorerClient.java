@@ -938,6 +938,76 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @return Result of the GetCostCategories operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
+     * @sample AWSCostExplorer.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCostCategoriesResult getCostCategories(GetCostCategoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCostCategories(request);
+    }
+
+    @SdkInternalApi
+    final GetCostCategoriesResult executeGetCostCategories(GetCostCategoriesRequest getCostCategoriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCostCategoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCostCategoriesRequest> request = null;
+        Response<GetCostCategoriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCostCategoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostCategoriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostCategories");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCostCategoriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCostCategoriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
      * that you select, based on your past costs.
      * </p>

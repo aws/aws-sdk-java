@@ -104,6 +104,18 @@ public class ReservationAggregatesJsonUnmarshaller implements Unmarshaller<Reser
                     context.nextToken();
                     reservationAggregates.setTotalAmortizedFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RICostForUnusedHours", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setRICostForUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RealizedSavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setRealizedSavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UnrealizedSavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setUnrealizedSavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -492,6 +492,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest request) {
+
+        return getCostCategoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(final GetCostCategoriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCostCategoriesRequest, GetCostCategoriesResult> asyncHandler) {
+        final GetCostCategoriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCostCategoriesResult>() {
+            @Override
+            public GetCostCategoriesResult call() throws Exception {
+                GetCostCategoriesResult result = null;
+
+                try {
+                    result = executeGetCostCategories(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest request) {
 
         return getCostForecastAsync(request, null);

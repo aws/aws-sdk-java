@@ -36,8 +36,12 @@ public class GetReservationUtilizationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Granularity").build();
     private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortBy").build();
     private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextPageToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final GetReservationUtilizationRequestMarshaller instance = new GetReservationUtilizationRequestMarshaller();
 
@@ -59,7 +63,9 @@ public class GetReservationUtilizationRequestMarshaller {
             protocolMarshaller.marshall(getReservationUtilizationRequest.getGroupBy(), GROUPBY_BINDING);
             protocolMarshaller.marshall(getReservationUtilizationRequest.getGranularity(), GRANULARITY_BINDING);
             protocolMarshaller.marshall(getReservationUtilizationRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getReservationUtilizationRequest.getSortBy(), SORTBY_BINDING);
             protocolMarshaller.marshall(getReservationUtilizationRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
+            protocolMarshaller.marshall(getReservationUtilizationRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -208,6 +208,77 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String nextPageToken;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageHoursPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageNormalizedUnitsPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Time</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     */
+    private SortDefinition sortBy;
+    /**
+     * <p>
+     * The maximum number of objects that you returned for this request. If more objects are available, in the response,
+     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -1518,6 +1589,440 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageHoursPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageNormalizedUnitsPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Time</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoverageHoursPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReservedHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalRunningHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoverageNormalizedUnitsPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReservedNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalRunningNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Time</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public void setSortBy(SortDefinition sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageHoursPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageNormalizedUnitsPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Time</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The following values are supported for <code>Key</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>OnDemandCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CoverageHoursPercentage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OnDemandHours</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReservedHours</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TotalRunningHours</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CoverageNormalizedUnitsPercentage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OnDemandNormalizedUnits</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReservedNormalizedUnits</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TotalRunningNormalizedUnits</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Time</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public SortDefinition getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageHoursPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningHours</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoverageNormalizedUnitsPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReservedNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalRunningNormalizedUnits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Time</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoverageHoursPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReservedHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalRunningHours</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoverageNormalizedUnitsPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReservedNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalRunningNormalizedUnits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Time</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservationCoverageRequest withSortBy(SortDefinition sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of objects that you returned for this request. If more objects are available, in the response,
+     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of objects that you returned for this request. If more objects are available, in the
+     *        response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
+     *        of objects.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of objects that you returned for this request. If more objects are available, in the response,
+     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * </p>
+     * 
+     * @return The maximum number of objects that you returned for this request. If more objects are available, in the
+     *         response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
+     *         of objects.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of objects that you returned for this request. If more objects are available, in the response,
+     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of objects that you returned for this request. If more objects are available, in the
+     *        response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
+     *        of objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservationCoverageRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1540,7 +2045,11 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: ").append(getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -1579,6 +2088,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -1593,6 +2110,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -234,22 +234,21 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
-     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
-     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
+     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
+     * allowed is 1.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
      * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     * </p>
-     * <p>
-     * This parameter is required if you are registering a scalable target.
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
      * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
@@ -2027,22 +2026,23 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
-     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
-     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
+     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
+     * allowed is 1.
      * </p>
      * 
      * @param minCapacity
      *        The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
-     *        </p>
+     *        This property is required when registering a new scalable target.</p>
      *        <p>
-     *        This parameter is required if you are registering a scalable target. For certain resources, the minimum
-     *        value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
-     *        clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
+     *        minimum value allowed is 1.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -2052,21 +2052,22 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
-     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
-     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
+     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
+     * allowed is 1.
      * </p>
      * 
      * @return The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
      *         Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
-     *         </p>
+     *         This property is required when registering a new scalable target.</p>
      *         <p>
-     *         This parameter is required if you are registering a scalable target. For certain resources, the minimum
-     *         value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
-     *         clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     *         For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     *         Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
+     *         minimum value allowed is 1.
      */
 
     public Integer getMinCapacity() {
@@ -2076,22 +2077,23 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
-     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
-     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
+     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
+     * allowed is 1.
      * </p>
      * 
      * @param minCapacity
      *        The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
-     *        </p>
+     *        This property is required when registering a new scalable target.</p>
      *        <p>
-     *        This parameter is required if you are registering a scalable target. For certain resources, the minimum
-     *        value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
-     *        clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
+     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
+     *        minimum value allowed is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2103,10 +2105,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     * </p>
-     * <p>
-     * This parameter is required if you are registering a scalable target.
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
      * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
@@ -2120,10 +2120,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * @param maxCapacity
      *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
      *        Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     *        </p>
-     *        <p>
-     *        This parameter is required if you are registering a scalable target.
-     *        </p>
+     *        This property is required when registering a new scalable target.</p>
      *        <p>
      *        Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
@@ -2140,10 +2137,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     * </p>
-     * <p>
-     * This parameter is required if you are registering a scalable target.
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
      * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
@@ -2156,10 +2151,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
      *         Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     *         </p>
-     *         <p>
-     *         This parameter is required if you are registering a scalable target.
-     *         </p>
+     *         This property is required when registering a new scalable target.</p>
      *         <p>
      *         Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
      *         service has its own default quotas for the maximum capacity of the resource. If you want to specify a
@@ -2176,10 +2168,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
-     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     * </p>
-     * <p>
-     * This parameter is required if you are registering a scalable target.
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand. This property is
+     * required when registering a new scalable target.
      * </p>
      * <p>
      * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
@@ -2193,10 +2183,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * @param maxCapacity
      *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
      *        Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
-     *        </p>
-     *        <p>
-     *        This parameter is required if you are registering a scalable target.
-     *        </p>
+     *        This property is required when registering a new scalable target.</p>
      *        <p>
      *        Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a

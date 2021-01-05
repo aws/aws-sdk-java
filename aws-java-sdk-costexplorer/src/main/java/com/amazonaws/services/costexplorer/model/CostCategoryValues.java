@@ -21,6 +21,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The Cost Categories values used for filtering the costs.
  * </p>
+ * <p>
+ * If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is
+ * applied to all Cost Categories. That is, filtering on resources that are not mapped to any Cost Categories.
+ * </p>
+ * <p>
+ * If <code>Values</code> is provided and <code>Key</code> is not specified, the <code>ABSENT</code>
+ * <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, filtering on resources
+ * without the given Cost Categories key.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryValues" target="_top">AWS API
  *      Documentation</a>
@@ -37,8 +46,8 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> values;
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      */
@@ -142,14 +151,14 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
-     * @return The match options that you can use to filter your results. MatchOptions is only applicable for only
-     *         applicable for actions related to cost category. The default values for <code>MatchOptions</code> is
-     *         <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     * @return The match options that you can use to filter your results. MatchOptions is only applicable for actions
+     *         related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     *         <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
 
@@ -159,15 +168,15 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. MatchOptions is only applicable for only
-     *        applicable for actions related to cost category. The default values for <code>MatchOptions</code> is
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results. MatchOptions is only applicable for actions
+     *        related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     *        <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
 
@@ -182,8 +191,8 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * <p>
@@ -193,9 +202,9 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. MatchOptions is only applicable for only
-     *        applicable for actions related to cost category. The default values for <code>MatchOptions</code> is
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results. MatchOptions is only applicable for actions
+     *        related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     *        <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */
@@ -212,15 +221,15 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. MatchOptions is only applicable for only
-     *        applicable for actions related to cost category. The default values for <code>MatchOptions</code> is
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results. MatchOptions is only applicable for actions
+     *        related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     *        <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */
@@ -232,15 +241,15 @@ public class CostCategoryValues implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The match options that you can use to filter your results. MatchOptions is only applicable for only applicable
-     * for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * The match options that you can use to filter your results. MatchOptions is only applicable for actions related to
+     * cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. MatchOptions is only applicable for only
-     *        applicable for actions related to cost category. The default values for <code>MatchOptions</code> is
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results. MatchOptions is only applicable for actions
+     *        related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     *        <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */

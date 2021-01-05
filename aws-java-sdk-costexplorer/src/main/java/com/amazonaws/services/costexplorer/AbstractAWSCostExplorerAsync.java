@@ -184,6 +184,19 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest request) {
+
+        return getCostCategoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCostCategoriesRequest, GetCostCategoriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest request) {
 
         return getCostForecastAsync(request, null);

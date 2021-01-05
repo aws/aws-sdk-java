@@ -110,6 +110,55 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SpendCoveredBySavingsPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoveragePercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceFamily</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Region</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Service</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     */
+    private SortDefinition sortBy;
 
     /**
      * <p>
@@ -736,6 +785,301 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SpendCoveredBySavingsPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoveragePercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceFamily</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Region</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Service</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SpendCoveredBySavingsPlan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoveragePercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceFamily</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Region</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Service</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public void setSortBy(SortDefinition sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SpendCoveredBySavingsPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoveragePercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceFamily</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Region</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Service</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The following values are supported for <code>Key</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SpendCoveredBySavingsPlan</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OnDemandCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CoveragePercentage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TotalCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstanceFamily</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Region</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Service</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public SortDefinition getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SpendCoveredBySavingsPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OnDemandCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoveragePercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceFamily</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Region</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Service</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SpendCoveredBySavingsPlan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OnDemandCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoveragePercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceFamily</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Region</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Service</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSavingsPlansCoverageRequest withSortBy(SortDefinition sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -760,7 +1104,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy());
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +1149,10 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
         return true;
     }
 
@@ -818,6 +1168,7 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         return hashCode;
     }
 

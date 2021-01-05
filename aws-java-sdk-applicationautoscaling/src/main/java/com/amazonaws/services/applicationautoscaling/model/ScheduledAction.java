@@ -75,12 +75,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      * </p>
      * <p>
-     * For examples of using these expressions, see <a href=
+     * For more information and examples, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
@@ -479,12 +478,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      * </p>
      * <p>
-     * For examples of using these expressions, see <a href=
+     * For more information and examples, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
@@ -516,12 +514,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For more information about cron expressions, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     *        For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     *        separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      *        </p>
      *        <p>
-     *        For examples of using these expressions, see <a href=
+     *        For more information and examples, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      */
@@ -559,12 +556,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      * </p>
      * <p>
-     * For examples of using these expressions, see <a href=
+     * For more information and examples, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
@@ -595,12 +591,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *         </p>
      *         <p>
-     *         For more information about cron expressions, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *         >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     *         For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six
+     *         fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      *         </p>
      *         <p>
-     *         For examples of using these expressions, see <a href=
+     *         For more information and examples, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      *         >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      */
@@ -638,12 +633,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      * </p>
      * <p>
-     * For examples of using these expressions, see <a href=
+     * For more information and examples, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
@@ -675,12 +669,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For more information about cron expressions, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     *        For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
+     *        separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
      *        </p>
      *        <p>
-     *        For examples of using these expressions, see <a href=
+     *        For more information and examples, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
      *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

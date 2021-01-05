@@ -45,6 +45,68 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private String tagKey;
+
+    private Expression filter;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     */
+    private java.util.List<SortDefinition> sortBy;
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     */
+    private Integer maxResults;
     /**
      * <p>
      * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
@@ -192,6 +254,522 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * @param filter
+     */
+
+    public void setFilter(Expression filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * @return
+     */
+
+    public Expression getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * @param filter
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTagsRequest withFilter(Expression filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The key represents cost and usage metrics. The following values are supported:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>BlendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UnblendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AmortizedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetAmortizedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetUnblendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UsageQuantity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NormalizedUsageAmount</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         </p>
+     *         <p>
+     *         When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *         supported.
+     */
+
+    public java.util.List<SortDefinition> getSortBy() {
+        return sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     */
+
+    public void setSortBy(java.util.Collection<SortDefinition> sortBy) {
+        if (sortBy == null) {
+            this.sortBy = null;
+            return;
+        }
+
+        this.sortBy = new java.util.ArrayList<SortDefinition>(sortBy);
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSortBy(java.util.Collection)} or {@link #withSortBy(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTagsRequest withSortBy(SortDefinition... sortBy) {
+        if (this.sortBy == null) {
+            setSortBy(new java.util.ArrayList<SortDefinition>(sortBy.length));
+        }
+        for (SortDefinition ele : sortBy) {
+            this.sortBy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTagsRequest withSortBy(java.util.Collection<SortDefinition> sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * 
+     * @param maxResults
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *        results as the default value for this parameter.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * 
+     * @return This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *         returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *         results as the default value for this parameter.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * 
+     * @param maxResults
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *        results as the default value for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTagsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * <p>
      * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
      * more results than the maximum page size.
@@ -255,6 +833,12 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
             sb.append("TimePeriod: ").append(getTimePeriod()).append(",");
         if (getTagKey() != null)
             sb.append("TagKey: ").append(getTagKey()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextPageToken() != null)
             sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
@@ -283,6 +867,18 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getTagKey() != null && other.getTagKey().equals(this.getTagKey()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
         if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
@@ -298,6 +894,9 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getSearchString() == null) ? 0 : getSearchString().hashCode());
         hashCode = prime * hashCode + ((getTimePeriod() == null) ? 0 : getTimePeriod().hashCode());
         hashCode = prime * hashCode + ((getTagKey() == null) ? 0 : getTagKey().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }

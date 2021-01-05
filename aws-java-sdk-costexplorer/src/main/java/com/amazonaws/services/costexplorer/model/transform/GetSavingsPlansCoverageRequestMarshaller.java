@@ -42,6 +42,8 @@ public class GetSavingsPlansCoverageRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortBy").build();
 
     private static final GetSavingsPlansCoverageRequestMarshaller instance = new GetSavingsPlansCoverageRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class GetSavingsPlansCoverageRequestMarshaller {
             protocolMarshaller.marshall(getSavingsPlansCoverageRequest.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(getSavingsPlansCoverageRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getSavingsPlansCoverageRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansCoverageRequest.getSortBy(), SORTBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

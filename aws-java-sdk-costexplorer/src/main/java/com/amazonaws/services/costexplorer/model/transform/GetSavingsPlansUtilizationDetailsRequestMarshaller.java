@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,10 +32,14 @@ public class GetSavingsPlansUtilizationDetailsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimePeriod").build();
     private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<List> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DataType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortBy").build();
 
     private static final GetSavingsPlansUtilizationDetailsRequestMarshaller instance = new GetSavingsPlansUtilizationDetailsRequestMarshaller();
 
@@ -54,8 +59,10 @@ public class GetSavingsPlansUtilizationDetailsRequestMarshaller {
         try {
             protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getTimePeriod(), TIMEPERIOD_BINDING);
             protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getDataType(), DATATYPE_BINDING);
             protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansUtilizationDetailsRequest.getSortBy(), SORTBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -42,6 +42,13 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.List<ResultByTime> resultsByTime;
+    /**
+     * <p>
+     * The attributes that apply to a specific dimension value. For example, if the value is a linked account, the
+     * attribute is that account name.
+     * </p>
+     */
+    private java.util.List<DimensionValuesWithAttributes> dimensionValueAttributes;
 
     /**
      * <p>
@@ -234,6 +241,84 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The attributes that apply to a specific dimension value. For example, if the value is a linked account, the
+     * attribute is that account name.
+     * </p>
+     * 
+     * @return The attributes that apply to a specific dimension value. For example, if the value is a linked account,
+     *         the attribute is that account name.
+     */
+
+    public java.util.List<DimensionValuesWithAttributes> getDimensionValueAttributes() {
+        return dimensionValueAttributes;
+    }
+
+    /**
+     * <p>
+     * The attributes that apply to a specific dimension value. For example, if the value is a linked account, the
+     * attribute is that account name.
+     * </p>
+     * 
+     * @param dimensionValueAttributes
+     *        The attributes that apply to a specific dimension value. For example, if the value is a linked account,
+     *        the attribute is that account name.
+     */
+
+    public void setDimensionValueAttributes(java.util.Collection<DimensionValuesWithAttributes> dimensionValueAttributes) {
+        if (dimensionValueAttributes == null) {
+            this.dimensionValueAttributes = null;
+            return;
+        }
+
+        this.dimensionValueAttributes = new java.util.ArrayList<DimensionValuesWithAttributes>(dimensionValueAttributes);
+    }
+
+    /**
+     * <p>
+     * The attributes that apply to a specific dimension value. For example, if the value is a linked account, the
+     * attribute is that account name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDimensionValueAttributes(java.util.Collection)} or
+     * {@link #withDimensionValueAttributes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param dimensionValueAttributes
+     *        The attributes that apply to a specific dimension value. For example, if the value is a linked account,
+     *        the attribute is that account name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCostAndUsageResult withDimensionValueAttributes(DimensionValuesWithAttributes... dimensionValueAttributes) {
+        if (this.dimensionValueAttributes == null) {
+            setDimensionValueAttributes(new java.util.ArrayList<DimensionValuesWithAttributes>(dimensionValueAttributes.length));
+        }
+        for (DimensionValuesWithAttributes ele : dimensionValueAttributes) {
+            this.dimensionValueAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attributes that apply to a specific dimension value. For example, if the value is a linked account, the
+     * attribute is that account name.
+     * </p>
+     * 
+     * @param dimensionValueAttributes
+     *        The attributes that apply to a specific dimension value. For example, if the value is a linked account,
+     *        the attribute is that account name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCostAndUsageResult withDimensionValueAttributes(java.util.Collection<DimensionValuesWithAttributes> dimensionValueAttributes) {
+        setDimensionValueAttributes(dimensionValueAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +335,9 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
         if (getGroupDefinitions() != null)
             sb.append("GroupDefinitions: ").append(getGroupDefinitions()).append(",");
         if (getResultsByTime() != null)
-            sb.append("ResultsByTime: ").append(getResultsByTime());
+            sb.append("ResultsByTime: ").append(getResultsByTime()).append(",");
+        if (getDimensionValueAttributes() != null)
+            sb.append("DimensionValueAttributes: ").append(getDimensionValueAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +364,10 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getResultsByTime() != null && other.getResultsByTime().equals(this.getResultsByTime()) == false)
             return false;
+        if (other.getDimensionValueAttributes() == null ^ this.getDimensionValueAttributes() == null)
+            return false;
+        if (other.getDimensionValueAttributes() != null && other.getDimensionValueAttributes().equals(this.getDimensionValueAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -288,6 +379,7 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         hashCode = prime * hashCode + ((getGroupDefinitions() == null) ? 0 : getGroupDefinitions().hashCode());
         hashCode = prime * hashCode + ((getResultsByTime() == null) ? 0 : getResultsByTime().hashCode());
+        hashCode = prime * hashCode + ((getDimensionValueAttributes() == null) ? 0 : getDimensionValueAttributes().hashCode());
         return hashCode;
     }
 
