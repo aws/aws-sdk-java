@@ -44,9 +44,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String launchConfigurationName;
     /**
      * <p>
-     * Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances.
+     * Parameters used to specify the launch template and version to use to launch instances.
      * </p>
      * <p>
      * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
@@ -379,9 +377,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances.
+     * Parameters used to specify the launch template and version to use to launch instances.
      * </p>
      * <p>
      * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
@@ -398,9 +394,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param launchTemplate
-     *        Parameters used to specify the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html"
-     *        >launch template</a> and version to use to launch instances. </p>
+     *        Parameters used to specify the launch template and version to use to launch instances. </p>
      *        <p>
      *        Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
      *        <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
@@ -421,9 +415,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances.
+     * Parameters used to specify the launch template and version to use to launch instances.
      * </p>
      * <p>
      * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
@@ -439,9 +431,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * 
-     * @return Parameters used to specify the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html"
-     *         >launch template</a> and version to use to launch instances. </p>
+     * @return Parameters used to specify the launch template and version to use to launch instances. </p>
      *         <p>
      *         Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
      *         <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
@@ -462,9 +452,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances.
+     * Parameters used to specify the launch template and version to use to launch instances.
      * </p>
      * <p>
      * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
@@ -481,9 +469,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param launchTemplate
-     *        Parameters used to specify the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html"
-     *        >launch template</a> and version to use to launch instances. </p>
+     *        Parameters used to specify the launch template and version to use to launch instances. </p>
      *        <p>
      *        Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
      *        <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or

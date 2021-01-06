@@ -493,6 +493,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
+     * <b>We strongly recommend using a launch template when calling this operation to ensure full functionality for
+     * Amazon EC2 Auto Scaling and Amazon EC2.</b>
+     * </p>
+     * <p>
      * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
      * <p>
@@ -526,6 +530,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
     java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
 
     /**
+     * <p>
+     * <b>We strongly recommend using a launch template when calling this operation to ensure full functionality for
+     * Amazon EC2 Auto Scaling and Amazon EC2.</b>
+     * </p>
      * <p>
      * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
@@ -3157,6 +3165,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
+     * <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure full functionality for
+     * Amazon EC2 Auto Scaling and Amazon EC2.</b>
+     * </p>
+     * <p>
      * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
@@ -3215,6 +3227,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
     java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);
 
     /**
+     * <p>
+     * <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure full functionality for
+     * Amazon EC2 Auto Scaling and Amazon EC2.</b>
+     * </p>
      * <p>
      * Updates the configuration for the specified Auto Scaling group.
      * </p>

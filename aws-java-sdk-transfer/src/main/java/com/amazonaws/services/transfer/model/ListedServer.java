@@ -34,6 +34,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+
+    private String domain;
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
@@ -119,6 +121,46 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     public ListedServer withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @see Domain
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * @return
+     * @see Domain
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public ListedServer withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public ListedServer withDomain(Domain domain) {
+        this.domain = domain.toString();
         return this;
     }
 
@@ -515,6 +557,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType()).append(",");
         if (getEndpointType() != null)
@@ -544,6 +588,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getIdentityProviderType() == null ^ this.getIdentityProviderType() == null)
             return false;
@@ -578,6 +626,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());

@@ -1,3 +1,16 @@
+# __1.11.933__ __2021-01-06__
+## __AWS Auto Scaling Plans__
+  - ### Features
+    - Documentation updates for AWS Auto Scaling
+
+## __AWS Transfer Family__
+  - ### Features
+    - This release adds support for Amazon EFS, so customers can transfer files over SFTP, FTPS and FTP in and out of Amazon S3 as well as Amazon EFS.
+
+## __Auto Scaling__
+  - ### Features
+    - This update increases the number of instance types that can be added to the overrides within an mixed instances group configuration.
+
 # __1.11.932__ __2021-01-05__
 ## __AWS Cost Explorer Service__
   - ### Features

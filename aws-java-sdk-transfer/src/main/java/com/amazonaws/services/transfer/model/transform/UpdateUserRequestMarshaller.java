@@ -36,6 +36,8 @@ public class UpdateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryMappings").build();
     private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policy").build();
+    private static final MarshallingInfo<StructuredPojo> POSIXPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PosixProfile").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class UpdateUserRequestMarshaller {
             protocolMarshaller.marshall(updateUserRequest.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getHomeDirectoryMappings(), HOMEDIRECTORYMAPPINGS_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getPolicy(), POLICY_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getPosixProfile(), POSIXPROFILE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getUserName(), USERNAME_BINDING);

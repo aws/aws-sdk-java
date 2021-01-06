@@ -52,7 +52,16 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The lifecycle state for the instance.
+     * The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about
+     * lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
+     * <code>EnteringStandby</code> | <code>Standby</code>
      * </p>
      */
     private String lifecycleState;
@@ -255,11 +264,28 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance.
+     * The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about
+     * lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
+     * <code>EnteringStandby</code> | <code>Standby</code>
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance.
+     *        The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information
+     *        about lifecycle states, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     *        lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+     *        <p>
+     *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
+     *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -268,10 +294,27 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance.
+     * The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about
+     * lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
+     * <code>EnteringStandby</code> | <code>Standby</code>
      * </p>
      * 
-     * @return The lifecycle state for the instance.
+     * @return The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information
+     *         about lifecycle states, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     *         lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+     *         <p>
+     *         Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *         <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
+     *         <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     *         <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
      */
 
     public String getLifecycleState() {
@@ -280,11 +323,28 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance.
+     * The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about
+     * lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
+     * <code>EnteringStandby</code> | <code>Standby</code>
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance.
+     *        The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information
+     *        about lifecycle states, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     *        lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+     *        <p>
+     *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
+     *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

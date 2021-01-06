@@ -29,6 +29,8 @@ public class ListedServerMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Domain").build();
     private static final MarshallingInfo<String> IDENTITYPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderType").build();
     private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class ListedServerMarshaller {
 
         try {
             protocolMarshaller.marshall(listedServer.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(listedServer.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(listedServer.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(listedServer.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(listedServer.getLoggingRole(), LOGGINGROLE_BINDING);

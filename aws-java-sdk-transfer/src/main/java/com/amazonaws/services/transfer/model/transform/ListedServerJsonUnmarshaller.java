@@ -52,6 +52,10 @@ public class ListedServerJsonUnmarshaller implements Unmarshaller<ListedServer, 
                     context.nextToken();
                     listedServer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Domain", targetDepth)) {
+                    context.nextToken();
+                    listedServer.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IdentityProviderType", targetDepth)) {
                     context.nextToken();
                     listedServer.setIdentityProviderType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -33,7 +33,8 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String scalingPlanName;
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     * multiple scaling plan versions.
      * </p>
      */
     private Long scalingPlanVersion;
@@ -41,11 +42,21 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      */
     private ApplicationSource applicationSource;
     /**
      * <p>
      * The scaling instructions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * </p>
      */
     private java.util.List<ScalingInstruction> scalingInstructions;
@@ -92,11 +103,13 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     * multiple scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     *        multiple scaling plan versions.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -105,10 +118,12 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     * multiple scaling plan versions.
      * </p>
      * 
-     * @return The version number of the scaling plan.
+     * @return The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot
+     *         have multiple scaling plan versions.
      */
 
     public Long getScalingPlanVersion() {
@@ -117,11 +132,13 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     * multiple scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have
+     *        multiple scaling plan versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,9 +151,18 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param applicationSource
-     *        A CloudFormation stack or set of tags.
+     *        A CloudFormation stack or set of tags.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *        >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -147,8 +173,17 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
-     * @return A CloudFormation stack or set of tags.
+     * @return A CloudFormation stack or set of tags.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *         >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -159,9 +194,18 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param applicationSource
-     *        A CloudFormation stack or set of tags.
+     *        A CloudFormation stack or set of tags.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *        >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,8 +218,17 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
-     * @return The scaling instructions.
+     * @return The scaling instructions.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *         >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public java.util.List<ScalingInstruction> getScalingInstructions() {
@@ -186,9 +239,18 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public void setScalingInstructions(java.util.Collection<ScalingInstruction> scalingInstructions) {
@@ -205,13 +267,22 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * The scaling instructions.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingInstructions(java.util.Collection)} or {@link #withScalingInstructions(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,9 +300,18 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

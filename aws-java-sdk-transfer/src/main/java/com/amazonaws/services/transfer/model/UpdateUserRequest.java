@@ -96,6 +96,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      */
     private String policy;
+
+    private PosixProfile posixProfile;
     /**
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
@@ -663,6 +665,32 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param posixProfile
+     */
+
+    public void setPosixProfile(PosixProfile posixProfile) {
+        this.posixProfile = posixProfile;
+    }
+
+    /**
+     * @return
+     */
+
+    public PosixProfile getPosixProfile() {
+        return this.posixProfile;
+    }
+
+    /**
+     * @param posixProfile
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withPosixProfile(PosixProfile posixProfile) {
+        setPosixProfile(posixProfile);
+        return this;
+    }
+
+    /**
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
@@ -838,6 +866,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("HomeDirectoryMappings: ").append(getHomeDirectoryMappings()).append(",");
         if (getPolicy() != null)
             sb.append("Policy: ").append(getPolicy()).append(",");
+        if (getPosixProfile() != null)
+            sb.append("PosixProfile: ").append(getPosixProfile()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getServerId() != null)
@@ -874,6 +904,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
+        if (other.getPosixProfile() == null ^ this.getPosixProfile() == null)
+            return false;
+        if (other.getPosixProfile() != null && other.getPosixProfile().equals(this.getPosixProfile()) == false)
+            return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
@@ -898,6 +932,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getHomeDirectoryType() == null) ? 0 : getHomeDirectoryType().hashCode());
         hashCode = prime * hashCode + ((getHomeDirectoryMappings() == null) ? 0 : getHomeDirectoryMappings().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getPosixProfile() == null) ? 0 : getPosixProfile().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());

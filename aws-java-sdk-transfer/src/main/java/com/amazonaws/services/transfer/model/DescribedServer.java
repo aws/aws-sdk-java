@@ -41,6 +41,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String certificate;
+
+    private String domain;
     /**
      * <p>
      * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
@@ -230,6 +232,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     public DescribedServer withCertificate(String certificate) {
         setCertificate(certificate);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @see Domain
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * @return
+     * @see Domain
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public DescribedServer withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public DescribedServer withDomain(Domain domain) {
+        this.domain = domain.toString();
         return this;
     }
 
@@ -1159,6 +1201,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getEndpointDetails() != null)
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
@@ -1204,6 +1248,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
             return false;
@@ -1263,6 +1311,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostKeyFingerprint() == null) ? 0 : getHostKeyFingerprint().hashCode());

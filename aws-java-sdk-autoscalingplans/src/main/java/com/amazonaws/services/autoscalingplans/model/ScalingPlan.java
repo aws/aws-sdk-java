@@ -42,7 +42,7 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     private Long scalingPlanVersion;
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      */
     private ApplicationSource applicationSource;
@@ -202,11 +202,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The application source.
+     *        A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -215,10 +215,10 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
-     * @return The application source.
+     * @return A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -227,11 +227,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The application source.
+     *        A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

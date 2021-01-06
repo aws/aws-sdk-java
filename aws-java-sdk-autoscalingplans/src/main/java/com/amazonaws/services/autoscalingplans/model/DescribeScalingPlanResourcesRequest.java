@@ -33,7 +33,7 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     private String scalingPlanName;
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      */
     private Long scalingPlanVersion;
@@ -92,11 +92,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -105,10 +105,10 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
-     * @return The version number of the scaling plan.
+     * @return The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public Long getScalingPlanVersion() {
@@ -117,11 +117,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

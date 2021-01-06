@@ -740,7 +740,7 @@ public class DynamoDBMapperConfig {
 
     /**
      * {@link DynamoDBMapper#batchLoad(Iterable, DynamoDBMapperConfig)} breaks the requested items in batches of maximum size 100.
-     * When calling the Dyanmo Db client, there is a chance that due to throttling, some unprocessed keys will be returned.
+     * When calling the Dynamo Db client, there is a chance that due to throttling, some unprocessed keys will be returned.
      * This interfaces controls whether we need to retry these unprocessed keys and it also controls the strategy as to how retries should be handled
      */
     public interface BatchLoadRetryStrategy {

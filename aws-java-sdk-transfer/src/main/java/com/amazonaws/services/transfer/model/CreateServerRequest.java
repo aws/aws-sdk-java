@@ -83,6 +83,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      */
     private String certificate;
+
+    private String domain;
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
@@ -551,6 +553,46 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateServerRequest withCertificate(String certificate) {
         setCertificate(certificate);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @see Domain
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * @return
+     * @see Domain
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public CreateServerRequest withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * @param domain
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public CreateServerRequest withDomain(Domain domain) {
+        this.domain = domain.toString();
         return this;
     }
 
@@ -1620,6 +1662,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getEndpointDetails() != null)
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
@@ -1655,6 +1699,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
             return false;
@@ -1701,6 +1749,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostKey() == null) ? 0 : getHostKey().hashCode());

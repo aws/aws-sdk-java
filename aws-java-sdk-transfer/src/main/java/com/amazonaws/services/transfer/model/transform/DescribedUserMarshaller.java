@@ -38,6 +38,8 @@ public class DescribedUserMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryType").build();
     private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policy").build();
+    private static final MarshallingInfo<StructuredPojo> POSIXPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PosixProfile").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<List> SSHPUBLICKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class DescribedUserMarshaller {
             protocolMarshaller.marshall(describedUser.getHomeDirectoryMappings(), HOMEDIRECTORYMAPPINGS_BINDING);
             protocolMarshaller.marshall(describedUser.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
             protocolMarshaller.marshall(describedUser.getPolicy(), POLICY_BINDING);
+            protocolMarshaller.marshall(describedUser.getPosixProfile(), POSIXPROFILE_BINDING);
             protocolMarshaller.marshall(describedUser.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(describedUser.getSshPublicKeys(), SSHPUBLICKEYS_BINDING);
             protocolMarshaller.marshall(describedUser.getTags(), TAGS_BINDING);

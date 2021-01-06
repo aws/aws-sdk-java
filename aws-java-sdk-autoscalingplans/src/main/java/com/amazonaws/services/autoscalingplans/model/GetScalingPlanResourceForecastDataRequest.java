@@ -33,63 +33,27 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
     private String scalingPlanName;
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      */
     private Long scalingPlanVersion;
     /**
      * <p>
-     * The namespace of the AWS service.
+     * The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * </p>
      */
     private String serviceNamespace;
     /**
      * <p>
-     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of
+     * a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
-     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
-     * name. Example: <code>service/default/sample-webapp</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
-     * <code>table/my-table</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
-     * Example: <code>cluster:my-db-cluster</code>.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String resourceId;
     /**
      * <p>
-     * The scalable dimension for the resource.
+     * The scalable dimension for the resource. The only valid value is
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * </p>
      */
     private String scalableDimension;
@@ -184,11 +148,11 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -197,10 +161,10 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
-     * @return The version number of the scaling plan.
+     * @return The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public Long getScalingPlanVersion() {
@@ -209,11 +173,11 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +188,11 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The namespace of the AWS service.
+     * The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service.
+     *        The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * @see ServiceNamespace
      */
 
@@ -238,10 +202,10 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The namespace of the AWS service.
+     * The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * </p>
      * 
-     * @return The namespace of the AWS service.
+     * @return The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * @see ServiceNamespace
      */
 
@@ -251,11 +215,11 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The namespace of the AWS service.
+     * The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service.
+     *        The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -267,11 +231,11 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The namespace of the AWS service.
+     * The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service.
+     *        The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -283,86 +247,14 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of
+     * a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
-     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
-     * name. Example: <code>service/default/sample-webapp</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
-     * <code>table/my-table</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
-     * Example: <code>cluster:my-db-cluster</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource. This string consists of the resource type and unique identifier. </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
-     *        name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
-     *        service name. Example: <code>service/default/sample-webapp</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
-     *        Example: <code>table/my-table</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
-     *        name. Example: <code>cluster:my-db-cluster</code>.
-     *        </p>
-     *        </li>
+     *        The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the
+     *        name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+     *        <code>autoScalingGroup/my-asg</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -371,86 +263,13 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of
+     * a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
-     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
-     * name. Example: <code>service/default/sample-webapp</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
-     * <code>table/my-table</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
-     * Example: <code>cluster:my-db-cluster</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The ID of the resource. This string consists of the resource type and unique identifier. </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
-     *         name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
-     *         service name. Example: <code>service/default/sample-webapp</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
-     *         the Spot Fleet request ID. Example:
-     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
-     *         Example: <code>table/my-table</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
-     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
-     *         name. Example: <code>cluster:my-db-cluster</code>.
-     *         </p>
-     *         </li>
+     * @return The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the
+     *         name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+     *         <code>autoScalingGroup/my-asg</code>.
      */
 
     public String getResourceId() {
@@ -459,86 +278,14 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of
+     * a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
-     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
-     * name. Example: <code>service/default/sample-webapp</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
-     * <code>table/my-table</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
-     * Example: <code>cluster:my-db-cluster</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource. This string consists of the resource type and unique identifier. </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
-     *        name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
-     *        service name. Example: <code>service/default/sample-webapp</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
-     *        Example: <code>table/my-table</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
-     *        name. Example: <code>cluster:my-db-cluster</code>.
-     *        </p>
-     *        </li>
+     *        The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the
+     *        name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+     *        <code>autoScalingGroup/my-asg</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,11 +296,13 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The scalable dimension for the resource.
+     * The scalable dimension for the resource. The only valid value is
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension for the resource.
+     *        The scalable dimension for the resource. The only valid value is
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * @see ScalableDimension
      */
 
@@ -563,10 +312,12 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The scalable dimension for the resource.
+     * The scalable dimension for the resource. The only valid value is
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * </p>
      * 
-     * @return The scalable dimension for the resource.
+     * @return The scalable dimension for the resource. The only valid value is
+     *         <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * @see ScalableDimension
      */
 
@@ -576,11 +327,13 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The scalable dimension for the resource.
+     * The scalable dimension for the resource. The only valid value is
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension for the resource.
+     *        The scalable dimension for the resource. The only valid value is
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -592,11 +345,13 @@ public class GetScalingPlanResourceForecastDataRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The scalable dimension for the resource.
+     * The scalable dimension for the resource. The only valid value is
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension for the resource.
+     *        The scalable dimension for the resource. The only valid value is
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */

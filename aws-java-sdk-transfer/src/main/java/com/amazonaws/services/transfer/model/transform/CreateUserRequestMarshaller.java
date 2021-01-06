@@ -36,6 +36,8 @@ public class CreateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryMappings").build();
     private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policy").build();
+    private static final MarshallingInfo<StructuredPojo> POSIXPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PosixProfile").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -67,6 +69,7 @@ public class CreateUserRequestMarshaller {
             protocolMarshaller.marshall(createUserRequest.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
             protocolMarshaller.marshall(createUserRequest.getHomeDirectoryMappings(), HOMEDIRECTORYMAPPINGS_BINDING);
             protocolMarshaller.marshall(createUserRequest.getPolicy(), POLICY_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getPosixProfile(), POSIXPROFILE_BINDING);
             protocolMarshaller.marshall(createUserRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createUserRequest.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(createUserRequest.getSshPublicKeyBody(), SSHPUBLICKEYBODY_BINDING);

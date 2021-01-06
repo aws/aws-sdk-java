@@ -90,9 +90,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroups;
     /**
      * <p>
-     * The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     * The user data to make available to the launched EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
-     * data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+     * user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.
      * </p>
      */
     private String userData;
@@ -103,7 +106,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String instanceType;
@@ -686,15 +689,22 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     * The user data to make available to the launched EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
-     * data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+     * user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     *        The user data to make available to the launched EC2 instances. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
-     *        and user data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        and user data</a> (Linux) and <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you,
+     *        and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
+     *        limited to 16 KB.
      */
 
     public void setUserData(String userData) {
@@ -703,14 +713,21 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     * The user data to make available to the launched EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
-     * data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+     * user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.
      * </p>
      * 
-     * @return The Base64-encoded user data to make available to the launched EC2 instances. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     *         metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return The user data to make available to the launched EC2 instances. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *         and user data</a> (Linux) and <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     *         metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed
+     *         for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User
+     *         data is limited to 16 KB.
      */
 
     public String getUserData() {
@@ -719,15 +736,22 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     * The user data to make available to the launched EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
-     * data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+     * user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the launched EC2 instances. For more information, see <a
+     *        The user data to make available to the launched EC2 instances. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
-     *        and user data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        and user data</a> (Linux) and <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you,
+     *        and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
+     *        limited to 16 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -743,7 +767,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param instanceType
@@ -751,7 +775,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -765,14 +789,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The instance type for the instances.</p>
      *         <p>
      *         For information about available instance types, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *         >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     *         >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getInstanceType() {
@@ -786,7 +810,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param instanceType
@@ -794,7 +818,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
+     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

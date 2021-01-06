@@ -23,8 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the
- * <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are
- * calculations used to aggregate data over specified time periods.
+ * <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data.
  * </p>
  * <p>
  * When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for
@@ -36,9 +35,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * average request count processed by each instance of the group.
  * </p>
  * <p>
+ * If you publish your own metrics, you can aggregate the data points at a given interval and then publish the
+ * aggregated data points to CloudWatch. Before AWS Auto Scaling generates the forecast, it sums up all the metric data
+ * points that occurred within each hour to match the granularity period that is used in the forecast (60 minutes).
+ * </p>
+ * <p>
  * For information about terminology, available metrics, or how to publish new metrics, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
  * Concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
+ * </p>
+ * <p>
+ * After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified
+ * metric. For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View
+ * Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedLoadMetricSpecification"
@@ -71,7 +81,7 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
     private java.util.List<MetricDimension> dimensions;
     /**
      * <p>
-     * The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * The statistic of the metric. The only valid value is <code>Sum</code>.
      * </p>
      */
     private String statistic;
@@ -262,11 +272,11 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * The statistic of the metric. The only valid value is <code>Sum</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     *        The statistic of the metric. The only valid value is <code>Sum</code>.
      * @see MetricStatistic
      */
 
@@ -276,10 +286,10 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * The statistic of the metric. The only valid value is <code>Sum</code>.
      * </p>
      * 
-     * @return The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * @return The statistic of the metric. The only valid value is <code>Sum</code>.
      * @see MetricStatistic
      */
 
@@ -289,11 +299,11 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * The statistic of the metric. The only valid value is <code>Sum</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     *        The statistic of the metric. The only valid value is <code>Sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -305,11 +315,11 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     * The statistic of the metric. The only valid value is <code>Sum</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+     *        The statistic of the metric. The only valid value is <code>Sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */

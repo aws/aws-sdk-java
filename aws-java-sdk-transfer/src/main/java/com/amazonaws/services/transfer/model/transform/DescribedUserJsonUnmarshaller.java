@@ -70,6 +70,10 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                     context.nextToken();
                     describedUser.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PosixProfile", targetDepth)) {
+                    context.nextToken();
+                    describedUser.setPosixProfile(PosixProfileJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
                     describedUser.setRole(context.getUnmarshaller(String.class).unmarshall(context));

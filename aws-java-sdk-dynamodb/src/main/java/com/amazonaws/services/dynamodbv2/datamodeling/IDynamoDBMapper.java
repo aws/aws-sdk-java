@@ -721,7 +721,7 @@ public interface IDynamoDBMapper {
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param queryExpression
-     *            The parameters for running the scan.
+     *            The parameters for running the query.
      * @param config
      *            The mapper configuration to use for the query, which overrides the default
      *            provided at object construction.

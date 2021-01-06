@@ -54,9 +54,6 @@ public class InstanceMetadataOptions implements Serializable, Cloneable {
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Possible values: Integers from 1 to 64
-     * </p>
      */
     private Integer httpPutResponseHopLimit;
     /**
@@ -231,18 +228,12 @@ public class InstanceMetadataOptions implements Serializable, Cloneable {
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Possible values: Integers from 1 to 64
-     * </p>
      * 
      * @param httpPutResponseHopLimit
      *        The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further
      *        instance metadata requests can travel.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Possible values: Integers from 1 to 64
      */
 
     public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
@@ -257,17 +248,11 @@ public class InstanceMetadataOptions implements Serializable, Cloneable {
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Possible values: Integers from 1 to 64
-     * </p>
      * 
      * @return The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the
      *         further instance metadata requests can travel.</p>
      *         <p>
      *         Default: 1
-     *         </p>
-     *         <p>
-     *         Possible values: Integers from 1 to 64
      */
 
     public Integer getHttpPutResponseHopLimit() {
@@ -282,18 +267,12 @@ public class InstanceMetadataOptions implements Serializable, Cloneable {
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Possible values: Integers from 1 to 64
-     * </p>
      * 
      * @param httpPutResponseHopLimit
      *        The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further
      *        instance metadata requests can travel.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Possible values: Integers from 1 to 64
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

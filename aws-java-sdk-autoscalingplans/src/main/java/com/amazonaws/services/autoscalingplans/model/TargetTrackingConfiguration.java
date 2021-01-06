@@ -43,8 +43,8 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
     private CustomizedScalingMetricSpecification customizedScalingMetricSpecification;
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      * </p>
      */
     private Double targetValue;
@@ -62,25 +62,27 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
     private Boolean disableScaleIn;
     /**
      * <p>
-     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not
+     * used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
-     * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
-     * continuously (but not excessively) scale out.
+     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
+     * After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the
+     * cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is
+     * triggered or the cooldown period ends.
      * </p>
      */
     private Integer scaleOutCooldown;
     /**
      * <p>
-     * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * This property is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
-     * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
+     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
+     * another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the
+     * target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      * </p>
      */
     private Integer scaleInCooldown;
@@ -174,13 +176,13 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      */
 
     public void setTargetValue(Double targetValue) {
@@ -189,12 +191,12 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      * </p>
      * 
-     * @return The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *         (Base 2).
+     * @return The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *         values that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      */
 
     public Double getTargetValue() {
@@ -203,13 +205,13 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,22 +318,24 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not
+     * used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
-     * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
-     * continuously (but not excessively) scale out.
+     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
+     * After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the
+     * cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is
+     * triggered or the cooldown period ends.
      * </p>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
-     *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is
+     *        not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
-     *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
-     *        intention is to continuously (but not excessively) scale out.
+     *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
+     *        out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
+     *        calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a
+     *        larger scale out is triggered or the cooldown period ends.
      */
 
     public void setScaleOutCooldown(Integer scaleOutCooldown) {
@@ -340,21 +344,23 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not
+     * used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
-     * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
-     * continuously (but not excessively) scale out.
+     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
+     * After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the
+     * cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is
+     * triggered or the cooldown period ends.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scale-out activity completes before another scale-out activity
-     *         can start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property
+     *         is not used if the scalable resource is an Auto Scaling group.</p>
      *         <p>
-     *         While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
-     *         that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
-     *         intention is to continuously (but not excessively) scale out.
+     *         With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
+     *         out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
+     *         calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a
+     *         larger scale out is triggered or the cooldown period ends.
      */
 
     public Integer getScaleOutCooldown() {
@@ -363,22 +369,24 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not
+     * used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
-     * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
-     * continuously (but not excessively) scale out.
+     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
+     * After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the
+     * cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is
+     * triggered or the cooldown period ends.
      * </p>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
-     *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is
+     *        not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
-     *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
-     *        intention is to continuously (but not excessively) scale out.
+     *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
+     *        out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
+     *        calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a
+     *        larger scale out is triggered or the cooldown period ends.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,23 +397,24 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * This property is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
-     * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
+     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
+     * another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the
+     * target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      * </p>
      * 
      * @param scaleInCooldown
-     *        The amount of time, in seconds, after a scale in activity completes before another scale in activity can
-     *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
+     *        start. This property is not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
-     *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *        a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
-     *        target immediately.
+     *        With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     *        application’s availability, so scale-in activities are blocked until the cooldown period has expired.
+     *        However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling
+     *        scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      */
 
     public void setScaleInCooldown(Integer scaleInCooldown) {
@@ -414,22 +423,23 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * This property is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
-     * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
+     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
+     * another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the
+     * target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scale in activity completes before another scale in activity can
-     *         start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     * @return The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
+     *         start. This property is not used if the scalable resource is an Auto Scaling group.</p>
      *         <p>
-     *         The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
-     *         to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *         a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
-     *         target immediately.
+     *         With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     *         application’s availability, so scale-in activities are blocked until the cooldown period has expired.
+     *         However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling
+     *         scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      */
 
     public Integer getScaleInCooldown() {
@@ -438,23 +448,24 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
-     * This value is not used if the scalable resource is an Auto Scaling group.
+     * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * This property is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
-     * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
+     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
+     * another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the
+     * target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      * </p>
      * 
      * @param scaleInCooldown
-     *        The amount of time, in seconds, after a scale in activity completes before another scale in activity can
-     *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+     *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
+     *        start. This property is not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
-     *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *        a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
-     *        target immediately.
+     *        With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
+     *        application’s availability, so scale-in activities are blocked until the cooldown period has expired.
+     *        However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling
+     *        scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

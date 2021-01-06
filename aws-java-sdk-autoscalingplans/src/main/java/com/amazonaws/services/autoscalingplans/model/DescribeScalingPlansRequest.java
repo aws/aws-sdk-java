@@ -34,9 +34,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> scalingPlanNames;
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      */
     private Long scalingPlanVersion;
     /**
@@ -139,13 +143,19 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *        scaling plan name.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *        <p>
+     *        If you specify a scaling plan version, you must also specify a scaling plan name.
+     *        </p>
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -154,12 +164,18 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
-     * @return The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *         scaling plan name.
+     * @return The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *         <p>
+     *         If you specify a scaling plan version, you must also specify a scaling plan name.
+     *         </p>
      */
 
     public Long getScalingPlanVersion() {
@@ -168,13 +184,19 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *        scaling plan name.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *        <p>
+     *        If you specify a scaling plan version, you must also specify a scaling plan name.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
