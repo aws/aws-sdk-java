@@ -64,6 +64,10 @@ public class PipelineExecutionJsonUnmarshaller implements Unmarshaller<PipelineE
                     context.nextToken();
                     pipelineExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusSummary", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setStatusSummary(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("artifactRevisions", targetDepth)) {
                     context.nextToken();
                     pipelineExecution.setArtifactRevisions(new ListUnmarshaller<ArtifactRevision>(ArtifactRevisionJsonUnmarshaller.getInstance())

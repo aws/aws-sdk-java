@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StageExecutionStatus {
 
+    Cancelled("Cancelled"),
     InProgress("InProgress"),
     Failed("Failed"),
     Stopped("Stopped"),

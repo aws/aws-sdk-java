@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see the
  * relevant specification. For detailed information about SD and HD in AVC-I, see
- * https://ieeexplore.ieee.org/document/7290936.
+ * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+ * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvcIntraSettings" target="_top">AWS API
  *      Documentation</a>
@@ -31,9 +32,14 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
      * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved
-     * image quality.
+     * image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      */
     private String avcIntraClass;
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class
+     * to a different value, this object isn't allowed.
+     */
+    private AvcIntraUhdSettings avcIntraUhdSettings;
     /**
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
@@ -81,6 +87,18 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String interlaceMode;
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    private String scanTypeConversionMode;
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
      * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
@@ -99,12 +117,12 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
      * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved
-     * image quality.
+     * image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * 
      * @param avcIntraClass
      *        Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit
      *        rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and
-     *        improved image quality.
+     *        improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * @see AvcIntraClass
      */
 
@@ -115,11 +133,11 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
      * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved
-     * image quality.
+     * image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * 
      * @return Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit
      *         rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and
-     *         improved image quality.
+     *         improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * @see AvcIntraClass
      */
 
@@ -130,12 +148,12 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
      * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved
-     * image quality.
+     * image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * 
      * @param avcIntraClass
      *        Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit
      *        rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and
-     *        improved image quality.
+     *        improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvcIntraClass
      */
@@ -148,18 +166,58 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
      * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved
-     * image quality.
+     * image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * 
      * @param avcIntraClass
      *        Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit
      *        rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and
-     *        improved image quality.
+     *        improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvcIntraClass
      */
 
     public AvcIntraSettings withAvcIntraClass(AvcIntraClass avcIntraClass) {
         this.avcIntraClass = avcIntraClass.toString();
+        return this;
+    }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class
+     * to a different value, this object isn't allowed.
+     * 
+     * @param avcIntraUhdSettings
+     *        Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra
+     *        class to a different value, this object isn't allowed.
+     */
+
+    public void setAvcIntraUhdSettings(AvcIntraUhdSettings avcIntraUhdSettings) {
+        this.avcIntraUhdSettings = avcIntraUhdSettings;
+    }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class
+     * to a different value, this object isn't allowed.
+     * 
+     * @return Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set
+     *         AVC-Intra class to a different value, this object isn't allowed.
+     */
+
+    public AvcIntraUhdSettings getAvcIntraUhdSettings() {
+        return this.avcIntraUhdSettings;
+    }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class
+     * to a different value, this object isn't allowed.
+     * 
+     * @param avcIntraUhdSettings
+     *        Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra
+     *        class to a different value, this object isn't allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvcIntraSettings withAvcIntraUhdSettings(AvcIntraUhdSettings avcIntraUhdSettings) {
+        setAvcIntraUhdSettings(avcIntraUhdSettings);
         return this;
     }
 
@@ -599,6 +657,125 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @see AvcIntraScanTypeConversionMode
+     */
+
+    public void setScanTypeConversionMode(String scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @return Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *         this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *         output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *         output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *         basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *         When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *         for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *         To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *         use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to
+     *         a value other than Progressive (PROGRESSIVE).
+     * @see AvcIntraScanTypeConversionMode
+     */
+
+    public String getScanTypeConversionMode() {
+        return this.scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AvcIntraScanTypeConversionMode
+     */
+
+    public AvcIntraSettings withScanTypeConversionMode(String scanTypeConversionMode) {
+        setScanTypeConversionMode(scanTypeConversionMode);
+        return this;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AvcIntraScanTypeConversionMode
+     */
+
+    public AvcIntraSettings withScanTypeConversionMode(AvcIntraScanTypeConversionMode scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode.toString();
+        return this;
+    }
+
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
      * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
@@ -774,6 +951,8 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getAvcIntraClass() != null)
             sb.append("AvcIntraClass: ").append(getAvcIntraClass()).append(",");
+        if (getAvcIntraUhdSettings() != null)
+            sb.append("AvcIntraUhdSettings: ").append(getAvcIntraUhdSettings()).append(",");
         if (getFramerateControl() != null)
             sb.append("FramerateControl: ").append(getFramerateControl()).append(",");
         if (getFramerateConversionAlgorithm() != null)
@@ -784,6 +963,8 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("FramerateNumerator: ").append(getFramerateNumerator()).append(",");
         if (getInterlaceMode() != null)
             sb.append("InterlaceMode: ").append(getInterlaceMode()).append(",");
+        if (getScanTypeConversionMode() != null)
+            sb.append("ScanTypeConversionMode: ").append(getScanTypeConversionMode()).append(",");
         if (getSlowPal() != null)
             sb.append("SlowPal: ").append(getSlowPal()).append(",");
         if (getTelecine() != null)
@@ -806,6 +987,10 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAvcIntraClass() != null && other.getAvcIntraClass().equals(this.getAvcIntraClass()) == false)
             return false;
+        if (other.getAvcIntraUhdSettings() == null ^ this.getAvcIntraUhdSettings() == null)
+            return false;
+        if (other.getAvcIntraUhdSettings() != null && other.getAvcIntraUhdSettings().equals(this.getAvcIntraUhdSettings()) == false)
+            return false;
         if (other.getFramerateControl() == null ^ this.getFramerateControl() == null)
             return false;
         if (other.getFramerateControl() != null && other.getFramerateControl().equals(this.getFramerateControl()) == false)
@@ -826,6 +1011,10 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getInterlaceMode() != null && other.getInterlaceMode().equals(this.getInterlaceMode()) == false)
             return false;
+        if (other.getScanTypeConversionMode() == null ^ this.getScanTypeConversionMode() == null)
+            return false;
+        if (other.getScanTypeConversionMode() != null && other.getScanTypeConversionMode().equals(this.getScanTypeConversionMode()) == false)
+            return false;
         if (other.getSlowPal() == null ^ this.getSlowPal() == null)
             return false;
         if (other.getSlowPal() != null && other.getSlowPal().equals(this.getSlowPal()) == false)
@@ -843,11 +1032,13 @@ public class AvcIntraSettings implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvcIntraClass() == null) ? 0 : getAvcIntraClass().hashCode());
+        hashCode = prime * hashCode + ((getAvcIntraUhdSettings() == null) ? 0 : getAvcIntraUhdSettings().hashCode());
         hashCode = prime * hashCode + ((getFramerateControl() == null) ? 0 : getFramerateControl().hashCode());
         hashCode = prime * hashCode + ((getFramerateConversionAlgorithm() == null) ? 0 : getFramerateConversionAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getFramerateDenominator() == null) ? 0 : getFramerateDenominator().hashCode());
         hashCode = prime * hashCode + ((getFramerateNumerator() == null) ? 0 : getFramerateNumerator().hashCode());
         hashCode = prime * hashCode + ((getInterlaceMode() == null) ? 0 : getInterlaceMode().hashCode());
+        hashCode = prime * hashCode + ((getScanTypeConversionMode() == null) ? 0 : getScanTypeConversionMode().hashCode());
         hashCode = prime * hashCode + ((getSlowPal() == null) ? 0 : getSlowPal().hashCode());
         hashCode = prime * hashCode + ((getTelecine() == null) ? 0 : getTelecine().hashCode());
         return hashCode;

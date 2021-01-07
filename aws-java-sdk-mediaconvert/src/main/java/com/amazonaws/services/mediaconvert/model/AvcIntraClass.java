@@ -17,14 +17,15 @@ import javax.annotation.Generated;
 /**
  * Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate
  * depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image
- * quality.
+ * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AvcIntraClass {
 
     CLASS_50("CLASS_50"),
     CLASS_100("CLASS_100"),
-    CLASS_200("CLASS_200");
+    CLASS_200("CLASS_200"),
+    CLASS_4K_2K("CLASS_4K_2K");
 
     private String value;
 

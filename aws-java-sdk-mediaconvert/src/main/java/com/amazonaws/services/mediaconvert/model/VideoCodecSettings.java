@@ -36,7 +36,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     /**
      * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
      * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     private AvcIntraSettings avcIntraSettings;
     /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
@@ -95,12 +96,14 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     /**
      * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
      * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
      * @param avcIntraSettings
      *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
      *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *        https://ieeexplore.ieee.org/document/7290936.
+     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     *        https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
 
     public void setAvcIntraSettings(AvcIntraSettings avcIntraSettings) {
@@ -110,11 +113,13 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     /**
      * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
      * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
      * @return Required when you set your output video codec to AVC-Intra. For more information about the AVC-I
      *         settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *         https://ieeexplore.ieee.org/document/7290936.
+     *         https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     *         https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
 
     public AvcIntraSettings getAvcIntraSettings() {
@@ -124,12 +129,14 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     /**
      * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
      * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
      * @param avcIntraSettings
      *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
      *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *        https://ieeexplore.ieee.org/document/7290936.
+     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     *        https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

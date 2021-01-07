@@ -144,6 +144,10 @@ public class Mpeg2SettingsJsonUnmarshaller implements Unmarshaller<Mpeg2Settings
                     context.nextToken();
                     mpeg2Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    mpeg2Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
                     context.nextToken();
                     mpeg2Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));

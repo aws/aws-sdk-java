@@ -52,6 +52,10 @@ public class AvcIntraSettingsJsonUnmarshaller implements Unmarshaller<AvcIntraSe
                     context.nextToken();
                     avcIntraSettings.setAvcIntraClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("avcIntraUhdSettings", targetDepth)) {
+                    context.nextToken();
+                    avcIntraSettings.setAvcIntraUhdSettings(AvcIntraUhdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("framerateControl", targetDepth)) {
                     context.nextToken();
                     avcIntraSettings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class AvcIntraSettingsJsonUnmarshaller implements Unmarshaller<AvcIntraSe
                 if (context.testExpression("interlaceMode", targetDepth)) {
                     context.nextToken();
                     avcIntraSettings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    avcIntraSettings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
                     context.nextToken();

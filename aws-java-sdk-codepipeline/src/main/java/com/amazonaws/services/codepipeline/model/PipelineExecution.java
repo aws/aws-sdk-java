@@ -53,6 +53,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -92,6 +97,12 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * A summary that contains a description of the pipeline execution status.
+     * </p>
+     */
+    private String statusSummary;
     /**
      * <p>
      * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
@@ -226,6 +237,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -267,6 +283,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @param status
      *        The status of the pipeline execution.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        InProgress: The pipeline execution is currently running.
@@ -320,6 +341,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -360,6 +386,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * 
      * @return The status of the pipeline execution.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         InProgress: The pipeline execution is currently running.
@@ -414,6 +445,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -455,6 +491,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @param status
      *        The status of the pipeline execution.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        InProgress: The pipeline execution is currently running.
@@ -510,6 +551,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -551,6 +597,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @param status
      *        The status of the pipeline execution.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        InProgress: The pipeline execution is currently running.
@@ -604,6 +655,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
+     * Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * InProgress: The pipeline execution is currently running.
      * </p>
      * </li>
@@ -645,6 +701,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @param status
      *        The status of the pipeline execution.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        InProgress: The pipeline execution is currently running.
@@ -690,6 +751,46 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
 
     public PipelineExecution withStatus(PipelineExecutionStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A summary that contains a description of the pipeline execution status.
+     * </p>
+     * 
+     * @param statusSummary
+     *        A summary that contains a description of the pipeline execution status.
+     */
+
+    public void setStatusSummary(String statusSummary) {
+        this.statusSummary = statusSummary;
+    }
+
+    /**
+     * <p>
+     * A summary that contains a description of the pipeline execution status.
+     * </p>
+     * 
+     * @return A summary that contains a description of the pipeline execution status.
+     */
+
+    public String getStatusSummary() {
+        return this.statusSummary;
+    }
+
+    /**
+     * <p>
+     * A summary that contains a description of the pipeline execution status.
+     * </p>
+     * 
+     * @param statusSummary
+     *        A summary that contains a description of the pipeline execution status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withStatusSummary(String statusSummary) {
+        setStatusSummary(statusSummary);
         return this;
     }
 
@@ -783,6 +884,8 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusSummary() != null)
+            sb.append("StatusSummary: ").append(getStatusSummary()).append(",");
         if (getArtifactRevisions() != null)
             sb.append("ArtifactRevisions: ").append(getArtifactRevisions());
         sb.append("}");
@@ -815,6 +918,10 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusSummary() == null ^ this.getStatusSummary() == null)
+            return false;
+        if (other.getStatusSummary() != null && other.getStatusSummary().equals(this.getStatusSummary()) == false)
+            return false;
         if (other.getArtifactRevisions() == null ^ this.getArtifactRevisions() == null)
             return false;
         if (other.getArtifactRevisions() != null && other.getArtifactRevisions().equals(this.getArtifactRevisions()) == false)
@@ -831,6 +938,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getPipelineVersion() == null) ? 0 : getPipelineVersion().hashCode());
         hashCode = prime * hashCode + ((getPipelineExecutionId() == null) ? 0 : getPipelineExecutionId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusSummary() == null) ? 0 : getStatusSummary().hashCode());
         hashCode = prime * hashCode + ((getArtifactRevisions() == null) ? 0 : getArtifactRevisions().hashCode());
         return hashCode;
     }

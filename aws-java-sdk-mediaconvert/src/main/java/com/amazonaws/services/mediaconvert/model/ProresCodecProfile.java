@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to use for this output.
+ * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProresCodecProfile {

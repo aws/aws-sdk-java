@@ -67,6 +67,18 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private String interlaceMode;
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    private String scanTypeConversionMode;
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
      * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
@@ -475,6 +487,125 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @see Vc3ScanTypeConversionMode
+     */
+
+    public void setScanTypeConversionMode(String scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @return Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *         this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *         output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *         output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *         basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *         When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *         for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *         To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *         use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to
+     *         a value other than Progressive (PROGRESSIVE).
+     * @see Vc3ScanTypeConversionMode
+     */
+
+    public String getScanTypeConversionMode() {
+        return this.scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Vc3ScanTypeConversionMode
+     */
+
+    public Vc3Settings withScanTypeConversionMode(String scanTypeConversionMode) {
+        setScanTypeConversionMode(scanTypeConversionMode);
+        return this;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Vc3ScanTypeConversionMode
+     */
+
+    public Vc3Settings withScanTypeConversionMode(Vc3ScanTypeConversionMode scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode.toString();
+        return this;
+    }
+
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
      * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
@@ -745,6 +876,8 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("FramerateNumerator: ").append(getFramerateNumerator()).append(",");
         if (getInterlaceMode() != null)
             sb.append("InterlaceMode: ").append(getInterlaceMode()).append(",");
+        if (getScanTypeConversionMode() != null)
+            sb.append("ScanTypeConversionMode: ").append(getScanTypeConversionMode()).append(",");
         if (getSlowPal() != null)
             sb.append("SlowPal: ").append(getSlowPal()).append(",");
         if (getTelecine() != null)
@@ -785,6 +918,10 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInterlaceMode() != null && other.getInterlaceMode().equals(this.getInterlaceMode()) == false)
             return false;
+        if (other.getScanTypeConversionMode() == null ^ this.getScanTypeConversionMode() == null)
+            return false;
+        if (other.getScanTypeConversionMode() != null && other.getScanTypeConversionMode().equals(this.getScanTypeConversionMode()) == false)
+            return false;
         if (other.getSlowPal() == null ^ this.getSlowPal() == null)
             return false;
         if (other.getSlowPal() != null && other.getSlowPal().equals(this.getSlowPal()) == false)
@@ -810,6 +947,7 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFramerateDenominator() == null) ? 0 : getFramerateDenominator().hashCode());
         hashCode = prime * hashCode + ((getFramerateNumerator() == null) ? 0 : getFramerateNumerator().hashCode());
         hashCode = prime * hashCode + ((getInterlaceMode() == null) ? 0 : getInterlaceMode().hashCode());
+        hashCode = prime * hashCode + ((getScanTypeConversionMode() == null) ? 0 : getScanTypeConversionMode().hashCode());
         hashCode = prime * hashCode + ((getSlowPal() == null) ? 0 : getSlowPal().hashCode());
         hashCode = prime * hashCode + ((getTelecine() == null) ? 0 : getTelecine().hashCode());
         hashCode = prime * hashCode + ((getVc3Class() == null) ? 0 : getVc3Class().hashCode());

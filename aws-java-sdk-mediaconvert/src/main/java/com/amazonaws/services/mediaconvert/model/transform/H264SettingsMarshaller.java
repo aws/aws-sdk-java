@@ -87,6 +87,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
     private static final MarshallingInfo<String> REPEATPPS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("repeatPps").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SCENECHANGEDETECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sceneChangeDetect").build();
     private static final MarshallingInfo<Integer> SLICES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -152,6 +154,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getQvbrSettings(), QVBRSETTINGS_BINDING);
             protocolMarshaller.marshall(h264Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h264Settings.getRepeatPps(), REPEATPPS_BINDING);
+            protocolMarshaller.marshall(h264Settings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(h264Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);
             protocolMarshaller.marshall(h264Settings.getSlices(), SLICES_BINDING);
             protocolMarshaller.marshall(h264Settings.getSlowPal(), SLOWPAL_BINDING);

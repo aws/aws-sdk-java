@@ -18,9 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units
- * are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel
- * unchanged to the output channel (no attenuation or amplification).
+ * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in dB.
+ * Specify remix values to indicate how much of the content from your input audio channel you want in your output audio
+ * channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output
+ * channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column
+ * in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels.
+ * Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the
+ * output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
+ * values. Don't use both.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ChannelMapping" target="_top">AWS API
  *      Documentation</a>
@@ -28,13 +33,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChannelMapping implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of output channels */
+    /**
+     * In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your
+     * output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
+     */
     private java.util.List<OutputChannelMapping> outputChannels;
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your
+     * output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * 
-     * @return List of output channels
+     * @return In your JSON job specification, include one child of OutputChannels for each audio channel that you want
+     *         in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      */
 
     public java.util.List<OutputChannelMapping> getOutputChannels() {
@@ -42,10 +52,12 @@ public class ChannelMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your
+     * output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * 
      * @param outputChannels
-     *        List of output channels
+     *        In your JSON job specification, include one child of OutputChannels for each audio channel that you want
+     *        in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      */
 
     public void setOutputChannels(java.util.Collection<OutputChannelMapping> outputChannels) {
@@ -58,7 +70,8 @@ public class ChannelMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your
+     * output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOutputChannels(java.util.Collection)} or {@link #withOutputChannels(java.util.Collection)} if you want
@@ -66,7 +79,8 @@ public class ChannelMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param outputChannels
-     *        List of output channels
+     *        In your JSON job specification, include one child of OutputChannels for each audio channel that you want
+     *        in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +95,12 @@ public class ChannelMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your
+     * output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * 
      * @param outputChannels
-     *        List of output channels
+     *        In your JSON job specification, include one child of OutputChannels for each audio channel that you want
+     *        in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

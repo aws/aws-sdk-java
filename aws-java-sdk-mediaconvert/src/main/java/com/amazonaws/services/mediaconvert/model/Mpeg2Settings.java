@@ -156,10 +156,20 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      */
     private String qualityTuningLevel;
-    /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
-     */
+    /** Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr). */
     private String rateControlMode;
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    private String scanTypeConversionMode;
     /**
      * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
      * video quality and is enabled by default.
@@ -1589,10 +1599,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
      * 
      * @param rateControlMode
-     *        Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant
+     *        Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant
      *        (cbr).
      * @see Mpeg2RateControlMode
      */
@@ -1602,10 +1612,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
      * 
-     * @return Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or
-     *         constant (cbr).
+     * @return Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant
+     *         (cbr).
      * @see Mpeg2RateControlMode
      */
 
@@ -1614,10 +1624,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
      * 
      * @param rateControlMode
-     *        Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant
+     *        Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant
      *        (cbr).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2RateControlMode
@@ -1629,10 +1639,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
      * 
      * @param rateControlMode
-     *        Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant
+     *        Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant
      *        (cbr).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2RateControlMode
@@ -1640,6 +1650,125 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     public Mpeg2Settings withRateControlMode(Mpeg2RateControlMode rateControlMode) {
         this.rateControlMode = rateControlMode.toString();
+        return this;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @see Mpeg2ScanTypeConversionMode
+     */
+
+    public void setScanTypeConversionMode(String scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @return Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *         this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *         output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *         output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *         basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *         When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *         for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *         To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *         use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to
+     *         a value other than Progressive (PROGRESSIVE).
+     * @see Mpeg2ScanTypeConversionMode
+     */
+
+    public String getScanTypeConversionMode() {
+        return this.scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Mpeg2ScanTypeConversionMode
+     */
+
+    public Mpeg2Settings withScanTypeConversionMode(String scanTypeConversionMode) {
+        setScanTypeConversionMode(scanTypeConversionMode);
+        return this;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Mpeg2ScanTypeConversionMode
+     */
+
+    public Mpeg2Settings withScanTypeConversionMode(Mpeg2ScanTypeConversionMode scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode.toString();
         return this;
     }
 
@@ -2320,6 +2449,8 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("QualityTuningLevel: ").append(getQualityTuningLevel()).append(",");
         if (getRateControlMode() != null)
             sb.append("RateControlMode: ").append(getRateControlMode()).append(",");
+        if (getScanTypeConversionMode() != null)
+            sb.append("ScanTypeConversionMode: ").append(getScanTypeConversionMode()).append(",");
         if (getSceneChangeDetect() != null)
             sb.append("SceneChangeDetect: ").append(getSceneChangeDetect()).append(",");
         if (getSlowPal() != null)
@@ -2446,6 +2577,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRateControlMode() != null && other.getRateControlMode().equals(this.getRateControlMode()) == false)
             return false;
+        if (other.getScanTypeConversionMode() == null ^ this.getScanTypeConversionMode() == null)
+            return false;
+        if (other.getScanTypeConversionMode() != null && other.getScanTypeConversionMode().equals(this.getScanTypeConversionMode()) == false)
+            return false;
         if (other.getSceneChangeDetect() == null ^ this.getSceneChangeDetect() == null)
             return false;
         if (other.getSceneChangeDetect() != null && other.getSceneChangeDetect().equals(this.getSceneChangeDetect()) == false)
@@ -2506,6 +2641,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParNumerator() == null) ? 0 : getParNumerator().hashCode());
         hashCode = prime * hashCode + ((getQualityTuningLevel() == null) ? 0 : getQualityTuningLevel().hashCode());
         hashCode = prime * hashCode + ((getRateControlMode() == null) ? 0 : getRateControlMode().hashCode());
+        hashCode = prime * hashCode + ((getScanTypeConversionMode() == null) ? 0 : getScanTypeConversionMode().hashCode());
         hashCode = prime * hashCode + ((getSceneChangeDetect() == null) ? 0 : getSceneChangeDetect().hashCode());
         hashCode = prime * hashCode + ((getSlowPal() == null) ? 0 : getSlowPal().hashCode());
         hashCode = prime * hashCode + ((getSoftness() == null) ? 0 : getSoftness().hashCode());

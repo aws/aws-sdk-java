@@ -84,6 +84,10 @@ public class ProresSettingsJsonUnmarshaller implements Unmarshaller<ProresSettin
                     context.nextToken();
                     proresSettings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    proresSettings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("slowPal", targetDepth)) {
                     context.nextToken();
                     proresSettings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));

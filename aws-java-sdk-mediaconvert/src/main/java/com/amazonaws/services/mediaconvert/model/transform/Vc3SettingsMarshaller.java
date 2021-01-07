@@ -37,6 +37,8 @@ public class Vc3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateNumerator").build();
     private static final MarshallingInfo<String> INTERLACEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interlaceMode").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SLOWPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("slowPal").build();
     private static final MarshallingInfo<String> TELECINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,7 @@ public class Vc3SettingsMarshaller {
             protocolMarshaller.marshall(vc3Settings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);
             protocolMarshaller.marshall(vc3Settings.getFramerateNumerator(), FRAMERATENUMERATOR_BINDING);
             protocolMarshaller.marshall(vc3Settings.getInterlaceMode(), INTERLACEMODE_BINDING);
+            protocolMarshaller.marshall(vc3Settings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(vc3Settings.getSlowPal(), SLOWPAL_BINDING);
             protocolMarshaller.marshall(vc3Settings.getTelecine(), TELECINE_BINDING);
             protocolMarshaller.marshall(vc3Settings.getVc3Class(), VC3CLASS_BINDING);

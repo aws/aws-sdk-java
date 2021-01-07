@@ -54,6 +54,12 @@ public class OutputChannelMappingJsonUnmarshaller implements Unmarshaller<Output
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("inputChannelsFineTune", targetDepth)) {
+                    context.nextToken();
+                    outputChannelMapping.setInputChannelsFineTune(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

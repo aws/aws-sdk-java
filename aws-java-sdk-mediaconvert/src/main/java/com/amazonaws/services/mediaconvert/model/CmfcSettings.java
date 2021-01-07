@@ -39,6 +39,14 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String audioDuration;
     /**
+     * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
+     * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     */
+    private String iFrameOnlyManifest;
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
      * XML (sccXml).
@@ -167,6 +175,89 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
 
     public CmfcSettings withAudioDuration(CmfcAudioDuration audioDuration) {
         this.audioDuration = audioDuration.toString();
+        return this;
+    }
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
+     * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     * 
+     * @param iFrameOnlyManifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames
+     *        for this rendition, in addition to your regular manifest for this rendition. You might use this manifest
+     *        as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame
+     *        only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame
+     *        only child manifest, keep the default value Exclude (EXCLUDE).
+     * @see CmfcIFrameOnlyManifest
+     */
+
+    public void setIFrameOnlyManifest(String iFrameOnlyManifest) {
+        this.iFrameOnlyManifest = iFrameOnlyManifest;
+    }
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
+     * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     * 
+     * @return Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames
+     *         for this rendition, in addition to your regular manifest for this rendition. You might use this manifest
+     *         as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame
+     *         only child manifest and the regular child manifest to the parent manifest. When you don't need the
+     *         I-frame only child manifest, keep the default value Exclude (EXCLUDE).
+     * @see CmfcIFrameOnlyManifest
+     */
+
+    public String getIFrameOnlyManifest() {
+        return this.iFrameOnlyManifest;
+    }
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
+     * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     * 
+     * @param iFrameOnlyManifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames
+     *        for this rendition, in addition to your regular manifest for this rendition. You might use this manifest
+     *        as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame
+     *        only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame
+     *        only child manifest, keep the default value Exclude (EXCLUDE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcIFrameOnlyManifest
+     */
+
+    public CmfcSettings withIFrameOnlyManifest(String iFrameOnlyManifest) {
+        setIFrameOnlyManifest(iFrameOnlyManifest);
+        return this;
+    }
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
+     * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     * 
+     * @param iFrameOnlyManifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames
+     *        for this rendition, in addition to your regular manifest for this rendition. You might use this manifest
+     *        as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame
+     *        only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame
+     *        only child manifest, keep the default value Exclude (EXCLUDE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcIFrameOnlyManifest
+     */
+
+    public CmfcSettings withIFrameOnlyManifest(CmfcIFrameOnlyManifest iFrameOnlyManifest) {
+        this.iFrameOnlyManifest = iFrameOnlyManifest.toString();
         return this;
     }
 
@@ -318,6 +409,8 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAudioDuration() != null)
             sb.append("AudioDuration: ").append(getAudioDuration()).append(",");
+        if (getIFrameOnlyManifest() != null)
+            sb.append("IFrameOnlyManifest: ").append(getIFrameOnlyManifest()).append(",");
         if (getScte35Esam() != null)
             sb.append("Scte35Esam: ").append(getScte35Esam()).append(",");
         if (getScte35Source() != null)
@@ -340,6 +433,10 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAudioDuration() != null && other.getAudioDuration().equals(this.getAudioDuration()) == false)
             return false;
+        if (other.getIFrameOnlyManifest() == null ^ this.getIFrameOnlyManifest() == null)
+            return false;
+        if (other.getIFrameOnlyManifest() != null && other.getIFrameOnlyManifest().equals(this.getIFrameOnlyManifest()) == false)
+            return false;
         if (other.getScte35Esam() == null ^ this.getScte35Esam() == null)
             return false;
         if (other.getScte35Esam() != null && other.getScte35Esam().equals(this.getScte35Esam()) == false)
@@ -357,6 +454,7 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAudioDuration() == null) ? 0 : getAudioDuration().hashCode());
+        hashCode = prime * hashCode + ((getIFrameOnlyManifest() == null) ? 0 : getIFrameOnlyManifest().hashCode());
         hashCode = prime * hashCode + ((getScte35Esam() == null) ? 0 : getScte35Esam().hashCode());
         hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());
         return hashCode;

@@ -68,6 +68,10 @@ public class Vc3SettingsJsonUnmarshaller implements Unmarshaller<Vc3Settings, Js
                     context.nextToken();
                     vc3Settings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    vc3Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("slowPal", targetDepth)) {
                     context.nextToken();
                     vc3Settings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));

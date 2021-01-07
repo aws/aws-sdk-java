@@ -168,6 +168,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setRepeatPps(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
                     context.nextToken();
                     h264Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));

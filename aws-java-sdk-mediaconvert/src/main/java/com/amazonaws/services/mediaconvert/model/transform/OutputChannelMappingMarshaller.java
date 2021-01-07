@@ -30,6 +30,8 @@ public class OutputChannelMappingMarshaller {
 
     private static final MarshallingInfo<List> INPUTCHANNELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputChannels").build();
+    private static final MarshallingInfo<List> INPUTCHANNELSFINETUNE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputChannelsFineTune").build();
 
     private static final OutputChannelMappingMarshaller instance = new OutputChannelMappingMarshaller();
 
@@ -48,6 +50,7 @@ public class OutputChannelMappingMarshaller {
 
         try {
             protocolMarshaller.marshall(outputChannelMapping.getInputChannels(), INPUTCHANNELS_BINDING);
+            protocolMarshaller.marshall(outputChannelMapping.getInputChannelsFineTune(), INPUTCHANNELSFINETUNE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -164,6 +164,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                     context.nextToken();
                     h265Settings.setSampleAdaptiveOffsetFilterMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
                     context.nextToken();
                     h265Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));

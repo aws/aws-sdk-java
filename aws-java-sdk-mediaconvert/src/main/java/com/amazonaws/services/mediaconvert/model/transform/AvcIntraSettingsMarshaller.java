@@ -29,6 +29,8 @@ public class AvcIntraSettingsMarshaller {
 
     private static final MarshallingInfo<String> AVCINTRACLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("avcIntraClass").build();
+    private static final MarshallingInfo<StructuredPojo> AVCINTRAUHDSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("avcIntraUhdSettings").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateControl").build();
     private static final MarshallingInfo<String> FRAMERATECONVERSIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -39,6 +41,8 @@ public class AvcIntraSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateNumerator").build();
     private static final MarshallingInfo<String> INTERLACEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interlaceMode").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SLOWPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("slowPal").build();
     private static final MarshallingInfo<String> TELECINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,11 +65,13 @@ public class AvcIntraSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(avcIntraSettings.getAvcIntraClass(), AVCINTRACLASS_BINDING);
+            protocolMarshaller.marshall(avcIntraSettings.getAvcIntraUhdSettings(), AVCINTRAUHDSETTINGS_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getFramerateConversionAlgorithm(), FRAMERATECONVERSIONALGORITHM_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getFramerateNumerator(), FRAMERATENUMERATOR_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getInterlaceMode(), INTERLACEMODE_BINDING);
+            protocolMarshaller.marshall(avcIntraSettings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getSlowPal(), SLOWPAL_BINDING);
             protocolMarshaller.marshall(avcIntraSettings.getTelecine(), TELECINE_BINDING);
         } catch (Exception e) {

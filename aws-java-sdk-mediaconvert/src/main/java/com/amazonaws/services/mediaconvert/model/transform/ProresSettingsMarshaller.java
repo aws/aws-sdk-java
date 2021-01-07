@@ -45,6 +45,8 @@ public class ProresSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parDenominator").build();
     private static final MarshallingInfo<Integer> PARNUMERATOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parNumerator").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SLOWPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("slowPal").build();
     private static final MarshallingInfo<String> TELECINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class ProresSettingsMarshaller {
             protocolMarshaller.marshall(proresSettings.getParControl(), PARCONTROL_BINDING);
             protocolMarshaller.marshall(proresSettings.getParDenominator(), PARDENOMINATOR_BINDING);
             protocolMarshaller.marshall(proresSettings.getParNumerator(), PARNUMERATOR_BINDING);
+            protocolMarshaller.marshall(proresSettings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(proresSettings.getSlowPal(), SLOWPAL_BINDING);
             protocolMarshaller.marshall(proresSettings.getTelecine(), TELECINE_BINDING);
         } catch (Exception e) {
