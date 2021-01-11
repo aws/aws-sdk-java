@@ -963,9 +963,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String engineVersion;
@@ -1002,7 +1002,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer iops;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -1322,7 +1322,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -7345,9 +7346,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -7402,9 +7403,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *        >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *        See <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *        >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -7464,9 +7465,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
@@ -7520,9 +7521,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         See <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *         >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *         See <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *         >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getEngineVersion() {
@@ -7582,9 +7583,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -7639,9 +7640,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *        >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *        See <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *        >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -7858,7 +7859,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -7866,7 +7867,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
+     *        A value that indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -7879,14 +7880,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
      * group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the specified option group.</p>
+     * @return A value that indicates that the DB instance should be associated with the specified option group.</p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *         option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -7899,7 +7900,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -7907,7 +7908,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
+     *        A value that indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -9902,7 +9903,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -9946,8 +9948,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>Oracle</b>
      *         </p>
      *         <p>
-     *         Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>
-     *         .
+     *         Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>,
+     *         and <code>oemagent</code>.
      *         </p>
      *         <p>
      *         <b>PostgreSQL</b>
@@ -9999,7 +10001,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -10044,7 +10047,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
      *        </p>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -10098,7 +10102,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -10148,7 +10153,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
      *        </p>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -10204,7 +10210,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -10249,7 +10256,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, and <code>trace</code>.
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
      *        </p>
      *        <p>
      *        <b>PostgreSQL</b>

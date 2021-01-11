@@ -410,8 +410,8 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean globalWriteForwardingRequested;
     /**
      * <p>
-     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
      * </p>
      */
     private ClusterPendingModifiedValues pendingModifiedValues;
@@ -3447,13 +3447,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB cluster are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      */
 
     public void setPendingModifiedValues(ClusterPendingModifiedValues pendingModifiedValues) {
@@ -3462,12 +3462,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
      * </p>
      * 
-     * @return Specifies that changes to the DB cluster are pending. This element is only included when changes are
-     *         pending. Specific changes are identified by subelements.
+     * @return A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *         changes are pending. Specific changes are identified by subelements.
      */
 
     public ClusterPendingModifiedValues getPendingModifiedValues() {
@@ -3476,13 +3476,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB cluster are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

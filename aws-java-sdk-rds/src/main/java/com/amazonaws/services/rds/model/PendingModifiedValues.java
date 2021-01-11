@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <code>ModifyDBInstance</code> action and contains changes that
+ * This data type is used as a response element in the <code>ModifyDBInstance</code> operation and contains changes that
  * will be applied during the next maintenance window.
  * </p>
  * 
@@ -59,7 +59,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      */
     private Boolean multiAZ;
@@ -326,11 +326,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     *        A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -339,10 +339,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * @return A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public Boolean getMultiAZ() {
@@ -351,11 +351,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     *        A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,10 +366,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * @return A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public Boolean isMultiAZ() {

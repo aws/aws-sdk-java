@@ -7516,6 +7516,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
      *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.ModifyGlobalCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
      *      Documentation</a>

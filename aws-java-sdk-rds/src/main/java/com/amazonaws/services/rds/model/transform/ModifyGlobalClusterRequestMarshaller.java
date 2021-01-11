@@ -52,6 +52,14 @@ public class ModifyGlobalClusterRequestMarshaller implements Marshaller<Request<
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyGlobalClusterRequest.getDeletionProtection()));
         }
 
+        if (modifyGlobalClusterRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(modifyGlobalClusterRequest.getEngineVersion()));
+        }
+
+        if (modifyGlobalClusterRequest.getAllowMajorVersionUpgrade() != null) {
+            request.addParameter("AllowMajorVersionUpgrade", StringUtils.fromBoolean(modifyGlobalClusterRequest.getAllowMajorVersionUpgrade()));
+        }
+
         return request;
     }
 

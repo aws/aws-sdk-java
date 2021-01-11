@@ -1,3 +1,12 @@
+# __1.11.935__ __2021-01-11__
+## __AWS Key Management Service__
+  - ### Features
+    - Adds support for filtering grants by grant ID and grantee principal in ListGrants requests to AWS KMS.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This releases adds support for Major Version Upgrades on Aurora MySQL Global Clusters. Customers will be able to upgrade their whole Aurora MySQL Global Cluster to a new major engine version.
+
 # __1.11.934__ __2021-01-07__
 ## __AWS CodePipeline__
   - ### Features

@@ -33,6 +33,10 @@ public class ListGrantsRequestMarshaller {
             .marshallLocationName("Marker").build();
     private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<String> GRANTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GrantId").build();
+    private static final MarshallingInfo<String> GRANTEEPRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GranteePrincipal").build();
 
     private static final ListGrantsRequestMarshaller instance = new ListGrantsRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class ListGrantsRequestMarshaller {
             protocolMarshaller.marshall(listGrantsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(listGrantsRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listGrantsRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(listGrantsRequest.getGrantId(), GRANTID_BINDING);
+            protocolMarshaller.marshall(listGrantsRequest.getGranteePrincipal(), GRANTEEPRINCIPAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

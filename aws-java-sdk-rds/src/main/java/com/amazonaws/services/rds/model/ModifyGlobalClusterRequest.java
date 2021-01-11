@@ -78,6 +78,47 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     */
+    private String engineVersion;
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * <p>
+     * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
+     * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
+     * </p>
+     */
+    private Boolean allowMajorVersionUpgrade;
 
     /**
      * <p>
@@ -419,6 +460,295 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * 
+     * @param engineVersion
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
+     *        is enabled.</p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     */
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * 
+     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
+     *         in an outage. The change is applied during the next maintenance window unless
+     *         <code>ApplyImmediately</code> is enabled.</p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *         use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *         Aurora), use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *         command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     */
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * </p>
+     * 
+     * @param engineVersion
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
+     *        is enabled.</p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyGlobalClusterRequest withEngineVersion(String engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * <p>
+     * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
+     * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
+     * </p>
+     * 
+     * @param allowMajorVersionUpgrade
+     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        <p>
+     *        Constraints: You must allow major version upgrades when specifying a value for the
+     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *        version.
+     *        </p>
+     *        <p>
+     *        If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
+     *        set to the default parameter groups for the new version. Apply any custom parameter groups after
+     *        completing the upgrade.
+     */
+
+    public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * <p>
+     * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
+     * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
+     * </p>
+     * 
+     * @return A value that indicates whether major version upgrades are allowed.</p>
+     *         <p>
+     *         Constraints: You must allow major version upgrades when specifying a value for the
+     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *         version.
+     *         </p>
+     *         <p>
+     *         If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
+     *         set to the default parameter groups for the new version. Apply any custom parameter groups after
+     *         completing the upgrade.
+     */
+
+    public Boolean getAllowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * <p>
+     * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
+     * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
+     * </p>
+     * 
+     * @param allowMajorVersionUpgrade
+     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        <p>
+     *        Constraints: You must allow major version upgrades when specifying a value for the
+     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *        version.
+     *        </p>
+     *        <p>
+     *        If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
+     *        set to the default parameter groups for the new version. Apply any custom parameter groups after
+     *        completing the upgrade.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyGlobalClusterRequest withAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        setAllowMajorVersionUpgrade(allowMajorVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * <p>
+     * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
+     * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
+     * </p>
+     * 
+     * @return A value that indicates whether major version upgrades are allowed.</p>
+     *         <p>
+     *         Constraints: You must allow major version upgrades when specifying a value for the
+     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *         version.
+     *         </p>
+     *         <p>
+     *         If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
+     *         set to the default parameter groups for the new version. Apply any custom parameter groups after
+     *         completing the upgrade.
+     */
+
+    public Boolean isAllowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -435,7 +765,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNewGlobalClusterIdentifier() != null)
             sb.append("NewGlobalClusterIdentifier: ").append(getNewGlobalClusterIdentifier()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getAllowMajorVersionUpgrade() != null)
+            sb.append("AllowMajorVersionUpgrade: ").append(getAllowMajorVersionUpgrade());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +796,14 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
+        if (other.getAllowMajorVersionUpgrade() == null ^ this.getAllowMajorVersionUpgrade() == null)
+            return false;
+        if (other.getAllowMajorVersionUpgrade() != null && other.getAllowMajorVersionUpgrade().equals(this.getAllowMajorVersionUpgrade()) == false)
+            return false;
         return true;
     }
 
@@ -473,6 +815,8 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getGlobalClusterIdentifier() == null) ? 0 : getGlobalClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getNewGlobalClusterIdentifier() == null) ? 0 : getNewGlobalClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAllowMajorVersionUpgrade() == null) ? 0 : getAllowMajorVersionUpgrade().hashCode());
         return hashCode;
     }
 

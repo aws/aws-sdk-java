@@ -39,7 +39,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The unique identifier for the grant.
      * </p>
      * <p>
-     * You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     * You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.
      * </p>
      */
     private String grantId;
@@ -116,13 +116,14 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The unique identifier for the grant.
      * </p>
      * <p>
-     * You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     * You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.
      * </p>
      * 
      * @param grantId
      *        The unique identifier for the grant.</p>
      *        <p>
-     *        You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     *        You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a>
+     *        operation.
      */
 
     public void setGrantId(String grantId) {
@@ -134,12 +135,13 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The unique identifier for the grant.
      * </p>
      * <p>
-     * You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     * You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.
      * </p>
      * 
      * @return The unique identifier for the grant.</p>
      *         <p>
-     *         You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     *         You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a>
+     *         operation.
      */
 
     public String getGrantId() {
@@ -151,13 +153,14 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The unique identifier for the grant.
      * </p>
      * <p>
-     * You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     * You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.
      * </p>
      * 
      * @param grantId
      *        The unique identifier for the grant.</p>
      *        <p>
-     *        You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
+     *        You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a>
+     *        operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

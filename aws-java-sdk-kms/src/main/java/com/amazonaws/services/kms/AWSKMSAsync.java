@@ -4841,6 +4841,9 @@ public interface AWSKMSAsync extends AWSKMS {
      * <p>
      * Gets a list of all grants for the specified customer master key (CMK).
      * </p>
+     * <p>
+     * You must specify the CMK in all requests. You can filter the grant list by grant ID or grantee principal.
+     * </p>
      * <note>
      * <p>
      * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
@@ -4896,6 +4899,9 @@ public interface AWSKMSAsync extends AWSKMS {
     /**
      * <p>
      * Gets a list of all grants for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * You must specify the CMK in all requests. You can filter the grant list by grant ID or grantee principal.
      * </p>
      * <note>
      * <p>

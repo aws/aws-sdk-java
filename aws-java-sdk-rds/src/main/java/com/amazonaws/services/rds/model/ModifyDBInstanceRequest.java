@@ -355,8 +355,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.
+     * If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the
+     * current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>,
+     * or call <code>DescribeDBEngineVersions</code>.
      * </p>
      */
     private String engineVersion;
@@ -424,11 +425,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer iops;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group. Changing this parameter
-     * doesn't result in an outage except in the following case and the change is applied during the next maintenance
-     * window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * A value that indicates the DB instance should be associated with the specified option group. Changing this
+     * parameter doesn't result in an outage except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the
+     * parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period
+     * during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -2977,8 +2978,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.
+     * If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the
+     * current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>,
+     * or call <code>DescribeDBEngineVersions</code>.
      * </p>
      * 
      * @param engineVersion
@@ -2991,8 +2993,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        group can be the default for that DB parameter group family.
      *        </p>
      *        <p>
-     *        For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     *        <code>DescribeDBEngineVersions</code>.
+     *        If you specify only a major version, Amazon RDS will update the DB instance to the default minor version
+     *        if the current minor version is lower. For information about valid engine versions, see
+     *        <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -3011,8 +3014,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.
+     * If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the
+     * current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>,
+     * or call <code>DescribeDBEngineVersions</code>.
      * </p>
      * 
      * @return The version number of the database engine to upgrade to. Changing this parameter results in an outage and
@@ -3024,8 +3028,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         group can be the default for that DB parameter group family.
      *         </p>
      *         <p>
-     *         For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     *         <code>DescribeDBEngineVersions</code>.
+     *         If you specify only a major version, Amazon RDS will update the DB instance to the default minor version
+     *         if the current minor version is lower. For information about valid engine versions, see
+     *         <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
      */
 
     public String getEngineVersion() {
@@ -3044,8 +3049,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.
+     * If you specify only a major version, Amazon RDS will update the DB instance to the default minor version if the
+     * current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>,
+     * or call <code>DescribeDBEngineVersions</code>.
      * </p>
      * 
      * @param engineVersion
@@ -3058,8 +3064,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        group can be the default for that DB parameter group family.
      *        </p>
      *        <p>
-     *        For information about valid engine versions, see <code>CreateDBInstance</code>, or call
-     *        <code>DescribeDBEngineVersions</code>.
+     *        If you specify only a major version, Amazon RDS will update the DB instance to the default minor version
+     *        if the current minor version is lower. For information about valid engine versions, see
+     *        <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3491,11 +3498,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group. Changing this parameter
-     * doesn't result in an outage except in the following case and the change is applied during the next maintenance
-     * window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * A value that indicates the DB instance should be associated with the specified option group. Changing this
+     * parameter doesn't result in an outage except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the
+     * parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period
+     * during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -3503,7 +3510,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group. Changing this
+     *        A value that indicates the DB instance should be associated with the specified option group. Changing this
      *        parameter doesn't result in an outage except in the following case and the change is applied during the
      *        next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If
      *        the parameter change results in an option group that enables OEM, this change can cause a brief
@@ -3521,22 +3528,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group. Changing this parameter
-     * doesn't result in an outage except in the following case and the change is applied during the next maintenance
-     * window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * A value that indicates the DB instance should be associated with the specified option group. Changing this
+     * parameter doesn't result in an outage except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the
+     * parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period
+     * during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
      * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the specified option group. Changing this
-     *         parameter doesn't result in an outage except in the following case and the change is applied during the
-     *         next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     *         If the parameter change results in an option group that enables OEM, this change can cause a brief
-     *         (sub-second) period during which new connections are rejected but existing connections are not
+     * @return A value that indicates the DB instance should be associated with the specified option group. Changing
+     *         this parameter doesn't result in an outage except in the following case and the change is applied during
+     *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this
+     *         request. If the parameter change results in an option group that enables OEM, this change can cause a
+     *         brief (sub-second) period during which new connections are rejected but existing connections are not
      *         interrupted. </p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
@@ -3550,11 +3557,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group. Changing this parameter
-     * doesn't result in an outage except in the following case and the change is applied during the next maintenance
-     * window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * A value that indicates the DB instance should be associated with the specified option group. Changing this
+     * parameter doesn't result in an outage except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If the
+     * parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period
+     * during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -3562,7 +3569,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group. Changing this
+     *        A value that indicates the DB instance should be associated with the specified option group. Changing this
      *        parameter doesn't result in an outage except in the following case and the change is applied during the
      *        next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If
      *        the parameter change results in an option group that enables OEM, this change can cause a brief

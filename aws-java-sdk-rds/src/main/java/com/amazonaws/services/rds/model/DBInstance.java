@@ -158,8 +158,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      */
     private PendingModifiedValues pendingModifiedValues;
@@ -183,7 +183,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -1460,13 +1460,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB instance are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      */
 
     public void setPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
@@ -1475,12 +1475,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
-     * @return Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *         pending. Specific changes are identified by subelements.
+     * @return A value that specifies that changes to the DB instance are pending. This element is only included when
+     *         changes are pending. Specific changes are identified by subelements.
      */
 
     public PendingModifiedValues getPendingModifiedValues() {
@@ -1489,13 +1489,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB instance are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1638,11 +1638,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        A value that indicates that minor version patches are applied automatically.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1651,10 +1651,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return A value that indicates that minor version patches are applied automatically.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1663,11 +1663,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        A value that indicates that minor version patches are applied automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1678,10 +1678,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return A value that indicates that minor version patches are applied automatically.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {

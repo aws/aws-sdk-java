@@ -4897,6 +4897,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Gets a list of all grants for the specified customer master key (CMK).
      * </p>
+     * <p>
+     * You must specify the CMK in all requests. You can filter the grant list by grant ID or grantee principal.
+     * </p>
      * <note>
      * <p>
      * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
@@ -4950,6 +4953,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidMarkerException
      *         The request was rejected because the marker that specifies where pagination should next begin is not
      *         valid.
+     * @throws InvalidGrantIdException
+     *         The request was rejected because the specified <code>GrantId</code> is not valid.
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws KMSInternalException
