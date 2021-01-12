@@ -48,6 +48,10 @@ public class AssessmentFrameworkMetadataJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    assessmentFrameworkMetadata.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     assessmentFrameworkMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));

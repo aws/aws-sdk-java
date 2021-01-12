@@ -821,7 +821,17 @@ public interface AmazonElastiCache {
      * </li>
      * <li>
      * <p>
+     * Redis (cluster mode disabled) clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * A cluster that is the last read replica of a replication group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A cluster that is the primary node of a replication group
      * </p>
      * </li>
      * <li>
@@ -881,7 +891,7 @@ public interface AmazonElastiCache {
     /**
      * <p>
      * Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with
-     * any cache clusters.
+     * any cache clusters. You cannot delete the default cache parameter groups in your account.
      * </p>
      * 
      * @param deleteCacheParameterGroupRequest

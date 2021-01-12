@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.auditmanager.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -54,6 +55,8 @@ public class FrameworkMarshaller {
             .marshallLocationName("createdBy").build();
     private static final MarshallingInfo<String> LASTUPDATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedBy").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final FrameworkMarshaller instance = new FrameworkMarshaller();
 
@@ -84,6 +87,7 @@ public class FrameworkMarshaller {
             protocolMarshaller.marshall(framework.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(framework.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(framework.getLastUpdatedBy(), LASTUPDATEDBY_BINDING);
+            protocolMarshaller.marshall(framework.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

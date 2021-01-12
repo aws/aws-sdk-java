@@ -71,6 +71,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -553,6 +558,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -716,6 +726,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * @param instanceType
      *        The instance type for the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -889,6 +904,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1051,6 +1071,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The instance type for the image builder. The following instance types are available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -1224,6 +1249,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1387,6 +1417,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * @param instanceType
      *        The instance type for the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium

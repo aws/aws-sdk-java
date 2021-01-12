@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AssessmentFrameworkMetadataMarshaller {
 
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class AssessmentFrameworkMetadataMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(assessmentFrameworkMetadata.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(assessmentFrameworkMetadata.getId(), ID_BINDING);
             protocolMarshaller.marshall(assessmentFrameworkMetadata.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(assessmentFrameworkMetadata.getName(), NAME_BINDING);

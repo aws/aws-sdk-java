@@ -4475,6 +4475,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest request) {
+
+        return setIpAddressTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(final SetIpAddressTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult> asyncHandler) {
+        final SetIpAddressTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetIpAddressTypeResult>() {
+            @Override
+            public SetIpAddressTypeResult call() throws Exception {
+                SetIpAddressTypeResult result = null;
+
+                try {
+                    result = executeSetIpAddressType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);

@@ -108,9 +108,15 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setPublicIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ipv6Address", targetDepth)) {
+                if (context.testExpression("ipv6Addresses", targetDepth)) {
                     context.nextToken();
-                    instance.setIpv6Address(context.getUnmarshaller(String.class).unmarshall(context));
+                    instance.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ipAddressType", targetDepth)) {
+                    context.nextToken();
+                    instance.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hardware", targetDepth)) {
                     context.nextToken();

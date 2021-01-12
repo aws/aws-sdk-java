@@ -40,6 +40,8 @@ public class CreateDistributionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheBehaviors").build();
     private static final MarshallingInfo<String> BUNDLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bundleId").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -65,6 +67,7 @@ public class CreateDistributionRequestMarshaller {
             protocolMarshaller.marshall(createDistributionRequest.getCacheBehaviorSettings(), CACHEBEHAVIORSETTINGS_BINDING);
             protocolMarshaller.marshall(createDistributionRequest.getCacheBehaviors(), CACHEBEHAVIORS_BINDING);
             protocolMarshaller.marshall(createDistributionRequest.getBundleId(), BUNDLEID_BINDING);
+            protocolMarshaller.marshall(createDistributionRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(createDistributionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

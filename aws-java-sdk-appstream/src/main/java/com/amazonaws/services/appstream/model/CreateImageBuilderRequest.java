@@ -50,6 +50,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -421,6 +426,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -584,6 +594,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param instanceType
      *        The instance type to use when launching the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -757,6 +772,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -920,6 +940,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The instance type to use when launching the image builder. The following instance types are
      *         available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -1093,6 +1118,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1256,6 +1286,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param instanceType
      *        The instance type to use when launching the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium

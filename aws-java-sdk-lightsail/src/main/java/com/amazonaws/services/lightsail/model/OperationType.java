@@ -82,6 +82,7 @@ public enum OperationType {
     AttachCertificateToDistribution("AttachCertificateToDistribution"),
     DetachCertificateFromDistribution("DetachCertificateFromDistribution"),
     UpdateDistributionBundle("UpdateDistributionBundle"),
+    SetIpAddressType("SetIpAddressType"),
     CreateCertificate("CreateCertificate"),
     DeleteCertificate("DeleteCertificate"),
     CreateContainerService("CreateContainerService"),

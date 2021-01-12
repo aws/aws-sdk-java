@@ -47,6 +47,8 @@ public class CreateInstancesFromSnapshotRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("addOns").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<String> SOURCEINSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceInstanceName").build();
     private static final MarshallingInfo<String> RESTOREDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class CreateInstancesFromSnapshotRequestMarshaller {
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getKeyPairName(), KEYPAIRNAME_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getAddOns(), ADDONS_BINDING);
+            protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getSourceInstanceName(), SOURCEINSTANCENAME_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getRestoreDate(), RESTOREDATE_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getUseLatestRestorableAutoSnapshot(), USELATESTRESTORABLEAUTOSNAPSHOT_BINDING);

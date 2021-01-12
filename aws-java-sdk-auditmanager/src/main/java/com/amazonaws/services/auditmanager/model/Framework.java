@@ -106,6 +106,12 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String lastUpdatedBy;
+    /**
+     * <p>
+     * The tags associated with the framework.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -677,6 +683,74 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags associated with the framework.
+     * </p>
+     * 
+     * @return The tags associated with the framework.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the framework.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the framework.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the framework.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the framework.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Framework withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Framework#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Framework addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Framework clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -713,7 +787,9 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getLastUpdatedBy() != null)
-            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy());
+            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -780,6 +856,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedBy() != null && other.getLastUpdatedBy().equals(this.getLastUpdatedBy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -801,6 +881,7 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedBy() == null) ? 0 : getLastUpdatedBy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

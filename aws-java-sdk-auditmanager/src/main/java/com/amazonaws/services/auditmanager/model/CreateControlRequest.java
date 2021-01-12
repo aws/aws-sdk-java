@@ -57,7 +57,7 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String actionPlanInstructions;
     /**
      * <p>
-     * The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * The data mapping sources for the specified control.
      * </p>
      */
     private java.util.List<CreateControlMappingSource> controlMappingSources;
@@ -270,10 +270,10 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * The data mapping sources for the specified control.
      * </p>
      * 
-     * @return The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * @return The data mapping sources for the specified control.
      */
 
     public java.util.List<CreateControlMappingSource> getControlMappingSources() {
@@ -282,11 +282,11 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * The data mapping sources for the specified control.
      * </p>
      * 
      * @param controlMappingSources
-     *        The data source that determines from where AWS Audit Manager collects evidence for the control.
+     *        The data mapping sources for the specified control.
      */
 
     public void setControlMappingSources(java.util.Collection<CreateControlMappingSource> controlMappingSources) {
@@ -300,7 +300,7 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * The data mapping sources for the specified control.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -309,7 +309,7 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param controlMappingSources
-     *        The data source that determines from where AWS Audit Manager collects evidence for the control.
+     *        The data mapping sources for the specified control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +325,11 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data source that determines from where AWS Audit Manager collects evidence for the control.
+     * The data mapping sources for the specified control.
      * </p>
      * 
      * @param controlMappingSources
-     *        The data source that determines from where AWS Audit Manager collects evidence for the control.
+     *        The data mapping sources for the specified control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

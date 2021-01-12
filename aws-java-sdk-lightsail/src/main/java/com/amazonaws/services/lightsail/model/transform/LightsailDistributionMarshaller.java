@@ -64,6 +64,8 @@ public class LightsailDistributionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheBehaviors").build();
     private static final MarshallingInfo<Boolean> ABLETOUPDATEBUNDLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ableToUpdateBundle").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -101,6 +103,7 @@ public class LightsailDistributionMarshaller {
             protocolMarshaller.marshall(lightsailDistribution.getCacheBehaviorSettings(), CACHEBEHAVIORSETTINGS_BINDING);
             protocolMarshaller.marshall(lightsailDistribution.getCacheBehaviors(), CACHEBEHAVIORS_BINDING);
             protocolMarshaller.marshall(lightsailDistribution.getAbleToUpdateBundle(), ABLETOUPDATEBUNDLE_BINDING);
+            protocolMarshaller.marshall(lightsailDistribution.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(lightsailDistribution.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

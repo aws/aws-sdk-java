@@ -46,7 +46,8 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the application to launch after the session starts. This is the name that you specified as
-     * <b>Name</b> in the Image Assistant.
+     * <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also
+     * choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      * </p>
      */
     private String applicationId;
@@ -189,12 +190,14 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the application to launch after the session starts. This is the name that you specified as
-     * <b>Name</b> in the Image Assistant.
+     * <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also
+     * choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      * </p>
      * 
      * @param applicationId
      *        The name of the application to launch after the session starts. This is the name that you specified as
-     *        <b>Name</b> in the Image Assistant.
+     *        <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can
+     *        also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      */
 
     public void setApplicationId(String applicationId) {
@@ -204,11 +207,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the application to launch after the session starts. This is the name that you specified as
-     * <b>Name</b> in the Image Assistant.
+     * <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also
+     * choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      * </p>
      * 
      * @return The name of the application to launch after the session starts. This is the name that you specified as
-     *         <b>Name</b> in the Image Assistant.
+     *         <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can
+     *         also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      */
 
     public String getApplicationId() {
@@ -218,12 +223,14 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the application to launch after the session starts. This is the name that you specified as
-     * <b>Name</b> in the Image Assistant.
+     * <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also
+     * choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      * </p>
      * 
      * @param applicationId
      *        The name of the application to launch after the session starts. This is the name that you specified as
-     *        <b>Name</b> in the Image Assistant.
+     *        <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can
+     *        also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

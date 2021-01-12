@@ -1142,6 +1142,10 @@
     "AssessmentFrameworkMetadata":{
       "type":"structure",
       "members":{
+        "arn":{
+          "shape":"AuditManagerArn",
+          "documentation":"<p> The Amazon Resource Name (ARN) of the framework. </p>"
+        },
         "id":{
           "shape":"UUID",
           "documentation":"<p> The unique identified for the specified framework. </p>"
@@ -1650,7 +1654,7 @@
         },
         "errorMessage":{
           "shape":"ErrorMessage",
-          "documentation":"<p> The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>"
+          "documentation":"<p> The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API. </p>"
         }
       },
       "documentation":"<p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message. </p>"
@@ -1774,7 +1778,7 @@
         },
         "controlSources":{
           "shape":"ControlSources",
-          "documentation":"<p> The data mapping sources for the specified control. </p>"
+          "documentation":"<p> The data source that determines from where AWS Audit Manager collects evidence for the control. </p>"
         },
         "controlMappingSources":{
           "shape":"ControlMappingSources",
@@ -2051,6 +2055,10 @@
         "controlSets":{
           "shape":"CreateAssessmentFrameworkControlSets",
           "documentation":"<p> The control sets to be associated with the framework. </p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p> The tags associated with the framework. </p>"
         }
       }
     },
@@ -2203,7 +2211,7 @@
         },
         "controlMappingSources":{
           "shape":"CreateControlMappingSources",
-          "documentation":"<p> The data source that determines from where AWS Audit Manager collects evidence for the control. </p>"
+          "documentation":"<p> The data mapping sources for the specified control. </p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -2671,6 +2679,10 @@
         "lastUpdatedBy":{
           "shape":"LastUpdatedBy",
           "documentation":"<p> The IAM user or role that most recently updated the framework. </p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p> The tags associated with the framework. </p>"
         }
       },
       "documentation":"<p> The file used to structure and automate AWS Audit Manager assessments for a given compliance standard. </p>"
@@ -4172,7 +4184,7 @@
         },
         "controlMappingSources":{
           "shape":"ControlMappingSources",
-          "documentation":"<p> The data source that determines from where AWS Audit Manager collects evidence for the control. </p>"
+          "documentation":"<p> The data mapping sources for the specified control. </p>"
         }
       }
     },

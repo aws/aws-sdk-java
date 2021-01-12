@@ -56,8 +56,10 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateIpAddress").build();
     private static final MarshallingInfo<String> PUBLICIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicIpAddress").build();
-    private static final MarshallingInfo<String> IPV6ADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipv6Address").build();
+    private static final MarshallingInfo<List> IPV6ADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ipv6Addresses").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<StructuredPojo> HARDWARE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hardware").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -99,7 +101,8 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getIsStaticIp(), ISSTATICIP_BINDING);
             protocolMarshaller.marshall(instance.getPrivateIpAddress(), PRIVATEIPADDRESS_BINDING);
             protocolMarshaller.marshall(instance.getPublicIpAddress(), PUBLICIPADDRESS_BINDING);
-            protocolMarshaller.marshall(instance.getIpv6Address(), IPV6ADDRESS_BINDING);
+            protocolMarshaller.marshall(instance.getIpv6Addresses(), IPV6ADDRESSES_BINDING);
+            protocolMarshaller.marshall(instance.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(instance.getHardware(), HARDWARE_BINDING);
             protocolMarshaller.marshall(instance.getNetworking(), NETWORKING_BINDING);
             protocolMarshaller.marshall(instance.getState(), STATE_BINDING);

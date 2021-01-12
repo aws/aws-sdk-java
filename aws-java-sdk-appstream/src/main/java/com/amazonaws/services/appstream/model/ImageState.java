@@ -24,7 +24,9 @@ public enum ImageState {
     AVAILABLE("AVAILABLE"),
     FAILED("FAILED"),
     COPYING("COPYING"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    CREATING("CREATING"),
+    IMPORTING("IMPORTING");
 
     private String value;
 

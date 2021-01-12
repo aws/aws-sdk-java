@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets
  * are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more
- * information about running tasks that do not specify targets, see see <a
+ * information about running tasks that do not specify targets, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
  * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>

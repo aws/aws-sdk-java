@@ -583,8 +583,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
-     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
-     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
+     * services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
      * </p>
      * 
      * @param createContainerServiceRequest
@@ -601,8 +601,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
-     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
-     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
+     * services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
      * </p>
      * 
      * @param createContainerServiceRequest
@@ -5337,6 +5337,45 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<SendContactMethodVerificationResult> sendContactMethodVerificationAsync(
             SendContactMethodVerificationRequest sendContactMethodVerificationRequest,
             com.amazonaws.handlers.AsyncHandler<SendContactMethodVerificationRequest, SendContactMethodVerificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the IP address type for a Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource.
+     * Alternately, you can use this action to disable dual-stack, and enable IPv4 only.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @return A Java Future containing the result of the SetIpAddressType operation returned by the service.
+     * @sample AmazonLightsailAsync.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest setIpAddressTypeRequest);
+
+    /**
+     * <p>
+     * Sets the IP address type for a Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource.
+     * Alternately, you can use this action to disable dual-stack, and enable IPv4 only.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetIpAddressType operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest setIpAddressTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult> asyncHandler);
 
     /**
      * <p>

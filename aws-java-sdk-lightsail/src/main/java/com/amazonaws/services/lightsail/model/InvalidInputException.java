@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
- * configuration to us-east-1 to create, view, or edit these resources.
+ * Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set
+ * your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.
  * </p>
  * </note>
  */

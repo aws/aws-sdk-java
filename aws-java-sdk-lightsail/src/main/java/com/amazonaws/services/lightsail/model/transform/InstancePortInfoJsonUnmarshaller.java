@@ -82,6 +82,12 @@ public class InstancePortInfoJsonUnmarshaller implements Unmarshaller<InstancePo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ipv6Cidrs", targetDepth)) {
+                    context.nextToken();
+                    instancePortInfo.setIpv6Cidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("cidrListAliases", targetDepth)) {
                     context.nextToken();
                     instancePortInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

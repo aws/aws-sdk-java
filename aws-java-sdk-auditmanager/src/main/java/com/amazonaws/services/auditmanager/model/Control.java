@@ -78,7 +78,7 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private String actionPlanInstructions;
     /**
      * <p>
-     * The data mapping sources for the specified control.
+     * The data source that determines from where AWS Audit Manager collects evidence for the control.
      * </p>
      */
     private String controlSources;
@@ -460,11 +460,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data mapping sources for the specified control.
+     * The data source that determines from where AWS Audit Manager collects evidence for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data mapping sources for the specified control.
+     *        The data source that determines from where AWS Audit Manager collects evidence for the control.
      */
 
     public void setControlSources(String controlSources) {
@@ -473,10 +473,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data mapping sources for the specified control.
+     * The data source that determines from where AWS Audit Manager collects evidence for the control.
      * </p>
      * 
-     * @return The data mapping sources for the specified control.
+     * @return The data source that determines from where AWS Audit Manager collects evidence for the control.
      */
 
     public String getControlSources() {
@@ -485,11 +485,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data mapping sources for the specified control.
+     * The data source that determines from where AWS Audit Manager collects evidence for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data mapping sources for the specified control.
+     *        The data source that determines from where AWS Audit Manager collects evidence for the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

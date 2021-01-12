@@ -123,8 +123,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -170,8 +171,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -208,8 +210,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -250,8 +253,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -295,8 +299,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -328,8 +333,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -367,8 +373,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -411,8 +418,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -455,8 +463,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -493,8 +502,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -534,8 +544,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -558,8 +569,8 @@ public interface AmazonLightsail {
      * </p>
      * <p>
      * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
-     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
-     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
+     * services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
      * </p>
      * 
      * @param createContainerServiceRequest
@@ -570,8 +581,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -611,8 +623,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -664,8 +677,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -701,8 +715,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -742,8 +757,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -799,8 +815,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -838,8 +855,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -875,8 +893,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -915,8 +934,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -955,8 +975,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -994,8 +1015,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1034,8 +1056,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1073,8 +1096,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1119,8 +1143,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1161,8 +1186,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1200,8 +1226,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1244,8 +1271,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1285,8 +1313,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1324,8 +1353,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -1357,8 +1387,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1392,8 +1423,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws AccessDeniedException
      *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
@@ -1429,8 +1461,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -1460,8 +1493,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1489,8 +1523,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1530,8 +1565,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1575,8 +1611,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1608,8 +1645,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1645,8 +1683,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1684,8 +1723,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1723,8 +1763,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1762,8 +1803,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1801,8 +1843,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1844,8 +1887,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1884,8 +1928,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1923,8 +1968,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -1962,8 +2008,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2001,8 +2048,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2038,8 +2086,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2076,8 +2125,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2119,8 +2169,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2152,8 +2203,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2187,8 +2239,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2218,8 +2271,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2253,8 +2307,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2305,8 +2360,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2338,8 +2394,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2379,8 +2436,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -2412,8 +2470,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2452,8 +2511,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2486,8 +2546,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2525,8 +2586,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2558,8 +2620,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2600,8 +2663,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2659,8 +2723,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2699,8 +2764,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2743,8 +2809,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2776,8 +2843,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2808,8 +2876,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2837,8 +2906,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2866,8 +2936,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2899,8 +2970,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2932,8 +3004,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -2965,8 +3038,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3002,8 +3076,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3034,8 +3109,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3069,8 +3145,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3100,8 +3177,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3131,8 +3209,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3164,8 +3243,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3201,8 +3281,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3234,8 +3315,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3273,8 +3355,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3310,8 +3393,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3344,8 +3428,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3377,8 +3462,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3410,8 +3496,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3443,8 +3530,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3476,8 +3564,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3509,8 +3598,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3542,8 +3632,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3575,8 +3666,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3612,8 +3704,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3652,8 +3745,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3685,8 +3779,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3719,8 +3814,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3757,8 +3853,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3790,8 +3887,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3824,8 +3922,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3857,8 +3956,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3894,8 +3994,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3931,8 +4032,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3964,8 +4066,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -3997,8 +4100,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4030,8 +4134,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4067,8 +4172,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4106,8 +4212,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4145,8 +4252,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4178,8 +4286,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4211,8 +4320,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4244,8 +4354,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4277,8 +4388,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4310,8 +4422,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4343,8 +4456,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4376,8 +4490,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4416,8 +4531,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4449,8 +4565,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4497,8 +4614,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -4538,8 +4656,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4577,8 +4696,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4616,8 +4736,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4657,8 +4778,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4686,8 +4808,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4723,8 +4846,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4772,8 +4896,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -4789,6 +4914,44 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     SendContactMethodVerificationResult sendContactMethodVerification(SendContactMethodVerificationRequest sendContactMethodVerificationRequest);
+
+    /**
+     * <p>
+     * Sets the IP address type for a Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource.
+     * Alternately, you can use this action to disable dual-stack, and enable IPv4 only.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @return Result of the SetIpAddressType operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest setIpAddressTypeRequest);
 
     /**
      * <p>
@@ -4818,8 +4981,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4858,8 +5022,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4905,8 +5070,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4944,8 +5110,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -4986,8 +5153,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5027,8 +5195,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws OperationFailureException
      *         Lightsail throws this exception when an operation fails to execute.
@@ -5058,8 +5227,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5097,8 +5267,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5131,8 +5302,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5163,8 +5335,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5207,8 +5380,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5244,8 +5418,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5283,8 +5458,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5326,8 +5502,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
@@ -5372,8 +5549,9 @@ public interface AmazonLightsail {
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
      *         field.</p> <note>
      *         <p>
-     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region.
+     *         Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these
+     *         resources.
      *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.

@@ -30,6 +30,12 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the framework.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * The unique identified for the specified framework.
      * </p>
      */
@@ -88,6 +94,46 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
      * </p>
      */
     private java.util.Date lastUpdatedAt;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the framework.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the framework.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the framework.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the framework.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the framework.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the framework.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentFrameworkMetadata withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -520,6 +566,8 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getType() != null)
@@ -554,6 +602,10 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
         if (obj instanceof AssessmentFrameworkMetadata == false)
             return false;
         AssessmentFrameworkMetadata other = (AssessmentFrameworkMetadata) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -602,6 +654,7 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

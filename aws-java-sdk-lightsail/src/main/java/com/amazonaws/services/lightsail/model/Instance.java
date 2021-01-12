@@ -117,10 +117,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String publicIpAddress;
     /**
      * <p>
-     * The IPv6 address of the instance.
+     * The IPv6 addresses of the instance.
      * </p>
      */
-    private String ipv6Address;
+    private java.util.List<String> ipv6Addresses;
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     */
+    private String ipAddressType;
     /**
      * <p>
      * The size of the vCPU and the amount of RAM for the instance.
@@ -846,41 +855,169 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IPv6 address of the instance.
+     * The IPv6 addresses of the instance.
      * </p>
      * 
-     * @param ipv6Address
-     *        The IPv6 address of the instance.
+     * @return The IPv6 addresses of the instance.
      */
 
-    public void setIpv6Address(String ipv6Address) {
-        this.ipv6Address = ipv6Address;
+    public java.util.List<String> getIpv6Addresses() {
+        return ipv6Addresses;
     }
 
     /**
      * <p>
-     * The IPv6 address of the instance.
+     * The IPv6 addresses of the instance.
      * </p>
      * 
-     * @return The IPv6 address of the instance.
+     * @param ipv6Addresses
+     *        The IPv6 addresses of the instance.
      */
 
-    public String getIpv6Address() {
-        return this.ipv6Address;
+    public void setIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
+        if (ipv6Addresses == null) {
+            this.ipv6Addresses = null;
+            return;
+        }
+
+        this.ipv6Addresses = new java.util.ArrayList<String>(ipv6Addresses);
     }
 
     /**
      * <p>
-     * The IPv6 address of the instance.
+     * The IPv6 addresses of the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
-     * @param ipv6Address
-     *        The IPv6 address of the instance.
+     * @param ipv6Addresses
+     *        The IPv6 addresses of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Instance withIpv6Address(String ipv6Address) {
-        setIpv6Address(ipv6Address);
+    public Instance withIpv6Addresses(String... ipv6Addresses) {
+        if (this.ipv6Addresses == null) {
+            setIpv6Addresses(new java.util.ArrayList<String>(ipv6Addresses.length));
+        }
+        for (String ele : ipv6Addresses) {
+            this.ipv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 addresses of the instance.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        The IPv6 addresses of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
+        setIpv6Addresses(ipv6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the instance.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @return The IP address type of the instance.</p>
+     *         <p>
+     *         The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the instance.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public Instance withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the instance.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(IpAddressType ipAddressType) {
+        withIpAddressType(ipAddressType);
+    }
+
+    /**
+     * <p>
+     * The IP address type of the instance.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the instance.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public Instance withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 
@@ -1127,8 +1264,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPublicIpAddress() != null)
             sb.append("PublicIpAddress: ").append(getPublicIpAddress()).append(",");
-        if (getIpv6Address() != null)
-            sb.append("Ipv6Address: ").append(getIpv6Address()).append(",");
+        if (getIpv6Addresses() != null)
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
         if (getHardware() != null)
             sb.append("Hardware: ").append(getHardware()).append(",");
         if (getNetworking() != null)
@@ -1209,9 +1348,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPublicIpAddress() != null && other.getPublicIpAddress().equals(this.getPublicIpAddress()) == false)
             return false;
-        if (other.getIpv6Address() == null ^ this.getIpv6Address() == null)
+        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
             return false;
-        if (other.getIpv6Address() != null && other.getIpv6Address().equals(this.getIpv6Address()) == false)
+        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
         if (other.getHardware() == null ^ this.getHardware() == null)
             return false;
@@ -1255,7 +1398,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIsStaticIp() == null) ? 0 : getIsStaticIp().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPublicIpAddress() == null) ? 0 : getPublicIpAddress().hashCode());
-        hashCode = prime * hashCode + ((getIpv6Address() == null) ? 0 : getIpv6Address().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getHardware() == null) ? 0 : getHardware().hashCode());
         hashCode = prime * hashCode + ((getNetworking() == null) ? 0 : getNetworking().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

@@ -1068,8 +1068,13 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
      * @throws InvalidPermissionTypeException
      *         The permission type is not supported. <i>Share</i> is the only supported permission type.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
      * @sample AWSSimpleSystemsManagement.DescribeDocumentPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission" target="_top">AWS
      *      API Documentation</a>
@@ -3712,7 +3717,7 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
      * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see see <a
+     * For more information about running tasks that do not specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
      * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>

@@ -44,10 +44,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -68,10 +76,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -132,9 +148,14 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
     private String state;
     /**
      * <p>
-     * The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance through the
-     * ports, and the protocol. Lightsail supports IPv4 addresses.
+     * The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
      * <p>
      * For more information about CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -142,6 +163,24 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<String> cidrs;
+    /**
+     * <p>
+     * The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6;
+     * otherwise, IPv4 should be used.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     * Routing</a> on <i>Wikipedia</i>.
+     * </p>
+     */
+    private java.util.List<String> ipv6Cidrs;
     /**
      * <p>
      * An alias that defines access for a preconfigured range of IP addresses.
@@ -168,10 +207,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -189,10 +236,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *        (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *        information, see <a
      *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *        Messages</a> on <i>Wikipedia</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the
+     *        <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *        information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *        Protocol for IPv6</a>.
      *        </p>
      *        </li>
      */
@@ -216,10 +273,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -236,10 +301,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *         <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *         ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *         (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *         information, see <a
      *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *         Messages</a> on <i>Wikipedia</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the
+     *         <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *         information, see <a
+     *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *         Protocol for IPv6</a>.
      *         </p>
      *         </li>
      */
@@ -263,10 +338,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -284,10 +367,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *        (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *        information, see <a
      *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *        Messages</a> on <i>Wikipedia</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the
+     *        <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *        information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *        Protocol for IPv6</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -313,10 +406,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -334,10 +435,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *        (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *        information, see <a
      *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *        Messages</a> on <i>Wikipedia</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the
+     *        <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *        information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *        Protocol for IPv6</a>.
      *        </p>
      *        </li>
      */
@@ -361,10 +472,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -381,10 +500,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *         <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *         ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *         (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *         information, see <a
      *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *         Messages</a> on <i>Wikipedia</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the
+     *         <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *         information, see <a
+     *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *         Protocol for IPv6</a>.
      *         </p>
      *         </li>
      */
@@ -408,10 +537,18 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
-     * <i>Wikipedia</i>.
+     * ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP
+     * type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a>
+     * on <i>Wikipedia</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code>
+     * (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol
+     * for IPv6</a>.
      * </p>
      * </li>
      * </ul>
@@ -429,10 +566,20 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
-     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code>
+     *        (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more
+     *        information, see <a
      *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
      *        Messages</a> on <i>Wikipedia</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the
+     *        <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more
+     *        information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message
+     *        Protocol for IPv6</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -986,17 +1133,26 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance through the
-     * ports, and the protocol. Lightsail supports IPv4 addresses.
+     * The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
      * <p>
      * For more information about CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
      * Routing</a> on <i>Wikipedia</i>.
      * </p>
      * 
-     * @return The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance
-     *         through the ports, and the protocol. Lightsail supports IPv4 addresses.</p>
+     * @return The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an
+     *         instance through the ports, and the protocol.</p> <note>
+     *         <p>
+     *         The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     *         </p>
+     *         </note>
      *         <p>
      *         For more information about CIDR block notation, see <a
      *         href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1009,9 +1165,14 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance through the
-     * ports, and the protocol. Lightsail supports IPv4 addresses.
+     * The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
      * <p>
      * For more information about CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1019,8 +1180,12 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param cidrs
-     *        The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance
-     *        through the ports, and the protocol. Lightsail supports IPv4 addresses.</p>
+     *        The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol.</p> <note>
+     *        <p>
+     *        The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about CIDR block notation, see <a
      *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1038,9 +1203,14 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance through the
-     * ports, and the protocol. Lightsail supports IPv4 addresses.
+     * The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
      * <p>
      * For more information about CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1053,8 +1223,12 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param cidrs
-     *        The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance
-     *        through the ports, and the protocol. Lightsail supports IPv4 addresses.</p>
+     *        The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol.</p> <note>
+     *        <p>
+     *        The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about CIDR block notation, see <a
      *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1074,9 +1248,14 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance through the
-     * ports, and the protocol. Lightsail supports IPv4 addresses.
+     * The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
      * <p>
      * For more information about CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1084,8 +1263,12 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param cidrs
-     *        The IP address, or range of IP addresses in CIDR notation, that are allowed to connect to an instance
-     *        through the ports, and the protocol. Lightsail supports IPv4 addresses.</p>
+     *        The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol.</p> <note>
+     *        <p>
+     *        The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about CIDR block notation, see <a
      *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
@@ -1095,6 +1278,164 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
 
     public InstancePortState withCidrs(java.util.Collection<String> cidrs) {
         setCidrs(cidrs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6;
+     * otherwise, IPv4 should be used.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     * Routing</a> on <i>Wikipedia</i>.
+     * </p>
+     * 
+     * @return The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an
+     *         instance through the ports, and the protocol. Only devices with an IPv6 address can connect to an
+     *         instance through IPv6; otherwise, IPv4 should be used.</p> <note>
+     *         <p>
+     *         The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information about CIDR block notation, see <a
+     *         href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     *         Routing</a> on <i>Wikipedia</i>.
+     */
+
+    public java.util.List<String> getIpv6Cidrs() {
+        return ipv6Cidrs;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6;
+     * otherwise, IPv4 should be used.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     * Routing</a> on <i>Wikipedia</i>.
+     * </p>
+     * 
+     * @param ipv6Cidrs
+     *        The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through
+     *        IPv6; otherwise, IPv4 should be used.</p> <note>
+     *        <p>
+     *        The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about CIDR block notation, see <a
+     *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     *        Routing</a> on <i>Wikipedia</i>.
+     */
+
+    public void setIpv6Cidrs(java.util.Collection<String> ipv6Cidrs) {
+        if (ipv6Cidrs == null) {
+            this.ipv6Cidrs = null;
+            return;
+        }
+
+        this.ipv6Cidrs = new java.util.ArrayList<String>(ipv6Cidrs);
+    }
+
+    /**
+     * <p>
+     * The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6;
+     * otherwise, IPv4 should be used.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     * Routing</a> on <i>Wikipedia</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Cidrs(java.util.Collection)} or {@link #withIpv6Cidrs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv6Cidrs
+     *        The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through
+     *        IPv6; otherwise, IPv4 should be used.</p> <note>
+     *        <p>
+     *        The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about CIDR block notation, see <a
+     *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     *        Routing</a> on <i>Wikipedia</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePortState withIpv6Cidrs(String... ipv6Cidrs) {
+        if (this.ipv6Cidrs == null) {
+            setIpv6Cidrs(new java.util.ArrayList<String>(ipv6Cidrs.length));
+        }
+        for (String ele : ipv6Cidrs) {
+            this.ipv6Cidrs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     * through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6;
+     * otherwise, IPv4 should be used.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     * Routing</a> on <i>Wikipedia</i>.
+     * </p>
+     * 
+     * @param ipv6Cidrs
+     *        The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance
+     *        through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through
+     *        IPv6; otherwise, IPv4 should be used.</p> <note>
+     *        <p>
+     *        The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about CIDR block notation, see <a
+     *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain
+     *        Routing</a> on <i>Wikipedia</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePortState withIpv6Cidrs(java.util.Collection<String> ipv6Cidrs) {
+        setIpv6Cidrs(ipv6Cidrs);
         return this;
     }
 
@@ -1218,6 +1559,8 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
             sb.append("State: ").append(getState()).append(",");
         if (getCidrs() != null)
             sb.append("Cidrs: ").append(getCidrs()).append(",");
+        if (getIpv6Cidrs() != null)
+            sb.append("Ipv6Cidrs: ").append(getIpv6Cidrs()).append(",");
         if (getCidrListAliases() != null)
             sb.append("CidrListAliases: ").append(getCidrListAliases());
         sb.append("}");
@@ -1254,6 +1597,10 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCidrs() != null && other.getCidrs().equals(this.getCidrs()) == false)
             return false;
+        if (other.getIpv6Cidrs() == null ^ this.getIpv6Cidrs() == null)
+            return false;
+        if (other.getIpv6Cidrs() != null && other.getIpv6Cidrs().equals(this.getIpv6Cidrs()) == false)
+            return false;
         if (other.getCidrListAliases() == null ^ this.getCidrListAliases() == null)
             return false;
         if (other.getCidrListAliases() != null && other.getCidrListAliases().equals(this.getCidrListAliases()) == false)
@@ -1271,6 +1618,7 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Cidrs() == null) ? 0 : getIpv6Cidrs().hashCode());
         hashCode = prime * hashCode + ((getCidrListAliases() == null) ? 0 : getCidrListAliases().hashCode());
         return hashCode;
     }

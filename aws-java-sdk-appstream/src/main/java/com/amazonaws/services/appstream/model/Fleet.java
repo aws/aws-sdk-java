@@ -71,6 +71,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -618,6 +623,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -781,6 +791,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -954,6 +969,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1116,6 +1136,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -1289,6 +1314,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1452,6 +1482,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium

@@ -124,6 +124,10 @@ public class LightsailDistributionJsonUnmarshaller implements Unmarshaller<Light
                     context.nextToken();
                     lightsailDistribution.setAbleToUpdateBundle(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ipAddressType", targetDepth)) {
+                    context.nextToken();
+                    lightsailDistribution.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     lightsailDistribution.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

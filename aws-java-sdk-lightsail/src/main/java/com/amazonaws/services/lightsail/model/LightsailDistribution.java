@@ -152,6 +152,15 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
     private Boolean ableToUpdateBundle;
     /**
      * <p>
+     * The IP address type of the distribution.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
      * </p>
@@ -1071,6 +1080,85 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The IP address type of the distribution.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the distribution.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the distribution.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @return The IP address type of the distribution.</p>
+     *         <p>
+     *         The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the distribution.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the distribution.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LightsailDistribution withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the distribution.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the distribution.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LightsailDistribution withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
      * </p>
@@ -1199,6 +1287,8 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
             sb.append("CacheBehaviors: ").append(getCacheBehaviors()).append(",");
         if (getAbleToUpdateBundle() != null)
             sb.append("AbleToUpdateBundle: ").append(getAbleToUpdateBundle()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1287,6 +1377,10 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
             return false;
         if (other.getAbleToUpdateBundle() != null && other.getAbleToUpdateBundle().equals(this.getAbleToUpdateBundle()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1317,6 +1411,7 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCacheBehaviorSettings() == null) ? 0 : getCacheBehaviorSettings().hashCode());
         hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode());
         hashCode = prime * hashCode + ((getAbleToUpdateBundle() == null) ? 0 : getAbleToUpdateBundle().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

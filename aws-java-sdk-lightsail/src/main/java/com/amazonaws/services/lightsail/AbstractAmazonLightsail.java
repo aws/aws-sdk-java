@@ -668,6 +668,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInstanceResult startInstance(StartInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

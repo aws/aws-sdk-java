@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.auditmanager.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -36,6 +37,8 @@ public class CreateAssessmentFrameworkRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("complianceType").build();
     private static final MarshallingInfo<List> CONTROLSETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("controlSets").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateAssessmentFrameworkRequestMarshaller instance = new CreateAssessmentFrameworkRequestMarshaller();
 
@@ -57,6 +60,7 @@ public class CreateAssessmentFrameworkRequestMarshaller {
             protocolMarshaller.marshall(createAssessmentFrameworkRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAssessmentFrameworkRequest.getComplianceType(), COMPLIANCETYPE_BINDING);
             protocolMarshaller.marshall(createAssessmentFrameworkRequest.getControlSets(), CONTROLSETS_BINDING);
+            protocolMarshaller.marshall(createAssessmentFrameworkRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -61,6 +61,8 @@ public class LoadBalancerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsCertificateSummaries").build();
     private static final MarshallingInfo<Map> CONFIGURATIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationOptions").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
 
     private static final LoadBalancerMarshaller instance = new LoadBalancerMarshaller();
 
@@ -94,6 +96,7 @@ public class LoadBalancerMarshaller {
             protocolMarshaller.marshall(loadBalancer.getInstanceHealthSummary(), INSTANCEHEALTHSUMMARY_BINDING);
             protocolMarshaller.marshall(loadBalancer.getTlsCertificateSummaries(), TLSCERTIFICATESUMMARIES_BINDING);
             protocolMarshaller.marshall(loadBalancer.getConfigurationOptions(), CONFIGURATIONOPTIONS_BINDING);
+            protocolMarshaller.marshall(loadBalancer.getIpAddressType(), IPADDRESSTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -46,6 +46,8 @@ public class CreateInstancesRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("addOns").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
 
     private static final CreateInstancesRequestMarshaller instance = new CreateInstancesRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateInstancesRequestMarshaller {
             protocolMarshaller.marshall(createInstancesRequest.getKeyPairName(), KEYPAIRNAME_BINDING);
             protocolMarshaller.marshall(createInstancesRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInstancesRequest.getAddOns(), ADDONS_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

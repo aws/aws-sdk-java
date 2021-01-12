@@ -73,8 +73,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -145,8 +146,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -375,8 +377,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -447,8 +450,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -531,8 +535,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        <note>
      *        <p>
-     *        At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *        eu-central-1, eu-west-1 and ap-northeast-1.
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
      *        </p>
      *        </note>
      *        <p>
@@ -606,8 +611,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        <note>
      *        <p>
-     *        At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *        eu-central-1, eu-west-1 and ap-northeast-1.
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
      *        </p>
      *        </note>
      *        <p>
@@ -699,8 +705,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -771,8 +778,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -854,8 +862,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *         </p>
      *         <note>
      *         <p>
-     *         At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *         eu-central-1, eu-west-1 and ap-northeast-1.
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
      *         </p>
      *         </note>
      *         <p>
@@ -929,8 +938,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *         </p>
      *         <note>
      *         <p>
-     *         At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *         eu-central-1, eu-west-1 and ap-northeast-1.
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
      *         </p>
      *         </note>
      *         <p>
@@ -1022,8 +1032,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -1094,8 +1105,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
      * </p>
      * </note>
      * <p>
@@ -1178,8 +1190,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        <note>
      *        <p>
-     *        At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *        eu-central-1, eu-west-1 and ap-northeast-1.
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
      *        </p>
      *        </note>
      *        <p>
@@ -1253,8 +1266,9 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        <note>
      *        <p>
-     *        At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2,
-     *        eu-central-1, eu-west-1 and ap-northeast-1.
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
      *        </p>
      *        </note>
      *        <p>

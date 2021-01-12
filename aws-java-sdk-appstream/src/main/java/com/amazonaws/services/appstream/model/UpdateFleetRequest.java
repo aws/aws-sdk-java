@@ -50,6 +50,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -462,6 +467,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -625,6 +635,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -798,6 +813,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -960,6 +980,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -1133,6 +1158,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -1296,6 +1326,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium

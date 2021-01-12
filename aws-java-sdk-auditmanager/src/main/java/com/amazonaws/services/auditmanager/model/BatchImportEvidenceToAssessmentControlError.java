@@ -44,7 +44,7 @@ public class BatchImportEvidenceToAssessmentControlError implements Serializable
     private String errorCode;
     /**
      * <p>
-     * The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     * The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      * </p>
      */
     private String errorMessage;
@@ -131,11 +131,11 @@ public class BatchImportEvidenceToAssessmentControlError implements Serializable
 
     /**
      * <p>
-     * The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     * The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      * </p>
      * 
      * @param errorMessage
-     *        The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     *        The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -144,10 +144,10 @@ public class BatchImportEvidenceToAssessmentControlError implements Serializable
 
     /**
      * <p>
-     * The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     * The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      * </p>
      * 
-     * @return The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     * @return The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      */
 
     public String getErrorMessage() {
@@ -156,11 +156,11 @@ public class BatchImportEvidenceToAssessmentControlError implements Serializable
 
     /**
      * <p>
-     * The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     * The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      * </p>
      * 
      * @param errorMessage
-     *        The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code> API.
+     *        The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,6 +66,12 @@ public class PortInfoJsonUnmarshaller implements Unmarshaller<PortInfo, JsonUnma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ipv6Cidrs", targetDepth)) {
+                    context.nextToken();
+                    portInfo.setIpv6Cidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("cidrListAliases", targetDepth)) {
                     context.nextToken();
                     portInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
