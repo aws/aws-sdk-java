@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ModelVersionStatus {
 
     ACTIVE("ACTIVE"),
-    INACTIVE("INACTIVE");
+    INACTIVE("INACTIVE"),
+    TRAINING_CANCELLED("TRAINING_CANCELLED");
 
     private String value;
 

@@ -1,3 +1,12 @@
+# __1.11.937__ __2021-01-13__
+## __Amazon Fraud Detector__
+  - ### Features
+    - Added support for cancelling a model version that is TRAINING_IN_PROGRESS.
+
+## __Amazon Personalize__
+  - ### Features
+    - Miscellaneous updates and improvements to the documentation
+
 # __1.11.936__ __2021-01-12__
 ## __AWS Audit Manager__
   - ### Features

@@ -30,20 +30,32 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+     * data only if your solution uses the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe.
      * </p>
      */
     private java.util.Map<String, String> itemExplorationConfig;
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+     * data only if your solution uses the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe.
      * </p>
      * 
-     * @return A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *         optimization. See <a>customizing-solution-config-hpo</a>.
+     * @return A string to string map specifying the exploration configuration hyperparameters, including
+     *         <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure
+     *         the amount of item exploration Amazon Personalize uses when recommending items. Provide
+     *         <code>itemExplorationConfig</code> data only if your solution uses the <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *         >User-Personalization</a> recipe.
      */
 
     public java.util.Map<String, String> getItemExplorationConfig() {
@@ -52,13 +64,21 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+     * data only if your solution uses the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe.
      * </p>
      * 
      * @param itemExplorationConfig
-     *        A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *        optimization. See <a>customizing-solution-config-hpo</a>.
+     *        A string to string map specifying the exploration configuration hyperparameters, including
+     *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
+     *        amount of item exploration Amazon Personalize uses when recommending items. Provide
+     *        <code>itemExplorationConfig</code> data only if your solution uses the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a> recipe.
      */
 
     public void setItemExplorationConfig(java.util.Map<String, String> itemExplorationConfig) {
@@ -67,13 +87,21 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+     * data only if your solution uses the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe.
      * </p>
      * 
      * @param itemExplorationConfig
-     *        A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *        optimization. See <a>customizing-solution-config-hpo</a>.
+     *        A string to string map specifying the exploration configuration hyperparameters, including
+     *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
+     *        amount of item exploration Amazon Personalize uses when recommending items. Provide
+     *        <code>itemExplorationConfig</code> data only if your solution uses the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a> recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

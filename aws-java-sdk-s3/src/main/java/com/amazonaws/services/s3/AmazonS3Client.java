@@ -2109,6 +2109,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyObjectResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
         copyObjectResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
         copyObjectResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
+        copyObjectResult.setBucketKeyEnabled(copyObjectResultHandler.getBucketKeyEnabled());
         copyObjectResult.setExpirationTime(copyObjectResultHandler.getExpirationTime());
         copyObjectResult.setExpirationTimeRuleId(copyObjectResultHandler.getExpirationTimeRuleId());
         copyObjectResult.setRequesterCharged(copyObjectResultHandler.isRequesterCharged());

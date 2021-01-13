@@ -30,20 +30,26 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. See
+     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      * </p>
      */
     private java.util.Map<String, String> itemExplorationConfig;
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. See
+     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      * </p>
      * 
-     * @return A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *         optimization. See <a>customizing-solution-config-hpo</a>.
+     * @return A string to string map specifying the exploration configuration hyperparameters, including
+     *         <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure
+     *         the amount of item exploration Amazon Personalize uses when recommending items. See
+     *         <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      */
 
     public java.util.Map<String, String> getItemExplorationConfig() {
@@ -52,13 +58,17 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. See
+     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      * </p>
      * 
      * @param itemExplorationConfig
-     *        A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *        optimization. See <a>customizing-solution-config-hpo</a>.
+     *        A string to string map specifying the exploration configuration hyperparameters, including
+     *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
+     *        amount of item exploration Amazon Personalize uses when recommending items. See
+     *        <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      */
 
     public void setItemExplorationConfig(java.util.Map<String, String> itemExplorationConfig) {
@@ -67,13 +77,17 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization.
-     * See <a>customizing-solution-config-hpo</a>.
+     * A string to string map specifying the exploration configuration hyperparameters, including
+     * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+     * of item exploration Amazon Personalize uses when recommending items. See
+     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      * </p>
      * 
      * @param itemExplorationConfig
-     *        A string to string map specifying the inference hyperparameters you wish to use for hyperparameter
-     *        optimization. See <a>customizing-solution-config-hpo</a>.
+     *        A string to string map specifying the exploration configuration hyperparameters, including
+     *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
+     *        amount of item exploration Amazon Personalize uses when recommending items. See
+     *        <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

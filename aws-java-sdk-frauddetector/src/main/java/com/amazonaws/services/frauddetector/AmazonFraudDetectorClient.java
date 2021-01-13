@@ -787,8 +787,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * You cannot delete an entity type that is included in an event type.
      * </p>
      * <p>
-     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
-     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type and the data is no
+     * longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEntityTypeRequest
@@ -876,8 +876,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * Deletes the specified event.
      * </p>
      * <p>
-     * When you delete an event, Amazon Fraud Detector permanently deletes that event from the evaluation history, and
-     * the event data is no longer stored in Amazon Fraud Detector.
+     * When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer
+     * stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEventRequest
@@ -947,8 +947,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * You cannot delete an event type that is used in a detector or a model.
      * </p>
      * <p>
-     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
-     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type and the data is no
+     * longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEventTypeRequest
@@ -1133,8 +1133,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
      * </p>
      * <p>
-     * When you delete a label, Amazon Fraud Detector permanently deletes that label from the evaluation history, and
-     * the data is no longer stored in Amazon Fraud Detector.
+     * When you delete a label, Amazon Fraud Detector permanently deletes that label and the data is no longer stored in
+     * Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteLabelRequest
@@ -1222,8 +1222,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * detector version.
      * </p>
      * <p>
-     * When you delete a model, Amazon Fraud Detector permanently deletes that model from the evaluation history, and
-     * the data is no longer stored in Amazon Fraud Detector.
+     * When you delete a model, Amazon Fraud Detector permanently deletes that model and the data is no longer stored in
+     * Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteModelRequest
@@ -1315,8 +1315,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * detector version.
      * </p>
      * <p>
-     * When you delete a model version, Amazon Fraud Detector permanently deletes that model version from the evaluation
-     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * When you delete a model version, Amazon Fraud Detector permanently deletes that model version and the data is no
+     * longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteModelVersionRequest
@@ -1407,8 +1407,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * You cannot delete an outcome that is used in a rule version.
      * </p>
      * <p>
-     * When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome from the evaluation history,
-     * and the data is no longer stored in Amazon Fraud Detector.
+     * When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome and the data is no longer
+     * stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteOutcomeRequest
@@ -1499,8 +1499,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * detector version.
      * </p>
      * <p>
-     * When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the evaluation history, and the
-     * data is no longer stored in Amazon Fraud Detector.
+     * When you delete a rule, Amazon Fraud Detector permanently deletes that rule and the data is no longer stored in
+     * Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -1597,8 +1597,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * delete the model. You can't delete these variables manually.
      * </p>
      * <p>
-     * When you delete a variable, Amazon Fraud Detector permanently deletes that variable from the evaluation history,
-     * and the data is no longer stored in Amazon Fraud Detector.
+     * When you delete a variable, Amazon Fraud Detector permanently deletes that variable and the data is no longer
+     * stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteVariableRequest

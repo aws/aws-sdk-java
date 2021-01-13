@@ -72,6 +72,10 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies
      * which event type (for example, 'click' or 'like') is used for training the model.
      * </p>
+     * <p>
+     * If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
+     * equal weight regardless of type.
+     * </p>
      */
     private String eventType;
     /**
@@ -79,6 +83,11 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize
      * only evaluates the <code>autoMLConfig</code> section of the solution configuration.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      */
     private SolutionConfig solutionConfig;
 
@@ -399,10 +408,17 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies
      * which event type (for example, 'click' or 'like') is used for training the model.
      * </p>
+     * <p>
+     * If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
+     * equal weight regardless of type.
+     * </p>
      * 
      * @param eventType
      *        When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter
-     *        specifies which event type (for example, 'click' or 'like') is used for training the model.
+     *        specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+     *        <p>
+     *        If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training
+     *        with equal weight regardless of type.
      */
 
     public void setEventType(String eventType) {
@@ -414,9 +430,16 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies
      * which event type (for example, 'click' or 'like') is used for training the model.
      * </p>
+     * <p>
+     * If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
+     * equal weight regardless of type.
+     * </p>
      * 
      * @return When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter
-     *         specifies which event type (for example, 'click' or 'like') is used for training the model.
+     *         specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+     *         <p>
+     *         If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for
+     *         training with equal weight regardless of type.
      */
 
     public String getEventType() {
@@ -428,10 +451,17 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies
      * which event type (for example, 'click' or 'like') is used for training the model.
      * </p>
+     * <p>
+     * If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
+     * equal weight regardless of type.
+     * </p>
      * 
      * @param eventType
      *        When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter
-     *        specifies which event type (for example, 'click' or 'like') is used for training the model.
+     *        specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+     *        <p>
+     *        If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training
+     *        with equal weight regardless of type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,10 +475,18 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize
      * only evaluates the <code>autoMLConfig</code> section of the solution configuration.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
      * @param solutionConfig
      *        The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon
-     *        Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.
+     *        Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+     *        <p>
+     *        Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *        </p>
      */
 
     public void setSolutionConfig(SolutionConfig solutionConfig) {
@@ -460,9 +498,18 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize
      * only evaluates the <code>autoMLConfig</code> section of the solution configuration.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
      * @return The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon
-     *         Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.
+     *         Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p>
+     *         <note>
+     *         <p>
+     *         Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *         </p>
      */
 
     public SolutionConfig getSolutionConfig() {
@@ -474,10 +521,18 @@ public class CreateSolutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize
      * only evaluates the <code>autoMLConfig</code> section of the solution configuration.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
      * @param solutionConfig
      *        The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon
-     *        Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.
+     *        Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+     *        <p>
+     *        Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

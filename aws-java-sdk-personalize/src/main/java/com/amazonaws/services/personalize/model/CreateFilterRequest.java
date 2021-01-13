@@ -39,16 +39,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String datasetGroupArn;
     /**
      * <p>
-     * The filter expression that designates the interaction types that the filter will filter out. A filter expression
-     * must follow the following format:
-     * </p>
-     * <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     * </p>
-     * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * The filter expression defines which items are included or excluded from recommendations. Filter expression must
+     * follow specific format rules. For information about filter expression structure and syntax, see
+     * <a>filter-expressions</a>.
      * </p>
      */
     private String filterExpression;
@@ -135,29 +128,15 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The filter expression that designates the interaction types that the filter will filter out. A filter expression
-     * must follow the following format:
-     * </p>
-     * <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     * </p>
-     * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * The filter expression defines which items are included or excluded from recommendations. Filter expression must
+     * follow specific format rules. For information about filter expression structure and syntax, see
+     * <a>filter-expressions</a>.
      * </p>
      * 
      * @param filterExpression
-     *        The filter expression that designates the interaction types that the filter will filter out. A filter
-     *        expression must follow the following format:</p>
-     *        <p>
-     *        <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     *        </p>
-     *        <p>
-     *        Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
-     *        Personalize</a>.
+     *        The filter expression defines which items are included or excluded from recommendations. Filter expression
+     *        must follow specific format rules. For information about filter expression structure and syntax, see
+     *        <a>filter-expressions</a>.
      */
 
     public void setFilterExpression(String filterExpression) {
@@ -166,28 +145,14 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The filter expression that designates the interaction types that the filter will filter out. A filter expression
-     * must follow the following format:
-     * </p>
-     * <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     * </p>
-     * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * The filter expression defines which items are included or excluded from recommendations. Filter expression must
+     * follow specific format rules. For information about filter expression structure and syntax, see
+     * <a>filter-expressions</a>.
      * </p>
      * 
-     * @return The filter expression that designates the interaction types that the filter will filter out. A filter
-     *         expression must follow the following format:</p>
-     *         <p>
-     *         <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     *         </p>
-     *         <p>
-     *         Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *         history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
-     *         Personalize</a>.
+     * @return The filter expression defines which items are included or excluded from recommendations. Filter
+     *         expression must follow specific format rules. For information about filter expression structure and
+     *         syntax, see <a>filter-expressions</a>.
      */
 
     public String getFilterExpression() {
@@ -196,29 +161,15 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The filter expression that designates the interaction types that the filter will filter out. A filter expression
-     * must follow the following format:
-     * </p>
-     * <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     * </p>
-     * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * The filter expression defines which items are included or excluded from recommendations. Filter expression must
+     * follow specific format rules. For information about filter expression structure and syntax, see
+     * <a>filter-expressions</a>.
      * </p>
      * 
      * @param filterExpression
-     *        The filter expression that designates the interaction types that the filter will filter out. A filter
-     *        expression must follow the following format:</p>
-     *        <p>
-     *        <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
-     *        </p>
-     *        <p>
-     *        Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
-     *        Personalize</a>.
+     *        The filter expression defines which items are included or excluded from recommendations. Filter expression
+     *        must follow specific format rules. For information about filter expression structure and syntax, see
+     *        <a>filter-expressions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
