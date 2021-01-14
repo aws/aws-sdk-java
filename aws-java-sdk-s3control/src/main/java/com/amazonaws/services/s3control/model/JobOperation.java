@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation that you want this job to perform on each object listed in the manifest. For more information about the
- * available operations, see <a
+ * The operation that you want this job to perform on every object listed in the manifest. For more information about
+ * the available operations, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
  * Simple Storage Service Developer Guide</i>.
  * </p>
@@ -31,31 +31,31 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      * </p>
      */
     private LambdaInvokeOperation lambdaInvoke;
     /**
      * <p>
-     * Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     * Directs the specified job to run a PUT Copy object call on every object in the manifest.
      * </p>
      */
     private S3CopyObjectOperation s3PutObjectCopy;
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
      * </p>
      */
     private S3SetObjectAclOperation s3PutObjectAcl;
     /**
      * <p>
-     * Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     * Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      * </p>
      */
     private S3SetObjectTaggingOperation s3PutObjectTagging;
     /**
      * <p>
-     * Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      */
     private S3InitiateRestoreObjectOperation s3InitiateRestoreObject;
@@ -66,11 +66,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      * </p>
      * 
      * @param lambdaInvoke
-     *        Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     *        Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      */
 
     public void setLambdaInvoke(LambdaInvokeOperation lambdaInvoke) {
@@ -79,10 +79,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     * @return Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      */
 
     public LambdaInvokeOperation getLambdaInvoke() {
@@ -91,11 +91,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      * </p>
      * 
      * @param lambdaInvoke
-     *        Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+     *        Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     * Directs the specified job to run a PUT Copy object call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectCopy
-     *        Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     *        Directs the specified job to run a PUT Copy object call on every object in the manifest.
      */
 
     public void setS3PutObjectCopy(S3CopyObjectOperation s3PutObjectCopy) {
@@ -119,10 +119,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     * Directs the specified job to run a PUT Copy object call on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     * @return Directs the specified job to run a PUT Copy object call on every object in the manifest.
      */
 
     public S3CopyObjectOperation getS3PutObjectCopy() {
@@ -131,11 +131,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     * Directs the specified job to run a PUT Copy object call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectCopy
-     *        Directs the specified job to run a PUT Copy object call on each object in the manifest.
+     *        Directs the specified job to run a PUT Copy object call on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectAcl
-     *        Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     *        Directs the specified job to run a PUT Object acl call on every object in the manifest.
      */
 
     public void setS3PutObjectAcl(S3SetObjectAclOperation s3PutObjectAcl) {
@@ -159,10 +159,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     * @return Directs the specified job to run a PUT Object acl call on every object in the manifest.
      */
 
     public S3SetObjectAclOperation getS3PutObjectAcl() {
@@ -171,11 +171,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectAcl
-     *        Directs the specified job to run a PUT Object acl call on each object in the manifest.
+     *        Directs the specified job to run a PUT Object acl call on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +186,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     * Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectTagging
-     *        Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     *        Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      */
 
     public void setS3PutObjectTagging(S3SetObjectTaggingOperation s3PutObjectTagging) {
@@ -199,10 +199,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     * Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     * @return Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      */
 
     public S3SetObjectTaggingOperation getS3PutObjectTagging() {
@@ -211,11 +211,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     * Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectTagging
-     *        Directs the specified job to run a PUT Object tagging call on each object in the manifest.
+     *        Directs the specified job to run a PUT Object tagging call on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +226,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      * 
      * @param s3InitiateRestoreObject
-     *        Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     *        Directs the specified job to initiate restore requests for every archived object in the manifest.
      */
 
     public void setS3InitiateRestoreObject(S3InitiateRestoreObjectOperation s3InitiateRestoreObject) {
@@ -239,10 +239,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     * @return Directs the specified job to initiate restore requests for every archived object in the manifest.
      */
 
     public S3InitiateRestoreObjectOperation getS3InitiateRestoreObject() {
@@ -251,11 +251,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      * 
      * @param s3InitiateRestoreObject
-     *        Directs the specified job to run an Initiate Glacier Restore call on each object in the manifest.
+     *        Directs the specified job to initiate restore requests for every archived object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

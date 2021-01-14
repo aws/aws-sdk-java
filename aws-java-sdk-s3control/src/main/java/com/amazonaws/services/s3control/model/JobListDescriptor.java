@@ -40,7 +40,7 @@ public class JobListDescriptor implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      */
     private String operation;
@@ -159,11 +159,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @see OperationName
      */
 
@@ -173,10 +173,10 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
-     * @return The operation that the specified job is configured to run on each object listed in the manifest.
+     * @return The operation that the specified job is configured to run on every object listed in the manifest.
      * @see OperationName
      */
 
@@ -186,11 +186,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationName
      */
@@ -202,11 +202,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationName
      */

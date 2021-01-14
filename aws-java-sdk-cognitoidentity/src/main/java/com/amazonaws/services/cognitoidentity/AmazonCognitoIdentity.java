@@ -378,7 +378,7 @@ public interface AmazonCognitoIdentity {
      * optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.
      * </p>
      * <p>
-     * The OpenId token is valid for 10 minutes.
+     * The OpenID token is valid for 10 minutes.
      * </p>
      * <p>
      * This is a public API. You do not need any credentials to call this API.
@@ -449,6 +449,30 @@ public interface AmazonCognitoIdentity {
      */
     GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest);
+
+    /**
+     * <p>
+     * Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user
+     * attributes.
+     * </p>
+     * 
+     * @param getPrincipalTagAttributeMapRequest
+     * @return Result of the GetPrincipalTagAttributeMap operation returned by the service.
+     * @throws InvalidParameterException
+     *         Thrown for missing or bad input parameter(s).
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
+     * @throws NotAuthorizedException
+     *         Thrown when a user is not authorized to access the requested resource.
+     * @throws TooManyRequestsException
+     *         Thrown when a request is throttled.
+     * @throws InternalErrorException
+     *         Thrown when the service encounters an error during processing the request.
+     * @sample AmazonCognitoIdentity.GetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPrincipalTagAttributeMapResult getPrincipalTagAttributeMap(GetPrincipalTagAttributeMapRequest getPrincipalTagAttributeMapRequest);
 
     /**
      * <p>
@@ -648,8 +672,32 @@ public interface AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you can use to categorize and
-     * manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.
+     * You can use this operation to use default (username and clientID) attribute or custom attribute mappings.
+     * </p>
+     * 
+     * @param setPrincipalTagAttributeMapRequest
+     * @return Result of the SetPrincipalTagAttributeMap operation returned by the service.
+     * @throws InvalidParameterException
+     *         Thrown for missing or bad input parameter(s).
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
+     * @throws NotAuthorizedException
+     *         Thrown when a user is not authorized to access the requested resource.
+     * @throws TooManyRequestsException
+     *         Thrown when a request is throttled.
+     * @throws InternalErrorException
+     *         Thrown when the service encounters an error during processing the request.
+     * @sample AmazonCognitoIdentity.SetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetPrincipalTagAttributeMapResult setPrincipalTagAttributeMap(SetPrincipalTagAttributeMapRequest setPrincipalTagAttributeMapRequest);
+
+    /**
+     * <p>
+     * Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label that you can use to
+     * categorize and manage identity pools in different ways, such as by purpose, owner, environment, or other
+     * criteria.
      * </p>
      * <p>
      * Each tag consists of a key and value, both of which you define. A key is a general category for more specific
@@ -749,8 +797,8 @@ public interface AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Removes the specified tags from an Amazon Cognito identity pool. You can use this action up to 5 times per
-     * second, per account
+     * Removes the specified tags from the specified Amazon Cognito identity pool. You can use this action up to 5 times
+     * per second, per account
      * </p>
      * 
      * @param untagResourceRequest

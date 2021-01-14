@@ -27,7 +27,9 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
+     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
+     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      */
     private String labelingJobName;
@@ -64,10 +66,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private String roleArn;
     /**
      * <p>
-     * The S3 URI of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories
+     * used to label the data objects.
      * </p>
      * <p>
-     * For 3D point cloud task types, see <a
+     * For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your
+     * label category configuration file. To learn how, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      * Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p>
@@ -156,11 +160,16 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
+     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
+     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
      * @param labelingJobName
-     *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
+     *        job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
+     *        sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
+     *        Truth.
      */
 
     public void setLabelingJobName(String labelingJobName) {
@@ -169,10 +178,15 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
+     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
+     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
-     * @return The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     * @return The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
+     *         job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
+     *         sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
+     *         Truth.
      */
 
     public String getLabelingJobName() {
@@ -181,11 +195,16 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
+     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
+     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
      * @param labelingJobName
-     *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs.
+     *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
+     *        job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
+     *        sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
+     *        Truth.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,10 +417,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URI of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories
+     * used to label the data objects.
      * </p>
      * <p>
-     * For 3D point cloud task types, see <a
+     * For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your
+     * label category configuration file. To learn how, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      * Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p>
@@ -459,9 +480,11 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URI of the file that defines the categories used to label the data objects.</p>
+     *        The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the
+     *        categories used to label the data objects.</p>
      *        <p>
-     *        For 3D point cloud task types, see <a
+     *        For 3D point cloud and video frame task types, you can add label category attributes and frame attributes
+     *        to your label category configuration file. To learn how, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      *        Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      *        </p>
@@ -524,10 +547,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URI of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories
+     * used to label the data objects.
      * </p>
      * <p>
-     * For 3D point cloud task types, see <a
+     * For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your
+     * label category configuration file. To learn how, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      * Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p>
@@ -584,9 +609,11 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>}</code>
      * </p>
      * 
-     * @return The S3 URI of the file that defines the categories used to label the data objects.</p>
+     * @return The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the
+     *         categories used to label the data objects.</p>
      *         <p>
-     *         For 3D point cloud task types, see <a
+     *         For 3D point cloud and video frame task types, you can add label category attributes and frame attributes
+     *         to your label category configuration file. To learn how, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      *         a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      *         </p>
@@ -649,10 +676,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URI of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories
+     * used to label the data objects.
      * </p>
      * <p>
-     * For 3D point cloud task types, see <a
+     * For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your
+     * label category configuration file. To learn how, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      * Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p>
@@ -710,9 +739,11 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URI of the file that defines the categories used to label the data objects.</p>
+     *        The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the
+     *        categories used to label the data objects.</p>
      *        <p>
-     *        For 3D point cloud task types, see <a
+     *        For 3D point cloud and video frame task types, you can add label category attributes and frame attributes
+     *        to your label category configuration file. To learn how, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
      *        Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      *        </p>

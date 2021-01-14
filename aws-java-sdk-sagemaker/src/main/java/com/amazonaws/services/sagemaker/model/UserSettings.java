@@ -19,7 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings.
+ * A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the
+ * <a>CreateUserProfile</a> API is called, and as <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is
+ * called.
+ * </p>
+ * <p>
+ * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+ * <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those
+ * specified in <code>CreateDomain</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings" target="_top">AWS API
@@ -44,6 +51,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * </p>
+     * <p>
+     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
+     * security groups that you can specify is one less than the maximum number shown.
      * </p>
      */
     private java.util.List<String> securityGroups;
@@ -123,6 +134,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
+     * <p>
+     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
+     * security groups that you can specify is one less than the maximum number shown.
+     * </p>
      * 
      * @return The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
      *         <p>
@@ -130,7 +145,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *         <code>PublicInternetOnly</code>.
      *         </p>
      *         <p>
-     *         Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *         Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>
+     *         .
+     *         </p>
+     *         <p>
+     *         Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     *         of security groups that you can specify is one less than the maximum number shown.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -148,6 +168,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
+     * <p>
+     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
+     * security groups that you can specify is one less than the maximum number shown.
+     * </p>
      * 
      * @param securityGroups
      *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
@@ -157,6 +181,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        </p>
+     *        <p>
+     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     *        of security groups that you can specify is one less than the maximum number shown.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -180,6 +208,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      * <p>
+     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
+     * security groups that you can specify is one less than the maximum number shown.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
      * to override the existing values.
@@ -193,6 +225,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        </p>
+     *        <p>
+     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     *        of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,6 +253,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
+     * <p>
+     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
+     * security groups that you can specify is one less than the maximum number shown.
+     * </p>
      * 
      * @param securityGroups
      *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
@@ -226,6 +266,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        </p>
+     *        <p>
+     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     *        of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,8 +38,8 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     private String notebookOutputOption;
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared
+     * notebook snapshots.
      * </p>
      */
     private String s3OutputPath;
@@ -116,13 +116,13 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared
+     * notebook snapshots.
      * </p>
      * 
      * @param s3OutputPath
-     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *        notebook cell output.
+     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the
+     *        shared notebook snapshots.
      */
 
     public void setS3OutputPath(String s3OutputPath) {
@@ -131,12 +131,12 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared
+     * notebook snapshots.
      * </p>
      * 
-     * @return When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *         notebook cell output.
+     * @return When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the
+     *         shared notebook snapshots.
      */
 
     public String getS3OutputPath() {
@@ -145,13 +145,13 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared
+     * notebook snapshots.
      * </p>
      * 
      * @param s3OutputPath
-     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *        notebook cell output.
+     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the
+     *        shared notebook snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

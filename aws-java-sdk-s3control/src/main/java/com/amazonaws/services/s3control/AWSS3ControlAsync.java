@@ -797,8 +797,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * For more information about object expiration, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-     * Elements to Describe Lifecycle Actions</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions"
+     * >Elements to Describe Lifecycle Actions</a>.
      * </p>
      * <p>
      * Related actions include:
@@ -861,8 +861,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * For more information about object expiration, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-     * Elements to Describe Lifecycle Actions</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions"
+     * >Elements to Describe Lifecycle Actions</a>.
      * </p>
      * <p>
      * Related actions include:
@@ -926,7 +926,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </important>
      * <p>
      * For more information about bucket policies, see <a
-     * href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
      * Policies</a>.
      * </p>
      * <p>
@@ -991,7 +991,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </important>
      * <p>
      * For more information about bucket policies, see <a
-     * href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
      * Policies</a>.
      * </p>
      * <p>
@@ -1288,14 +1288,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1313,14 +1313,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1343,14 +1343,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1368,14 +1368,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2424,14 +2424,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2448,14 +2448,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2477,14 +2477,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2502,14 +2502,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2771,14 +2771,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -2796,14 +2796,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -3189,9 +3189,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <note>
      * <p>
      * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using Cost Allocation in Amazon S3
-     * Bucket Tags</a>.
+     * value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+     * Using Cost Allocation in Amazon S3 Bucket Tags</a>.
      * </p>
      * </note>
      * <p>
@@ -3321,9 +3320,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <note>
      * <p>
      * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using Cost Allocation in Amazon S3
-     * Bucket Tags</a>.
+     * value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+     * Using Cost Allocation in Amazon S3 Bucket Tags</a>.
      * </p>
      * </note>
      * <p>
@@ -3714,14 +3712,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -3738,14 +3736,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -3767,15 +3765,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
-     * Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3
+     * Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>
@@ -3793,15 +3790,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
-     * Lens, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
-     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3
+     * Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
      * action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
      * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * </note>

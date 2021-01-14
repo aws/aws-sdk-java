@@ -21,7 +21,12 @@ import javax.annotation.Generated;
 public enum AttributeType {
 
     INCLUSIVE("INCLUSIVE"),
-    EXCLUSIVE("EXCLUSIVE");
+    EXCLUSIVE("EXCLUSIVE"),
+    CONTAINS("CONTAINS"),
+    BEFORE("BEFORE"),
+    AFTER("AFTER"),
+    ON("ON"),
+    BETWEEN("BETWEEN");
 
     private String value;
 

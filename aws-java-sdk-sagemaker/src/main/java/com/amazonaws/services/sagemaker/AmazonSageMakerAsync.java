@@ -1515,6 +1515,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * The output can be used as the manifest file for another labeling job or as training data for your machine
      * learning models.
      * </p>
+     * <p>
+     * You can use this operation to create a static labeling job or a streaming labeling job. A static labeling job
+     * stops if all data objects in the input manifest file identified in <code>ManifestS3Uri</code> have been labeled.
+     * A streaming labeling job runs perpetually until it is manually stopped, or remains idle for 10 days. You can send
+     * new data objects to an active (<code>InProgress</code>) streaming labeling job in real time. To learn how to
+     * create a static labeling job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create a Labeling Job
+     * (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming labeling job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling
+     * Job</a>.
+     * </p>
      * 
      * @param createLabelingJobRequest
      * @return A Java Future containing the result of the CreateLabelingJob operation returned by the service.
@@ -1566,6 +1577,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * The output can be used as the manifest file for another labeling job or as training data for your machine
      * learning models.
+     * </p>
+     * <p>
+     * You can use this operation to create a static labeling job or a streaming labeling job. A static labeling job
+     * stops if all data objects in the input manifest file identified in <code>ManifestS3Uri</code> have been labeled.
+     * A streaming labeling job runs perpetually until it is manually stopped, or remains idle for 10 days. You can send
+     * new data objects to an active (<code>InProgress</code>) streaming labeling job in real time. To learn how to
+     * create a static labeling job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create a Labeling Job
+     * (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming labeling job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling
+     * Job</a>.
      * </p>
      * 
      * @param createLabelingJobRequest
@@ -2410,7 +2432,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+     * <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your
      * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
      * successfully complete model training.
      * </p>
@@ -2491,7 +2513,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+     * <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your
      * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
      * successfully complete model training.
      * </p>

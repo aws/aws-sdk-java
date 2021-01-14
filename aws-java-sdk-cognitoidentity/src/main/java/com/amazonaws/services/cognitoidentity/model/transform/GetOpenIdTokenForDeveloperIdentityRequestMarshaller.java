@@ -35,6 +35,8 @@ public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
     private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Logins").build();
+    private static final MarshallingInfo<Map> PRINCIPALTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PrincipalTags").build();
     private static final MarshallingInfo<Long> TOKENDURATION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TokenDuration").build();
 
@@ -57,6 +59,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller {
             protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
             protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getIdentityId(), IDENTITYID_BINDING);
             protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getLogins(), LOGINS_BINDING);
+            protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getPrincipalTags(), PRINCIPALTAGS_BINDING);
             protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration(), TOKENDURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

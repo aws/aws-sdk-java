@@ -28,7 +28,7 @@ public class LambdaInvokeOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each object in
+     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in
      * the manifest.
      * </p>
      */
@@ -36,12 +36,12 @@ public class LambdaInvokeOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each object in
+     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in
      * the manifest.
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each
+     *        The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every
      *        object in the manifest.
      */
 
@@ -51,11 +51,11 @@ public class LambdaInvokeOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each object in
+     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in
      * the manifest.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each
+     * @return The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every
      *         object in the manifest.
      */
 
@@ -65,12 +65,12 @@ public class LambdaInvokeOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each object in
+     * The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in
      * the manifest.
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke for each
+     *        The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every
      *        object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -68,7 +68,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     private String developerProviderName;
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      */
     private java.util.List<String> openIdConnectProviderARNs;
@@ -402,10 +402,10 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
-     * @return A list of OpendID Connect provider ARNs.
+     * @return The ARNs of the OpenID Connect providers.
      */
 
     public java.util.List<String> getOpenIdConnectProviderARNs() {
@@ -414,11 +414,11 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      */
 
     public void setOpenIdConnectProviderARNs(java.util.Collection<String> openIdConnectProviderARNs) {
@@ -432,7 +432,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -441,7 +441,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,11 +457,11 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

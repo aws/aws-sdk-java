@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     *        The Amazon Resource Name (ARN) of the identity pool.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     * @return The Amazon Resource Name (ARN) of the identity pool.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+     *        The Amazon Resource Name (ARN) of the identity pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

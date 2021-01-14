@@ -88,6 +88,11 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
+    public GetPrincipalTagAttributeMapResult getPrincipalTagAttributeMap(GetPrincipalTagAttributeMapRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIdentitiesResult listIdentities(ListIdentitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +119,11 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
 
     @Override
     public SetIdentityPoolRolesResult setIdentityPoolRoles(SetIdentityPoolRolesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetPrincipalTagAttributeMapResult setPrincipalTagAttributeMap(SetPrincipalTagAttributeMapRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

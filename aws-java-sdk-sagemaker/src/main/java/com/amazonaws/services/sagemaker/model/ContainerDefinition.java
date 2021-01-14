@@ -114,6 +114,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String modelPackageName;
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     */
+    private MultiModelConfig multiModelConfig;
 
     /**
      * <p>
@@ -714,6 +720,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @param multiModelConfig
+     *        Specifies additional configuration for multi-model endpoints.
+     */
+
+    public void setMultiModelConfig(MultiModelConfig multiModelConfig) {
+        this.multiModelConfig = multiModelConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @return Specifies additional configuration for multi-model endpoints.
+     */
+
+    public MultiModelConfig getMultiModelConfig() {
+        return this.multiModelConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @param multiModelConfig
+     *        Specifies additional configuration for multi-model endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withMultiModelConfig(MultiModelConfig multiModelConfig) {
+        setMultiModelConfig(multiModelConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -738,7 +784,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getModelPackageName() != null)
-            sb.append("ModelPackageName: ").append(getModelPackageName());
+            sb.append("ModelPackageName: ").append(getModelPackageName()).append(",");
+        if (getMultiModelConfig() != null)
+            sb.append("MultiModelConfig: ").append(getMultiModelConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -781,6 +829,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getModelPackageName() != null && other.getModelPackageName().equals(this.getModelPackageName()) == false)
             return false;
+        if (other.getMultiModelConfig() == null ^ this.getMultiModelConfig() == null)
+            return false;
+        if (other.getMultiModelConfig() != null && other.getMultiModelConfig().equals(this.getMultiModelConfig()) == false)
+            return false;
         return true;
     }
 
@@ -796,6 +848,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
+        hashCode = prime * hashCode + ((getMultiModelConfig() == null) ? 0 : getMultiModelConfig().hashCode());
         return hashCode;
     }
 
