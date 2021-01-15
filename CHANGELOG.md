@@ -1,3 +1,8 @@
+# __1.11.939__ __2021-01-15__
+## __Amazon Simple Notification Service__
+  - ### Features
+    - Documentation updates for Amazon SNS.
+
 # __1.11.938__ __2021-01-14__
 ## __AWS S3 Control__
   - ### Features

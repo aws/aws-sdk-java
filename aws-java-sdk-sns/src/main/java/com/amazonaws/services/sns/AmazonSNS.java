@@ -30,9 +30,9 @@ import com.amazonaws.services.sns.model.*;
  * <p>
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled
  * applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
- * subscribers over multiple delivery protocols. For more information about this product see <a
- * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
- * and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+ * subscribers over multiple delivery protocols. For more information about this product see the <a
+ * href="http://aws.amazon.com/sns/">Amazon SNS product page</a>. For detailed information about Amazon SNS features and
+ * their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
  * Guide</a>.
  * </p>
  * <p>
@@ -1029,6 +1029,12 @@ public interface AmazonSNS {
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in
      * the <i>Amazon SNS Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>)
+     * permission to perform the <code>s3:ListBucket</code> action.
+     * </p>
+     * </note>
      * 
      * @param setSMSAttributesRequest
      *        The input for the SetSMSAttributes action.
