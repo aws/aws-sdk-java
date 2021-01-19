@@ -6171,7 +6171,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * doesn't have an entry, fetches the region from Amazon S3 and updates the
      * cache.
      */
-    private String fetchRegionFromCache(String bucketName) {
+    private synchronized String fetchRegionFromCache(String bucketName) {
         String bucketRegion = bucketRegionCache.get(bucketName);
         if (bucketRegion == null) {
             if (log.isDebugEnabled()) {
