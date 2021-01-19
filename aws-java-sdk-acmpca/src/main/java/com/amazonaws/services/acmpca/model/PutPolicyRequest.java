@@ -37,7 +37,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String resourceArn;
     /**
      * <p>
-     * The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
+     * The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
      * policy does not contain all required statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy
      * and statement structure, see <a
@@ -113,7 +113,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
+     * The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
      * policy does not contain all required statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy
      * and statement structure, see <a
@@ -122,7 +122,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param policy
-     *        The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If
+     *        The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If
      *        this policy does not contain all required statements or if it includes any statement that is not allowed,
      *        the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about
      *        IAM policy and statement structure, see <a
@@ -136,7 +136,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
+     * The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
      * policy does not contain all required statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy
      * and statement structure, see <a
@@ -144,7 +144,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * JSON Policies</a>.
      * </p>
      * 
-     * @return The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If
+     * @return The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If
      *         this policy does not contain all required statements or if it includes any statement that is not allowed,
      *         the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about
      *         IAM policy and statement structure, see <a
@@ -158,7 +158,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
+     * The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this
      * policy does not contain all required statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy
      * and statement structure, see <a
@@ -167,7 +167,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param policy
-     *        The path and filename of a JSON-formatted IAM policy to attach to the specified private CA resource. If
+     *        The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If
      *        this policy does not contain all required statements or if it includes any statement that is not allowed,
      *        the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about
      *        IAM policy and statement structure, see <a

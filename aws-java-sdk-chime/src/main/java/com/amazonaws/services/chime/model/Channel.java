@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a channel.
+ * The details of a channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Channel" target="_top">AWS API
@@ -48,31 +48,31 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String mode;
     /**
      * <p>
-     * The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The channel's privacy setting.
      * </p>
      */
     private String privacy;
     /**
      * <p>
-     * The metadata of the channel.
+     * The channel's metadata.
      * </p>
      */
     private String metadata;
     /**
      * <p>
-     * The administrator who created the channel.
+     * The <code>AppInstanceUser</code> who created the channel.
      * </p>
      */
     private Identity createdBy;
     /**
      * <p>
-     * The time at which the administrator created the channel.
+     * The time at which the <code>AppInstanceUser</code> created the channel.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The time at which a member sent the last message in a session.
+     * The time at which a member sent the last message in the channel.
      * </p>
      */
     private java.util.Date lastMessageTimestamp;
@@ -224,11 +224,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The channel's privacy setting.
      * </p>
      * 
      * @param privacy
-     *        The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The channel's privacy setting.
      * @see ChannelPrivacy
      */
 
@@ -238,10 +238,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The channel's privacy setting.
      * </p>
      * 
-     * @return The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * @return The channel's privacy setting.
      * @see ChannelPrivacy
      */
 
@@ -251,11 +251,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The channel's privacy setting.
      * </p>
      * 
      * @param privacy
-     *        The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The channel's privacy setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -267,11 +267,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The channel's privacy setting.
      * </p>
      * 
      * @param privacy
-     *        The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The channel's privacy setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -283,11 +283,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The channel's metadata.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel.
+     *        The channel's metadata.
      */
 
     public void setMetadata(String metadata) {
@@ -296,10 +296,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The channel's metadata.
      * </p>
      * 
-     * @return The metadata of the channel.
+     * @return The channel's metadata.
      */
 
     public String getMetadata() {
@@ -308,11 +308,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The channel's metadata.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel.
+     *        The channel's metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,11 +323,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The administrator who created the channel.
+     * The <code>AppInstanceUser</code> who created the channel.
      * </p>
      * 
      * @param createdBy
-     *        The administrator who created the channel.
+     *        The <code>AppInstanceUser</code> who created the channel.
      */
 
     public void setCreatedBy(Identity createdBy) {
@@ -336,10 +336,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The administrator who created the channel.
+     * The <code>AppInstanceUser</code> who created the channel.
      * </p>
      * 
-     * @return The administrator who created the channel.
+     * @return The <code>AppInstanceUser</code> who created the channel.
      */
 
     public Identity getCreatedBy() {
@@ -348,11 +348,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The administrator who created the channel.
+     * The <code>AppInstanceUser</code> who created the channel.
      * </p>
      * 
      * @param createdBy
-     *        The administrator who created the channel.
+     *        The <code>AppInstanceUser</code> who created the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,11 +363,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the administrator created the channel.
+     * The time at which the <code>AppInstanceUser</code> created the channel.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the administrator created the channel.
+     *        The time at which the <code>AppInstanceUser</code> created the channel.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -376,10 +376,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the administrator created the channel.
+     * The time at which the <code>AppInstanceUser</code> created the channel.
      * </p>
      * 
-     * @return The time at which the administrator created the channel.
+     * @return The time at which the <code>AppInstanceUser</code> created the channel.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -388,11 +388,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the administrator created the channel.
+     * The time at which the <code>AppInstanceUser</code> created the channel.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the administrator created the channel.
+     *        The time at which the <code>AppInstanceUser</code> created the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,11 +403,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which a member sent the last message in a session.
+     * The time at which a member sent the last message in the channel.
      * </p>
      * 
      * @param lastMessageTimestamp
-     *        The time at which a member sent the last message in a session.
+     *        The time at which a member sent the last message in the channel.
      */
 
     public void setLastMessageTimestamp(java.util.Date lastMessageTimestamp) {
@@ -416,10 +416,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which a member sent the last message in a session.
+     * The time at which a member sent the last message in the channel.
      * </p>
      * 
-     * @return The time at which a member sent the last message in a session.
+     * @return The time at which a member sent the last message in the channel.
      */
 
     public java.util.Date getLastMessageTimestamp() {
@@ -428,11 +428,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which a member sent the last message in a session.
+     * The time at which a member sent the last message in the channel.
      * </p>
      * 
      * @param lastMessageTimestamp
-     *        The time at which a member sent the last message in a session.
+     *        The time at which a member sent the last message in the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

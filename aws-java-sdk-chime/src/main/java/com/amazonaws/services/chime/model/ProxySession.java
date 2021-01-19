@@ -66,19 +66,19 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> capabilities;
     /**
      * <p>
-     * The created timestamp, in ISO 8601 format.
+     * The created time stamp, in ISO 8601 format.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The updated timestamp, in ISO 8601 format.
+     * The updated time stamp, in ISO 8601 format.
      * </p>
      */
     private java.util.Date updatedTimestamp;
     /**
      * <p>
-     * The ended timestamp, in ISO 8601 format.
+     * The ended time stamp, in ISO 8601 format.
      * </p>
      */
     private java.util.Date endedTimestamp;
@@ -427,11 +427,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The created timestamp, in ISO 8601 format.
+     * The created time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The created timestamp, in ISO 8601 format.
+     *        The created time stamp, in ISO 8601 format.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -440,10 +440,10 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The created timestamp, in ISO 8601 format.
+     * The created time stamp, in ISO 8601 format.
      * </p>
      * 
-     * @return The created timestamp, in ISO 8601 format.
+     * @return The created time stamp, in ISO 8601 format.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -452,11 +452,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The created timestamp, in ISO 8601 format.
+     * The created time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The created timestamp, in ISO 8601 format.
+     *        The created time stamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +467,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The updated timestamp, in ISO 8601 format.
+     * The updated time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The updated timestamp, in ISO 8601 format.
+     *        The updated time stamp, in ISO 8601 format.
      */
 
     public void setUpdatedTimestamp(java.util.Date updatedTimestamp) {
@@ -480,10 +480,10 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The updated timestamp, in ISO 8601 format.
+     * The updated time stamp, in ISO 8601 format.
      * </p>
      * 
-     * @return The updated timestamp, in ISO 8601 format.
+     * @return The updated time stamp, in ISO 8601 format.
      */
 
     public java.util.Date getUpdatedTimestamp() {
@@ -492,11 +492,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The updated timestamp, in ISO 8601 format.
+     * The updated time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The updated timestamp, in ISO 8601 format.
+     *        The updated time stamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +507,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ended timestamp, in ISO 8601 format.
+     * The ended time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param endedTimestamp
-     *        The ended timestamp, in ISO 8601 format.
+     *        The ended time stamp, in ISO 8601 format.
      */
 
     public void setEndedTimestamp(java.util.Date endedTimestamp) {
@@ -520,10 +520,10 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ended timestamp, in ISO 8601 format.
+     * The ended time stamp, in ISO 8601 format.
      * </p>
      * 
-     * @return The ended timestamp, in ISO 8601 format.
+     * @return The ended time stamp, in ISO 8601 format.
      */
 
     public java.util.Date getEndedTimestamp() {
@@ -532,11 +532,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ended timestamp, in ISO 8601 format.
+     * The ended time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param endedTimestamp
-     *        The ended timestamp, in ISO 8601 format.
+     *        The ended time stamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

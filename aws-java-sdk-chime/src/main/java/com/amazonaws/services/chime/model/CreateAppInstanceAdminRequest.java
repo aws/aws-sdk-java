@@ -27,24 +27,24 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the administrator of the current app instance.
+     * The ARN of the administrator of the current <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceAdminArn;
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
 
     /**
      * <p>
-     * The ARN of the administrator of the current app instance.
+     * The ARN of the administrator of the current <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceAdminArn
-     *        The ARN of the administrator of the current app instance.
+     *        The ARN of the administrator of the current <code>AppInstance</code>.
      */
 
     public void setAppInstanceAdminArn(String appInstanceAdminArn) {
@@ -53,10 +53,10 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the administrator of the current app instance.
+     * The ARN of the administrator of the current <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the administrator of the current app instance.
+     * @return The ARN of the administrator of the current <code>AppInstance</code>.
      */
 
     public String getAppInstanceAdminArn() {
@@ -65,11 +65,11 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the administrator of the current app instance.
+     * The ARN of the administrator of the current <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceAdminArn
-     *        The ARN of the administrator of the current app instance.
+     *        The ARN of the administrator of the current <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -93,10 +93,10 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -105,11 +105,11 @@ public class CreateAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

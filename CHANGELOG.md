@@ -1,3 +1,16 @@
+# __1.11.940__ __2021-01-19__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - ACM Private CA is launching additional certificate templates and API parameters. This allows customers to create custom certificates for their identity and secure communication use cases.
+
+## __Amazon Chime__
+  - ### Features
+    - Add support for specifying ChimeBearer header as part of the request for Amazon Chime SDK messaging APIs. Documentation updates.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release adds support to include task definition metadata information such as registeredAt, deregisteredAt, registeredBy as part of DescribeTaskDefinition API.
+
 # __1.11.939__ __2021-01-15__
 ## __Amazon Simple Notification Service__
   - ### Features

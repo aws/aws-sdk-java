@@ -368,6 +368,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -441,6 +442,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult> responseHandler = new StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult>(
                     new CheckIfPhoneNumberIsOptedOutResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -512,6 +514,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ConfirmSubscriptionResult> responseHandler = new StaxResponseHandler<ConfirmSubscriptionResult>(
                     new ConfirmSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -632,6 +635,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CreatePlatformApplicationResult> responseHandler = new StaxResponseHandler<CreatePlatformApplicationResult>(
                     new CreatePlatformApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -709,6 +713,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CreatePlatformEndpointResult> responseHandler = new StaxResponseHandler<CreatePlatformEndpointResult>(
                     new CreatePlatformEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -786,6 +791,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<CreateTopicResult> responseHandler = new StaxResponseHandler<CreateTopicResult>(new CreateTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -858,6 +864,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<DeleteEndpointResult> responseHandler = new StaxResponseHandler<DeleteEndpointResult>(
                     new DeleteEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -922,6 +929,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<DeletePlatformApplicationResult> responseHandler = new StaxResponseHandler<DeletePlatformApplicationResult>(
                     new DeletePlatformApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,6 +1000,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<DeleteTopicResult> responseHandler = new StaxResponseHandler<DeleteTopicResult>(new DeleteTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1063,6 +1072,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetEndpointAttributesResult> responseHandler = new StaxResponseHandler<GetEndpointAttributesResult>(
                     new GetEndpointAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1130,6 +1140,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<GetPlatformApplicationAttributesResult>(
                     new GetPlatformApplicationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1197,6 +1208,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetSMSAttributesResult> responseHandler = new StaxResponseHandler<GetSMSAttributesResult>(
                     new GetSMSAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1260,6 +1272,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<GetSubscriptionAttributesResult>(
                     new GetSubscriptionAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1332,6 +1345,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetTopicAttributesResult> responseHandler = new StaxResponseHandler<GetTopicAttributesResult>(
                     new GetTopicAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1412,6 +1426,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListEndpointsByPlatformApplicationResult> responseHandler = new StaxResponseHandler<ListEndpointsByPlatformApplicationResult>(
                     new ListEndpointsByPlatformApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1483,6 +1498,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListPhoneNumbersOptedOutResult> responseHandler = new StaxResponseHandler<ListPhoneNumbersOptedOutResult>(
                     new ListPhoneNumbersOptedOutResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1554,6 +1570,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListPlatformApplicationsResult> responseHandler = new StaxResponseHandler<ListPlatformApplicationsResult>(
                     new ListPlatformApplicationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1625,6 +1642,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListSubscriptionsResult> responseHandler = new StaxResponseHandler<ListSubscriptionsResult>(
                     new ListSubscriptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1703,6 +1721,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListSubscriptionsByTopicResult> responseHandler = new StaxResponseHandler<ListSubscriptionsByTopicResult>(
                     new ListSubscriptionsByTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1779,6 +1798,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1843,6 +1863,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<ListTopicsResult> responseHandler = new StaxResponseHandler<ListTopicsResult>(new ListTopicsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1921,6 +1942,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<OptInPhoneNumberResult> responseHandler = new StaxResponseHandler<OptInPhoneNumberResult>(
                     new OptInPhoneNumberResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2033,6 +2055,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<PublishResult> responseHandler = new StaxResponseHandler<PublishResult>(new PublishResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2106,6 +2129,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
                     new RemovePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2177,6 +2201,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetEndpointAttributesResult> responseHandler = new StaxResponseHandler<SetEndpointAttributesResult>(
                     new SetEndpointAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2246,6 +2271,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<SetPlatformApplicationAttributesResult>(
                     new SetPlatformApplicationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2322,6 +2348,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetSMSAttributesResult> responseHandler = new StaxResponseHandler<SetSMSAttributesResult>(
                     new SetSMSAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2388,6 +2415,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<SetSubscriptionAttributesResult>(
                     new SetSubscriptionAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2460,6 +2488,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetTopicAttributesResult> responseHandler = new StaxResponseHandler<SetTopicAttributesResult>(
                     new SetTopicAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2544,6 +2573,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<SubscribeResult> responseHandler = new StaxResponseHandler<SubscribeResult>(new SubscribeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2652,6 +2682,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(new TagResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2724,6 +2755,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<UnsubscribeResult> responseHandler = new StaxResponseHandler<UnsubscribeResult>(new UnsubscribeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2799,6 +2831,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(new UntagResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

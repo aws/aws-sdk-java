@@ -31,6 +31,8 @@ public class DeleteChannelModeratorRequestMarshaller {
             .marshallLocationName("channelArn").build();
     private static final MarshallingInfo<String> CHANNELMODERATORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("channelModeratorArn").build();
+    private static final MarshallingInfo<String> CHIMEBEARER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-chime-bearer").build();
 
     private static final DeleteChannelModeratorRequestMarshaller instance = new DeleteChannelModeratorRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeleteChannelModeratorRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteChannelModeratorRequest.getChannelArn(), CHANNELARN_BINDING);
             protocolMarshaller.marshall(deleteChannelModeratorRequest.getChannelModeratorArn(), CHANNELMODERATORARN_BINDING);
+            protocolMarshaller.marshall(deleteChannelModeratorRequest.getChimeBearer(), CHIMEBEARER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

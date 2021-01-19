@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Target SIP media application along with other details like priority and AWS Region to be specified in the SIP rule.
+ * Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule.
  * Only one SIP rule per AWS Region can be provided.
  * </p>
  * 
@@ -43,7 +43,7 @@ public class SipRuleTargetApplication implements Serializable, Cloneable, Struct
     private Integer priority;
     /**
      * <p>
-     * AWS Region of target application.
+     * The AWS Region of the target application.
      * </p>
      */
     private String awsRegion;
@@ -130,11 +130,11 @@ public class SipRuleTargetApplication implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * AWS Region of target application.
+     * The AWS Region of the target application.
      * </p>
      * 
      * @param awsRegion
-     *        AWS Region of target application.
+     *        The AWS Region of the target application.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -143,10 +143,10 @@ public class SipRuleTargetApplication implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * AWS Region of target application.
+     * The AWS Region of the target application.
      * </p>
      * 
-     * @return AWS Region of target application.
+     * @return The AWS Region of the target application.
      */
 
     public String getAwsRegion() {
@@ -155,11 +155,11 @@ public class SipRuleTargetApplication implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * AWS Region of target application.
+     * The AWS Region of the target application.
      * </p>
      * 
      * @param awsRegion
-     *        AWS Region of target application.
+     *        The AWS Region of the target application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

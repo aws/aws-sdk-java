@@ -512,6 +512,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             }
 
             StaxResponseHandler<AssumeRoleResult> responseHandler = new StaxResponseHandler<AssumeRoleResult>(new AssumeRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -741,6 +742,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<AssumeRoleWithSAMLResult> responseHandler = new StaxResponseHandler<AssumeRoleWithSAMLResult>(
                     new AssumeRoleWithSAMLResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -999,6 +1001,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<AssumeRoleWithWebIdentityResult> responseHandler = new StaxResponseHandler<AssumeRoleWithWebIdentityResult>(
                     new AssumeRoleWithWebIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1107,6 +1110,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<DecodeAuthorizationMessageResult> responseHandler = new StaxResponseHandler<DecodeAuthorizationMessageResult>(
                     new DecodeAuthorizationMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1185,6 +1189,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetAccessKeyInfoResult> responseHandler = new StaxResponseHandler<GetAccessKeyInfoResult>(
                     new GetAccessKeyInfoResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1249,6 +1254,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetCallerIdentityResult> responseHandler = new StaxResponseHandler<GetCallerIdentityResult>(
                     new GetCallerIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1424,6 +1430,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetFederationTokenResult> responseHandler = new StaxResponseHandler<GetFederationTokenResult>(
                     new GetFederationTokenResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1543,6 +1550,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetSessionTokenResult> responseHandler = new StaxResponseHandler<GetSessionTokenResult>(
                     new GetSessionTokenResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

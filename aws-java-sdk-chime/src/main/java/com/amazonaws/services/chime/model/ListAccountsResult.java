@@ -25,23 +25,23 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of accounts.
+     * List of Amazon Chime accounts and account details.
      * </p>
      */
     private java.util.List<Account> accounts;
     /**
      * <p>
-     * The account's user token.
+     * The token to use to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of accounts.
+     * List of Amazon Chime accounts and account details.
      * </p>
      * 
-     * @return The list of accounts.
+     * @return List of Amazon Chime accounts and account details.
      */
 
     public java.util.List<Account> getAccounts() {
@@ -50,11 +50,11 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of accounts.
+     * List of Amazon Chime accounts and account details.
      * </p>
      * 
      * @param accounts
-     *        The list of accounts.
+     *        List of Amazon Chime accounts and account details.
      */
 
     public void setAccounts(java.util.Collection<Account> accounts) {
@@ -68,7 +68,7 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of accounts.
+     * List of Amazon Chime accounts and account details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param accounts
-     *        The list of accounts.
+     *        List of Amazon Chime accounts and account details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of accounts.
+     * List of Amazon Chime accounts and account details.
      * </p>
      * 
      * @param accounts
-     *        The list of accounts.
+     *        List of Amazon Chime accounts and account details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The account's user token.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The account's user token.
+     *        The token to use to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The account's user token.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
-     * @return The account's user token.
+     * @return The token to use to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListAccountsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The account's user token.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The account's user token.
+     *        The token to use to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

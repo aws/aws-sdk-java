@@ -37,6 +37,12 @@ public class CreateChannelModeratorRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String channelModeratorArn;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class CreateChannelModeratorRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelModeratorRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class CreateChannelModeratorRequest extends com.amazonaws.AmazonWebServic
         if (getChannelArn() != null)
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getChannelModeratorArn() != null)
-            sb.append("ChannelModeratorArn: ").append(getChannelModeratorArn());
+            sb.append("ChannelModeratorArn: ").append(getChannelModeratorArn()).append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class CreateChannelModeratorRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getChannelModeratorArn() != null && other.getChannelModeratorArn().equals(this.getChannelModeratorArn()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class CreateChannelModeratorRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getChannelModeratorArn() == null) ? 0 : getChannelModeratorArn().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

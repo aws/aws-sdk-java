@@ -27,6 +27,20 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code>
+     * or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more
+     * information about using these templates, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
+     * </p>
+     * <p>
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * </p>
+     */
+    private ApiPassthrough apiPassthrough;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
      * >CreateCertificateAuthority</a>. This must be of the form:
@@ -38,15 +52,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     private String certificateAuthorityArn;
     /**
      * <p>
-     * The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL
-     * command to create the CSR and a 2048 bit RSA private key.
+     * The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the
+     * following OpenSSL command to create the CSR and a 2048 bit RSA private key.
      * </p>
      * <p>
      * <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
-     * If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in
-     * the configuration file contains your X509 version 3 extensions.
+     * If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block
+     * in the configuration file contains your X509 version 3 extensions.
      * </p>
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -62,7 +76,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
      * <p>
-     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the
+     * <code>CreateCertificateAuthority</code> action.
      * </p>
      */
     private String signingAlgorithm;
@@ -79,114 +94,150 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
      * </p>
      */
     private String templateArn;
     /**
      * <p>
-     * Information describing the validity period of the certificate.
+     * Information describing the end of the validity period of the certificate. This parameter sets the “Not After”
+     * date for the certificate.
      * </p>
      * <p>
-     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
-     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an
+     * explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months,
+     * or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
+     * RFC 5280.
      * </p>
      * <p>
-     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
+     * This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time
+     * regardless of the <code>ValidityNotBefore</code> value.
+     * </p>
+     * <p>
+     * The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA
+     * hierarchy.
      * </p>
      */
     private Validity validity;
     /**
      * <p>
-     * Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency
-     * tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificates.
+     * Information describing the start of the validity period of the certificate. This parameter sets the “Not Before"
+     * date for the certificate.
+     * </p>
+     * <p>
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
+     * </p>
+     * <p>
+     * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     * </p>
+     * <p>
+     * The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     * <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     * reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     * </p>
+     */
+    private Validity validityNotBefore;
+    /**
+     * <p>
+     * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      */
     private String idempotencyToken;
+
+    /**
+     * <p>
+     * Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code>
+     * or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more
+     * information about using these templates, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
+     * </p>
+     * <p>
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * </p>
+     * 
+     * @param apiPassthrough
+     *        Specifies X.509 certificate information to be included in the issued certificate. An
+     *        <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else
+     *        this parameter is ignored. For more information about using these templates, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *        Templates</a>.</p>
+     *        <p>
+     *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *        CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     */
+
+    public void setApiPassthrough(ApiPassthrough apiPassthrough) {
+        this.apiPassthrough = apiPassthrough;
+    }
+
+    /**
+     * <p>
+     * Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code>
+     * or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more
+     * information about using these templates, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
+     * </p>
+     * <p>
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * </p>
+     * 
+     * @return Specifies X.509 certificate information to be included in the issued certificate. An
+     *         <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else
+     *         this parameter is ignored. For more information about using these templates, see <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *         Templates</a>.</p>
+     *         <p>
+     *         If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *         CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     */
+
+    public ApiPassthrough getApiPassthrough() {
+        return this.apiPassthrough;
+    }
+
+    /**
+     * <p>
+     * Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code>
+     * or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more
+     * information about using these templates, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
+     * </p>
+     * <p>
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * </p>
+     * 
+     * @param apiPassthrough
+     *        Specifies X.509 certificate information to be included in the issued certificate. An
+     *        <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else
+     *        this parameter is ignored. For more information about using these templates, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *        Templates</a>.</p>
+     *        <p>
+     *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *        CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IssueCertificateRequest withApiPassthrough(ApiPassthrough apiPassthrough) {
+        setApiPassthrough(apiPassthrough);
+        return this;
+    }
 
     /**
      * <p>
@@ -257,15 +308,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL
-     * command to create the CSR and a 2048 bit RSA private key.
+     * The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the
+     * following OpenSSL command to create the CSR and a 2048 bit RSA private key.
      * </p>
      * <p>
      * <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
-     * If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in
-     * the configuration file contains your X509 version 3 extensions.
+     * If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block
+     * in the configuration file contains your X509 version 3 extensions.
      * </p>
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -286,14 +337,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param csr
-     *        The certificate signing request (CSR) for the certificate you want to issue. You can use the following
-     *        OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+     *        The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use
+     *        the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
      *        <p>
      *        <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      *        </p>
      *        <p>
-     *        If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code>
-     *        block in the configuration file contains your X509 version 3 extensions.
+     *        If you have a configuration file, you can then use the following OpenSSL command. The
+     *        <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions.
      *        </p>
      *        <p>
      *        <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -309,15 +360,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL
-     * command to create the CSR and a 2048 bit RSA private key.
+     * The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the
+     * following OpenSSL command to create the CSR and a 2048 bit RSA private key.
      * </p>
      * <p>
      * <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
-     * If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in
-     * the configuration file contains your X509 version 3 extensions.
+     * If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block
+     * in the configuration file contains your X509 version 3 extensions.
      * </p>
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -334,14 +385,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * {@code position}.
      * </p>
      * 
-     * @return The certificate signing request (CSR) for the certificate you want to issue. You can use the following
-     *         OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+     * @return The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use
+     *         the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
      *         <p>
      *         <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      *         </p>
      *         <p>
-     *         If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code>
-     *         block in the configuration file contains your X509 version 3 extensions.
+     *         If you have a configuration file, you can then use the following OpenSSL command. The
+     *         <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions.
      *         </p>
      *         <p>
      *         <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -357,15 +408,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL
-     * command to create the CSR and a 2048 bit RSA private key.
+     * The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the
+     * following OpenSSL command to create the CSR and a 2048 bit RSA private key.
      * </p>
      * <p>
      * <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
-     * If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in
-     * the configuration file contains your X509 version 3 extensions.
+     * If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block
+     * in the configuration file contains your X509 version 3 extensions.
      * </p>
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -386,14 +437,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param csr
-     *        The certificate signing request (CSR) for the certificate you want to issue. You can use the following
-     *        OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+     *        The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use
+     *        the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
      *        <p>
      *        <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      *        </p>
      *        <p>
-     *        If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code>
-     *        block in the configuration file contains your X509 version 3 extensions.
+     *        If you have a configuration file, you can then use the following OpenSSL command. The
+     *        <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions.
      *        </p>
      *        <p>
      *        <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
@@ -414,13 +465,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
      * <p>
-     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the
+     * <code>CreateCertificateAuthority</code> action.
      * </p>
      * 
      * @param signingAlgorithm
      *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
      *        <p>
-     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR
+     *        in the <code>CreateCertificateAuthority</code> action.
      * @see SigningAlgorithm
      */
 
@@ -433,13 +486,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
      * <p>
-     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the
+     * <code>CreateCertificateAuthority</code> action.
      * </p>
      * 
      * @return The name of the algorithm that will be used to sign the certificate to be issued. </p>
      *         <p>
-     *         This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a
-     *         CSR.
+     *         This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR
+     *         in the <code>CreateCertificateAuthority</code> action.
      * @see SigningAlgorithm
      */
 
@@ -452,13 +506,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
      * <p>
-     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the
+     * <code>CreateCertificateAuthority</code> action.
      * </p>
      * 
      * @param signingAlgorithm
      *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
      *        <p>
-     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR
+     *        in the <code>CreateCertificateAuthority</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -473,13 +529,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
      * <p>
-     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the
+     * <code>CreateCertificateAuthority</code> action.
      * </p>
      * 
      * @param signingAlgorithm
      *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
      *        <p>
-     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR
+     *        in the <code>CreateCertificateAuthority</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -502,88 +560,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
      * </p>
      * 
      * @param templateArn
@@ -597,88 +576,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        in the CA hierarchy.
      *        </p>
      *        <p>
-     *        The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/RootCACertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     *        For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *        Templates</a>.
      */
 
     public void setTemplateArn(String templateArn) {
@@ -698,88 +598,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
      * </p>
      * 
      * @return Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
@@ -792,88 +613,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         parents in the CA hierarchy.
      *         </p>
      *         <p>
-     *         The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/RootCACertificate/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     *         For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *         Templates</a>.
      */
 
     public String getTemplateArn() {
@@ -893,88 +635,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     * Templates</a>.
      * </p>
      * 
      * @param templateArn
@@ -988,88 +651,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        in the CA hierarchy.
      *        </p>
      *        <p>
-     *        The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/CodeSigningCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/RootCACertificate/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using Templates</a>.
+     *        For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
+     *        Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1080,26 +664,42 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information describing the validity period of the certificate.
+     * Information describing the end of the validity period of the certificate. This parameter sets the “Not After”
+     * date for the certificate.
      * </p>
      * <p>
-     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
-     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an
+     * explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months,
+     * or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
+     * RFC 5280.
      * </p>
      * <p>
-     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
+     * This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time
+     * regardless of the <code>ValidityNotBefore</code> value.
+     * </p>
+     * <p>
+     * The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA
+     * hierarchy.
      * </p>
      * 
      * @param validity
-     *        Information describing the validity period of the certificate.</p>
+     *        Information describing the end of the validity period of the certificate. This parameter sets the “Not
+     *        After” date for the certificate.</p>
      *        <p>
-     *        When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
-     *        time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
-     *        minutes or less.
+     *        Certificate validity is the period of time during which a certificate is valid. Validity can be expressed
+     *        as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in
+     *        days, months, or years. For more information, see <a
+     *        href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
      *        </p>
      *        <p>
-     *        The validity period configured on a certificate must not exceed the limit set by its parents in the CA
-     *        hierarchy.
+     *        This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     *        <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance
+     *        time regardless of the <code>ValidityNotBefore</code> value.
+     *        </p>
+     *        <p>
+     *        The end of the validity period configured on a certificate must not exceed the limit set on its parents in
+     *        the CA hierarchy.
      */
 
     public void setValidity(Validity validity) {
@@ -1108,25 +708,41 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information describing the validity period of the certificate.
+     * Information describing the end of the validity period of the certificate. This parameter sets the “Not After”
+     * date for the certificate.
      * </p>
      * <p>
-     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
-     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an
+     * explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months,
+     * or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
+     * RFC 5280.
      * </p>
      * <p>
-     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
+     * This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time
+     * regardless of the <code>ValidityNotBefore</code> value.
+     * </p>
+     * <p>
+     * The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA
+     * hierarchy.
      * </p>
      * 
-     * @return Information describing the validity period of the certificate.</p>
+     * @return Information describing the end of the validity period of the certificate. This parameter sets the “Not
+     *         After” date for the certificate.</p>
      *         <p>
-     *         When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
-     *         time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
-     *         minutes or less.
+     *         Certificate validity is the period of time during which a certificate is valid. Validity can be expressed
+     *         as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in
+     *         days, months, or years. For more information, see <a
+     *         href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
      *         </p>
      *         <p>
-     *         The validity period configured on a certificate must not exceed the limit set by its parents in the CA
-     *         hierarchy.
+     *         This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     *         <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance
+     *         time regardless of the <code>ValidityNotBefore</code> value.
+     *         </p>
+     *         <p>
+     *         The end of the validity period configured on a certificate must not exceed the limit set on its parents
+     *         in the CA hierarchy.
      */
 
     public Validity getValidity() {
@@ -1135,26 +751,42 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information describing the validity period of the certificate.
+     * Information describing the end of the validity period of the certificate. This parameter sets the “Not After”
+     * date for the certificate.
      * </p>
      * <p>
-     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
-     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an
+     * explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months,
+     * or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
+     * RFC 5280.
      * </p>
      * <p>
-     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
+     * This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time
+     * regardless of the <code>ValidityNotBefore</code> value.
+     * </p>
+     * <p>
+     * The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA
+     * hierarchy.
      * </p>
      * 
      * @param validity
-     *        Information describing the validity period of the certificate.</p>
+     *        Information describing the end of the validity period of the certificate. This parameter sets the “Not
+     *        After” date for the certificate.</p>
      *        <p>
-     *        When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
-     *        time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
-     *        minutes or less.
+     *        Certificate validity is the period of time during which a certificate is valid. Validity can be expressed
+     *        as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in
+     *        days, months, or years. For more information, see <a
+     *        href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
      *        </p>
      *        <p>
-     *        The validity period configured on a certificate must not exceed the limit set by its parents in the CA
-     *        hierarchy.
+     *        This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if
+     *        <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance
+     *        time regardless of the <code>ValidityNotBefore</code> value.
+     *        </p>
+     *        <p>
+     *        The end of the validity period configured on a certificate must not exceed the limit set on its parents in
+     *        the CA hierarchy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1165,19 +797,146 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency
-     * tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificates.
+     * Information describing the start of the validity period of the certificate. This parameter sets the “Not Before"
+     * date for the certificate.
+     * </p>
+     * <p>
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
+     * </p>
+     * <p>
+     * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     * </p>
+     * <p>
+     * The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     * <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     * reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     * </p>
+     * 
+     * @param validityNotBefore
+     *        Information describing the start of the validity period of the certificate. This parameter sets the “Not
+     *        Before" date for the certificate.</p>
+     *        <p>
+     *        By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *        minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *        <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     *        </p>
+     *        <p>
+     *        Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     *        </p>
+     *        <p>
+     *        The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     *        <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     *        reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     */
+
+    public void setValidityNotBefore(Validity validityNotBefore) {
+        this.validityNotBefore = validityNotBefore;
+    }
+
+    /**
+     * <p>
+     * Information describing the start of the validity period of the certificate. This parameter sets the “Not Before"
+     * date for the certificate.
+     * </p>
+     * <p>
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
+     * </p>
+     * <p>
+     * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     * </p>
+     * <p>
+     * The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     * <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     * reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     * </p>
+     * 
+     * @return Information describing the start of the validity period of the certificate. This parameter sets the “Not
+     *         Before" date for the certificate.</p>
+     *         <p>
+     *         By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *         minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *         <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     *         </p>
+     *         <p>
+     *         Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     *         </p>
+     *         <p>
+     *         The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     *         <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     *         reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     */
+
+    public Validity getValidityNotBefore() {
+        return this.validityNotBefore;
+    }
+
+    /**
+     * <p>
+     * Information describing the start of the validity period of the certificate. This parameter sets the “Not Before"
+     * date for the certificate.
+     * </p>
+     * <p>
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
+     * </p>
+     * <p>
+     * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     * </p>
+     * <p>
+     * The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     * <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     * reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     * </p>
+     * 
+     * @param validityNotBefore
+     *        Information describing the start of the validity period of the certificate. This parameter sets the “Not
+     *        Before" date for the certificate.</p>
+     *        <p>
+     *        By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *        minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *        <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     *        </p>
+     *        <p>
+     *        Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
+     *        </p>
+     *        <p>
+     *        The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the
+     *        <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API
+     *        reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IssueCertificateRequest withValidityNotBefore(Validity validityNotBefore) {
+        setValidityNotBefore(validityNotBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
-     *        Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
-     *        Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times
-     *        with the same idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only
-     *        one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes
-     *        that you are requesting multiple certificates.
+     *        Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     *        Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *        recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *        idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -1186,18 +945,18 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency
-     * tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
-     * @return Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
-     *         Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times
-     *         with the same idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only
-     *         one certificate and will issue only one. If you change the idempotency token for each call, PCA
-     *         recognizes that you are requesting multiple certificates.
+     * @return Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     *         Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     *         <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *         recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *         idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      */
 
     public String getIdempotencyToken() {
@@ -1206,19 +965,19 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency
-     * tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
-     *        Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
-     *        Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times
-     *        with the same idempotency token within 5 minutes, ACM Private CA recognizes that you are requesting only
-     *        one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes
-     *        that you are requesting multiple certificates.
+     *        Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
+     *        Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
+     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *        recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *        idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1239,6 +998,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApiPassthrough() != null)
+            sb.append("ApiPassthrough: ").append(getApiPassthrough()).append(",");
         if (getCertificateAuthorityArn() != null)
             sb.append("CertificateAuthorityArn: ").append(getCertificateAuthorityArn()).append(",");
         if (getCsr() != null)
@@ -1249,6 +1010,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
         if (getValidity() != null)
             sb.append("Validity: ").append(getValidity()).append(",");
+        if (getValidityNotBefore() != null)
+            sb.append("ValidityNotBefore: ").append(getValidityNotBefore()).append(",");
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken());
         sb.append("}");
@@ -1265,6 +1028,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof IssueCertificateRequest == false)
             return false;
         IssueCertificateRequest other = (IssueCertificateRequest) obj;
+        if (other.getApiPassthrough() == null ^ this.getApiPassthrough() == null)
+            return false;
+        if (other.getApiPassthrough() != null && other.getApiPassthrough().equals(this.getApiPassthrough()) == false)
+            return false;
         if (other.getCertificateAuthorityArn() == null ^ this.getCertificateAuthorityArn() == null)
             return false;
         if (other.getCertificateAuthorityArn() != null && other.getCertificateAuthorityArn().equals(this.getCertificateAuthorityArn()) == false)
@@ -1285,6 +1052,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getValidity() != null && other.getValidity().equals(this.getValidity()) == false)
             return false;
+        if (other.getValidityNotBefore() == null ^ this.getValidityNotBefore() == null)
+            return false;
+        if (other.getValidityNotBefore() != null && other.getValidityNotBefore().equals(this.getValidityNotBefore()) == false)
+            return false;
         if (other.getIdempotencyToken() == null ^ this.getIdempotencyToken() == null)
             return false;
         if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
@@ -1297,11 +1068,13 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApiPassthrough() == null) ? 0 : getApiPassthrough().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthorityArn() == null) ? 0 : getCertificateAuthorityArn().hashCode());
         hashCode = prime * hashCode + ((getCsr() == null) ? 0 : getCsr().hashCode());
         hashCode = prime * hashCode + ((getSigningAlgorithm() == null) ? 0 : getSigningAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getValidity() == null) ? 0 : getValidity().hashCode());
+        hashCode = prime * hashCode + ((getValidityNotBefore() == null) ? 0 : getValidityNotBefore().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         return hashCode;
     }

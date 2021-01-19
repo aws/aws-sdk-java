@@ -33,7 +33,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .
      * </p>
      */
     private String awsRegion;
@@ -86,7 +86,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .
      * </p>
      * 
      * @param awsRegion
@@ -101,11 +101,11 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .
      * </p>
      * 
      * @return The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-     *         <code>us-east-1</code>.
+     *         <code>us-east-1</code> .
      * @see VoiceConnectorAwsRegion
      */
 
@@ -115,7 +115,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .
      * </p>
      * 
      * @param awsRegion
@@ -132,7 +132,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .
      * </p>
      * 
      * @param awsRegion

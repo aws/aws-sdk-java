@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The summary data for a channel.
+ * Summary of the details of a <code>Channel</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelSummary" target="_top">AWS API
@@ -30,31 +30,31 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The name of the channel.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ARN of the channel summary.
+     * The ARN of the channel.
      * </p>
      */
     private String channelArn;
     /**
      * <p>
-     * The summary mode of the channel.
+     * The mode of the channel.
      * </p>
      */
     private String mode;
     /**
      * <p>
-     * The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The privacy setting of the channel.
      * </p>
      */
     private String privacy;
     /**
      * <p>
-     * The metadata of the channel summary.
+     * The metadata of the channel.
      * </p>
      */
     private String metadata;
@@ -67,11 +67,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The name of the channel.
      * </p>
      * 
      * @param name
-     *        The parameter of the action.
+     *        The name of the channel.
      */
 
     public void setName(String name) {
@@ -80,10 +80,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The name of the channel.
      * </p>
      * 
-     * @return The parameter of the action.
+     * @return The name of the channel.
      */
 
     public String getName() {
@@ -92,11 +92,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The name of the channel.
      * </p>
      * 
      * @param name
-     *        The parameter of the action.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the channel summary.
+     * The ARN of the channel.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel summary.
+     *        The ARN of the channel.
      */
 
     public void setChannelArn(String channelArn) {
@@ -120,10 +120,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the channel summary.
+     * The ARN of the channel.
      * </p>
      * 
-     * @return The ARN of the channel summary.
+     * @return The ARN of the channel.
      */
 
     public String getChannelArn() {
@@ -132,11 +132,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the channel summary.
+     * The ARN of the channel.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel summary.
+     *        The ARN of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The summary mode of the channel.
+     * The mode of the channel.
      * </p>
      * 
      * @param mode
-     *        The summary mode of the channel.
+     *        The mode of the channel.
      * @see ChannelMode
      */
 
@@ -161,10 +161,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The summary mode of the channel.
+     * The mode of the channel.
      * </p>
      * 
-     * @return The summary mode of the channel.
+     * @return The mode of the channel.
      * @see ChannelMode
      */
 
@@ -174,11 +174,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The summary mode of the channel.
+     * The mode of the channel.
      * </p>
      * 
      * @param mode
-     *        The summary mode of the channel.
+     *        The mode of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMode
      */
@@ -190,11 +190,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The summary mode of the channel.
+     * The mode of the channel.
      * </p>
      * 
      * @param mode
-     *        The summary mode of the channel.
+     *        The mode of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMode
      */
@@ -206,11 +206,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The privacy setting of the channel.
      * </p>
      * 
      * @param privacy
-     *        The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The privacy setting of the channel.
      * @see ChannelPrivacy
      */
 
@@ -220,10 +220,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The privacy setting of the channel.
      * </p>
      * 
-     * @return The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * @return The privacy setting of the channel.
      * @see ChannelPrivacy
      */
 
@@ -233,11 +233,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The privacy setting of the channel.
      * </p>
      * 
      * @param privacy
-     *        The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The privacy setting of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -249,11 +249,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     * The privacy setting of the channel.
      * </p>
      * 
      * @param privacy
-     *        The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+     *        The privacy setting of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -265,11 +265,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel summary.
+     * The metadata of the channel.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel summary.
+     *        The metadata of the channel.
      */
 
     public void setMetadata(String metadata) {
@@ -278,10 +278,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel summary.
+     * The metadata of the channel.
      * </p>
      * 
-     * @return The metadata of the channel summary.
+     * @return The metadata of the channel.
      */
 
     public String getMetadata() {
@@ -290,11 +290,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of the channel summary.
+     * The metadata of the channel.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel summary.
+     *        The metadata of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

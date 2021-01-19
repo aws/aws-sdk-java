@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The app instance user.
+ * The details of an <code>AppInstanceUser</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceUser" target="_top">AWS API
@@ -30,42 +30,42 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String appInstanceUserArn;
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The time at which the app instance user was created.
+     * The time at which the <code>AppInstanceUser</code> was created.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String metadata;
     /**
      * <p>
-     * The time at which the app instance user was last updated.
+     * The time at which the <code>AppInstanceUser</code> was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTimestamp;
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUserArn(String appInstanceUserArn) {
@@ -74,10 +74,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The ARN of the app instance user.
+     * @return The ARN of the <code>AppInstanceUser</code>.
      */
 
     public String getAppInstanceUserArn() {
@@ -86,11 +86,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      */
 
     public void setName(String name) {
@@ -114,10 +114,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The name of the app instance user.
+     * @return The name of the <code>AppInstanceUser</code>.
      */
 
     public String getName() {
@@ -126,11 +126,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was created.
+     * The time at which the <code>AppInstanceUser</code> was created.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the app instance user was created.
+     *        The time at which the <code>AppInstanceUser</code> was created.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -154,10 +154,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was created.
+     * The time at which the <code>AppInstanceUser</code> was created.
      * </p>
      * 
-     * @return The time at which the app instance user was created.
+     * @return The time at which the <code>AppInstanceUser</code> was created.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -166,11 +166,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was created.
+     * The time at which the <code>AppInstanceUser</code> was created.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the app instance user was created.
+     *        The time at which the <code>AppInstanceUser</code> was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance user.
+     *        The metadata of the <code>AppInstanceUser</code>.
      */
 
     public void setMetadata(String metadata) {
@@ -194,10 +194,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The metadata of the app instance user.
+     * @return The metadata of the <code>AppInstanceUser</code>.
      */
 
     public String getMetadata() {
@@ -206,11 +206,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance user.
+     *        The metadata of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was last updated.
+     * The time at which the <code>AppInstanceUser</code> was last updated.
      * </p>
      * 
      * @param lastUpdatedTimestamp
-     *        The time at which the app instance user was last updated.
+     *        The time at which the <code>AppInstanceUser</code> was last updated.
      */
 
     public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
@@ -234,10 +234,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was last updated.
+     * The time at which the <code>AppInstanceUser</code> was last updated.
      * </p>
      * 
-     * @return The time at which the app instance user was last updated.
+     * @return The time at which the <code>AppInstanceUser</code> was last updated.
      */
 
     public java.util.Date getLastUpdatedTimestamp() {
@@ -246,11 +246,11 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time at which the app instance user was last updated.
+     * The time at which the <code>AppInstanceUser</code> was last updated.
      * </p>
      * 
      * @param lastUpdatedTimestamp
-     *        The time at which the app instance user was last updated.
+     *        The time at which the <code>AppInstanceUser</code> was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

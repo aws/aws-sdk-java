@@ -45,10 +45,16 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String mode;
     /**
      * <p>
-     * The metadata of the channel.
+     * The metadata for the update request.
      * </p>
      */
     private String metadata;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
@@ -191,11 +197,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The metadata for the update request.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel.
+     *        The metadata for the update request.
      */
 
     public void setMetadata(String metadata) {
@@ -204,10 +210,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The metadata for the update request.
      * </p>
      * 
-     * @return The metadata of the channel.
+     * @return The metadata for the update request.
      */
 
     public String getMetadata() {
@@ -216,16 +222,56 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata of the channel.
+     * The metadata for the update request.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the channel.
+     *        The metadata for the update request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateChannelRequest withMetadata(String metadata) {
         setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
         return this;
     }
 
@@ -248,7 +294,9 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMode() != null)
             sb.append("Mode: ").append(getMode()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append("***Sensitive Data Redacted***");
+            sb.append("Metadata: ").append("***Sensitive Data Redacted***").append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +327,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +343,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

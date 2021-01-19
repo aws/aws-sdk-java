@@ -25,23 +25,23 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The information for each app instance.
+     * The information for each <code>AppInstance</code>.
      * </p>
      */
     private java.util.List<AppInstanceSummary> appInstances;
     /**
      * <p>
-     * The token passed by previous API requests until the maximum number of app instances is reached.
+     * The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The information for each app instance.
+     * The information for each <code>AppInstance</code>.
      * </p>
      * 
-     * @return The information for each app instance.
+     * @return The information for each <code>AppInstance</code>.
      */
 
     public java.util.List<AppInstanceSummary> getAppInstances() {
@@ -50,11 +50,11 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The information for each app instance.
+     * The information for each <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstances
-     *        The information for each app instance.
+     *        The information for each <code>AppInstance</code>.
      */
 
     public void setAppInstances(java.util.Collection<AppInstanceSummary> appInstances) {
@@ -68,7 +68,7 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The information for each app instance.
+     * The information for each <code>AppInstance</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param appInstances
-     *        The information for each app instance.
+     *        The information for each <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The information for each app instance.
+     * The information for each <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstances
-     *        The information for each app instance.
+     *        The information for each <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,12 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token passed by previous API requests until the maximum number of app instances is reached.
+     * The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.
      * </p>
      * 
      * @param nextToken
-     *        The token passed by previous API requests until the maximum number of app instances is reached.
+     *        The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is
+     *        reached.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +122,11 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token passed by previous API requests until the maximum number of app instances is reached.
+     * The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.
      * </p>
      * 
-     * @return The token passed by previous API requests until the maximum number of app instances is reached.
+     * @return The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is
+     *         reached.
      */
 
     public String getNextToken() {
@@ -133,11 +135,12 @@ public class ListAppInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token passed by previous API requests until the maximum number of app instances is reached.
+     * The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.
      * </p>
      * 
      * @param nextToken
-     *        The token passed by previous API requests until the maximum number of app instances is reached.
+     *        The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is
+     *        reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

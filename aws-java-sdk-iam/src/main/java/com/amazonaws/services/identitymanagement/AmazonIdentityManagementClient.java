@@ -373,6 +373,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult>(
                     new AddClientIDToOpenIDConnectProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -462,6 +463,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AddRoleToInstanceProfileResult> responseHandler = new StaxResponseHandler<AddRoleToInstanceProfileResult>(
                     new AddRoleToInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -524,6 +526,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AddUserToGroupResult> responseHandler = new StaxResponseHandler<AddUserToGroupResult>(
                     new AddUserToGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -600,6 +603,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AttachGroupPolicyResult> responseHandler = new StaxResponseHandler<AttachGroupPolicyResult>(
                     new AttachGroupPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -684,6 +688,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AttachRolePolicyResult> responseHandler = new StaxResponseHandler<AttachRolePolicyResult>(
                     new AttachRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -760,6 +765,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<AttachUserPolicyResult> responseHandler = new StaxResponseHandler<AttachUserPolicyResult>(
                     new AttachUserPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -837,6 +843,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ChangePasswordResult> responseHandler = new StaxResponseHandler<ChangePasswordResult>(
                     new ChangePasswordResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -917,6 +924,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateAccessKeyResult> responseHandler = new StaxResponseHandler<CreateAccessKeyResult>(
                     new CreateAccessKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -985,6 +993,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateAccountAliasResult> responseHandler = new StaxResponseHandler<CreateAccountAliasResult>(
                     new CreateAccountAliasResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1053,6 +1062,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<CreateGroupResult> responseHandler = new StaxResponseHandler<CreateGroupResult>(new CreateGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1120,6 +1130,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateInstanceProfileResult> responseHandler = new StaxResponseHandler<CreateInstanceProfileResult>(
                     new CreateInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1190,6 +1201,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateLoginProfileResult> responseHandler = new StaxResponseHandler<CreateLoginProfileResult>(
                     new CreateLoginProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1288,6 +1300,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<CreateOpenIDConnectProviderResult>(
                     new CreateOpenIDConnectProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1364,6 +1377,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<CreatePolicyResult> responseHandler = new StaxResponseHandler<CreatePolicyResult>(new CreatePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1442,6 +1456,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreatePolicyVersionResult> responseHandler = new StaxResponseHandler<CreatePolicyVersionResult>(
                     new CreatePolicyVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1514,6 +1529,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<CreateRoleResult> responseHandler = new StaxResponseHandler<CreateRoleResult>(new CreateRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1602,6 +1618,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateSAMLProviderResult> responseHandler = new StaxResponseHandler<CreateSAMLProviderResult>(
                     new CreateSAMLProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1675,6 +1692,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<CreateServiceLinkedRoleResult>(
                     new CreateServiceLinkedRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1753,6 +1771,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<CreateServiceSpecificCredentialResult>(
                     new CreateServiceSpecificCredentialResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1826,6 +1845,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<CreateUserResult> responseHandler = new StaxResponseHandler<CreateUserResult>(new CreateUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1903,6 +1923,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateVirtualMFADeviceResult> responseHandler = new StaxResponseHandler<CreateVirtualMFADeviceResult>(
                     new CreateVirtualMFADeviceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1975,6 +1996,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeactivateMFADeviceResult> responseHandler = new StaxResponseHandler<DeactivateMFADeviceResult>(
                     new DeactivateMFADeviceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2042,6 +2064,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteAccessKeyResult> responseHandler = new StaxResponseHandler<DeleteAccessKeyResult>(
                     new DeleteAccessKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2106,6 +2129,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteAccountAliasResult> responseHandler = new StaxResponseHandler<DeleteAccountAliasResult>(
                     new DeleteAccountAliasResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2168,6 +2192,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<DeleteAccountPasswordPolicyResult>(
                     new DeleteAccountPasswordPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2237,6 +2262,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<DeleteGroupResult> responseHandler = new StaxResponseHandler<DeleteGroupResult>(new DeleteGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2305,6 +2331,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteGroupPolicyResult> responseHandler = new StaxResponseHandler<DeleteGroupPolicyResult>(
                     new DeleteGroupPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2381,6 +2408,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteInstanceProfileResult> responseHandler = new StaxResponseHandler<DeleteInstanceProfileResult>(
                     new DeleteInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2455,6 +2483,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteLoginProfileResult> responseHandler = new StaxResponseHandler<DeleteLoginProfileResult>(
                     new DeleteLoginProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2524,6 +2553,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<DeleteOpenIDConnectProviderResult>(
                     new DeleteOpenIDConnectProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2621,6 +2651,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(new DeletePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2698,6 +2729,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeletePolicyVersionResult> responseHandler = new StaxResponseHandler<DeletePolicyVersionResult>(
                     new DeletePolicyVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2777,6 +2809,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<DeleteRoleResult> responseHandler = new StaxResponseHandler<DeleteRoleResult>(new DeleteRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2846,6 +2879,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteRolePermissionsBoundaryResult>(
                     new DeleteRolePermissionsBoundaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2918,6 +2952,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteRolePolicyResult> responseHandler = new StaxResponseHandler<DeleteRolePolicyResult>(
                     new DeleteRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2993,6 +3028,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteSAMLProviderResult> responseHandler = new StaxResponseHandler<DeleteSAMLProviderResult>(
                     new DeleteSAMLProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3056,6 +3092,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteSSHPublicKeyResult> responseHandler = new StaxResponseHandler<DeleteSSHPublicKeyResult>(
                     new DeleteSSHPublicKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3138,6 +3175,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteServerCertificateResult> responseHandler = new StaxResponseHandler<DeleteServerCertificateResult>(
                     new DeleteServerCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3217,6 +3255,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
                     new DeleteServiceLinkedRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3275,6 +3314,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<DeleteServiceSpecificCredentialResult>(
                     new DeleteServiceSpecificCredentialResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3342,6 +3382,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteSigningCertificateResult> responseHandler = new StaxResponseHandler<DeleteSigningCertificateResult>(
                     new DeleteSigningCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3459,6 +3500,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<DeleteUserResult> responseHandler = new StaxResponseHandler<DeleteUserResult>(new DeleteUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3524,6 +3566,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteUserPermissionsBoundaryResult>(
                     new DeleteUserPermissionsBoundaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3592,6 +3635,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteUserPolicyResult> responseHandler = new StaxResponseHandler<DeleteUserPolicyResult>(
                     new DeleteUserPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3663,6 +3707,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteVirtualMFADeviceResult> responseHandler = new StaxResponseHandler<DeleteVirtualMFADeviceResult>(
                     new DeleteVirtualMFADeviceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3733,6 +3778,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DetachGroupPolicyResult> responseHandler = new StaxResponseHandler<DetachGroupPolicyResult>(
                     new DetachGroupPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3807,6 +3853,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DetachRolePolicyResult> responseHandler = new StaxResponseHandler<DetachRolePolicyResult>(
                     new DetachRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3877,6 +3924,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DetachUserPolicyResult> responseHandler = new StaxResponseHandler<DetachUserPolicyResult>(
                     new DetachUserPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3949,6 +3997,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<EnableMFADeviceResult> responseHandler = new StaxResponseHandler<EnableMFADeviceResult>(
                     new EnableMFADeviceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4010,6 +4059,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GenerateCredentialReportResult> responseHandler = new StaxResponseHandler<GenerateCredentialReportResult>(
                     new GenerateCredentialReportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4206,6 +4256,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GenerateOrganizationsAccessReportResult> responseHandler = new StaxResponseHandler<GenerateOrganizationsAccessReportResult>(
                     new GenerateOrganizationsAccessReportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4330,6 +4381,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GenerateServiceLastAccessedDetailsResult> responseHandler = new StaxResponseHandler<GenerateServiceLastAccessedDetailsResult>(
                     new GenerateServiceLastAccessedDetailsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4386,6 +4438,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccessKeyLastUsedResult> responseHandler = new StaxResponseHandler<GetAccessKeyLastUsedResult>(
                     new GetAccessKeyLastUsedResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4456,6 +4509,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccountAuthorizationDetailsResult> responseHandler = new StaxResponseHandler<GetAccountAuthorizationDetailsResult>(
                     new GetAccountAuthorizationDetailsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4522,6 +4576,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<GetAccountPasswordPolicyResult>(
                     new GetAccountPasswordPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4588,6 +4643,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccountSummaryResult> responseHandler = new StaxResponseHandler<GetAccountSummaryResult>(
                     new GetAccountSummaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4658,6 +4714,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetContextKeysForCustomPolicyResult> responseHandler = new StaxResponseHandler<GetContextKeysForCustomPolicyResult>(
                     new GetContextKeysForCustomPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4735,6 +4792,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetContextKeysForPrincipalPolicyResult> responseHandler = new StaxResponseHandler<GetContextKeysForPrincipalPolicyResult>(
                     new GetContextKeysForPrincipalPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4804,6 +4862,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetCredentialReportResult> responseHandler = new StaxResponseHandler<GetCredentialReportResult>(
                     new GetCredentialReportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4868,6 +4927,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetGroupResult> responseHandler = new StaxResponseHandler<GetGroupResult>(new GetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4945,6 +5005,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetGroupPolicyResult> responseHandler = new StaxResponseHandler<GetGroupPolicyResult>(
                     new GetGroupPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5007,6 +5068,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetInstanceProfileResult> responseHandler = new StaxResponseHandler<GetInstanceProfileResult>(
                     new GetInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5067,6 +5129,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetLoginProfileResult> responseHandler = new StaxResponseHandler<GetLoginProfileResult>(
                     new GetLoginProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5128,6 +5191,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<GetOpenIDConnectProviderResult>(
                     new GetOpenIDConnectProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5206,6 +5270,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetOrganizationsAccessReportResult> responseHandler = new StaxResponseHandler<GetOrganizationsAccessReportResult>(
                     new GetOrganizationsAccessReportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5280,6 +5345,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetPolicyResult> responseHandler = new StaxResponseHandler<GetPolicyResult>(new GetPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5367,6 +5433,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetPolicyVersionResult> responseHandler = new StaxResponseHandler<GetPolicyVersionResult>(
                     new GetPolicyVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5435,6 +5502,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetRoleResult> responseHandler = new StaxResponseHandler<GetRoleResult>(new GetRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5516,6 +5584,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetRolePolicyResult> responseHandler = new StaxResponseHandler<GetRolePolicyResult>(new GetRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5584,6 +5653,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetSAMLProviderResult> responseHandler = new StaxResponseHandler<GetSAMLProviderResult>(
                     new GetSAMLProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5649,6 +5719,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetSSHPublicKeyResult> responseHandler = new StaxResponseHandler<GetSSHPublicKeyResult>(
                     new GetSSHPublicKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5714,6 +5785,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetServerCertificateResult> responseHandler = new StaxResponseHandler<GetServerCertificateResult>(
                     new GetServerCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5833,6 +5905,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetServiceLastAccessedDetailsResult> responseHandler = new StaxResponseHandler<GetServiceLastAccessedDetailsResult>(
                     new GetServiceLastAccessedDetailsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5921,6 +5994,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetServiceLastAccessedDetailsWithEntitiesResult> responseHandler = new StaxResponseHandler<GetServiceLastAccessedDetailsWithEntitiesResult>(
                     new GetServiceLastAccessedDetailsWithEntitiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5987,6 +6061,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult> responseHandler = new StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult>(
                     new GetServiceLinkedRoleDeletionStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6049,6 +6124,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetUserResult> responseHandler = new StaxResponseHandler<GetUserResult>(new GetUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6130,6 +6206,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetUserPolicyResult> responseHandler = new StaxResponseHandler<GetUserPolicyResult>(new GetUserPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6206,6 +6283,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListAccessKeysResult> responseHandler = new StaxResponseHandler<ListAccessKeysResult>(
                     new ListAccessKeysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6270,6 +6348,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListAccountAliasesResult> responseHandler = new StaxResponseHandler<ListAccountAliasesResult>(
                     new ListAccountAliasesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6348,6 +6427,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListAttachedGroupPoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedGroupPoliciesResult>(
                     new ListAttachedGroupPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6421,6 +6501,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListAttachedRolePoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedRolePoliciesResult>(
                     new ListAttachedRolePoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6494,6 +6575,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListAttachedUserPoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedUserPoliciesResult>(
                     new ListAttachedUserPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6563,6 +6645,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListEntitiesForPolicyResult> responseHandler = new StaxResponseHandler<ListEntitiesForPolicyResult>(
                     new ListEntitiesForPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6632,6 +6715,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListGroupPoliciesResult> responseHandler = new StaxResponseHandler<ListGroupPoliciesResult>(
                     new ListGroupPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6690,6 +6774,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListGroupsResult> responseHandler = new StaxResponseHandler<ListGroupsResult>(new ListGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6757,6 +6842,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListGroupsForUserResult> responseHandler = new StaxResponseHandler<ListGroupsForUserResult>(
                     new ListGroupsForUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6818,6 +6904,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListInstanceProfilesResult> responseHandler = new StaxResponseHandler<ListInstanceProfilesResult>(
                     new ListInstanceProfilesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6887,6 +6974,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListInstanceProfilesForRoleResult> responseHandler = new StaxResponseHandler<ListInstanceProfilesForRoleResult>(
                     new ListInstanceProfilesForRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6951,6 +7039,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListMFADevicesResult> responseHandler = new StaxResponseHandler<ListMFADevicesResult>(
                     new ListMFADevicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7012,6 +7101,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListOpenIDConnectProvidersResult> responseHandler = new StaxResponseHandler<ListOpenIDConnectProvidersResult>(
                     new ListOpenIDConnectProvidersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7087,6 +7177,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListPoliciesResult> responseHandler = new StaxResponseHandler<ListPoliciesResult>(new ListPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7198,6 +7289,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListPoliciesGrantingServiceAccessResult> responseHandler = new StaxResponseHandler<ListPoliciesGrantingServiceAccessResult>(
                     new ListPoliciesGrantingServiceAccessResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7265,6 +7357,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListPolicyVersionsResult> responseHandler = new StaxResponseHandler<ListPolicyVersionsResult>(
                     new ListPolicyVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7334,6 +7427,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListRolePoliciesResult> responseHandler = new StaxResponseHandler<ListRolePoliciesResult>(
                     new ListRolePoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7394,6 +7488,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListRoleTagsResult> responseHandler = new StaxResponseHandler<ListRoleTagsResult>(new ListRoleTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7454,6 +7549,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListRolesResult> responseHandler = new StaxResponseHandler<ListRolesResult>(new ListRolesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7521,6 +7617,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListSAMLProvidersResult> responseHandler = new StaxResponseHandler<ListSAMLProvidersResult>(
                     new ListSAMLProvidersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7594,6 +7691,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListSSHPublicKeysResult> responseHandler = new StaxResponseHandler<ListSSHPublicKeysResult>(
                     new ListSSHPublicKeysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7665,6 +7763,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListServerCertificatesResult> responseHandler = new StaxResponseHandler<ListServerCertificatesResult>(
                     new ListServerCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7734,6 +7833,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListServiceSpecificCredentialsResult> responseHandler = new StaxResponseHandler<ListServiceSpecificCredentialsResult>(
                     new ListServiceSpecificCredentialsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7804,6 +7904,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListSigningCertificatesResult> responseHandler = new StaxResponseHandler<ListSigningCertificatesResult>(
                     new ListSigningCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7878,6 +7979,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListUserPoliciesResult> responseHandler = new StaxResponseHandler<ListUserPoliciesResult>(
                     new ListUserPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7938,6 +8040,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListUserTagsResult> responseHandler = new StaxResponseHandler<ListUserTagsResult>(new ListUserTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7997,6 +8100,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListUsersResult> responseHandler = new StaxResponseHandler<ListUsersResult>(new ListUsersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8061,6 +8165,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListVirtualMFADevicesResult> responseHandler = new StaxResponseHandler<ListVirtualMFADevicesResult>(
                     new ListVirtualMFADevicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8150,6 +8255,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutGroupPolicyResult> responseHandler = new StaxResponseHandler<PutGroupPolicyResult>(
                     new PutGroupPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8232,6 +8338,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutRolePermissionsBoundaryResult>(
                     new PutRolePermissionsBoundaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8326,6 +8433,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<PutRolePolicyResult> responseHandler = new StaxResponseHandler<PutRolePolicyResult>(new PutRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8401,6 +8509,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutUserPermissionsBoundaryResult>(
                     new PutUserPermissionsBoundaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8484,6 +8593,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<PutUserPolicyResult> responseHandler = new StaxResponseHandler<PutUserPolicyResult>(new PutUserPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8552,6 +8662,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult>(
                     new RemoveClientIDFromOpenIDConnectProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8631,6 +8742,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<RemoveRoleFromInstanceProfileResult> responseHandler = new StaxResponseHandler<RemoveRoleFromInstanceProfileResult>(
                     new RemoveRoleFromInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8693,6 +8805,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<RemoveUserFromGroupResult> responseHandler = new StaxResponseHandler<RemoveUserFromGroupResult>(
                     new RemoveUserFromGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8752,6 +8865,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ResetServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<ResetServiceSpecificCredentialResult>(
                     new ResetServiceSpecificCredentialResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8822,6 +8936,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ResyncMFADeviceResult> responseHandler = new StaxResponseHandler<ResyncMFADeviceResult>(
                     new ResyncMFADeviceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8895,6 +9010,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetDefaultPolicyVersionResult> responseHandler = new StaxResponseHandler<SetDefaultPolicyVersionResult>(
                     new SetDefaultPolicyVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8973,6 +9089,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetSecurityTokenServicePreferencesResult> responseHandler = new StaxResponseHandler<SetSecurityTokenServicePreferencesResult>(
                     new SetSecurityTokenServicePreferencesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9051,6 +9168,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SimulateCustomPolicyResult> responseHandler = new StaxResponseHandler<SimulateCustomPolicyResult>(
                     new SimulateCustomPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9142,6 +9260,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SimulatePrincipalPolicyResult> responseHandler = new StaxResponseHandler<SimulatePrincipalPolicyResult>(
                     new SimulatePrincipalPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9258,6 +9377,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<TagRoleResult> responseHandler = new StaxResponseHandler<TagRoleResult>(new TagRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9375,6 +9495,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<TagUserResult> responseHandler = new StaxResponseHandler<TagUserResult>(new TagUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9438,6 +9559,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<UntagRoleResult> responseHandler = new StaxResponseHandler<UntagRoleResult>(new UntagRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9501,6 +9623,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<UntagUserResult> responseHandler = new StaxResponseHandler<UntagUserResult>(new UntagUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9574,6 +9697,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateAccessKeyResult> responseHandler = new StaxResponseHandler<UpdateAccessKeyResult>(
                     new UpdateAccessKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9657,6 +9781,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<UpdateAccountPasswordPolicyResult>(
                     new UpdateAccountPasswordPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9729,6 +9854,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateAssumeRolePolicyResult> responseHandler = new StaxResponseHandler<UpdateAssumeRolePolicyResult>(
                     new UpdateAssumeRolePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9808,6 +9934,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<UpdateGroupResult> responseHandler = new StaxResponseHandler<UpdateGroupResult>(new UpdateGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9882,6 +10009,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateLoginProfileResult> responseHandler = new StaxResponseHandler<UpdateLoginProfileResult>(
                     new UpdateLoginProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9962,6 +10090,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult> responseHandler = new StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult>(
                     new UpdateOpenIDConnectProviderThumbprintResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10024,6 +10153,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<UpdateRoleResult> responseHandler = new StaxResponseHandler<UpdateRoleResult>(new UpdateRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10091,6 +10221,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateRoleDescriptionResult> responseHandler = new StaxResponseHandler<UpdateRoleDescriptionResult>(
                     new UpdateRoleDescriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10161,6 +10292,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateSAMLProviderResult> responseHandler = new StaxResponseHandler<UpdateSAMLProviderResult>(
                     new UpdateSAMLProviderResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10226,6 +10358,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateSSHPublicKeyResult> responseHandler = new StaxResponseHandler<UpdateSSHPublicKeyResult>(
                     new UpdateSSHPublicKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10314,6 +10447,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateServerCertificateResult> responseHandler = new StaxResponseHandler<UpdateServerCertificateResult>(
                     new UpdateServerCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10374,6 +10508,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<UpdateServiceSpecificCredentialResult>(
                     new UpdateServiceSpecificCredentialResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10443,6 +10578,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateSigningCertificateResult> responseHandler = new StaxResponseHandler<UpdateSigningCertificateResult>(
                     new UpdateSigningCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10528,6 +10664,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<UpdateUserResult> responseHandler = new StaxResponseHandler<UpdateUserResult>(new UpdateUserResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10601,6 +10738,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UploadSSHPublicKeyResult> responseHandler = new StaxResponseHandler<UploadSSHPublicKeyResult>(
                     new UploadSSHPublicKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10697,6 +10835,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UploadServerCertificateResult> responseHandler = new StaxResponseHandler<UploadServerCertificateResult>(
                     new UploadServerCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10786,6 +10925,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UploadSigningCertificateResult> responseHandler = new StaxResponseHandler<UploadSigningCertificateResult>(
                     new UploadSigningCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

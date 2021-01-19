@@ -27,7 +27,7 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AWS Region assigned to the SIP media application.
+     * The AWS Region assigned to the SIP media application.
      * </p>
      */
     private String awsRegion;
@@ -47,11 +47,11 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AWS Region assigned to the SIP media application.
+     * The AWS Region assigned to the SIP media application.
      * </p>
      * 
      * @param awsRegion
-     *        AWS Region assigned to the SIP media application.
+     *        The AWS Region assigned to the SIP media application.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -60,10 +60,10 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AWS Region assigned to the SIP media application.
+     * The AWS Region assigned to the SIP media application.
      * </p>
      * 
-     * @return AWS Region assigned to the SIP media application.
+     * @return The AWS Region assigned to the SIP media application.
      */
 
     public String getAwsRegion() {
@@ -72,11 +72,11 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AWS Region assigned to the SIP media application.
+     * The AWS Region assigned to the SIP media application.
      * </p>
      * 
      * @param awsRegion
-     *        AWS Region assigned to the SIP media application.
+     *        The AWS Region assigned to the SIP media application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

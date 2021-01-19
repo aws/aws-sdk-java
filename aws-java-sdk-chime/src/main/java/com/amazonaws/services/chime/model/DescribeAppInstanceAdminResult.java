@@ -25,21 +25,21 @@ public class DescribeAppInstanceAdminResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     * timestamps. All timestamps use epoch milliseconds.
+     * The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created
+     * and last-updated timestamps. All timestamps use epoch milliseconds.
      * </p>
      */
     private AppInstanceAdmin appInstanceAdmin;
 
     /**
      * <p>
-     * The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     * timestamps. All timestamps use epoch milliseconds.
+     * The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created
+     * and last-updated timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     *        timestamps. All timestamps use epoch milliseconds.
+     *        The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the
+     *        created and last-updated timestamps. All timestamps use epoch milliseconds.
      */
 
     public void setAppInstanceAdmin(AppInstanceAdmin appInstanceAdmin) {
@@ -48,12 +48,12 @@ public class DescribeAppInstanceAdminResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     * timestamps. All timestamps use epoch milliseconds.
+     * The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created
+     * and last-updated timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
-     * @return The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     *         timestamps. All timestamps use epoch milliseconds.
+     * @return The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the
+     *         created and last-updated timestamps. All timestamps use epoch milliseconds.
      */
 
     public AppInstanceAdmin getAppInstanceAdmin() {
@@ -62,13 +62,13 @@ public class DescribeAppInstanceAdminResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     * timestamps. All timestamps use epoch milliseconds.
+     * The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created
+     * and last-updated timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated
-     *        timestamps. All timestamps use epoch milliseconds.
+     *        The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the
+     *        created and last-updated timestamps. All timestamps use epoch milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

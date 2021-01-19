@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The app instance user summary data .
+ * Summary of the details of an <code>AppInstanceUser</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceUserSummary" target="_top">AWS API
@@ -30,30 +30,30 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String appInstanceUserArn;
     /**
      * <p>
-     * The name in an app instance user summary.
+     * The name of an <code>AppInstanceUser</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The metadata in an app instance user summary.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String metadata;
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUserArn(String appInstanceUserArn) {
@@ -62,10 +62,10 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The ARN of the app instance user.
+     * @return The ARN of the <code>AppInstanceUser</code>.
      */
 
     public String getAppInstanceUserArn() {
@@ -74,11 +74,11 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name in an app instance user summary.
+     * The name of an <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name in an app instance user summary.
+     *        The name of an <code>AppInstanceUser</code>.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name in an app instance user summary.
+     * The name of an <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The name in an app instance user summary.
+     * @return The name of an <code>AppInstanceUser</code>.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name in an app instance user summary.
+     * The name of an <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name in an app instance user summary.
+     *        The name of an <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The metadata in an app instance user summary.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata in an app instance user summary.
+     *        The metadata of the <code>AppInstanceUser</code>.
      */
 
     public void setMetadata(String metadata) {
@@ -142,10 +142,10 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The metadata in an app instance user summary.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The metadata in an app instance user summary.
+     * @return The metadata of the <code>AppInstanceUser</code>.
      */
 
     public String getMetadata() {
@@ -154,11 +154,11 @@ public class AppInstanceUserSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The metadata in an app instance user summary.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata in an app instance user summary.
+     *        The metadata of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

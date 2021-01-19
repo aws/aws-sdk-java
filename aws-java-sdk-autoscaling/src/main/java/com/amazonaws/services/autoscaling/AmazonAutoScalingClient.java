@@ -362,6 +362,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<AttachInstancesResult> responseHandler = new StaxResponseHandler<AttachInstancesResult>(
                     new AttachInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -450,6 +451,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<AttachLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<AttachLoadBalancerTargetGroupsResult>(
                     new AttachLoadBalancerTargetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -525,6 +527,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<AttachLoadBalancersResult> responseHandler = new StaxResponseHandler<AttachLoadBalancersResult>(
                     new AttachLoadBalancersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -587,6 +590,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<BatchDeleteScheduledActionResult> responseHandler = new StaxResponseHandler<BatchDeleteScheduledActionResult>(
                     new BatchDeleteScheduledActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -654,6 +658,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult>(
                     new BatchPutScheduledUpdateGroupActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -724,6 +729,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<CancelInstanceRefreshResult> responseHandler = new StaxResponseHandler<CancelInstanceRefreshResult>(
                     new CancelInstanceRefreshResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -818,6 +824,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<CompleteLifecycleActionResult> responseHandler = new StaxResponseHandler<CompleteLifecycleActionResult>(
                     new CompleteLifecycleActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -909,6 +916,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<CreateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<CreateAutoScalingGroupResult>(
                     new CreateAutoScalingGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -984,6 +992,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<CreateLaunchConfigurationResult> responseHandler = new StaxResponseHandler<CreateLaunchConfigurationResult>(
                     new CreateLaunchConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1059,6 +1068,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<CreateOrUpdateTagsResult> responseHandler = new StaxResponseHandler<CreateOrUpdateTagsResult>(
                     new CreateOrUpdateTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1137,6 +1147,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteAutoScalingGroupResult> responseHandler = new StaxResponseHandler<DeleteAutoScalingGroupResult>(
                     new DeleteAutoScalingGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1200,6 +1211,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteLaunchConfigurationResult> responseHandler = new StaxResponseHandler<DeleteLaunchConfigurationResult>(
                     new DeleteLaunchConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1261,6 +1273,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteLifecycleHookResult> responseHandler = new StaxResponseHandler<DeleteLifecycleHookResult>(
                     new DeleteLifecycleHookResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1319,6 +1332,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteNotificationConfigurationResult> responseHandler = new StaxResponseHandler<DeleteNotificationConfigurationResult>(
                     new DeleteNotificationConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1386,6 +1400,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(new DeletePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1443,6 +1458,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteScheduledActionResult> responseHandler = new StaxResponseHandler<DeleteScheduledActionResult>(
                     new DeleteScheduledActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1501,6 +1517,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1563,6 +1580,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1646,6 +1664,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAdjustmentTypesResult> responseHandler = new StaxResponseHandler<DescribeAdjustmentTypesResult>(
                     new DescribeAdjustmentTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1710,6 +1729,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAutoScalingGroupsResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingGroupsResult>(
                     new DescribeAutoScalingGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1774,6 +1794,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAutoScalingInstancesResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingInstancesResult>(
                     new DescribeAutoScalingInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1838,6 +1859,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAutoScalingNotificationTypesResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingNotificationTypesResult>(
                     new DescribeAutoScalingNotificationTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1945,6 +1967,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeInstanceRefreshesResult> responseHandler = new StaxResponseHandler<DescribeInstanceRefreshesResult>(
                     new DescribeInstanceRefreshesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2004,6 +2027,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeLaunchConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeLaunchConfigurationsResult>(
                     new DescribeLaunchConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2081,6 +2105,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeLifecycleHookTypesResult> responseHandler = new StaxResponseHandler<DescribeLifecycleHookTypesResult>(
                     new DescribeLifecycleHookTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2143,6 +2168,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeLifecycleHooksResult> responseHandler = new StaxResponseHandler<DescribeLifecycleHooksResult>(
                     new DescribeLifecycleHooksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2201,6 +2227,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerTargetGroupsResult>(
                     new DescribeLoadBalancerTargetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2262,6 +2289,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeLoadBalancersResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancersResult>(
                     new DescribeLoadBalancersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2323,6 +2351,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeMetricCollectionTypesResult> responseHandler = new StaxResponseHandler<DescribeMetricCollectionTypesResult>(
                     new DescribeMetricCollectionTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2389,6 +2418,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeNotificationConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeNotificationConfigurationsResult>(
                     new DescribeNotificationConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2455,6 +2485,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribePoliciesResult> responseHandler = new StaxResponseHandler<DescribePoliciesResult>(
                     new DescribePoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2519,6 +2550,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeScalingActivitiesResult> responseHandler = new StaxResponseHandler<DescribeScalingActivitiesResult>(
                     new DescribeScalingActivitiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2581,6 +2613,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeScalingProcessTypesResult> responseHandler = new StaxResponseHandler<DescribeScalingProcessTypesResult>(
                     new DescribeScalingProcessTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2646,6 +2679,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeScheduledActionsResult> responseHandler = new StaxResponseHandler<DescribeScheduledActionsResult>(
                     new DescribeScheduledActionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2723,6 +2757,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2790,6 +2825,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeTerminationPolicyTypesResult> responseHandler = new StaxResponseHandler<DescribeTerminationPolicyTypesResult>(
                     new DescribeTerminationPolicyTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2869,6 +2905,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DetachInstancesResult> responseHandler = new StaxResponseHandler<DetachInstancesResult>(
                     new DetachInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2926,6 +2963,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DetachLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<DetachLoadBalancerTargetGroupsResult>(
                     new DetachLoadBalancerTargetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2992,6 +3030,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DetachLoadBalancersResult> responseHandler = new StaxResponseHandler<DetachLoadBalancersResult>(
                     new DetachLoadBalancersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3054,6 +3093,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DisableMetricsCollectionResult> responseHandler = new StaxResponseHandler<DisableMetricsCollectionResult>(
                     new DisableMetricsCollectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3113,6 +3153,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<EnableMetricsCollectionResult> responseHandler = new StaxResponseHandler<EnableMetricsCollectionResult>(
                     new EnableMetricsCollectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3183,6 +3224,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<EnterStandbyResult> responseHandler = new StaxResponseHandler<EnterStandbyResult>(new EnterStandbyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3241,6 +3283,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<ExecutePolicyResult> responseHandler = new StaxResponseHandler<ExecutePolicyResult>(new ExecutePolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3305,6 +3348,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<ExitStandbyResult> responseHandler = new StaxResponseHandler<ExitStandbyResult>(new ExitStandbyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3418,6 +3462,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<PutLifecycleHookResult> responseHandler = new StaxResponseHandler<PutLifecycleHookResult>(
                     new PutLifecycleHookResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3494,6 +3539,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<PutNotificationConfigurationResult> responseHandler = new StaxResponseHandler<PutNotificationConfigurationResult>(
                     new PutNotificationConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3565,6 +3611,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<PutScalingPolicyResult> responseHandler = new StaxResponseHandler<PutScalingPolicyResult>(
                     new PutScalingPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3635,6 +3682,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<PutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<PutScheduledUpdateGroupActionResult>(
                     new PutScheduledUpdateGroupActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3730,6 +3778,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<RecordLifecycleActionHeartbeatResult> responseHandler = new StaxResponseHandler<RecordLifecycleActionHeartbeatResult>(
                     new RecordLifecycleActionHeartbeatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3795,6 +3844,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<ResumeProcessesResult> responseHandler = new StaxResponseHandler<ResumeProcessesResult>(
                     new ResumeProcessesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3864,6 +3914,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<SetDesiredCapacityResult> responseHandler = new StaxResponseHandler<SetDesiredCapacityResult>(
                     new SetDesiredCapacityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3925,6 +3976,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<SetInstanceHealthResult> responseHandler = new StaxResponseHandler<SetInstanceHealthResult>(
                     new SetInstanceHealthResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3996,6 +4048,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<SetInstanceProtectionResult> responseHandler = new StaxResponseHandler<SetInstanceProtectionResult>(
                     new SetInstanceProtectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4073,6 +4126,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<StartInstanceRefreshResult> responseHandler = new StaxResponseHandler<StartInstanceRefreshResult>(
                     new StartInstanceRefreshResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4141,6 +4195,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<SuspendProcessesResult> responseHandler = new StaxResponseHandler<SuspendProcessesResult>(
                     new SuspendProcessesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4219,6 +4274,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<TerminateInstanceInAutoScalingGroupResult> responseHandler = new StaxResponseHandler<TerminateInstanceInAutoScalingGroupResult>(
                     new TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4330,6 +4386,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<UpdateAutoScalingGroupResult>(
                     new UpdateAutoScalingGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

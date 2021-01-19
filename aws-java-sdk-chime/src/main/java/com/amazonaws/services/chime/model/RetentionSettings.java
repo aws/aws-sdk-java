@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat
- * room messages and chat conversation messages.
+ * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as
+ * chat-room messages and chat-conversation messages.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RetentionSettings" target="_top">AWS API

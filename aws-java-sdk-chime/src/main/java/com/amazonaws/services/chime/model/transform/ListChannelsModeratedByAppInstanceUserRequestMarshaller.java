@@ -33,6 +33,8 @@ public class ListChannelsModeratedByAppInstanceUserRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("next-token").build();
+    private static final MarshallingInfo<String> CHIMEBEARER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-chime-bearer").build();
 
     private static final ListChannelsModeratedByAppInstanceUserRequestMarshaller instance = new ListChannelsModeratedByAppInstanceUserRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListChannelsModeratedByAppInstanceUserRequestMarshaller {
             protocolMarshaller.marshall(listChannelsModeratedByAppInstanceUserRequest.getAppInstanceUserArn(), APPINSTANCEUSERARN_BINDING);
             protocolMarshaller.marshall(listChannelsModeratedByAppInstanceUserRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listChannelsModeratedByAppInstanceUserRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listChannelsModeratedByAppInstanceUserRequest.getChimeBearer(), CHIMEBEARER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

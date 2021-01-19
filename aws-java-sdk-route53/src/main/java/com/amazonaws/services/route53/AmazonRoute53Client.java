@@ -400,6 +400,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ActivateKeySigningKeyResult> responseHandler = new StaxResponseHandler<ActivateKeySigningKeyResult>(
                     new ActivateKeySigningKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -522,6 +523,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<AssociateVPCWithHostedZoneResult> responseHandler = new StaxResponseHandler<AssociateVPCWithHostedZoneResult>(
                     new AssociateVPCWithHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -693,6 +695,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ChangeResourceRecordSetsResult> responseHandler = new StaxResponseHandler<ChangeResourceRecordSetsResult>(
                     new ChangeResourceRecordSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -766,6 +769,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ChangeTagsForResourceResult> responseHandler = new StaxResponseHandler<ChangeTagsForResourceResult>(
                     new ChangeTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -903,6 +907,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateHealthCheckResult> responseHandler = new StaxResponseHandler<CreateHealthCheckResult>(
                     new CreateHealthCheckResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1075,6 +1080,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateHostedZoneResult> responseHandler = new StaxResponseHandler<CreateHostedZoneResult>(
                     new CreateHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1153,6 +1159,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateKeySigningKeyResult> responseHandler = new StaxResponseHandler<CreateKeySigningKeyResult>(
                     new CreateKeySigningKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1401,6 +1408,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<CreateQueryLoggingConfigResult>(
                     new CreateQueryLoggingConfigResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1558,6 +1566,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateReusableDelegationSetResult> responseHandler = new StaxResponseHandler<CreateReusableDelegationSetResult>(
                     new CreateReusableDelegationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1637,6 +1646,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateTrafficPolicyResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyResult>(
                     new CreateTrafficPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1721,6 +1731,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyInstanceResult>(
                     new CreateTrafficPolicyInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1801,6 +1812,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateTrafficPolicyVersionResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyVersionResult>(
                     new CreateTrafficPolicyVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1884,6 +1896,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<CreateVPCAssociationAuthorizationResult> responseHandler = new StaxResponseHandler<CreateVPCAssociationAuthorizationResult>(
                     new CreateVPCAssociationAuthorizationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1954,6 +1967,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeactivateKeySigningKeyResult> responseHandler = new StaxResponseHandler<DeactivateKeySigningKeyResult>(
                     new DeactivateKeySigningKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2031,6 +2045,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteHealthCheckResult> responseHandler = new StaxResponseHandler<DeleteHealthCheckResult>(
                     new DeleteHealthCheckResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2154,6 +2169,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteHostedZoneResult> responseHandler = new StaxResponseHandler<DeleteHostedZoneResult>(
                     new DeleteHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2221,6 +2237,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteKeySigningKeyResult> responseHandler = new StaxResponseHandler<DeleteKeySigningKeyResult>(
                     new DeleteKeySigningKeyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2288,6 +2305,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<DeleteQueryLoggingConfigResult>(
                     new DeleteQueryLoggingConfigResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2362,6 +2380,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteReusableDelegationSetResult> responseHandler = new StaxResponseHandler<DeleteReusableDelegationSetResult>(
                     new DeleteReusableDelegationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2451,6 +2470,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteTrafficPolicyResult> responseHandler = new StaxResponseHandler<DeleteTrafficPolicyResult>(
                     new DeleteTrafficPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2521,6 +2541,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<DeleteTrafficPolicyInstanceResult>(
                     new DeleteTrafficPolicyInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2600,6 +2621,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DeleteVPCAssociationAuthorizationResult> responseHandler = new StaxResponseHandler<DeleteVPCAssociationAuthorizationResult>(
                     new DeleteVPCAssociationAuthorizationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2670,6 +2692,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DisableHostedZoneDNSSECResult> responseHandler = new StaxResponseHandler<DisableHostedZoneDNSSECResult>(
                     new DisableHostedZoneDNSSECResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2772,6 +2795,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<DisassociateVPCFromHostedZoneResult> responseHandler = new StaxResponseHandler<DisassociateVPCFromHostedZoneResult>(
                     new DisassociateVPCFromHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2844,6 +2868,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<EnableHostedZoneDNSSECResult> responseHandler = new StaxResponseHandler<EnableHostedZoneDNSSECResult>(
                     new EnableHostedZoneDNSSECResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2917,6 +2942,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetAccountLimitResult> responseHandler = new StaxResponseHandler<GetAccountLimitResult>(
                     new GetAccountLimitResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2988,6 +3014,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<GetChangeResult> responseHandler = new StaxResponseHandler<GetChangeResult>(new GetChangeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3048,6 +3075,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetCheckerIpRangesResult> responseHandler = new StaxResponseHandler<GetCheckerIpRangesResult>(
                     new GetCheckerIpRangesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3111,6 +3139,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<GetDNSSECResult> responseHandler = new StaxResponseHandler<GetDNSSECResult>(new GetDNSSECResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3193,6 +3222,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetGeoLocationResult> responseHandler = new StaxResponseHandler<GetGeoLocationResult>(
                     new GetGeoLocationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3259,6 +3289,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHealthCheckResult> responseHandler = new StaxResponseHandler<GetHealthCheckResult>(
                     new GetHealthCheckResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3314,6 +3345,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHealthCheckCountResult> responseHandler = new StaxResponseHandler<GetHealthCheckCountResult>(
                     new GetHealthCheckCountResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3379,6 +3411,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHealthCheckLastFailureReasonResult> responseHandler = new StaxResponseHandler<GetHealthCheckLastFailureReasonResult>(
                     new GetHealthCheckLastFailureReasonResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3438,6 +3471,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHealthCheckStatusResult> responseHandler = new StaxResponseHandler<GetHealthCheckStatusResult>(
                     new GetHealthCheckStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3496,6 +3530,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<GetHostedZoneResult> responseHandler = new StaxResponseHandler<GetHostedZoneResult>(new GetHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3553,6 +3588,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHostedZoneCountResult> responseHandler = new StaxResponseHandler<GetHostedZoneCountResult>(
                     new GetHostedZoneCountResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3627,6 +3663,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetHostedZoneLimitResult> responseHandler = new StaxResponseHandler<GetHostedZoneLimitResult>(
                     new GetHostedZoneLimitResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3691,6 +3728,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<GetQueryLoggingConfigResult>(
                     new GetQueryLoggingConfigResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3753,6 +3791,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetReusableDelegationSetResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetResult>(
                     new GetReusableDelegationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3819,6 +3858,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetReusableDelegationSetLimitResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetLimitResult>(
                     new GetReusableDelegationSetLimitResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3884,6 +3924,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetTrafficPolicyResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyResult>(
                     new GetTrafficPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3954,6 +3995,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyInstanceResult>(
                     new GetTrafficPolicyInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4009,6 +4051,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<GetTrafficPolicyInstanceCountResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyInstanceCountResult>(
                     new GetTrafficPolicyInstanceCountResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4081,6 +4124,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListGeoLocationsResult> responseHandler = new StaxResponseHandler<ListGeoLocationsResult>(
                     new ListGeoLocationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4145,6 +4189,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListHealthChecksResult> responseHandler = new StaxResponseHandler<ListHealthChecksResult>(
                     new ListHealthChecksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4217,6 +4262,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListHostedZonesResult> responseHandler = new StaxResponseHandler<ListHostedZonesResult>(
                     new ListHostedZonesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4347,6 +4393,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListHostedZonesByNameResult> responseHandler = new StaxResponseHandler<ListHostedZonesByNameResult>(
                     new ListHostedZonesByNameResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4429,6 +4476,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListHostedZonesByVPCResult> responseHandler = new StaxResponseHandler<ListHostedZonesByVPCResult>(
                     new ListHostedZonesByVPCResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4497,6 +4545,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListQueryLoggingConfigsResult> responseHandler = new StaxResponseHandler<ListQueryLoggingConfigsResult>(
                     new ListQueryLoggingConfigsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4638,6 +4687,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListResourceRecordSetsResult> responseHandler = new StaxResponseHandler<ListResourceRecordSetsResult>(
                     new ListResourceRecordSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4695,6 +4745,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListReusableDelegationSetsResult> responseHandler = new StaxResponseHandler<ListReusableDelegationSetsResult>(
                     new ListReusableDelegationSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4774,6 +4825,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4848,6 +4900,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTagsForResourcesResult> responseHandler = new StaxResponseHandler<ListTagsForResourcesResult>(
                     new ListTagsForResourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4913,6 +4966,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTrafficPoliciesResult> responseHandler = new StaxResponseHandler<ListTrafficPoliciesResult>(
                     new ListTrafficPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4989,6 +5043,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTrafficPolicyInstancesResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesResult>(
                     new ListTrafficPolicyInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5068,6 +5123,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTrafficPolicyInstancesByHostedZoneResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesByHostedZoneResult>(
                     new ListTrafficPolicyInstancesByHostedZoneResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5142,6 +5198,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTrafficPolicyInstancesByPolicyResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesByPolicyResult>(
                     new ListTrafficPolicyInstancesByPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5204,6 +5261,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListTrafficPolicyVersionsResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyVersionsResult>(
                     new ListTrafficPolicyVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5271,6 +5329,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<ListVPCAssociationAuthorizationsResult> responseHandler = new StaxResponseHandler<ListVPCAssociationAuthorizationsResult>(
                     new ListVPCAssociationAuthorizationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5333,6 +5392,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<TestDNSAnswerResult> responseHandler = new StaxResponseHandler<TestDNSAnswerResult>(new TestDNSAnswerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5400,6 +5460,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<UpdateHealthCheckResult> responseHandler = new StaxResponseHandler<UpdateHealthCheckResult>(
                     new UpdateHealthCheckResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5459,6 +5520,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<UpdateHostedZoneCommentResult> responseHandler = new StaxResponseHandler<UpdateHostedZoneCommentResult>(
                     new UpdateHostedZoneCommentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5521,6 +5583,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<UpdateTrafficPolicyCommentResult> responseHandler = new StaxResponseHandler<UpdateTrafficPolicyCommentResult>(
                     new UpdateTrafficPolicyCommentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5619,6 +5682,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<UpdateTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<UpdateTrafficPolicyInstanceResult>(
                     new UpdateTrafficPolicyInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the messages in a channel.
+ * Summary of the messages in a <code>Channel</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMessageSummary" target="_top">AWS API
@@ -30,25 +30,25 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the message summary.
+     * The ID of the message.
      * </p>
      */
     private String messageId;
     /**
      * <p>
-     * The content of the message summary.
+     * The content of the message.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * The metadata of the message summary.
+     * The metadata of the message.
      * </p>
      */
     private String metadata;
     /**
      * <p>
-     * The type of message summary.
+     * The type of message.
      * </p>
      */
     private String type;
@@ -58,30 +58,38 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdTimestamp;
-
+    /**
+     * <p>
+     * The time at which a message was last updated.
+     * </p>
+     */
     private java.util.Date lastUpdatedTimestamp;
-
+    /**
+     * <p>
+     * The time at which a message was last edited.
+     * </p>
+     */
     private java.util.Date lastEditedTimestamp;
     /**
      * <p>
-     * The sender of the message summary.
+     * The message sender.
      * </p>
      */
     private Identity sender;
     /**
      * <p>
-     * Redacts the content of a message summary.
+     * Indicates whether a message was redacted.
      * </p>
      */
     private Boolean redacted;
 
     /**
      * <p>
-     * The ID of the message summary.
+     * The ID of the message.
      * </p>
      * 
      * @param messageId
-     *        The ID of the message summary.
+     *        The ID of the message.
      */
 
     public void setMessageId(String messageId) {
@@ -90,10 +98,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the message summary.
+     * The ID of the message.
      * </p>
      * 
-     * @return The ID of the message summary.
+     * @return The ID of the message.
      */
 
     public String getMessageId() {
@@ -102,11 +110,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the message summary.
+     * The ID of the message.
      * </p>
      * 
      * @param messageId
-     *        The ID of the message summary.
+     *        The ID of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +125,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message summary.
+     * The content of the message.
      * </p>
      * 
      * @param content
-     *        The content of the message summary.
+     *        The content of the message.
      */
 
     public void setContent(String content) {
@@ -130,10 +138,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message summary.
+     * The content of the message.
      * </p>
      * 
-     * @return The content of the message summary.
+     * @return The content of the message.
      */
 
     public String getContent() {
@@ -142,11 +150,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message summary.
+     * The content of the message.
      * </p>
      * 
      * @param content
-     *        The content of the message summary.
+     *        The content of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +165,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata of the message summary.
+     * The metadata of the message.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the message summary.
+     *        The metadata of the message.
      */
 
     public void setMetadata(String metadata) {
@@ -170,10 +178,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata of the message summary.
+     * The metadata of the message.
      * </p>
      * 
-     * @return The metadata of the message summary.
+     * @return The metadata of the message.
      */
 
     public String getMetadata() {
@@ -182,11 +190,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata of the message summary.
+     * The metadata of the message.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the message summary.
+     *        The metadata of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,11 +205,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of message summary.
+     * The type of message.
      * </p>
      * 
      * @param type
-     *        The type of message summary.
+     *        The type of message.
      * @see ChannelMessageType
      */
 
@@ -211,10 +219,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of message summary.
+     * The type of message.
      * </p>
      * 
-     * @return The type of message summary.
+     * @return The type of message.
      * @see ChannelMessageType
      */
 
@@ -224,11 +232,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of message summary.
+     * The type of message.
      * </p>
      * 
      * @param type
-     *        The type of message summary.
+     *        The type of message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessageType
      */
@@ -240,11 +248,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of message summary.
+     * The type of message.
      * </p>
      * 
      * @param type
-     *        The type of message summary.
+     *        The type of message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessageType
      */
@@ -295,7 +303,12 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The time at which a message was last updated.
+     * </p>
+     * 
      * @param lastUpdatedTimestamp
+     *        The time at which a message was last updated.
      */
 
     public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
@@ -303,7 +316,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The time at which a message was last updated.
+     * </p>
+     * 
+     * @return The time at which a message was last updated.
      */
 
     public java.util.Date getLastUpdatedTimestamp() {
@@ -311,7 +328,12 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The time at which a message was last updated.
+     * </p>
+     * 
      * @param lastUpdatedTimestamp
+     *        The time at which a message was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +343,12 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The time at which a message was last edited.
+     * </p>
+     * 
      * @param lastEditedTimestamp
+     *        The time at which a message was last edited.
      */
 
     public void setLastEditedTimestamp(java.util.Date lastEditedTimestamp) {
@@ -329,7 +356,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The time at which a message was last edited.
+     * </p>
+     * 
+     * @return The time at which a message was last edited.
      */
 
     public java.util.Date getLastEditedTimestamp() {
@@ -337,7 +368,12 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The time at which a message was last edited.
+     * </p>
+     * 
      * @param lastEditedTimestamp
+     *        The time at which a message was last edited.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +384,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The sender of the message summary.
+     * The message sender.
      * </p>
      * 
      * @param sender
-     *        The sender of the message summary.
+     *        The message sender.
      */
 
     public void setSender(Identity sender) {
@@ -361,10 +397,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The sender of the message summary.
+     * The message sender.
      * </p>
      * 
-     * @return The sender of the message summary.
+     * @return The message sender.
      */
 
     public Identity getSender() {
@@ -373,11 +409,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The sender of the message summary.
+     * The message sender.
      * </p>
      * 
      * @param sender
-     *        The sender of the message summary.
+     *        The message sender.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +424,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Redacts the content of a message summary.
+     * Indicates whether a message was redacted.
      * </p>
      * 
      * @param redacted
-     *        Redacts the content of a message summary.
+     *        Indicates whether a message was redacted.
      */
 
     public void setRedacted(Boolean redacted) {
@@ -401,10 +437,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Redacts the content of a message summary.
+     * Indicates whether a message was redacted.
      * </p>
      * 
-     * @return Redacts the content of a message summary.
+     * @return Indicates whether a message was redacted.
      */
 
     public Boolean getRedacted() {
@@ -413,11 +449,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Redacts the content of a message summary.
+     * Indicates whether a message was redacted.
      * </p>
      * 
      * @param redacted
-     *        Redacts the content of a message summary.
+     *        Indicates whether a message was redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,10 +464,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Redacts the content of a message summary.
+     * Indicates whether a message was redacted.
      * </p>
      * 
-     * @return Redacts the content of a message summary.
+     * @return Indicates whether a message was redacted.
      */
 
     public Boolean isRedacted() {

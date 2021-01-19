@@ -25,7 +25,7 @@ public class ListAppInstanceAdminsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
@@ -44,11 +44,11 @@ public class ListAppInstanceAdminsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -57,10 +57,10 @@ public class ListAppInstanceAdminsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -69,11 +69,11 @@ public class ListAppInstanceAdminsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

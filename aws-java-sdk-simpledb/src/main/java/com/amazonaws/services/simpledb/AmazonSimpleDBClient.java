@@ -355,6 +355,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<BatchDeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchDeleteAttributesResult>(
                     new BatchDeleteAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -468,6 +469,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<BatchPutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchPutAttributesResult>(
                     new BatchPutAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -536,6 +538,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<CreateDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<CreateDomainResult>(
                     new CreateDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -606,6 +609,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteAttributesResult>(
                     new DeleteAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -661,6 +665,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DeleteDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteDomainResult>(
                     new DeleteDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -718,6 +723,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DomainMetadataResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DomainMetadataResult>(
                     new DomainMetadataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -781,6 +787,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<GetAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<GetAttributesResult>(
                     new GetAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -841,6 +848,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<ListDomainsResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<ListDomainsResult>(
                     new ListDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -947,6 +955,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<PutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<PutAttributesResult>(
                     new PutAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1028,6 +1037,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<SelectResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<SelectResult>(
                     new SelectResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

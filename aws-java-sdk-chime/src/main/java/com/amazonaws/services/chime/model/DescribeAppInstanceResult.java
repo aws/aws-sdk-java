@@ -25,21 +25,21 @@ public class DescribeAppInstanceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps use
-     * epoch milliseconds.
+     * The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     * timestamps use epoch milliseconds.
      * </p>
      */
     private AppInstance appInstance;
 
     /**
      * <p>
-     * The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps use
-     * epoch milliseconds.
+     * The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     * timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstance
-     *        The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps
-     *        use epoch milliseconds.
+     *        The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     *        timestamps use epoch milliseconds.
      */
 
     public void setAppInstance(AppInstance appInstance) {
@@ -48,12 +48,12 @@ public class DescribeAppInstanceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps use
-     * epoch milliseconds.
+     * The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     * timestamps use epoch milliseconds.
      * </p>
      * 
-     * @return The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps
-     *         use epoch milliseconds.
+     * @return The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     *         timestamps use epoch milliseconds.
      */
 
     public AppInstance getAppInstance() {
@@ -62,13 +62,13 @@ public class DescribeAppInstanceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps use
-     * epoch milliseconds.
+     * The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     * timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstance
-     *        The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps
-     *        use epoch milliseconds.
+     *        The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+     *        timestamps use epoch milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

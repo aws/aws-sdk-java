@@ -42,6 +42,8 @@ public class SendChannelMessageRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> CHIMEBEARER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-chime-bearer").build();
 
     private static final SendChannelMessageRequestMarshaller instance = new SendChannelMessageRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class SendChannelMessageRequestMarshaller {
             protocolMarshaller.marshall(sendChannelMessageRequest.getPersistence(), PERSISTENCE_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(sendChannelMessageRequest.getChimeBearer(), CHIMEBEARER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

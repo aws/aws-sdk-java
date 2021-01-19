@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retention settings for a channel.
+ * The details of the retention settings for a channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelRetentionSettings" target="_top">AWS API
@@ -30,18 +30,18 @@ public class ChannelRetentionSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time in days to retain a channel.
+     * The time in days to retain the messages in a channel.
      * </p>
      */
     private Integer retentionDays;
 
     /**
      * <p>
-     * The time in days to retain a channel.
+     * The time in days to retain the messages in a channel.
      * </p>
      * 
      * @param retentionDays
-     *        The time in days to retain a channel.
+     *        The time in days to retain the messages in a channel.
      */
 
     public void setRetentionDays(Integer retentionDays) {
@@ -50,10 +50,10 @@ public class ChannelRetentionSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time in days to retain a channel.
+     * The time in days to retain the messages in a channel.
      * </p>
      * 
-     * @return The time in days to retain a channel.
+     * @return The time in days to retain the messages in a channel.
      */
 
     public Integer getRetentionDays() {
@@ -62,11 +62,11 @@ public class ChannelRetentionSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time in days to retain a channel.
+     * The time in days to retain the messages in a channel.
      * </p>
      * 
      * @param retentionDays
-     *        The time in days to retain a channel.
+     *        The time in days to retain the messages in a channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

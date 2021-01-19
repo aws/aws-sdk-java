@@ -46,22 +46,17 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     private Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller;
 
+    private final boolean needsConnectionLeftOpen;
+
+    private final boolean isPayloadXML;
+
     /**
      * Shared logger for profiling information
      */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
-    /**
-     * Constructs a new response handler that will use the specified StAX
-     * unmarshaller to unmarshall the service response and uses the specified
-     * response element path to find the root of the business data in the
-     * service's response.
-     *
-     * @param responseUnmarshaller The StAX unmarshaller to use on the response.
-     */
-    public StaxResponseHandler(Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller) {
+    public StaxResponseHandler(Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller, boolean needsConnectionLeftOpen, boolean isPayloadXML) {
         this.responseUnmarshaller = responseUnmarshaller;
-
         /*
          * Even if the invoked operation just returns null, we still need an
          * unmarshaller to run so we can pull out response metadata.
@@ -72,6 +67,20 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         if (this.responseUnmarshaller == null) {
             this.responseUnmarshaller = new VoidStaxUnmarshaller<T>();
         }
+        this.needsConnectionLeftOpen = needsConnectionLeftOpen;
+        this.isPayloadXML = isPayloadXML;
+    }
+
+    /**
+     * Constructs a new response handler that will use the specified StAX
+     * unmarshaller to unmarshall the service response and uses the specified
+     * response element path to find the root of the business data in the
+     * service's response.
+     *
+     * @param responseUnmarshaller The StAX unmarshaller to use on the response.
+     */
+    public StaxResponseHandler(Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller) {
+        this(responseUnmarshaller, false, true);
     }
 
 
@@ -82,23 +91,25 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         log.trace("Parsing service response XML");
         InputStream content = response.getContent();
 
-        if (content == null) {
+        /**
+         * Send an empty ByteArrayInputStream when the http response is not XML.
+         */
+        if (content == null || !shouldParsePayloadAsXml()) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
         } else if (content instanceof SdkFilterInputStream &&
                    ((SdkFilterInputStream) content).getDelegateStream() instanceof EmptyInputStream) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
         }
-
         XMLEventReader eventReader;
         try {
             eventReader = XmlUtils.getXmlInputFactory().createXMLEventReader(content);
         } catch (XMLStreamException e) {
             throw handleXmlStreamException(e);
         }
-
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
-            StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader, response.getHeaders());
+            StaxUnmarshallerContext unmarshallerContext =
+                    new StaxUnmarshallerContext(eventReader, response.getHeaders(), response);
             unmarshallerContext.registerMetadataExpression("ResponseMetadata/RequestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             unmarshallerContext.registerMetadataExpression("requestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             registerAdditionalMetadataExpressions(unmarshallerContext);
@@ -165,12 +176,20 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /**
      * Since this response handler completely consumes all the data from the
      * underlying HTTP connection during the handle method, we don't need to
-     * keep the HTTP connection open.
+     * keep the HTTP connection open in most of the cases.
+     * However, we need it for payload as InputStream.
      *
      * @see com.amazonaws.http.HttpResponseHandler#needsConnectionLeftOpen()
      */
     public boolean needsConnectionLeftOpen() {
-        return false;
+        return needsConnectionLeftOpen;
+    }
+
+    /**
+     * @return True if the payload will be parsed as XML, false otherwise.This false whenever response content is blob type.
+     */
+    private boolean shouldParsePayloadAsXml() {
+        return !needsConnectionLeftOpen && isPayloadXML;
     }
 
 }

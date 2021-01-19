@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The summary data for an app instance.
+ * Summary of the data for an <code>AppInstance</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceSummary" target="_top">AWS API
@@ -30,30 +30,30 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The app instance ARN.
+     * The <code>AppInstance</code> ARN.
      * </p>
      */
     private String appInstanceArn;
     /**
      * <p>
-     * The name of the app instance summary.
+     * The name of the <code>AppInstance</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The metadata of the app instance summary.
+     * The metadata of the <code>AppInstance</code>.
      * </p>
      */
     private String metadata;
 
     /**
      * <p>
-     * The app instance ARN.
+     * The <code>AppInstance</code> ARN.
      * </p>
      * 
      * @param appInstanceArn
-     *        The app instance ARN.
+     *        The <code>AppInstance</code> ARN.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -62,10 +62,10 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The app instance ARN.
+     * The <code>AppInstance</code> ARN.
      * </p>
      * 
-     * @return The app instance ARN.
+     * @return The <code>AppInstance</code> ARN.
      */
 
     public String getAppInstanceArn() {
@@ -74,11 +74,11 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The app instance ARN.
+     * The <code>AppInstance</code> ARN.
      * </p>
      * 
      * @param appInstanceArn
-     *        The app instance ARN.
+     *        The <code>AppInstance</code> ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the app instance summary.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance summary.
+     *        The name of the <code>AppInstance</code>.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the app instance summary.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The name of the app instance summary.
+     * @return The name of the <code>AppInstance</code>.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the app instance summary.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance summary.
+     *        The name of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The metadata of the app instance summary.
+     * The metadata of the <code>AppInstance</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance summary.
+     *        The metadata of the <code>AppInstance</code>.
      */
 
     public void setMetadata(String metadata) {
@@ -142,10 +142,10 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The metadata of the app instance summary.
+     * The metadata of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The metadata of the app instance summary.
+     * @return The metadata of the <code>AppInstance</code>.
      */
 
     public String getMetadata() {
@@ -154,11 +154,11 @@ public class AppInstanceSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The metadata of the app instance summary.
+     * The metadata of the <code>AppInstance</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance summary.
+     *        The metadata of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

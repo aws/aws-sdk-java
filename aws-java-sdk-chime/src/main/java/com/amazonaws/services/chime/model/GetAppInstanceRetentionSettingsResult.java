@@ -26,7 +26,7 @@ public class GetAppInstanceRetentionSettingsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The retention settings for the app instance.
+     * The retention settings for the <code>AppInstance</code>.
      * </p>
      */
     private AppInstanceRetentionSettings appInstanceRetentionSettings;
@@ -39,11 +39,11 @@ public class GetAppInstanceRetentionSettingsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The retention settings for the app instance.
+     * The retention settings for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceRetentionSettings
-     *        The retention settings for the app instance.
+     *        The retention settings for the <code>AppInstance</code>.
      */
 
     public void setAppInstanceRetentionSettings(AppInstanceRetentionSettings appInstanceRetentionSettings) {
@@ -52,10 +52,10 @@ public class GetAppInstanceRetentionSettingsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The retention settings for the app instance.
+     * The retention settings for the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The retention settings for the app instance.
+     * @return The retention settings for the <code>AppInstance</code>.
      */
 
     public AppInstanceRetentionSettings getAppInstanceRetentionSettings() {
@@ -64,11 +64,11 @@ public class GetAppInstanceRetentionSettingsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The retention settings for the app instance.
+     * The retention settings for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceRetentionSettings
-     *        The retention settings for the app instance.
+     *        The retention settings for the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

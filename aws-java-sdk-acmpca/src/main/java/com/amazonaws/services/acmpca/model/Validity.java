@@ -20,12 +20,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit
- * date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years.
- * For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+ * date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in
+ * days, months, or years. For more information, see <a
+ * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
  * </p>
  * <p>
- * You can issue a certificate by calling the <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a> action.
+ * ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the
+ * <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code>
+ * specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:
+ * <code>ValidityNotBefore</code> specifies a customized starting time for the validity period.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity" target="_top">AWS API
@@ -65,8 +68,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds since
-     * the Unix Epoch.
+     * <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     * expressed in seconds since the Unix Epoch.
      * </p>
      * <ul>
      * <li>
@@ -171,8 +174,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds since
-     * the Unix Epoch.
+     * <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     * expressed in seconds since the Unix Epoch.
      * </p>
      * <ul>
      * <li>
@@ -233,8 +236,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds
-     *        since the Unix Epoch.
+     *        <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     *        expressed in seconds since the Unix Epoch.
      *        </p>
      *        <ul>
      *        <li>
@@ -303,8 +306,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds since
-     * the Unix Epoch.
+     * <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     * expressed in seconds since the Unix Epoch.
      * </p>
      * <ul>
      * <li>
@@ -364,8 +367,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds
-     *         since the Unix Epoch.
+     *         <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or
+     *         expire, expressed in seconds since the Unix Epoch.
      *         </p>
      *         <ul>
      *         <li>
@@ -434,8 +437,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds since
-     * the Unix Epoch.
+     * <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     * expressed in seconds since the Unix Epoch.
      * </p>
      * <ul>
      * <li>
@@ -496,8 +499,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds
-     *        since the Unix Epoch.
+     *        <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     *        expressed in seconds since the Unix Epoch.
      *        </p>
      *        <ul>
      *        <li>
@@ -568,8 +571,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds since
-     * the Unix Epoch.
+     * <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     * expressed in seconds since the Unix Epoch.
      * </p>
      * <ul>
      * <li>
@@ -630,8 +633,8 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>ABSOLUTE</code>: The specific date and time when the certificate will expire, expressed in seconds
-     *        since the Unix Epoch.
+     *        <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire,
+     *        expressed in seconds since the Unix Epoch.
      *        </p>
      *        <ul>
      *        <li>

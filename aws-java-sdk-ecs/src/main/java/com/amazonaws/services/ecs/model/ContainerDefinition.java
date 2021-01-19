@@ -352,9 +352,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
      * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * <p>
-     * This field is not valid for containers in tasks using the Fargate launch type.
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnvironmentFile> environmentFiles;
     /**
@@ -3073,9 +3070,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
      * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * <p>
-     * This field is not valid for containers in tasks using the Fargate launch type.
-     * </p>
      * 
      * @return A list of files containing the environment variables to pass to a container. This parameter maps to the
      *         <code>--env-file</code> option to <a
@@ -3094,9 +3088,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         is recommended to use unique variable names. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      *         Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *         </p>
-     *         <p>
-     *         This field is not valid for containers in tasks using the Fargate launch type.
      */
 
     public java.util.List<EnvironmentFile> getEnvironmentFiles() {
@@ -3127,9 +3118,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
      * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * <p>
-     * This field is not valid for containers in tasks using the Fargate launch type.
-     * </p>
      * 
      * @param environmentFiles
      *        A list of files containing the environment variables to pass to a container. This parameter maps to the
@@ -3149,9 +3137,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        is recommended to use unique variable names. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        This field is not valid for containers in tasks using the Fargate launch type.
      */
 
     public void setEnvironmentFiles(java.util.Collection<EnvironmentFile> environmentFiles) {
@@ -3185,9 +3170,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This field is not valid for containers in tasks using the Fargate launch type.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnvironmentFiles(java.util.Collection)} or {@link #withEnvironmentFiles(java.util.Collection)} if you
      * want to override the existing values.
@@ -3211,9 +3193,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        is recommended to use unique variable names. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        This field is not valid for containers in tasks using the Fargate launch type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3248,9 +3227,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
      * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * <p>
-     * This field is not valid for containers in tasks using the Fargate launch type.
-     * </p>
      * 
      * @param environmentFiles
      *        A list of files containing the environment variables to pass to a container. This parameter maps to the
@@ -3270,9 +3246,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        is recommended to use unique variable names. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        This field is not valid for containers in tasks using the Fargate launch type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

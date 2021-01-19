@@ -19,12 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the certificate subject. The certificate can be one issued by your private certificate
- * authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the
+ * Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the
  * entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or
- * service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative
- * distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each
- * entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+ * service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
+ * distinguished names (RDNs). The RDNs are separated by commas in the certificate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject" target="_top">AWS API
@@ -109,7 +107,7 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle
-     * name if one exists, and the first letter of the <b>SurName</b>.
+     * name if one exists, and the first letter of the <b>Surname</b>.
      * </p>
      */
     private String initials;
@@ -610,12 +608,12 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle
-     * name if one exists, and the first letter of the <b>SurName</b>.
+     * name if one exists, and the first letter of the <b>Surname</b>.
      * </p>
      * 
      * @param initials
      *        Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the
-     *        middle name if one exists, and the first letter of the <b>SurName</b>.
+     *        middle name if one exists, and the first letter of the <b>Surname</b>.
      */
 
     public void setInitials(String initials) {
@@ -625,11 +623,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle
-     * name if one exists, and the first letter of the <b>SurName</b>.
+     * name if one exists, and the first letter of the <b>Surname</b>.
      * </p>
      * 
      * @return Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the
-     *         middle name if one exists, and the first letter of the <b>SurName</b>.
+     *         middle name if one exists, and the first letter of the <b>Surname</b>.
      */
 
     public String getInitials() {
@@ -639,12 +637,12 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle
-     * name if one exists, and the first letter of the <b>SurName</b>.
+     * name if one exists, and the first letter of the <b>Surname</b>.
      * </p>
      * 
      * @param initials
      *        Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the
-     *        middle name if one exists, and the first letter of the <b>SurName</b>.
+     *        middle name if one exists, and the first letter of the <b>Surname</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

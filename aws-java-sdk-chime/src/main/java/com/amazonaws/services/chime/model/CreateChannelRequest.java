@@ -48,7 +48,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by
-     * users outside the channel. Public channels are discoverable by anyone in the app instance.
+     * users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.
      * </p>
      */
     private String privacy;
@@ -64,8 +64,18 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String clientRequestToken;
-
+    /**
+     * <p>
+     * The tags for the creation request.
+     * </p>
+     */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
@@ -225,12 +235,13 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by
-     * users outside the channel. Public channels are discoverable by anyone in the app instance.
+     * users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.
      * </p>
      * 
      * @param privacy
      *        The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't
-     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the app instance.
+     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the
+     *        <code>AppInstance</code>.
      * @see ChannelPrivacy
      */
 
@@ -241,12 +252,12 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by
-     * users outside the channel. Public channels are discoverable by anyone in the app instance.
+     * users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.
      * </p>
      * 
      * @return The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't
-     *         discoverable by users outside the channel. Public channels are discoverable by anyone in the app
-     *         instance.
+     *         discoverable by users outside the channel. Public channels are discoverable by anyone in the
+     *         <code>AppInstance</code>.
      * @see ChannelPrivacy
      */
 
@@ -257,12 +268,13 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by
-     * users outside the channel. Public channels are discoverable by anyone in the app instance.
+     * users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.
      * </p>
      * 
      * @param privacy
      *        The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't
-     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the app instance.
+     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the
+     *        <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -275,12 +287,13 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by
-     * users outside the channel. Public channels are discoverable by anyone in the app instance.
+     * users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.
      * </p>
      * 
      * @param privacy
      *        The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't
-     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the app instance.
+     *        discoverable by users outside the channel. Public channels are discoverable by anyone in the
+     *        <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -371,7 +384,11 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The tags for the creation request.
+     * </p>
+     * 
+     * @return The tags for the creation request.
      */
 
     public java.util.List<Tag> getTags() {
@@ -379,7 +396,12 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The tags for the creation request.
+     * </p>
+     * 
      * @param tags
+     *        The tags for the creation request.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -393,12 +415,16 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The tags for the creation request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags for the creation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,12 +439,57 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The tags for the creation request.
+     * </p>
+     * 
      * @param tags
+     *        The tags for the creation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateChannelRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
         return this;
     }
 
@@ -447,7 +518,9 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +563,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -505,6 +582,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

@@ -27,30 +27,30 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String appInstanceUserArn;
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String metadata;
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUserArn(String appInstanceUserArn) {
@@ -59,10 +59,10 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The ARN of the app instance user.
+     * @return The ARN of the <code>AppInstanceUser</code>.
      */
 
     public String getAppInstanceUserArn() {
@@ -71,11 +71,11 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The name of the app instance user.
+     * @return The name of the <code>AppInstanceUser</code>.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance user.
+     *        The metadata of the <code>AppInstanceUser</code>.
      */
 
     public void setMetadata(String metadata) {
@@ -139,10 +139,10 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The metadata of the app instance user.
+     * @return The metadata of the <code>AppInstanceUser</code>.
      */
 
     public String getMetadata() {
@@ -151,11 +151,11 @@ public class UpdateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata of the app instance user.
+     * The metadata of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance user.
+     *        The metadata of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

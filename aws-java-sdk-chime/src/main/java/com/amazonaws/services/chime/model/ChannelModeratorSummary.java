@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary data of the moderators in a channel.
+ * Summary of the details of a <code>ChannelModerator</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelModeratorSummary" target="_top">AWS API

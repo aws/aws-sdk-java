@@ -27,18 +27,18 @@ public class DescribeAppInstanceUserRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      */
     private String appInstanceUserArn;
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUserArn(String appInstanceUserArn) {
@@ -47,10 +47,10 @@ public class DescribeAppInstanceUserRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The ARN of the app instance user.
+     * @return The ARN of the <code>AppInstanceUser</code>.
      */
 
     public String getAppInstanceUserArn() {
@@ -59,11 +59,11 @@ public class DescribeAppInstanceUserRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the app instance user.
+     * The ARN of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the app instance user.
+     *        The ARN of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

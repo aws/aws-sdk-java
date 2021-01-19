@@ -25,13 +25,13 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
     /**
      * <p>
-     * The information for each of the requested app instance users.
+     * The information for each requested <code>AppInstanceUser</code>.
      * </p>
      */
     private java.util.List<AppInstanceUserSummary> appInstanceUsers;
@@ -44,11 +44,11 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -57,10 +57,10 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -69,11 +69,11 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The information for each of the requested app instance users.
+     * The information for each requested <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The information for each of the requested app instance users.
+     * @return The information for each requested <code>AppInstanceUser</code>.
      */
 
     public java.util.List<AppInstanceUserSummary> getAppInstanceUsers() {
@@ -96,11 +96,11 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The information for each of the requested app instance users.
+     * The information for each requested <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUsers
-     *        The information for each of the requested app instance users.
+     *        The information for each requested <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUsers(java.util.Collection<AppInstanceUserSummary> appInstanceUsers) {
@@ -114,7 +114,7 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The information for each of the requested app instance users.
+     * The information for each requested <code>AppInstanceUser</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param appInstanceUsers
-     *        The information for each of the requested app instance users.
+     *        The information for each requested <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class ListAppInstanceUsersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The information for each of the requested app instance users.
+     * The information for each requested <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUsers
-     *        The information for each of the requested app instance users.
+     *        The information for each requested <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

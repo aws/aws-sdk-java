@@ -94,26 +94,11 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CertificateMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.CertificateMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.InvalidPolicyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.InvalidArgsExceptionUnmarshaller.getInstance()))
@@ -139,17 +124,32 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                             new JsonErrorShapeMetadata().withErrorCode("RequestAlreadyProcessedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.RequestAlreadyProcessedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedCertificateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.MalformedCertificateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestFailedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.acmpca.model.transform.RequestFailedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.CertificateMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidPolicyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedCertificateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.MalformedCertificateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.RequestFailedExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.acmpca.model.AWSACMPCAException.class));
 
     public static AWSACMPCAClientBuilder builder() {
@@ -821,7 +821,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * <li>
      * <p>
      * <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems such a network outage or
-     * backend AWS failure or other errors. A failed CA can never return to the pending state. You must create a new CA.
+     * back-end AWS failure or other errors. A failed CA can never return to the pending state. You must create a new
+     * CA.
      * </p>
      * </li>
      * <li>
@@ -1279,7 +1280,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * <p>
      * In ACM Private CA, call the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
-     * >CreateCertificateAuthority</a> action to create the private CA that that you plan to back with the imported
+     * >CreateCertificateAuthority</a> action to create the private CA that you plan to back with the imported
      * certificate.
      * </p>
      * </li>
@@ -1321,7 +1322,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * </li>
      * </ul>
      * <p>
-     * The following addtitional requirements apply when you import a CA certificate.
+     * The following additional requirements apply when you import a CA certificate.
      * </p>
      * <ul>
      * <li>

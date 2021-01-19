@@ -37,7 +37,7 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
     private String nextToken;
     /**
      * <p>
-     * The information about and content of each requested message.
+     * The information about, and content of, each requested message.
      * </p>
      */
     private java.util.List<ChannelMessageSummary> channelMessages;
@@ -124,10 +124,10 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The information about and content of each requested message.
+     * The information about, and content of, each requested message.
      * </p>
      * 
-     * @return The information about and content of each requested message.
+     * @return The information about, and content of, each requested message.
      */
 
     public java.util.List<ChannelMessageSummary> getChannelMessages() {
@@ -136,11 +136,11 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The information about and content of each requested message.
+     * The information about, and content of, each requested message.
      * </p>
      * 
      * @param channelMessages
-     *        The information about and content of each requested message.
+     *        The information about, and content of, each requested message.
      */
 
     public void setChannelMessages(java.util.Collection<ChannelMessageSummary> channelMessages) {
@@ -154,7 +154,7 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The information about and content of each requested message.
+     * The information about, and content of, each requested message.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param channelMessages
-     *        The information about and content of each requested message.
+     *        The information about, and content of, each requested message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The information about and content of each requested message.
+     * The information about, and content of, each requested message.
      * </p>
      * 
      * @param channelMessages
-     *        The information about and content of each requested message.
+     *        The information about, and content of, each requested message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

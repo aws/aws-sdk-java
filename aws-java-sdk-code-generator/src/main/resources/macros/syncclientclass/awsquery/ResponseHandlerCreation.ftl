@@ -8,5 +8,18 @@
         <#assign responseHandler="StaxResponseHandler" />
     </#if>
 
-    StaxResponseHandler<${outputType}> responseHandler = new ${responseHandler}<${outputType}>(${unmarshallerReference});
+    <#assign streamingMember = false />
+    <#if operationModel.outputShape??>
+        <#if operationModel.outputShape.hasStreamingMember>
+            <#assign streamingMember =  true />
+        </#if>
+    </#if>
+
+     <#if operationModel.hasBlobMemberAsPayload || streamingMember >
+        StaxResponseHandler<${outputType}> responseHandler = new ${responseHandler}<${outputType}>(${unmarshallerReference},
+                                                            ${streamingMember?c}, ${(!operationModel.hasBlobMemberAsPayload)?c} );
+     <#else>
+         StaxResponseHandler<${outputType}> responseHandler = new ${responseHandler}<${outputType}>(${unmarshallerReference});
+     </#if>
+
 </#macro>

@@ -386,6 +386,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<AddTagsResult> responseHandler = new StaxResponseHandler<AddTagsResult>(new AddTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -455,6 +456,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ApplySecurityGroupsToLoadBalancerResult> responseHandler = new StaxResponseHandler<ApplySecurityGroupsToLoadBalancerResult>(
                     new ApplySecurityGroupsToLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -523,6 +525,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<AttachLoadBalancerToSubnetsResult> responseHandler = new StaxResponseHandler<AttachLoadBalancerToSubnetsResult>(
                     new AttachLoadBalancerToSubnetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -585,6 +588,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ConfigureHealthCheckResult> responseHandler = new StaxResponseHandler<ConfigureHealthCheckResult>(
                     new ConfigureHealthCheckResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -666,6 +670,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateAppCookieStickinessPolicyResult> responseHandler = new StaxResponseHandler<CreateAppCookieStickinessPolicyResult>(
                     new CreateAppCookieStickinessPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -746,6 +751,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateLBCookieStickinessPolicyResult> responseHandler = new StaxResponseHandler<CreateLBCookieStickinessPolicyResult>(
                     new CreateLBCookieStickinessPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -843,6 +849,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateLoadBalancerResult> responseHandler = new StaxResponseHandler<CreateLoadBalancerResult>(
                     new CreateLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -918,6 +925,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateLoadBalancerListenersResult> responseHandler = new StaxResponseHandler<CreateLoadBalancerListenersResult>(
                     new CreateLoadBalancerListenersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -987,6 +995,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateLoadBalancerPolicyResult> responseHandler = new StaxResponseHandler<CreateLoadBalancerPolicyResult>(
                     new CreateLoadBalancerPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1051,6 +1060,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteLoadBalancerResult> responseHandler = new StaxResponseHandler<DeleteLoadBalancerResult>(
                     new DeleteLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1108,6 +1118,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteLoadBalancerListenersResult> responseHandler = new StaxResponseHandler<DeleteLoadBalancerListenersResult>(
                     new DeleteLoadBalancerListenersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1167,6 +1178,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteLoadBalancerPolicyResult> responseHandler = new StaxResponseHandler<DeleteLoadBalancerPolicyResult>(
                     new DeleteLoadBalancerPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1238,6 +1250,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeregisterInstancesFromLoadBalancerResult> responseHandler = new StaxResponseHandler<DeregisterInstancesFromLoadBalancerResult>(
                     new DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1297,6 +1310,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1359,6 +1373,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeInstanceHealthResult> responseHandler = new StaxResponseHandler<DescribeInstanceHealthResult>(
                     new DescribeInstanceHealthResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1419,6 +1434,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerAttributesResult>(
                     new DescribeLoadBalancerAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1486,6 +1502,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancerPoliciesResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerPoliciesResult>(
                     new DescribeLoadBalancerPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1560,6 +1577,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancerPolicyTypesResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerPolicyTypesResult>(
                     new DescribeLoadBalancerPolicyTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1626,6 +1644,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancersResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancersResult>(
                     new DescribeLoadBalancersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1687,6 +1706,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1752,6 +1772,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DetachLoadBalancerFromSubnetsResult> responseHandler = new StaxResponseHandler<DetachLoadBalancerFromSubnetsResult>(
                     new DetachLoadBalancerFromSubnetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1829,6 +1850,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DisableAvailabilityZonesForLoadBalancerResult> responseHandler = new StaxResponseHandler<DisableAvailabilityZonesForLoadBalancerResult>(
                     new DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1899,6 +1921,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<EnableAvailabilityZonesForLoadBalancerResult> responseHandler = new StaxResponseHandler<EnableAvailabilityZonesForLoadBalancerResult>(
                     new EnableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1996,6 +2019,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<ModifyLoadBalancerAttributesResult>(
                     new ModifyLoadBalancerAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2082,6 +2106,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<RegisterInstancesWithLoadBalancerResult> responseHandler = new StaxResponseHandler<RegisterInstancesWithLoadBalancerResult>(
                     new RegisterInstancesWithLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2138,6 +2163,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<RemoveTagsResult> responseHandler = new StaxResponseHandler<RemoveTagsResult>(new RemoveTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2214,6 +2240,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetLoadBalancerListenerSSLCertificateResult> responseHandler = new StaxResponseHandler<SetLoadBalancerListenerSSLCertificateResult>(
                     new SetLoadBalancerListenerSSLCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2296,6 +2323,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetLoadBalancerPoliciesForBackendServerResult> responseHandler = new StaxResponseHandler<SetLoadBalancerPoliciesForBackendServerResult>(
                     new SetLoadBalancerPoliciesForBackendServerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2373,6 +2401,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetLoadBalancerPoliciesOfListenerResult> responseHandler = new StaxResponseHandler<SetLoadBalancerPoliciesOfListenerResult>(
                     new SetLoadBalancerPoliciesOfListenerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

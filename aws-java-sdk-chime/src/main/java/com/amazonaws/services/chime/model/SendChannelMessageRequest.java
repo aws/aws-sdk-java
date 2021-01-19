@@ -61,6 +61,12 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
@@ -341,6 +347,46 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendChannelMessageRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -363,7 +409,9 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMetadata() != null)
             sb.append("Metadata: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***");
+            sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***").append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +450,10 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +468,7 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPersistence() == null) ? 0 : getPersistence().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

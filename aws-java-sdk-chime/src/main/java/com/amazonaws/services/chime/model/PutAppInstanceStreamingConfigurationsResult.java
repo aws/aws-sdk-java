@@ -26,17 +26,17 @@ public class PutAppInstanceStreamingConfigurationsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The streaming configurations of an app instance.
+     * The streaming configurations of an <code>AppInstance</code>.
      * </p>
      */
     private java.util.List<AppInstanceStreamingConfiguration> appInstanceStreamingConfigurations;
 
     /**
      * <p>
-     * The streaming configurations of an app instance.
+     * The streaming configurations of an <code>AppInstance</code>.
      * </p>
      * 
-     * @return The streaming configurations of an app instance.
+     * @return The streaming configurations of an <code>AppInstance</code>.
      */
 
     public java.util.List<AppInstanceStreamingConfiguration> getAppInstanceStreamingConfigurations() {
@@ -45,11 +45,11 @@ public class PutAppInstanceStreamingConfigurationsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The streaming configurations of an app instance.
+     * The streaming configurations of an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations of an app instance.
+     *        The streaming configurations of an <code>AppInstance</code>.
      */
 
     public void setAppInstanceStreamingConfigurations(java.util.Collection<AppInstanceStreamingConfiguration> appInstanceStreamingConfigurations) {
@@ -63,7 +63,7 @@ public class PutAppInstanceStreamingConfigurationsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The streaming configurations of an app instance.
+     * The streaming configurations of an <code>AppInstance</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class PutAppInstanceStreamingConfigurationsResult extends com.amazonaws.A
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations of an app instance.
+     *        The streaming configurations of an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class PutAppInstanceStreamingConfigurationsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The streaming configurations of an app instance.
+     * The streaming configurations of an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations of an app instance.
+     *        The streaming configurations of an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

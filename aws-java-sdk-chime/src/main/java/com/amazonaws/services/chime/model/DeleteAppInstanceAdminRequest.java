@@ -27,24 +27,24 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance's administrator.
+     * The ARN of the <code>AppInstance</code>'s administrator.
      * </p>
      */
     private String appInstanceAdminArn;
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
 
     /**
      * <p>
-     * The ARN of the app instance's administrator.
+     * The ARN of the <code>AppInstance</code>'s administrator.
      * </p>
      * 
      * @param appInstanceAdminArn
-     *        The ARN of the app instance's administrator.
+     *        The ARN of the <code>AppInstance</code>'s administrator.
      */
 
     public void setAppInstanceAdminArn(String appInstanceAdminArn) {
@@ -53,10 +53,10 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance's administrator.
+     * The ARN of the <code>AppInstance</code>'s administrator.
      * </p>
      * 
-     * @return The ARN of the app instance's administrator.
+     * @return The ARN of the <code>AppInstance</code>'s administrator.
      */
 
     public String getAppInstanceAdminArn() {
@@ -65,11 +65,11 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance's administrator.
+     * The ARN of the <code>AppInstance</code>'s administrator.
      * </p>
      * 
      * @param appInstanceAdminArn
-     *        The ARN of the app instance's administrator.
+     *        The ARN of the <code>AppInstance</code>'s administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -93,10 +93,10 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -105,11 +105,11 @@ public class DeleteAppInstanceAdminRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

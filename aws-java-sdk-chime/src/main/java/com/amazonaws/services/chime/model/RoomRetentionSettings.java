@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.
+ * The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RoomRetentionSettings" target="_top">AWS API
@@ -30,18 +30,18 @@ public class RoomRetentionSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of days for which to retain chat room messages.
+     * The number of days for which to retain chat-room messages.
      * </p>
      */
     private Integer retentionDays;
 
     /**
      * <p>
-     * The number of days for which to retain chat room messages.
+     * The number of days for which to retain chat-room messages.
      * </p>
      * 
      * @param retentionDays
-     *        The number of days for which to retain chat room messages.
+     *        The number of days for which to retain chat-room messages.
      */
 
     public void setRetentionDays(Integer retentionDays) {
@@ -50,10 +50,10 @@ public class RoomRetentionSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of days for which to retain chat room messages.
+     * The number of days for which to retain chat-room messages.
      * </p>
      * 
-     * @return The number of days for which to retain chat room messages.
+     * @return The number of days for which to retain chat-room messages.
      */
 
     public Integer getRetentionDays() {
@@ -62,11 +62,11 @@ public class RoomRetentionSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of days for which to retain chat room messages.
+     * The number of days for which to retain chat-room messages.
      * </p>
      * 
      * @param retentionDays
-     *        The number of days for which to retain chat room messages.
+     *        The number of days for which to retain chat-room messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

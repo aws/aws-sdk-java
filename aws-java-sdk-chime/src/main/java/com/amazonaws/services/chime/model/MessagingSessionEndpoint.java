@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The endpoint of a meeting session.
+ * The websocket endpoint used to connect to Amazon Chime SDK messaging.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MessagingSessionEndpoint" target="_top">AWS API
@@ -30,18 +30,18 @@ public class MessagingSessionEndpoint implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The URL of a meeting session endpoint.
+     * The endpoint to which you establish a websocket connection.
      * </p>
      */
     private String url;
 
     /**
      * <p>
-     * The URL of a meeting session endpoint.
+     * The endpoint to which you establish a websocket connection.
      * </p>
      * 
      * @param url
-     *        The URL of a meeting session endpoint.
+     *        The endpoint to which you establish a websocket connection.
      */
 
     public void setUrl(String url) {
@@ -50,10 +50,10 @@ public class MessagingSessionEndpoint implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The URL of a meeting session endpoint.
+     * The endpoint to which you establish a websocket connection.
      * </p>
      * 
-     * @return The URL of a meeting session endpoint.
+     * @return The endpoint to which you establish a websocket connection.
      */
 
     public String getUrl() {
@@ -62,11 +62,11 @@ public class MessagingSessionEndpoint implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The URL of a meeting session endpoint.
+     * The endpoint to which you establish a websocket connection.
      * </p>
      * 
      * @param url
-     *        The URL of a meeting session endpoint.
+     *        The endpoint to which you establish a websocket connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

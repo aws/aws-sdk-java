@@ -57,7 +57,7 @@ public class OriginationRoute implements Serializable, Cloneable, StructuredPojo
     private Integer priority;
     /**
      * <p>
-     * The weight associated with the host. If hosts are equal in priority, calls are distributed among them based on
+     * The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on
      * their relative weight.
      * </p>
      */
@@ -258,12 +258,12 @@ public class OriginationRoute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The weight associated with the host. If hosts are equal in priority, calls are distributed among them based on
+     * The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on
      * their relative weight.
      * </p>
      * 
      * @param weight
-     *        The weight associated with the host. If hosts are equal in priority, calls are distributed among them
+     *        The weight associated with the host. If hosts are equal in priority, calls are redistributed among them
      *        based on their relative weight.
      */
 
@@ -273,11 +273,11 @@ public class OriginationRoute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The weight associated with the host. If hosts are equal in priority, calls are distributed among them based on
+     * The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on
      * their relative weight.
      * </p>
      * 
-     * @return The weight associated with the host. If hosts are equal in priority, calls are distributed among them
+     * @return The weight associated with the host. If hosts are equal in priority, calls are redistributed among them
      *         based on their relative weight.
      */
 
@@ -287,12 +287,12 @@ public class OriginationRoute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The weight associated with the host. If hosts are equal in priority, calls are distributed among them based on
+     * The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on
      * their relative weight.
      * </p>
      * 
      * @param weight
-     *        The weight associated with the host. If hosts are equal in priority, calls are distributed among them
+     *        The weight associated with the host. If hosts are equal in priority, calls are redistributed among them
      *        based on their relative weight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

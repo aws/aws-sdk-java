@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Lists the channels to which app instance users belong.
+ * Summary of the membership details of an <code>AppInstanceUser</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceUserMembershipSummary"
@@ -30,24 +30,24 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The type of channel summary,
+     * The type of <code>ChannelMembership</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The time at which a summary was last read.
+     * The time at which a message was last read.
      * </p>
      */
     private java.util.Date readMarkerTimestamp;
 
     /**
      * <p>
-     * The type of channel summary,
+     * The type of <code>ChannelMembership</code>.
      * </p>
      * 
      * @param type
-     *        The type of channel summary,
+     *        The type of <code>ChannelMembership</code>.
      * @see ChannelMembershipType
      */
 
@@ -57,10 +57,10 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The type of channel summary,
+     * The type of <code>ChannelMembership</code>.
      * </p>
      * 
-     * @return The type of channel summary,
+     * @return The type of <code>ChannelMembership</code>.
      * @see ChannelMembershipType
      */
 
@@ -70,11 +70,11 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The type of channel summary,
+     * The type of <code>ChannelMembership</code>.
      * </p>
      * 
      * @param type
-     *        The type of channel summary,
+     *        The type of <code>ChannelMembership</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMembershipType
      */
@@ -86,11 +86,11 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The type of channel summary,
+     * The type of <code>ChannelMembership</code>.
      * </p>
      * 
      * @param type
-     *        The type of channel summary,
+     *        The type of <code>ChannelMembership</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMembershipType
      */
@@ -102,11 +102,11 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The time at which a summary was last read.
+     * The time at which a message was last read.
      * </p>
      * 
      * @param readMarkerTimestamp
-     *        The time at which a summary was last read.
+     *        The time at which a message was last read.
      */
 
     public void setReadMarkerTimestamp(java.util.Date readMarkerTimestamp) {
@@ -115,10 +115,10 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The time at which a summary was last read.
+     * The time at which a message was last read.
      * </p>
      * 
-     * @return The time at which a summary was last read.
+     * @return The time at which a message was last read.
      */
 
     public java.util.Date getReadMarkerTimestamp() {
@@ -127,11 +127,11 @@ public class AppInstanceUserMembershipSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The time at which a summary was last read.
+     * The time at which a message was last read.
      * </p>
      * 
      * @param readMarkerTimestamp
-     *        The time at which a summary was last read.
+     *        The time at which a message was last read.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

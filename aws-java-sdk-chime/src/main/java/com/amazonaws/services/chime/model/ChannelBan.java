@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Bans a user from a channel.
+ * The details of a channel ban.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelBan" target="_top">AWS API
@@ -48,7 +48,7 @@ public class ChannelBan implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The parameter of the action.
+     * The <code>AppInstanceUser</code> who created the ban.
      * </p>
      */
     private Identity createdBy;
@@ -175,11 +175,11 @@ public class ChannelBan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The <code>AppInstanceUser</code> who created the ban.
      * </p>
      * 
      * @param createdBy
-     *        The parameter of the action.
+     *        The <code>AppInstanceUser</code> who created the ban.
      */
 
     public void setCreatedBy(Identity createdBy) {
@@ -188,10 +188,10 @@ public class ChannelBan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The <code>AppInstanceUser</code> who created the ban.
      * </p>
      * 
-     * @return The parameter of the action.
+     * @return The <code>AppInstanceUser</code> who created the ban.
      */
 
     public Identity getCreatedBy() {
@@ -200,11 +200,11 @@ public class ChannelBan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter of the action.
+     * The <code>AppInstanceUser</code> who created the ban.
      * </p>
      * 
      * @param createdBy
-     *        The parameter of the action.
+     *        The <code>AppInstanceUser</code> who created the ban.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

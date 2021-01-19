@@ -112,7 +112,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
+      "documentation":"<p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
     },
     "BatchCreateRoomMembership":{
       "name":"BatchCreateRoomMembership",
@@ -132,7 +132,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots. The member role designates whether the member is a chat room administrator or a general chat room member.</p>"
+      "documentation":"<p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The member role designates whether the member is a chat room administrator or a general chat room member.</p>"
     },
     "BatchDeletePhoneNumber":{
       "name":"BatchDeletePhoneNumber",
@@ -152,7 +152,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon Chime Voice Connectors before they can be deleted.</p> <p>Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.</p>"
+      "documentation":"<p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon Chime Voice Connectors before they can be deleted. </p> <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently. </p>"
     },
     "BatchSuspendUser":{
       "name":"BatchSuspendUser",
@@ -172,7 +172,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime account. For more information about different account types, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and can no longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a> action. </p> <p>To sign out users without suspending them, use the <a>LogoutUser</a> action.</p>"
+      "documentation":"<p>Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime account. For more information about different account types, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and can no longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a> action.</p> <p> To sign out users without suspending them, use the <a>LogoutUser</a> action. </p>"
     },
     "BatchUnsuspendUser":{
       "name":"BatchUnsuspendUser",
@@ -192,7 +192,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For more information about different account types, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p> <p>Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored.</p>"
+      "documentation":"<p>Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For more information about different account types, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p> <p> Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored. </p>"
     },
     "BatchUpdatePhoneNumber":{
       "name":"BatchUpdatePhoneNumber",
@@ -212,7 +212,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates phone number product types or calling names. You can update one attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling name.</p> <p>For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.</p> <p>Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>"
+      "documentation":"<p> Updates phone number product types or calling names. You can update one attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For example, you can update either the product type or the calling name. </p> <p>For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.</p> <p>Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>"
     },
     "BatchUpdateUser":{
       "name":"BatchUpdateUser",
@@ -232,7 +232,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action.</p>"
+      "documentation":"<p> Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action. </p>"
     },
     "CreateAccount":{
       "name":"CreateAccount",
@@ -273,7 +273,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS Account. Only Messaging SDK customers use this API. <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as described in the AWS API Standard.</p>",
+      "documentation":"<p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "CreateAppInstanceAdmin":{
@@ -295,7 +295,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the app instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>",
+      "documentation":"<p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "CreateAppInstanceUser":{
@@ -339,7 +339,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
     },
     "CreateBot":{
       "name":"CreateBot",
@@ -381,7 +381,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates a channel to which you can add users and send messages.</p> <p> <b>Restriction</b>: You can't change a channel's privacy.</p>",
+      "documentation":"<p>Creates a channel to which you can add users and send messages.</p> <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "CreateChannelBan":{
@@ -403,7 +403,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels. </p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p>",
+      "documentation":"<p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "CreateChannelMembership":{
@@ -425,7 +425,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul>",
+      "documentation":"<p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "CreateChannelModerator":{
@@ -447,7 +447,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul>",
+      "documentation":"<p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "CreateMeeting":{
@@ -468,7 +468,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "CreateMeetingDialOut":{
       "name":"CreateMeetingDialOut",
@@ -488,7 +488,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public switched telephone network (PSTN) and joins them into Chime meeting. Also ensures that the From number belongs to the customer.</p> <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> API with the corresponding SIP media application ID.</p>"
+      "documentation":"<p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs to the customer.</p> <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>"
     },
     "CreateMeetingWithAttendees":{
       "name":"CreateMeetingWithAttendees",
@@ -508,7 +508,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "CreatePhoneNumberOrder":{
       "name":"CreatePhoneNumberOrder",
@@ -698,7 +698,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon Chime Voice Connector in a specific AWS Region.</p> <p>Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.</p>"
+      "documentation":"<p>Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon Chime Voice Connector in a specific AWS Region.</p> <p> Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked. </p>"
     },
     "CreateVoiceConnectorGroup":{
       "name":"CreateVoiceConnectorGroup",
@@ -740,7 +740,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action to do so.</p> <p>For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for your Amazon Chime account before deletion. As soon as you release the domain, all users under that account are suspended.</p> <p>Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account from your <code>Disabled</code> accounts list, you must contact AWS Support.</p> <p>After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.</p>"
+      "documentation":"<p>Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action to dodo.</p> <p>For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for your Amazon Chime account before deletion. As soon as you release the domain, all users under that account are suspended.</p> <p>Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from your <code>Disabled</code> accounts list, you must contact AWS Support.</p> <p> After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list. </p>"
     },
     "DeleteAppInstance":{
       "name":"DeleteAppInstance",
@@ -773,7 +773,6 @@
         {"shape":"BadRequestException"},
         {"shape":"ConflictException"},
         {"shape":"ForbiddenException"},
-        {"shape":"ResourceLimitExceededException"},
         {"shape":"ThrottledClientException"},
         {"shape":"UnauthorizedClientException"},
         {"shape":"ServiceUnavailableException"},
@@ -799,7 +798,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes the streaming configurations of an app instance.</p>"
+      "documentation":"<p>Deletes the streaming configurations of an <code>AppInstance</code>.</p>"
     },
     "DeleteAppInstanceUser":{
       "name":"DeleteAppInstanceUser",
@@ -837,7 +836,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "DeleteChannel":{
       "name":"DeleteChannel",
@@ -855,7 +854,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p>",
+      "documentation":"<p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DeleteChannelBan":{
@@ -874,7 +873,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Removes a user from a channel's ban list.</p>",
+      "documentation":"<p>Removes a user from a channel's ban list.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DeleteChannelMembership":{
@@ -893,7 +892,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Removes a member from a channel.</p>",
+      "documentation":"<p>Removes a member from a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DeleteChannelMessage":{
@@ -912,7 +911,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p>",
+      "documentation":"<p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DeleteChannelModerator":{
@@ -931,7 +930,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes a channel moderator.</p>",
+      "documentation":"<p>Deletes a channel moderator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DeleteEventsConfiguration":{
@@ -969,7 +968,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and clients can no longer join it. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted, clients connected to the meeting are disconnected, and clients can no longer join the meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
     },
     "DeletePhoneNumber":{
       "name":"DeletePhoneNumber",
@@ -988,7 +987,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any users or Amazon Chime Voice Connectors before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.</p>"
+      "documentation":"<p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must be disassociated from any users or Amazon Chime Voice Connectors before it can be deleted.</p> <p> Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently. </p>"
     },
     "DeleteProxySession":{
       "name":"DeleteProxySession",
@@ -1144,7 +1143,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers associated with the group must be removed before it can be deleted.</p>"
+      "documentation":"<p> Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers associated with the group must be removed before it can be deleted. </p>"
     },
     "DeleteVoiceConnectorOrigination":{
       "name":"DeleteVoiceConnectorOrigination",
@@ -1298,7 +1297,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of an <code>AppInstanceUser</code>.</p>",
+      "documentation":"<p> Returns the full details of an <code>AppInstanceUser</code> . </p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "DescribeChannel":{
@@ -1318,7 +1317,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of a channel in an Amazon Chime app instance.</p>",
+      "documentation":"<p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DescribeChannelBan":{
@@ -1339,7 +1338,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of a channel ban.</p>",
+      "documentation":"<p>Returns the full details of a channel ban.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DescribeChannelMembership":{
@@ -1360,7 +1359,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of a user's channel membership.</p>",
+      "documentation":"<p>Returns the full details of a user's channel membership.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DescribeChannelMembershipForAppInstanceUser":{
@@ -1380,7 +1379,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the details of a channel based on the membership of the <code>AppInstanceUser</code> specified.</p>",
+      "documentation":"<p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DescribeChannelModeratedByAppInstanceUser":{
@@ -1400,7 +1399,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p>",
+      "documentation":"<p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DescribeChannelModerator":{
@@ -1421,7 +1420,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns the full details of a single ChannelModerator.</p>",
+      "documentation":"<p>Returns the full details of a single ChannelModerator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "DisassociatePhoneNumberFromUser":{
@@ -1540,7 +1539,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out settings. For more information about these settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/policies.html\">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
+      "documentation":"<p>Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout settings. For more information about these settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/policies.html\">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
     },
     "GetAppInstanceRetentionSettings":{
       "name":"GetAppInstanceRetentionSettings",
@@ -1560,7 +1559,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the retention settings for an app instance.</p>",
+      "documentation":"<p>Gets the retention settings for an <code>AppInstance</code>.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "GetAppInstanceStreamingConfigurations":{
@@ -1581,7 +1580,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the streaming settings for an app instance.</p>"
+      "documentation":"<p>Gets the streaming settings for an <code>AppInstance</code>.</p>"
     },
     "GetAttendee":{
       "name":"GetAttendee",
@@ -1601,7 +1600,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "GetBot":{
       "name":"GetBot",
@@ -1641,7 +1640,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the full details of a channel message.</p>",
+      "documentation":"<p>Gets the full details of a channel message.</p> <note> <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "GetEventsConfiguration":{
@@ -1662,7 +1661,7 @@
         {"shape":"ResourceLimitExceededException"},
         {"shape":"NotFoundException"}
       ],
-      "documentation":"<p>Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint or Lambda function ARN. </p>"
+      "documentation":"<p>Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p>"
     },
     "GetGlobalSettings":{
       "name":"GetGlobalSettings",
@@ -1700,7 +1699,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "GetMessagingSessionEndpoint":{
       "name":"GetMessagingSessionEndpoint",
@@ -1718,7 +1717,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>The endpoint for the messaging session.</p>",
+      "documentation":"<p>The details of the endpoint for the messaging session.</p>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "GetPhoneNumber":{
@@ -1758,7 +1757,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>"
+      "documentation":"<p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>"
     },
     "GetPhoneNumberSettings":{
       "name":"GetPhoneNumberSettings",
@@ -1815,7 +1814,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html\">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
+      "documentation":"<p> Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html\">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> . </p>"
     },
     "GetRoom":{
       "name":"GetRoom",
@@ -1915,7 +1914,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting PIN.</p> <p>To retrieve user details with an email address instead of a user ID, use the <a>ListUsers</a> action, and then filter by email address.</p>"
+      "documentation":"<p>Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting PIN.</p> <p> To retrieve user details with an email address instead of a user ID, use the <a>ListUsers</a> action, and then filter by email address. </p>"
     },
     "GetUserSettings":{
       "name":"GetUserSettings",
@@ -1955,7 +1954,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and encryption requirements.</p>"
+      "documentation":"<p>Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and encryption requirements.</p>"
     },
     "GetVoiceConnectorEmergencyCallingConfiguration":{
       "name":"GetVoiceConnectorEmergencyCallingConfiguration",
@@ -1995,7 +1994,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated <code>VoiceConnectorItems</code>.</p>"
+      "documentation":"<p> Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code> . </p>"
     },
     "GetVoiceConnectorLoggingConfiguration":{
       "name":"GetVoiceConnectorLoggingConfiguration",
@@ -2015,7 +2014,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch.</p>"
+      "documentation":"<p>Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>"
     },
     "GetVoiceConnectorOrigination":{
       "name":"GetVoiceConnectorOrigination",
@@ -2135,7 +2134,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are currently supported for this action. </p>"
+      "documentation":"<p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are currently supported for this action.</p>"
     },
     "ListAccounts":{
       "name":"ListAccounts",
@@ -2154,7 +2153,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address, which returns one account result.</p>"
+      "documentation":"<p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, toucan filter by the user's email address, which returns one account result.</p>"
     },
     "ListAppInstanceAdmins":{
       "name":"ListAppInstanceAdmins",
@@ -2168,13 +2167,12 @@
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"ForbiddenException"},
-        {"shape":"ResourceLimitExceededException"},
         {"shape":"ThrottledClientException"},
         {"shape":"UnauthorizedClientException"},
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Returns a list of the administrators in the app instance.</p>",
+      "documentation":"<p>Returns a list of the administrators in the <code>AppInstance</code>.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "ListAppInstanceUsers":{
@@ -2194,7 +2192,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>List all <code>AppInstanceUsers</code> created under a single app instance.</p>",
+      "documentation":"<p> List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "ListAppInstances":{
@@ -2214,7 +2212,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all Amazon Chime app instances created under a single AWS account.</p>",
+      "documentation":"<p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "ListAttendeeTags":{
@@ -2255,7 +2253,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "ListBots":{
       "name":"ListBots",
@@ -2294,7 +2292,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all the users banned from a particular channel.</p>",
+      "documentation":"<p>Lists all the users banned from a particular channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannelMemberships":{
@@ -2314,7 +2312,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all channel memberships in a channel.</p>",
+      "documentation":"<p>Lists all channel memberships in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannelMembershipsForAppInstanceUser":{
@@ -2334,7 +2332,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.</p>",
+      "documentation":"<p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannelMessages":{
@@ -2354,7 +2352,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. Sorted in descending order by default, based on the creation timestamp.</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> </note>",
+      "documentation":"<p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order .</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannelModerators":{
@@ -2374,7 +2372,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all the moderators for a channel.</p>",
+      "documentation":"<p>Lists all the moderators for a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannels":{
@@ -2394,7 +2392,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class=\"title\"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account</p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul>",
+      "documentation":"<p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class=\"title\"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account </p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListChannelsModeratedByAppInstanceUser":{
@@ -2414,7 +2412,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>A list of the channels moderated by an app instance user.</p>",
+      "documentation":"<p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "ListMeetingTags":{
@@ -2454,7 +2452,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+      "documentation":"<p> Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>"
     },
     "ListPhoneNumberOrders":{
       "name":"ListPhoneNumberOrders",
@@ -2487,6 +2485,7 @@
         {"shape":"UnauthorizedClientException"},
         {"shape":"ForbiddenException"},
         {"shape":"BadRequestException"},
+        {"shape":"NotFoundException"},
         {"shape":"ThrottledClientException"},
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
@@ -2726,7 +2725,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Sets the amount of time in days that a given app instance retains data.</p>",
+      "documentation":"<p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "PutAppInstanceStreamingConfigurations":{
@@ -2747,7 +2746,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>The data streaming configurations of an app instance.</p>"
+      "documentation":"<p>The data streaming configurations of an <code>AppInstance</code>.</p>"
     },
     "PutEventsConfiguration":{
       "name":"PutEventsConfiguration",
@@ -2788,7 +2787,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to monitor usage of this API for your account. For more information, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html\">Logging Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.</p> <p>To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b> field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html\">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
+      "documentation":"<p> Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to monitor usage of this API for your account. For more information, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html\">Logging Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> . </p> <p> To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b> field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html\">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> . </p>"
     },
     "PutSipMediaApplicationLoggingConfiguration":{
       "name":"PutSipMediaApplicationLoggingConfiguration",
@@ -2908,7 +2907,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>"
+      "documentation":"<p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>"
     },
     "PutVoiceConnectorTermination":{
       "name":"PutVoiceConnectorTermination",
@@ -2967,7 +2966,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p>",
+      "documentation":"<p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "RedactConversationMessage":{
@@ -3108,7 +3107,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Sends a message to a particular channel that the member is a part of.</p> <note> <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p> </note>",
+      "documentation":"<p>Sends a message to a particular channel that the member is a part of.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "TagAttendee":{
@@ -3305,7 +3304,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates the details for an <code>AppInstanceUser</code>. You can update names and metadata.</p>",
+      "documentation":"<p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p>",
       "endpoint":{"hostPrefix":"identity-"}
     },
     "UpdateBot":{
@@ -3346,7 +3345,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy.</p>",
+      "documentation":"<p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "UpdateChannelMessage":{
@@ -3367,7 +3366,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates the content of a message.</p>",
+      "documentation":"<p>Updates the content of a message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "UpdateChannelReadMarker":{
@@ -3388,7 +3387,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Sets the timestamp to the point when a user last read messages in a channel.</p>",
+      "documentation":"<p>The details of the time when a user last read messages in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>",
       "endpoint":{"hostPrefix":"messaging-"}
     },
     "UpdateGlobalSettings":{
@@ -3526,7 +3525,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates the details for the specified SIP media application.</p>"
+      "documentation":"<p>Updates the details of the specified SIP media application.</p>"
     },
     "UpdateSipRule":{
       "name":"UpdateSipRule",
@@ -3548,7 +3547,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates the details for the specified SIP rule.</p>"
+      "documentation":"<p>Updates the details of the specified SIP rule.</p>"
     },
     "UpdateUser":{
       "name":"UpdateUser",
@@ -3568,7 +3567,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for this action.</p>"
+      "documentation":"<p> Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for this action. </p>"
     },
     "UpdateUserSettings":{
       "name":"UpdateUserSettings",
@@ -3628,7 +3627,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice Connector priority ranking.</p>"
+      "documentation":"<p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice Connector priority ranking.</p>"
     }
   },
   "shapes":{
@@ -3741,44 +3740,44 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the messaging instance. </p>"
+          "documentation":"<p>The ARN of the messaging instance.</p>"
         },
         "Name":{
           "shape":"NonEmptyResourceName",
-          "documentation":"<p>The name of an app instance.</p>"
+          "documentation":"<p>The name of an <code>AppInstance</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of an app instance.</p>"
+          "documentation":"<p>The metadata of an <code>AppInstance</code>.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which an app instance was created. In epoch milliseconds.</p>"
+          "documentation":"<p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>"
         },
         "LastUpdatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time an app instance was last updated. In epoch milliseconds.</p>"
+          "documentation":"<p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>"
         }
       },
-      "documentation":"<p>An instance of a Chime messaging application.</p>"
+      "documentation":"<p>The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.</p>"
     },
     "AppInstanceAdmin":{
       "type":"structure",
       "members":{
         "Admin":{
           "shape":"Identity",
-          "documentation":"<p>The name and metadata of the app instance administrator.</p>"
+          "documentation":"<p>The <code>AppInstanceAdmin</code> data.</p>"
         },
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance administrator.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The time at which an administrator was created.</p>"
         }
       },
-      "documentation":"<p>Promotes a user to the administrator role for the duration of an app instance.</p>"
+      "documentation":"<p>The details of an <code>AppInstanceAdmin</code>.</p>"
     },
     "AppInstanceAdminList":{
       "type":"list",
@@ -3789,10 +3788,10 @@
       "members":{
         "Admin":{
           "shape":"Identity",
-          "documentation":"<p>The name and metadata of the app instance administrator.</p>"
+          "documentation":"<p>The details of the <code>AppInstanceAdmin</code>.</p>"
         }
       },
-      "documentation":"<p>The identity and metadata of an administrator.</p>"
+      "documentation":"<p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>"
     },
     "AppInstanceDataType":{
       "type":"string",
@@ -3810,10 +3809,10 @@
       "members":{
         "ChannelRetentionSettings":{
           "shape":"ChannelRetentionSettings",
-          "documentation":"<p>The length of time in days to retain a channel.</p>"
+          "documentation":"<p>The length of time in days to retain the messages in a channel.</p>"
         }
       },
-      "documentation":"<p>The length of time in days to retain messages.</p>"
+      "documentation":"<p>The details of the data-retention settings for an <code>AppInstance</code>.</p>"
     },
     "AppInstanceStreamingConfiguration":{
       "type":"structure",
@@ -3824,14 +3823,14 @@
       "members":{
         "AppInstanceDataType":{
           "shape":"AppInstanceDataType",
-          "documentation":"<p>The data type of the app instance.</p>"
+          "documentation":"<p>The type of data to be streamed.</p>"
         },
         "ResourceArn":{
           "shape":"Arn",
           "documentation":"<p>The resource ARN.</p>"
         }
       },
-      "documentation":"<p>The streaming configuration of an app instance.</p>"
+      "documentation":"<p>The details of the streaming configuration of an <code>AppInstance</code>.</p>"
     },
     "AppInstanceStreamingConfigurationList":{
       "type":"list",
@@ -3844,44 +3843,44 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The app instance ARN.</p>"
+          "documentation":"<p>The <code>AppInstance</code> ARN.</p>"
         },
         "Name":{
           "shape":"NonEmptyResourceName",
-          "documentation":"<p>The name of the app instance summary.</p>"
+          "documentation":"<p>The name of the <code>AppInstance</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the app instance summary.</p>"
+          "documentation":"<p>The metadata of the <code>AppInstance</code>.</p>"
         }
       },
-      "documentation":"<p>The summary data for an app instance.</p>"
+      "documentation":"<p>Summary of the data for an <code>AppInstance</code>.</p>"
     },
     "AppInstanceUser":{
       "type":"structure",
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>.</p>"
         },
         "Name":{
           "shape":"UserName",
-          "documentation":"<p>The name of the app instance user.</p>"
+          "documentation":"<p>The name of the <code>AppInstanceUser</code>.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which the app instance user was created.</p>"
+          "documentation":"<p>The time at which the <code>AppInstanceUser</code> was created.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the app instance user.</p>"
+          "documentation":"<p>The metadata of the <code>AppInstanceUser</code>.</p>"
         },
         "LastUpdatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which the app instance user was last updated.</p>"
+          "documentation":"<p>The time at which the <code>AppInstanceUser</code> was last updated.</p>"
         }
       },
-      "documentation":"<p>The app instance user.</p>"
+      "documentation":"<p>The details of an <code>AppInstanceUser</code>.</p>"
     },
     "AppInstanceUserList":{
       "type":"list",
@@ -3892,32 +3891,32 @@
       "members":{
         "Type":{
           "shape":"ChannelMembershipType",
-          "documentation":"<p>The type of channel summary, </p>"
+          "documentation":"<p>The type of <code>ChannelMembership</code>.</p>"
         },
         "ReadMarkerTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which a summary was last read.</p>"
+          "documentation":"<p>The time at which a message was last read.</p>"
         }
       },
-      "documentation":"<p>Lists the channels to which app instance users belong.</p>"
+      "documentation":"<p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>"
     },
     "AppInstanceUserSummary":{
       "type":"structure",
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>.</p>"
         },
         "Name":{
           "shape":"UserName",
-          "documentation":"<p>The name in an app instance user summary.</p>"
+          "documentation":"<p>The name of an <code>AppInstanceUser</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata in an app instance user summary.</p>"
+          "documentation":"<p>The metadata of the <code>AppInstanceUser</code>.</p>"
         }
       },
-      "documentation":"<p>The app instance user summary data .</p>"
+      "documentation":"<p>Summary of the details of an <code>AppInstanceUser</code>.</p>"
     },
     "AreaCode":{
       "type":"string",
@@ -4054,7 +4053,7 @@
       "members":{
         "ExternalUserId":{
           "shape":"ExternalUserIdType",
-          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application. If you create an attendee with the same external user id, the service returns the existing record.</p>"
+          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
         },
         "AttendeeId":{
           "shape":"GuidString",
@@ -4065,7 +4064,7 @@
           "documentation":"<p>The join token used by the Amazon Chime SDK attendee.</p>"
         }
       },
-      "documentation":"<p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>"
+      "documentation":"<p> An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code> . The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting. </p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>"
     },
     "AttendeeList":{
       "type":"list",
@@ -4395,30 +4394,30 @@
         },
         "Privacy":{
           "shape":"ChannelPrivacy",
-          "documentation":"<p>The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.</p>"
+          "documentation":"<p>The channel's privacy setting.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the channel.</p>"
+          "documentation":"<p>The channel's metadata.</p>"
         },
         "CreatedBy":{
           "shape":"Identity",
-          "documentation":"<p>The administrator who created the channel.</p>"
+          "documentation":"<p>The <code>AppInstanceUser</code> who created the channel.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which the administrator created the channel.</p>"
+          "documentation":"<p>The time at which the <code>AppInstanceUser</code> created the channel.</p>"
         },
         "LastMessageTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which a member sent the last message in a session.</p>"
+          "documentation":"<p>The time at which a member sent the last message in the channel.</p>"
         },
         "LastUpdatedTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The time at which a channel was last updated.</p>"
         }
       },
-      "documentation":"<p>Creates a channel.</p>"
+      "documentation":"<p>The details of a channel.</p>"
     },
     "ChannelBan":{
       "type":"structure",
@@ -4437,10 +4436,10 @@
         },
         "CreatedBy":{
           "shape":"Identity",
-          "documentation":"<p>The parameter of the action.</p>"
+          "documentation":"<p>The <code>AppInstanceUser</code> who created the ban.</p>"
         }
       },
-      "documentation":"<p>Bans a user from a channel.</p>"
+      "documentation":"<p>The details of a channel ban.</p>"
     },
     "ChannelBanSummary":{
       "type":"structure",
@@ -4450,7 +4449,7 @@
           "documentation":"<p>The member being banned from a channel.</p>"
         }
       },
-      "documentation":"<p>The summary data for the channel ban.</p>"
+      "documentation":"<p>Summary of the details of a <code>ChannelBan</code>.</p>"
     },
     "ChannelBanSummaryList":{
       "type":"list",
@@ -4461,7 +4460,7 @@
       "members":{
         "InvitedBy":{
           "shape":"Identity",
-          "documentation":"<p>The identifier of the member who invited another member. Taken from the message header.</p>"
+          "documentation":"<p>The identifier of the member who invited another member.</p>"
         },
         "Type":{
           "shape":"ChannelMembershipType",
@@ -4477,14 +4476,14 @@
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The time at which the channel membership was created. </p>"
+          "documentation":"<p>The time at which the channel membership was created.</p>"
         },
         "LastUpdatedTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The time at which a channel membership was last updated.</p>"
         }
       },
-      "documentation":"<p>Creates a channel member.</p>"
+      "documentation":"<p>The details of a channel member.</p>"
     },
     "ChannelMembershipForAppInstanceUserSummary":{
       "type":"structure",
@@ -4492,10 +4491,10 @@
         "ChannelSummary":{"shape":"ChannelSummary"},
         "AppInstanceUserMembershipSummary":{
           "shape":"AppInstanceUserMembershipSummary",
-          "documentation":"<p>Returns the channel membership data for an app instance.</p>"
+          "documentation":"<p>Returns the channel membership data for an <code>AppInstance</code>.</p>"
         }
       },
-      "documentation":"<p>Returns the channel membership summary data for an app instance.</p>"
+      "documentation":"<p>Summary of the channel membership details of an <code>AppInstanceUser</code>.</p>"
     },
     "ChannelMembershipForAppInstanceUserSummaryList":{
       "type":"list",
@@ -4509,7 +4508,7 @@
           "documentation":"<p>A member's summary data.</p>"
         }
       },
-      "documentation":"<p>The summary data of a channel membership.</p>"
+      "documentation":"<p>Summary of the details of a <code>ChannelMembership</code>.</p>"
     },
     "ChannelMembershipSummaryList":{
       "type":"list",
@@ -4563,11 +4562,14 @@
         },
         "Redacted":{
           "shape":"NonNullableBoolean",
-          "documentation":"<p>Hides the content of a message. The message still exists on the back end, but this action only returns metadata.</p>"
+          "documentation":"<p>Hides the content of a message.</p>"
         },
-        "Persistence":{"shape":"ChannelMessagePersistenceType"}
+        "Persistence":{
+          "shape":"ChannelMessagePersistenceType",
+          "documentation":"<p>The persistence setting for a channel message.</p>"
+        }
       },
-      "documentation":"<p>Creates a message in a channel.</p>"
+      "documentation":"<p>The details of a message in a channel.</p>"
     },
     "ChannelMessagePersistenceType":{
       "type":"string",
@@ -4581,36 +4583,42 @@
       "members":{
         "MessageId":{
           "shape":"MessageId",
-          "documentation":"<p>The ID of the message summary.</p>"
+          "documentation":"<p>The ID of the message.</p>"
         },
         "Content":{
           "shape":"Content",
-          "documentation":"<p>The content of the message summary.</p>"
+          "documentation":"<p>The content of the message.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the message summary.</p>"
+          "documentation":"<p>The metadata of the message.</p>"
         },
         "Type":{
           "shape":"ChannelMessageType",
-          "documentation":"<p>The type of message summary.</p>"
+          "documentation":"<p>The type of message.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The time at which the message summary was created.</p>"
         },
-        "LastUpdatedTimestamp":{"shape":"Timestamp"},
-        "LastEditedTimestamp":{"shape":"Timestamp"},
+        "LastUpdatedTimestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time at which a message was last updated.</p>"
+        },
+        "LastEditedTimestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time at which a message was last edited.</p>"
+        },
         "Sender":{
           "shape":"Identity",
-          "documentation":"<p>The sender of the message summary.</p>"
+          "documentation":"<p>The message sender.</p>"
         },
         "Redacted":{
           "shape":"NonNullableBoolean",
-          "documentation":"<p>Redacts the content of a message summary.</p>"
+          "documentation":"<p>Indicates whether a message was redacted.</p>"
         }
       },
-      "documentation":"<p>A summary of the messages in a channel.</p>"
+      "documentation":"<p>Summary of the messages in a <code>Channel</code>.</p>"
     },
     "ChannelMessageSummaryList":{
       "type":"list",
@@ -4635,7 +4643,7 @@
       "members":{
         "ChannelSummary":{"shape":"ChannelSummary"}
       },
-      "documentation":"<p>Returns the summary data for a moderated channel.</p>"
+      "documentation":"<p>Summary of the details of a moderated channel.</p>"
     },
     "ChannelModeratedByAppInstanceUserSummaryList":{
       "type":"list",
@@ -4658,10 +4666,10 @@
         },
         "CreatedBy":{
           "shape":"Identity",
-          "documentation":"<p>The member who created the moderator.</p>"
+          "documentation":"<p>The <code>AppInstanceUser</code> who created the moderator.</p>"
         }
       },
-      "documentation":"<p>Creates a moderator on a channel.</p>"
+      "documentation":"<p>The details of a channel moderator.</p>"
     },
     "ChannelModeratorSummary":{
       "type":"structure",
@@ -4671,7 +4679,7 @@
           "documentation":"<p>The data for a moderator.</p>"
         }
       },
-      "documentation":"<p>Summary data of the moderators in a channel.</p>"
+      "documentation":"<p>Summary of the details of a <code>ChannelModerator</code>.</p>"
     },
     "ChannelModeratorSummaryList":{
       "type":"list",
@@ -4689,40 +4697,40 @@
       "members":{
         "RetentionDays":{
           "shape":"RetentionDays",
-          "documentation":"<p>The time in days to retain a channel.</p>"
+          "documentation":"<p>The time in days to retain the messages in a channel.</p>"
         }
       },
-      "documentation":"<p>The retention settings for a channel.</p>"
+      "documentation":"<p>The details of the retention settings for a channel.</p>"
     },
     "ChannelSummary":{
       "type":"structure",
       "members":{
         "Name":{
           "shape":"NonEmptyResourceName",
-          "documentation":"<p>The parameter of the action.</p>"
+          "documentation":"<p>The name of the channel.</p>"
         },
         "ChannelArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the channel summary.</p>"
+          "documentation":"<p>The ARN of the channel.</p>"
         },
         "Mode":{
           "shape":"ChannelMode",
-          "documentation":"<p>The summary mode of the channel.</p>"
+          "documentation":"<p>The mode of the channel.</p>"
         },
         "Privacy":{
           "shape":"ChannelPrivacy",
-          "documentation":"<p>The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.</p>"
+          "documentation":"<p>The privacy setting of the channel.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the channel summary.</p>"
+          "documentation":"<p>The metadata of the channel.</p>"
         },
         "LastMessageTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The time at which the last message in a channel was sent.</p>"
         }
       },
-      "documentation":"<p>The summary data for a channel.</p>"
+      "documentation":"<p>Summary of the details of a <code>Channel</code>.</p>"
     },
     "ChannelSummaryList":{
       "type":"list",
@@ -4763,10 +4771,10 @@
       "members":{
         "RetentionDays":{
           "shape":"RetentionDays",
-          "documentation":"<p>The number of days for which to retain chat conversation messages.</p>"
+          "documentation":"<p>The number of days for which to retain conversation messages.</p>"
         }
       },
-      "documentation":"<p>The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.</p>"
+      "documentation":"<p>The retention settings that determine how long to retain conversation messages for an Amazon Chime Enterprise account.</p>"
     },
     "Country":{
       "type":"string",
@@ -4795,7 +4803,10 @@
     "CreateAccountResponse":{
       "type":"structure",
       "members":{
-        "Account":{"shape":"Account"}
+        "Account":{
+          "shape":"Account",
+          "documentation":"<p>The Amazon Chime account details.</p>"
+        }
       }
     },
     "CreateAppInstanceAdminRequest":{
@@ -4807,11 +4818,11 @@
       "members":{
         "AppInstanceAdminArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the administrator of the current app instance.</p>"
+          "documentation":"<p>The ARN of the administrator of the current <code>AppInstance</code>.</p>"
         },
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -4822,11 +4833,11 @@
       "members":{
         "AppInstanceAdmin":{
           "shape":"Identity",
-          "documentation":"<p>The name and ARN of the admin for the app instance.</p>"
+          "documentation":"<p>The name and ARN of the admin for the <code>AppInstance</code>.</p>"
         },
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the of the admin for the app instance.</p>"
+          "documentation":"<p>The ARN of the of the admin for the <code>AppInstance</code>.</p>"
         }
       }
     },
@@ -4839,16 +4850,20 @@
       "members":{
         "Name":{
           "shape":"NonEmptyResourceName",
-          "documentation":"<p>The name of the app instance.</p>"
+          "documentation":"<p>The name of the <code>AppInstance</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the app instance. Limited to a 1KB string in UTF-8.</p>"
+          "documentation":"<p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>The <code>ClientRequestToken</code> of the app instance.</p>",
+          "documentation":"<p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>Tags assigned to the <code>AppInstanceUser</code>.</p>"
         }
       }
     },
@@ -4857,7 +4872,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The Amazon Resource Number (ARN) of the app instance.</p>"
+          "documentation":"<p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>"
         }
       }
     },
@@ -4872,11 +4887,11 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance request.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstance</code> request.</p>"
         },
         "AppInstanceUserId":{
           "shape":"UserId",
-          "documentation":"<p>The user ID of the app instance.</p>"
+          "documentation":"<p>The user ID of the <code>AppInstance</code>.</p>"
         },
         "Name":{
           "shape":"UserName",
@@ -4888,8 +4903,12 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>The token assigned to the user requesting an app instance.</p>",
+          "documentation":"<p>The token assigned to the user requesting an <code>AppInstance</code>.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>Tags assigned to the <code>AppInstanceUser</code>.</p>"
         }
       }
     },
@@ -4907,7 +4926,7 @@
       "members":{
         "ExternalUserId":{
           "shape":"ExternalUserIdType",
-          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application. If you create an attendee with the same external user id, the service returns the existing record.</p>"
+          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
         },
         "ErrorCode":{
           "shape":"String",
@@ -4935,7 +4954,7 @@
         },
         "ExternalUserId":{
           "shape":"ExternalUserIdType",
-          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application. If you create an attendee with the same external user id, the service returns the existing record.</p>"
+          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
         },
         "Tags":{
           "shape":"AttendeeTagList",
@@ -4949,7 +4968,7 @@
       "members":{
         "ExternalUserId":{
           "shape":"ExternalUserIdType",
-          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application. If you create an attendee with the same external user id, the service returns the existing record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.</p>"
+          "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
         },
         "Tags":{
           "shape":"AttendeeTagList",
@@ -5019,6 +5038,12 @@
         "MemberArn":{
           "shape":"ChimeArn",
           "documentation":"<p>The ARN of the member being banned.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5056,6 +5081,12 @@
         "Type":{
           "shape":"ChannelMembershipType",
           "documentation":"<p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5088,6 +5119,12 @@
         "ChannelModeratorArn":{
           "shape":"ChimeArn",
           "documentation":"<p>The ARN of the moderator.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5126,7 +5163,7 @@
         },
         "Privacy":{
           "shape":"ChannelPrivacy",
-          "documentation":"<p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the app instance.</p>"
+          "documentation":"<p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
@@ -5137,7 +5174,16 @@
           "documentation":"<p>The client token for the request. An <code>Idempotency</code> token.</p>",
           "idempotencyToken":true
         },
-        "Tags":{"shape":"TagList"}
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the creation request.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
+        }
       }
     },
     "CreateChannelResponse":{
@@ -5152,15 +5198,15 @@
     "CreateMeetingDialOutRequest":{
       "type":"structure",
       "required":[
+        "MeetingId",
         "FromPhoneNumber",
         "ToPhoneNumber",
-        "JoinToken",
-        "MeetingId"
+        "JoinToken"
       ],
       "members":{
         "MeetingId":{
           "shape":"GuidString",
-          "documentation":"<p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>",
+          "documentation":"<p>The Amazon Chime SDK meeting ID.</p>",
           "location":"uri",
           "locationName":"meetingId"
         },
@@ -5174,7 +5220,7 @@
         },
         "JoinToken":{
           "shape":"JoinTokenString",
-          "documentation":"<p>Token used by the Amazon Chime SDK attendee. Call the <a href=\"https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html\"> CreateAttendee API</a> to get a join token. </p>"
+          "documentation":"<p>Token used by the Amazon Chime SDK attendee. Call the <a href=\"https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee\">CreateAttendee</a> action to get a join token.</p>"
         }
       }
     },
@@ -5206,7 +5252,7 @@
         },
         "MediaRegion":{
           "shape":"String",
-          "documentation":"<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>"
+          "documentation":"<p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>"
         },
         "Tags":{
           "shape":"MeetingTagList",
@@ -5223,7 +5269,7 @@
       "members":{
         "Meeting":{
           "shape":"Meeting",
-          "documentation":"<p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>"
+          "documentation":"<p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>"
         }
       }
     },
@@ -5246,7 +5292,7 @@
         },
         "MediaRegion":{
           "shape":"String",
-          "documentation":"<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>"
+          "documentation":"<p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>"
         },
         "Tags":{
           "shape":"MeetingTagList",
@@ -5432,7 +5478,11 @@
     },
     "CreateSipMediaApplicationCallRequest":{
       "type":"structure",
-      "required":["SipMediaApplicationId"],
+      "required":[
+        "FromPhoneNumber",
+        "ToPhoneNumber",
+        "SipMediaApplicationId"
+      ],
       "members":{
         "FromPhoneNumber":{
           "shape":"E164PhoneNumber",
@@ -5440,7 +5490,7 @@
         },
         "ToPhoneNumber":{
           "shape":"E164PhoneNumber",
-          "documentation":"<p>The phone number that the user dials in order to connect to a meeting</p>"
+          "documentation":"<p>The phone number that the user dials in order to connect to a meeting.</p>"
         },
         "SipMediaApplicationId":{
           "shape":"NonEmptyString",
@@ -5463,12 +5513,13 @@
       "type":"structure",
       "required":[
         "AwsRegion",
+        "Name",
         "Endpoints"
       ],
       "members":{
         "AwsRegion":{
           "shape":"String",
-          "documentation":"<p>AWS Region assigned to the SIP media application.</p>"
+          "documentation":"<p>The AWS Region assigned to the SIP media application.</p>"
         },
         "Name":{
           "shape":"SipMediaApplicationName",
@@ -5485,7 +5536,7 @@
       "members":{
         "SipMediaApplication":{
           "shape":"SipMediaApplication",
-          "documentation":"<p>The Sip media application details.</p>"
+          "documentation":"<p>The SIP media application details.</p>"
         }
       }
     },
@@ -5504,11 +5555,11 @@
         },
         "TriggerType":{
           "shape":"SipRuleTriggerType",
-          "documentation":"<p>The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.</p>"
+          "documentation":"<p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>"
         },
         "TriggerValue":{
           "shape":"NonEmptyString",
-          "documentation":"<p>If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound hostname of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP request.</p>"
+          "documentation":"<p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>"
         },
         "Disabled":{
           "shape":"NullableBoolean",
@@ -5595,7 +5646,7 @@
         },
         "AwsRegion":{
           "shape":"VoiceConnectorAwsRegion",
-          "documentation":"<p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.</p>"
+          "documentation":"<p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>"
         },
         "RequireEncryption":{
           "shape":"Boolean",
@@ -5686,13 +5737,13 @@
       "members":{
         "AppInstanceAdminArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance's administrator.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>'s administrator.</p>",
           "location":"uri",
           "locationName":"appInstanceAdminArn"
         },
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -5704,7 +5755,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -5764,15 +5815,21 @@
       "members":{
         "ChannelArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the channel from which the app instance user was banned.</p>",
+          "documentation":"<p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>",
           "location":"uri",
           "locationName":"channelArn"
         },
         "MemberArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user that you want to reinstate.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>",
           "location":"uri",
           "locationName":"memberArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5794,6 +5851,12 @@
           "documentation":"<p>The ARN of the member that you're removing from the channel.</p>",
           "location":"uri",
           "locationName":"memberArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5815,6 +5878,12 @@
           "documentation":"<p>The ID of the message being deleted.</p>",
           "location":"uri",
           "locationName":"messageId"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5836,6 +5905,12 @@
           "documentation":"<p>The ARN of the moderator being deleted.</p>",
           "location":"uri",
           "locationName":"channelModeratorArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -5848,6 +5923,12 @@
           "documentation":"<p>The ARN of the channel being deleted.</p>",
           "location":"uri",
           "locationName":"channelArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6102,13 +6183,13 @@
       "members":{
         "AppInstanceAdminArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance administrator.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceAdmin</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceAdminArn"
         },
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -6119,7 +6200,7 @@
       "members":{
         "AppInstanceAdmin":{
           "shape":"AppInstanceAdmin",
-          "documentation":"<p>The ARN and name of the app instance user, the ARN of the app instance, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>"
+          "documentation":"<p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>"
         }
       }
     },
@@ -6129,7 +6210,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -6140,7 +6221,7 @@
       "members":{
         "AppInstance":{
           "shape":"AppInstance",
-          "documentation":"<p>The ARN, metadata, created and last-updated timestamps, and the name of the app instance. All timestamps use epoch milliseconds.</p>"
+          "documentation":"<p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>"
         }
       }
     },
@@ -6150,7 +6231,7 @@
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceUserArn"
         }
@@ -6161,7 +6242,7 @@
       "members":{
         "AppInstanceUser":{
           "shape":"AppInstanceUser",
-          "documentation":"<p>The name of the app instance user.</p>"
+          "documentation":"<p>The name of the <code>AppInstanceUser</code>.</p>"
         }
       }
     },
@@ -6183,6 +6264,12 @@
           "documentation":"<p>The ARN of the member being banned.</p>",
           "location":"uri",
           "locationName":"memberArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6213,6 +6300,12 @@
           "documentation":"<p>The ARN of the user in a channel.</p>",
           "location":"querystring",
           "locationName":"app-instance-user-arn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6243,6 +6336,12 @@
           "documentation":"<p>The ARN of the member.</p>",
           "location":"uri",
           "locationName":"memberArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6270,9 +6369,15 @@
         },
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user in the moderated channel.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>",
           "location":"querystring",
           "locationName":"app-instance-user-arn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6303,6 +6408,12 @@
           "documentation":"<p>The ARN of the channel moderator.</p>",
           "location":"uri",
           "locationName":"channelModeratorArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6324,6 +6435,12 @@
           "documentation":"<p>The ARN of the channel.</p>",
           "location":"uri",
           "locationName":"channelArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6580,7 +6697,10 @@
     "GetAccountResponse":{
       "type":"structure",
       "members":{
-        "Account":{"shape":"Account"}
+        "Account":{
+          "shape":"Account",
+          "documentation":"<p>The Amazon Chime account details.</p>"
+        }
       }
     },
     "GetAccountSettingsRequest":{
@@ -6610,7 +6730,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -6621,7 +6741,7 @@
       "members":{
         "AppInstanceRetentionSettings":{
           "shape":"AppInstanceRetentionSettings",
-          "documentation":"<p>The retention settings for the app instance.</p>"
+          "documentation":"<p>The retention settings for the <code>AppInstance</code>.</p>"
         },
         "InitiateDeletionTimestamp":{
           "shape":"Timestamp",
@@ -6635,7 +6755,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance. </p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         }
@@ -6728,6 +6848,12 @@
           "documentation":"<p>The ID of the message.</p>",
           "location":"uri",
           "locationName":"messageId"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -6964,7 +7090,7 @@
       "members":{
         "SipMediaApplicationId":{
           "shape":"NonEmptyString",
-          "documentation":"<p>The ID of the SIP media application.</p>",
+          "documentation":"<p>The SIP media application ID.</p>",
           "location":"uri",
           "locationName":"sipMediaApplicationId"
         }
@@ -7286,7 +7412,7 @@
           "documentation":"<p>The name in an Identity.</p>"
         }
       },
-      "documentation":"<p>The ARN and name of a user.</p>"
+      "documentation":"<p>The details of a user.</p>"
     },
     "Integer":{"type":"integer"},
     "Invite":{
@@ -7413,11 +7539,11 @@
       "members":{
         "Accounts":{
           "shape":"AccountList",
-          "documentation":"<p>The list of accounts.</p>"
+          "documentation":"<p>List of Amazon Chime accounts and account details.</p>"
         },
         "NextToken":{
           "shape":"String",
-          "documentation":"<p>The account's user token.</p>"
+          "documentation":"<p>The token to use to retrieve the next page of results.</p>"
         }
       }
     },
@@ -7427,7 +7553,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         },
@@ -7450,7 +7576,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>"
         },
         "AppInstanceAdmins":{
           "shape":"AppInstanceAdminList",
@@ -7468,7 +7594,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"querystring",
           "locationName":"app-instance-arn"
         },
@@ -7491,11 +7617,11 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>"
         },
         "AppInstanceUsers":{
           "shape":"AppInstanceUserList",
-          "documentation":"<p>The information for each of the requested app instance users.</p>"
+          "documentation":"<p>The information for each requested <code>AppInstanceUser</code>.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -7508,13 +7634,13 @@
       "members":{
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of app instances that you want to return.</p>",
+          "documentation":"<p>The maximum number of <code>AppInstance</code>s that you want to return.</p>",
           "location":"querystring",
           "locationName":"max-results"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>The token passed by previous API requests until you reach the maximum number of app instances.</p>",
+          "documentation":"<p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>",
           "location":"querystring",
           "locationName":"next-token"
         }
@@ -7525,11 +7651,11 @@
       "members":{
         "AppInstances":{
           "shape":"AppInstanceList",
-          "documentation":"<p>The information for each app instance.</p>"
+          "documentation":"<p>The information for each <code>AppInstance</code>.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>The token passed by previous API requests until the maximum number of app instances is reached.</p>"
+          "documentation":"<p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>"
         }
       }
     },
@@ -7658,6 +7784,12 @@
           "documentation":"<p>The token passed by previous API calls until all requested bans are returned.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7683,13 +7815,13 @@
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance users</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>s</p>",
           "location":"querystring",
           "locationName":"app-instance-user-arn"
         },
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of users that you want returned. </p>",
+          "documentation":"<p>The maximum number of users that you want returned.</p>",
           "location":"querystring",
           "locationName":"max-results"
         },
@@ -7698,6 +7830,12 @@
           "documentation":"<p>The token returned from previous API requests until the number of channel memberships is reached.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7738,9 +7876,15 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>The token passed by previous API calls until all requested channel memberships are returned..</p>",
+          "documentation":"<p>The token passed by previous API calls until all requested channel memberships are returned.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7779,7 +7923,7 @@
         },
         "NotBefore":{
           "shape":"Timestamp",
-          "documentation":"<p>The initial or starting time stamp for your requested messages. </p>",
+          "documentation":"<p>The initial or starting time stamp for your requested messages.</p>",
           "location":"querystring",
           "locationName":"not-before"
         },
@@ -7800,6 +7944,12 @@
           "documentation":"<p>The token passed by previous API calls until all requested messages are returned.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7816,7 +7966,7 @@
         },
         "ChannelMessages":{
           "shape":"ChannelMessageSummaryList",
-          "documentation":"<p>The information about and content of each requested message.</p>"
+          "documentation":"<p>The information about, and content of, each requested message.</p>"
         }
       }
     },
@@ -7841,6 +7991,12 @@
           "documentation":"<p>The token passed by previous API calls until all requested moderators are returned.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7881,6 +8037,12 @@
           "documentation":"<p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -7903,13 +8065,13 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"querystring",
           "locationName":"app-instance-arn"
         },
         "Privacy":{
           "shape":"ChannelPrivacy",
-          "documentation":"<p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an app instance administrator can retrieve private channels.</p>",
+          "documentation":"<p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>",
           "location":"querystring",
           "locationName":"privacy"
         },
@@ -7924,6 +8086,12 @@
           "documentation":"<p>The token passed by previous API calls until all requested channels are returned.</p>",
           "location":"querystring",
           "locationName":"next-token"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -8516,7 +8684,7 @@
         },
         "MediaRegion":{
           "shape":"String",
-          "documentation":"<p>The Region in which to create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>"
+          "documentation":"<p> The Region in which you create the meeting. Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>"
         }
       },
       "documentation":"<p>A meeting created using the Amazon Chime SDK.</p>"
@@ -8537,7 +8705,7 @@
           "documentation":"<p>The SQS queue ARN.</p>"
         }
       },
-      "documentation":"<p>The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).</p>"
+      "documentation":"<p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>"
     },
     "MeetingTagKeyList":{
       "type":"list",
@@ -8637,10 +8805,10 @@
       "members":{
         "Url":{
           "shape":"UrlType",
-          "documentation":"<p>The URL of a meeting session endpoint.</p>"
+          "documentation":"<p>The endpoint to which you establish a websocket connection.</p>"
         }
       },
-      "documentation":"<p>The endpoint of a meeting session.</p>"
+      "documentation":"<p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>"
     },
     "Metadata":{
       "type":"string",
@@ -8662,7 +8830,6 @@
     },
     "NonEmptyContent":{
       "type":"string",
-      "max":4096,
       "min":1,
       "pattern":"[\\s\\S]*",
       "sensitive":true
@@ -8777,7 +8944,7 @@
         },
         "Weight":{
           "shape":"OriginationRouteWeight",
-          "documentation":"<p>The weight associated with the host. If hosts are equal in priority, calls are distributed among them based on their relative weight.</p>"
+          "documentation":"<p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>"
         }
       },
       "documentation":"<p>Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.</p>"
@@ -8995,11 +9162,11 @@
         },
         "CreatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The phone number order creation timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The phone number order creation time stamp, in ISO 8601 format.</p>"
         },
         "UpdatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The updated phone number order timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The updated phone number order time stamp, in ISO 8601 format.</p>"
         }
       },
       "documentation":"<p>The details of a phone number order created for Amazon Chime.</p>"
@@ -9109,15 +9276,15 @@
         },
         "CreatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The created timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The created time stamp, in ISO 8601 format.</p>"
         },
         "UpdatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The updated timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The updated time stamp, in ISO 8601 format.</p>"
         },
         "EndedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The ended timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The ended time stamp, in ISO 8601 format.</p>"
         },
         "Participants":{
           "shape":"Participants",
@@ -9164,7 +9331,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         },
@@ -9196,13 +9363,13 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         },
         "AppInstanceStreamingConfigurations":{
           "shape":"AppInstanceStreamingConfigurationList",
-          "documentation":"<p>The streaming configurations set for an app instance.</p>"
+          "documentation":"<p>The streaming configurations set for an <code>AppInstance</code>.</p>"
         }
       }
     },
@@ -9211,7 +9378,7 @@
       "members":{
         "AppInstanceStreamingConfigurations":{
           "shape":"AppInstanceStreamingConfigurationList",
-          "documentation":"<p>The streaming configurations of an app instance.</p>"
+          "documentation":"<p>The streaming configurations of an <code>AppInstance</code>.</p>"
         }
       }
     },
@@ -9288,7 +9455,7 @@
       "members":{
         "SipMediaApplicationId":{
           "shape":"NonEmptyString",
-          "documentation":"<p>The ID of the specified SIP media application</p>",
+          "documentation":"<p>The SIP media application ID.</p>",
           "location":"uri",
           "locationName":"sipMediaApplicationId"
         },
@@ -9301,10 +9468,7 @@
     "PutSipMediaApplicationLoggingConfigurationResponse":{
       "type":"structure",
       "members":{
-        "SipMediaApplicationLoggingConfiguration":{
-          "shape":"SipMediaApplicationLoggingConfiguration",
-          "documentation":"<p>The actual logging configuration.</p>"
-        }
+        "SipMediaApplicationLoggingConfiguration":{"shape":"SipMediaApplicationLoggingConfiguration"}
       }
     },
     "PutVoiceConnectorEmergencyCallingConfigurationRequest":{
@@ -9522,6 +9686,12 @@
           "documentation":"<p>The ID of the message being redacted.</p>",
           "location":"uri",
           "locationName":"messageId"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -9729,7 +9899,7 @@
           "documentation":"<p>The chat conversation retention settings.</p>"
         }
       },
-      "documentation":"<p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.</p>"
+      "documentation":"<p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.</p>"
     },
     "Room":{
       "type":"structure",
@@ -9804,10 +9974,10 @@
       "members":{
         "RetentionDays":{
           "shape":"RetentionDays",
-          "documentation":"<p>The number of days for which to retain chat room messages.</p>"
+          "documentation":"<p>The number of days for which to retain chat-room messages.</p>"
         }
       },
-      "documentation":"<p>The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.</p>"
+      "documentation":"<p>The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.</p>"
     },
     "SearchAvailablePhoneNumbersRequest":{
       "type":"structure",
@@ -9895,12 +10065,18 @@
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The optional metadata for each message. </p>"
+          "documentation":"<p>The optional metadata for each message.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
           "documentation":"<p>The <code>Idempotency</code> token for each client request.</p>",
           "idempotencyToken":true
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -9913,7 +10089,7 @@
         },
         "MessageId":{
           "shape":"MessageId",
-          "documentation":"<p>The ID string assigned to each message. </p>"
+          "documentation":"<p>The ID string assigned to each message.</p>"
         }
       }
     },
@@ -9993,7 +10169,7 @@
           "documentation":"<p>The SIP media application updated timestamp, in ISO 8601 format.</p>"
         }
       },
-      "documentation":"<p>The SIP media application details, including name and endpoints. An AWS account can have multiple SIP media applications.</p>"
+      "documentation":"<p>The details of the SIP media application, including name and endpoints. An AWS account can have multiple SIP media applications.</p>"
     },
     "SipMediaApplicationCall":{
       "type":"structure",
@@ -10010,10 +10186,10 @@
       "members":{
         "LambdaArn":{
           "shape":"FunctionArn",
-          "documentation":"<p>Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media application is created.</p>"
+          "documentation":"<p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as the SIP media application.</p>"
         }
       },
-      "documentation":"<p>Endpoints to specify as part of a SIP media application.</p>"
+      "documentation":"<p>The endpoint assigned to the SIP media application.</p>"
     },
     "SipMediaApplicationEndpointList":{
       "type":"list",
@@ -10053,11 +10229,11 @@
         },
         "Disabled":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates if the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>"
+          "documentation":"<p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>"
         },
         "TriggerType":{
           "shape":"SipRuleTriggerType",
-          "documentation":"<p>The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>.</p>"
+          "documentation":"<p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>"
         },
         "TriggerValue":{
           "shape":"NonEmptyString",
@@ -10065,15 +10241,15 @@
         },
         "TargetApplications":{
           "shape":"SipRuleTargetApplicationList",
-          "documentation":"<p>List of SIP media applications with priority and AWS Region. You can only use one SIP application per AWS Region and priority combination.</p>"
+          "documentation":"<p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>"
         },
         "CreatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The SIP rule created timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The time at which the SIP rule was created, in ISO 8601 format.</p>"
         },
         "UpdatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The SIP rule updated timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>"
         }
       },
       "documentation":"<p>The SIP rule details, including name, triggers, and target applications. An AWS account can have multiple SIP rules.</p>"
@@ -10100,10 +10276,10 @@
         },
         "AwsRegion":{
           "shape":"String",
-          "documentation":"<p>AWS Region of target application.</p>"
+          "documentation":"<p>The AWS Region of the target application.</p>"
         }
       },
-      "documentation":"<p>Target SIP media application along with other details like priority and AWS Region to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>"
+      "documentation":"<p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>"
     },
     "SipRuleTargetApplicationList":{
       "type":"list",
@@ -10455,7 +10631,10 @@
     "UpdateAccountResponse":{
       "type":"structure",
       "members":{
-        "Account":{"shape":"Account"}
+        "Account":{
+          "shape":"Account",
+          "documentation":"<p>The updated Amazon Chime account details.</p>"
+        }
       }
     },
     "UpdateAccountSettingsRequest":{
@@ -10491,7 +10670,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceArn"
         },
@@ -10510,7 +10689,7 @@
       "members":{
         "AppInstanceArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstance</code>.</p>"
         }
       }
     },
@@ -10523,17 +10702,17 @@
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user.</p>",
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "location":"uri",
           "locationName":"appInstanceUserArn"
         },
         "Name":{
           "shape":"UserName",
-          "documentation":"<p>The name of the app instance user.</p>"
+          "documentation":"<p>The name of the <code>AppInstanceUser</code>.</p>"
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the app instance user.</p>"
+          "documentation":"<p>The metadata of the <code>AppInstanceUser</code>.</p>"
         }
       }
     },
@@ -10542,7 +10721,7 @@
       "members":{
         "AppInstanceUserArn":{
           "shape":"ChimeArn",
-          "documentation":"<p>The ARN of the app instance user.</p>"
+          "documentation":"<p>The ARN of the <code>AppInstanceUser</code>.</p>"
         }
       }
     },
@@ -10606,6 +10785,12 @@
         "Metadata":{
           "shape":"Metadata",
           "documentation":"<p>The metadata of the message being updated.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -10631,6 +10816,12 @@
           "documentation":"<p>The ARN of the channel.</p>",
           "location":"uri",
           "locationName":"channelArn"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -10667,7 +10858,13 @@
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The metadata of the channel.</p>"
+          "documentation":"<p>The metadata for the update request.</p>"
+        },
+        "ChimeBearer":{
+          "shape":"ChimeArn",
+          "documentation":"<p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>",
+          "location":"header",
+          "locationName":"x-amz-chime-bearer"
         }
       }
     },
@@ -10734,7 +10931,7 @@
           "documentation":"<p>The outbound calling name to update.</p>"
         }
       },
-      "documentation":"<p>The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.</p>"
+      "documentation":"<p> The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. </p>"
     },
     "UpdatePhoneNumberRequestItemList":{
       "type":"list",
@@ -10992,7 +11189,7 @@
           "documentation":"<p>The Alexa for Business metadata.</p>"
         }
       },
-      "documentation":"<p>The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.</p>"
+      "documentation":"<p> The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. </p>"
     },
     "UpdateUserRequestItemList":{
       "type":"list",
@@ -11054,7 +11251,7 @@
         },
         "VoiceConnectorItems":{
           "shape":"VoiceConnectorItemList",
-          "documentation":"<p>The <code>VoiceConnectorItems</code> to associate with the group.</p>"
+          "documentation":"<p> The <code>VoiceConnectorItems</code> to associate with the group. </p>"
         }
       }
     },
@@ -11244,7 +11441,7 @@
         },
         "AwsRegion":{
           "shape":"VoiceConnectorAwsRegion",
-          "documentation":"<p>The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.</p>"
+          "documentation":"<p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>"
         },
         "Name":{
           "shape":"VoiceConnectorName",
@@ -11293,11 +11490,11 @@
         },
         "CreatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The Amazon Chime Voice Connector group creation timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>"
         },
         "UpdatedTimestamp":{
           "shape":"Iso8601Timestamp",
-          "documentation":"<p>The updated Amazon Chime Voice Connector group timestamp, in ISO 8601 format.</p>"
+          "documentation":"<p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>"
         }
       },
       "documentation":"<p>The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>"
@@ -11324,10 +11521,10 @@
         },
         "Priority":{
           "shape":"VoiceConnectorItemPriority",
-          "documentation":"<p>The priority associated with the Amazon Chime Voice Connector, with 1 being the highest priority. Higher priority Amazon Chime Voice Connectors are attempted first. </p>"
+          "documentation":"<p>The priority associated with the Amazon Chime Voice Connector, with 1 being the highest priority. Higher priority Amazon Chime Voice Connectors are attempted first.</p>"
         }
       },
-      "documentation":"<p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.</p>"
+      "documentation":"<p> For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group. </p>"
     },
     "VoiceConnectorItemList":{
       "type":"list",
@@ -11359,5 +11556,5 @@
       "documentation":"<p>The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.</p>"
     }
   },
-  "documentation":"<p>The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation includes links to information about using it with a language-specific AWS SDK or the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p>You don't need to write code to calculate a signature for request authentication. The SDK clients authenticate your requests by using access keys that you provide. For more information about AWS SDKs, see the <a href=\"http://aws.amazon.com/developer/\">AWS Developer Center</a>.</p> </dd> <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make API calls. For information about setting up the AWS CLI, see <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/installing.html\">Installing the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User Guide</i>. For a list of available Amazon Chime commands, see the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/chime/index.html\">Amazon Chime commands</a> in the <i>AWS CLI Command Reference</i>.</p> </dd> <dt>Using REST</dt> <dd> <p>If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports Signature Version 4. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>When making REST API calls, use the service name <code>chime</code> and REST endpoint <code>https://service.chime.aws.amazon.com</code>.</p> </dd> </dl> <p>Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/security-iam.html\">Identity and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
+  "documentation":"<p>The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\"> Using the Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation includes links to information about using it with a language-specific AWS SDK or the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p> You don't need to write code to calculate a signature for request authentication. The SDK clients authenticate your requests by using access keys that you provide. For more information about AWS SDKs, see the <a href=\"http://aws.amazon.com/developer/\">AWS Developer Center</a>. </p> </dd> <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make API calls. For information about setting up the AWS CLI, see <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/installing.html\">Installing the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User Guide</i>. For a list of available Amazon Chime commands, see the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/chime/index.html\">Amazon Chime commands</a> in the <i>AWS CLI Command Reference</i>. </p> </dd> <dt>Using REST APIs</dt> <dd> <p>If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports signature version 4. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>When making REST API calls, use the service name <code>chime</code> and REST endpoint <code>https://service.chime.aws.amazon.com</code>.</p> </dd> </dl> <p>Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see <a href=\"https://docs.aws.amazon.com/chime/latest/ag/security-iam.html\">Identity and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration Guide</i>.</p>"
 }

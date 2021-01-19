@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The identity and metadata of an administrator.
+ * Summary of the details of an <code>AppInstanceAdmin</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdminSummary" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AppInstanceAdminSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The details of the <code>AppInstanceAdmin</code>.
      * </p>
      */
     private Identity admin;
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The details of the <code>AppInstanceAdmin</code>.
      * </p>
      * 
      * @param admin
-     *        The name and metadata of the app instance administrator.
+     *        The details of the <code>AppInstanceAdmin</code>.
      */
 
     public void setAdmin(Identity admin) {
@@ -50,10 +50,10 @@ public class AppInstanceAdminSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The details of the <code>AppInstanceAdmin</code>.
      * </p>
      * 
-     * @return The name and metadata of the app instance administrator.
+     * @return The details of the <code>AppInstanceAdmin</code>.
      */
 
     public Identity getAdmin() {
@@ -62,11 +62,11 @@ public class AppInstanceAdminSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The details of the <code>AppInstanceAdmin</code>.
      * </p>
      * 
      * @param admin
-     *        The name and metadata of the app instance administrator.
+     *        The details of the <code>AppInstanceAdmin</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

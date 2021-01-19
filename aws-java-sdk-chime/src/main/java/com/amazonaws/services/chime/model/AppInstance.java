@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An instance of a Chime messaging application.
+ * The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstance" target="_top">AWS API
@@ -36,25 +36,25 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
     private String appInstanceArn;
     /**
      * <p>
-     * The name of an app instance.
+     * The name of an <code>AppInstance</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The metadata of an app instance.
+     * The metadata of an <code>AppInstance</code>.
      * </p>
      */
     private String metadata;
     /**
      * <p>
-     * The time at which an app instance was created. In epoch milliseconds.
+     * The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The time an app instance was last updated. In epoch milliseconds.
+     * The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      * </p>
      */
     private java.util.Date lastUpdatedTimestamp;
@@ -101,11 +101,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an app instance.
+     * The name of an <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of an app instance.
+     *        The name of an <code>AppInstance</code>.
      */
 
     public void setName(String name) {
@@ -114,10 +114,10 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an app instance.
+     * The name of an <code>AppInstance</code>.
      * </p>
      * 
-     * @return The name of an app instance.
+     * @return The name of an <code>AppInstance</code>.
      */
 
     public String getName() {
@@ -126,11 +126,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an app instance.
+     * The name of an <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of an app instance.
+     *        The name of an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of an app instance.
+     * The metadata of an <code>AppInstance</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of an app instance.
+     *        The metadata of an <code>AppInstance</code>.
      */
 
     public void setMetadata(String metadata) {
@@ -154,10 +154,10 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of an app instance.
+     * The metadata of an <code>AppInstance</code>.
      * </p>
      * 
-     * @return The metadata of an app instance.
+     * @return The metadata of an <code>AppInstance</code>.
      */
 
     public String getMetadata() {
@@ -166,11 +166,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata of an app instance.
+     * The metadata of an <code>AppInstance</code>.
      * </p>
      * 
      * @param metadata
-     *        The metadata of an app instance.
+     *        The metadata of an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which an app instance was created. In epoch milliseconds.
+     * The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which an app instance was created. In epoch milliseconds.
+     *        The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -194,10 +194,10 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which an app instance was created. In epoch milliseconds.
+     * The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      * </p>
      * 
-     * @return The time at which an app instance was created. In epoch milliseconds.
+     * @return The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -206,11 +206,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which an app instance was created. In epoch milliseconds.
+     * The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which an app instance was created. In epoch milliseconds.
+     *        The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time an app instance was last updated. In epoch milliseconds.
+     * The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      * </p>
      * 
      * @param lastUpdatedTimestamp
-     *        The time an app instance was last updated. In epoch milliseconds.
+     *        The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      */
 
     public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
@@ -234,10 +234,10 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time an app instance was last updated. In epoch milliseconds.
+     * The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      * </p>
      * 
-     * @return The time an app instance was last updated. In epoch milliseconds.
+     * @return The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      */
 
     public java.util.Date getLastUpdatedTimestamp() {
@@ -246,11 +246,11 @@ public class AppInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time an app instance was last updated. In epoch milliseconds.
+     * The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      * </p>
      * 
      * @param lastUpdatedTimestamp
-     *        The time an app instance was last updated. In epoch milliseconds.
+     *        The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,6 +31,8 @@ public class CreateChannelBanRequestMarshaller {
             .marshallLocationName("channelArn").build();
     private static final MarshallingInfo<String> MEMBERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MemberArn").build();
+    private static final MarshallingInfo<String> CHIMEBEARER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-chime-bearer").build();
 
     private static final CreateChannelBanRequestMarshaller instance = new CreateChannelBanRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreateChannelBanRequestMarshaller {
         try {
             protocolMarshaller.marshall(createChannelBanRequest.getChannelArn(), CHANNELARN_BINDING);
             protocolMarshaller.marshall(createChannelBanRequest.getMemberArn(), MEMBERARN_BINDING);
+            protocolMarshaller.marshall(createChannelBanRequest.getChimeBearer(), CHIMEBEARER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

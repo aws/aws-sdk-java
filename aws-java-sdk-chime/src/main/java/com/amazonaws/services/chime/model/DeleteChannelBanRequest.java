@@ -27,24 +27,30 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the channel from which the app instance user was banned.
+     * The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      * </p>
      */
     private String channelArn;
     /**
      * <p>
-     * The ARN of the app instance user that you want to reinstate.
+     * The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      * </p>
      */
     private String memberArn;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
-     * The ARN of the channel from which the app instance user was banned.
+     * The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel from which the app instance user was banned.
+     *        The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      */
 
     public void setChannelArn(String channelArn) {
@@ -53,10 +59,10 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the channel from which the app instance user was banned.
+     * The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      * </p>
      * 
-     * @return The ARN of the channel from which the app instance user was banned.
+     * @return The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      */
 
     public String getChannelArn() {
@@ -65,11 +71,11 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the channel from which the app instance user was banned.
+     * The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel from which the app instance user was banned.
+     *        The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +86,11 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the app instance user that you want to reinstate.
+     * The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      * </p>
      * 
      * @param memberArn
-     *        The ARN of the app instance user that you want to reinstate.
+     *        The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      */
 
     public void setMemberArn(String memberArn) {
@@ -93,10 +99,10 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the app instance user that you want to reinstate.
+     * The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      * </p>
      * 
-     * @return The ARN of the app instance user that you want to reinstate.
+     * @return The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      */
 
     public String getMemberArn() {
@@ -105,16 +111,56 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the app instance user that you want to reinstate.
+     * The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      * </p>
      * 
      * @param memberArn
-     *        The ARN of the app instance user that you want to reinstate.
+     *        The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteChannelBanRequest withMemberArn(String memberArn) {
         setMemberArn(memberArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteChannelBanRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
         return this;
     }
 
@@ -133,7 +179,9 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
         if (getChannelArn() != null)
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getMemberArn() != null)
-            sb.append("MemberArn: ").append(getMemberArn());
+            sb.append("MemberArn: ").append(getMemberArn()).append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMemberArn() != null && other.getMemberArn().equals(this.getMemberArn()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class DeleteChannelBanRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getMemberArn() == null) ? 0 : getMemberArn().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The
+ * An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code> . The
  * <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code>
  * expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the
  * meeting.
@@ -38,8 +38,7 @@ public class Attendee implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      */
     private String externalUserId;
@@ -59,14 +58,12 @@ public class Attendee implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        a builder application.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -76,13 +73,11 @@ public class Attendee implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *         a builder application. If you create an attendee with the same external user id, the service returns the
-     *         existing record.
+     *         a builder application.
      */
 
     public String getExternalUserId() {
@@ -92,14 +87,12 @@ public class Attendee implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        a builder application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

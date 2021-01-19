@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The streaming configuration of an app instance.
+ * The details of the streaming configuration of an <code>AppInstance</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceStreamingConfiguration"
@@ -30,7 +30,7 @@ public class AppInstanceStreamingConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The data type of the app instance.
+     * The type of data to be streamed.
      * </p>
      */
     private String appInstanceDataType;
@@ -43,11 +43,11 @@ public class AppInstanceStreamingConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The data type of the app instance.
+     * The type of data to be streamed.
      * </p>
      * 
      * @param appInstanceDataType
-     *        The data type of the app instance.
+     *        The type of data to be streamed.
      * @see AppInstanceDataType
      */
 
@@ -57,10 +57,10 @@ public class AppInstanceStreamingConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The data type of the app instance.
+     * The type of data to be streamed.
      * </p>
      * 
-     * @return The data type of the app instance.
+     * @return The type of data to be streamed.
      * @see AppInstanceDataType
      */
 
@@ -70,11 +70,11 @@ public class AppInstanceStreamingConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The data type of the app instance.
+     * The type of data to be streamed.
      * </p>
      * 
      * @param appInstanceDataType
-     *        The data type of the app instance.
+     *        The type of data to be streamed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceDataType
      */
@@ -86,11 +86,11 @@ public class AppInstanceStreamingConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The data type of the app instance.
+     * The type of data to be streamed.
      * </p>
      * 
      * @param appInstanceDataType
-     *        The data type of the app instance.
+     *        The type of data to be streamed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceDataType
      */

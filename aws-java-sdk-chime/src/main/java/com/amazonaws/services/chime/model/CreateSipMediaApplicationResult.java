@@ -25,18 +25,18 @@ public class CreateSipMediaApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Sip media application details.
+     * The SIP media application details.
      * </p>
      */
     private SipMediaApplication sipMediaApplication;
 
     /**
      * <p>
-     * The Sip media application details.
+     * The SIP media application details.
      * </p>
      * 
      * @param sipMediaApplication
-     *        The Sip media application details.
+     *        The SIP media application details.
      */
 
     public void setSipMediaApplication(SipMediaApplication sipMediaApplication) {
@@ -45,10 +45,10 @@ public class CreateSipMediaApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Sip media application details.
+     * The SIP media application details.
      * </p>
      * 
-     * @return The Sip media application details.
+     * @return The SIP media application details.
      */
 
     public SipMediaApplication getSipMediaApplication() {
@@ -57,11 +57,11 @@ public class CreateSipMediaApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Sip media application details.
+     * The SIP media application details.
      * </p>
      * 
      * @param sipMediaApplication
-     *        The Sip media application details.
+     *        The SIP media application details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

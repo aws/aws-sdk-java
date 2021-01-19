@@ -475,6 +475,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -602,6 +603,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ChangeMessageVisibilityResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityResult>(
                     new ChangeMessageVisibilityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -689,6 +691,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ChangeMessageVisibilityBatchResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityBatchResult>(
                     new ChangeMessageVisibilityBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -825,6 +828,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<CreateQueueResult> responseHandler = new StaxResponseHandler<CreateQueueResult>(new CreateQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -907,6 +911,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<DeleteMessageResult> responseHandler = new StaxResponseHandler<DeleteMessageResult>(new DeleteMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,6 +997,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<DeleteMessageBatchResult> responseHandler = new StaxResponseHandler<DeleteMessageBatchResult>(
                     new DeleteMessageBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1072,6 +1078,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<DeleteQueueResult> responseHandler = new StaxResponseHandler<DeleteQueueResult>(new DeleteQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1140,6 +1147,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<GetQueueAttributesResult> responseHandler = new StaxResponseHandler<GetQueueAttributesResult>(
                     new GetQueueAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1208,6 +1216,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<GetQueueUrlResult> responseHandler = new StaxResponseHandler<GetQueueUrlResult>(new GetQueueUrlResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1283,6 +1292,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ListDeadLetterSourceQueuesResult> responseHandler = new StaxResponseHandler<ListDeadLetterSourceQueuesResult>(
                     new ListDeadLetterSourceQueuesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1346,6 +1356,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<ListQueueTagsResult> responseHandler = new StaxResponseHandler<ListQueueTagsResult>(new ListQueueTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1421,6 +1432,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<ListQueuesResult> responseHandler = new StaxResponseHandler<ListQueuesResult>(new ListQueuesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1506,6 +1518,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<PurgeQueueResult> responseHandler = new StaxResponseHandler<PurgeQueueResult>(new PurgeQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1634,6 +1647,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ReceiveMessageResult> responseHandler = new StaxResponseHandler<ReceiveMessageResult>(
                     new ReceiveMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1716,6 +1730,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
                     new RemovePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1791,6 +1806,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<SendMessageResult> responseHandler = new StaxResponseHandler<SendMessageResult>(new SendMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1899,6 +1915,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<SendMessageBatchResult> responseHandler = new StaxResponseHandler<SendMessageBatchResult>(
                     new SendMessageBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1986,6 +2003,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<SetQueueAttributesResult> responseHandler = new StaxResponseHandler<SetQueueAttributesResult>(
                     new SetQueueAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2084,6 +2102,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<TagQueueResult> responseHandler = new StaxResponseHandler<TagQueueResult>(new TagQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2152,6 +2171,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<UntagQueueResult> responseHandler = new StaxResponseHandler<UntagQueueResult>(new UntagQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

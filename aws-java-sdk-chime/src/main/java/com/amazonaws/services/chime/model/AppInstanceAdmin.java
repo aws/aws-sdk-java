@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Promotes a user to the administrator role for the duration of an app instance.
+ * The details of an <code>AppInstanceAdmin</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdmin" target="_top">AWS API
@@ -30,13 +30,13 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The <code>AppInstanceAdmin</code> data.
      * </p>
      */
     private Identity admin;
     /**
      * <p>
-     * The ARN of the app instance administrator.
+     * The ARN of the <code>AppInstance</code> for which the user is an administrator.
      * </p>
      */
     private String appInstanceArn;
@@ -49,11 +49,11 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The <code>AppInstanceAdmin</code> data.
      * </p>
      * 
      * @param admin
-     *        The name and metadata of the app instance administrator.
+     *        The <code>AppInstanceAdmin</code> data.
      */
 
     public void setAdmin(Identity admin) {
@@ -62,10 +62,10 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The <code>AppInstanceAdmin</code> data.
      * </p>
      * 
-     * @return The name and metadata of the app instance administrator.
+     * @return The <code>AppInstanceAdmin</code> data.
      */
 
     public Identity getAdmin() {
@@ -74,11 +74,11 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name and metadata of the app instance administrator.
+     * The <code>AppInstanceAdmin</code> data.
      * </p>
      * 
      * @param admin
-     *        The name and metadata of the app instance administrator.
+     *        The <code>AppInstanceAdmin</code> data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the app instance administrator.
+     * The ARN of the <code>AppInstance</code> for which the user is an administrator.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance administrator.
+     *        The ARN of the <code>AppInstance</code> for which the user is an administrator.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -102,10 +102,10 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the app instance administrator.
+     * The ARN of the <code>AppInstance</code> for which the user is an administrator.
      * </p>
      * 
-     * @return The ARN of the app instance administrator.
+     * @return The ARN of the <code>AppInstance</code> for which the user is an administrator.
      */
 
     public String getAppInstanceArn() {
@@ -114,11 +114,11 @@ public class AppInstanceAdmin implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the app instance administrator.
+     * The ARN of the <code>AppInstance</code> for which the user is an administrator.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance administrator.
+     *        The ARN of the <code>AppInstance</code> for which the user is an administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

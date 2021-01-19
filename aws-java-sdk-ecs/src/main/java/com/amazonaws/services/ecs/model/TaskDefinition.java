@@ -368,6 +368,24 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ProxyConfiguration proxyConfiguration;
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was registered.
+     * </p>
+     */
+    private java.util.Date registeredAt;
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was deregistered.
+     * </p>
+     */
+    private java.util.Date deregisteredAt;
+    /**
+     * <p>
+     * The principal that registered the task definition.
+     * </p>
+     */
+    private String registeredBy;
 
     /**
      * <p>
@@ -3317,6 +3335,126 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix timestamp for when the task definition was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The Unix timestamp for when the task definition was registered.
+     */
+
+    public void setRegisteredAt(java.util.Date registeredAt) {
+        this.registeredAt = registeredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was registered.
+     * </p>
+     * 
+     * @return The Unix timestamp for when the task definition was registered.
+     */
+
+    public java.util.Date getRegisteredAt() {
+        return this.registeredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The Unix timestamp for when the task definition was registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withRegisteredAt(java.util.Date registeredAt) {
+        setRegisteredAt(registeredAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was deregistered.
+     * </p>
+     * 
+     * @param deregisteredAt
+     *        The Unix timestamp for when the task definition was deregistered.
+     */
+
+    public void setDeregisteredAt(java.util.Date deregisteredAt) {
+        this.deregisteredAt = deregisteredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was deregistered.
+     * </p>
+     * 
+     * @return The Unix timestamp for when the task definition was deregistered.
+     */
+
+    public java.util.Date getDeregisteredAt() {
+        return this.deregisteredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the task definition was deregistered.
+     * </p>
+     * 
+     * @param deregisteredAt
+     *        The Unix timestamp for when the task definition was deregistered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withDeregisteredAt(java.util.Date deregisteredAt) {
+        setDeregisteredAt(deregisteredAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The principal that registered the task definition.
+     * </p>
+     * 
+     * @param registeredBy
+     *        The principal that registered the task definition.
+     */
+
+    public void setRegisteredBy(String registeredBy) {
+        this.registeredBy = registeredBy;
+    }
+
+    /**
+     * <p>
+     * The principal that registered the task definition.
+     * </p>
+     * 
+     * @return The principal that registered the task definition.
+     */
+
+    public String getRegisteredBy() {
+        return this.registeredBy;
+    }
+
+    /**
+     * <p>
+     * The principal that registered the task definition.
+     * </p>
+     * 
+     * @param registeredBy
+     *        The principal that registered the task definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withRegisteredBy(String registeredBy) {
+        setRegisteredBy(registeredBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3365,7 +3503,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getIpcMode() != null)
             sb.append("IpcMode: ").append(getIpcMode()).append(",");
         if (getProxyConfiguration() != null)
-            sb.append("ProxyConfiguration: ").append(getProxyConfiguration());
+            sb.append("ProxyConfiguration: ").append(getProxyConfiguration()).append(",");
+        if (getRegisteredAt() != null)
+            sb.append("RegisteredAt: ").append(getRegisteredAt()).append(",");
+        if (getDeregisteredAt() != null)
+            sb.append("DeregisteredAt: ").append(getDeregisteredAt()).append(",");
+        if (getRegisteredBy() != null)
+            sb.append("RegisteredBy: ").append(getRegisteredBy());
         sb.append("}");
         return sb.toString();
     }
@@ -3456,6 +3600,18 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProxyConfiguration() != null && other.getProxyConfiguration().equals(this.getProxyConfiguration()) == false)
             return false;
+        if (other.getRegisteredAt() == null ^ this.getRegisteredAt() == null)
+            return false;
+        if (other.getRegisteredAt() != null && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
+            return false;
+        if (other.getDeregisteredAt() == null ^ this.getDeregisteredAt() == null)
+            return false;
+        if (other.getDeregisteredAt() != null && other.getDeregisteredAt().equals(this.getDeregisteredAt()) == false)
+            return false;
+        if (other.getRegisteredBy() == null ^ this.getRegisteredBy() == null)
+            return false;
+        if (other.getRegisteredBy() != null && other.getRegisteredBy().equals(this.getRegisteredBy()) == false)
+            return false;
         return true;
     }
 
@@ -3483,6 +3639,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPidMode() == null) ? 0 : getPidMode().hashCode());
         hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
         hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
+        hashCode = prime * hashCode + ((getDeregisteredAt() == null) ? 0 : getDeregisteredAt().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode());
         return hashCode;
     }
 

@@ -25,24 +25,24 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the app instance.
+     * The name and ARN of the admin for the <code>AppInstance</code>.
      * </p>
      */
     private Identity appInstanceAdmin;
     /**
      * <p>
-     * The ARN of the of the admin for the app instance.
+     * The ARN of the of the admin for the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
 
     /**
      * <p>
-     * The name and ARN of the admin for the app instance.
+     * The name and ARN of the admin for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The name and ARN of the admin for the app instance.
+     *        The name and ARN of the admin for the <code>AppInstance</code>.
      */
 
     public void setAppInstanceAdmin(Identity appInstanceAdmin) {
@@ -51,10 +51,10 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the app instance.
+     * The name and ARN of the admin for the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The name and ARN of the admin for the app instance.
+     * @return The name and ARN of the admin for the <code>AppInstance</code>.
      */
 
     public Identity getAppInstanceAdmin() {
@@ -63,11 +63,11 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the app instance.
+     * The name and ARN of the admin for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The name and ARN of the admin for the app instance.
+     *        The name and ARN of the admin for the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the of the admin for the app instance.
+     * The ARN of the of the admin for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the of the admin for the app instance.
+     *        The ARN of the of the admin for the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -91,10 +91,10 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the of the admin for the app instance.
+     * The ARN of the of the admin for the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the of the admin for the app instance.
+     * @return The ARN of the of the admin for the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -103,11 +103,11 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the of the admin for the app instance.
+     * The ARN of the of the admin for the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the of the admin for the app instance.
+     *        The ARN of the of the admin for the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

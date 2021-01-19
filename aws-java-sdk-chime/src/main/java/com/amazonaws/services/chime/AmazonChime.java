@@ -31,8 +31,8 @@ import com.amazonaws.services.chime.model.*;
  * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
  * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
  * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
- * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
- * Chime Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the Amazon Chime SDK </a> in the
+ * <i>Amazon Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -58,11 +58,11 @@ import com.amazonaws.services.chime.model.*;
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST</dt>
+ * <dt>Using REST APIs</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
- * Signature Version 4. For more information, see <a
+ * signature version 4. For more information, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>
  * in the <i>Amazon Web Services General Reference</i>.
  * </p>
@@ -240,8 +240,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots.
-     * The member role designates whether the member is a chat room administrator or a general chat room member.
+     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
+     * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
      * 
      * @param batchCreateRoomMembershipRequest
@@ -305,7 +305,7 @@ public interface AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -378,7 +378,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
+     * <code>UpdatePhoneNumberRequestItem</code> . For example, you can update either the product type or the calling
      * name.
      * </p>
      * <p>
@@ -472,9 +472,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS Account. Only Messaging SDK customers
-     * use this API. <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as described in the AWS
-     * API Standard.
+     * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
+     * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
      * </p>
      * 
      * @param createAppInstanceRequest
@@ -509,7 +508,7 @@ public interface AmazonChime {
      * <ul>
      * <li>
      * <p>
-     * <code>ChannelModerator</code> actions across all channels in the app instance.
+     * <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
      * </p>
      * </li>
      * <li>
@@ -643,6 +642,12 @@ public interface AmazonChime {
      * <p>
      * <b>Restriction</b>: You can't change a channel's privacy.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param createChannelRequest
      * @return Result of the CreateChannel operation returned by the service.
@@ -677,6 +682,12 @@ public interface AmazonChime {
      * <p>
      * If you ban a user who is already part of a channel, that user is automatically kicked from the channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param createChannelBanRequest
      * @return Result of the CreateChannelBan operation returned by the service.
@@ -749,6 +760,12 @@ public interface AmazonChime {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param createChannelMembershipRequest
      * @return Result of the CreateChannelMembership operation returned by the service.
@@ -805,6 +822,12 @@ public interface AmazonChime {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param createChannelModeratorRequest
      * @return Result of the CreateChannelModerator operation returned by the service.
@@ -835,9 +858,9 @@ public interface AmazonChime {
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
      * information about specifying media Regions, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
-     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingRequest
@@ -865,12 +888,12 @@ public interface AmazonChime {
     /**
      * <p>
      * Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an
-     * outbound call to a public switched telephone network (PSTN) and joins them into Chime meeting. Also ensures that
+     * outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that
      * the From number belongs to the customer.
      * </p>
      * <p>
      * To play welcome audio or implement an interactive voice response (IVR), use the
-     * <code>CreateSipMediaApplicationCall</code> API with the corresponding SIP media application ID.
+     * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
      * </p>
      * 
      * @param createMeetingDialOutRequest
@@ -900,9 +923,9 @@ public interface AmazonChime {
      * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
      * specifying media Regions, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
-     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingWithAttendeesRequest
@@ -1237,8 +1260,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
-     * account. You can use the <a>BatchSuspendUser</a> action to do so.
+     * Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account.
+     * You can use the <a>BatchSuspendUser</a> action to dodo.
      * </p>
      * <p>
      * For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for
@@ -1246,8 +1269,8 @@ public interface AmazonChime {
      * suspended.
      * </p>
      * <p>
-     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account
-     * from your <code>Disabled</code> accounts list, you must contact AWS Support.
+     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from
+     * your <code>Disabled</code> accounts list, you must contact AWS Support.
      * </p>
      * <p>
      * After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.
@@ -1316,8 +1339,6 @@ public interface AmazonChime {
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request.
-     * @throws ResourceLimitExceededException
-     *         The request exceeds the resource limit.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws UnauthorizedClientException
@@ -1334,7 +1355,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the streaming configurations of an app instance.
+     * Deletes the streaming configurations of an <code>AppInstance</code>.
      * </p>
      * 
      * @param deleteAppInstanceStreamingConfigurationsRequest
@@ -1387,10 +1408,10 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code> .
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
-     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param deleteAttendeeRequest
@@ -1420,6 +1441,12 @@ public interface AmazonChime {
      * Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible
      * process.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param deleteChannelRequest
      * @return Result of the DeleteChannel operation returned by the service.
@@ -1445,6 +1472,12 @@ public interface AmazonChime {
      * <p>
      * Removes a user from a channel's ban list.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param deleteChannelBanRequest
      * @return Result of the DeleteChannelBan operation returned by the service.
@@ -1470,6 +1503,12 @@ public interface AmazonChime {
      * <p>
      * Removes a member from a channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param deleteChannelMembershipRequest
      * @return Result of the DeleteChannelMembership operation returned by the service.
@@ -1496,6 +1535,12 @@ public interface AmazonChime {
      * Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately.
      * A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param deleteChannelMessageRequest
      * @return Result of the DeleteChannelMessage operation returned by the service.
@@ -1521,6 +1566,12 @@ public interface AmazonChime {
      * <p>
      * Deletes a channel moderator.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param deleteChannelModeratorRequest
      * @return Result of the DeleteChannelModerator operation returned by the service.
@@ -1569,8 +1620,9 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
-     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted,
+     * clients connected to the meeting are disconnected, and clients can no longer join the meeting. For more
+     * information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -1599,7 +1651,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
+     * Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must be disassociated from any
      * users or Amazon Chime Voice Connectors before it can be deleted.
      * </p>
      * <p>
@@ -2057,7 +2109,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Returns the full details of an <code>AppInstanceUser</code>.
+     * Returns the full details of an <code>AppInstanceUser</code> .
      * </p>
      * 
      * @param describeAppInstanceUserRequest
@@ -2082,8 +2134,14 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Returns the full details of a channel in an Amazon Chime app instance.
+     * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelRequest
      * @return Result of the DescribeChannel operation returned by the service.
@@ -2109,6 +2167,12 @@ public interface AmazonChime {
      * <p>
      * Returns the full details of a channel ban.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelBanRequest
      * @return Result of the DescribeChannelBan operation returned by the service.
@@ -2136,6 +2200,12 @@ public interface AmazonChime {
      * <p>
      * Returns the full details of a user's channel membership.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelMembershipRequest
      * @return Result of the DescribeChannelMembership operation returned by the service.
@@ -2161,8 +2231,14 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Returns the details of a channel based on the membership of the <code>AppInstanceUser</code> specified.
+     * Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelMembershipForAppInstanceUserRequest
      * @return Result of the DescribeChannelMembershipForAppInstanceUser operation returned by the service.
@@ -2190,6 +2266,12 @@ public interface AmazonChime {
      * <p>
      * Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelModeratedByAppInstanceUserRequest
      * @return Result of the DescribeChannelModeratedByAppInstanceUser operation returned by the service.
@@ -2216,6 +2298,12 @@ public interface AmazonChime {
      * <p>
      * Returns the full details of a single ChannelModerator.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param describeChannelModeratorRequest
      * @return Result of the DescribeChannelModerator operation returned by the service.
@@ -2381,7 +2469,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out
+     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout
      * settings. For more information about these settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime
      * Administration Guide</i>.
@@ -2411,7 +2499,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Gets the retention settings for an app instance.
+     * Gets the retention settings for an <code>AppInstance</code>.
      * </p>
      * 
      * @param getAppInstanceRetentionSettingsRequest
@@ -2438,7 +2526,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Gets the streaming settings for an app instance.
+     * Gets the streaming settings for an <code>AppInstance</code>.
      * </p>
      * 
      * @param getAppInstanceStreamingConfigurationsRequest
@@ -2468,7 +2556,7 @@ public interface AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
      * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getAttendeeRequest
@@ -2524,6 +2612,12 @@ public interface AmazonChime {
      * <p>
      * Gets the full details of a channel message.
      * </p>
+     * <note>
+     * <p>
+     * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+     * makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param getChannelMessageRequest
      * @return Result of the GetChannelMessage operation returned by the service.
@@ -2605,7 +2699,7 @@ public interface AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -2632,7 +2726,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * The endpoint for the messaging session.
+     * The details of the endpoint for the messaging session.
      * </p>
      * 
      * @param getMessagingSessionEndpointRequest
@@ -2682,8 +2776,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
-     * format, product type, and order status.
+     * Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in
+     * E.164 format, product type, and order status.
      * </p>
      * 
      * @param getPhoneNumberOrderRequest
@@ -2765,7 +2859,7 @@ public interface AmazonChime {
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -2901,7 +2995,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
+     * Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting
      * PIN.
      * </p>
      * <p>
@@ -2960,7 +3054,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
      * 
@@ -3017,8 +3111,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
-     * <code>VoiceConnectorItems</code>.
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
+     * <code>VoiceConnectorItems</code> .
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -3046,7 +3140,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP
-     * message logs are enabled for sending to Amazon CloudWatch.
+     * message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param getVoiceConnectorLoggingConfigurationRequest
@@ -3243,7 +3337,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name
-     * prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address,
+     * prefix. To find out which Amazon Chime account a user belongs to, toucan filter by the user's email address,
      * which returns one account result.
      * </p>
      * 
@@ -3271,7 +3365,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Returns a list of the administrators in the app instance.
+     * Returns a list of the administrators in the <code>AppInstance</code>.
      * </p>
      * 
      * @param listAppInstanceAdminsRequest
@@ -3280,8 +3374,6 @@ public interface AmazonChime {
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request.
-     * @throws ResourceLimitExceededException
-     *         The request exceeds the resource limit.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws UnauthorizedClientException
@@ -3298,7 +3390,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * List all <code>AppInstanceUsers</code> created under a single app instance.
+     * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
      * </p>
      * 
      * @param listAppInstanceUsersRequest
@@ -3323,7 +3415,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Lists all Amazon Chime app instances created under a single AWS account.
+     * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
      * </p>
      * 
      * @param listAppInstancesRequest
@@ -3377,7 +3469,7 @@ public interface AmazonChime {
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listAttendeesRequest
@@ -3433,6 +3525,12 @@ public interface AmazonChime {
      * <p>
      * Lists all the users banned from a particular channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelBansRequest
      * @return Result of the ListChannelBans operation returned by the service.
@@ -3458,6 +3556,12 @@ public interface AmazonChime {
      * <p>
      * Lists all channel memberships in a channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelMembershipsRequest
      * @return Result of the ListChannelMemberships operation returned by the service.
@@ -3484,6 +3588,12 @@ public interface AmazonChime {
      * Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
      * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelMembershipsForAppInstanceUserRequest
      * @return Result of the ListChannelMembershipsForAppInstanceUser operation returned by the service.
@@ -3508,13 +3618,17 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. Sorted in
-     * descending order by default, based on the creation timestamp.
+     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
+     * by creation timestamp in descending order .
      * </p>
      * <note>
      * <p>
      * Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do
      * not appear in the results. This action always returns the latest version of an edited message.
+     * </p>
+     * <p>
+     * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+     * that makes the API call as the value in the header.
      * </p>
      * </note>
      * 
@@ -3542,6 +3656,12 @@ public interface AmazonChime {
      * <p>
      * Lists all the moderators for a channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelModeratorsRequest
      * @return Result of the ListChannelModerators operation returned by the service.
@@ -3584,6 +3704,12 @@ public interface AmazonChime {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelsRequest
      * @return Result of the ListChannels operation returned by the service.
@@ -3607,8 +3733,14 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * A list of the channels moderated by an app instance user.
+     * A list of the channels moderated by an <code>AppInstanceUser</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param listChannelsModeratedByAppInstanceUserRequest
      * @return Result of the ListChannelsModeratedByAppInstanceUser operation returned by the service.
@@ -3662,7 +3794,7 @@ public interface AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listMeetingsRequest
@@ -3724,6 +3856,8 @@ public interface AmazonChime {
      *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -4029,7 +4163,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Sets the amount of time in days that a given app instance retains data.
+     * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
      * </p>
      * 
      * @param putAppInstanceRetentionSettingsRequest
@@ -4058,7 +4192,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * The data streaming configurations of an app instance.
+     * The data streaming configurations of an <code>AppInstance</code>.
      * </p>
      * 
      * @param putAppInstanceStreamingConfigurationsRequest
@@ -4117,13 +4251,13 @@ public interface AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i>.
+     * the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -4303,7 +4437,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
      * hours, for the Amazon Kinesis data.
      * </p>
      * 
@@ -4398,6 +4532,12 @@ public interface AmazonChime {
      * Redacts message content, but not metadata. The message exists in the back end, but the action returns null
      * content, and the state shows as redacted.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param redactChannelMessageRequest
      * @return Result of the RedactChannelMessage operation returned by the service.
@@ -4590,8 +4730,12 @@ public interface AmazonChime {
      * </p>
      * <note>
      * <p>
-     * <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can
-     * contain 30 bytes of data and no metadata.
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * <p>
+     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+     * messages can contain 30 bytes of data and no metadata.
      * </p>
      * </note>
      * 
@@ -4868,7 +5012,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates the details for an <code>AppInstanceUser</code>. You can update names and metadata.
+     * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
      * </p>
      * 
      * @param updateAppInstanceUserRequest
@@ -4928,6 +5072,12 @@ public interface AmazonChime {
      * <p>
      * <b>Restriction</b>: You can't change a channel's privacy.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param updateChannelRequest
      * @return Result of the UpdateChannel operation returned by the service.
@@ -4955,6 +5105,12 @@ public interface AmazonChime {
      * <p>
      * Updates the content of a message.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param updateChannelMessageRequest
      * @return Result of the UpdateChannelMessage operation returned by the service.
@@ -4980,8 +5136,14 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Sets the timestamp to the point when a user last read messages in a channel.
+     * The details of the time when a user last read messages in a channel.
      * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
      * 
      * @param updateChannelReadMarkerRequest
      * @return Result of the UpdateChannelReadMarker operation returned by the service.
@@ -5179,7 +5341,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates the details for the specified SIP media application.
+     * Updates the details of the specified SIP media application.
      * </p>
      * 
      * @param updateSipMediaApplicationRequest
@@ -5208,7 +5370,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates the details for the specified SIP rule.
+     * Updates the details of the specified SIP rule.
      * </p>
      * 
      * @param updateSipRuleRequest
@@ -5321,7 +5483,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
      * 

@@ -27,24 +27,24 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
     /**
      * <p>
-     * The streaming configurations set for an app instance.
+     * The streaming configurations set for an <code>AppInstance</code>.
      * </p>
      */
     private java.util.List<AppInstanceStreamingConfiguration> appInstanceStreamingConfigurations;
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -53,10 +53,10 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -65,11 +65,11 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The streaming configurations set for an app instance.
+     * The streaming configurations set for an <code>AppInstance</code>.
      * </p>
      * 
-     * @return The streaming configurations set for an app instance.
+     * @return The streaming configurations set for an <code>AppInstance</code>.
      */
 
     public java.util.List<AppInstanceStreamingConfiguration> getAppInstanceStreamingConfigurations() {
@@ -92,11 +92,11 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The streaming configurations set for an app instance.
+     * The streaming configurations set for an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations set for an app instance.
+     *        The streaming configurations set for an <code>AppInstance</code>.
      */
 
     public void setAppInstanceStreamingConfigurations(java.util.Collection<AppInstanceStreamingConfiguration> appInstanceStreamingConfigurations) {
@@ -110,7 +110,7 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The streaming configurations set for an app instance.
+     * The streaming configurations set for an <code>AppInstance</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +120,7 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations set for an app instance.
+     *        The streaming configurations set for an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class PutAppInstanceStreamingConfigurationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The streaming configurations set for an app instance.
+     * The streaming configurations set for an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceStreamingConfigurations
-     *        The streaming configurations set for an app instance.
+     *        The streaming configurations set for an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

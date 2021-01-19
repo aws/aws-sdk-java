@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a message in a channel.
+ * The details of a message in a channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMessage" target="_top">AWS API
@@ -84,11 +84,15 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
     private Identity sender;
     /**
      * <p>
-     * Hides the content of a message. The message still exists on the back end, but this action only returns metadata.
+     * Hides the content of a message.
      * </p>
      */
     private Boolean redacted;
-
+    /**
+     * <p>
+     * The persistence setting for a channel message.
+     * </p>
+     */
     private String persistence;
 
     /**
@@ -472,12 +476,11 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Hides the content of a message. The message still exists on the back end, but this action only returns metadata.
+     * Hides the content of a message.
      * </p>
      * 
      * @param redacted
-     *        Hides the content of a message. The message still exists on the back end, but this action only returns
-     *        metadata.
+     *        Hides the content of a message.
      */
 
     public void setRedacted(Boolean redacted) {
@@ -486,11 +489,10 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Hides the content of a message. The message still exists on the back end, but this action only returns metadata.
+     * Hides the content of a message.
      * </p>
      * 
-     * @return Hides the content of a message. The message still exists on the back end, but this action only returns
-     *         metadata.
+     * @return Hides the content of a message.
      */
 
     public Boolean getRedacted() {
@@ -499,12 +501,11 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Hides the content of a message. The message still exists on the back end, but this action only returns metadata.
+     * Hides the content of a message.
      * </p>
      * 
      * @param redacted
-     *        Hides the content of a message. The message still exists on the back end, but this action only returns
-     *        metadata.
+     *        Hides the content of a message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,11 +516,10 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Hides the content of a message. The message still exists on the back end, but this action only returns metadata.
+     * Hides the content of a message.
      * </p>
      * 
-     * @return Hides the content of a message. The message still exists on the back end, but this action only returns
-     *         metadata.
+     * @return Hides the content of a message.
      */
 
     public Boolean isRedacted() {
@@ -527,7 +527,12 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The persistence setting for a channel message.
+     * </p>
+     * 
      * @param persistence
+     *        The persistence setting for a channel message.
      * @see ChannelMessagePersistenceType
      */
 
@@ -536,7 +541,11 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The persistence setting for a channel message.
+     * </p>
+     * 
+     * @return The persistence setting for a channel message.
      * @see ChannelMessagePersistenceType
      */
 
@@ -545,7 +554,12 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The persistence setting for a channel message.
+     * </p>
+     * 
      * @param persistence
+     *        The persistence setting for a channel message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessagePersistenceType
      */
@@ -556,7 +570,12 @@ public class ChannelMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The persistence setting for a channel message.
+     * </p>
+     * 
      * @param persistence
+     *        The persistence setting for a channel message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessagePersistenceType
      */

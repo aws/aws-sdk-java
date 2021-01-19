@@ -390,6 +390,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CloneReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CloneReceiptRuleSetResult>(
                     new CloneReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -464,6 +465,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetResult>(
                     new CreateConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -556,6 +558,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetEventDestinationResult>(
                     new CreateConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -638,6 +641,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult>(
                     new CreateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -714,6 +718,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<CreateCustomVerificationEmailTemplateResult>(
                     new CreateCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -786,6 +791,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptFilterResult> responseHandler = new StaxResponseHandler<CreateReceiptFilterResult>(
                     new CreateReceiptFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -878,6 +884,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptRuleResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleResult>(
                     new CreateReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -950,6 +957,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleSetResult>(
                     new CreateReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1022,6 +1030,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateTemplateResult> responseHandler = new StaxResponseHandler<CreateTemplateResult>(
                     new CreateTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1088,6 +1097,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetResult>(
                     new DeleteConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1160,6 +1170,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetEventDestinationResult>(
                     new DeleteConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1234,6 +1245,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult>(
                     new DeleteConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1299,6 +1311,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult>(
                     new DeleteCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1357,6 +1370,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteIdentityResult> responseHandler = new StaxResponseHandler<DeleteIdentityResult>(
                     new DeleteIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1430,6 +1444,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteIdentityPolicyResult> responseHandler = new StaxResponseHandler<DeleteIdentityPolicyResult>(
                     new DeleteIdentityPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1496,6 +1511,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptFilterResult> responseHandler = new StaxResponseHandler<DeleteReceiptFilterResult>(
                     new DeleteReceiptFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1564,6 +1580,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptRuleResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleResult>(
                     new DeleteReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1637,6 +1654,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleSetResult>(
                     new DeleteReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1697,6 +1715,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteTemplateResult> responseHandler = new StaxResponseHandler<DeleteTemplateResult>(
                     new DeleteTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1753,6 +1772,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteVerifiedEmailAddressResult> responseHandler = new StaxResponseHandler<DeleteVerifiedEmailAddressResult>(
                     new DeleteVerifiedEmailAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1819,6 +1839,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeActiveReceiptRuleSetResult>(
                     new DescribeActiveReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1884,6 +1905,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeConfigurationSetResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSetResult>(
                     new DescribeConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1954,6 +1976,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeReceiptRuleResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleResult>(
                     new DescribeReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2022,6 +2045,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleSetResult>(
                     new DescribeReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2079,6 +2103,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<GetAccountSendingEnabledResult>(
                     new GetAccountSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2146,6 +2171,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<GetCustomVerificationEmailTemplateResult>(
                     new GetCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2238,6 +2264,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityDkimAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityDkimAttributesResult>(
                     new GetIdentityDkimAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2302,6 +2329,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityMailFromDomainAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityMailFromDomainAttributesResult>(
                     new GetIdentityMailFromDomainAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2370,6 +2398,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityNotificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityNotificationAttributesResult>(
                     new GetIdentityNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2445,6 +2474,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityPoliciesResult> responseHandler = new StaxResponseHandler<GetIdentityPoliciesResult>(
                     new GetIdentityPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2524,6 +2554,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityVerificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityVerificationAttributesResult>(
                     new GetIdentityVerificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2580,6 +2611,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetSendQuotaResult> responseHandler = new StaxResponseHandler<GetSendQuotaResult>(new GetSendQuotaResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2644,6 +2676,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetSendStatisticsResult> responseHandler = new StaxResponseHandler<GetSendStatisticsResult>(
                     new GetSendStatisticsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2708,6 +2741,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2776,6 +2810,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListConfigurationSetsResult> responseHandler = new StaxResponseHandler<ListConfigurationSetsResult>(
                     new ListConfigurationSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2845,6 +2880,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListCustomVerificationEmailTemplatesResult> responseHandler = new StaxResponseHandler<ListCustomVerificationEmailTemplatesResult>(
                     new ListCustomVerificationEmailTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2905,6 +2941,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListIdentitiesResult> responseHandler = new StaxResponseHandler<ListIdentitiesResult>(
                     new ListIdentitiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2985,6 +3022,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListIdentityPoliciesResult> responseHandler = new StaxResponseHandler<ListIdentityPoliciesResult>(
                     new ListIdentityPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3051,6 +3089,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListReceiptFiltersResult> responseHandler = new StaxResponseHandler<ListReceiptFiltersResult>(
                     new ListReceiptFiltersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3119,6 +3158,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListReceiptRuleSetsResult> responseHandler = new StaxResponseHandler<ListReceiptRuleSetsResult>(
                     new ListReceiptRuleSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3175,6 +3215,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListTemplatesResult> responseHandler = new StaxResponseHandler<ListTemplatesResult>(new ListTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3230,6 +3271,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListVerifiedEmailAddressesResult> responseHandler = new StaxResponseHandler<ListVerifiedEmailAddressesResult>(
                     new ListVerifiedEmailAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3296,6 +3338,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutConfigurationSetDeliveryOptionsResult> responseHandler = new StaxResponseHandler<PutConfigurationSetDeliveryOptionsResult>(
                     new PutConfigurationSetDeliveryOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3372,6 +3415,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutIdentityPolicyResult> responseHandler = new StaxResponseHandler<PutIdentityPolicyResult>(
                     new PutIdentityPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3448,6 +3492,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ReorderReceiptRuleSetResult> responseHandler = new StaxResponseHandler<ReorderReceiptRuleSetResult>(
                     new ReorderReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3518,6 +3563,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendBounceResult> responseHandler = new StaxResponseHandler<SendBounceResult>(new SendBounceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3651,6 +3697,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendBulkTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendBulkTemplatedEmailResult>(
                     new SendBulkTemplatedEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3729,6 +3776,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendCustomVerificationEmailResult> responseHandler = new StaxResponseHandler<SendCustomVerificationEmailResult>(
                     new SendCustomVerificationEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3853,6 +3901,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendEmailResult> responseHandler = new StaxResponseHandler<SendEmailResult>(new SendEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4055,6 +4104,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendRawEmailResult> responseHandler = new StaxResponseHandler<SendRawEmailResult>(new SendRawEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4195,6 +4245,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendTemplatedEmailResult>(
                     new SendTemplatedEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4269,6 +4320,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<SetActiveReceiptRuleSetResult>(
                     new SetActiveReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4346,6 +4398,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityDkimEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityDkimEnabledResult>(
                     new SetIdentityDkimEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4421,6 +4474,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult>(
                     new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4489,6 +4543,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult>(
                     new SetIdentityHeadersInNotificationsEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4558,6 +4613,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityMailFromDomainResult> responseHandler = new StaxResponseHandler<SetIdentityMailFromDomainResult>(
                     new SetIdentityMailFromDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4628,6 +4684,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityNotificationTopicResult> responseHandler = new StaxResponseHandler<SetIdentityNotificationTopicResult>(
                     new SetIdentityNotificationTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4698,6 +4755,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetReceiptRulePositionResult> responseHandler = new StaxResponseHandler<SetReceiptRulePositionResult>(
                     new SetReceiptRulePositionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4764,6 +4822,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<TestRenderTemplateResult> responseHandler = new StaxResponseHandler<TestRenderTemplateResult>(
                     new TestRenderTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4826,6 +4885,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateAccountSendingEnabledResult>(
                     new UpdateAccountSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4910,6 +4970,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
                     new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4976,6 +5037,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult>(
                     new UpdateConfigurationSetReputationMetricsEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5041,6 +5103,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult>(
                     new UpdateConfigurationSetSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5123,6 +5186,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult>(
                     new UpdateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5195,6 +5259,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult>(
                     new UpdateCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5285,6 +5350,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateReceiptRuleResult> responseHandler = new StaxResponseHandler<UpdateReceiptRuleResult>(
                     new UpdateReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5350,6 +5416,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateTemplateResult> responseHandler = new StaxResponseHandler<UpdateTemplateResult>(
                     new UpdateTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5454,6 +5521,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyDomainDkimResult> responseHandler = new StaxResponseHandler<VerifyDomainDkimResult>(
                     new VerifyDomainDkimResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5519,6 +5587,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyDomainIdentityResult> responseHandler = new StaxResponseHandler<VerifyDomainIdentityResult>(
                     new VerifyDomainIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5577,6 +5646,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyEmailAddressResult> responseHandler = new StaxResponseHandler<VerifyEmailAddressResult>(
                     new VerifyEmailAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5640,6 +5710,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyEmailIdentityResult> responseHandler = new StaxResponseHandler<VerifyEmailIdentityResult>(
                     new VerifyEmailIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

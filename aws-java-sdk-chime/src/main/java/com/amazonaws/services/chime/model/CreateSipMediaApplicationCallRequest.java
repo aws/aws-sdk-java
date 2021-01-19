@@ -33,7 +33,7 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
     private String fromPhoneNumber;
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting
+     * The phone number that the user dials in order to connect to a meeting.
      * </p>
      */
     private String toPhoneNumber;
@@ -86,11 +86,11 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting
+     * The phone number that the user dials in order to connect to a meeting.
      * </p>
      * 
      * @param toPhoneNumber
-     *        The phone number that the user dials in order to connect to a meeting
+     *        The phone number that the user dials in order to connect to a meeting.
      */
 
     public void setToPhoneNumber(String toPhoneNumber) {
@@ -99,10 +99,10 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting
+     * The phone number that the user dials in order to connect to a meeting.
      * </p>
      * 
-     * @return The phone number that the user dials in order to connect to a meeting
+     * @return The phone number that the user dials in order to connect to a meeting.
      */
 
     public String getToPhoneNumber() {
@@ -111,11 +111,11 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting
+     * The phone number that the user dials in order to connect to a meeting.
      * </p>
      * 
      * @param toPhoneNumber
-     *        The phone number that the user dials in order to connect to a meeting
+     *        The phone number that the user dials in order to connect to a meeting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

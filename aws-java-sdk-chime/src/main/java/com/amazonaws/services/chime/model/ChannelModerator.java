@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a moderator on a channel.
+ * The details of a channel moderator.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelModerator" target="_top">AWS API
@@ -48,7 +48,7 @@ public class ChannelModerator implements Serializable, Cloneable, StructuredPojo
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The member who created the moderator.
+     * The <code>AppInstanceUser</code> who created the moderator.
      * </p>
      */
     private Identity createdBy;
@@ -175,11 +175,11 @@ public class ChannelModerator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The member who created the moderator.
+     * The <code>AppInstanceUser</code> who created the moderator.
      * </p>
      * 
      * @param createdBy
-     *        The member who created the moderator.
+     *        The <code>AppInstanceUser</code> who created the moderator.
      */
 
     public void setCreatedBy(Identity createdBy) {
@@ -188,10 +188,10 @@ public class ChannelModerator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The member who created the moderator.
+     * The <code>AppInstanceUser</code> who created the moderator.
      * </p>
      * 
-     * @return The member who created the moderator.
+     * @return The <code>AppInstanceUser</code> who created the moderator.
      */
 
     public Identity getCreatedBy() {
@@ -200,11 +200,11 @@ public class ChannelModerator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The member who created the moderator.
+     * The <code>AppInstanceUser</code> who created the moderator.
      * </p>
      * 
      * @param createdBy
-     *        The member who created the moderator.
+     *        The <code>AppInstanceUser</code> who created the moderator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -656,7 +656,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems such a network outage or
-     * backend AWS failure or other errors. A failed CA can never return to the pending state. You must create a new CA.
+     * back-end AWS failure or other errors. A failed CA can never return to the pending state. You must create a new
+     * CA.
      * </p>
      * </li>
      * <li>
@@ -713,7 +714,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <li>
      * <p>
      * <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems such a network outage or
-     * backend AWS failure or other errors. A failed CA can never return to the pending state. You must create a new CA.
+     * back-end AWS failure or other errors. A failed CA can never return to the pending state. You must create a new
+     * CA.
      * </p>
      * </li>
      * <li>
@@ -1041,7 +1043,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * In ACM Private CA, call the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
-     * >CreateCertificateAuthority</a> action to create the private CA that that you plan to back with the imported
+     * >CreateCertificateAuthority</a> action to create the private CA that you plan to back with the imported
      * certificate.
      * </p>
      * </li>
@@ -1083,7 +1085,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * </ul>
      * <p>
-     * The following addtitional requirements apply when you import a CA certificate.
+     * The following additional requirements apply when you import a CA certificate.
      * </p>
      * <ul>
      * <li>
@@ -1250,7 +1252,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * <p>
      * In ACM Private CA, call the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
-     * >CreateCertificateAuthority</a> action to create the private CA that that you plan to back with the imported
+     * >CreateCertificateAuthority</a> action to create the private CA that you plan to back with the imported
      * certificate.
      * </p>
      * </li>
@@ -1292,7 +1294,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * </ul>
      * <p>
-     * The following addtitional requirements apply when you import a CA certificate.
+     * The following additional requirements apply when you import a CA certificate.
      * </p>
      * <ul>
      * <li>

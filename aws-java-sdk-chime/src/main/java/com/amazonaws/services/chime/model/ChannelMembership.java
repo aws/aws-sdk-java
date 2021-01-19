@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a channel member.
+ * The details of a channel member.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembership" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the member who invited another member. Taken from the message header.
+     * The identifier of the member who invited another member.
      * </p>
      */
     private Identity invitedBy;
@@ -67,11 +67,11 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the member who invited another member. Taken from the message header.
+     * The identifier of the member who invited another member.
      * </p>
      * 
      * @param invitedBy
-     *        The identifier of the member who invited another member. Taken from the message header.
+     *        The identifier of the member who invited another member.
      */
 
     public void setInvitedBy(Identity invitedBy) {
@@ -80,10 +80,10 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the member who invited another member. Taken from the message header.
+     * The identifier of the member who invited another member.
      * </p>
      * 
-     * @return The identifier of the member who invited another member. Taken from the message header.
+     * @return The identifier of the member who invited another member.
      */
 
     public Identity getInvitedBy() {
@@ -92,11 +92,11 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the member who invited another member. Taken from the message header.
+     * The identifier of the member who invited another member.
      * </p>
      * 
      * @param invitedBy
-     *        The identifier of the member who invited another member. Taken from the message header.
+     *        The identifier of the member who invited another member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

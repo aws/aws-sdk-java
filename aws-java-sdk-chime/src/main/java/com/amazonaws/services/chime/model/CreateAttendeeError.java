@@ -32,8 +32,7 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      */
     private String externalUserId;
@@ -53,14 +52,12 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        a builder application.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -70,13 +67,11 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *         a builder application. If you create an attendee with the same external user id, the service returns the
-     *         existing record.
+     *         a builder application.
      */
 
     public String getExternalUserId() {
@@ -86,14 +81,12 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
-     * builder application. If you create an attendee with the same external user id, the service returns the existing
-     * record.
+     * builder application.
      * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        a builder application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

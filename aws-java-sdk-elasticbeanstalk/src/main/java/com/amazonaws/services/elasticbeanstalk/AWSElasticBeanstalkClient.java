@@ -364,6 +364,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<AbortEnvironmentUpdateResult> responseHandler = new StaxResponseHandler<AbortEnvironmentUpdateResult>(
                     new AbortEnvironmentUpdateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -430,6 +431,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ApplyEnvironmentManagedActionResult> responseHandler = new StaxResponseHandler<ApplyEnvironmentManagedActionResult>(
                     new ApplyEnvironmentManagedActionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -494,6 +496,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<AssociateEnvironmentOperationsRoleResult> responseHandler = new StaxResponseHandler<AssociateEnvironmentOperationsRoleResult>(
                     new AssociateEnvironmentOperationsRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -549,6 +552,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CheckDNSAvailabilityResult> responseHandler = new StaxResponseHandler<CheckDNSAvailabilityResult>(
                     new CheckDNSAvailabilityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -613,6 +617,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ComposeEnvironmentsResult> responseHandler = new StaxResponseHandler<ComposeEnvironmentsResult>(
                     new ComposeEnvironmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -671,6 +676,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateApplicationResult> responseHandler = new StaxResponseHandler<CreateApplicationResult>(
                     new CreateApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -773,6 +779,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateApplicationVersionResult> responseHandler = new StaxResponseHandler<CreateApplicationVersionResult>(
                     new CreateApplicationVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -860,6 +867,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateConfigurationTemplateResult> responseHandler = new StaxResponseHandler<CreateConfigurationTemplateResult>(
                     new CreateConfigurationTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -918,6 +926,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateEnvironmentResult> responseHandler = new StaxResponseHandler<CreateEnvironmentResult>(
                     new CreateEnvironmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -979,6 +988,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreatePlatformVersionResult> responseHandler = new StaxResponseHandler<CreatePlatformVersionResult>(
                     new CreatePlatformVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1042,6 +1052,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateStorageLocationResult> responseHandler = new StaxResponseHandler<CreateStorageLocationResult>(
                     new CreateStorageLocationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1111,6 +1122,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DeleteApplicationResult> responseHandler = new StaxResponseHandler<DeleteApplicationResult>(
                     new DeleteApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1198,6 +1210,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DeleteApplicationVersionResult> responseHandler = new StaxResponseHandler<DeleteApplicationVersionResult>(
                     new DeleteApplicationVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1262,6 +1275,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DeleteConfigurationTemplateResult> responseHandler = new StaxResponseHandler<DeleteConfigurationTemplateResult>(
                     new DeleteConfigurationTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1323,6 +1337,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DeleteEnvironmentConfigurationResult> responseHandler = new StaxResponseHandler<DeleteEnvironmentConfigurationResult>(
                     new DeleteEnvironmentConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1386,6 +1401,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DeletePlatformVersionResult> responseHandler = new StaxResponseHandler<DeletePlatformVersionResult>(
                     new DeletePlatformVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1445,6 +1461,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1500,6 +1517,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeApplicationVersionsResult> responseHandler = new StaxResponseHandler<DescribeApplicationVersionsResult>(
                     new DescribeApplicationVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1560,6 +1578,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeApplicationsResult> responseHandler = new StaxResponseHandler<DescribeApplicationsResult>(
                     new DescribeApplicationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1624,6 +1643,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeConfigurationOptionsResult> responseHandler = new StaxResponseHandler<DescribeConfigurationOptionsResult>(
                     new DescribeConfigurationOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1698,6 +1718,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeConfigurationSettingsResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSettingsResult>(
                     new DescribeConfigurationSettingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1759,6 +1780,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEnvironmentHealthResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentHealthResult>(
                     new DescribeEnvironmentHealthResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1819,6 +1841,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult>(
                     new DescribeEnvironmentManagedActionHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1878,6 +1901,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEnvironmentManagedActionsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionsResult>(
                     new DescribeEnvironmentManagedActionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1935,6 +1959,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEnvironmentResourcesResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentResourcesResult>(
                     new DescribeEnvironmentResourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1990,6 +2015,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEnvironmentsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentsResult>(
                     new DescribeEnvironmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2055,6 +2081,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2122,6 +2149,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribeInstancesHealthResult> responseHandler = new StaxResponseHandler<DescribeInstancesHealthResult>(
                     new DescribeInstancesHealthResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2186,6 +2214,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribePlatformVersionResult> responseHandler = new StaxResponseHandler<DescribePlatformVersionResult>(
                     new DescribePlatformVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2250,6 +2279,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DisassociateEnvironmentOperationsRoleResult> responseHandler = new StaxResponseHandler<DisassociateEnvironmentOperationsRoleResult>(
                     new DisassociateEnvironmentOperationsRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2305,6 +2335,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ListAvailableSolutionStacksResult> responseHandler = new StaxResponseHandler<ListAvailableSolutionStacksResult>(
                     new ListAvailableSolutionStacksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2370,6 +2401,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ListPlatformBranchesResult> responseHandler = new StaxResponseHandler<ListPlatformBranchesResult>(
                     new ListPlatformBranchesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2435,6 +2467,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ListPlatformVersionsResult> responseHandler = new StaxResponseHandler<ListPlatformVersionsResult>(
                     new ListPlatformVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2501,6 +2534,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2558,6 +2592,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<RebuildEnvironmentResult> responseHandler = new StaxResponseHandler<RebuildEnvironmentResult>(
                     new RebuildEnvironmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2634,6 +2669,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<RequestEnvironmentInfoResult> responseHandler = new StaxResponseHandler<RequestEnvironmentInfoResult>(
                     new RequestEnvironmentInfoResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2688,6 +2724,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<RestartAppServerResult> responseHandler = new StaxResponseHandler<RestartAppServerResult>(
                     new RestartAppServerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2753,6 +2790,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<RetrieveEnvironmentInfoResult> responseHandler = new StaxResponseHandler<RetrieveEnvironmentInfoResult>(
                     new RetrieveEnvironmentInfoResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2808,6 +2846,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<SwapEnvironmentCNAMEsResult> responseHandler = new StaxResponseHandler<SwapEnvironmentCNAMEsResult>(
                     new SwapEnvironmentCNAMEsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2870,6 +2909,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<TerminateEnvironmentResult> responseHandler = new StaxResponseHandler<TerminateEnvironmentResult>(
                     new TerminateEnvironmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2931,6 +2971,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateApplicationResult> responseHandler = new StaxResponseHandler<UpdateApplicationResult>(
                     new UpdateApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2990,6 +3031,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateApplicationResourceLifecycleResult> responseHandler = new StaxResponseHandler<UpdateApplicationResourceLifecycleResult>(
                     new UpdateApplicationResourceLifecycleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3050,6 +3092,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateApplicationVersionResult> responseHandler = new StaxResponseHandler<UpdateApplicationVersionResult>(
                     new UpdateApplicationVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3125,6 +3168,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateConfigurationTemplateResult> responseHandler = new StaxResponseHandler<UpdateConfigurationTemplateResult>(
                     new UpdateConfigurationTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3194,6 +3238,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateEnvironmentResult> responseHandler = new StaxResponseHandler<UpdateEnvironmentResult>(
                     new UpdateEnvironmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3293,6 +3338,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateTagsForResourceResult> responseHandler = new StaxResponseHandler<UpdateTagsForResourceResult>(
                     new UpdateTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3357,6 +3403,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ValidateConfigurationSettingsResult> responseHandler = new StaxResponseHandler<ValidateConfigurationSettingsResult>(
                     new ValidateConfigurationSettingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

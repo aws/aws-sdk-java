@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Endpoints to specify as part of a SIP media application.
+ * The endpoint assigned to the SIP media application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipMediaApplicationEndpoint" target="_top">AWS
@@ -30,21 +30,21 @@ public class SipMediaApplicationEndpoint implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media application is
-     * created.
+     * Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as
+     * the SIP media application.
      * </p>
      */
     private String lambdaArn;
 
     /**
      * <p>
-     * Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media application is
-     * created.
+     * Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as
+     * the SIP media application.
      * </p>
      * 
      * @param lambdaArn
-     *        Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media
-     *        application is created.
+     *        Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS
+     *        Region as the SIP media application.
      */
 
     public void setLambdaArn(String lambdaArn) {
@@ -53,12 +53,12 @@ public class SipMediaApplicationEndpoint implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media application is
-     * created.
+     * Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as
+     * the SIP media application.
      * </p>
      * 
-     * @return Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media
-     *         application is created.
+     * @return Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS
+     *         Region as the SIP media application.
      */
 
     public String getLambdaArn() {
@@ -67,13 +67,13 @@ public class SipMediaApplicationEndpoint implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media application is
-     * created.
+     * Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as
+     * the SIP media application.
      * </p>
      * 
      * @param lambdaArn
-     *        Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where the SIP media
-     *        application is created.
+     *        Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS
+     *        Region as the SIP media application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

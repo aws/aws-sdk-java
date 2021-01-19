@@ -354,6 +354,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<CancelJobResult> responseHandler = new StaxResponseHandler<CancelJobResult>(new CancelJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -444,6 +445,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<CreateJobResult> responseHandler = new StaxResponseHandler<CreateJobResult>(new CreateJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -510,6 +512,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
 
             StaxResponseHandler<GetShippingLabelResult> responseHandler = new StaxResponseHandler<GetShippingLabelResult>(
                     new GetShippingLabelResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -573,6 +576,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<GetStatusResult> responseHandler = new StaxResponseHandler<GetStatusResult>(new GetStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -632,6 +636,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<ListJobsResult> responseHandler = new StaxResponseHandler<ListJobsResult>(new ListJobsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -730,6 +735,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<UpdateJobResult> responseHandler = new StaxResponseHandler<UpdateJobResult>(new UpdateJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The SIP media application details, including name and endpoints. An AWS account can have multiple SIP media
+ * The details of the SIP media application, including name and endpoints. An AWS account can have multiple SIP media
  * applications.
  * </p>
  * 

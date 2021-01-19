@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class IssueCertificateRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> APIPASSTHROUGH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApiPassthrough").build();
     private static final MarshallingInfo<String> CERTIFICATEAUTHORITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityArn").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> CSR_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
@@ -37,6 +39,8 @@ public class IssueCertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
     private static final MarshallingInfo<StructuredPojo> VALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Validity").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDITYNOTBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidityNotBefore").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
 
@@ -56,11 +60,13 @@ public class IssueCertificateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(issueCertificateRequest.getApiPassthrough(), APIPASSTHROUGH_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getCertificateAuthorityArn(), CERTIFICATEAUTHORITYARN_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getCsr(), CSR_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getSigningAlgorithm(), SIGNINGALGORITHM_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getTemplateArn(), TEMPLATEARN_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getValidity(), VALIDITY_BINDING);
+            protocolMarshaller.marshall(issueCertificateRequest.getValidityNotBefore(), VALIDITYNOTBEFORE_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

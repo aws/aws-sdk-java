@@ -25,18 +25,18 @@ public class DescribeAppInstanceUserResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      */
     private AppInstanceUser appInstanceUser;
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUser
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUser(AppInstanceUser appInstanceUser) {
@@ -45,10 +45,10 @@ public class DescribeAppInstanceUserResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
-     * @return The name of the app instance user.
+     * @return The name of the <code>AppInstanceUser</code>.
      */
 
     public AppInstanceUser getAppInstanceUser() {
@@ -57,11 +57,11 @@ public class DescribeAppInstanceUserResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the app instance user.
+     * The name of the <code>AppInstanceUser</code>.
      * </p>
      * 
      * @param appInstanceUser
-     *        The name of the app instance user.
+     *        The name of the <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

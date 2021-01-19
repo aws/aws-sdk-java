@@ -27,7 +27,7 @@ public class PutSipMediaApplicationLoggingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the specified SIP media application
+     * The SIP media application ID.
      * </p>
      */
     private String sipMediaApplicationId;
@@ -40,11 +40,11 @@ public class PutSipMediaApplicationLoggingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the specified SIP media application
+     * The SIP media application ID.
      * </p>
      * 
      * @param sipMediaApplicationId
-     *        The ID of the specified SIP media application
+     *        The SIP media application ID.
      */
 
     public void setSipMediaApplicationId(String sipMediaApplicationId) {
@@ -53,10 +53,10 @@ public class PutSipMediaApplicationLoggingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the specified SIP media application
+     * The SIP media application ID.
      * </p>
      * 
-     * @return The ID of the specified SIP media application
+     * @return The SIP media application ID.
      */
 
     public String getSipMediaApplicationId() {
@@ -65,11 +65,11 @@ public class PutSipMediaApplicationLoggingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the specified SIP media application
+     * The SIP media application ID.
      * </p>
      * 
      * @param sipMediaApplicationId
-     *        The ID of the specified SIP media application
+     *        The SIP media application ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,20 +33,19 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values
-     * are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     * <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * </p>
      */
     private String triggerType;
     /**
      * <p>
-     * If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host name of an
-     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then the value can be a
-     * customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a
-     * host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-     * outbound hostname of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>,
-     * then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP
-     * application requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     * If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an
+     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a
+     * customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     * <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     * <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     * <code>ToPhoneNumber</code> value.
      * </p>
      */
     private String triggerValue;
@@ -105,13 +104,13 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values
-     * are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     * <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * </p>
      * 
      * @param triggerType
-     *        The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger
-     *        values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     *        The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     *        <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * @see SipRuleTriggerType
      */
 
@@ -121,12 +120,12 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values
-     * are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     * <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * </p>
      * 
-     * @return The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger
-     *         values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * @return The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     *         <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * @see SipRuleTriggerType
      */
 
@@ -136,13 +135,13 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values
-     * are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     * <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * </p>
      * 
      * @param triggerType
-     *        The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger
-     *        values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     *        The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     *        <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SipRuleTriggerType
      */
@@ -154,13 +153,13 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger values
-     * are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     * The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     * <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * </p>
      * 
      * @param triggerType
-     *        The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>. Allowed trigger
-     *        values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+     *        The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+     *        <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SipRuleTriggerType
      */
@@ -172,24 +171,21 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host name of an
-     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then the value can be a
-     * customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a
-     * host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-     * outbound hostname of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>,
-     * then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP
-     * application requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     * If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an
+     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a
+     * customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     * <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     * <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     * <code>ToPhoneNumber</code> value.
      * </p>
      * 
      * @param triggerValue
-     *        If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host
-     *        name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then
-     *        the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the
-     *        SIP application requests a host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>,
-     *        then the value can be the outbound hostname of an Amazon Chime Voice Connector. If
-     *        <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone
-     *        number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a host name, or a
-     *        <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     *        If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of
+     *        an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can
+     *        be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     *        <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     *        <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     *        <code>ToPhoneNumber</code> value.
      */
 
     public void setTriggerValue(String triggerValue) {
@@ -198,23 +194,20 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host name of an
-     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then the value can be a
-     * customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a
-     * host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-     * outbound hostname of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>,
-     * then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP
-     * application requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     * If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an
+     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a
+     * customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     * <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     * <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     * <code>ToPhoneNumber</code> value.
      * </p>
      * 
-     * @return If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host
-     *         name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then
-     *         the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the
-     *         SIP application requests a host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>
-     *         , then the value can be the outbound hostname of an Amazon Chime Voice Connector. If
-     *         <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone
-     *         number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a host name, or
-     *         a <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     * @return If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name
+     *         of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value
+     *         can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified
+     *         in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     *         <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     *         <code>ToPhoneNumber</code> value.
      */
 
     public String getTriggerValue() {
@@ -223,24 +216,21 @@ public class CreateSipRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host name of an
-     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then the value can be a
-     * customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a
-     * host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-     * outbound hostname of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>,
-     * then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the SIP
-     * application requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     * If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an
+     * Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a
+     * customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     * <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     * <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     * <code>ToPhoneNumber</code> value.
      * </p>
      * 
      * @param triggerValue
-     *        If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can be the outbound host
-     *        name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code> then
-     *        the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered if the
-     *        SIP application requests a host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>,
-     *        then the value can be the outbound hostname of an Amazon Chime Voice Connector. If
-     *        <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone
-     *        number in E164 format. <code>SipRule</code> is triggered if the SIP application requests a host name, or a
-     *        <code>ToPhoneNumber</code> value matches the incoming SIP request.
+     *        If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of
+     *        an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can
+     *        be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the
+     *        <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the
+     *        <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+     *        <code>ToPhoneNumber</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

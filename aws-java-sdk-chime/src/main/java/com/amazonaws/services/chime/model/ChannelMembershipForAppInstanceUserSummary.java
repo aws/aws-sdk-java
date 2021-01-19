@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns the channel membership summary data for an app instance.
+ * Summary of the channel membership details of an <code>AppInstanceUser</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembershipForAppInstanceUserSummary"
@@ -31,7 +31,7 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     private ChannelSummary channelSummary;
     /**
      * <p>
-     * Returns the channel membership data for an app instance.
+     * Returns the channel membership data for an <code>AppInstance</code>.
      * </p>
      */
     private AppInstanceUserMembershipSummary appInstanceUserMembershipSummary;
@@ -64,11 +64,11 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
 
     /**
      * <p>
-     * Returns the channel membership data for an app instance.
+     * Returns the channel membership data for an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceUserMembershipSummary
-     *        Returns the channel membership data for an app instance.
+     *        Returns the channel membership data for an <code>AppInstance</code>.
      */
 
     public void setAppInstanceUserMembershipSummary(AppInstanceUserMembershipSummary appInstanceUserMembershipSummary) {
@@ -77,10 +77,10 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
 
     /**
      * <p>
-     * Returns the channel membership data for an app instance.
+     * Returns the channel membership data for an <code>AppInstance</code>.
      * </p>
      * 
-     * @return Returns the channel membership data for an app instance.
+     * @return Returns the channel membership data for an <code>AppInstance</code>.
      */
 
     public AppInstanceUserMembershipSummary getAppInstanceUserMembershipSummary() {
@@ -89,11 +89,11 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
 
     /**
      * <p>
-     * Returns the channel membership data for an app instance.
+     * Returns the channel membership data for an <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceUserMembershipSummary
-     *        Returns the channel membership data for an app instance.
+     *        Returns the channel membership data for an <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

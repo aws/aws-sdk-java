@@ -27,30 +27,36 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the app instance.
+     * The name of the <code>AppInstance</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      * </p>
      */
     private String metadata;
     /**
      * <p>
-     * The <code>ClientRequestToken</code> of the app instance.
+     * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * Tags assigned to the <code>AppInstanceUser</code>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the app instance.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance.
+     *        The name of the <code>AppInstance</code>.
      */
 
     public void setName(String name) {
@@ -59,10 +65,10 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the app instance.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The name of the app instance.
+     * @return The name of the <code>AppInstance</code>.
      */
 
     public String getName() {
@@ -71,11 +77,11 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the app instance.
+     * The name of the <code>AppInstance</code>.
      * </p>
      * 
      * @param name
-     *        The name of the app instance.
+     *        The name of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +92,11 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     *        The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      */
 
     public void setMetadata(String metadata) {
@@ -99,10 +105,10 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      * </p>
      * 
-     * @return The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     * @return The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      */
 
     public String getMetadata() {
@@ -111,11 +117,11 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      * </p>
      * 
      * @param metadata
-     *        The metadata of the app instance. Limited to a 1KB string in UTF-8.
+     *        The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +132,11 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <code>ClientRequestToken</code> of the app instance.
+     * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      * </p>
      * 
      * @param clientRequestToken
-     *        The <code>ClientRequestToken</code> of the app instance.
+     *        The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -139,10 +145,10 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <code>ClientRequestToken</code> of the app instance.
+     * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The <code>ClientRequestToken</code> of the app instance.
+     * @return The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      */
 
     public String getClientRequestToken() {
@@ -151,16 +157,86 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <code>ClientRequestToken</code> of the app instance.
+     * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      * </p>
      * 
      * @param clientRequestToken
-     *        The <code>ClientRequestToken</code> of the app instance.
+     *        The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAppInstanceRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @return Tags assigned to the <code>AppInstanceUser</code>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags assigned to the <code>AppInstanceUser</code>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the <code>AppInstanceUser</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags assigned to the <code>AppInstanceUser</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppInstanceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags assigned to the <code>AppInstanceUser</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppInstanceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -181,7 +257,9 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMetadata() != null)
             sb.append("Metadata: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***");
+            sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +286,10 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +301,7 @@ public class CreateAppInstanceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

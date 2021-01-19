@@ -27,24 +27,24 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of app instances that you want to return.
+     * The maximum number of <code>AppInstance</code>s that you want to return.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token passed by previous API requests until you reach the maximum number of app instances.
+     * The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The maximum number of app instances that you want to return.
+     * The maximum number of <code>AppInstance</code>s that you want to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of app instances that you want to return.
+     *        The maximum number of <code>AppInstance</code>s that you want to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +53,10 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of app instances that you want to return.
+     * The maximum number of <code>AppInstance</code>s that you want to return.
      * </p>
      * 
-     * @return The maximum number of app instances that you want to return.
+     * @return The maximum number of <code>AppInstance</code>s that you want to return.
      */
 
     public Integer getMaxResults() {
@@ -65,11 +65,11 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of app instances that you want to return.
+     * The maximum number of <code>AppInstance</code>s that you want to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of app instances that you want to return.
+     *        The maximum number of <code>AppInstance</code>s that you want to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token passed by previous API requests until you reach the maximum number of app instances.
+     * The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      * </p>
      * 
      * @param nextToken
-     *        The token passed by previous API requests until you reach the maximum number of app instances.
+     *        The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      */
 
     public void setNextToken(String nextToken) {
@@ -93,10 +93,11 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token passed by previous API requests until you reach the maximum number of app instances.
+     * The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      * </p>
      * 
-     * @return The token passed by previous API requests until you reach the maximum number of app instances.
+     * @return The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>
+     *         s.
      */
 
     public String getNextToken() {
@@ -105,11 +106,11 @@ public class ListAppInstancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token passed by previous API requests until you reach the maximum number of app instances.
+     * The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      * </p>
      * 
      * @param nextToken
-     *        The token passed by previous API requests until you reach the maximum number of app instances.
+     *        The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

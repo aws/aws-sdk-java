@@ -27,14 +27,14 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      */
     private String appInstanceArn;
     /**
      * <p>
      * The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     * private channels. Only an app instance administrator can retrieve private channels.
+     * private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * </p>
      */
     private String privacy;
@@ -50,14 +50,20 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     */
+    private String chimeBearer;
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      */
 
     public void setAppInstanceArn(String appInstanceArn) {
@@ -66,10 +72,10 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
-     * @return The ARN of the app instance.
+     * @return The ARN of the <code>AppInstance</code>.
      */
 
     public String getAppInstanceArn() {
@@ -78,11 +84,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the app instance.
+     * The ARN of the <code>AppInstance</code>.
      * </p>
      * 
      * @param appInstanceArn
-     *        The ARN of the app instance.
+     *        The ARN of the <code>AppInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,12 +100,12 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     * private channels. Only an app instance administrator can retrieve private channels.
+     * private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * </p>
      * 
      * @param privacy
      *        The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     *        private channels. Only an app instance administrator can retrieve private channels.
+     *        private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * @see ChannelPrivacy
      */
 
@@ -110,11 +116,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     * private channels. Only an app instance administrator can retrieve private channels.
+     * private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * </p>
      * 
      * @return The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
-     *         retrieves private channels. Only an app instance administrator can retrieve private channels.
+     *         retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * @see ChannelPrivacy
      */
 
@@ -125,12 +131,12 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     * private channels. Only an app instance administrator can retrieve private channels.
+     * private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * </p>
      * 
      * @param privacy
      *        The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     *        private channels. Only an app instance administrator can retrieve private channels.
+     *        private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -143,12 +149,12 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     * private channels. Only an app instance administrator can retrieve private channels.
+     * private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * </p>
      * 
      * @param privacy
      *        The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves
-     *        private channels. Only an app instance administrator can retrieve private channels.
+     *        private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelPrivacy
      */
@@ -239,6 +245,46 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public void setChimeBearer(String chimeBearer) {
+        this.chimeBearer = chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     */
+
+    public String getChimeBearer() {
+        return this.chimeBearer;
+    }
+
+    /**
+     * <p>
+     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * </p>
+     * 
+     * @param chimeBearer
+     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChannelsRequest withChimeBearer(String chimeBearer) {
+        setChimeBearer(chimeBearer);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -257,7 +303,9 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append("***Sensitive Data Redacted***");
+            sb.append("NextToken: ").append("***Sensitive Data Redacted***").append(",");
+        if (getChimeBearer() != null)
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +336,10 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getChimeBearer() == null ^ this.getChimeBearer() == null)
+            return false;
+        if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +352,7 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPrivacy() == null) ? 0 : getPrivacy().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         return hashCode;
     }
 

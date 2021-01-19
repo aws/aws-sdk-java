@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The length of time in days to retain messages.
+ * The details of the data-retention settings for an <code>AppInstance</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceRetentionSettings" target="_top">AWS
@@ -30,18 +30,18 @@ public class AppInstanceRetentionSettings implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The length of time in days to retain a channel.
+     * The length of time in days to retain the messages in a channel.
      * </p>
      */
     private ChannelRetentionSettings channelRetentionSettings;
 
     /**
      * <p>
-     * The length of time in days to retain a channel.
+     * The length of time in days to retain the messages in a channel.
      * </p>
      * 
      * @param channelRetentionSettings
-     *        The length of time in days to retain a channel.
+     *        The length of time in days to retain the messages in a channel.
      */
 
     public void setChannelRetentionSettings(ChannelRetentionSettings channelRetentionSettings) {
@@ -50,10 +50,10 @@ public class AppInstanceRetentionSettings implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The length of time in days to retain a channel.
+     * The length of time in days to retain the messages in a channel.
      * </p>
      * 
-     * @return The length of time in days to retain a channel.
+     * @return The length of time in days to retain the messages in a channel.
      */
 
     public ChannelRetentionSettings getChannelRetentionSettings() {
@@ -62,11 +62,11 @@ public class AppInstanceRetentionSettings implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The length of time in days to retain a channel.
+     * The length of time in days to retain the messages in a channel.
      * </p>
      * 
      * @param channelRetentionSettings
-     *        The length of time in days to retain a channel.
+     *        The length of time in days to retain the messages in a channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

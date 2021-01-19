@@ -358,6 +358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult>(
                     new AcceptReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -416,6 +417,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult>(
                     new AcceptTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -473,6 +475,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayPeeringAttachmentResult>(
                     new AcceptTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -533,6 +536,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayVpcAttachmentResult>(
                     new AcceptTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -587,6 +591,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<AcceptVpcEndpointConnectionsResult>(
                     new AcceptVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -647,6 +652,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<AcceptVpcPeeringConnectionResult>(
                     new AcceptVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -724,6 +730,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AdvertiseByoipCidrResult> responseHandler = new StaxResponseHandler<AdvertiseByoipCidrResult>(
                     new AdvertiseByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -805,6 +812,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AllocateAddressResult> responseHandler = new StaxResponseHandler<AllocateAddressResult>(
                     new AllocateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -864,6 +872,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<AllocateHostsResult> responseHandler = new StaxResponseHandler<AllocateHostsResult>(new AllocateHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -922,6 +931,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult>(
                     new ApplySecurityGroupsToClientVpnTargetNetworkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -984,6 +994,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssignIpv6AddressesResult> responseHandler = new StaxResponseHandler<AssignIpv6AddressesResult>(
                     new AssignIpv6AddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1060,6 +1071,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<AssignPrivateIpAddressesResult>(
                     new AssignPrivateIpAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1148,6 +1160,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateAddressResult> responseHandler = new StaxResponseHandler<AssociateAddressResult>(
                     new AssociateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1210,6 +1223,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<AssociateClientVpnTargetNetworkResult>(
                     new AssociateClientVpnTargetNetworkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1275,6 +1289,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateDhcpOptionsResult> responseHandler = new StaxResponseHandler<AssociateDhcpOptionsResult>(
                     new AssociateDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1348,6 +1363,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult>(
                     new AssociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1403,6 +1419,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<AssociateIamInstanceProfileResult>(
                     new AssociateIamInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1464,6 +1481,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateRouteTableResult> responseHandler = new StaxResponseHandler<AssociateRouteTableResult>(
                     new AssociateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1519,6 +1537,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateSubnetCidrBlockResult>(
                     new AssociateSubnetCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1581,6 +1600,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<AssociateTransitGatewayMulticastDomainResult>(
                     new AssociateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1637,6 +1657,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<AssociateTransitGatewayRouteTableResult>(
                     new AssociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1703,6 +1724,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateVpcCidrBlockResult>(
                     new AssociateVpcCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1767,6 +1789,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<AttachClassicLinkVpcResult>(
                     new AttachClassicLinkVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1823,6 +1846,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachInternetGatewayResult> responseHandler = new StaxResponseHandler<AttachInternetGatewayResult>(
                     new AttachInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1878,6 +1902,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<AttachNetworkInterfaceResult>(
                     new AttachNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1973,6 +1998,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<AttachVolumeResult> responseHandler = new StaxResponseHandler<AttachVolumeResult>(new AttachVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2032,6 +2058,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachVpnGatewayResult> responseHandler = new StaxResponseHandler<AttachVpnGatewayResult>(
                     new AttachVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2088,6 +2115,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeClientVpnIngressResult> responseHandler = new StaxResponseHandler<AuthorizeClientVpnIngressResult>(
                     new AuthorizeClientVpnIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2158,6 +2186,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupEgressResult>(
                     new AuthorizeSecurityGroupEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2229,6 +2258,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupIngressResult>(
                     new AuthorizeSecurityGroupIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2293,6 +2323,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<BundleInstanceResult> responseHandler = new StaxResponseHandler<BundleInstanceResult>(
                     new BundleInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2348,6 +2379,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelBundleTaskResult> responseHandler = new StaxResponseHandler<CancelBundleTaskResult>(
                     new CancelBundleTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2409,6 +2441,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelCapacityReservationResult> responseHandler = new StaxResponseHandler<CancelCapacityReservationResult>(
                     new CancelCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2470,6 +2503,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelConversionTaskResult> responseHandler = new StaxResponseHandler<CancelConversionTaskResult>(
                     new CancelConversionTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2526,6 +2560,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
                     new CancelExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2580,6 +2615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelImportTaskResult> responseHandler = new StaxResponseHandler<CancelImportTaskResult>(
                     new CancelImportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2645,6 +2681,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CancelReservedInstancesListingResult>(
                     new CancelReservedInstancesListingResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2707,6 +2744,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotFleetRequestsResult>(
                     new CancelSpotFleetRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2767,6 +2805,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotInstanceRequestsResult>(
                     new CancelSpotInstanceRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2823,6 +2862,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ConfirmProductInstanceResult> responseHandler = new StaxResponseHandler<ConfirmProductInstanceResult>(
                     new ConfirmProductInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2876,6 +2916,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopyFpgaImageResult> responseHandler = new StaxResponseHandler<CopyFpgaImageResult>(new CopyFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2941,6 +2982,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopyImageResult> responseHandler = new StaxResponseHandler<CopyImageResult>(new CopyImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3014,6 +3056,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopySnapshotResult> responseHandler = new StaxResponseHandler<CopySnapshotResult>(new CopySnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3090,6 +3133,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCapacityReservationResult> responseHandler = new StaxResponseHandler<CreateCapacityReservationResult>(
                     new CreateCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3146,6 +3190,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCarrierGatewayResult> responseHandler = new StaxResponseHandler<CreateCarrierGatewayResult>(
                     new CreateCarrierGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3201,6 +3246,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateClientVpnEndpointResult> responseHandler = new StaxResponseHandler<CreateClientVpnEndpointResult>(
                     new CreateClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3257,6 +3303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateClientVpnRouteResult> responseHandler = new StaxResponseHandler<CreateClientVpnRouteResult>(
                     new CreateClientVpnRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3358,6 +3405,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCustomerGatewayResult> responseHandler = new StaxResponseHandler<CreateCustomerGatewayResult>(
                     new CreateCustomerGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3415,6 +3463,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDefaultSubnetResult> responseHandler = new StaxResponseHandler<CreateDefaultSubnetResult>(
                     new CreateDefaultSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3483,6 +3532,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDefaultVpcResult> responseHandler = new StaxResponseHandler<CreateDefaultVpcResult>(
                     new CreateDefaultVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3587,6 +3637,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDhcpOptionsResult> responseHandler = new StaxResponseHandler<CreateDhcpOptionsResult>(
                     new CreateDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3644,6 +3695,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateEgressOnlyInternetGatewayResult>(
                     new CreateEgressOnlyInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3705,6 +3757,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateFleetResult> responseHandler = new StaxResponseHandler<CreateFleetResult>(new CreateFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3775,6 +3828,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateFlowLogsResult> responseHandler = new StaxResponseHandler<CreateFlowLogsResult>(
                     new CreateFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3837,6 +3891,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateFpgaImageResult> responseHandler = new StaxResponseHandler<CreateFpgaImageResult>(
                     new CreateFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3900,6 +3955,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateImageResult> responseHandler = new StaxResponseHandler<CreateImageResult>(new CreateImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3960,6 +4016,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateInstanceExportTaskResult> responseHandler = new StaxResponseHandler<CreateInstanceExportTaskResult>(
                     new CreateInstanceExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4019,6 +4076,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateInternetGatewayResult>(
                     new CreateInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4090,6 +4148,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateKeyPairResult> responseHandler = new StaxResponseHandler<CreateKeyPairResult>(new CreateKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4148,6 +4207,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLaunchTemplateResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateResult>(
                     new CreateLaunchTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4212,6 +4272,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLaunchTemplateVersionResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateVersionResult>(
                     new CreateLaunchTemplateVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4266,6 +4327,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLocalGatewayRouteResult> responseHandler = new StaxResponseHandler<CreateLocalGatewayRouteResult>(
                     new CreateLocalGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4322,6 +4384,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLocalGatewayRouteTableVpcAssociationResult> responseHandler = new StaxResponseHandler<CreateLocalGatewayRouteTableVpcAssociationResult>(
                     new CreateLocalGatewayRouteTableVpcAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4381,6 +4444,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateManagedPrefixListResult> responseHandler = new StaxResponseHandler<CreateManagedPrefixListResult>(
                     new CreateManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4440,6 +4504,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNatGatewayResult> responseHandler = new StaxResponseHandler<CreateNatGatewayResult>(
                     new CreateNatGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4499,6 +4564,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkAclResult> responseHandler = new StaxResponseHandler<CreateNetworkAclResult>(
                     new CreateNetworkAclResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4570,6 +4636,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkAclEntryResult> responseHandler = new StaxResponseHandler<CreateNetworkAclEntryResult>(
                     new CreateNetworkAclEntryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4629,6 +4696,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<CreateNetworkInsightsPathResult>(
                     new CreateNetworkInsightsPathResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4689,6 +4757,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkInterfaceResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfaceResult>(
                     new CreateNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4749,6 +4818,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfacePermissionResult>(
                     new CreateNetworkInterfacePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4815,6 +4885,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreatePlacementGroupResult> responseHandler = new StaxResponseHandler<CreatePlacementGroupResult>(
                     new CreatePlacementGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4895,6 +4966,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CreateReservedInstancesListingResult>(
                     new CreateReservedInstancesListingResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4978,6 +5050,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateRouteResult> responseHandler = new StaxResponseHandler<CreateRouteResult>(new CreateRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5037,6 +5110,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateRouteTableResult> responseHandler = new StaxResponseHandler<CreateRouteTableResult>(
                     new CreateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5117,6 +5191,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSecurityGroupResult> responseHandler = new StaxResponseHandler<CreateSecurityGroupResult>(
                     new CreateSecurityGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5205,6 +5280,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSnapshotResult> responseHandler = new StaxResponseHandler<CreateSnapshotResult>(
                     new CreateSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5261,6 +5337,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSnapshotsResult> responseHandler = new StaxResponseHandler<CreateSnapshotsResult>(
                     new CreateSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5319,6 +5396,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<CreateSpotDatafeedSubscriptionResult>(
                     new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5399,6 +5477,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateSubnetResult> responseHandler = new StaxResponseHandler<CreateSubnetResult>(new CreateSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5462,6 +5541,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(new CreateTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5527,6 +5607,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterResult>(
                     new CreateTrafficMirrorFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5587,6 +5668,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterRuleResult>(
                     new CreateTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5655,6 +5737,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorSessionResult>(
                     new CreateTrafficMirrorSessionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5722,6 +5805,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorTargetResult>(
                     new CreateTrafficMirrorTargetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5797,6 +5881,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayResult>(
                     new CreateTransitGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5855,6 +5940,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectResult>(
                     new CreateTransitGatewayConnectResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5919,6 +6005,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectPeerResult>(
                     new CreateTransitGatewayConnectPeerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5980,6 +6067,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayMulticastDomainResult>(
                     new CreateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6042,6 +6130,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayPeeringAttachmentResult>(
                     new CreateTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6098,6 +6187,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayPrefixListReferenceResult>(
                     new CreateTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6152,6 +6242,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayRouteResult>(
                     new CreateTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6206,6 +6297,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayRouteTableResult>(
                     new CreateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6268,6 +6360,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult>(
                     new CreateTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6341,6 +6434,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateVolumeResult> responseHandler = new StaxResponseHandler<CreateVolumeResult>(new CreateVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6415,6 +6509,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateVpcResult> responseHandler = new StaxResponseHandler<CreateVpcResult>(new CreateVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6490,6 +6585,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointResult>(
                     new CreateVpcEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6552,6 +6648,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult>(
                     new CreateVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6635,6 +6732,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult>(
                     new CreateVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6706,6 +6804,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<CreateVpcPeeringConnectionResult>(
                     new CreateVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6788,6 +6887,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnConnectionResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionResult>(
                     new CreateVpnConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6849,6 +6949,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionRouteResult>(
                     new CreateVpnConnectionRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6909,6 +7010,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnGatewayResult> responseHandler = new StaxResponseHandler<CreateVpnGatewayResult>(
                     new CreateVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6970,6 +7072,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteCarrierGatewayResult> responseHandler = new StaxResponseHandler<DeleteCarrierGatewayResult>(
                     new DeleteCarrierGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7025,6 +7128,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteClientVpnEndpointResult> responseHandler = new StaxResponseHandler<DeleteClientVpnEndpointResult>(
                     new DeleteClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7082,6 +7186,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteClientVpnRouteResult> responseHandler = new StaxResponseHandler<DeleteClientVpnRouteResult>(
                     new DeleteClientVpnRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7138,6 +7243,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteCustomerGatewayResult> responseHandler = new StaxResponseHandler<DeleteCustomerGatewayResult>(
                     new DeleteCustomerGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7194,6 +7300,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteDhcpOptionsResult> responseHandler = new StaxResponseHandler<DeleteDhcpOptionsResult>(
                     new DeleteDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7249,6 +7356,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult>(
                     new DeleteEgressOnlyInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7337,6 +7445,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteFleetsResult> responseHandler = new StaxResponseHandler<DeleteFleetsResult>(new DeleteFleetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7391,6 +7500,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteFlowLogsResult> responseHandler = new StaxResponseHandler<DeleteFlowLogsResult>(
                     new DeleteFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7445,6 +7555,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteFpgaImageResult> responseHandler = new StaxResponseHandler<DeleteFpgaImageResult>(
                     new DeleteFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7500,6 +7611,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteInternetGatewayResult>(
                     new DeleteInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7553,6 +7665,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteKeyPairResult> responseHandler = new StaxResponseHandler<DeleteKeyPairResult>(new DeleteKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7607,6 +7720,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLaunchTemplateResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateResult>(
                     new DeleteLaunchTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7663,6 +7777,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateVersionsResult>(
                     new DeleteLaunchTemplateVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7717,6 +7832,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLocalGatewayRouteResult> responseHandler = new StaxResponseHandler<DeleteLocalGatewayRouteResult>(
                     new DeleteLocalGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7773,6 +7889,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult> responseHandler = new StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult>(
                     new DeleteLocalGatewayRouteTableVpcAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7828,6 +7945,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteManagedPrefixListResult> responseHandler = new StaxResponseHandler<DeleteManagedPrefixListResult>(
                     new DeleteManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7884,6 +8002,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNatGatewayResult> responseHandler = new StaxResponseHandler<DeleteNatGatewayResult>(
                     new DeleteNatGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7939,6 +8058,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkAclResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclResult>(
                     new DeleteNetworkAclResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7993,6 +8113,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkAclEntryResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclEntryResult>(
                     new DeleteNetworkAclEntryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8047,6 +8168,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsAnalysisResult>(
                     new DeleteNetworkInsightsAnalysisResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8101,6 +8223,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsPathResult>(
                     new DeleteNetworkInsightsPathResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8156,6 +8279,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfaceResult>(
                     new DeleteNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8214,6 +8338,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfacePermissionResult>(
                     new DeleteNetworkInterfacePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8271,6 +8396,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeletePlacementGroupResult> responseHandler = new StaxResponseHandler<DeletePlacementGroupResult>(
                     new DeletePlacementGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8325,6 +8451,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteQueuedReservedInstancesResult> responseHandler = new StaxResponseHandler<DeleteQueuedReservedInstancesResult>(
                     new DeleteQueuedReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8378,6 +8505,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteRouteResult> responseHandler = new StaxResponseHandler<DeleteRouteResult>(new DeleteRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8433,6 +8561,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteRouteTableResult> responseHandler = new StaxResponseHandler<DeleteRouteTableResult>(
                     new DeleteRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8492,6 +8621,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteSecurityGroupResult>(
                     new DeleteSecurityGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8561,6 +8691,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSnapshotResult> responseHandler = new StaxResponseHandler<DeleteSnapshotResult>(
                     new DeleteSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8616,6 +8747,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult>(
                     new DeleteSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8675,6 +8807,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteSubnetResult> responseHandler = new StaxResponseHandler<DeleteSubnetResult>(new DeleteSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8733,6 +8866,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8790,6 +8924,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterResult>(
                     new DeleteTrafficMirrorFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8844,6 +8979,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult>(
                     new DeleteTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8898,6 +9034,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorSessionResult>(
                     new DeleteTrafficMirrorSessionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8955,6 +9092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorTargetResult>(
                     new DeleteTrafficMirrorTargetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9009,6 +9147,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayResult>(
                     new DeleteTransitGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9063,6 +9202,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectResult>(
                     new DeleteTransitGatewayConnectResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9118,6 +9258,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectPeerResult>(
                     new DeleteTransitGatewayConnectPeerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9174,6 +9315,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayMulticastDomainResult>(
                     new DeleteTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9230,6 +9372,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayPeeringAttachmentResult>(
                     new DeleteTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9286,6 +9429,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayPrefixListReferenceResult>(
                     new DeleteTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9340,6 +9484,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayRouteResult>(
                     new DeleteTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9395,6 +9540,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayRouteTableResult>(
                     new DeleteTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9450,6 +9596,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayVpcAttachmentResult>(
                     new DeleteTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9512,6 +9659,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteVolumeResult> responseHandler = new StaxResponseHandler<DeleteVolumeResult>(new DeleteVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9568,6 +9716,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteVpcResult> responseHandler = new StaxResponseHandler<DeleteVpcResult>(new DeleteVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9624,6 +9773,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult>(
                     new DeleteVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9682,6 +9832,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult>(
                     new DeleteVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9740,6 +9891,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointsResult>(
                     new DeleteVpcEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9797,6 +9949,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpcPeeringConnectionResult>(
                     new DeleteVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9864,6 +10017,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionResult>(
                     new DeleteVpnConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9921,6 +10075,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionRouteResult>(
                     new DeleteVpnConnectionRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9978,6 +10133,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnGatewayResult> responseHandler = new StaxResponseHandler<DeleteVpnGatewayResult>(
                     new DeleteVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10037,6 +10193,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeprovisionByoipCidrResult> responseHandler = new StaxResponseHandler<DeprovisionByoipCidrResult>(
                     new DeprovisionByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10099,6 +10256,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterImageResult> responseHandler = new StaxResponseHandler<DeregisterImageResult>(
                     new DeregisterImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10158,6 +10316,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult>(
                     new DeregisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10216,6 +10375,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterTransitGatewayMulticastGroupMembersResult> responseHandler = new StaxResponseHandler<DeregisterTransitGatewayMulticastGroupMembersResult>(
                     new DeregisterTransitGatewayMulticastGroupMembersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10274,6 +10434,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterTransitGatewayMulticastGroupSourcesResult> responseHandler = new StaxResponseHandler<DeregisterTransitGatewayMulticastGroupSourcesResult>(
                     new DeregisterTransitGatewayMulticastGroupSourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10367,6 +10528,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10431,6 +10593,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAddressesResult> responseHandler = new StaxResponseHandler<DescribeAddressesResult>(
                     new DescribeAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10507,6 +10670,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAggregateIdFormatResult> responseHandler = new StaxResponseHandler<DescribeAggregateIdFormatResult>(
                     new DescribeAggregateIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10567,6 +10731,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAvailabilityZonesResult> responseHandler = new StaxResponseHandler<DescribeAvailabilityZonesResult>(
                     new DescribeAvailabilityZonesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10633,6 +10798,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeBundleTasksResult> responseHandler = new StaxResponseHandler<DescribeBundleTasksResult>(
                     new DescribeBundleTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10696,6 +10862,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeByoipCidrsResult> responseHandler = new StaxResponseHandler<DescribeByoipCidrsResult>(
                     new DescribeByoipCidrsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10751,6 +10918,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCapacityReservationsResult> responseHandler = new StaxResponseHandler<DescribeCapacityReservationsResult>(
                     new DescribeCapacityReservationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10805,6 +10973,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCarrierGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCarrierGatewaysResult>(
                     new DescribeCarrierGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10861,6 +11030,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClassicLinkInstancesResult> responseHandler = new StaxResponseHandler<DescribeClassicLinkInstancesResult>(
                     new DescribeClassicLinkInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10922,6 +11092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult>(
                     new DescribeClientVpnAuthorizationRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10977,6 +11148,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnConnectionsResult>(
                     new DescribeClientVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11031,6 +11203,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnEndpointsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnEndpointsResult>(
                     new DescribeClientVpnEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11085,6 +11258,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnRoutesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnRoutesResult>(
                     new DescribeClientVpnRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11140,6 +11314,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnTargetNetworksResult> responseHandler = new StaxResponseHandler<DescribeClientVpnTargetNetworksResult>(
                     new DescribeClientVpnTargetNetworksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11194,6 +11369,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCoipPoolsResult> responseHandler = new StaxResponseHandler<DescribeCoipPoolsResult>(
                     new DescribeCoipPoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11253,6 +11429,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeConversionTasksResult> responseHandler = new StaxResponseHandler<DescribeConversionTasksResult>(
                     new DescribeConversionTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11317,6 +11494,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCustomerGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCustomerGatewaysResult>(
                     new DescribeCustomerGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11380,6 +11558,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeDhcpOptionsResult> responseHandler = new StaxResponseHandler<DescribeDhcpOptionsResult>(
                     new DescribeDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11441,6 +11620,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult>(
                     new DescribeEgressOnlyInternetGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11497,6 +11677,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeElasticGpusResult> responseHandler = new StaxResponseHandler<DescribeElasticGpusResult>(
                     new DescribeElasticGpusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11551,6 +11732,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeExportImageTasksResult> responseHandler = new StaxResponseHandler<DescribeExportImageTasksResult>(
                     new DescribeExportImageTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11605,6 +11787,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeExportTasksResult> responseHandler = new StaxResponseHandler<DescribeExportTasksResult>(
                     new DescribeExportTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11664,6 +11847,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DescribeFastSnapshotRestoresResult>(
                     new DescribeFastSnapshotRestoresResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11722,6 +11906,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetHistoryResult> responseHandler = new StaxResponseHandler<DescribeFleetHistoryResult>(
                     new DescribeFleetHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11776,6 +11961,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeFleetInstancesResult>(
                     new DescribeFleetInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11830,6 +12016,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetsResult> responseHandler = new StaxResponseHandler<DescribeFleetsResult>(
                     new DescribeFleetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11885,6 +12072,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFlowLogsResult> responseHandler = new StaxResponseHandler<DescribeFlowLogsResult>(
                     new DescribeFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11944,6 +12132,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeFpgaImageAttributeResult>(
                     new DescribeFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11999,6 +12188,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFpgaImagesResult> responseHandler = new StaxResponseHandler<DescribeFpgaImagesResult>(
                     new DescribeFpgaImagesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12062,6 +12252,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeHostReservationOfferingsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationOfferingsResult>(
                     new DescribeHostReservationOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12116,6 +12307,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeHostReservationsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationsResult>(
                     new DescribeHostReservationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12174,6 +12366,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeHostsResult> responseHandler = new StaxResponseHandler<DescribeHostsResult>(new DescribeHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12235,6 +12428,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult> responseHandler = new StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult>(
                     new DescribeIamInstanceProfileAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12310,6 +12504,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdFormatResult>(
                     new DescribeIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12389,6 +12584,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIdentityIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdentityIdFormatResult>(
                     new DescribeIdentityIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12444,6 +12640,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeImageAttributeResult>(
                     new DescribeImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12507,6 +12704,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImagesResult> responseHandler = new StaxResponseHandler<DescribeImagesResult>(
                     new DescribeImagesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12566,6 +12764,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImportImageTasksResult> responseHandler = new StaxResponseHandler<DescribeImportImageTasksResult>(
                     new DescribeImportImageTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12625,6 +12824,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImportSnapshotTasksResult> responseHandler = new StaxResponseHandler<DescribeImportSnapshotTasksResult>(
                     new DescribeImportSnapshotTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12688,6 +12888,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceAttributeResult> responseHandler = new StaxResponseHandler<DescribeInstanceAttributeResult>(
                     new DescribeInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12769,6 +12970,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
                     new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12827,6 +13029,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult>(
                     new DescribeInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12913,6 +13116,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceStatusResult> responseHandler = new StaxResponseHandler<DescribeInstanceStatusResult>(
                     new DescribeInstanceStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12973,6 +13177,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceTypeOfferingsResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypeOfferingsResult>(
                     new DescribeInstanceTypeOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13028,6 +13233,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceTypesResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypesResult>(
                     new DescribeInstanceTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13101,6 +13307,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstancesResult> responseHandler = new StaxResponseHandler<DescribeInstancesResult>(
                     new DescribeInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13160,6 +13367,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeInternetGatewaysResult>(
                     new DescribeInternetGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13219,6 +13427,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIpv6PoolsResult> responseHandler = new StaxResponseHandler<DescribeIpv6PoolsResult>(
                     new DescribeIpv6PoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13278,6 +13487,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeKeyPairsResult> responseHandler = new StaxResponseHandler<DescribeKeyPairsResult>(
                     new DescribeKeyPairsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13339,6 +13549,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplateVersionsResult>(
                     new DescribeLaunchTemplateVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13393,6 +13604,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLaunchTemplatesResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplatesResult>(
                     new DescribeLaunchTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13452,6 +13664,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult>(
                     new DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13510,6 +13723,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTableVpcAssociationsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTableVpcAssociationsResult>(
                     new DescribeLocalGatewayRouteTableVpcAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13566,6 +13780,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTablesResult>(
                     new DescribeLocalGatewayRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13622,6 +13837,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayVirtualInterfaceGroupsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayVirtualInterfaceGroupsResult>(
                     new DescribeLocalGatewayVirtualInterfaceGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13678,6 +13894,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayVirtualInterfacesResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayVirtualInterfacesResult>(
                     new DescribeLocalGatewayVirtualInterfacesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13733,6 +13950,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewaysResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewaysResult>(
                     new DescribeLocalGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13790,6 +14008,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeManagedPrefixListsResult> responseHandler = new StaxResponseHandler<DescribeManagedPrefixListsResult>(
                     new DescribeManagedPrefixListsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13846,6 +14065,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeMovingAddressesResult> responseHandler = new StaxResponseHandler<DescribeMovingAddressesResult>(
                     new DescribeMovingAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13905,6 +14125,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNatGatewaysResult> responseHandler = new StaxResponseHandler<DescribeNatGatewaysResult>(
                     new DescribeNatGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13963,6 +14184,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkAclsResult> responseHandler = new StaxResponseHandler<DescribeNetworkAclsResult>(
                     new DescribeNetworkAclsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14023,6 +14245,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInsightsAnalysesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsAnalysesResult>(
                     new DescribeNetworkInsightsAnalysesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14077,6 +14300,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInsightsPathsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsPathsResult>(
                     new DescribeNetworkInsightsPathsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14133,6 +14357,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfaceAttributeResult>(
                     new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14190,6 +14415,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfacePermissionsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacePermissionsResult>(
                     new DescribeNetworkInterfacePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14245,6 +14471,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfacesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacesResult>(
                     new DescribeNetworkInterfacesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14306,6 +14533,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePlacementGroupsResult> responseHandler = new StaxResponseHandler<DescribePlacementGroupsResult>(
                     new DescribePlacementGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14369,6 +14597,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePrefixListsResult> responseHandler = new StaxResponseHandler<DescribePrefixListsResult>(
                     new DescribePrefixListsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14446,6 +14675,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePrincipalIdFormatResult> responseHandler = new StaxResponseHandler<DescribePrincipalIdFormatResult>(
                     new DescribePrincipalIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14500,6 +14730,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePublicIpv4PoolsResult> responseHandler = new StaxResponseHandler<DescribePublicIpv4PoolsResult>(
                     new DescribePublicIpv4PoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14563,6 +14794,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeRegionsResult> responseHandler = new StaxResponseHandler<DescribeRegionsResult>(
                     new DescribeRegionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14628,6 +14860,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesResult>(
                     new DescribeReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14710,6 +14943,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesListingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesListingsResult>(
                     new DescribeReservedInstancesListingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14779,6 +15013,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesModificationsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesModificationsResult>(
                     new DescribeReservedInstancesModificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14852,6 +15087,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesOfferingsResult>(
                     new DescribeReservedInstancesOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14920,6 +15156,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeRouteTablesResult>(
                     new DescribeRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14991,6 +15228,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult>(
                     new DescribeScheduledInstanceAvailabilityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15046,6 +15284,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeScheduledInstancesResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstancesResult>(
                     new DescribeScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15102,6 +15341,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSecurityGroupReferencesResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupReferencesResult>(
                     new DescribeSecurityGroupReferencesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15163,6 +15403,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupsResult>(
                     new DescribeSecurityGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15227,6 +15468,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSnapshotAttributeResult> responseHandler = new StaxResponseHandler<DescribeSnapshotAttributeResult>(
                     new DescribeSnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15342,6 +15584,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeSnapshotsResult>(
                     new DescribeSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15405,6 +15648,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult>(
                     new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15465,6 +15709,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetInstancesResult>(
                     new DescribeSpotFleetInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15525,6 +15770,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetRequestHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestHistoryResult>(
                     new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15583,6 +15829,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestsResult>(
                     new DescribeSpotFleetRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15660,6 +15907,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotInstanceRequestsResult>(
                     new DescribeSpotInstanceRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15727,6 +15975,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotPriceHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotPriceHistoryResult>(
                     new DescribeSpotPriceHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15788,6 +16037,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeStaleSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeStaleSecurityGroupsResult>(
                     new DescribeStaleSecurityGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15846,6 +16096,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSubnetsResult> responseHandler = new StaxResponseHandler<DescribeSubnetsResult>(
                     new DescribeSubnetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15909,6 +16160,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15968,6 +16220,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorFiltersResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorFiltersResult>(
                     new DescribeTrafficMirrorFiltersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16023,6 +16276,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorSessionsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorSessionsResult>(
                     new DescribeTrafficMirrorSessionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16077,6 +16331,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorTargetsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorTargetsResult>(
                     new DescribeTrafficMirrorTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16134,6 +16389,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayAttachmentsResult>(
                     new DescribeTransitGatewayAttachmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16190,6 +16446,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayConnectPeersResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectPeersResult>(
                     new DescribeTransitGatewayConnectPeersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16244,6 +16501,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayConnectsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectsResult>(
                     new DescribeTransitGatewayConnectsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16300,6 +16558,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayMulticastDomainsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayMulticastDomainsResult>(
                     new DescribeTransitGatewayMulticastDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16356,6 +16615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayPeeringAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayPeeringAttachmentsResult>(
                     new DescribeTransitGatewayPeeringAttachmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16412,6 +16672,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayRouteTablesResult>(
                     new DescribeTransitGatewayRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16469,6 +16730,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayVpcAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayVpcAttachmentsResult>(
                     new DescribeTransitGatewayVpcAttachmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16524,6 +16786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewaysResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewaysResult>(
                     new DescribeTransitGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16583,6 +16846,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumeAttributeResult> responseHandler = new StaxResponseHandler<DescribeVolumeAttributeResult>(
                     new DescribeVolumeAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16671,6 +16935,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumeStatusResult> responseHandler = new StaxResponseHandler<DescribeVolumeStatusResult>(
                     new DescribeVolumeStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16742,6 +17007,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumesResult> responseHandler = new StaxResponseHandler<DescribeVolumesResult>(
                     new DescribeVolumesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16812,6 +17078,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumesModificationsResult> responseHandler = new StaxResponseHandler<DescribeVolumesModificationsResult>(
                     new DescribeVolumesModificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16866,6 +17133,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcAttributeResult> responseHandler = new StaxResponseHandler<DescribeVpcAttributeResult>(
                     new DescribeVpcAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16920,6 +17188,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkResult>(
                     new DescribeVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16985,6 +17254,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult>(
                     new DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17041,6 +17311,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult>(
                     new DescribeVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17096,6 +17367,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionsResult>(
                     new DescribeVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17152,6 +17424,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult>(
                     new DescribeVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17208,6 +17481,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult>(
                     new DescribeVpcEndpointServicePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17270,6 +17544,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServicesResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicesResult>(
                     new DescribeVpcEndpointServicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17330,6 +17605,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointsResult>(
                     new DescribeVpcEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17389,6 +17665,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcPeeringConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcPeeringConnectionsResult>(
                     new DescribeVpcPeeringConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17447,6 +17724,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeVpcsResult> responseHandler = new StaxResponseHandler<DescribeVpcsResult>(new DescribeVpcsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17511,6 +17789,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpnConnectionsResult>(
                     new DescribeVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17575,6 +17854,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpnGatewaysResult> responseHandler = new StaxResponseHandler<DescribeVpnGatewaysResult>(
                     new DescribeVpnGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17636,6 +17916,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<DetachClassicLinkVpcResult>(
                     new DetachClassicLinkVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17691,6 +17972,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachInternetGatewayResult> responseHandler = new StaxResponseHandler<DetachInternetGatewayResult>(
                     new DetachInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17746,6 +18028,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DetachNetworkInterfaceResult>(
                     new DetachNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17813,6 +18096,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DetachVolumeResult> responseHandler = new StaxResponseHandler<DetachVolumeResult>(new DetachVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17874,6 +18158,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachVpnGatewayResult> responseHandler = new StaxResponseHandler<DetachVpnGatewayResult>(
                     new DetachVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17939,6 +18224,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<DisableEbsEncryptionByDefaultResult>(
                     new DisableEbsEncryptionByDefaultResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17993,6 +18279,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DisableFastSnapshotRestoresResult>(
                     new DisableFastSnapshotRestoresResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18049,6 +18336,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableTransitGatewayRouteTablePropagationResult> responseHandler = new StaxResponseHandler<DisableTransitGatewayRouteTablePropagationResult>(
                     new DisableTransitGatewayRouteTablePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18104,6 +18392,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<DisableVgwRoutePropagationResult>(
                     new DisableVgwRoutePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18159,6 +18448,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkResult>(
                     new DisableVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18221,6 +18511,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult>(
                     new DisableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18283,6 +18574,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateAddressResult> responseHandler = new StaxResponseHandler<DisassociateAddressResult>(
                     new DisassociateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18362,6 +18654,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<DisassociateClientVpnTargetNetworkResult>(
                     new DisassociateClientVpnTargetNetworkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18422,6 +18715,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult>(
                     new DisassociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18479,6 +18773,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<DisassociateIamInstanceProfileResult>(
                     new DisassociateIamInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18539,6 +18834,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateRouteTableResult>(
                     new DisassociateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18595,6 +18891,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateSubnetCidrBlockResult>(
                     new DisassociateSubnetCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18651,6 +18948,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<DisassociateTransitGatewayMulticastDomainResult>(
                     new DisassociateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18707,6 +19005,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateTransitGatewayRouteTableResult>(
                     new DisassociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18766,6 +19065,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateVpcCidrBlockResult>(
                     new DisassociateVpcCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18839,6 +19139,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<EnableEbsEncryptionByDefaultResult>(
                     new EnableEbsEncryptionByDefaultResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18903,6 +19204,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<EnableFastSnapshotRestoresResult>(
                     new EnableFastSnapshotRestoresResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18959,6 +19261,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableTransitGatewayRouteTablePropagationResult> responseHandler = new StaxResponseHandler<EnableTransitGatewayRouteTablePropagationResult>(
                     new EnableTransitGatewayRouteTablePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19014,6 +19317,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<EnableVgwRoutePropagationResult>(
                     new EnableVgwRoutePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19069,6 +19373,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVolumeIOResult> responseHandler = new StaxResponseHandler<EnableVolumeIOResult>(
                     new EnableVolumeIOResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19129,6 +19434,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkResult>(
                     new EnableVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19191,6 +19497,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult>(
                     new EnableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19249,6 +19556,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult>(
                     new ExportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19307,6 +19615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportClientVpnClientConfigurationResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientConfigurationResult>(
                     new ExportClientVpnClientConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19362,6 +19671,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ExportImageResult> responseHandler = new StaxResponseHandler<ExportImageResult>(new ExportImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19422,6 +19732,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<ExportTransitGatewayRoutesResult>(
                     new ExportTransitGatewayRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19481,6 +19792,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult> responseHandler = new StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult>(
                     new GetAssociatedEnclaveCertificateIamRolesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19535,6 +19847,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult> responseHandler = new StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult>(
                     new GetAssociatedIpv6PoolCidrsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19591,6 +19904,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetCapacityReservationUsageResult> responseHandler = new StaxResponseHandler<GetCapacityReservationUsageResult>(
                     new GetCapacityReservationUsageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19645,6 +19959,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetCoipPoolUsageResult> responseHandler = new StaxResponseHandler<GetCoipPoolUsageResult>(
                     new GetCoipPoolUsageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19715,6 +20030,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetConsoleOutputResult> responseHandler = new StaxResponseHandler<GetConsoleOutputResult>(
                     new GetConsoleOutputResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19772,6 +20088,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetConsoleScreenshotResult> responseHandler = new StaxResponseHandler<GetConsoleScreenshotResult>(
                     new GetConsoleScreenshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19831,6 +20148,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<GetDefaultCreditSpecificationResult>(
                     new GetDefaultCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19891,6 +20209,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<GetEbsDefaultKmsKeyIdResult>(
                     new GetEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19949,6 +20268,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<GetEbsEncryptionByDefaultResult>(
                     new GetEbsEncryptionByDefaultResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20004,6 +20324,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetGroupsForCapacityReservationResult> responseHandler = new StaxResponseHandler<GetGroupsForCapacityReservationResult>(
                     new GetGroupsForCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20064,6 +20385,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetHostReservationPurchasePreviewResult> responseHandler = new StaxResponseHandler<GetHostReservationPurchasePreviewResult>(
                     new GetHostReservationPurchasePreviewResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20124,6 +20446,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetLaunchTemplateDataResult> responseHandler = new StaxResponseHandler<GetLaunchTemplateDataResult>(
                     new GetLaunchTemplateDataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20179,6 +20502,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetManagedPrefixListAssociationsResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListAssociationsResult>(
                     new GetManagedPrefixListAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20233,6 +20557,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetManagedPrefixListEntriesResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListEntriesResult>(
                     new GetManagedPrefixListEntriesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20308,6 +20633,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetPasswordDataResult> responseHandler = new StaxResponseHandler<GetPasswordDataResult>(
                     new GetPasswordDataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20366,6 +20692,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<GetReservedInstancesExchangeQuoteResult>(
                     new GetReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20422,6 +20749,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayAttachmentPropagationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayAttachmentPropagationsResult>(
                     new GetTransitGatewayAttachmentPropagationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20479,6 +20807,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayMulticastDomainAssociationsResult>(
                     new GetTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20535,6 +20864,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayPrefixListReferencesResult> responseHandler = new StaxResponseHandler<GetTransitGatewayPrefixListReferencesResult>(
                     new GetTransitGatewayPrefixListReferencesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20591,6 +20921,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayRouteTableAssociationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayRouteTableAssociationsResult>(
                     new GetTransitGatewayRouteTableAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20647,6 +20978,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayRouteTablePropagationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayRouteTablePropagationsResult>(
                     new GetTransitGatewayRouteTablePropagationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20709,6 +21041,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult>(
                     new ImportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20765,6 +21098,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportImageResult> responseHandler = new StaxResponseHandler<ImportImageResult>(new ImportImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20831,6 +21165,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportInstanceResult> responseHandler = new StaxResponseHandler<ImportInstanceResult>(
                     new ImportInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20892,6 +21227,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportKeyPairResult> responseHandler = new StaxResponseHandler<ImportKeyPairResult>(new ImportKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20946,6 +21282,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportSnapshotResult> responseHandler = new StaxResponseHandler<ImportSnapshotResult>(
                     new ImportSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21010,6 +21347,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportVolumeResult> responseHandler = new StaxResponseHandler<ImportVolumeResult>(new ImportVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21068,6 +21406,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyAvailabilityZoneGroupResult> responseHandler = new StaxResponseHandler<ModifyAvailabilityZoneGroupResult>(
                     new ModifyAvailabilityZoneGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21125,6 +21464,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyCapacityReservationResult> responseHandler = new StaxResponseHandler<ModifyCapacityReservationResult>(
                     new ModifyCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21179,6 +21519,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyClientVpnEndpointResult> responseHandler = new StaxResponseHandler<ModifyClientVpnEndpointResult>(
                     new ModifyClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21248,6 +21589,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyDefaultCreditSpecificationResult>(
                     new ModifyDefaultCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21315,6 +21657,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<ModifyEbsDefaultKmsKeyIdResult>(
                     new ModifyEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21397,6 +21740,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyFleetResult> responseHandler = new StaxResponseHandler<ModifyFleetResult>(new ModifyFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21451,6 +21795,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyFpgaImageAttributeResult>(
                     new ModifyFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21512,6 +21857,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyHostsResult> responseHandler = new StaxResponseHandler<ModifyHostsResult>(new ModifyHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21591,6 +21937,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdFormatResult>(
                     new ModifyIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21672,6 +22019,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyIdentityIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdentityIdFormatResult>(
                     new ModifyIdentityIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21737,6 +22085,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyImageAttributeResult>(
                     new ModifyImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21802,6 +22151,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
                     new ModifyInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21861,6 +22211,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult> responseHandler = new StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult>(
                     new ModifyInstanceCapacityReservationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21922,6 +22273,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
                     new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21976,6 +22328,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceEventStartTimeResult> responseHandler = new StaxResponseHandler<ModifyInstanceEventStartTimeResult>(
                     new ModifyInstanceEventStartTimeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22036,6 +22389,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceMetadataOptionsResult> responseHandler = new StaxResponseHandler<ModifyInstanceMetadataOptionsResult>(
                     new ModifyInstanceMetadataOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22126,6 +22480,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstancePlacementResult> responseHandler = new StaxResponseHandler<ModifyInstancePlacementResult>(
                     new ModifyInstancePlacementResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22181,6 +22536,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyLaunchTemplateResult> responseHandler = new StaxResponseHandler<ModifyLaunchTemplateResult>(
                     new ModifyLaunchTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22242,6 +22598,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyManagedPrefixListResult> responseHandler = new StaxResponseHandler<ModifyManagedPrefixListResult>(
                     new ModifyManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22299,6 +22656,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ModifyNetworkInterfaceAttributeResult>(
                     new ModifyNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22361,6 +22719,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyReservedInstancesResult> responseHandler = new StaxResponseHandler<ModifyReservedInstancesResult>(
                     new ModifyReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22427,6 +22786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySnapshotAttributeResult> responseHandler = new StaxResponseHandler<ModifySnapshotAttributeResult>(
                     new ModifySnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22511,6 +22871,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySpotFleetRequestResult> responseHandler = new StaxResponseHandler<ModifySpotFleetRequestResult>(
                     new ModifySpotFleetRequestResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22565,6 +22926,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySubnetAttributeResult> responseHandler = new StaxResponseHandler<ModifySubnetAttributeResult>(
                     new ModifySubnetAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22632,6 +22994,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult>(
                     new ModifyTrafficMirrorFilterNetworkServicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22689,6 +23052,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult>(
                     new ModifyTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22743,6 +23107,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorSessionResult>(
                     new ModifyTrafficMirrorSessionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22798,6 +23163,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTransitGatewayResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayResult>(
                     new ModifyTransitGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22854,6 +23220,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayPrefixListReferenceResult>(
                     new ModifyTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22909,6 +23276,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayVpcAttachmentResult>(
                     new ModifyTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22996,6 +23364,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyVolumeResult> responseHandler = new StaxResponseHandler<ModifyVolumeResult>(new ModifyVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23059,6 +23428,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVolumeAttributeResult> responseHandler = new StaxResponseHandler<ModifyVolumeAttributeResult>(
                     new ModifyVolumeAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23113,6 +23483,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcAttributeResult> responseHandler = new StaxResponseHandler<ModifyVpcAttributeResult>(
                     new ModifyVpcAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23171,6 +23542,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointResult>(
                     new ModifyVpcEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23228,6 +23600,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult>(
                     new ModifyVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23292,6 +23665,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult>(
                     new ModifyVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23356,6 +23730,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult>(
                     new ModifyVpcEndpointServicePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23441,6 +23816,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult>(
                     new ModifyVpcPeeringConnectionOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23506,6 +23882,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcTenancyResult> responseHandler = new StaxResponseHandler<ModifyVpcTenancyResult>(
                     new ModifyVpcTenancyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23616,6 +23993,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnConnectionResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionResult>(
                     new ModifyVpnConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23675,6 +24053,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionOptionsResult>(
                     new ModifyVpnConnectionOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23729,6 +24108,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnTunnelCertificateResult> responseHandler = new StaxResponseHandler<ModifyVpnTunnelCertificateResult>(
                     new ModifyVpnTunnelCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23786,6 +24166,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnTunnelOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpnTunnelOptionsResult>(
                     new ModifyVpnTunnelOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23845,6 +24226,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<MonitorInstancesResult> responseHandler = new StaxResponseHandler<MonitorInstancesResult>(
                     new MonitorInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23903,6 +24285,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<MoveAddressToVpcResult> responseHandler = new StaxResponseHandler<MoveAddressToVpcResult>(
                     new MoveAddressToVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23973,6 +24356,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ProvisionByoipCidrResult> responseHandler = new StaxResponseHandler<ProvisionByoipCidrResult>(
                     new ProvisionByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24029,6 +24413,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseHostReservationResult> responseHandler = new StaxResponseHandler<PurchaseHostReservationResult>(
                     new PurchaseHostReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24101,6 +24486,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseReservedInstancesOfferingResult> responseHandler = new StaxResponseHandler<PurchaseReservedInstancesOfferingResult>(
                     new PurchaseReservedInstancesOfferingResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24165,6 +24551,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseScheduledInstancesResult> responseHandler = new StaxResponseHandler<PurchaseScheduledInstancesResult>(
                     new PurchaseScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24229,6 +24616,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RebootInstancesResult> responseHandler = new StaxResponseHandler<RebootInstancesResult>(
                     new RebootInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24337,6 +24725,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<RegisterImageResult> responseHandler = new StaxResponseHandler<RegisterImageResult>(new RegisterImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24397,6 +24786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult>(
                     new RegisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24464,6 +24854,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterTransitGatewayMulticastGroupMembersResult> responseHandler = new StaxResponseHandler<RegisterTransitGatewayMulticastGroupMembersResult>(
                     new RegisterTransitGatewayMulticastGroupMembersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24532,6 +24923,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterTransitGatewayMulticastGroupSourcesResult> responseHandler = new StaxResponseHandler<RegisterTransitGatewayMulticastGroupSourcesResult>(
                     new RegisterTransitGatewayMulticastGroupSourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24590,6 +24982,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult>(
                     new RejectTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24646,6 +25039,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayPeeringAttachmentResult>(
                     new RejectTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24706,6 +25100,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayVpcAttachmentResult>(
                     new RejectTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24760,6 +25155,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<RejectVpcEndpointConnectionsResult>(
                     new RejectVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24817,6 +25213,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<RejectVpcPeeringConnectionResult>(
                     new RejectVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24889,6 +25286,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReleaseAddressResult> responseHandler = new StaxResponseHandler<ReleaseAddressResult>(
                     new ReleaseAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24952,6 +25350,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ReleaseHostsResult> responseHandler = new StaxResponseHandler<ReleaseHostsResult>(new ReleaseHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25013,6 +25412,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult> responseHandler = new StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult>(
                     new ReplaceIamInstanceProfileAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25073,6 +25473,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceNetworkAclAssociationResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclAssociationResult>(
                     new ReplaceNetworkAclAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25129,6 +25530,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceNetworkAclEntryResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclEntryResult>(
                     new ReplaceNetworkAclEntryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25188,6 +25590,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ReplaceRouteResult> responseHandler = new StaxResponseHandler<ReplaceRouteResult>(new ReplaceRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25249,6 +25652,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceRouteTableAssociationResult> responseHandler = new StaxResponseHandler<ReplaceRouteTableAssociationResult>(
                     new ReplaceRouteTableAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25303,6 +25707,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<ReplaceTransitGatewayRouteResult>(
                     new ReplaceTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25363,6 +25768,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReportInstanceStatusResult> responseHandler = new StaxResponseHandler<ReportInstanceStatusResult>(
                     new ReportInstanceStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25447,6 +25853,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RequestSpotFleetResult> responseHandler = new StaxResponseHandler<RequestSpotFleetResult>(
                     new RequestSpotFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25506,6 +25913,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RequestSpotInstancesResult> responseHandler = new StaxResponseHandler<RequestSpotInstancesResult>(
                     new RequestSpotInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25567,6 +25975,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<ResetEbsDefaultKmsKeyIdResult>(
                     new ResetEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25622,6 +26031,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ResetFpgaImageAttributeResult>(
                     new ResetFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25682,6 +26092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetImageAttributeResult> responseHandler = new StaxResponseHandler<ResetImageAttributeResult>(
                     new ResetImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25745,6 +26156,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetInstanceAttributeResult> responseHandler = new StaxResponseHandler<ResetInstanceAttributeResult>(
                     new ResetInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25800,6 +26212,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ResetNetworkInterfaceAttributeResult>(
                     new ResetNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25859,6 +26272,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetSnapshotAttributeResult> responseHandler = new StaxResponseHandler<ResetSnapshotAttributeResult>(
                     new ResetSnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25915,6 +26329,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RestoreAddressToClassicResult> responseHandler = new StaxResponseHandler<RestoreAddressToClassicResult>(
                     new RestoreAddressToClassicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -25970,6 +26385,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RestoreManagedPrefixListVersionResult> responseHandler = new StaxResponseHandler<RestoreManagedPrefixListVersionResult>(
                     new RestoreManagedPrefixListVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26024,6 +26440,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeClientVpnIngressResult> responseHandler = new StaxResponseHandler<RevokeClientVpnIngressResult>(
                     new RevokeClientVpnIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26099,6 +26516,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupEgressResult>(
                     new RevokeSecurityGroupEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26173,6 +26591,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupIngressResult>(
                     new RevokeSecurityGroupIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26307,6 +26726,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<RunInstancesResult> responseHandler = new StaxResponseHandler<RunInstancesResult>(new RunInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26373,6 +26793,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RunScheduledInstancesResult> responseHandler = new StaxResponseHandler<RunScheduledInstancesResult>(
                     new RunScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26427,6 +26848,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchLocalGatewayRoutesResult> responseHandler = new StaxResponseHandler<SearchLocalGatewayRoutesResult>(
                     new SearchLocalGatewayRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26483,6 +26905,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchTransitGatewayMulticastGroupsResult> responseHandler = new StaxResponseHandler<SearchTransitGatewayMulticastGroupsResult>(
                     new SearchTransitGatewayMulticastGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26537,6 +26960,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<SearchTransitGatewayRoutesResult>(
                     new SearchTransitGatewayRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26609,6 +27033,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SendDiagnosticInterruptResult> responseHandler = new StaxResponseHandler<SendDiagnosticInterruptResult>(
                     new SendDiagnosticInterruptResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26684,6 +27109,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartInstancesResult> responseHandler = new StaxResponseHandler<StartInstancesResult>(
                     new StartInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26738,6 +27164,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<StartNetworkInsightsAnalysisResult>(
                     new StartNetworkInsightsAnalysisResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26807,6 +27234,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartVpcEndpointServicePrivateDnsVerificationResult> responseHandler = new StaxResponseHandler<StartVpcEndpointServicePrivateDnsVerificationResult>(
                     new StartVpcEndpointServicePrivateDnsVerificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26905,6 +27333,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<StopInstancesResult> responseHandler = new StaxResponseHandler<StopInstancesResult>(new StopInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -26960,6 +27389,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<TerminateClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<TerminateClientVpnConnectionsResult>(
                     new TerminateClientVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27040,6 +27470,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<TerminateInstancesResult> responseHandler = new StaxResponseHandler<TerminateInstancesResult>(
                     new TerminateInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27094,6 +27525,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnassignIpv6AddressesResult> responseHandler = new StaxResponseHandler<UnassignIpv6AddressesResult>(
                     new UnassignIpv6AddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27149,6 +27581,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnassignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<UnassignPrivateIpAddressesResult>(
                     new UnassignPrivateIpAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27205,6 +27638,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnmonitorInstancesResult> responseHandler = new StaxResponseHandler<UnmonitorInstancesResult>(
                     new UnmonitorInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27266,6 +27700,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult>(
                     new UpdateSecurityGroupRuleDescriptionsEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27327,6 +27762,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult>(
                     new UpdateSecurityGroupRuleDescriptionsIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -27389,6 +27825,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<WithdrawByoipCidrResult> responseHandler = new StaxResponseHandler<WithdrawByoipCidrResult>(
                     new WithdrawByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

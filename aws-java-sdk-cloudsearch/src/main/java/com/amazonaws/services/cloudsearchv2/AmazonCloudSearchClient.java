@@ -347,6 +347,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<BuildSuggestersResult> responseHandler = new StaxResponseHandler<BuildSuggestersResult>(
                     new BuildSuggestersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -409,6 +410,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<CreateDomainResult> responseHandler = new StaxResponseHandler<CreateDomainResult>(new CreateDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -477,6 +479,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineAnalysisSchemeResult> responseHandler = new StaxResponseHandler<DefineAnalysisSchemeResult>(
                     new DefineAnalysisSchemeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -545,6 +548,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineExpressionResult> responseHandler = new StaxResponseHandler<DefineExpressionResult>(
                     new DefineExpressionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -616,6 +620,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineIndexFieldResult> responseHandler = new StaxResponseHandler<DefineIndexFieldResult>(
                     new DefineIndexFieldResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -685,6 +690,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineSuggesterResult> responseHandler = new StaxResponseHandler<DefineSuggesterResult>(
                     new DefineSuggesterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -750,6 +756,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteAnalysisSchemeResult> responseHandler = new StaxResponseHandler<DeleteAnalysisSchemeResult>(
                     new DeleteAnalysisSchemeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -811,6 +818,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<DeleteDomainResult> responseHandler = new StaxResponseHandler<DeleteDomainResult>(new DeleteDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -876,6 +884,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteExpressionResult> responseHandler = new StaxResponseHandler<DeleteExpressionResult>(
                     new DeleteExpressionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -941,6 +950,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteIndexFieldResult> responseHandler = new StaxResponseHandler<DeleteIndexFieldResult>(
                     new DeleteIndexFieldResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1006,6 +1016,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteSuggesterResult> responseHandler = new StaxResponseHandler<DeleteSuggesterResult>(
                     new DeleteSuggesterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1074,6 +1085,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAnalysisSchemesResult> responseHandler = new StaxResponseHandler<DescribeAnalysisSchemesResult>(
                     new DescribeAnalysisSchemesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1146,6 +1158,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAvailabilityOptionsResult> responseHandler = new StaxResponseHandler<DescribeAvailabilityOptionsResult>(
                     new DescribeAvailabilityOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1215,6 +1228,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<DescribeDomainEndpointOptionsResult>(
                     new DescribeDomainEndpointOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1280,6 +1294,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeDomainsResult> responseHandler = new StaxResponseHandler<DescribeDomainsResult>(
                     new DescribeDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1353,6 +1368,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeExpressionsResult> responseHandler = new StaxResponseHandler<DescribeExpressionsResult>(
                     new DescribeExpressionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1421,6 +1437,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeIndexFieldsResult> responseHandler = new StaxResponseHandler<DescribeIndexFieldsResult>(
                     new DescribeIndexFieldsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1485,6 +1502,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeScalingParametersResult> responseHandler = new StaxResponseHandler<DescribeScalingParametersResult>(
                     new DescribeScalingParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1551,6 +1569,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeServiceAccessPoliciesResult> responseHandler = new StaxResponseHandler<DescribeServiceAccessPoliciesResult>(
                     new DescribeServiceAccessPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1619,6 +1638,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeSuggestersResult> responseHandler = new StaxResponseHandler<DescribeSuggestersResult>(
                     new DescribeSuggestersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1681,6 +1701,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<IndexDocumentsResult> responseHandler = new StaxResponseHandler<IndexDocumentsResult>(
                     new IndexDocumentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1735,6 +1756,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<ListDomainNamesResult> responseHandler = new StaxResponseHandler<ListDomainNamesResult>(
                     new ListDomainNamesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1814,6 +1836,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateAvailabilityOptionsResult> responseHandler = new StaxResponseHandler<UpdateAvailabilityOptionsResult>(
                     new UpdateAvailabilityOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1886,6 +1909,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<UpdateDomainEndpointOptionsResult>(
                     new UpdateDomainEndpointOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1956,6 +1980,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateScalingParametersResult> responseHandler = new StaxResponseHandler<UpdateScalingParametersResult>(
                     new UpdateScalingParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2023,6 +2048,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateServiceAccessPoliciesResult> responseHandler = new StaxResponseHandler<UpdateServiceAccessPoliciesResult>(
                     new UpdateServiceAccessPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
