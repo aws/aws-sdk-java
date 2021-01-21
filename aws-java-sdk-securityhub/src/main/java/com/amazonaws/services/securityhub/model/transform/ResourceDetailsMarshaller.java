@@ -75,6 +75,8 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsApiGatewayRestApi").build();
     private static final MarshallingInfo<StructuredPojo> AWSCLOUDTRAILTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCloudTrailTrail").build();
+    private static final MarshallingInfo<StructuredPojo> AWSSSMPATCHCOMPLIANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsSsmPatchCompliance").build();
     private static final MarshallingInfo<StructuredPojo> AWSCERTIFICATEMANAGERCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCertificateManagerCertificate").build();
     private static final MarshallingInfo<StructuredPojo> AWSREDSHIFTCLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -149,6 +151,7 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayStage(), AWSAPIGATEWAYSTAGE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayRestApi(), AWSAPIGATEWAYRESTAPI_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsCloudTrailTrail(), AWSCLOUDTRAILTRAIL_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsSsmPatchCompliance(), AWSSSMPATCHCOMPLIANCE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsCertificateManagerCertificate(), AWSCERTIFICATEMANAGERCERTIFICATE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsRedshiftCluster(), AWSREDSHIFTCLUSTER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElbLoadBalancer(), AWSELBLOADBALANCER_BINDING);

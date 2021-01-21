@@ -67,6 +67,12 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     private String kafkaVersion;
 
     private LoggingInfo loggingInfo;
+    /**
+     * <p>
+     * Information about the Amazon MSK broker type.
+     * </p>
+     */
+    private String instanceType;
 
     /**
      * <p>
@@ -425,6 +431,52 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Information about the Amazon MSK broker type.
+     * </p>
+     * 
+     * @param instanceType
+     *        <p>
+     *        Information about the Amazon MSK broker type.
+     *        </p>
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * Information about the Amazon MSK broker type.
+     * </p>
+     * 
+     * @return <p>
+     *         Information about the Amazon MSK broker type.
+     *         </p>
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * Information about the Amazon MSK broker type.
+     * </p>
+     * 
+     * @param instanceType
+     *        <p>
+     *        Information about the Amazon MSK broker type.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MutableClusterInfo withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -449,7 +501,9 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         if (getKafkaVersion() != null)
             sb.append("KafkaVersion: ").append(getKafkaVersion()).append(",");
         if (getLoggingInfo() != null)
-            sb.append("LoggingInfo: ").append(getLoggingInfo());
+            sb.append("LoggingInfo: ").append(getLoggingInfo()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +546,10 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLoggingInfo() != null && other.getLoggingInfo().equals(this.getLoggingInfo()) == false)
             return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -507,6 +565,7 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
         hashCode = prime * hashCode + ((getKafkaVersion() == null) ? 0 : getKafkaVersion().hashCode());
         hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 

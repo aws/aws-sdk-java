@@ -142,9 +142,17 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsIamPolicyDetails awsIamPolicy;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides information about a version 2 stage for Amazon API Gateway.
+     * </p>
+     */
     private AwsApiGatewayV2StageDetails awsApiGatewayV2Stage;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides information about a version 2 API in Amazon API Gateway.
+     * </p>
+     */
     private AwsApiGatewayV2ApiDetails awsApiGatewayV2Api;
     /**
      * <p>
@@ -152,19 +160,54 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsDynamoDbTableDetails awsDynamoDbTable;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides information about a version 1 Amazon API Gateway stage.
+     * </p>
+     */
     private AwsApiGatewayStageDetails awsApiGatewayStage;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides information about a REST API in version 1 of Amazon API Gateway.
+     * </p>
+     */
     private AwsApiGatewayRestApiDetails awsApiGatewayRestApi;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides details about a CloudTrail trail.
+     * </p>
+     */
     private AwsCloudTrailTrailDetails awsCloudTrailTrail;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides information about the state of a patch on an instance based on the patch baseline that was used to patch
+     * the instance.
+     * </p>
+     */
+    private AwsSsmPatchComplianceDetails awsSsmPatchCompliance;
+    /**
+     * <p>
+     * Provides details about an AWS Certificate Manager (ACM) certificate.
+     * </p>
+     */
     private AwsCertificateManagerCertificateDetails awsCertificateManagerCertificate;
-    /** <p/> */
+    /**
+     * <p>
+     * Contains details about an Amazon Redshift cluster.
+     * </p>
+     */
     private AwsRedshiftClusterDetails awsRedshiftCluster;
-    /** <p/> */
+    /**
+     * <p>
+     * contains details about a Classic Load Balancer.
+     * </p>
+     */
     private AwsElbLoadBalancerDetails awsElbLoadBalancer;
-    /** <p/> */
+    /**
+     * <p>
+     * Contains details about an IAM group.
+     * </p>
+     */
     private AwsIamGroupDetails awsIamGroup;
     /**
      * <p>
@@ -942,9 +985,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 stage for Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayV2Stage
+     *        Provides information about a version 2 stage for Amazon API Gateway.
      */
 
     public void setAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails awsApiGatewayV2Stage) {
@@ -952,9 +998,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 stage for Amazon API Gateway.
+     * </p>
      * 
-     * @return
+     * @return Provides information about a version 2 stage for Amazon API Gateway.
      */
 
     public AwsApiGatewayV2StageDetails getAwsApiGatewayV2Stage() {
@@ -962,9 +1010,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 stage for Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayV2Stage
+     *        Provides information about a version 2 stage for Amazon API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -974,9 +1025,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 API in Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayV2Api
+     *        Provides information about a version 2 API in Amazon API Gateway.
      */
 
     public void setAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails awsApiGatewayV2Api) {
@@ -984,9 +1038,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 API in Amazon API Gateway.
+     * </p>
      * 
-     * @return
+     * @return Provides information about a version 2 API in Amazon API Gateway.
      */
 
     public AwsApiGatewayV2ApiDetails getAwsApiGatewayV2Api() {
@@ -994,9 +1050,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 2 API in Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayV2Api
+     *        Provides information about a version 2 API in Amazon API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1046,9 +1105,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 1 Amazon API Gateway stage.
+     * </p>
      * 
      * @param awsApiGatewayStage
+     *        Provides information about a version 1 Amazon API Gateway stage.
      */
 
     public void setAwsApiGatewayStage(AwsApiGatewayStageDetails awsApiGatewayStage) {
@@ -1056,9 +1118,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 1 Amazon API Gateway stage.
+     * </p>
      * 
-     * @return
+     * @return Provides information about a version 1 Amazon API Gateway stage.
      */
 
     public AwsApiGatewayStageDetails getAwsApiGatewayStage() {
@@ -1066,9 +1130,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a version 1 Amazon API Gateway stage.
+     * </p>
      * 
      * @param awsApiGatewayStage
+     *        Provides information about a version 1 Amazon API Gateway stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1078,9 +1145,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a REST API in version 1 of Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayRestApi
+     *        Provides information about a REST API in version 1 of Amazon API Gateway.
      */
 
     public void setAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails awsApiGatewayRestApi) {
@@ -1088,9 +1158,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a REST API in version 1 of Amazon API Gateway.
+     * </p>
      * 
-     * @return
+     * @return Provides information about a REST API in version 1 of Amazon API Gateway.
      */
 
     public AwsApiGatewayRestApiDetails getAwsApiGatewayRestApi() {
@@ -1098,9 +1170,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about a REST API in version 1 of Amazon API Gateway.
+     * </p>
      * 
      * @param awsApiGatewayRestApi
+     *        Provides information about a REST API in version 1 of Amazon API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1110,9 +1185,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides details about a CloudTrail trail.
+     * </p>
      * 
      * @param awsCloudTrailTrail
+     *        Provides details about a CloudTrail trail.
      */
 
     public void setAwsCloudTrailTrail(AwsCloudTrailTrailDetails awsCloudTrailTrail) {
@@ -1120,9 +1198,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides details about a CloudTrail trail.
+     * </p>
      * 
-     * @return
+     * @return Provides details about a CloudTrail trail.
      */
 
     public AwsCloudTrailTrailDetails getAwsCloudTrailTrail() {
@@ -1130,9 +1210,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides details about a CloudTrail trail.
+     * </p>
      * 
      * @param awsCloudTrailTrail
+     *        Provides details about a CloudTrail trail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1142,9 +1225,58 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides information about the state of a patch on an instance based on the patch baseline that was used to patch
+     * the instance.
+     * </p>
+     * 
+     * @param awsSsmPatchCompliance
+     *        Provides information about the state of a patch on an instance based on the patch baseline that was used
+     *        to patch the instance.
+     */
+
+    public void setAwsSsmPatchCompliance(AwsSsmPatchComplianceDetails awsSsmPatchCompliance) {
+        this.awsSsmPatchCompliance = awsSsmPatchCompliance;
+    }
+
+    /**
+     * <p>
+     * Provides information about the state of a patch on an instance based on the patch baseline that was used to patch
+     * the instance.
+     * </p>
+     * 
+     * @return Provides information about the state of a patch on an instance based on the patch baseline that was used
+     *         to patch the instance.
+     */
+
+    public AwsSsmPatchComplianceDetails getAwsSsmPatchCompliance() {
+        return this.awsSsmPatchCompliance;
+    }
+
+    /**
+     * <p>
+     * Provides information about the state of a patch on an instance based on the patch baseline that was used to patch
+     * the instance.
+     * </p>
+     * 
+     * @param awsSsmPatchCompliance
+     *        Provides information about the state of a patch on an instance based on the patch baseline that was used
+     *        to patch the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSsmPatchCompliance(AwsSsmPatchComplianceDetails awsSsmPatchCompliance) {
+        setAwsSsmPatchCompliance(awsSsmPatchCompliance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an AWS Certificate Manager (ACM) certificate.
+     * </p>
      * 
      * @param awsCertificateManagerCertificate
+     *        Provides details about an AWS Certificate Manager (ACM) certificate.
      */
 
     public void setAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails awsCertificateManagerCertificate) {
@@ -1152,9 +1284,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides details about an AWS Certificate Manager (ACM) certificate.
+     * </p>
      * 
-     * @return
+     * @return Provides details about an AWS Certificate Manager (ACM) certificate.
      */
 
     public AwsCertificateManagerCertificateDetails getAwsCertificateManagerCertificate() {
@@ -1162,9 +1296,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides details about an AWS Certificate Manager (ACM) certificate.
+     * </p>
      * 
      * @param awsCertificateManagerCertificate
+     *        Provides details about an AWS Certificate Manager (ACM) certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,9 +1311,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an Amazon Redshift cluster.
+     * </p>
      * 
      * @param awsRedshiftCluster
+     *        Contains details about an Amazon Redshift cluster.
      */
 
     public void setAwsRedshiftCluster(AwsRedshiftClusterDetails awsRedshiftCluster) {
@@ -1184,9 +1324,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an Amazon Redshift cluster.
+     * </p>
      * 
-     * @return
+     * @return Contains details about an Amazon Redshift cluster.
      */
 
     public AwsRedshiftClusterDetails getAwsRedshiftCluster() {
@@ -1194,9 +1336,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an Amazon Redshift cluster.
+     * </p>
      * 
      * @param awsRedshiftCluster
+     *        Contains details about an Amazon Redshift cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1206,9 +1351,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * contains details about a Classic Load Balancer.
+     * </p>
      * 
      * @param awsElbLoadBalancer
+     *        contains details about a Classic Load Balancer.
      */
 
     public void setAwsElbLoadBalancer(AwsElbLoadBalancerDetails awsElbLoadBalancer) {
@@ -1216,9 +1364,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * contains details about a Classic Load Balancer.
+     * </p>
      * 
-     * @return
+     * @return contains details about a Classic Load Balancer.
      */
 
     public AwsElbLoadBalancerDetails getAwsElbLoadBalancer() {
@@ -1226,9 +1376,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * contains details about a Classic Load Balancer.
+     * </p>
      * 
      * @param awsElbLoadBalancer
+     *        contains details about a Classic Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1238,9 +1391,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an IAM group.
+     * </p>
      * 
      * @param awsIamGroup
+     *        Contains details about an IAM group.
      */
 
     public void setAwsIamGroup(AwsIamGroupDetails awsIamGroup) {
@@ -1248,9 +1404,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an IAM group.
+     * </p>
      * 
-     * @return
+     * @return Contains details about an IAM group.
      */
 
     public AwsIamGroupDetails getAwsIamGroup() {
@@ -1258,9 +1416,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Contains details about an IAM group.
+     * </p>
      * 
      * @param awsIamGroup
+     *        Contains details about an IAM group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1968,6 +2129,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsApiGatewayRestApi: ").append(getAwsApiGatewayRestApi()).append(",");
         if (getAwsCloudTrailTrail() != null)
             sb.append("AwsCloudTrailTrail: ").append(getAwsCloudTrailTrail()).append(",");
+        if (getAwsSsmPatchCompliance() != null)
+            sb.append("AwsSsmPatchCompliance: ").append(getAwsSsmPatchCompliance()).append(",");
         if (getAwsCertificateManagerCertificate() != null)
             sb.append("AwsCertificateManagerCertificate: ").append(getAwsCertificateManagerCertificate()).append(",");
         if (getAwsRedshiftCluster() != null)
@@ -2109,6 +2272,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsCloudTrailTrail() != null && other.getAwsCloudTrailTrail().equals(this.getAwsCloudTrailTrail()) == false)
             return false;
+        if (other.getAwsSsmPatchCompliance() == null ^ this.getAwsSsmPatchCompliance() == null)
+            return false;
+        if (other.getAwsSsmPatchCompliance() != null && other.getAwsSsmPatchCompliance().equals(this.getAwsSsmPatchCompliance()) == false)
+            return false;
         if (other.getAwsCertificateManagerCertificate() == null ^ this.getAwsCertificateManagerCertificate() == null)
             return false;
         if (other.getAwsCertificateManagerCertificate() != null
@@ -2209,6 +2376,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsApiGatewayStage() == null) ? 0 : getAwsApiGatewayStage().hashCode());
         hashCode = prime * hashCode + ((getAwsApiGatewayRestApi() == null) ? 0 : getAwsApiGatewayRestApi().hashCode());
         hashCode = prime * hashCode + ((getAwsCloudTrailTrail() == null) ? 0 : getAwsCloudTrailTrail().hashCode());
+        hashCode = prime * hashCode + ((getAwsSsmPatchCompliance() == null) ? 0 : getAwsSsmPatchCompliance().hashCode());
         hashCode = prime * hashCode + ((getAwsCertificateManagerCertificate() == null) ? 0 : getAwsCertificateManagerCertificate().hashCode());
         hashCode = prime * hashCode + ((getAwsRedshiftCluster() == null) ? 0 : getAwsRedshiftCluster().hashCode());
         hashCode = prime * hashCode + ((getAwsElbLoadBalancer() == null) ? 0 : getAwsElbLoadBalancer().hashCode());

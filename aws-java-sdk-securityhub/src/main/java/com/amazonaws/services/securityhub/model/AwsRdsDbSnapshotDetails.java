@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides details about an Amazon RDS DB cluster snapshot.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSnapshotDetails"
  *      target="_top">AWS API Documentation</a>
@@ -26,65 +28,177 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The name or ARN of the DB snapshot that is used to restore the DB instance.
+     * </p>
+     */
     private String dbSnapshotIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * A name for the DB instance.
+     * </p>
+     */
     private String dbInstanceIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * When the snapshot was taken in Coordinated Universal Time (UTC).
+     * </p>
+     */
     private String snapshotCreateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the database engine to use for this DB instance.
+     * </p>
+     */
     private String engine;
-    /** <p/> */
+    /**
+     * <p>
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * </p>
+     */
     private Integer allocatedStorage;
-    /** <p/> */
+    /**
+     * <p>
+     * The status of this DB snapshot.
+     * </p>
+     */
     private String status;
-    /** <p/> */
+    /**
+     * <p>
+     * The port that the database engine was listening on at the time of the snapshot.
+     * </p>
+     */
     private Integer port;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.
+     * </p>
+     */
     private String availabilityZone;
-    /** <p/> */
+    /**
+     * <p>
+     * The VPC ID associated with the DB snapshot.
+     * </p>
+     */
     private String vpcId;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
+     * </p>
+     */
     private String instanceCreateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * The master user name for the DB snapshot.
+     * </p>
+     */
     private String masterUsername;
-    /** <p/> */
+    /**
+     * <p>
+     * The version of the database engine.
+     * </p>
+     */
     private String engineVersion;
-    /** <p/> */
+    /**
+     * <p>
+     * License model information for the restored DB instance.
+     * </p>
+     */
     private String licenseModel;
-    /** <p/> */
+    /**
+     * <p>
+     * The type of the DB snapshot.
+     * </p>
+     */
     private String snapshotType;
-    /** <p/> */
+    /**
+     * <p>
+     * The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
+     * </p>
+     */
     private Integer iops;
-    /** <p/> */
+    /**
+     * <p>
+     * The option group name for the DB snapshot.
+     * </p>
+     */
     private String optionGroupName;
-    /** <p/> */
+    /**
+     * <p>
+     * The percentage of the estimated data that has been transferred.
+     * </p>
+     */
     private Integer percentProgress;
-    /** <p/> */
+    /**
+     * <p>
+     * The AWS Region that the DB snapshot was created in or copied from.
+     * </p>
+     */
     private String sourceRegion;
-    /** <p/> */
+    /**
+     * <p>
+     * The DB snapshot ARN that the DB snapshot was copied from.
+     * </p>
+     */
     private String sourceDbSnapshotIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The storage type associated with the DB snapshot.
+     * </p>
+     */
     private String storageType;
-    /** <p/> */
+    /**
+     * <p>
+     * The ARN from the key store with which to associate the instance for TDE encryption.
+     * </p>
+     */
     private String tdeCredentialArn;
-    /** <p/> */
+    /**
+     * <p>
+     * Whether the DB snapshot is encrypted.
+     * </p>
+     */
     private Boolean encrypted;
-    /** <p/> */
+    /**
+     * <p>
+     * If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
+     * </p>
+     */
     private String kmsKeyId;
-    /** <p/> */
+    /**
+     * <p>
+     * The time zone of the DB snapshot.
+     * </p>
+     */
     private String timezone;
-    /** <p/> */
+    /**
+     * <p>
+     * Whether mapping of IAM accounts to database accounts is enabled.
+     * </p>
+     */
     private Boolean iamDatabaseAuthenticationEnabled;
-    /** <p/> */
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     */
     private java.util.List<AwsRdsDbProcessorFeature> processorFeatures;
-    /** <p/> */
+    /**
+     * <p>
+     * The identifier for the source DB instance.
+     * </p>
+     */
     private String dbiResourceId;
 
     /**
-     * <p/>
+     * <p>
+     * The name or ARN of the DB snapshot that is used to restore the DB instance.
+     * </p>
      * 
      * @param dbSnapshotIdentifier
+     *        The name or ARN of the DB snapshot that is used to restore the DB instance.
      */
 
     public void setDbSnapshotIdentifier(String dbSnapshotIdentifier) {
@@ -92,9 +206,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name or ARN of the DB snapshot that is used to restore the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The name or ARN of the DB snapshot that is used to restore the DB instance.
      */
 
     public String getDbSnapshotIdentifier() {
@@ -102,9 +218,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name or ARN of the DB snapshot that is used to restore the DB instance.
+     * </p>
      * 
      * @param dbSnapshotIdentifier
+     *        The name or ARN of the DB snapshot that is used to restore the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,9 +233,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * A name for the DB instance.
+     * </p>
      * 
      * @param dbInstanceIdentifier
+     *        A name for the DB instance.
      */
 
     public void setDbInstanceIdentifier(String dbInstanceIdentifier) {
@@ -124,9 +246,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * A name for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return A name for the DB instance.
      */
 
     public String getDbInstanceIdentifier() {
@@ -134,9 +258,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * A name for the DB instance.
+     * </p>
      * 
      * @param dbInstanceIdentifier
+     *        A name for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,9 +273,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * When the snapshot was taken in Coordinated Universal Time (UTC).
+     * </p>
      * 
      * @param snapshotCreateTime
+     *        When the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public void setSnapshotCreateTime(String snapshotCreateTime) {
@@ -156,9 +286,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * When the snapshot was taken in Coordinated Universal Time (UTC).
+     * </p>
      * 
-     * @return
+     * @return When the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public String getSnapshotCreateTime() {
@@ -166,9 +298,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * When the snapshot was taken in Coordinated Universal Time (UTC).
+     * </p>
      * 
      * @param snapshotCreateTime
+     *        When the snapshot was taken in Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,9 +313,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine to use for this DB instance.
+     * </p>
      * 
      * @param engine
+     *        The name of the database engine to use for this DB instance.
      */
 
     public void setEngine(String engine) {
@@ -188,9 +326,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine to use for this DB instance.
+     * </p>
      * 
-     * @return
+     * @return The name of the database engine to use for this DB instance.
      */
 
     public String getEngine() {
@@ -198,9 +338,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine to use for this DB instance.
+     * </p>
      * 
      * @param engine
+     *        The name of the database engine to use for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,9 +353,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * </p>
      * 
      * @param allocatedStorage
+     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -220,9 +366,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * </p>
      * 
-     * @return
+     * @return The amount of storage (in gigabytes) to be initially allocated for the database instance.
      */
 
     public Integer getAllocatedStorage() {
@@ -230,9 +378,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * </p>
      * 
      * @param allocatedStorage
+     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,9 +393,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of this DB snapshot.
+     * </p>
      * 
      * @param status
+     *        The status of this DB snapshot.
      */
 
     public void setStatus(String status) {
@@ -252,9 +406,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of this DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The status of this DB snapshot.
      */
 
     public String getStatus() {
@@ -262,9 +418,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of this DB snapshot.
+     * </p>
      * 
      * @param status
+     *        The status of this DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,9 +433,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The port that the database engine was listening on at the time of the snapshot.
+     * </p>
      * 
      * @param port
+     *        The port that the database engine was listening on at the time of the snapshot.
      */
 
     public void setPort(Integer port) {
@@ -284,9 +446,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The port that the database engine was listening on at the time of the snapshot.
+     * </p>
      * 
-     * @return
+     * @return The port that the database engine was listening on at the time of the snapshot.
      */
 
     public Integer getPort() {
@@ -294,9 +458,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The port that the database engine was listening on at the time of the snapshot.
+     * </p>
      * 
      * @param port
+     *        The port that the database engine was listening on at the time of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,9 +473,13 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.
+     * </p>
      * 
      * @param availabilityZone
+     *        Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB
+     *        snapshot.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -316,9 +487,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB
+     *         snapshot.
      */
 
     public String getAvailabilityZone() {
@@ -326,9 +500,13 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.
+     * </p>
      * 
      * @param availabilityZone
+     *        Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,9 +516,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The VPC ID associated with the DB snapshot.
+     * </p>
      * 
      * @param vpcId
+     *        The VPC ID associated with the DB snapshot.
      */
 
     public void setVpcId(String vpcId) {
@@ -348,9 +529,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The VPC ID associated with the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The VPC ID associated with the DB snapshot.
      */
 
     public String getVpcId() {
@@ -358,9 +541,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The VPC ID associated with the DB snapshot.
+     * </p>
      * 
      * @param vpcId
+     *        The VPC ID associated with the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,9 +556,14 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
+     * </p>
      * 
      * @param instanceCreateTime
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      */
 
     public void setInstanceCreateTime(String instanceCreateTime) {
@@ -380,9 +571,13 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
+     * </p>
      * 
-     * @return
+     * @return Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *         taken, was created.
      */
 
     public String getInstanceCreateTime() {
@@ -390,9 +585,14 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
+     * </p>
      * 
      * @param instanceCreateTime
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,9 +602,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The master user name for the DB snapshot.
+     * </p>
      * 
      * @param masterUsername
+     *        The master user name for the DB snapshot.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -412,9 +615,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The master user name for the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The master user name for the DB snapshot.
      */
 
     public String getMasterUsername() {
@@ -422,9 +627,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The master user name for the DB snapshot.
+     * </p>
      * 
      * @param masterUsername
+     *        The master user name for the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,9 +642,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The version of the database engine.
+     * </p>
      * 
      * @param engineVersion
+     *        The version of the database engine.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -444,9 +655,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The version of the database engine.
+     * </p>
      * 
-     * @return
+     * @return The version of the database engine.
      */
 
     public String getEngineVersion() {
@@ -454,9 +667,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The version of the database engine.
+     * </p>
      * 
      * @param engineVersion
+     *        The version of the database engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,9 +682,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * License model information for the restored DB instance.
+     * </p>
      * 
      * @param licenseModel
+     *        License model information for the restored DB instance.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -476,9 +695,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * License model information for the restored DB instance.
+     * </p>
      * 
-     * @return
+     * @return License model information for the restored DB instance.
      */
 
     public String getLicenseModel() {
@@ -486,9 +707,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * License model information for the restored DB instance.
+     * </p>
      * 
      * @param licenseModel
+     *        License model information for the restored DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,9 +722,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of the DB snapshot.
+     * </p>
      * 
      * @param snapshotType
+     *        The type of the DB snapshot.
      */
 
     public void setSnapshotType(String snapshotType) {
@@ -508,9 +735,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The type of the DB snapshot.
      */
 
     public String getSnapshotType() {
@@ -518,9 +747,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of the DB snapshot.
+     * </p>
      * 
      * @param snapshotType
+     *        The type of the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,9 +762,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
+     * </p>
      * 
      * @param iops
+     *        The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
      */
 
     public void setIops(Integer iops) {
@@ -540,9 +775,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
+     * </p>
      * 
-     * @return
+     * @return The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
      */
 
     public Integer getIops() {
@@ -550,9 +787,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
+     * </p>
      * 
      * @param iops
+     *        The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -562,9 +802,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The option group name for the DB snapshot.
+     * </p>
      * 
      * @param optionGroupName
+     *        The option group name for the DB snapshot.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -572,9 +815,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The option group name for the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The option group name for the DB snapshot.
      */
 
     public String getOptionGroupName() {
@@ -582,9 +827,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The option group name for the DB snapshot.
+     * </p>
      * 
      * @param optionGroupName
+     *        The option group name for the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -594,9 +842,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of the estimated data that has been transferred.
+     * </p>
      * 
      * @param percentProgress
+     *        The percentage of the estimated data that has been transferred.
      */
 
     public void setPercentProgress(Integer percentProgress) {
@@ -604,9 +855,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of the estimated data that has been transferred.
+     * </p>
      * 
-     * @return
+     * @return The percentage of the estimated data that has been transferred.
      */
 
     public Integer getPercentProgress() {
@@ -614,9 +867,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of the estimated data that has been transferred.
+     * </p>
      * 
      * @param percentProgress
+     *        The percentage of the estimated data that has been transferred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,9 +882,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS Region that the DB snapshot was created in or copied from.
+     * </p>
      * 
      * @param sourceRegion
+     *        The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -636,9 +895,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS Region that the DB snapshot was created in or copied from.
+     * </p>
      * 
-     * @return
+     * @return The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public String getSourceRegion() {
@@ -646,9 +907,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS Region that the DB snapshot was created in or copied from.
+     * </p>
      * 
      * @param sourceRegion
+     *        The AWS Region that the DB snapshot was created in or copied from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,9 +922,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The DB snapshot ARN that the DB snapshot was copied from.
+     * </p>
      * 
      * @param sourceDbSnapshotIdentifier
+     *        The DB snapshot ARN that the DB snapshot was copied from.
      */
 
     public void setSourceDbSnapshotIdentifier(String sourceDbSnapshotIdentifier) {
@@ -668,9 +935,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The DB snapshot ARN that the DB snapshot was copied from.
+     * </p>
      * 
-     * @return
+     * @return The DB snapshot ARN that the DB snapshot was copied from.
      */
 
     public String getSourceDbSnapshotIdentifier() {
@@ -678,9 +947,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The DB snapshot ARN that the DB snapshot was copied from.
+     * </p>
      * 
      * @param sourceDbSnapshotIdentifier
+     *        The DB snapshot ARN that the DB snapshot was copied from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -690,9 +962,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The storage type associated with the DB snapshot.
+     * </p>
      * 
      * @param storageType
+     *        The storage type associated with the DB snapshot.
      */
 
     public void setStorageType(String storageType) {
@@ -700,9 +975,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The storage type associated with the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The storage type associated with the DB snapshot.
      */
 
     public String getStorageType() {
@@ -710,9 +987,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The storage type associated with the DB snapshot.
+     * </p>
      * 
      * @param storageType
+     *        The storage type associated with the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,9 +1002,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ARN from the key store with which to associate the instance for TDE encryption.
+     * </p>
      * 
      * @param tdeCredentialArn
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public void setTdeCredentialArn(String tdeCredentialArn) {
@@ -732,9 +1015,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ARN from the key store with which to associate the instance for TDE encryption.
+     * </p>
      * 
-     * @return
+     * @return The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public String getTdeCredentialArn() {
@@ -742,9 +1027,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ARN from the key store with which to associate the instance for TDE encryption.
+     * </p>
      * 
      * @param tdeCredentialArn
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,9 +1042,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether the DB snapshot is encrypted.
+     * </p>
      * 
      * @param encrypted
+     *        Whether the DB snapshot is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -764,9 +1055,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether the DB snapshot is encrypted.
+     * </p>
      * 
-     * @return
+     * @return Whether the DB snapshot is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -774,9 +1067,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether the DB snapshot is encrypted.
+     * </p>
      * 
      * @param encrypted
+     *        Whether the DB snapshot is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -786,9 +1082,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether the DB snapshot is encrypted.
+     * </p>
      * 
-     * @return
+     * @return Whether the DB snapshot is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -796,9 +1094,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
+     * </p>
      * 
      * @param kmsKeyId
+     *        If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -806,9 +1107,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public String getKmsKeyId() {
@@ -816,9 +1119,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
+     * </p>
      * 
      * @param kmsKeyId
+     *        If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -828,9 +1134,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The time zone of the DB snapshot.
+     * </p>
      * 
      * @param timezone
+     *        The time zone of the DB snapshot.
      */
 
     public void setTimezone(String timezone) {
@@ -838,9 +1147,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The time zone of the DB snapshot.
+     * </p>
      * 
-     * @return
+     * @return The time zone of the DB snapshot.
      */
 
     public String getTimezone() {
@@ -848,9 +1159,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The time zone of the DB snapshot.
+     * </p>
      * 
      * @param timezone
+     *        The time zone of the DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -860,9 +1174,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether mapping of IAM accounts to database accounts is enabled.
+     * </p>
      * 
      * @param iamDatabaseAuthenticationEnabled
+     *        Whether mapping of IAM accounts to database accounts is enabled.
      */
 
     public void setIamDatabaseAuthenticationEnabled(Boolean iamDatabaseAuthenticationEnabled) {
@@ -870,9 +1187,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether mapping of IAM accounts to database accounts is enabled.
+     * </p>
      * 
-     * @return
+     * @return Whether mapping of IAM accounts to database accounts is enabled.
      */
 
     public Boolean getIamDatabaseAuthenticationEnabled() {
@@ -880,9 +1199,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether mapping of IAM accounts to database accounts is enabled.
+     * </p>
      * 
      * @param iamDatabaseAuthenticationEnabled
+     *        Whether mapping of IAM accounts to database accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -892,9 +1214,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether mapping of IAM accounts to database accounts is enabled.
+     * </p>
      * 
-     * @return
+     * @return Whether mapping of IAM accounts to database accounts is enabled.
      */
 
     public Boolean isIamDatabaseAuthenticationEnabled() {
@@ -902,9 +1226,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      */
 
     public java.util.List<AwsRdsDbProcessorFeature> getProcessorFeatures() {
@@ -912,9 +1238,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
      * 
      * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      */
 
     public void setProcessorFeatures(java.util.Collection<AwsRdsDbProcessorFeature> processorFeatures) {
@@ -927,7 +1256,9 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
@@ -935,6 +1266,7 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -949,9 +1281,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
      * 
      * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -961,9 +1296,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier for the source DB instance.
+     * </p>
      * 
      * @param dbiResourceId
+     *        The identifier for the source DB instance.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -971,9 +1309,11 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier for the source DB instance.
+     * </p>
      * 
-     * @return
+     * @return The identifier for the source DB instance.
      */
 
     public String getDbiResourceId() {
@@ -981,9 +1321,12 @@ public class AwsRdsDbSnapshotDetails implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier for the source DB instance.
+     * </p>
      * 
      * @param dbiResourceId
+     *        The identifier for the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

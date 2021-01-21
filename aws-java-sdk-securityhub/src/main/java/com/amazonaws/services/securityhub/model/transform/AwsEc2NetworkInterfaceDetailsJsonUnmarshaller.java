@@ -67,6 +67,28 @@ public class AwsEc2NetworkInterfaceDetailsJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     awsEc2NetworkInterfaceDetails.setSourceDestCheck(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IpV6Addresses", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setIpV6Addresses(new ListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail>(
+                            AwsEc2NetworkInterfaceIpV6AddressDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrivateIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPrivateIpAddresses(new ListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail>(
+                            AwsEc2NetworkInterfacePrivateIpAddressDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PublicDnsName", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPublicDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PublicIp", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPublicIp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

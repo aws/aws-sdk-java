@@ -834,6 +834,37 @@ public interface AWSKafkaAsync extends AWSKafka {
 
     /**
      * <p>
+     * Updates EC2 instance type.
+     * </p>
+     * 
+     * @param updateBrokerTypeRequest
+     * @return A Java Future containing the result of the UpdateBrokerType operation returned by the service.
+     * @sample AWSKafkaAsync.UpdateBrokerType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBrokerTypeResult> updateBrokerTypeAsync(UpdateBrokerTypeRequest updateBrokerTypeRequest);
+
+    /**
+     * <p>
+     * Updates EC2 instance type.
+     * </p>
+     * 
+     * @param updateBrokerTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBrokerType operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.UpdateBrokerType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBrokerTypeResult> updateBrokerTypeAsync(UpdateBrokerTypeRequest updateBrokerTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBrokerTypeRequest, UpdateBrokerTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the cluster with the configuration that is specified in the request body.
      * </p>
      * 

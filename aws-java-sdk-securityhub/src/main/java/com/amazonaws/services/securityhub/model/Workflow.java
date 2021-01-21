@@ -37,6 +37,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     * <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -67,6 +84,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     * <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -93,6 +127,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     *        <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -126,6 +177,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     * <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -151,6 +219,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *         </p>
+     *         <p>
+     *         Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *         <code>NEW</code> in the following cases:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     *         <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -184,6 +269,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     * <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -210,6 +312,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     *        <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -245,6 +364,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     * <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -271,6 +407,23 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+     *        <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>

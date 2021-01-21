@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * A processor feature.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbProcessorFeature"
  *      target="_top">AWS API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the processor feature.
+     * </p>
+     */
     private String name;
-    /** <p/> */
+    /**
+     * <p>
+     * The value of the processor feature.
+     * </p>
+     */
     private String value;
 
     /**
-     * <p/>
+     * <p>
+     * The name of the processor feature.
+     * </p>
      * 
      * @param name
+     *        The name of the processor feature.
      */
 
     public void setName(String name) {
@@ -42,9 +55,11 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the processor feature.
+     * </p>
      * 
-     * @return
+     * @return The name of the processor feature.
      */
 
     public String getName() {
@@ -52,9 +67,12 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the processor feature.
+     * </p>
      * 
      * @param name
+     *        The name of the processor feature.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,9 +82,12 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The value of the processor feature.
+     * </p>
      * 
      * @param value
+     *        The value of the processor feature.
      */
 
     public void setValue(String value) {
@@ -74,9 +95,11 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The value of the processor feature.
+     * </p>
      * 
-     * @return
+     * @return The value of the processor feature.
      */
 
     public String getValue() {
@@ -84,9 +107,12 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The value of the processor feature.
+     * </p>
      * 
      * @param value
+     *        The value of the processor feature.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides information about a parameter group for a DB instance.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbParameterGroup" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsRdsDbParameterGroup implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the parameter group.
+     * </p>
+     */
     private String dbParameterGroupName;
-    /** <p/> */
+    /**
+     * <p>
+     * The status of parameter updates.
+     * </p>
+     */
     private String parameterApplyStatus;
 
     /**
-     * <p/>
+     * <p>
+     * The name of the parameter group.
+     * </p>
      * 
      * @param dbParameterGroupName
+     *        The name of the parameter group.
      */
 
     public void setDbParameterGroupName(String dbParameterGroupName) {
@@ -42,9 +55,11 @@ public class AwsRdsDbParameterGroup implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the parameter group.
+     * </p>
      * 
-     * @return
+     * @return The name of the parameter group.
      */
 
     public String getDbParameterGroupName() {
@@ -52,9 +67,12 @@ public class AwsRdsDbParameterGroup implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the parameter group.
+     * </p>
      * 
      * @param dbParameterGroupName
+     *        The name of the parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,9 +82,12 @@ public class AwsRdsDbParameterGroup implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of parameter updates.
+     * </p>
      * 
      * @param parameterApplyStatus
+     *        The status of parameter updates.
      */
 
     public void setParameterApplyStatus(String parameterApplyStatus) {
@@ -74,9 +95,11 @@ public class AwsRdsDbParameterGroup implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of parameter updates.
+     * </p>
      * 
-     * @return
+     * @return The status of parameter updates.
      */
 
     public String getParameterApplyStatus() {
@@ -84,9 +107,12 @@ public class AwsRdsDbParameterGroup implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of parameter updates.
+     * </p>
      * 
      * @param parameterApplyStatus
+     *        The status of parameter updates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,7 +45,11 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
      * </p>
      */
     private String snapshotCreateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the database engine that you want to use for this DB instance.
+     * </p>
+     */
     private String engine;
     /**
      * <p>
@@ -281,9 +285,12 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine that you want to use for this DB instance.
+     * </p>
      * 
      * @param engine
+     *        The name of the database engine that you want to use for this DB instance.
      */
 
     public void setEngine(String engine) {
@@ -291,9 +298,11 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine that you want to use for this DB instance.
+     * </p>
      * 
-     * @return
+     * @return The name of the database engine that you want to use for this DB instance.
      */
 
     public String getEngine() {
@@ -301,9 +310,12 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the database engine that you want to use for this DB instance.
+     * </p>
      * 
      * @param engine
+     *        The name of the database engine that you want to use for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

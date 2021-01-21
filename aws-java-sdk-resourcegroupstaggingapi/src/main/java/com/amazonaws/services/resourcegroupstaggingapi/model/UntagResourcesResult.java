@@ -25,20 +25,23 @@ public class UntagResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Details of resources that could not be untagged. An error code, status code, and error message are returned for
-     * each failed item.
+     * A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the
+     * failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      * </p>
      */
     private java.util.Map<String, FailureInfo> failedResourcesMap;
 
     /**
      * <p>
-     * Details of resources that could not be untagged. An error code, status code, and error message are returned for
-     * each failed item.
+     * A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the
+     * failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      * </p>
      * 
-     * @return Details of resources that could not be untagged. An error code, status code, and error message are
-     *         returned for each failed item.
+     * @return A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of
+     *         the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status
+     *         code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      */
 
     public java.util.Map<String, FailureInfo> getFailedResourcesMap() {
@@ -47,13 +50,15 @@ public class UntagResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Details of resources that could not be untagged. An error code, status code, and error message are returned for
-     * each failed item.
+     * A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the
+     * failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      * </p>
      * 
      * @param failedResourcesMap
-     *        Details of resources that could not be untagged. An error code, status code, and error message are
-     *        returned for each failed item.
+     *        A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of
+     *        the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status
+     *        code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      */
 
     public void setFailedResourcesMap(java.util.Map<String, FailureInfo> failedResourcesMap) {
@@ -62,13 +67,15 @@ public class UntagResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Details of resources that could not be untagged. An error code, status code, and error message are returned for
-     * each failed item.
+     * A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the
+     * failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      * </p>
      * 
      * @param failedResourcesMap
-     *        Details of resources that could not be untagged. An error code, status code, and error message are
-     *        returned for each failed item.
+     *        A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of
+     *        the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status
+     *        code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

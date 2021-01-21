@@ -48,8 +48,38 @@ public class StandardsSubscription implements Serializable, Cloneable, Structure
     private java.util.Map<String, String> standardsInput;
     /**
      * <p>
-     * The status of the standards subscription.
+     * The status of the standard subscription.
      * </p>
+     * <p>
+     * The status values are as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Standard is in the process of being enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Standard is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standard could not be disabled.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String standardsStatus;
 
@@ -203,11 +233,70 @@ public class StandardsSubscription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the standards subscription.
+     * The status of the standard subscription.
      * </p>
+     * <p>
+     * The status values are as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Standard is in the process of being enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Standard is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standard could not be disabled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param standardsStatus
-     *        The status of the standards subscription.
+     *        The status of the standard subscription.</p>
+     *        <p>
+     *        The status values are as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Standard is in the process of being enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Standard is enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Standard is in the process of being disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standard could not be disabled.
+     *        </p>
+     *        </li>
      * @see StandardsStatus
      */
 
@@ -217,10 +306,69 @@ public class StandardsSubscription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the standards subscription.
+     * The status of the standard subscription.
      * </p>
+     * <p>
+     * The status values are as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Standard is in the process of being enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Standard is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standard could not be disabled.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the standards subscription.
+     * @return The status of the standard subscription.</p>
+     *         <p>
+     *         The status values are as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code> - Standard is in the process of being enabled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>READY</code> - Standard is enabled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code> - Standard is in the process of being disabled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - Standard could not be disabled.
+     *         </p>
+     *         </li>
      * @see StandardsStatus
      */
 
@@ -230,11 +378,70 @@ public class StandardsSubscription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the standards subscription.
+     * The status of the standard subscription.
      * </p>
+     * <p>
+     * The status values are as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Standard is in the process of being enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Standard is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standard could not be disabled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param standardsStatus
-     *        The status of the standards subscription.
+     *        The status of the standard subscription.</p>
+     *        <p>
+     *        The status values are as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Standard is in the process of being enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Standard is enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Standard is in the process of being disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standard could not be disabled.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardsStatus
      */
@@ -246,11 +453,70 @@ public class StandardsSubscription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the standards subscription.
+     * The status of the standard subscription.
      * </p>
+     * <p>
+     * The status values are as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Standard is in the process of being enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Standard is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standard could not be disabled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param standardsStatus
-     *        The status of the standards subscription.
+     *        The status of the standard subscription.</p>
+     *        <p>
+     *        The status values are as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Standard is in the process of being enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Standard is enabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Standard is in the process of being disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standard could not be disabled.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardsStatus
      */

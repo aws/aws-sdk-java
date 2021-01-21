@@ -901,6 +901,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateBrokerTypeResult> updateBrokerTypeAsync(UpdateBrokerTypeRequest request) {
+
+        return updateBrokerTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBrokerTypeResult> updateBrokerTypeAsync(final UpdateBrokerTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBrokerTypeRequest, UpdateBrokerTypeResult> asyncHandler) {
+        final UpdateBrokerTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBrokerTypeResult>() {
+            @Override
+            public UpdateBrokerTypeResult call() throws Exception {
+                UpdateBrokerTypeResult result = null;
+
+                try {
+                    result = executeUpdateBrokerType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterConfigurationResult> updateClusterConfigurationAsync(UpdateClusterConfigurationRequest request) {
 
         return updateClusterConfigurationAsync(request, null);

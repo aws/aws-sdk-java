@@ -57,7 +57,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String region;
-    /** <p/> */
+    /**
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
+     */
     private String resourceRole;
     /**
      * <p>
@@ -280,9 +285,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
      * 
      * @param resourceRole
+     *        Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *        finding activity,
      */
 
     public void setResourceRole(String resourceRole) {
@@ -290,9 +300,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
      * 
-     * @return
+     * @return Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *         finding activity,
      */
 
     public String getResourceRole() {
@@ -300,9 +314,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
      * 
      * @param resourceRole
+     *        Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *        finding activity,
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

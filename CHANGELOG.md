@@ -1,3 +1,16 @@
+# __1.11.941__ __2021-01-21__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - This release adds a new parameter ResourceARNList to Resource Groups Tagging api GetResources api to allow customers retrieve tag data for specific resources.
+
+## __AWS SecurityHub__
+  - ### Features
+    - This release of ASFF adds a new Action object and a new resource details object - AwsSsmPatchCompliance. It also adds several new attributes for the AwsEc2NetworkInterface resource type.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Amazon MSK has added a new API that allows you to update all the brokers in the cluster to the specified type.
+
 # __1.11.940__ __2021-01-19__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

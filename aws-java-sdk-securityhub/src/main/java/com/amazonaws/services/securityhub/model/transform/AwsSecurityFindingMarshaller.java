@@ -97,6 +97,8 @@ public class AwsSecurityFindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Vulnerabilities").build();
     private static final MarshallingInfo<StructuredPojo> PATCHSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatchSummary").build();
+    private static final MarshallingInfo<StructuredPojo> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Action").build();
 
     private static final AwsSecurityFindingMarshaller instance = new AwsSecurityFindingMarshaller();
 
@@ -148,6 +150,7 @@ public class AwsSecurityFindingMarshaller {
             protocolMarshaller.marshall(awsSecurityFinding.getNote(), NOTE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getVulnerabilities(), VULNERABILITIES_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getPatchSummary(), PATCHSUMMARY_BINDING);
+            protocolMarshaller.marshall(awsSecurityFinding.getAction(), ACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

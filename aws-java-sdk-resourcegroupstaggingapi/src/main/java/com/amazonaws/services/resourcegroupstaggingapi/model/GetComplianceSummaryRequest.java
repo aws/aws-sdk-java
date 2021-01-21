@@ -27,24 +27,24 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the
-     * count of returned noncompliant resources includes only resources with the specified target IDs.
+     * Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
+     * the count of returned noncompliant resources includes only resources with the specified target IDs.
      * </p>
      */
     private java.util.List<String> targetIdFilters;
     /**
      * <p>
-     * A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources
-     * includes only resources in the specified Regions.
+     * Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     * noncompliant resources includes only resources in the specified Regions.
      * </p>
      */
     private java.util.List<String> regionFilters;
     /**
      * <p>
-     * The constraints on the resources that you want returned. The format of each resource type is
-     * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-     * returns only EC2 instances.
+     * Specifies that you want the response to include information for only resources of the specified types. The format
+     * of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of
+     * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -54,67 +54,70 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * For a list of service name strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For resource type strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
-     * length constraint requirement applies to each resource type filter.
+     * You can specify multiple resource types by using a comma separated array. The array can include up to 100 items.
+     * Note that the length constraint requirement applies to each resource type filter.
      * </p>
      */
     private java.util.List<String> resourceTypeFilters;
     /**
      * <p>
-     * A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     * resources includes only resources that have the specified tag keys.
+     * Specifies that you want the response to include information for only resources that have tags with the specified
+     * tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that
+     * have the specified tag keys.
      * </p>
      */
     private java.util.List<String> tagKeyFilters;
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      */
     private java.util.List<String> groupBy;
     /**
      * <p>
-     * A limit that restricts the number of results that are returned per page.
+     * Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum,
+     * even if there are more results still to return. You should always check the <code>PaginationToken</code> response
+     * value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      */
     private String paginationToken;
 
     /**
      * <p>
-     * The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the
-     * count of returned noncompliant resources includes only resources with the specified target IDs.
+     * Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
+     * the count of returned noncompliant resources includes only resources with the specified target IDs.
      * </p>
      * 
-     * @return The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
-     *         the count of returned noncompliant resources includes only resources with the specified target IDs.
+     * @return Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this
+     *         parameter, the count of returned noncompliant resources includes only resources with the specified target
+     *         IDs.
      */
 
     public java.util.List<String> getTargetIdFilters() {
@@ -123,13 +126,14 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the
-     * count of returned noncompliant resources includes only resources with the specified target IDs.
+     * Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
+     * the count of returned noncompliant resources includes only resources with the specified target IDs.
      * </p>
      * 
      * @param targetIdFilters
-     *        The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
-     *        the count of returned noncompliant resources includes only resources with the specified target IDs.
+     *        Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this
+     *        parameter, the count of returned noncompliant resources includes only resources with the specified target
+     *        IDs.
      */
 
     public void setTargetIdFilters(java.util.Collection<String> targetIdFilters) {
@@ -143,8 +147,8 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the
-     * count of returned noncompliant resources includes only resources with the specified target IDs.
+     * Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
+     * the count of returned noncompliant resources includes only resources with the specified target IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,8 +157,9 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param targetIdFilters
-     *        The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
-     *        the count of returned noncompliant resources includes only resources with the specified target IDs.
+     *        Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this
+     *        parameter, the count of returned noncompliant resources includes only resources with the specified target
+     *        IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,13 +175,14 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the
-     * count of returned noncompliant resources includes only resources with the specified target IDs.
+     * Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
+     * the count of returned noncompliant resources includes only resources with the specified target IDs.
      * </p>
      * 
      * @param targetIdFilters
-     *        The target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter,
-     *        the count of returned noncompliant resources includes only resources with the specified target IDs.
+     *        Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this
+     *        parameter, the count of returned noncompliant resources includes only resources with the specified target
+     *        IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,12 +193,12 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources
-     * includes only resources in the specified Regions.
+     * Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     * noncompliant resources includes only resources in the specified Regions.
      * </p>
      * 
-     * @return A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant
-     *         resources includes only resources in the specified Regions.
+     * @return Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     *         noncompliant resources includes only resources in the specified Regions.
      */
 
     public java.util.List<String> getRegionFilters() {
@@ -201,13 +207,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources
-     * includes only resources in the specified Regions.
+     * Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     * noncompliant resources includes only resources in the specified Regions.
      * </p>
      * 
      * @param regionFilters
-     *        A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources in the specified Regions.
+     *        Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     *        noncompliant resources includes only resources in the specified Regions.
      */
 
     public void setRegionFilters(java.util.Collection<String> regionFilters) {
@@ -221,8 +227,8 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources
-     * includes only resources in the specified Regions.
+     * Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     * noncompliant resources includes only resources in the specified Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,8 +237,8 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param regionFilters
-     *        A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources in the specified Regions.
+     *        Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     *        noncompliant resources includes only resources in the specified Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,13 +254,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources
-     * includes only resources in the specified Regions.
+     * Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     * noncompliant resources includes only resources in the specified Regions.
      * </p>
      * 
      * @param regionFilters
-     *        A list of Regions to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources in the specified Regions.
+     *        Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned
+     *        noncompliant resources includes only resources in the specified Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,10 +271,10 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The constraints on the resources that you want returned. The format of each resource type is
-     * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-     * returns only EC2 instances.
+     * Specifies that you want the response to include information for only resources of the specified types. The format
+     * of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of
+     * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -278,33 +284,33 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * For a list of service name strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For resource type strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
-     * length constraint requirement applies to each resource type filter.
+     * You can specify multiple resource types by using a comma separated array. The array can include up to 100 items.
+     * Note that the length constraint requirement applies to each resource type filter.
      * </p>
      * 
-     * @return The constraints on the resources that you want returned. The format of each resource type is
-     *         <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *         all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
-     *         <code>ec2:instance</code> returns only EC2 instances. </p>
+     * @return Specifies that you want the response to include information for only resources of the specified types.
+     *         The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a
+     *         resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
+     *         Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
      *         <p>
      *         The string for each service name and resource type is the same as that embedded in a resource's Amazon
      *         Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:
@@ -313,28 +319,28 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         For a list of service name strings, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *         >AWS Service Namespaces</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For resource type strings, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      *         ARNs</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         You can specify multiple resource types by using an array. The array can include up to 100 items. Note
-     *         that the length constraint requirement applies to each resource type filter.
+     *         You can specify multiple resource types by using a comma separated array. The array can include up to 100
+     *         items. Note that the length constraint requirement applies to each resource type filter.
      */
 
     public java.util.List<String> getResourceTypeFilters() {
@@ -343,10 +349,10 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The constraints on the resources that you want returned. The format of each resource type is
-     * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-     * returns only EC2 instances.
+     * Specifies that you want the response to include information for only resources of the specified types. The format
+     * of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of
+     * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -356,34 +362,34 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * For a list of service name strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For resource type strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
-     * length constraint requirement applies to each resource type filter.
+     * You can specify multiple resource types by using a comma separated array. The array can include up to 100 items.
+     * Note that the length constraint requirement applies to each resource type filter.
      * </p>
      * 
      * @param resourceTypeFilters
-     *        The constraints on the resources that you want returned. The format of each resource type is
-     *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
-     *        <code>ec2:instance</code> returns only EC2 instances. </p>
+     *        Specifies that you want the response to include information for only resources of the specified types. The
+     *        format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource
+     *        type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a
+     *        resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
      *        Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:
@@ -392,28 +398,28 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        For a list of service name strings, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For resource type strings, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      *        ARNs</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
-     *        that the length constraint requirement applies to each resource type filter.
+     *        You can specify multiple resource types by using a comma separated array. The array can include up to 100
+     *        items. Note that the length constraint requirement applies to each resource type filter.
      */
 
     public void setResourceTypeFilters(java.util.Collection<String> resourceTypeFilters) {
@@ -427,10 +433,10 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The constraints on the resources that you want returned. The format of each resource type is
-     * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-     * returns only EC2 instances.
+     * Specifies that you want the response to include information for only resources of the specified types. The format
+     * of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of
+     * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -440,27 +446,27 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * For a list of service name strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For resource type strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
-     * length constraint requirement applies to each resource type filter.
+     * You can specify multiple resource types by using a comma separated array. The array can include up to 100 items.
+     * Note that the length constraint requirement applies to each resource type filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -469,10 +475,10 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param resourceTypeFilters
-     *        The constraints on the resources that you want returned. The format of each resource type is
-     *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
-     *        <code>ec2:instance</code> returns only EC2 instances. </p>
+     *        Specifies that you want the response to include information for only resources of the specified types. The
+     *        format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource
+     *        type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a
+     *        resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
      *        Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:
@@ -481,28 +487,28 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        For a list of service name strings, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For resource type strings, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      *        ARNs</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
-     *        that the length constraint requirement applies to each resource type filter.
+     *        You can specify multiple resource types by using a comma separated array. The array can include up to 100
+     *        items. Note that the length constraint requirement applies to each resource type filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,10 +524,10 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The constraints on the resources that you want returned. The format of each resource type is
-     * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-     * returns only EC2 instances.
+     * Specifies that you want the response to include information for only resources of the specified types. The format
+     * of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of
+     * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -531,34 +537,34 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * For a list of service name strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For resource type strings, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
-     * length constraint requirement applies to each resource type filter.
+     * You can specify multiple resource types by using a comma separated array. The array can include up to 100 items.
+     * Note that the length constraint requirement applies to each resource type filter.
      * </p>
      * 
      * @param resourceTypeFilters
-     *        The constraints on the resources that you want returned. The format of each resource type is
-     *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
-     *        <code>ec2:instance</code> returns only EC2 instances. </p>
+     *        Specifies that you want the response to include information for only resources of the specified types. The
+     *        format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource
+     *        type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a
+     *        resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
      *        Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:
@@ -567,28 +573,28 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        For a list of service name strings, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For resource type strings, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      *        ARNs</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
-     *        that the length constraint requirement applies to each resource type filter.
+     *        You can specify multiple resource types by using a comma separated array. The array can include up to 100
+     *        items. Note that the length constraint requirement applies to each resource type filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -599,12 +605,14 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     * resources includes only resources that have the specified tag keys.
+     * Specifies that you want the response to include information for only resources that have tags with the specified
+     * tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that
+     * have the specified tag keys.
      * </p>
      * 
-     * @return A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     *         resources includes only resources that have the specified tag keys.
+     * @return Specifies that you want the response to include information for only resources that have tags with the
+     *         specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only
+     *         resources that have the specified tag keys.
      */
 
     public java.util.List<String> getTagKeyFilters() {
@@ -613,13 +621,15 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     * resources includes only resources that have the specified tag keys.
+     * Specifies that you want the response to include information for only resources that have tags with the specified
+     * tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that
+     * have the specified tag keys.
      * </p>
      * 
      * @param tagKeyFilters
-     *        A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources that have the specified tag keys.
+     *        Specifies that you want the response to include information for only resources that have tags with the
+     *        specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only
+     *        resources that have the specified tag keys.
      */
 
     public void setTagKeyFilters(java.util.Collection<String> tagKeyFilters) {
@@ -633,8 +643,9 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     * resources includes only resources that have the specified tag keys.
+     * Specifies that you want the response to include information for only resources that have tags with the specified
+     * tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that
+     * have the specified tag keys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -643,8 +654,9 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param tagKeyFilters
-     *        A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources that have the specified tag keys.
+     *        Specifies that you want the response to include information for only resources that have tags with the
+     *        specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only
+     *        resources that have the specified tag keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -660,13 +672,15 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     * resources includes only resources that have the specified tag keys.
+     * Specifies that you want the response to include information for only resources that have tags with the specified
+     * tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that
+     * have the specified tag keys.
      * </p>
      * 
      * @param tagKeyFilters
-     *        A list of tag keys to limit the output by. If you use this parameter, the count of returned noncompliant
-     *        resources includes only resources that have the specified tag keys.
+     *        Specifies that you want the response to include information for only resources that have tags with the
+     *        specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only
+     *        resources that have the specified tag keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,12 +691,12 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      * 
-     * @return A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted
-     *         by those attributes.
+     * @return Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts
+     *         are sorted by those attributes.
      * @see GroupByAttribute
      */
 
@@ -692,13 +706,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      * 
      * @param groupBy
-     *        A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted
-     *        by those attributes.
+     *        Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts
+     *        are sorted by those attributes.
      * @see GroupByAttribute
      */
 
@@ -713,8 +727,8 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -723,8 +737,8 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param groupBy
-     *        A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted
-     *        by those attributes.
+     *        Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts
+     *        are sorted by those attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GroupByAttribute
      */
@@ -741,13 +755,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      * 
      * @param groupBy
-     *        A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted
-     *        by those attributes.
+     *        Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts
+     *        are sorted by those attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GroupByAttribute
      */
@@ -759,13 +773,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by
-     * those attributes.
+     * Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are
+     * sorted by those attributes.
      * </p>
      * 
      * @param groupBy
-     *        A list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted
-     *        by those attributes.
+     *        Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts
+     *        are sorted by those attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GroupByAttribute
      */
@@ -785,11 +799,16 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A limit that restricts the number of results that are returned per page.
+     * Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum,
+     * even if there are more results still to return. You should always check the <code>PaginationToken</code> response
+     * value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
      * </p>
      * 
      * @param maxResults
-     *        A limit that restricts the number of results that are returned per page.
+     *        Specifies the maximum number of results to be returned in each page. A query can return fewer than this
+     *        maximum, even if there are more results still to return. You should always check the
+     *        <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of
+     *        1 and a maximum value of 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -798,10 +817,15 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A limit that restricts the number of results that are returned per page.
+     * Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum,
+     * even if there are more results still to return. You should always check the <code>PaginationToken</code> response
+     * value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
      * </p>
      * 
-     * @return A limit that restricts the number of results that are returned per page.
+     * @return Specifies the maximum number of results to be returned in each page. A query can return fewer than this
+     *         maximum, even if there are more results still to return. You should always check the
+     *         <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum
+     *         of 1 and a maximum value of 100.
      */
 
     public Integer getMaxResults() {
@@ -810,11 +834,16 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A limit that restricts the number of results that are returned per page.
+     * Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum,
+     * even if there are more results still to return. You should always check the <code>PaginationToken</code> response
+     * value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
      * </p>
      * 
      * @param maxResults
-     *        A limit that restricts the number of results that are returned per page.
+     *        Specifies the maximum number of results to be returned in each page. A query can return fewer than this
+     *        maximum, even if there are more results still to return. You should always check the
+     *        <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of
+     *        1 and a maximum value of 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,15 +854,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *        request an additional page of data.
+     *        Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *        the next page of results. Leave this parameter empty in your initial request.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -842,14 +869,12 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
-     * @return A string that indicates that additional data is available. Leave this value empty for your initial
-     *         request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *         request an additional page of data.
+     * @return Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *         the next page of results. Leave this parameter empty in your initial request.
      */
 
     public String getPaginationToken() {
@@ -858,15 +883,13 @@ public class GetComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *        request an additional page of data.
+     *        Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *        the next page of results. Leave this parameter empty in your initial request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

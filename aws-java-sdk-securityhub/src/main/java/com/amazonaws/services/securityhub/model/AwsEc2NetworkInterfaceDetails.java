@@ -52,6 +52,30 @@ public class AwsEc2NetworkInterfaceDetails implements Serializable, Cloneable, S
      * </p>
      */
     private Boolean sourceDestCheck;
+    /**
+     * <p>
+     * The IPv6 addresses associated with the network interface.
+     * </p>
+     */
+    private java.util.List<AwsEc2NetworkInterfaceIpV6AddressDetail> ipV6Addresses;
+    /**
+     * <p>
+     * The private IPv4 addresses associated with the network interface.
+     * </p>
+     */
+    private java.util.List<AwsEc2NetworkInterfacePrivateIpAddressDetail> privateIpAddresses;
+    /**
+     * <p>
+     * The public DNS name of the network interface.
+     * </p>
+     */
+    private String publicDnsName;
+    /**
+     * <p>
+     * The address of the Elastic IP address bound to the network interface.
+     * </p>
+     */
+    private String publicIp;
 
     /**
      * <p>
@@ -256,6 +280,226 @@ public class AwsEc2NetworkInterfaceDetails implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The IPv6 addresses associated with the network interface.
+     * </p>
+     * 
+     * @return The IPv6 addresses associated with the network interface.
+     */
+
+    public java.util.List<AwsEc2NetworkInterfaceIpV6AddressDetail> getIpV6Addresses() {
+        return ipV6Addresses;
+    }
+
+    /**
+     * <p>
+     * The IPv6 addresses associated with the network interface.
+     * </p>
+     * 
+     * @param ipV6Addresses
+     *        The IPv6 addresses associated with the network interface.
+     */
+
+    public void setIpV6Addresses(java.util.Collection<AwsEc2NetworkInterfaceIpV6AddressDetail> ipV6Addresses) {
+        if (ipV6Addresses == null) {
+            this.ipV6Addresses = null;
+            return;
+        }
+
+        this.ipV6Addresses = new java.util.ArrayList<AwsEc2NetworkInterfaceIpV6AddressDetail>(ipV6Addresses);
+    }
+
+    /**
+     * <p>
+     * The IPv6 addresses associated with the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpV6Addresses(java.util.Collection)} or {@link #withIpV6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param ipV6Addresses
+     *        The IPv6 addresses associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withIpV6Addresses(AwsEc2NetworkInterfaceIpV6AddressDetail... ipV6Addresses) {
+        if (this.ipV6Addresses == null) {
+            setIpV6Addresses(new java.util.ArrayList<AwsEc2NetworkInterfaceIpV6AddressDetail>(ipV6Addresses.length));
+        }
+        for (AwsEc2NetworkInterfaceIpV6AddressDetail ele : ipV6Addresses) {
+            this.ipV6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 addresses associated with the network interface.
+     * </p>
+     * 
+     * @param ipV6Addresses
+     *        The IPv6 addresses associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withIpV6Addresses(java.util.Collection<AwsEc2NetworkInterfaceIpV6AddressDetail> ipV6Addresses) {
+        setIpV6Addresses(ipV6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses associated with the network interface.
+     * </p>
+     * 
+     * @return The private IPv4 addresses associated with the network interface.
+     */
+
+    public java.util.List<AwsEc2NetworkInterfacePrivateIpAddressDetail> getPrivateIpAddresses() {
+        return privateIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses associated with the network interface.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        The private IPv4 addresses associated with the network interface.
+     */
+
+    public void setPrivateIpAddresses(java.util.Collection<AwsEc2NetworkInterfacePrivateIpAddressDetail> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+            return;
+        }
+
+        this.privateIpAddresses = new java.util.ArrayList<AwsEc2NetworkInterfacePrivateIpAddressDetail>(privateIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses associated with the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateIpAddresses(java.util.Collection)} or {@link #withPrivateIpAddresses(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        The private IPv4 addresses associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withPrivateIpAddresses(AwsEc2NetworkInterfacePrivateIpAddressDetail... privateIpAddresses) {
+        if (this.privateIpAddresses == null) {
+            setPrivateIpAddresses(new java.util.ArrayList<AwsEc2NetworkInterfacePrivateIpAddressDetail>(privateIpAddresses.length));
+        }
+        for (AwsEc2NetworkInterfacePrivateIpAddressDetail ele : privateIpAddresses) {
+            this.privateIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses associated with the network interface.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        The private IPv4 addresses associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withPrivateIpAddresses(java.util.Collection<AwsEc2NetworkInterfacePrivateIpAddressDetail> privateIpAddresses) {
+        setPrivateIpAddresses(privateIpAddresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The public DNS name of the network interface.
+     * </p>
+     * 
+     * @param publicDnsName
+     *        The public DNS name of the network interface.
+     */
+
+    public void setPublicDnsName(String publicDnsName) {
+        this.publicDnsName = publicDnsName;
+    }
+
+    /**
+     * <p>
+     * The public DNS name of the network interface.
+     * </p>
+     * 
+     * @return The public DNS name of the network interface.
+     */
+
+    public String getPublicDnsName() {
+        return this.publicDnsName;
+    }
+
+    /**
+     * <p>
+     * The public DNS name of the network interface.
+     * </p>
+     * 
+     * @param publicDnsName
+     *        The public DNS name of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withPublicDnsName(String publicDnsName) {
+        setPublicDnsName(publicDnsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The address of the Elastic IP address bound to the network interface.
+     * </p>
+     * 
+     * @param publicIp
+     *        The address of the Elastic IP address bound to the network interface.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * The address of the Elastic IP address bound to the network interface.
+     * </p>
+     * 
+     * @return The address of the Elastic IP address bound to the network interface.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * The address of the Elastic IP address bound to the network interface.
+     * </p>
+     * 
+     * @param publicIp
+     *        The address of the Elastic IP address bound to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2NetworkInterfaceDetails withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -274,7 +518,15 @@ public class AwsEc2NetworkInterfaceDetails implements Serializable, Cloneable, S
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
+        if (getIpV6Addresses() != null)
+            sb.append("IpV6Addresses: ").append(getIpV6Addresses()).append(",");
+        if (getPrivateIpAddresses() != null)
+            sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
+        if (getPublicDnsName() != null)
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -305,6 +557,22 @@ public class AwsEc2NetworkInterfaceDetails implements Serializable, Cloneable, S
             return false;
         if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
+        if (other.getIpV6Addresses() == null ^ this.getIpV6Addresses() == null)
+            return false;
+        if (other.getIpV6Addresses() != null && other.getIpV6Addresses().equals(this.getIpV6Addresses()) == false)
+            return false;
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null)
+            return false;
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false)
+            return false;
+        if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null)
+            return false;
+        if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
+            return false;
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
+            return false;
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +585,10 @@ public class AwsEc2NetworkInterfaceDetails implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getIpV6Addresses() == null) ? 0 : getIpV6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 

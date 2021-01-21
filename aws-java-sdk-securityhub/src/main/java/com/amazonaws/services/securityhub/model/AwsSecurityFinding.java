@@ -293,6 +293,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private PatchSummary patchSummary;
+    /**
+     * <p>
+     * Provides details about an action that was detected for the finding.
+     * </p>
+     */
+    private Action action;
 
     /**
      * <p>
@@ -2285,6 +2291,46 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides details about an action that was detected for the finding.
+     * </p>
+     * 
+     * @param action
+     *        Provides details about an action that was detected for the finding.
+     */
+
+    public void setAction(Action action) {
+        this.action = action;
+    }
+
+    /**
+     * <p>
+     * Provides details about an action that was detected for the finding.
+     * </p>
+     * 
+     * @return Provides details about an action that was detected for the finding.
+     */
+
+    public Action getAction() {
+        return this.action;
+    }
+
+    /**
+     * <p>
+     * Provides details about an action that was detected for the finding.
+     * </p>
+     * 
+     * @param action
+     *        Provides details about an action that was detected for the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withAction(Action action) {
+        setAction(action);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2363,7 +2409,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getVulnerabilities() != null)
             sb.append("Vulnerabilities: ").append(getVulnerabilities()).append(",");
         if (getPatchSummary() != null)
-            sb.append("PatchSummary: ").append(getPatchSummary());
+            sb.append("PatchSummary: ").append(getPatchSummary()).append(",");
+        if (getAction() != null)
+            sb.append("Action: ").append(getAction());
         sb.append("}");
         return sb.toString();
     }
@@ -2514,6 +2562,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getPatchSummary() != null && other.getPatchSummary().equals(this.getPatchSummary()) == false)
             return false;
+        if (other.getAction() == null ^ this.getAction() == null)
+            return false;
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
         return true;
     }
 
@@ -2556,6 +2608,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getNote() == null) ? 0 : getNote().hashCode());
         hashCode = prime * hashCode + ((getVulnerabilities() == null) ? 0 : getVulnerabilities().hashCode());
         hashCode = prime * hashCode + ((getPatchSummary() == null) ? 0 : getPatchSummary().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         return hashCode;
     }
 

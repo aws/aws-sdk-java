@@ -140,6 +140,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsCloudTrailTrail(AwsCloudTrailTrailDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsSsmPatchCompliance", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsSsmPatchCompliance(AwsSsmPatchComplianceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsCertificateManagerCertificate", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetailsJsonUnmarshaller.getInstance().unmarshall(

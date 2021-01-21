@@ -153,6 +153,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public UpdateBrokerTypeResult updateBrokerType(UpdateBrokerTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClusterConfigurationResult updateClusterConfiguration(UpdateClusterConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

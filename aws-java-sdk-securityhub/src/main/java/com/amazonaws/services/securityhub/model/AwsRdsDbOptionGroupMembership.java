@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * An option group membership.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbOptionGroupMembership"
  *      target="_top">AWS API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the option group.
+     * </p>
+     */
     private String optionGroupName;
-    /** <p/> */
+    /**
+     * <p>
+     * The status of the option group membership.
+     * </p>
+     */
     private String status;
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option group.
+     * </p>
      * 
      * @param optionGroupName
+     *        The name of the option group.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -42,9 +55,11 @@ public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option group.
+     * </p>
      * 
-     * @return
+     * @return The name of the option group.
      */
 
     public String getOptionGroupName() {
@@ -52,9 +67,12 @@ public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option group.
+     * </p>
      * 
      * @param optionGroupName
+     *        The name of the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,9 +82,12 @@ public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the option group membership.
+     * </p>
      * 
      * @param status
+     *        The status of the option group membership.
      */
 
     public void setStatus(String status) {
@@ -74,9 +95,11 @@ public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the option group membership.
+     * </p>
      * 
-     * @return
+     * @return The status of the option group membership.
      */
 
     public String getStatus() {
@@ -84,9 +107,12 @@ public class AwsRdsDbOptionGroupMembership implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the option group membership.
+     * </p>
      * 
      * @param status
+     *        The status of the option group membership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

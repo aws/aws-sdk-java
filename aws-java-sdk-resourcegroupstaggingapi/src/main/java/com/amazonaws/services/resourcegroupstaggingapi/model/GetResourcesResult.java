@@ -25,28 +25,30 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      */
     private String paginationToken;
     /**
      * <p>
-     * A list of resource ARNs and the tags (keys and values) associated with each.
+     * A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * </p>
      */
     private java.util.List<ResourceTagMapping> resourceTagMappingList;
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -55,13 +57,14 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
-     * @return A string that indicates that the response contains more data than can be returned in a single response.
-     *         To receive additional data, specify this string for the <code>PaginationToken</code> value in a
-     *         subsequent request.
+     * @return A string that indicates that there is more data available than this response contains. To receive the
+     *         next part of the response, specify this response value as the <code>PaginationToken</code> value in the
+     *         request for the next page.
      */
 
     public String getPaginationToken() {
@@ -70,14 +73,15 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +92,10 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of resource ARNs and the tags (keys and values) associated with each.
+     * A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * </p>
      * 
-     * @return A list of resource ARNs and the tags (keys and values) associated with each.
+     * @return A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      */
 
     public java.util.List<ResourceTagMapping> getResourceTagMappingList() {
@@ -100,11 +104,11 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of resource ARNs and the tags (keys and values) associated with each.
+     * A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * </p>
      * 
      * @param resourceTagMappingList
-     *        A list of resource ARNs and the tags (keys and values) associated with each.
+     *        A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      */
 
     public void setResourceTagMappingList(java.util.Collection<ResourceTagMapping> resourceTagMappingList) {
@@ -118,7 +122,7 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of resource ARNs and the tags (keys and values) associated with each.
+     * A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +131,7 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param resourceTagMappingList
-     *        A list of resource ARNs and the tags (keys and values) associated with each.
+     *        A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +147,11 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of resource ARNs and the tags (keys and values) associated with each.
+     * A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * </p>
      * 
      * @param resourceTagMappingList
-     *        A list of resource ARNs and the tags (keys and values) associated with each.
+     *        A list of resource ARNs and the tags (keys and values) associated with those ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

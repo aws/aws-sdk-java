@@ -26,720 +26,6 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * </p>
  * <p>
  * <fullname>Resource Groups Tagging API</fullname>
- * <p>
- * This guide describes the API operations for the resource groups tagging.
- * </p>
- * <p>
- * A tag is a label that you assign to an AWS resource. A tag consists of a key and a value, both of which you define.
- * For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value of
- * "Stack" might be "Testing" for one and "Production" for the other.
- * </p>
- * <important>
- * <p>
- * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use
- * tags to provide you with billing and administration services. Tags are not intended to be used for private or
- * sensitive data.
- * </p>
- * </important>
- * <p>
- * Tagging can help you organize your resources and enables you to simplify resource management, access management and
- * cost allocation.
- * </p>
- * <p>
- * You can use the resource groups tagging API operations to complete the following tasks:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Tag and untag supported resources located in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * Use tag-based filters to search for resources located in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * List all existing tag keys in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * List all existing values for the specified key in the specified Region for the AWS account.
- * </p>
- * </li>
- * </ul>
- * <p>
- * To use resource groups tagging API operations, you must add the following permissions to your IAM policy:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>tag:GetResources</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>tag:TagResources</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>tag:UntagResources</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>tag:GetTagKeys</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>tag:GetTagValues</code>
- * </p>
- * </li>
- * </ul>
- * <p>
- * You'll also need permissions to access the resources of individual services so that you can tag and untag those
- * resources.
- * </p>
- * <p>
- * For more information on IAM policies, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html">Managing IAM Policies</a> in the
- * <i>IAM User Guide</i>.
- * </p>
- * <p>
- * <i> <b>Services that support the Resource Groups Tagging API</b> </i>
- * </p>
- * <p>
- * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/a4b">Alexa for Business (a4b)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/apigateway">API Gateway</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/appstream2">Amazon AppStream</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/appsync">AWS AppSync</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/app-mesh">AWS App Mesh</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/athena">Amazon Athena</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide">Amazon Aurora</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/aws-backup">AWS Backup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/acm">AWS Certificate Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/acm">AWS Certificate Manager Private CA</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/clouddirectory">Amazon Cloud Directory</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloud-map">AWS Cloud Map</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudformation">AWS CloudFormation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudfront">Amazon CloudFront</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudhsm">AWS CloudHSM</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudtrail">AWS CloudTrail</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudwatch">Amazon CloudWatch (alarms only)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudwatch/?id=docs_gateway#amazon-cloudwatch-events">Amazon CloudWatch
- * Events</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudwatch/?id=docs_gateway#amazon-cloudwatch-logs">Amazon CloudWatch Logs</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cloudwatch">Amazon Cloudwatch Synthetics</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codebuild">AWS CodeBuild</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codecommit">AWS CodeCommit</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/">AWS CodeGuru Profiler</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codestar">AWS CodeStar</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/">AWS CodeStar Connections</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cognito">Amazon Cognito Identity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/cognito">Amazon Cognito User Pools</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/comprehend">Amazon Comprehend</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/config">AWS Config</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/connect/resources/?whats-new-cards#Documentation">Amazon Connect</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/data-exchange">AWS Data Exchange</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/data-pipeline">AWS Data Pipeline</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/dms">AWS Database Migration Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/datasync">AWS DataSync</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/devicefarm">AWS Device Farm</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/directconnect">AWS Direct Connect</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/directory-service">AWS Directory Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/dynamodb">Amazon DynamoDB</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ebs">Amazon EBS</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ec2">Amazon EC2</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/imagebuilder">EC2 Image Builder</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ecr">Amazon ECR</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ecs">Amazon ECS</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/eks">Amazon EKS</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/elastic-beanstalk">AWS Elastic Beanstalk</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/efs">Amazon Elastic File System</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/elasticloadbalancing">Elastic Load Balancing</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/elastic-inference">Amazon Elastic Inference</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/elasticache">Amazon ElastiCache</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/elasticsearch-service">Amazon Elasticsearch Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/medialive">AWS Elemental MediaLive</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/mediapackage">AWS Elemental MediaPackage</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/mediapackage">AWS Elemental MediaPackage VoD</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/mediatailor">AWS Elemental MediaTailor</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/emr">Amazon EMR</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/eventbridge">Amazon EventBridge Schema</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/firewall-manager">AWS Firewall Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/forecast">Amazon Forecast</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/s3/?id=docs_gateway#amazon-s3-glacier">Amazon S3 Glacier</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/global-accelerator">AWS Global Accelerator</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ground-station">AWS Ground Station</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/glue">AWS Glue</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/guardduty">Amazon GuardDuty</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/inspector">Amazon Inspector</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ivs">Amazon Interactive Video Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iotanalytics">AWS IoT Analytics</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iot">AWS IoT Core</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iot-device-defender">AWS IoT Device Defender</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iot-device-management">AWS IoT Device Management</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iotevents">AWS IoT Events</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/greengrass">AWS IoT Greengrass</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iot-1-click">AWS IoT 1-Click</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/iot-sitewise">AWS IoT Sitewise</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/thingsgraph">AWS IoT Things Graph</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/kendra">Amazon Kendra</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/kms">AWS Key Management Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/kinesis">Amazon Kinesis</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/kinesis/?id=docs_gateway#amazon-kinesis-data-analytics">Amazon Kinesis Data
- * Analytics</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/kinesis/?id=docs_gateway#amazon-kinesis-data-firehose">Amazon Kinesis Data
- * Firehose</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/lambda">AWS Lambda</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/lex">Amazon Lex</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/license-manager">AWS License Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/lightsail">Amazon Lightsail</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/macie">Amazon Macie</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/machine-learning">Amazon Machine Learning</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/amazon-mq">Amazon MQ</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/neptune">Amazon Neptune</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html">AWS Network Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks CM</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/organizations">AWS Organizations</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/pinpoint">Amazon Pinpoint</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/qldb">Amazon Quantum Ledger Database (QLDB)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/rds">Amazon RDS</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/redshift">Amazon Redshift</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ram">AWS Resource Access Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ARG">AWS Resource Groups</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/robomaker">AWS RoboMaker</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/route53">Amazon Route 53</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/route53">Amazon Route 53 Resolver</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/s3">Amazon S3 (buckets only)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/sagemaker">Amazon SageMaker</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/savingsplans">Savings Plans</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/securityhub">AWS Security Hub</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/servicecatalog">AWS Service Catalog</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/ses">Amazon Simple Email Service (SES)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/sns">Amazon Simple Notification Service (SNS)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/sqs">Amazon Simple Queue Service (SQS)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/swf">Amazon Simple Workflow Service</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/step-functions">AWS Step Functions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/storagegateway">AWS Storage Gateway</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/systems-manager">AWS Systems Manager</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/transfer">AWS Transfer for SFTP</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/vpc">Amazon VPC</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/waf">AWS WAF</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/waf">AWS WAF Regional</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/worklink">Amazon WorkLink</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/workspaces">Amazon WorkSpaces</a>
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggingAPI {
@@ -749,7 +35,7 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * Describes the status of the <code>StartReportCreation</code> operation.
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
      * </p>
      * 
      * @param describeReportCreationRequest
@@ -765,7 +51,7 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * Describes the status of the <code>StartReportCreation</code> operation.
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
      * </p>
      * 
      * @param describeReportCreationRequest
@@ -787,11 +73,18 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * </p>
      * <p>
      * For more information on tag policies, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
      * Policies</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getComplianceSummaryRequest
@@ -808,11 +101,18 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * </p>
      * <p>
      * For more information on tag policies, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
      * Policies</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getComplianceSummaryRequest
@@ -846,18 +146,18 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <li>
      * <p>
      * Information about compliance with the account's effective tag policy. For more information on tag policies, see
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
      * Policies</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
-     * <note>
      * <p>
-     * You can check the <code>PaginationToken</code> response parameter to determine if a query is complete. Queries
-     * occasionally return fewer results on a page than allowed. The <code>PaginationToken</code> response parameter
-     * value is <code>null</code> <i>only</i> when there are no more results to display.
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
-     * </note>
      * 
      * @param getResourcesRequest
      * @return A Java Future containing the result of the GetResources operation returned by the service.
@@ -885,18 +185,18 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <li>
      * <p>
      * Information about compliance with the account's effective tag policy. For more information on tag policies, see
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
      * Policies</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
-     * <note>
      * <p>
-     * You can check the <code>PaginationToken</code> response parameter to determine if a query is complete. Queries
-     * occasionally return fewer results on a page than allowed. The <code>PaginationToken</code> response parameter
-     * value is <code>null</code> <i>only</i> when there are no more results to display.
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
-     * </note>
      * 
      * @param getResourcesRequest
      * @param asyncHandler
@@ -913,7 +213,14 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Returns all tag keys in the specified Region for the AWS account.
+     * Returns all tag keys currently in use in the specified Region for the calling AWS account.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getTagKeysRequest
@@ -926,7 +233,14 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Returns all tag keys in the specified Region for the AWS account.
+     * Returns all tag keys currently in use in the specified Region for the calling AWS account.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getTagKeysRequest
@@ -944,7 +258,15 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Returns all tag values for the specified key in the specified Region for the AWS account.
+     * Returns all tag values for the specified key that are used in the specified AWS Region for the calling AWS
+     * account.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getTagValuesRequest
@@ -957,7 +279,15 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Returns all tag values for the specified key in the specified Region for the AWS account.
+     * Returns all tag values for the specified key that are used in the specified AWS Region for the calling AWS
+     * account.
+     * </p>
+     * <p>
+     * This operation supports pagination, where the response can be sent in multiple pages. You should check the
+     * <code>PaginationToken</code> response parameter to determine if there are additional results available to return.
+     * Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next
+     * request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
+     * there are no more results waiting to be returned.
      * </p>
      * 
      * @param getTagValuesRequest
@@ -975,8 +305,9 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Generates a report that lists all tagged resources in accounts across your organization and tells whether each
-     * resource is compliant with the effective tag policy. Compliance data is refreshed daily.
+     * Generates a report that lists all tagged resources in the accounts across your organization and tells whether
+     * each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is
+     * generated asynchronously.
      * </p>
      * <p>
      * The generated report is saved to the following location:
@@ -985,7 +316,7 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
      * </p>
      * 
      * @param startReportCreationRequest
@@ -998,8 +329,9 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
 
     /**
      * <p>
-     * Generates a report that lists all tagged resources in accounts across your organization and tells whether each
-     * resource is compliant with the effective tag policy. Compliance data is refreshed daily.
+     * Generates a report that lists all tagged resources in the accounts across your organization and tells whether
+     * each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is
+     * generated asynchronously.
      * </p>
      * <p>
      * The generated report is saved to the following location:
@@ -1008,7 +340,7 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
      * </p>
      * <p>
-     * You can call this operation only from the organization's master account and from the us-east-1 Region.
+     * You can call this operation only from the organization's management account and from the us-east-1 Region.
      * </p>
      * 
      * @param startReportCreationRequest
@@ -1031,27 +363,28 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <ul>
      * <li>
      * <p>
-     * Not all resources can have tags. For a list of services that support tagging, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * Not all resources can have tags. For a list of services with resources that support tagging using this operation,
+     * see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Each resource can have up to 50 tags. For other limits, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage
      * Conventions</a> in the <i>AWS General Reference.</i>
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified AWS Region for the AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
      * To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as
-     * well as permissions for adding tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * well as permissions for adding tags. For more information, see the documentation for each service.
      * </p>
      * </li>
      * </ul>
@@ -1078,27 +411,28 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <ul>
      * <li>
      * <p>
-     * Not all resources can have tags. For a list of services that support tagging, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * Not all resources can have tags. For a list of services with resources that support tagging using this operation,
+     * see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Each resource can have up to 50 tags. For other limits, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage
      * Conventions</a> in the <i>AWS General Reference.</i>
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified AWS Region for the AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
      * To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as
-     * well as permissions for adding tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * well as permissions for adding tags. For more information, see the documentation for each service.
      * </p>
      * </li>
      * </ul>
@@ -1133,13 +467,13 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <li>
      * <p>
      * To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to
-     * as well as permissions for removing tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * as well as permissions for removing tags. For more information, see the documentation for the service whose
+     * resource you want to untag.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified AWS Region for the calling AWS account.
      * </p>
      * </li>
      * </ul>
@@ -1162,13 +496,13 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * <li>
      * <p>
      * To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to
-     * as well as permissions for removing tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * as well as permissions for removing tags. For more information, see the documentation for the service whose
+     * resource you want to untag.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified AWS Region for the calling AWS account.
      * </p>
      * </li>
      * </ul>

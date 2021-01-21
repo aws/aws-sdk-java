@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Changes to a DB instance that are currently pending.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbPendingModifiedValues"
  *      target="_top">AWS API Documentation</a>
@@ -26,41 +28,104 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The new DB instance class for the DB instance.
+     * </p>
+     */
     private String dbInstanceClass;
-    /** <p/> */
+    /**
+     * <p>
+     * The new value of the allocated storage for the DB instance.
+     * </p>
+     */
     private Integer allocatedStorage;
-    /** <p/> */
+    /**
+     * <p>
+     * The new master user password for the DB instance.
+     * </p>
+     */
     private String masterUserPassword;
-    /** <p/> */
+    /**
+     * <p>
+     * The new port for the DB instance.
+     * </p>
+     */
     private Integer port;
-    /** <p/> */
+    /**
+     * <p>
+     * The new backup retention period for the DB instance.
+     * </p>
+     */
     private Integer backupRetentionPeriod;
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.
+     * </p>
+     */
     private Boolean multiAZ;
-    /** <p/> */
+    /**
+     * <p>
+     * The new engine version for the DB instance.
+     * </p>
+     */
     private String engineVersion;
-    /** <p/> */
+    /**
+     * <p>
+     * The new license model value for the DB instance.
+     * </p>
+     */
     private String licenseModel;
-    /** <p/> */
+    /**
+     * <p>
+     * The new provisioned IOPS value for the DB instance.
+     * </p>
+     */
     private Integer iops;
-    /** <p/> */
+    /**
+     * <p>
+     * The new DB instance identifier for the DB instance.
+     * </p>
+     */
     private String dbInstanceIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The new storage type for the DB instance.
+     * </p>
+     */
     private String storageType;
-    /** <p/> */
+    /**
+     * <p>
+     * The new CA certificate identifier for the DB instance.
+     * </p>
+     */
     private String caCertificateIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the new subnet group for the DB instance.
+     * </p>
+     */
     private String dbSubnetGroupName;
-    /** <p/> */
+    /**
+     * <p>
+     * A list of log types that are being enabled or disabled.
+     * </p>
+     */
     private AwsRdsPendingCloudWatchLogsExports pendingCloudWatchLogsExports;
-    /** <p/> */
+    /**
+     * <p>
+     * Processor features that are being updated.
+     * </p>
+     */
     private java.util.List<AwsRdsDbProcessorFeature> processorFeatures;
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance class for the DB instance.
+     * </p>
      * 
      * @param dbInstanceClass
+     *        The new DB instance class for the DB instance.
      */
 
     public void setDbInstanceClass(String dbInstanceClass) {
@@ -68,9 +133,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance class for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new DB instance class for the DB instance.
      */
 
     public String getDbInstanceClass() {
@@ -78,9 +145,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance class for the DB instance.
+     * </p>
      * 
      * @param dbInstanceClass
+     *        The new DB instance class for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,9 +160,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new value of the allocated storage for the DB instance.
+     * </p>
      * 
      * @param allocatedStorage
+     *        The new value of the allocated storage for the DB instance.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -100,9 +173,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new value of the allocated storage for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new value of the allocated storage for the DB instance.
      */
 
     public Integer getAllocatedStorage() {
@@ -110,9 +185,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new value of the allocated storage for the DB instance.
+     * </p>
      * 
      * @param allocatedStorage
+     *        The new value of the allocated storage for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,9 +200,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new master user password for the DB instance.
+     * </p>
      * 
      * @param masterUserPassword
+     *        The new master user password for the DB instance.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -132,9 +213,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new master user password for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new master user password for the DB instance.
      */
 
     public String getMasterUserPassword() {
@@ -142,9 +225,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new master user password for the DB instance.
+     * </p>
      * 
      * @param masterUserPassword
+     *        The new master user password for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,9 +240,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new port for the DB instance.
+     * </p>
      * 
      * @param port
+     *        The new port for the DB instance.
      */
 
     public void setPort(Integer port) {
@@ -164,9 +253,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new port for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new port for the DB instance.
      */
 
     public Integer getPort() {
@@ -174,9 +265,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new port for the DB instance.
+     * </p>
      * 
      * @param port
+     *        The new port for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,9 +280,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new backup retention period for the DB instance.
+     * </p>
      * 
      * @param backupRetentionPeriod
+     *        The new backup retention period for the DB instance.
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -196,9 +293,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new backup retention period for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new backup retention period for the DB instance.
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -206,9 +305,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new backup retention period for the DB instance.
+     * </p>
      * 
      * @param backupRetentionPeriod
+     *        The new backup retention period for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,9 +320,13 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.
+     * </p>
      * 
      * @param multiAZ
+     *        Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone
+     *        deployment.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -228,9 +334,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.
+     * </p>
      * 
-     * @return
+     * @return Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone
+     *         deployment.
      */
 
     public Boolean getMultiAZ() {
@@ -238,9 +347,13 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.
+     * </p>
      * 
      * @param multiAZ
+     *        Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone
+     *        deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,9 +363,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.
+     * </p>
      * 
-     * @return
+     * @return Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone
+     *         deployment.
      */
 
     public Boolean isMultiAZ() {
@@ -260,9 +376,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new engine version for the DB instance.
+     * </p>
      * 
      * @param engineVersion
+     *        The new engine version for the DB instance.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -270,9 +389,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new engine version for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new engine version for the DB instance.
      */
 
     public String getEngineVersion() {
@@ -280,9 +401,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new engine version for the DB instance.
+     * </p>
      * 
      * @param engineVersion
+     *        The new engine version for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,9 +416,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new license model value for the DB instance.
+     * </p>
      * 
      * @param licenseModel
+     *        The new license model value for the DB instance.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -302,9 +429,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new license model value for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new license model value for the DB instance.
      */
 
     public String getLicenseModel() {
@@ -312,9 +441,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new license model value for the DB instance.
+     * </p>
      * 
      * @param licenseModel
+     *        The new license model value for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,9 +456,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new provisioned IOPS value for the DB instance.
+     * </p>
      * 
      * @param iops
+     *        The new provisioned IOPS value for the DB instance.
      */
 
     public void setIops(Integer iops) {
@@ -334,9 +469,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new provisioned IOPS value for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new provisioned IOPS value for the DB instance.
      */
 
     public Integer getIops() {
@@ -344,9 +481,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new provisioned IOPS value for the DB instance.
+     * </p>
      * 
      * @param iops
+     *        The new provisioned IOPS value for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,9 +496,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance identifier for the DB instance.
+     * </p>
      * 
      * @param dbInstanceIdentifier
+     *        The new DB instance identifier for the DB instance.
      */
 
     public void setDbInstanceIdentifier(String dbInstanceIdentifier) {
@@ -366,9 +509,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance identifier for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new DB instance identifier for the DB instance.
      */
 
     public String getDbInstanceIdentifier() {
@@ -376,9 +521,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new DB instance identifier for the DB instance.
+     * </p>
      * 
      * @param dbInstanceIdentifier
+     *        The new DB instance identifier for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,9 +536,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new storage type for the DB instance.
+     * </p>
      * 
      * @param storageType
+     *        The new storage type for the DB instance.
      */
 
     public void setStorageType(String storageType) {
@@ -398,9 +549,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new storage type for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new storage type for the DB instance.
      */
 
     public String getStorageType() {
@@ -408,9 +561,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new storage type for the DB instance.
+     * </p>
      * 
      * @param storageType
+     *        The new storage type for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,9 +576,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new CA certificate identifier for the DB instance.
+     * </p>
      * 
      * @param caCertificateIdentifier
+     *        The new CA certificate identifier for the DB instance.
      */
 
     public void setCaCertificateIdentifier(String caCertificateIdentifier) {
@@ -430,9 +589,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new CA certificate identifier for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The new CA certificate identifier for the DB instance.
      */
 
     public String getCaCertificateIdentifier() {
@@ -440,9 +601,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The new CA certificate identifier for the DB instance.
+     * </p>
      * 
      * @param caCertificateIdentifier
+     *        The new CA certificate identifier for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,9 +616,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the new subnet group for the DB instance.
+     * </p>
      * 
      * @param dbSubnetGroupName
+     *        The name of the new subnet group for the DB instance.
      */
 
     public void setDbSubnetGroupName(String dbSubnetGroupName) {
@@ -462,9 +629,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the new subnet group for the DB instance.
+     * </p>
      * 
-     * @return
+     * @return The name of the new subnet group for the DB instance.
      */
 
     public String getDbSubnetGroupName() {
@@ -472,9 +641,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the new subnet group for the DB instance.
+     * </p>
      * 
      * @param dbSubnetGroupName
+     *        The name of the new subnet group for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,9 +656,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of log types that are being enabled or disabled.
+     * </p>
      * 
      * @param pendingCloudWatchLogsExports
+     *        A list of log types that are being enabled or disabled.
      */
 
     public void setPendingCloudWatchLogsExports(AwsRdsPendingCloudWatchLogsExports pendingCloudWatchLogsExports) {
@@ -494,9 +669,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of log types that are being enabled or disabled.
+     * </p>
      * 
-     * @return
+     * @return A list of log types that are being enabled or disabled.
      */
 
     public AwsRdsPendingCloudWatchLogsExports getPendingCloudWatchLogsExports() {
@@ -504,9 +681,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of log types that are being enabled or disabled.
+     * </p>
      * 
      * @param pendingCloudWatchLogsExports
+     *        A list of log types that are being enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,9 +696,11 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Processor features that are being updated.
+     * </p>
      * 
-     * @return
+     * @return Processor features that are being updated.
      */
 
     public java.util.List<AwsRdsDbProcessorFeature> getProcessorFeatures() {
@@ -526,9 +708,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Processor features that are being updated.
+     * </p>
      * 
      * @param processorFeatures
+     *        Processor features that are being updated.
      */
 
     public void setProcessorFeatures(java.util.Collection<AwsRdsDbProcessorFeature> processorFeatures) {
@@ -541,7 +726,9 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Processor features that are being updated.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
@@ -549,6 +736,7 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
      * </p>
      * 
      * @param processorFeatures
+     *        Processor features that are being updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,9 +751,12 @@ public class AwsRdsDbPendingModifiedValues implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * Processor features that are being updated.
+     * </p>
      * 
      * @param processorFeatures
+     *        Processor features that are being updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
