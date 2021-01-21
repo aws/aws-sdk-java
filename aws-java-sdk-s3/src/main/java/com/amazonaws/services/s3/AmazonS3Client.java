@@ -4232,7 +4232,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Map<String, Object> rawMetadata = metadata.getRawMetadata();
         if (rawMetadata != null) {
             for (Entry<String, Object> entry : rawMetadata.entrySet()) {
-                request.addHeader(entry.getKey(), entry.getValue().toString());
+                String key = entry.getKey();
+                Object value = entry.getValue();
+                if (value != null) {
+                    request.addHeader(key, value.toString());
+                }
             }
         }
 
