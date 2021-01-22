@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Describes the Amazon EC2 launch template and the launch template version that can be used by an EC2 Fleet to
  * configure Amazon EC2 instances. For information about launch templates, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching an instance from a
- * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * launch template</a> in the <i>Amazon EC2 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetLaunchTemplateSpecificationRequest"

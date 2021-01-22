@@ -75,6 +75,12 @@ public class ModifyCapacityReservationRequest extends AmazonWebServiceRequest im
      * </ul>
      */
     private String endDateType;
+    /**
+     * <p>
+     * Reserved. Capacity Reservations you have created are accepted by default.
+     * </p>
+     */
+    private Boolean accept;
 
     /**
      * <p>
@@ -432,6 +438,58 @@ public class ModifyCapacityReservationRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Reserved. Capacity Reservations you have created are accepted by default.
+     * </p>
+     * 
+     * @param accept
+     *        Reserved. Capacity Reservations you have created are accepted by default.
+     */
+
+    public void setAccept(Boolean accept) {
+        this.accept = accept;
+    }
+
+    /**
+     * <p>
+     * Reserved. Capacity Reservations you have created are accepted by default.
+     * </p>
+     * 
+     * @return Reserved. Capacity Reservations you have created are accepted by default.
+     */
+
+    public Boolean getAccept() {
+        return this.accept;
+    }
+
+    /**
+     * <p>
+     * Reserved. Capacity Reservations you have created are accepted by default.
+     * </p>
+     * 
+     * @param accept
+     *        Reserved. Capacity Reservations you have created are accepted by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCapacityReservationRequest withAccept(Boolean accept) {
+        setAccept(accept);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved. Capacity Reservations you have created are accepted by default.
+     * </p>
+     * 
+     * @return Reserved. Capacity Reservations you have created are accepted by default.
+     */
+
+    public Boolean isAccept() {
+        return this.accept;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -461,7 +519,9 @@ public class ModifyCapacityReservationRequest extends AmazonWebServiceRequest im
         if (getEndDate() != null)
             sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getEndDateType() != null)
-            sb.append("EndDateType: ").append(getEndDateType());
+            sb.append("EndDateType: ").append(getEndDateType()).append(",");
+        if (getAccept() != null)
+            sb.append("Accept: ").append(getAccept());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +552,10 @@ public class ModifyCapacityReservationRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getEndDateType() != null && other.getEndDateType().equals(this.getEndDateType()) == false)
             return false;
+        if (other.getAccept() == null ^ this.getAccept() == null)
+            return false;
+        if (other.getAccept() != null && other.getAccept().equals(this.getAccept()) == false)
+            return false;
         return true;
     }
 
@@ -504,6 +568,7 @@ public class ModifyCapacityReservationRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getEndDateType() == null) ? 0 : getEndDateType().hashCode());
+        hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
         return hashCode;
     }
 

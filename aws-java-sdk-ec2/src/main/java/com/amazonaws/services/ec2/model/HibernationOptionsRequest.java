@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
  * prerequisites</a>. For more information, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * <i>Amazon EC2 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HibernationOptionsRequest" target="_top">AWS API

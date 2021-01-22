@@ -460,7 +460,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * <p>
@@ -3440,7 +3440,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * <p>
@@ -3494,7 +3494,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
      *        The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x
@@ -3553,7 +3553,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * <p>
@@ -3606,7 +3606,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *         <p>
      *         The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x
@@ -3665,7 +3665,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * <p>
@@ -3719,7 +3719,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
      *        The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x

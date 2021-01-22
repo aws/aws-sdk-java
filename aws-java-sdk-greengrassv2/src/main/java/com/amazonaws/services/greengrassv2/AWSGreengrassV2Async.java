@@ -266,8 +266,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * </p>
      * <p>
      * For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in
+     * the <i>AWS IoT Greengrass V2 Developer Guide</i>.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -296,8 +296,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * </p>
      * <p>
      * For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in
+     * the <i>AWS IoT Greengrass V2 Developer Guide</i>.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -463,8 +463,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices can call this operation to identify
-     * the URL that they can use to download an artifact to install.
+     * Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the
+     * URL that they can use to download an artifact to install.
      * </p>
      * 
      * @param getComponentVersionArtifactRequest
@@ -478,8 +478,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices can call this operation to identify
-     * the URL that they can use to download an artifact to install.
+     * Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the
+     * URL that they can use to download an artifact to install.
      * </p>
      * 
      * @param getComponentVersionArtifactRequest
@@ -798,8 +798,7 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * To use this operation, you must use the data plane API endpoint and authenticate with an AWS IoT device
      * certificate. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
-     * Greengrass endpoints and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT Greengrass endpoints and quotas</a>.
      * </p>
      * </important>
      * 
@@ -833,8 +832,7 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * To use this operation, you must use the data plane API endpoint and authenticate with an AWS IoT device
      * certificate. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
-     * Greengrass endpoints and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT Greengrass endpoints and quotas</a>.
      * </p>
      * </important>
      * 

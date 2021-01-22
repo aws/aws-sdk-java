@@ -28,8 +28,8 @@ public class EbsInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
-     * in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a>
+     * in <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String ebsOptimizedSupport;
@@ -55,14 +55,14 @@ public class EbsInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
-     * in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a>
+     * in <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param ebsOptimizedSupport
      *        Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *        Instances</a> in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized
+     *        instances</a> in <i>Amazon EC2 User Guide</i>.
      * @see EbsOptimizedSupport
      */
 
@@ -73,13 +73,13 @@ public class EbsInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
-     * in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a>
+     * in <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *         Instances</a> in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized
+     *         instances</a> in <i>Amazon EC2 User Guide</i>.
      * @see EbsOptimizedSupport
      */
 
@@ -90,14 +90,14 @@ public class EbsInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
-     * in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a>
+     * in <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param ebsOptimizedSupport
      *        Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *        Instances</a> in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized
+     *        instances</a> in <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EbsOptimizedSupport
      */
@@ -110,14 +110,14 @@ public class EbsInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
-     * in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a>
+     * in <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param ebsOptimizedSupport
      *        Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *        Instances</a> in <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized
+     *        instances</a> in <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EbsOptimizedSupport
      */

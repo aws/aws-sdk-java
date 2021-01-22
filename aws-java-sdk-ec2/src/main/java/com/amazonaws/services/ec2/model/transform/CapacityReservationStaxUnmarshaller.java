@@ -110,6 +110,11 @@ public class CapacityReservationStaxUnmarshaller implements Unmarshaller<Capacit
                     continue;
                 }
 
+                if (context.testExpression("startDate", targetDepth)) {
+                    capacityReservation.setStartDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("endDate", targetDepth)) {
                     capacityReservation.setEndDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;

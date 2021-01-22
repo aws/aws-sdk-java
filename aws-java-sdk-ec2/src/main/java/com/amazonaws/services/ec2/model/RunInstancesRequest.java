@@ -42,7 +42,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -80,7 +80,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      */
@@ -147,7 +147,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      */
@@ -284,8 +284,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
      * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
@@ -332,7 +332,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -343,7 +343,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private CpuOptionsRequest cpuOptions;
@@ -359,7 +359,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
@@ -554,7 +554,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -563,7 +563,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @see InstanceType
@@ -577,7 +577,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -585,7 +585,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return The instance type. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>m1.small</code>
      * @see InstanceType
@@ -599,7 +599,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -608,7 +608,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -624,7 +624,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -633,7 +633,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @see InstanceType
@@ -647,7 +647,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -656,7 +656,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -858,7 +858,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -867,7 +867,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <i>Amazon EC2 User Guide</i>.
      *        </p>
      */
 
@@ -883,7 +883,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -891,7 +891,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <p>
      *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <i>Amazon EC2 User Guide</i>.
      *         </p>
      */
 
@@ -907,7 +907,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -916,7 +916,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <i>Amazon EC2 User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1277,7 +1277,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1288,7 +1288,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <i>Amazon EC2 User Guide</i>.
      *        </p>
      */
 
@@ -1306,7 +1306,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1316,7 +1316,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <p>
      *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <i>Amazon EC2 User Guide</i>.
      *         </p>
      */
 
@@ -1334,7 +1334,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1345,7 +1345,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <i>Amazon EC2 User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2378,14 +2378,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
      * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
      *         your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
-     *         Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
+     *         Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
@@ -2399,15 +2399,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
      * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param elasticGpuSpecification
      *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
      *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
@@ -2423,8 +2423,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
      * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2435,8 +2435,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param elasticGpuSpecification
      *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
      *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2454,15 +2454,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
      * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param elasticGpuSpecification
      *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
      *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2789,7 +2789,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2801,7 +2801,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *        performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      */
@@ -2817,7 +2817,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2828,7 +2828,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *         ModifyInstanceCreditSpecification</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *         performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      */
@@ -2844,7 +2844,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2856,7 +2856,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *        performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2871,13 +2871,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setCpuOptions(CpuOptionsRequest cpuOptions) {
@@ -2888,12 +2888,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The CPU options for the instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *         options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         options</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public CpuOptionsRequest getCpuOptions() {
@@ -2904,13 +2904,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2975,7 +2975,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
@@ -2984,7 +2984,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      */
@@ -2997,7 +2997,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
@@ -3005,7 +3005,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      */
@@ -3018,7 +3018,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
@@ -3027,7 +3027,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.

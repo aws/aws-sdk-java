@@ -47,7 +47,7 @@ public class Host implements Serializable, Cloneable {
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -109,9 +109,9 @@ public class Host implements Serializable, Cloneable {
     private String hostRecovery;
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      */
     private String allowsMultipleInstanceTypes;
@@ -292,14 +292,14 @@ public class Host implements Serializable, Cloneable {
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -311,13 +311,13 @@ public class Host implements Serializable, Cloneable {
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -329,14 +329,14 @@ public class Host implements Serializable, Cloneable {
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -846,16 +846,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      * 
      * @param allowsMultipleInstanceTypes
-     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a
-     *        specific instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance
-     *        types in the instance family. <code>off</code> indicates that the Dedicated Host supports a single
-     *        instance type only.
+     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the
+     *        value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If
+     *        the value is <code>off</code>, the Dedicated Host supports a single instance type only.
      * @see AllowsMultipleInstanceTypes
      */
 
@@ -865,15 +864,14 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      * 
-     * @return Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a
-     *         specific instance type only. <code>one</code> indicates that the Dedicated Host supports multiple
-     *         instance types in the instance family. <code>off</code> indicates that the Dedicated Host supports a
-     *         single instance type only.
+     * @return Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the
+     *         value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If
+     *         the value is <code>off</code>, the Dedicated Host supports a single instance type only.
      * @see AllowsMultipleInstanceTypes
      */
 
@@ -883,16 +881,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      * 
      * @param allowsMultipleInstanceTypes
-     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a
-     *        specific instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance
-     *        types in the instance family. <code>off</code> indicates that the Dedicated Host supports a single
-     *        instance type only.
+     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the
+     *        value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If
+     *        the value is <code>off</code>, the Dedicated Host supports a single instance type only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsMultipleInstanceTypes
      */
@@ -904,16 +901,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      * 
      * @param allowsMultipleInstanceTypes
-     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a
-     *        specific instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance
-     *        types in the instance family. <code>off</code> indicates that the Dedicated Host supports a single
-     *        instance type only.
+     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the
+     *        value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If
+     *        the value is <code>off</code>, the Dedicated Host supports a single instance type only.
      * @see AllowsMultipleInstanceTypes
      */
 
@@ -923,16 +919,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a specific
-     * instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a single instance type only.
+     * Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value
+     * is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.
      * </p>
      * 
      * @param allowsMultipleInstanceTypes
-     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family, or a
-     *        specific instance type only. <code>one</code> indicates that the Dedicated Host supports multiple instance
-     *        types in the instance family. <code>off</code> indicates that the Dedicated Host supports a single
-     *        instance type only.
+     *        Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the
+     *        value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If
+     *        the value is <code>off</code>, the Dedicated Host supports a single instance type only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsMultipleInstanceTypes
      */

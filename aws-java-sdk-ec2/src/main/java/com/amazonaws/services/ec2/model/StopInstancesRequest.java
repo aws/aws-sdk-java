@@ -36,7 +36,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate
      * successfully, a normal shutdown occurs. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -151,7 +151,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate
      * successfully, a normal shutdown occurs. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -161,7 +161,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *        Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot
      *        hibernate successfully, a normal shutdown occurs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -175,7 +175,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate
      * successfully, a normal shutdown occurs. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -184,7 +184,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * @return Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot
      *         hibernate successfully, a normal shutdown occurs. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -198,7 +198,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate
      * successfully, a normal shutdown occurs. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -208,7 +208,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *        Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot
      *        hibernate successfully, a normal shutdown occurs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -224,7 +224,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate
      * successfully, a normal shutdown occurs. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -233,7 +233,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      * @return Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot
      *         hibernate successfully, a normal shutdown occurs. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>false</code>
      */

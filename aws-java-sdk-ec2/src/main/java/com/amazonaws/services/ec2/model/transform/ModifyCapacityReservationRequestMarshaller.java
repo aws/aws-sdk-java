@@ -56,6 +56,10 @@ public class ModifyCapacityReservationRequestMarshaller implements Marshaller<Re
             request.addParameter("EndDateType", StringUtils.fromString(modifyCapacityReservationRequest.getEndDateType()));
         }
 
+        if (modifyCapacityReservationRequest.getAccept() != null) {
+            request.addParameter("Accept", StringUtils.fromBoolean(modifyCapacityReservationRequest.getAccept()));
+        }
+
         return request;
     }
 

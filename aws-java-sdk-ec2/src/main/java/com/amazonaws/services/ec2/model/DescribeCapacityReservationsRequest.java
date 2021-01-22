@@ -115,8 +115,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -418,8 +418,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -552,8 +552,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *         longer available for your use.
+     *         <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *         available for your use.
      *         </p>
      *         </li>
      *         <li>
@@ -696,8 +696,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -831,8 +831,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -977,8 +977,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1117,8 +1117,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1265,8 +1265,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1400,8 +1400,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>

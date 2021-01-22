@@ -254,8 +254,8 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -2250,8 +2250,8 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param sourceDestCheck
@@ -2259,8 +2259,8 @@ public class Instance implements Serializable, Cloneable {
      *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *        for the instance to perform NAT. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
-     *        the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
+     *        the <i>Amazon VPC User Guide</i>.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -2273,16 +2273,16 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
      *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *         for the instance to perform NAT. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
-     *         the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
+     *         the <i>Amazon VPC User Guide</i>.
      */
 
     public Boolean getSourceDestCheck() {
@@ -2295,8 +2295,8 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param sourceDestCheck
@@ -2304,8 +2304,8 @@ public class Instance implements Serializable, Cloneable {
      *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *        for the instance to perform NAT. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
-     *        the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
+     *        the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2320,16 +2320,16 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
      *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *         for the instance to perform NAT. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
-     *         the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
+     *         the <i>Amazon VPC User Guide</i>.
      */
 
     public Boolean isSourceDestCheck() {

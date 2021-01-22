@@ -769,6 +769,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      */
     private Integer maxAllocatedStorage;
     /**
@@ -5812,9 +5817,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
      * @param maxAllocatedStorage
-     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
      */
 
     public void setMaxAllocatedStorage(Integer maxAllocatedStorage) {
@@ -5825,8 +5840,18 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
-     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *         <p>
+     *         For more information about this setting, including limitations that apply to it, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *         > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *         Guide</i>.
      */
 
     public Integer getMaxAllocatedStorage() {
@@ -5837,9 +5862,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
      * @param maxAllocatedStorage
-     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

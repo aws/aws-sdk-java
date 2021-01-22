@@ -78,7 +78,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <ul>
      * <li>
      * <p>
-     * <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and continues to
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
      * maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      * </p>
      * </li>
@@ -99,7 +99,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     * >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String type;
@@ -515,7 +515,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <ul>
      * <li>
      * <p>
-     * <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and continues to
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
      * maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      * </p>
      * </li>
@@ -536,7 +536,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     * >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param type
@@ -544,7 +544,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and
+     *        <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and
      *        continues to maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      *        </p>
      *        </li>
@@ -565,7 +565,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     *        >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * @see FleetType
      */
 
@@ -580,7 +580,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <ul>
      * <li>
      * <p>
-     * <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and continues to
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
      * maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      * </p>
      * </li>
@@ -601,14 +601,14 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     * >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The type of request. The default value is <code>maintain</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and
+     *         <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and
      *         continues to maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      *         </p>
      *         </li>
@@ -629,7 +629,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     *         >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * @see FleetType
      */
 
@@ -644,7 +644,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <ul>
      * <li>
      * <p>
-     * <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and continues to
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
      * maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      * </p>
      * </li>
@@ -665,7 +665,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     * >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param type
@@ -673,7 +673,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and
+     *        <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and
      *        continues to maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      *        </p>
      *        </li>
@@ -694,7 +694,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     *        >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -711,7 +711,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <ul>
      * <li>
      * <p>
-     * <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and continues to
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
      * maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      * </p>
      * </li>
@@ -732,7 +732,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     * >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param type
@@ -740,7 +740,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired capacity, and
+     *        <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired capacity, and
      *        continues to maintain your desired Spot capacity by replenishing interrupted Spot Instances.
      *        </p>
      *        </li>
@@ -761,7 +761,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
-     *        >EC2 Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */

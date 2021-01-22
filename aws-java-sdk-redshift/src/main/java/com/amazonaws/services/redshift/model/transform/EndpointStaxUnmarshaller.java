@@ -56,12 +56,12 @@ public class EndpointStaxUnmarshaller implements Unmarshaller<Endpoint, StaxUnma
                 }
 
                 if (context.testExpression("VpcEndpoints", targetDepth)) {
-                    endpoint.withVpcEndpoints(new ArrayList<SpartaProxyVpcEndpoint>());
+                    endpoint.withVpcEndpoints(new ArrayList<VpcEndpoint>());
                     continue;
                 }
 
-                if (context.testExpression("VpcEndpoints/SpartaProxyVpcEndpoint", targetDepth)) {
-                    endpoint.withVpcEndpoints(SpartaProxyVpcEndpointStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("VpcEndpoints/VpcEndpoint", targetDepth)) {
+                    endpoint.withVpcEndpoints(VpcEndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

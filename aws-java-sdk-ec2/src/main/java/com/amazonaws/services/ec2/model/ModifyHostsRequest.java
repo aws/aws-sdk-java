@@ -40,8 +40,8 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String hostRecovery;
@@ -219,14 +219,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param hostRecovery
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostRecovery
      */
 
@@ -237,13 +237,13 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *         Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         recovery</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostRecovery
      */
 
@@ -254,14 +254,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param hostRecovery
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostRecovery
      */
@@ -274,14 +274,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param hostRecovery
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostRecovery
      */
 
@@ -292,14 +292,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param hostRecovery
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostRecovery
      */

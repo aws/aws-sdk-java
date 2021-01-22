@@ -43,7 +43,7 @@ public class Endpoint implements Serializable, Cloneable {
      * Describes a connection endpoint.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<SpartaProxyVpcEndpoint> vpcEndpoints;
+    private com.amazonaws.internal.SdkInternalList<VpcEndpoint> vpcEndpoints;
 
     /**
      * <p>
@@ -133,9 +133,9 @@ public class Endpoint implements Serializable, Cloneable {
      * @return Describes a connection endpoint.
      */
 
-    public java.util.List<SpartaProxyVpcEndpoint> getVpcEndpoints() {
+    public java.util.List<VpcEndpoint> getVpcEndpoints() {
         if (vpcEndpoints == null) {
-            vpcEndpoints = new com.amazonaws.internal.SdkInternalList<SpartaProxyVpcEndpoint>();
+            vpcEndpoints = new com.amazonaws.internal.SdkInternalList<VpcEndpoint>();
         }
         return vpcEndpoints;
     }
@@ -149,13 +149,13 @@ public class Endpoint implements Serializable, Cloneable {
      *        Describes a connection endpoint.
      */
 
-    public void setVpcEndpoints(java.util.Collection<SpartaProxyVpcEndpoint> vpcEndpoints) {
+    public void setVpcEndpoints(java.util.Collection<VpcEndpoint> vpcEndpoints) {
         if (vpcEndpoints == null) {
             this.vpcEndpoints = null;
             return;
         }
 
-        this.vpcEndpoints = new com.amazonaws.internal.SdkInternalList<SpartaProxyVpcEndpoint>(vpcEndpoints);
+        this.vpcEndpoints = new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(vpcEndpoints);
     }
 
     /**
@@ -173,11 +173,11 @@ public class Endpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Endpoint withVpcEndpoints(SpartaProxyVpcEndpoint... vpcEndpoints) {
+    public Endpoint withVpcEndpoints(VpcEndpoint... vpcEndpoints) {
         if (this.vpcEndpoints == null) {
-            setVpcEndpoints(new com.amazonaws.internal.SdkInternalList<SpartaProxyVpcEndpoint>(vpcEndpoints.length));
+            setVpcEndpoints(new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(vpcEndpoints.length));
         }
-        for (SpartaProxyVpcEndpoint ele : vpcEndpoints) {
+        for (VpcEndpoint ele : vpcEndpoints) {
             this.vpcEndpoints.add(ele);
         }
         return this;
@@ -193,7 +193,7 @@ public class Endpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Endpoint withVpcEndpoints(java.util.Collection<SpartaProxyVpcEndpoint> vpcEndpoints) {
+    public Endpoint withVpcEndpoints(java.util.Collection<VpcEndpoint> vpcEndpoints) {
         setVpcEndpoints(vpcEndpoints);
         return this;
     }

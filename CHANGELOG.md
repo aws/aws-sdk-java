@@ -1,3 +1,32 @@
+# __1.11.942__ __2021-01-22__
+## __AWS IoT Greengrass V2__
+  - ### Features
+    - Documentation updates that improve clarity and fix broken links.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Introducing startDate field for CapacityReservation object for the date and time which the reservation started and adding reserved parameter for ModifyCapacityReservation.
+
+## __Amazon Lex Model Building V2__
+  - ### Features
+    - This release adds support for Amazon Lex V2 APIs for model building.
+
+## __Amazon Lex Runtime V2__
+  - ### Features
+    - This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.
+
+## __Amazon Redshift__
+  - ### Features
+    - Update VPC endpoint field names.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for Amazon RDS
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for the ListDocumentFilters API action.
+
 # __1.11.941__ __2021-01-21__
 ## __AWS Resource Groups Tagging API__
   - ### Features

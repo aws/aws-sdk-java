@@ -28,7 +28,7 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * version. Specify the ARN of a public component version.
      * </p>
      */
     private String arn;
@@ -36,18 +36,25 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The name of the artifact.
      * </p>
+     * <p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
+     * download the component recipe, which includes the URI of the artifact. The artifact name is the section of the
+     * URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact
+     * name is <code>SomeArtifact.zip</code>.
+     * </p>
      */
     private String artifactName;
 
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * version. Specify the ARN of a public component version.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version.
+     *        component version. Specify the ARN of a public component version.
      */
 
     public void setArn(String arn) {
@@ -57,11 +64,11 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * version. Specify the ARN of a public component version.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         component version.
+     *         component version. Specify the ARN of a public component version.
      */
 
     public String getArn() {
@@ -71,12 +78,12 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * version. Specify the ARN of a public component version.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version.
+     *        component version. Specify the ARN of a public component version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,9 +96,22 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The name of the artifact.
      * </p>
+     * <p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
+     * download the component recipe, which includes the URI of the artifact. The artifact name is the section of the
+     * URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact
+     * name is <code>SomeArtifact.zip</code>.
+     * </p>
      * 
      * @param artifactName
-     *        The name of the artifact.
+     *        The name of the artifact.</p>
+     *        <p>
+     *        You can use the <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a>
+     *        operation to download the component recipe, which includes the URI of the artifact. The artifact name is
+     *        the section of the URI after the scheme. For example, in the artifact URI
+     *        <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.
      */
 
     public void setArtifactName(String artifactName) {
@@ -102,8 +122,21 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The name of the artifact.
      * </p>
+     * <p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
+     * download the component recipe, which includes the URI of the artifact. The artifact name is the section of the
+     * URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact
+     * name is <code>SomeArtifact.zip</code>.
+     * </p>
      * 
-     * @return The name of the artifact.
+     * @return The name of the artifact.</p>
+     *         <p>
+     *         You can use the <a
+     *         href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a>
+     *         operation to download the component recipe, which includes the URI of the artifact. The artifact name is
+     *         the section of the URI after the scheme. For example, in the artifact URI
+     *         <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.
      */
 
     public String getArtifactName() {
@@ -114,9 +147,22 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The name of the artifact.
      * </p>
+     * <p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
+     * download the component recipe, which includes the URI of the artifact. The artifact name is the section of the
+     * URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact
+     * name is <code>SomeArtifact.zip</code>.
+     * </p>
      * 
      * @param artifactName
-     *        The name of the artifact.
+     *        The name of the artifact.</p>
+     *        <p>
+     *        You can use the <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a>
+     *        operation to download the component recipe, which includes the URI of the artifact. The artifact name is
+     *        the section of the URI after the scheme. For example, in the artifact URI
+     *        <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

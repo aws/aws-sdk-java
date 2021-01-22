@@ -44,10 +44,10 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
      * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
      * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
@@ -199,10 +199,10 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
      * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
      * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
@@ -212,10 +212,11 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
      *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
      *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *        built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      */
@@ -229,10 +230,10 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
      * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
      * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
@@ -241,10 +242,11 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * @return The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
      *         volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
      *         Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *         based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *         href
+     *         ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *         built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
      *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      */
@@ -258,10 +260,10 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
      * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
      * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
@@ -271,10 +273,11 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
      *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
      *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *        built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * @return Returns a reference to this object so that method calls can be chained together.

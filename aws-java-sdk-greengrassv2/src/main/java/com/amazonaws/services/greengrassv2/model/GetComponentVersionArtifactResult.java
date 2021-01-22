@@ -25,18 +25,18 @@ public class GetComponentVersionArtifactResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL to the artifact.
+     * The URL of the artifact.
      * </p>
      */
     private String preSignedUrl;
 
     /**
      * <p>
-     * The URL to the artifact.
+     * The URL of the artifact.
      * </p>
      * 
      * @param preSignedUrl
-     *        The URL to the artifact.
+     *        The URL of the artifact.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -45,10 +45,10 @@ public class GetComponentVersionArtifactResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL to the artifact.
+     * The URL of the artifact.
      * </p>
      * 
-     * @return The URL to the artifact.
+     * @return The URL of the artifact.
      */
 
     public String getPreSignedUrl() {
@@ -57,11 +57,11 @@ public class GetComponentVersionArtifactResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL to the artifact.
+     * The URL of the artifact.
      * </p>
      * 
      * @param preSignedUrl
-     *        The URL to the artifact.
+     *        The URL of the artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
