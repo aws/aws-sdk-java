@@ -30,8 +30,10 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is Amazon
-     * EC2.
+     * Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2
+     * instances with Windows VSS. For an CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     * >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>EC2</code>.
@@ -66,16 +68,20 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is Amazon
-     * EC2.
+     * Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2
+     * instances with Windows VSS. For an CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     * >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>EC2</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is
-     *        Amazon EC2.</p>
+     *        Specifies an object containing resource type and backup options. The only supported resource type is
+     *        Amazon EC2 instances with Windows VSS. For an CloudFormation example, see the <a href=
+     *        "https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     *        >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.</p>
      *        <p>
      *        Valid values: <code>EC2</code>.
      */
@@ -86,15 +92,19 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is Amazon
-     * EC2.
+     * Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2
+     * instances with Windows VSS. For an CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     * >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>EC2</code>.
      * </p>
      * 
-     * @return The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is
-     *         Amazon EC2.</p>
+     * @return Specifies an object containing resource type and backup options. The only supported resource type is
+     *         Amazon EC2 instances with Windows VSS. For an CloudFormation example, see the <a href=
+     *         "https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     *         >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.</p>
      *         <p>
      *         Valid values: <code>EC2</code>.
      */
@@ -105,16 +115,20 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is Amazon
-     * EC2.
+     * Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2
+     * instances with Windows VSS. For an CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     * >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>EC2</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource to be backed up. For VSS Windows backups, the only supported resource type is
-     *        Amazon EC2.</p>
+     *        Specifies an object containing resource type and backup options. The only supported resource type is
+     *        Amazon EC2 instances with Windows VSS. For an CloudFormation example, see the <a href=
+     *        "https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html"
+     *        >sample CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.</p>
      *        <p>
      *        Valid values: <code>EC2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

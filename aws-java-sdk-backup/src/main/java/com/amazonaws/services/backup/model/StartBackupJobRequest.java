@@ -56,14 +56,15 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      */
     private Long startWindowMinutes;
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      */
     private Long completeWindowMinutes;
@@ -76,6 +77,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
      * </p>
      */
     private Lifecycle lifecycle;
@@ -285,12 +289,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional, and the default is 8 hours.
      */
 
     public void setStartWindowMinutes(Long startWindowMinutes) {
@@ -300,11 +304,11 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *         successfully. This value is optional.
+     *         successfully. This value is optional, and the default is 8 hours.
      */
 
     public Long getStartWindowMinutes() {
@@ -314,12 +318,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional, and the default is 8 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,13 +334,16 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *        canceled by AWS Backup. This value is optional.
+     *        A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *        cancel the job. This value is optional. This value begins counting down from when the backup was
+     *        scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *        later than scheduled.
      */
 
     public void setCompleteWindowMinutes(Long completeWindowMinutes) {
@@ -345,12 +352,15 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
-     * @return A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *         canceled by AWS Backup. This value is optional.
+     * @return A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *         cancel the job. This value is optional. This value begins counting down from when the backup was
+     *         scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *         later than scheduled.
      */
 
     public Long getCompleteWindowMinutes() {
@@ -359,13 +369,16 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *        canceled by AWS Backup. This value is optional.
+     *        A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *        cancel the job. This value is optional. This value begins counting down from when the backup was
+     *        scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *        later than scheduled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,6 +397,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -393,6 +409,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -409,6 +428,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
@@ -417,6 +439,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -433,6 +458,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -442,6 +470,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,6 +55,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -94,6 +99,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -124,6 +134,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
@@ -169,6 +184,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -200,6 +220,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -250,6 +275,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -286,6 +316,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -338,6 +373,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -369,6 +409,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>

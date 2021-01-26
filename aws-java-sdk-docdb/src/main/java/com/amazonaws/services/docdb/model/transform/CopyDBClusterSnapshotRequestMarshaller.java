@@ -87,6 +87,10 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
             }
         }
 
+        if (copyDBClusterSnapshotRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(copyDBClusterSnapshotRequest.getSourceRegion()));
+        }
+
         return request;
     }
 

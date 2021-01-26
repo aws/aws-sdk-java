@@ -27,6 +27,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
  * The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
  * </p>
+ * <p>
+ * Only Amazon EFS file system backups can be transitioned to cold storage.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Lifecycle" target="_top">AWS API
  *      Documentation</a>

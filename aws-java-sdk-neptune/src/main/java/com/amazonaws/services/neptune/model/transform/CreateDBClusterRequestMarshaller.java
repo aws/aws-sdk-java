@@ -196,6 +196,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBClusterRequest.getDeletionProtection()));
         }
 
+        if (createDBClusterRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
+        }
+
         return request;
     }
 

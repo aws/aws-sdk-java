@@ -168,6 +168,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<Tag> tags;
+    /** The region where the source instance is located. */
+    private String sourceRegion;
 
     /**
      * <p>
@@ -1066,6 +1068,40 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @return The region where the source instance is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBClusterSnapshotRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1088,7 +1124,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         if (getCopyTags() != null)
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -1129,6 +1167,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -1143,6 +1185,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

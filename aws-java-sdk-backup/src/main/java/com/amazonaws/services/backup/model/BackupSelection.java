@@ -50,7 +50,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     * resource with at least one matching tag.
      * </p>
      */
     private java.util.List<Condition> listOfTags;
@@ -214,11 +215,13 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     * resource with at least one matching tag.
      * </p>
      * 
      * @return An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *         <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *         <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to
+     *         every resource with at least one matching tag.
      */
 
     public java.util.List<Condition> getListOfTags() {
@@ -228,12 +231,14 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     * resource with at least one matching tag.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     *        resource with at least one matching tag.
      */
 
     public void setListOfTags(java.util.Collection<Condition> listOfTags) {
@@ -248,7 +253,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     * resource with at least one matching tag.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -258,7 +264,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     *        resource with at least one matching tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,12 +282,14 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     * resource with at least one matching tag.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>. Assigns the backup plan to every
+     *        resource with at least one matching tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

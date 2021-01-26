@@ -529,7 +529,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * The current feature settings for the AWS Account.
+     * Describes the global settings of the AWS account, including whether it is opted in to cross-account backup.
      * </p>
      * 
      * @param describeGlobalSettingsRequest
@@ -542,7 +542,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * The current feature settings for the AWS Account.
+     * Describes the global settings of the AWS account, including whether it is opted in to cross-account backup.
      * </p>
      * 
      * @param describeGlobalSettingsRequest
@@ -1684,7 +1684,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code> API to
+     * Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code> API to
      * determine the current settings.
      * </p>
      * 
@@ -1698,7 +1698,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code> API to
+     * Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code> API to
      * determine the current settings.
      * </p>
      * 
@@ -1728,6 +1728,9 @@ public interface AWSBackupAsync extends AWSBackup {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param updateRecoveryPointLifecycleRequest
      * @return A Java Future containing the result of the UpdateRecoveryPointLifecycle operation returned by the
@@ -1751,6 +1754,9 @@ public interface AWSBackupAsync extends AWSBackup {
      * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
      * </p>
      * 
      * @param updateRecoveryPointLifecycleRequest

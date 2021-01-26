@@ -95,6 +95,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -418,6 +423,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -449,6 +459,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -494,6 +509,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -524,6 +544,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
@@ -569,6 +594,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -600,6 +630,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>

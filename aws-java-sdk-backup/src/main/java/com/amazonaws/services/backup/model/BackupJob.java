@@ -110,8 +110,10 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     private Long backupSizeInBytes;
     /**
      * <p>
-     * Specifies the IAM role ARN used to create the target recovery point; for example,
-     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must
+     * include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions
+     * to perform backup jobs.
      * </p>
      */
     private String iamRoleArn;
@@ -722,13 +724,17 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IAM role ARN used to create the target recovery point; for example,
-     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must
+     * include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions
+     * to perform backup jobs.
      * </p>
      * 
      * @param iamRoleArn
-     *        Specifies the IAM role ARN used to create the target recovery point; for example,
-     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role
+     *        must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     *        <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack
+     *        permissions to perform backup jobs.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -737,12 +743,16 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IAM role ARN used to create the target recovery point; for example,
-     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must
+     * include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions
+     * to perform backup jobs.
      * </p>
      * 
-     * @return Specifies the IAM role ARN used to create the target recovery point; for example,
-     *         <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * @return Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default
+     *         role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     *         <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack
+     *         permissions to perform backup jobs.
      */
 
     public String getIamRoleArn() {
@@ -751,13 +761,17 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IAM role ARN used to create the target recovery point; for example,
-     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must
+     * include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions
+     * to perform backup jobs.
      * </p>
      * 
      * @param iamRoleArn
-     *        Specifies the IAM role ARN used to create the target recovery point; for example,
-     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role
+     *        must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example,
+     *        <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack
+     *        permissions to perform backup jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

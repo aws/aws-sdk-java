@@ -76,6 +76,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      */
     private Lifecycle lifecycle;
     /**
@@ -359,6 +362,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -368,6 +374,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -384,6 +393,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
@@ -392,6 +404,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -408,6 +423,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -417,6 +435,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

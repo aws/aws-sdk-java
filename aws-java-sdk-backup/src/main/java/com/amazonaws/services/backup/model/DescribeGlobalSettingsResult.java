@@ -31,7 +31,7 @@ public class DescribeGlobalSettingsResult extends com.amazonaws.AmazonWebService
     private java.util.Map<String, String> globalSettings;
     /**
      * <p>
-     * The date and time that the global settings was last updated. This update is in Unix format and Coordinated
+     * The date and time that the global settings were last updated. This update is in Unix format and Coordinated
      * Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
@@ -108,15 +108,15 @@ public class DescribeGlobalSettingsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time that the global settings was last updated. This update is in Unix format and Coordinated
+     * The date and time that the global settings were last updated. This update is in Unix format and Coordinated
      * Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The date and time that the global settings was last updated. This update is in Unix format and Coordinated
-     *        Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example,
-     *        the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time that the global settings were last updated. This update is in Unix format and
+     *        Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds.
+     *        For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -125,12 +125,12 @@ public class DescribeGlobalSettingsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time that the global settings was last updated. This update is in Unix format and Coordinated
+     * The date and time that the global settings were last updated. This update is in Unix format and Coordinated
      * Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
-     * @return The date and time that the global settings was last updated. This update is in Unix format and
+     * @return The date and time that the global settings were last updated. This update is in Unix format and
      *         Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds.
      *         For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
@@ -141,15 +141,15 @@ public class DescribeGlobalSettingsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time that the global settings was last updated. This update is in Unix format and Coordinated
+     * The date and time that the global settings were last updated. This update is in Unix format and Coordinated
      * Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The date and time that the global settings was last updated. This update is in Unix format and Coordinated
-     *        Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example,
-     *        the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time that the global settings were last updated. This update is in Unix format and
+     *        Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds.
+     *        For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

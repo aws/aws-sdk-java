@@ -103,6 +103,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -112,6 +117,10 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
      * </p>
      */
     private String byAccountId;
@@ -471,6 +480,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -502,6 +516,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -547,6 +566,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -577,6 +601,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
@@ -622,6 +651,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -657,6 +691,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
@@ -672,9 +711,17 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
      * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
      * 
      * @param byAccountId
-     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *        ID.</p>
+     *        <p>
+     *        If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *        organization.
      */
 
     public void setByAccountId(String byAccountId) {
@@ -685,8 +732,16 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
      * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
      * 
-     * @return The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * @return The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *         ID.</p>
+     *         <p>
+     *         If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *         organization.
      */
 
     public String getByAccountId() {
@@ -697,9 +752,17 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
      * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
      * 
      * @param byAccountId
-     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *        ID.</p>
+     *        <p>
+     *        If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *        organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

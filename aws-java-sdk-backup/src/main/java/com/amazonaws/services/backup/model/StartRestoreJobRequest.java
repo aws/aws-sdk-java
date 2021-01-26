@@ -83,9 +83,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
      * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
-     * parameter is optional.
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -132,6 +132,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
@@ -240,9 +245,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
      * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
-     * parameter is optional.
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -297,9 +302,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
-     *         Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
-     *         system. This parameter is optional.
+     *         <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *         <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *         This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *         </p>
      *         </li>
      */
@@ -359,9 +364,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
      * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
-     * parameter is optional.
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -417,9 +422,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
-     *        Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
-     *        system. This parameter is optional.
+     *        <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *        <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *        This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *        </p>
      *        </li>
      */
@@ -479,9 +484,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
      * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
-     * parameter is optional.
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -537,9 +542,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
-     *        Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
-     *        system. This parameter is optional.
+     *        <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *        <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *        This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -696,6 +701,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -727,6 +737,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -772,6 +787,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -802,6 +822,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
@@ -847,6 +872,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
@@ -878,6 +908,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>

@@ -1,3 +1,8 @@
+# __1.11.943__ __2021-01-26__
+## __AWS Backup__
+  - ### Features
+    - Documentation updates for AWS Backup
+
 # __1.11.942__ __2021-01-22__
 ## __AWS IoT Greengrass V2__
   - ### Features
