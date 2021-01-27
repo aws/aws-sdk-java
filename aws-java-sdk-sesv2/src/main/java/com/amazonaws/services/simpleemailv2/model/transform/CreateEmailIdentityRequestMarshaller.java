@@ -34,6 +34,8 @@ public class CreateEmailIdentityRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> DKIMSIGNINGATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DkimSigningAttributes").build();
+    private static final MarshallingInfo<String> CONFIGURATIONSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSetName").build();
 
     private static final CreateEmailIdentityRequestMarshaller instance = new CreateEmailIdentityRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateEmailIdentityRequestMarshaller {
             protocolMarshaller.marshall(createEmailIdentityRequest.getEmailIdentity(), EMAILIDENTITY_BINDING);
             protocolMarshaller.marshall(createEmailIdentityRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEmailIdentityRequest.getDkimSigningAttributes(), DKIMSIGNINGATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createEmailIdentityRequest.getConfigurationSetName(), CONFIGURATIONSETNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

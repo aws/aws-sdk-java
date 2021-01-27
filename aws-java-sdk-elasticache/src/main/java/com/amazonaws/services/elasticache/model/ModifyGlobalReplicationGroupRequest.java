@@ -53,6 +53,13 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
     private String engineVersion;
     /**
      * <p>
+     * The name of the cache parameter group to use with the Global datastore. It must be compatible with the major
+     * engine version used by the Global datastore.
+     * </p>
+     */
+    private String cacheParameterGroupName;
+    /**
+     * <p>
      * A description of the Global Datastore
      * </p>
      */
@@ -255,6 +262,52 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * The name of the cache parameter group to use with the Global datastore. It must be compatible with the major
+     * engine version used by the Global datastore.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group to use with the Global datastore. It must be compatible with the
+     *        major engine version used by the Global datastore.
+     */
+
+    public void setCacheParameterGroupName(String cacheParameterGroupName) {
+        this.cacheParameterGroupName = cacheParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cache parameter group to use with the Global datastore. It must be compatible with the major
+     * engine version used by the Global datastore.
+     * </p>
+     * 
+     * @return The name of the cache parameter group to use with the Global datastore. It must be compatible with the
+     *         major engine version used by the Global datastore.
+     */
+
+    public String getCacheParameterGroupName() {
+        return this.cacheParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cache parameter group to use with the Global datastore. It must be compatible with the major
+     * engine version used by the Global datastore.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group to use with the Global datastore. It must be compatible with the
+     *        major engine version used by the Global datastore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyGlobalReplicationGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
+        setCacheParameterGroupName(cacheParameterGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
      * A description of the Global Datastore
      * </p>
      * 
@@ -373,6 +426,8 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
             sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getCacheParameterGroupName() != null)
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getGlobalReplicationGroupDescription() != null)
             sb.append("GlobalReplicationGroupDescription: ").append(getGlobalReplicationGroupDescription()).append(",");
         if (getAutomaticFailoverEnabled() != null)
@@ -407,6 +462,10 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null)
+            return false;
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false)
+            return false;
         if (other.getGlobalReplicationGroupDescription() == null ^ this.getGlobalReplicationGroupDescription() == null)
             return false;
         if (other.getGlobalReplicationGroupDescription() != null
@@ -428,6 +487,7 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getApplyImmediately() == null) ? 0 : getApplyImmediately().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getGlobalReplicationGroupDescription() == null) ? 0 : getGlobalReplicationGroupDescription().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
         return hashCode;

@@ -381,6 +381,15 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
      * that you want to use for DKIM authentication) and a private key.
      * </p>
+     * <p>
+     * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
+     * You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES
+     * detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or
+     * more to complete the domain verification process.
+     * </p>
+     * <p>
+     * Additionally, you can associate an existing configuration set with the email identity that you're verifying.
+     * </p>
      * 
      * @param createEmailIdentityRequest
      *        A request to begin the verification process for an email identity (an email address or domain).
@@ -415,6 +424,15 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <code>CreateEmailIdentity</code> operation has to include the <code>DkimSigningAttributes</code> object. When you
      * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
      * that you want to use for DKIM authentication) and a private key.
+     * </p>
+     * <p>
+     * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
+     * You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES
+     * detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or
+     * more to complete the domain verification process.
+     * </p>
+     * <p>
+     * Additionally, you can associate an existing configuration set with the email identity that you're verifying.
      * </p>
      * 
      * @param createEmailIdentityRequest
@@ -2695,6 +2713,43 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
             PutDeliverabilityDashboardOptionRequest putDeliverabilityDashboardOptionRequest,
             com.amazonaws.handlers.AsyncHandler<PutDeliverabilityDashboardOptionRequest, PutDeliverabilityDashboardOptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to associate a configuration set with an email identity.
+     * </p>
+     * 
+     * @param putEmailIdentityConfigurationSetAttributesRequest
+     *        A request to associate a configuration set with an email identity.
+     * @return A Java Future containing the result of the PutEmailIdentityConfigurationSetAttributes operation returned
+     *         by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutEmailIdentityConfigurationSetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            PutEmailIdentityConfigurationSetAttributesRequest putEmailIdentityConfigurationSetAttributesRequest);
+
+    /**
+     * <p>
+     * Used to associate a configuration set with an email identity.
+     * </p>
+     * 
+     * @param putEmailIdentityConfigurationSetAttributesRequest
+     *        A request to associate a configuration set with an email identity.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEmailIdentityConfigurationSetAttributes operation returned
+     *         by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutEmailIdentityConfigurationSetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            PutEmailIdentityConfigurationSetAttributesRequest putEmailIdentityConfigurationSetAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEmailIdentityConfigurationSetAttributesRequest, PutEmailIdentityConfigurationSetAttributesResult> asyncHandler);
 
     /**
      * <p>

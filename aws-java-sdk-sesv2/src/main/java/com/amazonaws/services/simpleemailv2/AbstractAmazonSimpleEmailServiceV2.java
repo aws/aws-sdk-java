@@ -343,6 +343,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public PutEmailIdentityConfigurationSetAttributesResult putEmailIdentityConfigurationSetAttributes(PutEmailIdentityConfigurationSetAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutEmailIdentityDkimAttributesResult putEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

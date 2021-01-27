@@ -356,12 +356,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
-     * <note>
-     * <p>
-     * If you are restoring to an engine version that is different than the original, you must specify the default
-     * version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     * </p>
-     * </note>
      * <p>
      * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
      * group, we recommend that you specify the parameter group by name.
@@ -2803,12 +2797,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
-     * <note>
-     * <p>
-     * If you are restoring to an engine version that is different than the original, you must specify the default
-     * version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     * </p>
-     * </note>
      * <p>
      * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
      * group, we recommend that you specify the parameter group by name.
@@ -2830,12 +2818,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param cacheParameterGroupName
      *        The name of the parameter group to associate with this replication group. If this argument is omitted, the
-     *        default cache parameter group for the specified engine is used.</p> <note>
-     *        <p>
-     *        If you are restoring to an engine version that is different than the original, you must specify the
-     *        default version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     *        </p>
-     *        </note>
+     *        default cache parameter group for the specified engine is used.</p>
      *        <p>
      *        If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
      *        parameter group, we recommend that you specify the parameter group by name.
@@ -2864,12 +2847,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
-     * <note>
-     * <p>
-     * If you are restoring to an engine version that is different than the original, you must specify the default
-     * version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     * </p>
-     * </note>
      * <p>
      * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
      * group, we recommend that you specify the parameter group by name.
@@ -2890,12 +2867,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The name of the parameter group to associate with this replication group. If this argument is omitted,
-     *         the default cache parameter group for the specified engine is used.</p> <note>
-     *         <p>
-     *         If you are restoring to an engine version that is different than the original, you must specify the
-     *         default version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     *         </p>
-     *         </note>
+     *         the default cache parameter group for the specified engine is used.</p>
      *         <p>
      *         If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
      *         parameter group, we recommend that you specify the parameter group by name.
@@ -2924,12 +2896,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
-     * <note>
-     * <p>
-     * If you are restoring to an engine version that is different than the original, you must specify the default
-     * version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     * </p>
-     * </note>
      * <p>
      * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
      * group, we recommend that you specify the parameter group by name.
@@ -2951,12 +2917,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param cacheParameterGroupName
      *        The name of the parameter group to associate with this replication group. If this argument is omitted, the
-     *        default cache parameter group for the specified engine is used.</p> <note>
-     *        <p>
-     *        If you are restoring to an engine version that is different than the original, you must specify the
-     *        default version of that version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.
-     *        </p>
-     *        </note>
+     *        default cache parameter group for the specified engine is used.</p>
      *        <p>
      *        If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
      *        parameter group, we recommend that you specify the parameter group by name.

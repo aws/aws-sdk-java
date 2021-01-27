@@ -25,7 +25,8 @@ public enum ResourceType {
     AWSSQSQueue("AWS::SQS::Queue"),
     AWSLambdaFunction("AWS::Lambda::Function"),
     AWSLambdaLayerVersion("AWS::Lambda::LayerVersion"),
-    AWSKMSKey("AWS::KMS::Key");
+    AWSKMSKey("AWS::KMS::Key"),
+    AWSSecretsManagerSecret("AWS::SecretsManager::Secret");
 
     private String value;
 

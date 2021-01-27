@@ -58,6 +58,10 @@ public class ModifyGlobalReplicationGroupRequestMarshaller implements
             request.addParameter("EngineVersion", StringUtils.fromString(modifyGlobalReplicationGroupRequest.getEngineVersion()));
         }
 
+        if (modifyGlobalReplicationGroupRequest.getCacheParameterGroupName() != null) {
+            request.addParameter("CacheParameterGroupName", StringUtils.fromString(modifyGlobalReplicationGroupRequest.getCacheParameterGroupName()));
+        }
+
         if (modifyGlobalReplicationGroupRequest.getGlobalReplicationGroupDescription() != null) {
             request.addParameter("GlobalReplicationGroupDescription",
                     StringUtils.fromString(modifyGlobalReplicationGroupRequest.getGlobalReplicationGroupDescription()));

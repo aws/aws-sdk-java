@@ -81,6 +81,12 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The configuration set used by default when sending from this identity.
+     * </p>
+     */
+    private String configurationSetName;
 
     /**
      * <p>
@@ -568,6 +574,46 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The configuration set used by default when sending from this identity.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The configuration set used by default when sending from this identity.
+     */
+
+    public void setConfigurationSetName(String configurationSetName) {
+        this.configurationSetName = configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The configuration set used by default when sending from this identity.
+     * </p>
+     * 
+     * @return The configuration set used by default when sending from this identity.
+     */
+
+    public String getConfigurationSetName() {
+        return this.configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The configuration set used by default when sending from this identity.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The configuration set used by default when sending from this identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult withConfigurationSetName(String configurationSetName) {
+        setConfigurationSetName(configurationSetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -592,7 +638,9 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         if (getPolicies() != null)
             sb.append("Policies: ").append(getPolicies()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConfigurationSetName() != null)
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }
@@ -635,6 +683,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConfigurationSetName() == null ^ this.getConfigurationSetName() == null)
+            return false;
+        if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
+            return false;
         return true;
     }
 
@@ -650,6 +702,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getMailFromAttributes() == null) ? 0 : getMailFromAttributes().hashCode());
         hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
         return hashCode;
     }
 

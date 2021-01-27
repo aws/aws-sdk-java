@@ -711,6 +711,15 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
      * that you want to use for DKIM authentication) and a private key.
      * </p>
+     * <p>
+     * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
+     * You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES
+     * detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or
+     * more to complete the domain verification process.
+     * </p>
+     * <p>
+     * Additionally, you can associate an existing configuration set with the email identity that you're verifying.
+     * </p>
      * 
      * @param createEmailIdentityRequest
      *        A request to begin the verification process for an email identity (an email address or domain).
@@ -725,6 +734,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      *         The input you provided is invalid.
      * @throws ConcurrentModificationException
      *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
      * @sample AmazonSimpleEmailServiceV2.CreateEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity" target="_top">AWS API
      *      Documentation</a>
@@ -4368,6 +4379,70 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<PutDeliverabilityDashboardOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutDeliverabilityDashboardOptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used to associate a configuration set with an email identity.
+     * </p>
+     * 
+     * @param putEmailIdentityConfigurationSetAttributesRequest
+     *        A request to associate a configuration set with an email identity.
+     * @return Result of the PutEmailIdentityConfigurationSetAttributes operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutEmailIdentityConfigurationSetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutEmailIdentityConfigurationSetAttributesResult putEmailIdentityConfigurationSetAttributes(PutEmailIdentityConfigurationSetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEmailIdentityConfigurationSetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutEmailIdentityConfigurationSetAttributesResult executePutEmailIdentityConfigurationSetAttributes(
+            PutEmailIdentityConfigurationSetAttributesRequest putEmailIdentityConfigurationSetAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEmailIdentityConfigurationSetAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEmailIdentityConfigurationSetAttributesRequest> request = null;
+        Response<PutEmailIdentityConfigurationSetAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEmailIdentityConfigurationSetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putEmailIdentityConfigurationSetAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityConfigurationSetAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEmailIdentityConfigurationSetAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutEmailIdentityConfigurationSetAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

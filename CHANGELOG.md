@@ -1,3 +1,28 @@
+# __1.11.944__ __2021-01-27__
+## __Access Analyzer__
+  - ### Features
+    - This release adds Secrets Manager secrets as a supported resource in IAM Access Analyzer to help you identify secrets that can be accessed from outside your account or AWS organization.
+
+## __Amazon Connect Customer Profiles__
+  - ### Features
+    - This release makes Uri a required parameter in GetIntegrationRequest and DeleteIntegrationRequest.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Add support to pass ParameterGroup name as part updating Engine Version of Global Datastore.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service adds support for node-to-node encryption and encryption at rest for existing domains running Elasticsearch version 6.7 and above
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Lightsail
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This release includes the ability to assign a configuration set to an email identity (a domain or email address), which allows the settings from the configuration set to be applied to the identity.
+
 # __1.11.943__ __2021-01-26__
 ## __AWS Backup__
   - ### Features

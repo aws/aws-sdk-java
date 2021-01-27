@@ -79,6 +79,10 @@ public class GetEmailIdentityResultJsonUnmarshaller implements Unmarshaller<GetE
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ConfigurationSetName", targetDepth)) {
+                    context.nextToken();
+                    getEmailIdentityResult.setConfigurationSetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

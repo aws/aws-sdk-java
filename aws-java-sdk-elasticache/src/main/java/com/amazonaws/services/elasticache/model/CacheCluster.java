@@ -34,9 +34,8 @@ public class CacheCluster implements Serializable, Cloneable {
     private String cacheClusterId;
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
@@ -482,18 +481,16 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
      * @param configurationEndpoint
-     *        Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *        used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *        <code>.cfg</code> in it.</p>
+     *        Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *        cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *        <p>
      *        Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      */
@@ -504,17 +501,15 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
-     * @return Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *         used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *         <code>.cfg</code> in it.</p>
+     * @return Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *         cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *         <p>
      *         Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      */
@@ -525,18 +520,16 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
      * @param configurationEndpoint
-     *        Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *        used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *        <code>.cfg</code> in it.</p>
+     *        Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *        cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *        <p>
      *        Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * @return Returns a reference to this object so that method calls can be chained together.

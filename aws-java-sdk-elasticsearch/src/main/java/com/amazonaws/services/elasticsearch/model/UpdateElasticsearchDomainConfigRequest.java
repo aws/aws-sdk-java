@@ -100,6 +100,18 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
      * </p>
      */
     private AdvancedSecurityOptionsInput advancedSecurityOptions;
+    /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     */
+    private EncryptionAtRestOptions encryptionAtRestOptions;
 
     /**
      * <p>
@@ -652,6 +664,86 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the NodeToNodeEncryptionOptions.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @return Specifies the NodeToNodeEncryptionOptions.
+     */
+
+    public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the NodeToNodeEncryptionOptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the Encryption At Rest Options.
+     */
+
+    public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        this.encryptionAtRestOptions = encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @return Specifies the Encryption At Rest Options.
+     */
+
+    public EncryptionAtRestOptions getEncryptionAtRestOptions() {
+        return this.encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the Encryption At Rest Options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        setEncryptionAtRestOptions(encryptionAtRestOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -684,7 +776,11 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         if (getDomainEndpointOptions() != null)
             sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions()).append(",");
         if (getAdvancedSecurityOptions() != null)
-            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
+        if (getEncryptionAtRestOptions() != null)
+            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -743,6 +839,14 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
             return false;
         if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
             return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
+        if (other.getEncryptionAtRestOptions() == null ^ this.getEncryptionAtRestOptions() == null)
+            return false;
+        if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
+            return false;
         return true;
     }
 
@@ -762,6 +866,8 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
         return hashCode;
     }
 

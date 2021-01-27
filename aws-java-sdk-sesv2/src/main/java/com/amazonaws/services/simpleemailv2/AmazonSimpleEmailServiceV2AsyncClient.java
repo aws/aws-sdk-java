@@ -2219,6 +2219,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            PutEmailIdentityConfigurationSetAttributesRequest request) {
+
+        return putEmailIdentityConfigurationSetAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            final PutEmailIdentityConfigurationSetAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEmailIdentityConfigurationSetAttributesRequest, PutEmailIdentityConfigurationSetAttributesResult> asyncHandler) {
+        final PutEmailIdentityConfigurationSetAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEmailIdentityConfigurationSetAttributesResult>() {
+            @Override
+            public PutEmailIdentityConfigurationSetAttributesResult call() throws Exception {
+                PutEmailIdentityConfigurationSetAttributesResult result = null;
+
+                try {
+                    result = executePutEmailIdentityConfigurationSetAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEmailIdentityDkimAttributesResult> putEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request) {
 
         return putEmailIdentityDkimAttributesAsync(request, null);
