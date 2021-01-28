@@ -36,7 +36,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The identifier (the user name) of the user who created the schedule.
+     * The Amazon Resource Name (ARN) of the user who created the schedule.
      * </p>
      */
     private String createdBy;
@@ -54,7 +54,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> jobNames;
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the schedule.
+     * The Amazon Resource Name (ARN) of the user who last modified the schedule.
      * </p>
      */
     private String lastModifiedBy;
@@ -72,7 +72,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     * The date(s) and time(s) when the job will run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
+     * DataBrew Developer Guide</i>.
      * </p>
      */
     private String cronExpression;
@@ -131,11 +133,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the schedule.
+     * The Amazon Resource Name (ARN) of the user who created the schedule.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the schedule.
+     *        The Amazon Resource Name (ARN) of the user who created the schedule.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -144,10 +146,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the schedule.
+     * The Amazon Resource Name (ARN) of the user who created the schedule.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who created the schedule.
+     * @return The Amazon Resource Name (ARN) of the user who created the schedule.
      */
 
     public String getCreatedBy() {
@@ -156,11 +158,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the schedule.
+     * The Amazon Resource Name (ARN) of the user who created the schedule.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the schedule.
+     *        The Amazon Resource Name (ARN) of the user who created the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +283,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the schedule.
+     * The Amazon Resource Name (ARN) of the user who last modified the schedule.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the schedule.
+     *        The Amazon Resource Name (ARN) of the user who last modified the schedule.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -294,10 +296,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the schedule.
+     * The Amazon Resource Name (ARN) of the user who last modified the schedule.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who last modified the schedule.
+     * @return The Amazon Resource Name (ARN) of the user who last modified the schedule.
      */
 
     public String getLastModifiedBy() {
@@ -306,11 +308,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the schedule.
+     * The Amazon Resource Name (ARN) of the user who last modified the schedule.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the schedule.
+     *        The Amazon Resource Name (ARN) of the user who last modified the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,11 +403,15 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     * The date(s) and time(s) when the job will run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
+     * DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
-     *        The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     *        The date(s) and time(s) when the job will run. For more information, see <a
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
+     *        Glue DataBrew Developer Guide</i>.
      */
 
     public void setCronExpression(String cronExpression) {
@@ -414,10 +420,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     * The date(s) and time(s) when the job will run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
+     * DataBrew Developer Guide</i>.
      * </p>
      * 
-     * @return The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     * @return The date(s) and time(s) when the job will run. For more information, see <a
+     *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
+     *         Glue DataBrew Developer Guide</i>.
      */
 
     public String getCronExpression() {
@@ -426,11 +436,15 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     * The date(s) and time(s) when the job will run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
+     * DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
-     *        The date(s) and time(s), in <code>cron</code> format, when the job will run.
+     *        The date(s) and time(s) when the job will run. For more information, see <a
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
+     *        Glue DataBrew Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents one or more actions to be performed on an AWS Glue DataBrew dataset.
+ * Represents one or more actions to be performed on a DataBrew dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Recipe" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the recipe.
+     * The Amazon Resource Name (ARN) of the user who created the recipe.
      * </p>
      */
     private String createdBy;
@@ -42,7 +42,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createDate;
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the recipe.
+     * The Amazon Resource Name (ARN) of the user who last modified the recipe.
      * </p>
      */
     private String lastModifiedBy;
@@ -60,7 +60,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
     private String projectName;
     /**
      * <p>
-     * The identifier (the user name) of the user who published the recipe.
+     * The Amazon Resource Name (ARN) of the user who published the recipe.
      * </p>
      */
     private String publishedBy;
@@ -102,18 +102,37 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The identifier for the version for the recipe.
+     * The identifier for the version for the recipe. Must be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
+     * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_PUBLISHED</code> - the most recent published version.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String recipeVersion;
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the recipe.
+     * The Amazon Resource Name (ARN) of the user who created the recipe.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the recipe.
+     *        The Amazon Resource Name (ARN) of the user who created the recipe.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -122,10 +141,10 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the recipe.
+     * The Amazon Resource Name (ARN) of the user who created the recipe.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who created the recipe.
+     * @return The Amazon Resource Name (ARN) of the user who created the recipe.
      */
 
     public String getCreatedBy() {
@@ -134,11 +153,11 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the recipe.
+     * The Amazon Resource Name (ARN) of the user who created the recipe.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the recipe.
+     *        The Amazon Resource Name (ARN) of the user who created the recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +208,11 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the recipe.
+     * The Amazon Resource Name (ARN) of the user who last modified the recipe.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (user name) of the user who last modified the recipe.
+     *        The Amazon Resource Name (ARN) of the user who last modified the recipe.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -202,10 +221,10 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the recipe.
+     * The Amazon Resource Name (ARN) of the user who last modified the recipe.
      * </p>
      * 
-     * @return The identifier (user name) of the user who last modified the recipe.
+     * @return The Amazon Resource Name (ARN) of the user who last modified the recipe.
      */
 
     public String getLastModifiedBy() {
@@ -214,11 +233,11 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the recipe.
+     * The Amazon Resource Name (ARN) of the user who last modified the recipe.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (user name) of the user who last modified the recipe.
+     *        The Amazon Resource Name (ARN) of the user who last modified the recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +328,11 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who published the recipe.
+     * The Amazon Resource Name (ARN) of the user who published the recipe.
      * </p>
      * 
      * @param publishedBy
-     *        The identifier (the user name) of the user who published the recipe.
+     *        The Amazon Resource Name (ARN) of the user who published the recipe.
      */
 
     public void setPublishedBy(String publishedBy) {
@@ -322,10 +341,10 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who published the recipe.
+     * The Amazon Resource Name (ARN) of the user who published the recipe.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who published the recipe.
+     * @return The Amazon Resource Name (ARN) of the user who published the recipe.
      */
 
     public String getPublishedBy() {
@@ -334,11 +353,11 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who published the recipe.
+     * The Amazon Resource Name (ARN) of the user who published the recipe.
      * </p>
      * 
      * @param publishedBy
-     *        The identifier (the user name) of the user who published the recipe.
+     *        The Amazon Resource Name (ARN) of the user who published the recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -647,11 +666,48 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the version for the recipe.
+     * The identifier for the version for the recipe. Must be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
+     * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_PUBLISHED</code> - the most recent published version.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param recipeVersion
-     *        The identifier for the version for the recipe.
+     *        The identifier for the version for the recipe. Must be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
+     *        numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
+     *        and <code>Y</code> are required, and "0.0" is not a valid version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LATEST_PUBLISHED</code> - the most recent published version.
+     *        </p>
+     *        </li>
      */
 
     public void setRecipeVersion(String recipeVersion) {
@@ -660,10 +716,47 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the version for the recipe.
+     * The identifier for the version for the recipe. Must be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
+     * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_PUBLISHED</code> - the most recent published version.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the version for the recipe.
+     * @return The identifier for the version for the recipe. Must be one of the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
+     *         numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
+     *         and <code>Y</code> are required, and "0.0" is not a valid version.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LATEST_PUBLISHED</code> - the most recent published version.
+     *         </p>
+     *         </li>
      */
 
     public String getRecipeVersion() {
@@ -672,11 +765,48 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the version for the recipe.
+     * The identifier for the version for the recipe. Must be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
+     * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LATEST_PUBLISHED</code> - the most recent published version.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param recipeVersion
-     *        The identifier for the version for the recipe.
+     *        The identifier for the version for the recipe. Must be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
+     *        numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
+     *        and <code>Y</code> are required, and "0.0" is not a valid version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LATEST_PUBLISHED</code> - the most recent published version.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

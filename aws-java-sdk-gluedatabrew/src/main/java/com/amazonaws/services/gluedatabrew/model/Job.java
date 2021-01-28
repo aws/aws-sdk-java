@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents all of the attributes of an AWS Glue DataBrew job.
+ * Represents all of the attributes of a DataBrew job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job" target="_top">AWS API Documentation</a>
@@ -35,7 +35,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The identifier (the user name) of the user who created the job.
+     * The Amazon Resource Name (ARN) of the user who created the job.
      * </p>
      */
     private String createdBy;
@@ -53,7 +53,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String datasetName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     * The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information,
+     * see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a>
      * </p>
      */
     private String encryptionKeyArn;
@@ -102,7 +104,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the job.
+     * The Amazon Resource Name (ARN) of the user who last modified the job.
      * </p>
      */
     private String lastModifiedBy;
@@ -216,11 +218,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the job.
+     * The Amazon Resource Name (ARN) of the user who created the job.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the job.
+     *        The Amazon Resource Name (ARN) of the user who created the job.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -229,10 +231,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the job.
+     * The Amazon Resource Name (ARN) of the user who created the job.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who created the job.
+     * @return The Amazon Resource Name (ARN) of the user who created the job.
      */
 
     public String getCreatedBy() {
@@ -241,11 +243,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the job.
+     * The Amazon Resource Name (ARN) of the user who created the job.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the job.
+     *        The Amazon Resource Name (ARN) of the user who created the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,11 +338,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     * The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information,
+     * see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a>
      * </p>
      * 
      * @param encryptionKeyArn
-     *        The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     *        The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     *        data written by DataBrew jobs</a>
      */
 
     public void setEncryptionKeyArn(String encryptionKeyArn) {
@@ -349,10 +356,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     * The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information,
+     * see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     * @return The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     *         data written by DataBrew jobs</a>
      */
 
     public String getEncryptionKeyArn() {
@@ -361,11 +373,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     * The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information,
+     * see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a>
      * </p>
      * 
      * @param encryptionKeyArn
-     *        The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+     *        The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     *        data written by DataBrew jobs</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,11 +743,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the job.
+     * The Amazon Resource Name (ARN) of the user who last modified the job.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the job.
+     *        The Amazon Resource Name (ARN) of the user who last modified the job.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -739,10 +756,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the job.
+     * The Amazon Resource Name (ARN) of the user who last modified the job.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who last modified the job.
+     * @return The Amazon Resource Name (ARN) of the user who last modified the job.
      */
 
     public String getLastModifiedBy() {
@@ -751,11 +768,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the job.
+     * The Amazon Resource Name (ARN) of the user who last modified the job.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the job.
+     *        The Amazon Resource Name (ARN) of the user who last modified the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

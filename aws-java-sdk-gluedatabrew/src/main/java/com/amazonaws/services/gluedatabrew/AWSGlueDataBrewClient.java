@@ -149,6 +149,66 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
      * <p>
      * Deletes one or more versions of a recipe at a time.
      * </p>
+     * <p>
+     * The entire request will be rejected if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The recipe does not exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is an invalid version identifier in the list of versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The verision list is empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The version list size exceeds 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The verison list contains duplicate entries.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The request will complete successfully, but with partial failures, if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A version does not exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A version is being used by a job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The version fails to be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to
+     * delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then
+     * <code>LATEST_WORKING</code> will be listed as partial failure in the response.
+     * </p>
      * 
      * @param batchDeleteRecipeVersionRequest
      * @return Result of the BatchDeleteRecipeVersion operation returned by the service.
@@ -209,7 +269,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new AWS Glue DataBrew dataset for this AWS account.
+     * Creates a new DataBrew dataset.
      * </p>
      * 
      * @param createDatasetRequest
@@ -271,11 +331,19 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new job to profile an AWS Glue DataBrew dataset that exists in the current AWS account.
+     * Creates a new job to analyze a dataset and create its data profile.
      * </p>
      * 
      * @param createProfileJobRequest
      * @return Result of the CreateProfileJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to the specified resource was denied.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.CreateProfileJob
@@ -327,7 +395,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new AWS Glue DataBrew project in the current AWS account.
+     * Creates a new DataBrew project.
      * </p>
      * 
      * @param createProjectRequest
@@ -389,7 +457,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new AWS Glue DataBrew recipe for the current AWS account.
+     * Creates a new DataBrew recipe.
      * </p>
      * 
      * @param createRecipeRequest
@@ -449,12 +517,19 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS account. You can create a
-     * standalone job using either a project, or a combination of a recipe and a dataset.
+     * Creates a new job to transform input data, using steps defined in an existing AWS Glue DataBrew recipe
      * </p>
      * 
      * @param createRecipeJobRequest
      * @return Result of the CreateRecipeJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to the specified resource was denied.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.CreateRecipeJob
@@ -506,12 +581,16 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be run at a specific date and time, or at
-     * regular intervals.
+     * Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular
+     * intervals.
      * </p>
      * 
      * @param createScheduleRequest
      * @return Result of the CreateSchedule operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.CreateSchedule
@@ -563,11 +642,13 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes a dataset from AWS Glue DataBrew.
+     * Deletes a dataset from DataBrew.
      * </p>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ValidationException
@@ -621,12 +702,13 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes the specified AWS Glue DataBrew job from the current AWS account. The job can be for a recipe or for a
-     * profile.
+     * Deletes the specified DataBrew job.
      * </p>
      * 
      * @param deleteJobRequest
      * @return Result of the DeleteJob operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ValidationException
@@ -680,11 +762,13 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes an existing AWS Glue DataBrew project from the current AWS account.
+     * Deletes an existing DataBrew project.
      * </p>
      * 
      * @param deleteProjectRequest
      * @return Result of the DeleteProject operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ValidationException
@@ -738,11 +822,13 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes a single version of an AWS Glue DataBrew recipe.
+     * Deletes a single version of a DataBrew recipe.
      * </p>
      * 
      * @param deleteRecipeVersionRequest
      * @return Result of the DeleteRecipeVersion operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ValidationException
@@ -796,7 +882,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes the specified AWS Glue DataBrew schedule from the current AWS account.
+     * Deletes the specified DataBrew schedule.
      * </p>
      * 
      * @param deleteScheduleRequest
@@ -854,7 +940,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the definition of a specific AWS Glue DataBrew dataset that is in the current AWS account.
+     * Returns the definition of a specific DataBrew dataset.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -912,7 +998,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the definition of a specific AWS Glue DataBrew job that is in the current AWS account.
+     * Returns the definition of a specific DataBrew job.
      * </p>
      * 
      * @param describeJobRequest
@@ -970,7 +1056,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the definition of a specific AWS Glue DataBrew project that is in the current AWS account.
+     * Returns the definition of a specific DataBrew project.
      * </p>
      * 
      * @param describeProjectRequest
@@ -1028,7 +1114,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the definition of a specific AWS Glue DataBrew recipe that is in the current AWS account.
+     * Returns the definition of a specific DataBrew recipe corresponding to a particular version.
      * </p>
      * 
      * @param describeRecipeRequest
@@ -1086,7 +1172,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the definition of a specific AWS Glue DataBrew schedule that is in the current AWS account.
+     * Returns the definition of a specific DataBrew schedule.
      * </p>
      * 
      * @param describeScheduleRequest
@@ -1144,7 +1230,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all of the AWS Glue DataBrew datasets for the current AWS account.
+     * Lists all of the DataBrew datasets.
      * </p>
      * 
      * @param listDatasetsRequest
@@ -1200,7 +1286,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all of the previous runs of a particular AWS Glue DataBrew job in the current AWS account.
+     * Lists all of the previous runs of a particular DataBrew job.
      * </p>
      * 
      * @param listJobRunsRequest
@@ -1258,7 +1344,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists the AWS Glue DataBrew jobs in the current AWS account.
+     * Lists all of the DataBrew jobs that are defined.
      * </p>
      * 
      * @param listJobsRequest
@@ -1314,7 +1400,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all of the DataBrew projects in the current AWS account.
+     * Lists all of the DataBrew projects that are defined.
      * </p>
      * 
      * @param listProjectsRequest
@@ -1370,7 +1456,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all of the versions of a particular AWS Glue DataBrew recipe in the current AWS account.
+     * Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
      * </p>
      * 
      * @param listRecipeVersionsRequest
@@ -1426,7 +1512,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all of the AWS Glue DataBrew recipes in the current AWS account.
+     * Lists all of the DataBrew recipes that are defined.
      * </p>
      * 
      * @param listRecipesRequest
@@ -1482,7 +1568,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists the AWS Glue DataBrew schedules in the current AWS account.
+     * Lists the DataBrew schedules that are defined.
      * </p>
      * 
      * @param listSchedulesRequest
@@ -1538,7 +1624,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists all the tags for an AWS Glue DataBrew resource.
+     * Lists all the tags for a DataBrew resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1598,7 +1684,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Publishes a new major version of an AWS Glue DataBrew recipe that exists in the current AWS account.
+     * Publishes a new version of a DataBrew recipe.
      * </p>
      * 
      * @param publishRecipeRequest
@@ -1607,6 +1693,8 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
      *         The input parameters for this request failed validation.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @sample AWSGlueDataBrew.PublishRecipe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PublishRecipe" target="_top">AWS API
      *      Documentation</a>
@@ -1656,7 +1744,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Performs a recipe step within an interactive AWS Glue DataBrew session that's currently open.
+     * Performs a recipe step within an interactive DataBrew session that's currently open.
      * </p>
      * 
      * @param sendProjectSessionActionRequest
@@ -1718,13 +1806,17 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Runs an AWS Glue DataBrew job that exists in the current AWS account.
+     * Runs a DataBrew job.
      * </p>
      * 
      * @param startJobRunRequest
      * @return Result of the StartJobRun operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.StartJobRun
@@ -1776,13 +1868,17 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates an interactive session, enabling you to manipulate an AWS Glue DataBrew project.
+     * Creates an interactive session, enabling you to manipulate data in a DataBrew project.
      * </p>
      * 
      * @param startProjectSessionRequest
      * @return Result of the StartProjectSession operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.StartProjectSession
@@ -1834,7 +1930,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Stops the specified job from running in the current AWS account.
+     * Stops a particular run of a job.
      * </p>
      * 
      * @param stopJobRunRequest
@@ -1892,7 +1988,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job, project, or recipe.
+     * Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1952,7 +2048,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Removes metadata tags from an AWS Glue DataBrew resource.
+     * Removes metadata tags from a DataBrew resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2012,11 +2108,13 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of an existing AWS Glue DataBrew dataset in the current AWS account.
+     * Modifies the definition of an existing DataBrew dataset.
      * </p>
      * 
      * @param updateDatasetRequest
      * @return Result of the UpdateDataset operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to the specified resource was denied.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ValidationException
@@ -2070,11 +2168,15 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of an existing AWS Glue DataBrew job in the current AWS account.
+     * Modifies the definition of an existing profile job.
      * </p>
      * 
      * @param updateProfileJobRequest
      * @return Result of the UpdateProfileJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to the specified resource was denied.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.UpdateProfileJob
@@ -2126,7 +2228,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of an existing AWS Glue DataBrew project in the current AWS account.
+     * Modifies the definition of an existing DataBrew project.
      * </p>
      * 
      * @param updateProjectRequest
@@ -2184,7 +2286,7 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of the latest working version of an AWS Glue DataBrew recipe in the current AWS account.
+     * Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
      * </p>
      * 
      * @param updateRecipeRequest
@@ -2242,11 +2344,15 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of an existing AWS Glue DataBrew recipe job in the current AWS account.
+     * Modifies the definition of an existing DataBrew recipe job.
      * </p>
      * 
      * @param updateRecipeJobRequest
      * @return Result of the UpdateRecipeJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to the specified resource was denied.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.UpdateRecipeJob
@@ -2298,11 +2404,15 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Modifies the definition of an existing AWS Glue DataBrew schedule in the current AWS account.
+     * Modifies the definition of an existing DataBrew schedule.
      * </p>
      * 
      * @param updateScheduleRequest
      * @return Result of the UpdateSchedule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ServiceQuotaExceededException
+     *         A service quota is exceeded.
      * @throws ValidationException
      *         The input parameters for this request failed validation.
      * @sample AWSGlueDataBrew.UpdateSchedule

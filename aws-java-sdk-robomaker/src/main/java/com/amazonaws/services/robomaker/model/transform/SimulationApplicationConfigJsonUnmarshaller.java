@@ -60,11 +60,22 @@ public class SimulationApplicationConfigJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     simulationApplicationConfig.setLaunchConfig(LaunchConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("uploadConfigurations", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUploadConfigurations(new ListUnmarshaller<UploadConfiguration>(UploadConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("worldConfigs", targetDepth)) {
                     context.nextToken();
                     simulationApplicationConfig.setWorldConfigs(new ListUnmarshaller<WorldConfig>(WorldConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("useDefaultUploadConfigurations", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUseDefaultUploadConfigurations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

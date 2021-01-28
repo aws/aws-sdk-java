@@ -27,7 +27,7 @@ public class SendProjectSessionActionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.
+     * If true, the result of the recipe step will be returned, but not applied.
      * </p>
      */
     private Boolean preview;
@@ -58,12 +58,11 @@ public class SendProjectSessionActionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.
+     * If true, the result of the recipe step will be returned, but not applied.
      * </p>
      * 
      * @param preview
-     *        Returns the result of the recipe step, without applying it. The result isn't added to the view frame
-     *        stack.
+     *        If true, the result of the recipe step will be returned, but not applied.
      */
 
     public void setPreview(Boolean preview) {
@@ -72,11 +71,10 @@ public class SendProjectSessionActionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.
+     * If true, the result of the recipe step will be returned, but not applied.
      * </p>
      * 
-     * @return Returns the result of the recipe step, without applying it. The result isn't added to the view frame
-     *         stack.
+     * @return If true, the result of the recipe step will be returned, but not applied.
      */
 
     public Boolean getPreview() {
@@ -85,12 +83,11 @@ public class SendProjectSessionActionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.
+     * If true, the result of the recipe step will be returned, but not applied.
      * </p>
      * 
      * @param preview
-     *        Returns the result of the recipe step, without applying it. The result isn't added to the view frame
-     *        stack.
+     *        If true, the result of the recipe step will be returned, but not applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +98,10 @@ public class SendProjectSessionActionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.
+     * If true, the result of the recipe step will be returned, but not applied.
      * </p>
      * 
-     * @return Returns the result of the recipe step, without applying it. The result isn't added to the view frame
-     *         stack.
+     * @return If true, the result of the recipe step will be returned, but not applied.
      */
 
     public Boolean isPreview() {

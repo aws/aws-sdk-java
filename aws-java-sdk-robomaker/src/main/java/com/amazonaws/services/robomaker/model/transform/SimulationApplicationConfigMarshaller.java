@@ -34,8 +34,12 @@ public class SimulationApplicationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationVersion").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchConfig").build();
+    private static final MarshallingInfo<List> UPLOADCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("uploadConfigurations").build();
     private static final MarshallingInfo<List> WORLDCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("worldConfigs").build();
+    private static final MarshallingInfo<Boolean> USEDEFAULTUPLOADCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDefaultUploadConfigurations").build();
 
     private static final SimulationApplicationConfigMarshaller instance = new SimulationApplicationConfigMarshaller();
 
@@ -56,7 +60,9 @@ public class SimulationApplicationConfigMarshaller {
             protocolMarshaller.marshall(simulationApplicationConfig.getApplication(), APPLICATION_BINDING);
             protocolMarshaller.marshall(simulationApplicationConfig.getApplicationVersion(), APPLICATIONVERSION_BINDING);
             protocolMarshaller.marshall(simulationApplicationConfig.getLaunchConfig(), LAUNCHCONFIG_BINDING);
+            protocolMarshaller.marshall(simulationApplicationConfig.getUploadConfigurations(), UPLOADCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(simulationApplicationConfig.getWorldConfigs(), WORLDCONFIGS_BINDING);
+            protocolMarshaller.marshall(simulationApplicationConfig.getUseDefaultUploadConfigurations(), USEDEFAULTUPLOADCONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

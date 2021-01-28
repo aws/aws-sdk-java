@@ -115,6 +115,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer maxDatapoints;
+    /**
+     * <p>
+     * This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that
+     * the labels of returned data display the correct time for your time zone.
+     * </p>
+     */
+    private LabelOptions labelOptions;
 
     /**
      * <p>
@@ -744,6 +751,52 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that
+     * the labels of returned data display the correct time for your time zone.
+     * </p>
+     * 
+     * @param labelOptions
+     *        This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone
+     *        so that the labels of returned data display the correct time for your time zone.
+     */
+
+    public void setLabelOptions(LabelOptions labelOptions) {
+        this.labelOptions = labelOptions;
+    }
+
+    /**
+     * <p>
+     * This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that
+     * the labels of returned data display the correct time for your time zone.
+     * </p>
+     * 
+     * @return This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone
+     *         so that the labels of returned data display the correct time for your time zone.
+     */
+
+    public LabelOptions getLabelOptions() {
+        return this.labelOptions;
+    }
+
+    /**
+     * <p>
+     * This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that
+     * the labels of returned data display the correct time for your time zone.
+     * </p>
+     * 
+     * @param labelOptions
+     *        This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone
+     *        so that the labels of returned data display the correct time for your time zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMetricDataRequest withLabelOptions(LabelOptions labelOptions) {
+        setLabelOptions(labelOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -766,7 +819,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getScanBy() != null)
             sb.append("ScanBy: ").append(getScanBy()).append(",");
         if (getMaxDatapoints() != null)
-            sb.append("MaxDatapoints: ").append(getMaxDatapoints());
+            sb.append("MaxDatapoints: ").append(getMaxDatapoints()).append(",");
+        if (getLabelOptions() != null)
+            sb.append("LabelOptions: ").append(getLabelOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -805,6 +860,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMaxDatapoints() != null && other.getMaxDatapoints().equals(this.getMaxDatapoints()) == false)
             return false;
+        if (other.getLabelOptions() == null ^ this.getLabelOptions() == null)
+            return false;
+        if (other.getLabelOptions() != null && other.getLabelOptions().equals(this.getLabelOptions()) == false)
+            return false;
         return true;
     }
 
@@ -819,6 +878,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getScanBy() == null) ? 0 : getScanBy().hashCode());
         hashCode = prime * hashCode + ((getMaxDatapoints() == null) ? 0 : getMaxDatapoints().hashCode());
+        hashCode = prime * hashCode + ((getLabelOptions() == null) ? 0 : getLabelOptions().hashCode());
         return hashCode;
     }
 

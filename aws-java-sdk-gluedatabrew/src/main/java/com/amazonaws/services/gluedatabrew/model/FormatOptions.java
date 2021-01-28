@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define how Microsoft Excel input is to be interpreted by DataBrew.
+ * Options that define the structure of either Csv, Excel, or JSON input.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FormatOptions" target="_top">AWS API
@@ -40,6 +40,12 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ExcelOptions excel;
+    /**
+     * <p>
+     * Options that define how Csv input is to be interpreted by DataBrew.
+     * </p>
+     */
+    private CsvOptions csv;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Options that define how Csv input is to be interpreted by DataBrew.
+     * </p>
+     * 
+     * @param csv
+     *        Options that define how Csv input is to be interpreted by DataBrew.
+     */
+
+    public void setCsv(CsvOptions csv) {
+        this.csv = csv;
+    }
+
+    /**
+     * <p>
+     * Options that define how Csv input is to be interpreted by DataBrew.
+     * </p>
+     * 
+     * @return Options that define how Csv input is to be interpreted by DataBrew.
+     */
+
+    public CsvOptions getCsv() {
+        return this.csv;
+    }
+
+    /**
+     * <p>
+     * Options that define how Csv input is to be interpreted by DataBrew.
+     * </p>
+     * 
+     * @param csv
+     *        Options that define how Csv input is to be interpreted by DataBrew.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormatOptions withCsv(CsvOptions csv) {
+        setCsv(csv);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
         if (getJson() != null)
             sb.append("Json: ").append(getJson()).append(",");
         if (getExcel() != null)
-            sb.append("Excel: ").append(getExcel());
+            sb.append("Excel: ").append(getExcel()).append(",");
+        if (getCsv() != null)
+            sb.append("Csv: ").append(getCsv());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExcel() != null && other.getExcel().equals(this.getExcel()) == false)
             return false;
+        if (other.getCsv() == null ^ this.getCsv() == null)
+            return false;
+        if (other.getCsv() != null && other.getCsv().equals(this.getCsv()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getJson() == null) ? 0 : getJson().hashCode());
         hashCode = prime * hashCode + ((getExcel() == null) ? 0 : getExcel().hashCode());
+        hashCode = prime * hashCode + ((getCsv() == null) ? 0 : getCsv().hashCode());
         return hashCode;
     }
 

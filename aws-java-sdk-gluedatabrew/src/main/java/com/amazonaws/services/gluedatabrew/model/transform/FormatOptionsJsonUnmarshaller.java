@@ -56,6 +56,10 @@ public class FormatOptionsJsonUnmarshaller implements Unmarshaller<FormatOptions
                     context.nextToken();
                     formatOptions.setExcel(ExcelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Csv", targetDepth)) {
+                    context.nextToken();
+                    formatOptions.setCsv(CsvOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

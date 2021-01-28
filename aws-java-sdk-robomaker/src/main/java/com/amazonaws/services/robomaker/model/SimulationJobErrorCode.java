@@ -46,7 +46,8 @@ public enum SimulationJobErrorCode {
     WrongRegionS3Bucket("WrongRegionS3Bucket"),
     WrongRegionS3Output("WrongRegionS3Output"),
     WrongRegionRobotApplication("WrongRegionRobotApplication"),
-    WrongRegionSimulationApplication("WrongRegionSimulationApplication");
+    WrongRegionSimulationApplication("WrongRegionSimulationApplication"),
+    UploadContentMismatchError("UploadContentMismatchError");
 
     private String value;
 

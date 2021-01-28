@@ -27,24 +27,25 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the recipe to be deleted.
+     * The name of the recipe.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The version of the recipe to be deleted.
+     * The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     * <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      */
     private String recipeVersion;
 
     /**
      * <p>
-     * The name of the recipe to be deleted.
+     * The name of the recipe.
      * </p>
      * 
      * @param name
-     *        The name of the recipe to be deleted.
+     *        The name of the recipe.
      */
 
     public void setName(String name) {
@@ -53,10 +54,10 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the recipe to be deleted.
+     * The name of the recipe.
      * </p>
      * 
-     * @return The name of the recipe to be deleted.
+     * @return The name of the recipe.
      */
 
     public String getName() {
@@ -65,11 +66,11 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the recipe to be deleted.
+     * The name of the recipe.
      * </p>
      * 
      * @param name
-     *        The name of the recipe to be deleted.
+     *        The name of the recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +81,13 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version of the recipe to be deleted.
+     * The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     * <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
      * @param recipeVersion
-     *        The version of the recipe to be deleted.
+     *        The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     *        <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      */
 
     public void setRecipeVersion(String recipeVersion) {
@@ -93,10 +96,12 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version of the recipe to be deleted.
+     * The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     * <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
-     * @return The version of the recipe to be deleted.
+     * @return The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     *         <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      */
 
     public String getRecipeVersion() {
@@ -105,11 +110,13 @@ public class DeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version of the recipe to be deleted.
+     * The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     * <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
      * @param recipeVersion
-     *        The version of the recipe to be deleted.
+     *        The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or
+     *        <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

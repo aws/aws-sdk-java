@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents how metadata stored in the AWS Glue Data Catalog is defined in an AWS Glue DataBrew dataset.
+ * Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogInputDefinition"

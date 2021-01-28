@@ -36,7 +36,8 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
     private NodeFabricAttributes fabric;
     /**
      * <p>
-     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     * Blockchain is in preview release and is subject to change.
      * </p>
      */
     private NodeEthereumAttributes ethereum;
@@ -86,11 +87,13 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     * Blockchain is in preview release and is subject to change.
      * </p>
      * 
      * @param ethereum
-     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     *        Blockchain is in preview release and is subject to change.
      */
 
     public void setEthereum(NodeEthereumAttributes ethereum) {
@@ -99,10 +102,12 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     * Blockchain is in preview release and is subject to change.
      * </p>
      * 
-     * @return Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * @return Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     *         Blockchain is in preview release and is subject to change.
      */
 
     public NodeEthereumAttributes getEthereum() {
@@ -111,11 +116,13 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     * Blockchain is in preview release and is subject to change.
      * </p>
      * 
      * @param ethereum
-     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. Ethereum on Managed
+     *        Blockchain is in preview release and is subject to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

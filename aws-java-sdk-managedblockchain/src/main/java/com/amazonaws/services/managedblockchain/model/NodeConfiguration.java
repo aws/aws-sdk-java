@@ -36,7 +36,8 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
     private String instanceType;
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
+     * preview release and is subject to change.
      * </p>
      */
     private String availabilityZone;
@@ -101,11 +102,13 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
+     * preview release and is subject to change.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
+     *        Blockchain is in preview release and is subject to change.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -114,10 +117,12 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
+     * preview release and is subject to change.
      * </p>
      * 
-     * @return The Availability Zone in which the node exists.
+     * @return The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
+     *         Blockchain is in preview release and is subject to change.
      */
 
     public String getAvailabilityZone() {
@@ -126,11 +131,13 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
+     * preview release and is subject to change.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
+     *        Blockchain is in preview release and is subject to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

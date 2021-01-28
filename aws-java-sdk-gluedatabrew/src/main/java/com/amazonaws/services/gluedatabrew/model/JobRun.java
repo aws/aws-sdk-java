@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents one run of an AWS Glue DataBrew job.
+ * Represents one run of a DataBrew job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobRun" target="_top">AWS API
@@ -102,7 +102,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private RecipeReference recipeReference;
     /**
      * <p>
-     * The identifier (the user name) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who initiated the job run.
      * </p>
      */
     private String startedBy;
@@ -663,11 +663,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who initiated the job run.
      * </p>
      * 
      * @param startedBy
-     *        The identifier (the user name) of the user who initiated the job run.
+     *        The Amazon Resource Name (ARN) of the user who initiated the job run.
      */
 
     public void setStartedBy(String startedBy) {
@@ -676,10 +676,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who initiated the job run.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who initiated the job run.
+     * @return The Amazon Resource Name (ARN) of the user who initiated the job run.
      */
 
     public String getStartedBy() {
@@ -688,11 +688,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who initiated the job run.
      * </p>
      * 
      * @param startedBy
-     *        The identifier (the user name) of the user who initiated the job run.
+     *        The Amazon Resource Name (ARN) of the user who initiated the job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

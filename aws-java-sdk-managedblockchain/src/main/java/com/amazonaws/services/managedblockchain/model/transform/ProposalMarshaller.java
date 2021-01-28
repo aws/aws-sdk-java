@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.managedblockchain.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -51,6 +53,10 @@ public class ProposalMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoVoteCount").build();
     private static final MarshallingInfo<Integer> OUTSTANDINGVOTECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutstandingVoteCount").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final ProposalMarshaller instance = new ProposalMarshaller();
 
@@ -80,6 +86,8 @@ public class ProposalMarshaller {
             protocolMarshaller.marshall(proposal.getYesVoteCount(), YESVOTECOUNT_BINDING);
             protocolMarshaller.marshall(proposal.getNoVoteCount(), NOVOTECOUNT_BINDING);
             protocolMarshaller.marshall(proposal.getOutstandingVoteCount(), OUTSTANDINGVOTECOUNT_BINDING);
+            protocolMarshaller.marshall(proposal.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(proposal.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

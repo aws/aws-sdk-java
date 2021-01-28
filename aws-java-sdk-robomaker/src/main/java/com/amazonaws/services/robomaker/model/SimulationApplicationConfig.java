@@ -48,10 +48,26 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
     private LaunchConfig launchConfig;
     /**
      * <p>
+     * Information about upload configurations for the simulation application.
+     * </p>
+     */
+    private java.util.List<UploadConfiguration> uploadConfigurations;
+    /**
+     * <p>
      * A list of world configurations.
      * </p>
      */
     private java.util.List<WorldConfig> worldConfigs;
+    /**
+     * <p>
+     * A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     * <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.
+     * </p>
+     * <p>
+     * If you set this value, you must specify an <code>outputLocation</code>.
+     * </p>
+     */
+    private Boolean useDefaultUploadConfigurations;
 
     /**
      * <p>
@@ -175,6 +191,76 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * Information about upload configurations for the simulation application.
+     * </p>
+     * 
+     * @return Information about upload configurations for the simulation application.
+     */
+
+    public java.util.List<UploadConfiguration> getUploadConfigurations() {
+        return uploadConfigurations;
+    }
+
+    /**
+     * <p>
+     * Information about upload configurations for the simulation application.
+     * </p>
+     * 
+     * @param uploadConfigurations
+     *        Information about upload configurations for the simulation application.
+     */
+
+    public void setUploadConfigurations(java.util.Collection<UploadConfiguration> uploadConfigurations) {
+        if (uploadConfigurations == null) {
+            this.uploadConfigurations = null;
+            return;
+        }
+
+        this.uploadConfigurations = new java.util.ArrayList<UploadConfiguration>(uploadConfigurations);
+    }
+
+    /**
+     * <p>
+     * Information about upload configurations for the simulation application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUploadConfigurations(java.util.Collection)} or {@link #withUploadConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param uploadConfigurations
+     *        Information about upload configurations for the simulation application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationApplicationConfig withUploadConfigurations(UploadConfiguration... uploadConfigurations) {
+        if (this.uploadConfigurations == null) {
+            setUploadConfigurations(new java.util.ArrayList<UploadConfiguration>(uploadConfigurations.length));
+        }
+        for (UploadConfiguration ele : uploadConfigurations) {
+            this.uploadConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about upload configurations for the simulation application.
+     * </p>
+     * 
+     * @param uploadConfigurations
+     *        Information about upload configurations for the simulation application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationApplicationConfig withUploadConfigurations(java.util.Collection<UploadConfiguration> uploadConfigurations) {
+        setUploadConfigurations(uploadConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of world configurations.
      * </p>
      * 
@@ -244,6 +330,90 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     * <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.
+     * </p>
+     * <p>
+     * If you set this value, you must specify an <code>outputLocation</code>.
+     * </p>
+     * 
+     * @param useDefaultUploadConfigurations
+     *        A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     *        <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be
+     *        recorded.</p>
+     *        <p>
+     *        If you set this value, you must specify an <code>outputLocation</code>.
+     */
+
+    public void setUseDefaultUploadConfigurations(Boolean useDefaultUploadConfigurations) {
+        this.useDefaultUploadConfigurations = useDefaultUploadConfigurations;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     * <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.
+     * </p>
+     * <p>
+     * If you set this value, you must specify an <code>outputLocation</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     *         <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be
+     *         recorded.</p>
+     *         <p>
+     *         If you set this value, you must specify an <code>outputLocation</code>.
+     */
+
+    public Boolean getUseDefaultUploadConfigurations() {
+        return this.useDefaultUploadConfigurations;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     * <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.
+     * </p>
+     * <p>
+     * If you set this value, you must specify an <code>outputLocation</code>.
+     * </p>
+     * 
+     * @param useDefaultUploadConfigurations
+     *        A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     *        <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be
+     *        recorded.</p>
+     *        <p>
+     *        If you set this value, you must specify an <code>outputLocation</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationApplicationConfig withUseDefaultUploadConfigurations(Boolean useDefaultUploadConfigurations) {
+        setUseDefaultUploadConfigurations(useDefaultUploadConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     * <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.
+     * </p>
+     * <p>
+     * If you set this value, you must specify an <code>outputLocation</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and
+     *         <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be
+     *         recorded.</p>
+     *         <p>
+     *         If you set this value, you must specify an <code>outputLocation</code>.
+     */
+
+    public Boolean isUseDefaultUploadConfigurations() {
+        return this.useDefaultUploadConfigurations;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -261,8 +431,12 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
             sb.append("ApplicationVersion: ").append(getApplicationVersion()).append(",");
         if (getLaunchConfig() != null)
             sb.append("LaunchConfig: ").append(getLaunchConfig()).append(",");
+        if (getUploadConfigurations() != null)
+            sb.append("UploadConfigurations: ").append(getUploadConfigurations()).append(",");
         if (getWorldConfigs() != null)
-            sb.append("WorldConfigs: ").append(getWorldConfigs());
+            sb.append("WorldConfigs: ").append(getWorldConfigs()).append(",");
+        if (getUseDefaultUploadConfigurations() != null)
+            sb.append("UseDefaultUploadConfigurations: ").append(getUseDefaultUploadConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -289,9 +463,18 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
             return false;
         if (other.getLaunchConfig() != null && other.getLaunchConfig().equals(this.getLaunchConfig()) == false)
             return false;
+        if (other.getUploadConfigurations() == null ^ this.getUploadConfigurations() == null)
+            return false;
+        if (other.getUploadConfigurations() != null && other.getUploadConfigurations().equals(this.getUploadConfigurations()) == false)
+            return false;
         if (other.getWorldConfigs() == null ^ this.getWorldConfigs() == null)
             return false;
         if (other.getWorldConfigs() != null && other.getWorldConfigs().equals(this.getWorldConfigs()) == false)
+            return false;
+        if (other.getUseDefaultUploadConfigurations() == null ^ this.getUseDefaultUploadConfigurations() == null)
+            return false;
+        if (other.getUseDefaultUploadConfigurations() != null
+                && other.getUseDefaultUploadConfigurations().equals(this.getUseDefaultUploadConfigurations()) == false)
             return false;
         return true;
     }
@@ -304,7 +487,9 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getApplication() == null) ? 0 : getApplication().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersion() == null) ? 0 : getApplicationVersion().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfig() == null) ? 0 : getLaunchConfig().hashCode());
+        hashCode = prime * hashCode + ((getUploadConfigurations() == null) ? 0 : getUploadConfigurations().hashCode());
         hashCode = prime * hashCode + ((getWorldConfigs() == null) ? 0 : getWorldConfigs().hashCode());
+        hashCode = prime * hashCode + ((getUseDefaultUploadConfigurations() == null) ? 0 : getUseDefaultUploadConfigurations().hashCode());
         return hashCode;
     }
 

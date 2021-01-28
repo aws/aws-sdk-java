@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the sample size and sampling type for AWS Glue DataBrew to use for interactive data analysis.
+ * Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Sample" target="_top">AWS API

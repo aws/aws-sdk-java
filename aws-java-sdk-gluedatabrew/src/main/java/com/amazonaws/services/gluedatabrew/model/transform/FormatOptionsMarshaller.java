@@ -31,6 +31,8 @@ public class FormatOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Json").build();
     private static final MarshallingInfo<StructuredPojo> EXCEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Excel").build();
+    private static final MarshallingInfo<StructuredPojo> CSV_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Csv").build();
 
     private static final FormatOptionsMarshaller instance = new FormatOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class FormatOptionsMarshaller {
         try {
             protocolMarshaller.marshall(formatOptions.getJson(), JSON_BINDING);
             protocolMarshaller.marshall(formatOptions.getExcel(), EXCEL_BINDING);
+            protocolMarshaller.marshall(formatOptions.getCsv(), CSV_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

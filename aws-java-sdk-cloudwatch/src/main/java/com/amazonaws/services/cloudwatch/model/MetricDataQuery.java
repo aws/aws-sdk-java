@@ -94,6 +94,11 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the
      * label is shown. If Label is omitted, CloudWatch generates a default.
      * </p>
+     * <p>
+     * You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic
+     * Labels</a>.
+     * </p>
      */
     private String label;
     /**
@@ -342,11 +347,20 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the
      * label is shown. If Label is omitted, CloudWatch generates a default.
      * </p>
+     * <p>
+     * You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic
+     * Labels</a>.
+     * </p>
      * 
      * @param label
      *        A human-readable label for this metric or expression. This is especially useful if this is an expression,
      *        so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard
-     *        widget, the label is shown. If Label is omitted, CloudWatch generates a default.
+     *        widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+     *        <p>
+     *        You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     *        Dynamic Labels</a>.
      */
 
     public void setLabel(String label) {
@@ -359,10 +373,19 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the
      * label is shown. If Label is omitted, CloudWatch generates a default.
      * </p>
+     * <p>
+     * You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic
+     * Labels</a>.
+     * </p>
      * 
      * @return A human-readable label for this metric or expression. This is especially useful if this is an expression,
      *         so that you know what the value represents. If the metric or expression is shown in a CloudWatch
-     *         dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.
+     *         dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+     *         <p>
+     *         You can put dynamic expressions into a label, so that it is more descriptive. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     *         Dynamic Labels</a>.
      */
 
     public String getLabel() {
@@ -375,11 +398,20 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the
      * label is shown. If Label is omitted, CloudWatch generates a default.
      * </p>
+     * <p>
+     * You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic
+     * Labels</a>.
+     * </p>
      * 
      * @param label
      *        A human-readable label for this metric or expression. This is especially useful if this is an expression,
      *        so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard
-     *        widget, the label is shown. If Label is omitted, CloudWatch generates a default.
+     *        widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+     *        <p>
+     *        You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     *        Dynamic Labels</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.managedblockchain.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,8 @@ public class MemberConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final MemberConfigurationMarshaller instance = new MemberConfigurationMarshaller();
 
@@ -56,6 +60,7 @@ public class MemberConfigurationMarshaller {
             protocolMarshaller.marshall(memberConfiguration.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(memberConfiguration.getFrameworkConfiguration(), FRAMEWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(memberConfiguration.getLogPublishingConfiguration(), LOGPUBLISHINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(memberConfiguration.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

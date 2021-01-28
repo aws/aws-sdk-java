@@ -104,13 +104,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * Indicates whether Amazon CloudWatch logging is enabled for this job.
      * </p>
      */
     private String logSubscription;
     /**
      * <p>
-     * The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     * The maximum number of compute nodes that DataBrew can consume when the job processes data.
      * </p>
      */
     private Integer maxCapacity;
@@ -142,7 +142,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String resourceArn;
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      */
     private String roleArn;
@@ -752,11 +752,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * Indicates whether Amazon CloudWatch logging is enabled for this job.
      * </p>
      * 
      * @param logSubscription
-     *        A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     *        Indicates whether Amazon CloudWatch logging is enabled for this job.
      * @see LogSubscription
      */
 
@@ -766,10 +766,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * Indicates whether Amazon CloudWatch logging is enabled for this job.
      * </p>
      * 
-     * @return A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * @return Indicates whether Amazon CloudWatch logging is enabled for this job.
      * @see LogSubscription
      */
 
@@ -779,11 +779,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * Indicates whether Amazon CloudWatch logging is enabled for this job.
      * </p>
      * 
      * @param logSubscription
-     *        A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     *        Indicates whether Amazon CloudWatch logging is enabled for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogSubscription
      */
@@ -795,11 +795,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     * Indicates whether Amazon CloudWatch logging is enabled for this job.
      * </p>
      * 
      * @param logSubscription
-     *        A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+     *        Indicates whether Amazon CloudWatch logging is enabled for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogSubscription
      */
@@ -811,11 +811,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     * The maximum number of compute nodes that DataBrew can consume when the job processes data.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     *        The maximum number of compute nodes that DataBrew can consume when the job processes data.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -824,10 +824,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     * The maximum number of compute nodes that DataBrew can consume when the job processes data.
      * </p>
      * 
-     * @return The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     * @return The maximum number of compute nodes that DataBrew can consume when the job processes data.
      */
 
     public Integer getMaxCapacity() {
@@ -836,11 +836,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     * The maximum number of compute nodes that DataBrew can consume when the job processes data.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.
+     *        The maximum number of compute nodes that DataBrew can consume when the job processes data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,11 +1067,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -1080,10 +1080,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
-     * @return The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     * @return The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public String getRoleArn() {
@@ -1092,11 +1092,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.
+     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

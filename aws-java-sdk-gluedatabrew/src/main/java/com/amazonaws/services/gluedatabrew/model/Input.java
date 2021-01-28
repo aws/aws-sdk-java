@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on how AWS Glue DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
+ * Information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input" target="_top">AWS API

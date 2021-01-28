@@ -41,6 +41,8 @@ public class ProposalSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> EXPIRATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationDate").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final ProposalSummaryMarshaller instance = new ProposalSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class ProposalSummaryMarshaller {
             protocolMarshaller.marshall(proposalSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(proposalSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(proposalSummary.getExpirationDate(), EXPIRATIONDATE_BINDING);
+            protocolMarshaller.marshall(proposalSummary.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

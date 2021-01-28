@@ -27,13 +27,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to associate this project with.
+     * The name of an existing dataset to associate this project with.
      * </p>
      */
     private String datasetName;
     /**
      * <p>
-     * A unique name for the new project.
+     * A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      */
     private String name;
@@ -61,11 +62,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to associate this project with.
+     * The name of an existing dataset to associate this project with.
      * </p>
      * 
      * @param datasetName
-     *        The name of the dataset to associate this project with.
+     *        The name of an existing dataset to associate this project with.
      */
 
     public void setDatasetName(String datasetName) {
@@ -74,10 +75,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to associate this project with.
+     * The name of an existing dataset to associate this project with.
      * </p>
      * 
-     * @return The name of the dataset to associate this project with.
+     * @return The name of an existing dataset to associate this project with.
      */
 
     public String getDatasetName() {
@@ -86,11 +87,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to associate this project with.
+     * The name of an existing dataset to associate this project with.
      * </p>
      * 
      * @param datasetName
-     *        The name of the dataset to associate this project with.
+     *        The name of an existing dataset to associate this project with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +102,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique name for the new project.
+     * A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
      * @param name
-     *        A unique name for the new project.
+     *        A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period
+     *        (.), and space.
      */
 
     public void setName(String name) {
@@ -114,10 +117,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique name for the new project.
+     * A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
-     * @return A unique name for the new project.
+     * @return A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period
+     *         (.), and space.
      */
 
     public String getName() {
@@ -126,11 +131,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique name for the new project.
+     * A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
      * @param name
-     *        A unique name for the new project.
+     *        A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period
+     *        (.), and space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

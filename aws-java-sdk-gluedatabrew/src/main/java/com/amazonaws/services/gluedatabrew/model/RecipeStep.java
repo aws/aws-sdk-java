@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a single step to be performed in an AWS Glue DataBrew recipe.
+ * Represents a single step from a DataBrew recipe to be performed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeStep" target="_top">AWS API

@@ -72,6 +72,10 @@ public class MemberSummaryJsonUnmarshaller implements Unmarshaller<MemberSummary
                     context.nextToken();
                     memberSummary.setIsOwned(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    memberSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

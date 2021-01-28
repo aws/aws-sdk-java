@@ -27,7 +27,8 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to be created.
+     * The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     * and space.
      * </p>
      */
     private String name;
@@ -44,11 +45,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to be created.
+     * The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     * and space.
      * </p>
      * 
      * @param name
-     *        The name of the dataset to be created.
+     *        The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-),
+     *        period (.), and space.
      */
 
     public void setName(String name) {
@@ -57,10 +60,12 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to be created.
+     * The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     * and space.
      * </p>
      * 
-     * @return The name of the dataset to be created.
+     * @return The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-),
+     *         period (.), and space.
      */
 
     public String getName() {
@@ -69,11 +74,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the dataset to be created.
+     * The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     * and space.
      * </p>
      * 
      * @param name
-     *        The name of the dataset to be created.
+     *        The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-),
+     *        period (.), and space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

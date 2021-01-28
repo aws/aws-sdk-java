@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents all of the attributes of an AWS Glue DataBrew recipe.
+ * Represents the name and version of a DataBrew recipe.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeReference" target="_top">AWS API

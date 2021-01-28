@@ -31,7 +31,7 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
-     * Errors, if any, that were encountered when deleting the recipe versions.
+     * Errors, if any, that occurred while attempting to delete the recipe versions.
      * </p>
      */
     private java.util.List<RecipeVersionErrorDetail> errors;
@@ -78,10 +78,10 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Errors, if any, that were encountered when deleting the recipe versions.
+     * Errors, if any, that occurred while attempting to delete the recipe versions.
      * </p>
      * 
-     * @return Errors, if any, that were encountered when deleting the recipe versions.
+     * @return Errors, if any, that occurred while attempting to delete the recipe versions.
      */
 
     public java.util.List<RecipeVersionErrorDetail> getErrors() {
@@ -90,11 +90,11 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Errors, if any, that were encountered when deleting the recipe versions.
+     * Errors, if any, that occurred while attempting to delete the recipe versions.
      * </p>
      * 
      * @param errors
-     *        Errors, if any, that were encountered when deleting the recipe versions.
+     *        Errors, if any, that occurred while attempting to delete the recipe versions.
      */
 
     public void setErrors(java.util.Collection<RecipeVersionErrorDetail> errors) {
@@ -108,7 +108,7 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Errors, if any, that were encountered when deleting the recipe versions.
+     * Errors, if any, that occurred while attempting to delete the recipe versions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param errors
-     *        Errors, if any, that were encountered when deleting the recipe versions.
+     *        Errors, if any, that occurred while attempting to delete the recipe versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class BatchDeleteRecipeVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Errors, if any, that were encountered when deleting the recipe versions.
+     * Errors, if any, that occurred while attempting to delete the recipe versions.
      * </p>
      * 
      * @param errors
-     *        Errors, if any, that were encountered when deleting the recipe versions.
+     *        Errors, if any, that occurred while attempting to delete the recipe versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

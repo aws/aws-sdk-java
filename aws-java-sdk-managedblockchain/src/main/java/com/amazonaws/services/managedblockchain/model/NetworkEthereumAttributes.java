@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Attributes of Ethereum for a network.
+ * Attributes of Ethereum for a network. Ethereum on Managed Blockchain is in preview release and is subject to change.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NetworkEthereumAttributes"

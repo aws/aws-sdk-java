@@ -57,14 +57,14 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
     private String encryptionMode;
     /**
      * <p>
-     * A unique name for the job.
+     * A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled,
-     * CloudWatch writes one log stream for each job run.
+     * Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log
+     * stream for each job run.
      * </p>
      */
     private String logSubscription;
@@ -96,14 +96,14 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
     private RecipeReference recipeReference;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+     * runs the job.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * Metadata tags to apply to this job dataset.
+     * Metadata tags to apply to this job.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -348,11 +348,12 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique name for the job.
+     * A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
      * </p>
      * 
      * @param name
-     *        A unique name for the job.
+     *        A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     *        space.
      */
 
     public void setName(String name) {
@@ -361,10 +362,11 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique name for the job.
+     * A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
      * </p>
      * 
-     * @return A unique name for the job.
+     * @return A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     *         space.
      */
 
     public String getName() {
@@ -373,11 +375,12 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique name for the job.
+     * A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
      * </p>
      * 
      * @param name
-     *        A unique name for the job.
+     *        A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     *        space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,13 +391,13 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled,
-     * CloudWatch writes one log stream for each job run.
+     * Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log
+     * stream for each job run.
      * </p>
      * 
      * @param logSubscription
-     *        A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is
-     *        enabled, CloudWatch writes one log stream for each job run.
+     *        Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one
+     *        log stream for each job run.
      * @see LogSubscription
      */
 
@@ -404,12 +407,12 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled,
-     * CloudWatch writes one log stream for each job run.
+     * Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log
+     * stream for each job run.
      * </p>
      * 
-     * @return A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is
-     *         enabled, CloudWatch writes one log stream for each job run.
+     * @return Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one
+     *         log stream for each job run.
      * @see LogSubscription
      */
 
@@ -419,13 +422,13 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled,
-     * CloudWatch writes one log stream for each job run.
+     * Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log
+     * stream for each job run.
      * </p>
      * 
      * @param logSubscription
-     *        A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is
-     *        enabled, CloudWatch writes one log stream for each job run.
+     *        Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one
+     *        log stream for each job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogSubscription
      */
@@ -437,13 +440,13 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled,
-     * CloudWatch writes one log stream for each job run.
+     * Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log
+     * stream for each job run.
      * </p>
      * 
      * @param logSubscription
-     *        A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is
-     *        enabled, CloudWatch writes one log stream for each job run.
+     *        Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one
+     *        log stream for each job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogSubscription
      */
@@ -674,13 +677,13 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+     * runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     *        request.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     *        DataBrew runs the job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -689,12 +692,12 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+     * runs the job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for
-     *         this request.
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     *         DataBrew runs the job.
      */
 
     public String getRoleArn() {
@@ -703,13 +706,13 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+     * runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     *        request.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     *        DataBrew runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,10 +723,10 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Metadata tags to apply to this job dataset.
+     * Metadata tags to apply to this job.
      * </p>
      * 
-     * @return Metadata tags to apply to this job dataset.
+     * @return Metadata tags to apply to this job.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -732,11 +735,11 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Metadata tags to apply to this job dataset.
+     * Metadata tags to apply to this job.
      * </p>
      * 
      * @param tags
-     *        Metadata tags to apply to this job dataset.
+     *        Metadata tags to apply to this job.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -745,11 +748,11 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Metadata tags to apply to this job dataset.
+     * Metadata tags to apply to this job.
      * </p>
      * 
      * @param tags
-     *        Metadata tags to apply to this job dataset.
+     *        Metadata tags to apply to this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

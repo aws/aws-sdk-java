@@ -25,7 +25,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes one or more versions of a recipe at a time.</p>"
+      "documentation":"<p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>"
     },
     "CreateDataset":{
       "name":"CreateDataset",
@@ -41,7 +41,7 @@
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new AWS Glue DataBrew dataset for this AWS account.</p>"
+      "documentation":"<p>Creates a new DataBrew dataset.</p>"
     },
     "CreateProfileJob":{
       "name":"CreateProfileJob",
@@ -52,9 +52,13 @@
       "input":{"shape":"CreateProfileJobRequest"},
       "output":{"shape":"CreateProfileJobResponse"},
       "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new job to profile an AWS Glue DataBrew dataset that exists in the current AWS account.</p>"
+      "documentation":"<p>Creates a new job to analyze a dataset and create its data profile.</p>"
     },
     "CreateProject":{
       "name":"CreateProject",
@@ -70,7 +74,7 @@
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new AWS Glue DataBrew project in the current AWS account.</p>"
+      "documentation":"<p>Creates a new DataBrew project.</p>"
     },
     "CreateRecipe":{
       "name":"CreateRecipe",
@@ -85,7 +89,7 @@
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new AWS Glue DataBrew recipe for the current AWS account.</p>"
+      "documentation":"<p>Creates a new DataBrew recipe.</p>"
     },
     "CreateRecipeJob":{
       "name":"CreateRecipeJob",
@@ -96,9 +100,13 @@
       "input":{"shape":"CreateRecipeJobRequest"},
       "output":{"shape":"CreateRecipeJobResponse"},
       "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS account. You can create a standalone job using either a project, or a combination of a recipe and a dataset.</p>"
+      "documentation":"<p>Creates a new job to transform input data, using steps defined in an existing AWS Glue DataBrew recipe</p>"
     },
     "CreateSchedule":{
       "name":"CreateSchedule",
@@ -109,9 +117,11 @@
       "input":{"shape":"CreateScheduleRequest"},
       "output":{"shape":"CreateScheduleResponse"},
       "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.</p>"
+      "documentation":"<p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.</p>"
     },
     "DeleteDataset":{
       "name":"DeleteDataset",
@@ -122,10 +132,11 @@
       "input":{"shape":"DeleteDatasetRequest"},
       "output":{"shape":"DeleteDatasetResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes a dataset from AWS Glue DataBrew.</p>"
+      "documentation":"<p>Deletes a dataset from DataBrew.</p>"
     },
     "DeleteJob":{
       "name":"DeleteJob",
@@ -136,10 +147,11 @@
       "input":{"shape":"DeleteJobRequest"},
       "output":{"shape":"DeleteJobResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes the specified AWS Glue DataBrew job from the current AWS account. The job can be for a recipe or for a profile.</p>"
+      "documentation":"<p>Deletes the specified DataBrew job.</p>"
     },
     "DeleteProject":{
       "name":"DeleteProject",
@@ -150,10 +162,11 @@
       "input":{"shape":"DeleteProjectRequest"},
       "output":{"shape":"DeleteProjectResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes an existing AWS Glue DataBrew project from the current AWS account.</p>"
+      "documentation":"<p>Deletes an existing DataBrew project.</p>"
     },
     "DeleteRecipeVersion":{
       "name":"DeleteRecipeVersion",
@@ -164,10 +177,11 @@
       "input":{"shape":"DeleteRecipeVersionRequest"},
       "output":{"shape":"DeleteRecipeVersionResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes a single version of an AWS Glue DataBrew recipe.</p>"
+      "documentation":"<p>Deletes a single version of a DataBrew recipe.</p>"
     },
     "DeleteSchedule":{
       "name":"DeleteSchedule",
@@ -181,7 +195,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Deletes the specified AWS Glue DataBrew schedule from the current AWS account.</p>"
+      "documentation":"<p>Deletes the specified DataBrew schedule.</p>"
     },
     "DescribeDataset":{
       "name":"DescribeDataset",
@@ -195,7 +209,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns the definition of a specific AWS Glue DataBrew dataset that is in the current AWS account.</p>"
+      "documentation":"<p>Returns the definition of a specific DataBrew dataset.</p>"
     },
     "DescribeJob":{
       "name":"DescribeJob",
@@ -209,7 +223,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns the definition of a specific AWS Glue DataBrew job that is in the current AWS account.</p>"
+      "documentation":"<p>Returns the definition of a specific DataBrew job.</p>"
     },
     "DescribeProject":{
       "name":"DescribeProject",
@@ -223,7 +237,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns the definition of a specific AWS Glue DataBrew project that is in the current AWS account.</p>"
+      "documentation":"<p>Returns the definition of a specific DataBrew project.</p>"
     },
     "DescribeRecipe":{
       "name":"DescribeRecipe",
@@ -237,7 +251,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns the definition of a specific AWS Glue DataBrew recipe that is in the current AWS account.</p>"
+      "documentation":"<p>Returns the definition of a specific DataBrew recipe corresponding to a particular version.</p>"
     },
     "DescribeSchedule":{
       "name":"DescribeSchedule",
@@ -251,7 +265,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns the definition of a specific AWS Glue DataBrew schedule that is in the current AWS account.</p>"
+      "documentation":"<p>Returns the definition of a specific DataBrew schedule.</p>"
     },
     "ListDatasets":{
       "name":"ListDatasets",
@@ -264,7 +278,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the AWS Glue DataBrew datasets for the current AWS account.</p>"
+      "documentation":"<p>Lists all of the DataBrew datasets.</p>"
     },
     "ListJobRuns":{
       "name":"ListJobRuns",
@@ -278,7 +292,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the previous runs of a particular AWS Glue DataBrew job in the current AWS account.</p>"
+      "documentation":"<p>Lists all of the previous runs of a particular DataBrew job.</p>"
     },
     "ListJobs":{
       "name":"ListJobs",
@@ -291,7 +305,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists the AWS Glue DataBrew jobs in the current AWS account.</p>"
+      "documentation":"<p>Lists all of the DataBrew jobs that are defined.</p>"
     },
     "ListProjects":{
       "name":"ListProjects",
@@ -304,7 +318,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the DataBrew projects in the current AWS account.</p>"
+      "documentation":"<p>Lists all of the DataBrew projects that are defined.</p>"
     },
     "ListRecipeVersions":{
       "name":"ListRecipeVersions",
@@ -317,7 +331,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the versions of a particular AWS Glue DataBrew recipe in the current AWS account.</p>"
+      "documentation":"<p>Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.</p>"
     },
     "ListRecipes":{
       "name":"ListRecipes",
@@ -330,7 +344,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the AWS Glue DataBrew recipes in the current AWS account.</p>"
+      "documentation":"<p>Lists all of the DataBrew recipes that are defined.</p>"
     },
     "ListSchedules":{
       "name":"ListSchedules",
@@ -343,7 +357,7 @@
       "errors":[
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists the AWS Glue DataBrew schedules in the current AWS account.</p>"
+      "documentation":"<p>Lists the DataBrew schedules that are defined.</p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -358,7 +372,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all the tags for an AWS Glue DataBrew resource. </p>"
+      "documentation":"<p>Lists all the tags for a DataBrew resource. </p>"
     },
     "PublishRecipe":{
       "name":"PublishRecipe",
@@ -370,9 +384,10 @@
       "output":{"shape":"PublishRecipeResponse"},
       "errors":[
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
-      "documentation":"<p>Publishes a new major version of an AWS Glue DataBrew recipe that exists in the current AWS account.</p>"
+      "documentation":"<p>Publishes a new version of a DataBrew recipe.</p>"
     },
     "SendProjectSessionAction":{
       "name":"SendProjectSessionAction",
@@ -387,7 +402,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Performs a recipe step within an interactive AWS Glue DataBrew session that's currently open.</p>"
+      "documentation":"<p>Performs a recipe step within an interactive DataBrew session that's currently open.</p>"
     },
     "StartJobRun":{
       "name":"StartJobRun",
@@ -398,10 +413,12 @@
       "input":{"shape":"StartJobRunRequest"},
       "output":{"shape":"StartJobRunResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Runs an AWS Glue DataBrew job that exists in the current AWS account.</p>"
+      "documentation":"<p>Runs a DataBrew job.</p>"
     },
     "StartProjectSession":{
       "name":"StartProjectSession",
@@ -412,10 +429,12 @@
       "input":{"shape":"StartProjectSessionRequest"},
       "output":{"shape":"StartProjectSessionResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Creates an interactive session, enabling you to manipulate an AWS Glue DataBrew project.</p>"
+      "documentation":"<p>Creates an interactive session, enabling you to manipulate data in a DataBrew project.</p>"
     },
     "StopJobRun":{
       "name":"StopJobRun",
@@ -429,7 +448,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Stops the specified job from running in the current AWS account.</p>"
+      "documentation":"<p>Stops a particular run of a job.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -444,7 +463,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job, project, or recipe.</p>"
+      "documentation":"<p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.</p>"
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -459,7 +478,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Removes metadata tags from an AWS Glue DataBrew resource.</p>"
+      "documentation":"<p>Removes metadata tags from a DataBrew resource.</p>"
     },
     "UpdateDataset":{
       "name":"UpdateDataset",
@@ -470,10 +489,11 @@
       "input":{"shape":"UpdateDatasetRequest"},
       "output":{"shape":"UpdateDatasetResponse"},
       "errors":[
+        {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Modifies the definition of an existing AWS Glue DataBrew dataset in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of an existing DataBrew dataset.</p>"
     },
     "UpdateProfileJob":{
       "name":"UpdateProfileJob",
@@ -484,9 +504,11 @@
       "input":{"shape":"UpdateProfileJobRequest"},
       "output":{"shape":"UpdateProfileJobResponse"},
       "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Modifies the definition of an existing AWS Glue DataBrew job in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of an existing profile job.</p>"
     },
     "UpdateProject":{
       "name":"UpdateProject",
@@ -500,7 +522,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Modifies the definition of an existing AWS Glue DataBrew project in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of an existing DataBrew project.</p>"
     },
     "UpdateRecipe":{
       "name":"UpdateRecipe",
@@ -514,7 +536,7 @@
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Modifies the definition of the latest working version of an AWS Glue DataBrew recipe in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.</p>"
     },
     "UpdateRecipeJob":{
       "name":"UpdateRecipeJob",
@@ -525,9 +547,11 @@
       "input":{"shape":"UpdateRecipeJobRequest"},
       "output":{"shape":"UpdateRecipeJobResponse"},
       "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Modifies the definition of an existing AWS Glue DataBrew recipe job in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of an existing DataBrew recipe job.</p>"
     },
     "UpdateSchedule":{
       "name":"UpdateSchedule",
@@ -538,9 +562,11 @@
       "input":{"shape":"UpdateScheduleRequest"},
       "output":{"shape":"UpdateScheduleResponse"},
       "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Modifies the definition of an existing AWS Glue DataBrew schedule in the current AWS account.</p>"
+      "documentation":"<p>Modifies the definition of an existing DataBrew schedule.</p>"
     }
   },
   "shapes":{
@@ -574,13 +600,13 @@
       "members":{
         "Name":{
           "shape":"RecipeName",
-          "documentation":"<p>The name of the recipe to be modified.</p>",
+          "documentation":"<p>The name of the recipe whose versions are to be deleted.</p>",
           "location":"uri",
           "locationName":"name"
         },
         "RecipeVersions":{
           "shape":"RecipeVersionList",
-          "documentation":"<p>An array of version identifiers to be deleted.</p>"
+          "documentation":"<p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>"
         }
       }
     },
@@ -594,7 +620,7 @@
         },
         "Errors":{
           "shape":"RecipeErrorList",
-          "documentation":"<p>Errors, if any, that were encountered when deleting the recipe versions.</p>"
+          "documentation":"<p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>"
         }
       }
     },
@@ -658,7 +684,7 @@
       "members":{
         "Condition":{
           "shape":"Condition",
-          "documentation":"<p>A specific condition to apply to a recipe action. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html\">Recipe structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
+          "documentation":"<p>A specific condition to apply to a recipe action. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure\">Recipe structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
         },
         "Value":{
           "shape":"ConditionValue",
@@ -666,7 +692,7 @@
         },
         "TargetColumn":{
           "shape":"TargetColumn",
-          "documentation":"<p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>"
+          "documentation":"<p>A column to apply this condition to.</p>"
         }
       },
       "documentation":"<p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions: The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>"
@@ -697,7 +723,7 @@
       "members":{
         "Name":{
           "shape":"DatasetName",
-          "documentation":"<p>The name of the dataset to be created.</p>"
+          "documentation":"<p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         },
         "FormatOptions":{"shape":"FormatOptions"},
         "Input":{"shape":"Input"},
@@ -740,11 +766,11 @@
         },
         "Name":{
           "shape":"JobName",
-          "documentation":"<p>The name of the job to be created.</p>"
+          "documentation":"<p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         },
         "LogSubscription":{
           "shape":"LogSubscription",
-          "documentation":"<p>A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
+          "documentation":"<p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
         },
         "MaxCapacity":{
           "shape":"MaxCapacity",
@@ -757,7 +783,7 @@
         "OutputLocation":{"shape":"S3Location"},
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this request.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -790,11 +816,11 @@
       "members":{
         "DatasetName":{
           "shape":"DatasetName",
-          "documentation":"<p>The name of the dataset to associate this project with.</p>"
+          "documentation":"<p>The name of an existing dataset to associate this project with.</p>"
         },
         "Name":{
           "shape":"ProjectName",
-          "documentation":"<p>A unique name for the new project.</p>"
+          "documentation":"<p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         },
         "RecipeName":{
           "shape":"RecipeName",
@@ -843,11 +869,11 @@
         },
         "Name":{
           "shape":"JobName",
-          "documentation":"<p>A unique name for the job.</p>"
+          "documentation":"<p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         },
         "LogSubscription":{
           "shape":"LogSubscription",
-          "documentation":"<p>A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
+          "documentation":"<p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
         },
         "MaxCapacity":{
           "shape":"MaxCapacity",
@@ -868,11 +894,11 @@
         "RecipeReference":{"shape":"RecipeReference"},
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this request.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Tags":{
           "shape":"TagMap",
-          "documentation":"<p>Metadata tags to apply to this job dataset.</p>"
+          "documentation":"<p>Metadata tags to apply to this job.</p>"
         },
         "Timeout":{
           "shape":"Timeout",
@@ -903,7 +929,7 @@
         },
         "Name":{
           "shape":"RecipeName",
-          "documentation":"<p>A unique name for the recipe.</p>"
+          "documentation":"<p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         },
         "Steps":{
           "shape":"RecipeStepList",
@@ -938,7 +964,7 @@
         },
         "CronExpression":{
           "shape":"CronExpression",
-          "documentation":"<p>The date or dates and time or times, in <code>cron</code> format, when the jobs are to be run.</p>"
+          "documentation":"<p>The date or dates and time or times when the jobs are to be run. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -946,7 +972,7 @@
         },
         "Name":{
           "shape":"ScheduleName",
-          "documentation":"<p>A unique name for the schedule.</p>"
+          "documentation":"<p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>"
         }
       }
     },
@@ -965,6 +991,26 @@
       "type":"string",
       "max":512,
       "min":1
+    },
+    "CsvOptions":{
+      "type":"structure",
+      "members":{
+        "Delimiter":{
+          "shape":"Delimiter",
+          "documentation":"<p>A single character that specifies the delimiter being used in the Csv file.</p>"
+        }
+      },
+      "documentation":"<p>Options that define how DataBrew will read a Csv file when creating a dataset from that file.</p>"
+    },
+    "CsvOutputOptions":{
+      "type":"structure",
+      "members":{
+        "Delimiter":{
+          "shape":"Delimiter",
+          "documentation":"<p>A single character that specifies the delimiter used to create Csv job output.</p>"
+        }
+      },
+      "documentation":"<p>Options that define how DataBrew will write a Csv file a.</p>"
     },
     "DataCatalogInputDefinition":{
       "type":"structure",
@@ -990,7 +1036,7 @@
           "documentation":"<p>An Amazon location that AWS Glue Data Catalog can use as a temporary directory.</p>"
         }
       },
-      "documentation":"<p>Represents how metadata stored in the AWS Glue Data Catalog is defined in an AWS Glue DataBrew dataset. </p>"
+      "documentation":"<p>Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew dataset. </p>"
     },
     "DatabaseName":{
       "type":"string",
@@ -1010,7 +1056,7 @@
         },
         "CreatedBy":{
           "shape":"CreatedBy",
-          "documentation":"<p>The identifier (the user name) of the user who created the dataset.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>"
         },
         "CreateDate":{
           "shape":"Date",
@@ -1034,7 +1080,7 @@
         },
         "LastModifiedBy":{
           "shape":"LastModifiedBy",
-          "documentation":"<p>The identifier (the user name) of the user who last modified the dataset.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>"
         },
         "Source":{
           "shape":"Source",
@@ -1049,7 +1095,7 @@
           "documentation":"<p>The unique Amazon Resource Name (ARN) for the dataset.</p>"
         }
       },
-      "documentation":"<p>Represents a dataset that can be processed by AWS Glue DataBrew.</p>"
+      "documentation":"<p>Represents a dataset that can be processed by DataBrew.</p>"
     },
     "DatasetList":{
       "type":"list",
@@ -1136,13 +1182,13 @@
       "members":{
         "Name":{
           "shape":"RecipeName",
-          "documentation":"<p>The name of the recipe to be deleted.</p>",
+          "documentation":"<p>The name of the recipe.</p>",
           "location":"uri",
           "locationName":"name"
         },
         "RecipeVersion":{
           "shape":"RecipeVersion",
-          "documentation":"<p>The version of the recipe to be deleted.</p>",
+          "documentation":"<p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>",
           "location":"uri",
           "locationName":"recipeVersion"
         }
@@ -1186,6 +1232,11 @@
           "documentation":"<p>The name of the schedule that was deleted.</p>"
         }
       }
+    },
+    "Delimiter":{
+      "type":"string",
+      "max":1,
+      "min":1
     },
     "DescribeDatasetRequest":{
       "type":"structure",
@@ -1296,11 +1347,11 @@
         },
         "LogSubscription":{
           "shape":"LogSubscription",
-          "documentation":"<p>A value that indicates whether Amazon CloudWatch logging is enabled for this job.</p>"
+          "documentation":"<p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>"
         },
         "MaxCapacity":{
           "shape":"MaxCapacity",
-          "documentation":"<p>The maximum number of nodes that AWS Glue DataBrew can consume when the job processes data.</p>"
+          "documentation":"<p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>"
         },
         "MaxRetries":{
           "shape":"MaxRetries",
@@ -1321,7 +1372,7 @@
         },
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.</p>"
+          "documentation":"<p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -1384,7 +1435,7 @@
         "Sample":{"shape":"Sample"},
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed for this request.</p>"
+          "documentation":"<p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -1522,7 +1573,7 @@
         },
         "CronExpression":{
           "shape":"CronExpression",
-          "documentation":"<p>The date or dates and time or times, in <code>cron</code> format, when the jobs are to be run for the schedule.</p>"
+          "documentation":"<p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -1575,9 +1626,13 @@
         "Excel":{
           "shape":"ExcelOptions",
           "documentation":"<p>Options that define how Excel input is to be interpreted by DataBrew.</p>"
+        },
+        "Csv":{
+          "shape":"CsvOptions",
+          "documentation":"<p>Options that define how Csv input is to be interpreted by DataBrew.</p>"
         }
       },
-      "documentation":"<p>Options that define how Microsoft Excel input is to be interpreted by DataBrew.</p>"
+      "documentation":"<p>Options that define the structure of either Csv, Excel, or JSON input.</p>"
     },
     "HiddenColumnList":{
       "type":"list",
@@ -1595,7 +1650,7 @@
           "documentation":"<p>The AWS Glue Data Catalog parameters for the data.</p>"
         }
       },
-      "documentation":"<p>Information on how AWS Glue DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.</p>"
+      "documentation":"<p>Information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.</p>"
     },
     "InternalServerException":{
       "type":"structure",
@@ -1616,7 +1671,7 @@
         },
         "CreatedBy":{
           "shape":"CreatedBy",
-          "documentation":"<p>The identifier (the user name) of the user who created the job.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who created the job.</p>"
         },
         "CreateDate":{
           "shape":"Date",
@@ -1628,7 +1683,7 @@
         },
         "EncryptionKeyArn":{
           "shape":"EncryptionKeyArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html\">Encrypting data written by DataBrew jobs</a> </p>"
         },
         "EncryptionMode":{
           "shape":"EncryptionMode",
@@ -1644,7 +1699,7 @@
         },
         "LastModifiedBy":{
           "shape":"LastModifiedBy",
-          "documentation":"<p>The identifier (the user name) of the user who last modified the job.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>"
         },
         "LastModifiedDate":{
           "shape":"Date",
@@ -1691,7 +1746,7 @@
           "documentation":"<p>Metadata tags that have been applied to the job.</p>"
         }
       },
-      "documentation":"<p>Represents all of the attributes of an AWS Glue DataBrew job.</p>"
+      "documentation":"<p>Represents all of the attributes of a DataBrew job.</p>"
     },
     "JobList":{
       "type":"list",
@@ -1760,14 +1815,14 @@
         },
         "StartedBy":{
           "shape":"StartedBy",
-          "documentation":"<p>The identifier (the user name) of the user who initiated the job run. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>"
         },
         "StartedOn":{
           "shape":"Date",
           "documentation":"<p>The date and time when the job run began. </p>"
         }
       },
-      "documentation":"<p>Represents one run of an AWS Glue DataBrew job.</p>"
+      "documentation":"<p>Represents one run of a DataBrew job.</p>"
     },
     "JobRunErrorMessage":{"type":"string"},
     "JobRunId":{
@@ -1825,7 +1880,7 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         }
@@ -1837,11 +1892,11 @@
       "members":{
         "Datasets":{
           "shape":"DatasetList",
-          "documentation":"<p>A list of datasets that are defined in the current AWS account.</p>"
+          "documentation":"<p>A list of datasets that are defined.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -1863,7 +1918,7 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by AWS Glue DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         }
@@ -1879,7 +1934,7 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -1918,11 +1973,11 @@
       "members":{
         "Jobs":{
           "shape":"JobList",
-          "documentation":"<p>A list of jobs that are defined in the current AWS account.</p>"
+          "documentation":"<p>A list of jobs that are defined.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -1931,7 +1986,7 @@
       "members":{
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         },
@@ -1949,11 +2004,11 @@
       "members":{
         "Projects":{
           "shape":"ProjectList",
-          "documentation":"<p>A list of projects that are defined in the current AWS account.</p>"
+          "documentation":"<p>A list of projects that are defined .</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -1969,7 +2024,7 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         },
@@ -1987,7 +2042,7 @@
       "members":{
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         },
         "Recipes":{
           "shape":"RecipeList",
@@ -2006,13 +2061,13 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         },
         "RecipeVersion":{
           "shape":"RecipeVersion",
-          "documentation":"<p>A version identifier. Using this parameter indicates to return only those recipes that have this version identifier.</p>",
+          "documentation":"<p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>",
           "location":"querystring",
           "locationName":"recipeVersion"
         }
@@ -2024,11 +2079,11 @@
       "members":{
         "Recipes":{
           "shape":"RecipeList",
-          "documentation":"<p>A list of recipes that are defined in the current AWS account.</p>"
+          "documentation":"<p>A list of recipes that are defined.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -2049,7 +2104,7 @@
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         }
@@ -2061,11 +2116,11 @@
       "members":{
         "Schedules":{
           "shape":"ScheduleList",
-          "documentation":"<p>A list of schedules in the current AWS account.</p>"
+          "documentation":"<p>A list of schedules that are defined.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>"
+          "documentation":"<p>A token that you can use in a subsequent call to retrieve the next set of results.</p>"
         }
       }
     },
@@ -2149,9 +2204,13 @@
         "Overwrite":{
           "shape":"OverwriteOutput",
           "documentation":"<p>A value that, if true, means that any data in the location specified for output is overwritten with new output.</p>"
+        },
+        "FormatOptions":{
+          "shape":"OutputFormatOptions",
+          "documentation":"<p>Options that define how DataBrew formats job output files.</p>"
         }
       },
-      "documentation":"<p>Represents individual output from a particular job run.</p>"
+      "documentation":"<p>Parameters that specify how and where DataBrew will write the output generated by recipe jobs or profile jobs.</p>"
     },
     "OutputFormat":{
       "type":"string",
@@ -2164,6 +2223,16 @@
         "ORC",
         "XML"
       ]
+    },
+    "OutputFormatOptions":{
+      "type":"structure",
+      "members":{
+        "Csv":{
+          "shape":"CsvOutputOptions",
+          "documentation":"<p>Options that define how DataBrew writes Csv output.</p>"
+        }
+      },
+      "documentation":"<p>Options that define the structure of Csv job output.</p>"
     },
     "OutputList":{
       "type":"list",
@@ -2205,7 +2274,7 @@
         },
         "CreatedBy":{
           "shape":"CreatedBy",
-          "documentation":"<p>The identifier (the user name) of the user who crated the project.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who crated the project.</p>"
         },
         "DatasetName":{
           "shape":"DatasetName",
@@ -2217,7 +2286,7 @@
         },
         "LastModifiedBy":{
           "shape":"LastModifiedBy",
-          "documentation":"<p>The identifier (user name) of the user who last modified the project.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>"
         },
         "Name":{
           "shape":"ProjectName",
@@ -2245,14 +2314,14 @@
         },
         "OpenedBy":{
           "shape":"OpenedBy",
-          "documentation":"<p>The identifier (the user name) of the user that opened the project for use.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user that opened the project for use.</p>"
         },
         "OpenDate":{
           "shape":"Date",
           "documentation":"<p>The date and time when the project was opened.</p>"
         }
       },
-      "documentation":"<p>Represents all of the attributes of an AWS Glue DataBrew project.</p>"
+      "documentation":"<p>Represents all of the attributes of a DataBrew project.</p>"
     },
     "ProjectList":{
       "type":"list",
@@ -2296,7 +2365,7 @@
       "members":{
         "CreatedBy":{
           "shape":"CreatedBy",
-          "documentation":"<p>The identifier (the user name) of the user who created the recipe.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>"
         },
         "CreateDate":{
           "shape":"Date",
@@ -2304,7 +2373,7 @@
         },
         "LastModifiedBy":{
           "shape":"LastModifiedBy",
-          "documentation":"<p>The identifier (user name) of the user who last modified the recipe.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>"
         },
         "LastModifiedDate":{
           "shape":"Date",
@@ -2316,7 +2385,7 @@
         },
         "PublishedBy":{
           "shape":"PublishedBy",
-          "documentation":"<p>The identifier (the user name) of the user who published the recipe.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>"
         },
         "PublishedDate":{
           "shape":"Date",
@@ -2344,10 +2413,10 @@
         },
         "RecipeVersion":{
           "shape":"RecipeVersion",
-          "documentation":"<p>The identifier for the version for the recipe. </p>"
+          "documentation":"<p>The identifier for the version for the recipe. Must be one of the following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and \"0.0\" is not a valid version.</p> </li> <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> </ul>"
         }
       },
-      "documentation":"<p>Represents one or more actions to be performed on an AWS Glue DataBrew dataset.</p>"
+      "documentation":"<p>Represents one or more actions to be performed on a DataBrew dataset.</p>"
     },
     "RecipeAction":{
       "type":"structure",
@@ -2362,7 +2431,7 @@
           "documentation":"<p>Contextual parameters for the transformation.</p>"
         }
       },
-      "documentation":"<p>Represents a transformation and associated parameters that are used to apply a change to an AWS Glue DataBrew dataset. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html\">Recipe structure</a> and <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html\">ecipe actions reference</a> .</p>"
+      "documentation":"<p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html\">Recipe structure</a> and <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html\">Recipe actions reference</a>.</p>"
     },
     "RecipeDescription":{
       "type":"string",
@@ -2395,7 +2464,7 @@
           "documentation":"<p>The identifier for the version for the recipe. </p>"
         }
       },
-      "documentation":"<p>Represents all of the attributes of an AWS Glue DataBrew recipe.</p>"
+      "documentation":"<p>Represents the name and version of a DataBrew recipe.</p>"
     },
     "RecipeStep":{
       "type":"structure",
@@ -2410,7 +2479,7 @@
           "documentation":"<p>One or more conditions that must be met, in order for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>"
         }
       },
-      "documentation":"<p>Represents a single step to be performed in an AWS Glue DataBrew recipe.</p>"
+      "documentation":"<p>Represents a single step from a DataBrew recipe to be performed.</p>"
     },
     "RecipeStepList":{
       "type":"list",
@@ -2483,7 +2552,7 @@
           "documentation":"<p>The way in which DataBrew obtains rows from a dataset.</p>"
         }
       },
-      "documentation":"<p>Represents the sample size and sampling type for AWS Glue DataBrew to use for interactive data analysis.</p>"
+      "documentation":"<p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>"
     },
     "SampleSize":{
       "type":"integer",
@@ -2508,7 +2577,7 @@
         },
         "CreatedBy":{
           "shape":"CreatedBy",
-          "documentation":"<p>The identifier (the user name) of the user who created the schedule.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>"
         },
         "CreateDate":{
           "shape":"Date",
@@ -2520,7 +2589,7 @@
         },
         "LastModifiedBy":{
           "shape":"LastModifiedBy",
-          "documentation":"<p>The identifier (the user name) of the user who last modified the schedule.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who last modified the schedule.</p>"
         },
         "LastModifiedDate":{
           "shape":"Date",
@@ -2532,7 +2601,7 @@
         },
         "CronExpression":{
           "shape":"CronExpression",
-          "documentation":"<p>The date(s) and time(s), in <code>cron</code> format, when the job will run.</p>"
+          "documentation":"<p>The date(s) and time(s) when the job will run. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -2560,7 +2629,7 @@
       "members":{
         "Preview":{
           "shape":"Preview",
-          "documentation":"<p>Returns the result of the recipe step, without applying it. The result isn't added to the view frame stack.</p>"
+          "documentation":"<p>If true, the result of the recipe step will be returned, but not applied.</p>"
         },
         "Name":{
           "shape":"ProjectName",
@@ -2812,7 +2881,7 @@
       "members":{
         "ResourceArn":{
           "shape":"Arn",
-          "documentation":"<p>An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>",
+          "documentation":"<p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>",
           "location":"uri",
           "locationName":"ResourceArn"
         },
@@ -2880,11 +2949,11 @@
         },
         "LogSubscription":{
           "shape":"LogSubscription",
-          "documentation":"<p>A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
+          "documentation":"<p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
         },
         "MaxCapacity":{
           "shape":"MaxCapacity",
-          "documentation":"<p>The maximum number of nodes that DataBrew can use when the job processes data.</p>"
+          "documentation":"<p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>"
         },
         "MaxRetries":{
           "shape":"MaxRetries",
@@ -2893,7 +2962,7 @@
         "OutputLocation":{"shape":"S3Location"},
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this request.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Timeout":{
           "shape":"Timeout",
@@ -2969,7 +3038,7 @@
         },
         "LogSubscription":{
           "shape":"LogSubscription",
-          "documentation":"<p>A value that enables or disables Amazon CloudWatch logging for the current AWS account. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
+          "documentation":"<p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>"
         },
         "MaxCapacity":{
           "shape":"MaxCapacity",
@@ -2985,7 +3054,7 @@
         },
         "RoleArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this request.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>"
         },
         "Timeout":{
           "shape":"Timeout",
@@ -3046,7 +3115,7 @@
         },
         "CronExpression":{
           "shape":"CronExpression",
-          "documentation":"<p>The date or dates and time or times, in <code>cron</code> format, when the jobs are to be run.</p>"
+          "documentation":"<p>The date or dates and time or times when the jobs are to be run. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>"
         },
         "Name":{
           "shape":"ScheduleName",
@@ -3092,7 +3161,7 @@
           "documentation":"<p>A list of columns to hide in the view frame.</p>"
         }
       },
-      "documentation":"<p>Represents the data being being transformed during an AWS Glue DataBrew project session.</p>"
+      "documentation":"<p>Represents the data being being transformed during an action.</p>"
     }
   },
   "documentation":"<p>AWS Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.</p>"

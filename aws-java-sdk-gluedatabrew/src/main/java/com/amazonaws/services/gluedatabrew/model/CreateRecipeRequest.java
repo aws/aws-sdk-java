@@ -33,7 +33,8 @@ public class CreateRecipeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * A unique name for the recipe.
+     * A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      */
     private String name;
@@ -93,11 +94,13 @@ public class CreateRecipeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique name for the recipe.
+     * A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
      * @param name
-     *        A unique name for the recipe.
+     *        A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     *        and space.
      */
 
     public void setName(String name) {
@@ -106,10 +109,12 @@ public class CreateRecipeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique name for the recipe.
+     * A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
-     * @return A unique name for the recipe.
+     * @return A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     *         and space.
      */
 
     public String getName() {
@@ -118,11 +123,13 @@ public class CreateRecipeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique name for the recipe.
+     * A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and
+     * space.
      * </p>
      * 
      * @param name
-     *        A unique name for the recipe.
+     *        A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.),
+     *        and space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

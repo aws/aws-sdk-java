@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the data being being transformed during an AWS Glue DataBrew project session.
+ * Represents the data being being transformed during an action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ViewFrame" target="_top">AWS API

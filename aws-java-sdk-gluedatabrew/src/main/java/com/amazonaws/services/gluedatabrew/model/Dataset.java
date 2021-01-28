@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a dataset that can be processed by AWS Glue DataBrew.
+ * Represents a dataset that can be processed by DataBrew.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Dataset" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The identifier (the user name) of the user who created the dataset.
+     * The Amazon Resource Name (ARN) of the user who created the dataset.
      * </p>
      */
     private String createdBy;
@@ -72,7 +72,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the dataset.
+     * The Amazon Resource Name (ARN) of the user who last modified the dataset.
      * </p>
      */
     private String lastModifiedBy;
@@ -137,11 +137,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the dataset.
+     * The Amazon Resource Name (ARN) of the user who created the dataset.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the dataset.
+     *        The Amazon Resource Name (ARN) of the user who created the dataset.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -150,10 +150,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the dataset.
+     * The Amazon Resource Name (ARN) of the user who created the dataset.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who created the dataset.
+     * @return The Amazon Resource Name (ARN) of the user who created the dataset.
      */
 
     public String getCreatedBy() {
@@ -162,11 +162,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who created the dataset.
+     * The Amazon Resource Name (ARN) of the user who created the dataset.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who created the dataset.
+     *        The Amazon Resource Name (ARN) of the user who created the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +377,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the dataset.
+     * The Amazon Resource Name (ARN) of the user who last modified the dataset.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the dataset.
+     *        The Amazon Resource Name (ARN) of the user who last modified the dataset.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -390,10 +390,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the dataset.
+     * The Amazon Resource Name (ARN) of the user who last modified the dataset.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who last modified the dataset.
+     * @return The Amazon Resource Name (ARN) of the user who last modified the dataset.
      */
 
     public String getLastModifiedBy() {
@@ -402,11 +402,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who last modified the dataset.
+     * The Amazon Resource Name (ARN) of the user who last modified the dataset.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (the user name) of the user who last modified the dataset.
+     *        The Amazon Resource Name (ARN) of the user who last modified the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

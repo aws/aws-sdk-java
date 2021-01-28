@@ -39,7 +39,7 @@ public class ListSchedulesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer maxResults;
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -126,11 +126,11 @@ public class ListSchedulesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that can be used in a subsequent request.
+     *        The token returned by a previous call to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,10 +139,10 @@ public class ListSchedulesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
-     * @return A pagination token that can be used in a subsequent request.
+     * @return The token returned by a previous call to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -151,11 +151,11 @@ public class ListSchedulesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that can be used in a subsequent request.
+     *        The token returned by a previous call to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.managedblockchain.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -38,6 +40,8 @@ public class CreateNodeRequestMarshaller {
             .marshallLocationName("MemberId").build();
     private static final MarshallingInfo<StructuredPojo> NODECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateNodeRequestMarshaller instance = new CreateNodeRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateNodeRequestMarshaller {
             protocolMarshaller.marshall(createNodeRequest.getNetworkId(), NETWORKID_BINDING);
             protocolMarshaller.marshall(createNodeRequest.getMemberId(), MEMBERID_BINDING);
             protocolMarshaller.marshall(createNodeRequest.getNodeConfiguration(), NODECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createNodeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

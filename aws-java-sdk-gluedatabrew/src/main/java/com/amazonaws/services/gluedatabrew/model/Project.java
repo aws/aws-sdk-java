@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents all of the attributes of an AWS Glue DataBrew project.
+ * Represents all of the attributes of a DataBrew project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Project" target="_top">AWS API
@@ -42,7 +42,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createDate;
     /**
      * <p>
-     * The identifier (the user name) of the user who crated the project.
+     * The Amazon Resource Name (ARN) of the user who crated the project.
      * </p>
      */
     private String createdBy;
@@ -60,7 +60,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the project.
+     * The Amazon Resource Name (ARN) of the user who last modified the project.
      * </p>
      */
     private String lastModifiedBy;
@@ -103,7 +103,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * The identifier (the user name) of the user that opened the project for use.
+     * The Amazon Resource Name (ARN) of the user that opened the project for use.
      * </p>
      */
     private String openedBy;
@@ -196,11 +196,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who crated the project.
+     * The Amazon Resource Name (ARN) of the user who crated the project.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who crated the project.
+     *        The Amazon Resource Name (ARN) of the user who crated the project.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -209,10 +209,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who crated the project.
+     * The Amazon Resource Name (ARN) of the user who crated the project.
      * </p>
      * 
-     * @return The identifier (the user name) of the user who crated the project.
+     * @return The Amazon Resource Name (ARN) of the user who crated the project.
      */
 
     public String getCreatedBy() {
@@ -221,11 +221,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user who crated the project.
+     * The Amazon Resource Name (ARN) of the user who crated the project.
      * </p>
      * 
      * @param createdBy
-     *        The identifier (the user name) of the user who crated the project.
+     *        The Amazon Resource Name (ARN) of the user who crated the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,11 +316,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the project.
+     * The Amazon Resource Name (ARN) of the user who last modified the project.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (user name) of the user who last modified the project.
+     *        The Amazon Resource Name (ARN) of the user who last modified the project.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -329,10 +329,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the project.
+     * The Amazon Resource Name (ARN) of the user who last modified the project.
      * </p>
      * 
-     * @return The identifier (user name) of the user who last modified the project.
+     * @return The Amazon Resource Name (ARN) of the user who last modified the project.
      */
 
     public String getLastModifiedBy() {
@@ -341,11 +341,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (user name) of the user who last modified the project.
+     * The Amazon Resource Name (ARN) of the user who last modified the project.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The identifier (user name) of the user who last modified the project.
+     *        The Amazon Resource Name (ARN) of the user who last modified the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,11 +630,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user that opened the project for use.
+     * The Amazon Resource Name (ARN) of the user that opened the project for use.
      * </p>
      * 
      * @param openedBy
-     *        The identifier (the user name) of the user that opened the project for use.
+     *        The Amazon Resource Name (ARN) of the user that opened the project for use.
      */
 
     public void setOpenedBy(String openedBy) {
@@ -643,10 +643,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user that opened the project for use.
+     * The Amazon Resource Name (ARN) of the user that opened the project for use.
      * </p>
      * 
-     * @return The identifier (the user name) of the user that opened the project for use.
+     * @return The Amazon Resource Name (ARN) of the user that opened the project for use.
      */
 
     public String getOpenedBy() {
@@ -655,11 +655,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (the user name) of the user that opened the project for use.
+     * The Amazon Resource Name (ARN) of the user that opened the project for use.
      * </p>
      * 
      * @param openedBy
-     *        The identifier (the user name) of the user that opened the project for use.
+     *        The Amazon Resource Name (ARN) of the user that opened the project for use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

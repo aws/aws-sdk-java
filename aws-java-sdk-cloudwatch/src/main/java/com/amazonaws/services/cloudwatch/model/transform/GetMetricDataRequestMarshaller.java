@@ -160,6 +160,16 @@ public class GetMetricDataRequestMarshaller implements Marshaller<Request<GetMet
             request.addParameter("MaxDatapoints", StringUtils.fromInteger(getMetricDataRequest.getMaxDatapoints()));
         }
 
+        {
+            LabelOptions labelOptions = getMetricDataRequest.getLabelOptions();
+            if (labelOptions != null) {
+
+                if (labelOptions.getTimezone() != null) {
+                    request.addParameter("LabelOptions.Timezone", StringUtils.fromString(labelOptions.getTimezone()));
+                }
+            }
+        }
+
         return request;
     }
 

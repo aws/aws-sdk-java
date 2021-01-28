@@ -27,24 +27,25 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the recipe to be modified.
+     * The name of the recipe whose versions are to be deleted.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * An array of version identifiers to be deleted.
+     * An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     * <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      */
     private java.util.List<String> recipeVersions;
 
     /**
      * <p>
-     * The name of the recipe to be modified.
+     * The name of the recipe whose versions are to be deleted.
      * </p>
      * 
      * @param name
-     *        The name of the recipe to be modified.
+     *        The name of the recipe whose versions are to be deleted.
      */
 
     public void setName(String name) {
@@ -53,10 +54,10 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the recipe to be modified.
+     * The name of the recipe whose versions are to be deleted.
      * </p>
      * 
-     * @return The name of the recipe to be modified.
+     * @return The name of the recipe whose versions are to be deleted.
      */
 
     public String getName() {
@@ -65,11 +66,11 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the recipe to be modified.
+     * The name of the recipe whose versions are to be deleted.
      * </p>
      * 
      * @param name
-     *        The name of the recipe to be modified.
+     *        The name of the recipe whose versions are to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +81,12 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of version identifiers to be deleted.
+     * An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     * <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
-     * @return An array of version identifiers to be deleted.
+     * @return An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions
+     *         (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      */
 
     public java.util.List<String> getRecipeVersions() {
@@ -92,11 +95,13 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of version identifiers to be deleted.
+     * An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     * <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
      * @param recipeVersions
-     *        An array of version identifiers to be deleted.
+     *        An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     *        <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      */
 
     public void setRecipeVersions(java.util.Collection<String> recipeVersions) {
@@ -110,7 +115,8 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of version identifiers to be deleted.
+     * An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     * <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +125,8 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param recipeVersions
-     *        An array of version identifiers to be deleted.
+     *        An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     *        <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,13 @@ public class BatchDeleteRecipeVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of version identifiers to be deleted.
+     * An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     * <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * </p>
      * 
      * @param recipeVersions
-     *        An array of version identifiers to be deleted.
+     *        An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (
+     *        <code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

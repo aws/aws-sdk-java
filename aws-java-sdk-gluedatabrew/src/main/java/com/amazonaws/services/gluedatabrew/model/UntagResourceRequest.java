@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     * A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
      * Resource Name (ARN).
      * </p>
      */
@@ -41,13 +41,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     * A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
      * Resource Name (ARN).
      * </p>
      * 
      * @param resourceArn
-     *        An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an
-     *        Amazon Resource Name (ARN).
+     *        A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     *        Resource Name (ARN).
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,11 +56,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     * A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
      * Resource Name (ARN).
      * </p>
      * 
-     * @return An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an
+     * @return A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an
      *         Amazon Resource Name (ARN).
      */
 
@@ -70,13 +70,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     * A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
      * Resource Name (ARN).
      * </p>
      * 
      * @param resourceArn
-     *        An DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an
-     *        Amazon Resource Name (ARN).
+     *        A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon
+     *        Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,8 @@ public class InvitationMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkSummary").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final InvitationMarshaller instance = new InvitationMarshaller();
 
@@ -59,6 +61,7 @@ public class InvitationMarshaller {
             protocolMarshaller.marshall(invitation.getExpirationDate(), EXPIRATIONDATE_BINDING);
             protocolMarshaller.marshall(invitation.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(invitation.getNetworkSummary(), NETWORKSUMMARY_BINDING);
+            protocolMarshaller.marshall(invitation.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
