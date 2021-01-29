@@ -56,6 +56,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleArn;
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
+    /** Settings for VPC output */
+    private VpcOutputSettings vpc;
 
     /**
      * Specification of CDI inputs for this channel
@@ -574,6 +576,40 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     */
+
+    public void setVpc(VpcOutputSettings vpc) {
+        this.vpc = vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @return Settings for VPC output
+     */
+
+    public VpcOutputSettings getVpc() {
+        return this.vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withVpc(VpcOutputSettings vpc) {
+        setVpc(vpc);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -608,7 +644,9 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpc() != null)
+            sb.append("Vpc: ").append(getVpc());
         sb.append("}");
         return sb.toString();
     }
@@ -671,6 +709,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpc() == null ^ this.getVpc() == null)
+            return false;
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
+            return false;
         return true;
     }
 
@@ -691,6 +733,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getReserved() == null) ? 0 : getReserved().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
         return hashCode;
     }
 

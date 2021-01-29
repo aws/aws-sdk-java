@@ -28,7 +28,8 @@ public enum JobComparator {
     LT("LT"),
     LTE("LTE"),
     NE("NE"),
-    CONTAINS("CONTAINS");
+    CONTAINS("CONTAINS"),
+    STARTS_WITH("STARTS_WITH");
 
     private String value;
 

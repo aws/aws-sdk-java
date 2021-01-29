@@ -62,6 +62,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     private String state;
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
+    /** Settings for VPC output */
+    private VpcOutputSettings vpc;
 
     /**
      * The unique arn of the channel.
@@ -797,6 +799,40 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     */
+
+    public void setVpc(VpcOutputSettings vpc) {
+        this.vpc = vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @return Settings for VPC output
+     */
+
+    public VpcOutputSettings getVpc() {
+        return this.vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withVpc(VpcOutputSettings vpc) {
+        setVpc(vpc);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -839,7 +875,9 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpc() != null)
+            sb.append("Vpc: ").append(getVpc());
         sb.append("}");
         return sb.toString();
     }
@@ -918,6 +956,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpc() == null ^ this.getVpc() == null)
+            return false;
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
+            return false;
         return true;
     }
 
@@ -942,6 +984,7 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
         return hashCode;
     }
 

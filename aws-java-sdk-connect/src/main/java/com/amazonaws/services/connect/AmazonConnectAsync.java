@@ -26,22 +26,22 @@ import com.amazonaws.services.connect.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
+ * Amazon Connect is a cloud-based contact center solution that you use to set up and manage a customer contact center
+ * and provide reliable customer engagement at any scale.
  * </p>
  * <p>
- * Amazon Connect provides rich metrics and real-time reporting that allow you to optimize contact routing. You can also
- * resolve customer issues more efficiently by putting customers in touch with the right agents.
+ * Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing. You can also
+ * resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
  * </p>
  * <p>
- * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
- * that you can make per second. For more information, see <a
+ * There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number
+ * of requests that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
  * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
  * </p>
  * <p>
- * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
+ * You can connect programmatically to an AWS service by using an endpoint. For a list of Amazon Connect endpoints, see
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
  * <note>
  * <p>
@@ -101,8 +101,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
-     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
-     * association.
+     * resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.
      * </p>
      * 
      * @param associateInstanceStorageConfigRequest
@@ -126,8 +125,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
-     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
-     * association.
+     * resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.
      * </p>
      * 
      * @param associateInstanceStorageConfigRequest
@@ -218,6 +216,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<AssociateLexBotResult> associateLexBotAsync(AssociateLexBotRequest associateLexBotRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateLexBotRequest, AssociateLexBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Associates a set of quick connects with a queue.
+     * </p>
+     * 
+     * @param associateQueueQuickConnectsRequest
+     * @return A Java Future containing the result of the AssociateQueueQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateQueueQuickConnectsResult> associateQueueQuickConnectsAsync(
+            AssociateQueueQuickConnectsRequest associateQueueQuickConnectsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Associates a set of quick connects with a queue.
+     * </p>
+     * 
+     * @param associateQueueQuickConnectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateQueueQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateQueueQuickConnectsResult> associateQueueQuickConnectsAsync(
+            AssociateQueueQuickConnectsRequest associateQueueQuickConnectsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateQueueQuickConnectsRequest, AssociateQueueQuickConnectsResult> asyncHandler);
 
     /**
      * <p>
@@ -335,9 +372,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
-     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
-     * Connect.
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage,
+     * such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+     * configurations on features, such as Contact Lens for Amazon Connect.
      * </p>
      * 
      * @param createInstanceRequest
@@ -353,9 +390,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
-     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
-     * Connect.
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage,
+     * such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+     * configurations on features, such as Contact Lens for Amazon Connect.
      * </p>
      * 
      * @param createInstanceRequest
@@ -411,6 +448,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(
             CreateIntegrationAssociationRequest createIntegrationAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIntegrationAssociationRequest, CreateIntegrationAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a new queue for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQueueRequest
+     * @return A Java Future containing the result of the CreateQueue operation returned by the service.
+     * @sample AmazonConnectAsync.CreateQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a new queue for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQueueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateQueue operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler);
 
     /**
      * <p>
@@ -861,8 +935,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Describes the hours of operation.
+     * </p>
+     * 
+     * @param describeHoursOfOperationRequest
+     * @return A Java Future containing the result of the DescribeHoursOfOperation operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHoursOfOperationResult> describeHoursOfOperationAsync(DescribeHoursOfOperationRequest describeHoursOfOperationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the hours of operation.
+     * </p>
+     * 
+     * @param describeHoursOfOperationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHoursOfOperation operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHoursOfOperationResult> describeHoursOfOperationAsync(DescribeHoursOfOperationRequest describeHoursOfOperationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHoursOfOperationRequest, DescribeHoursOfOperationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
-     * and returns an error status if applicable.
+     * and returns an error status, if applicable.
      * </p>
      * <p>
      * If an instance is not created successfully, the instance status reason field returns details relevant to the
@@ -883,7 +994,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
-     * and returns an error status if applicable.
+     * and returns an error status, if applicable.
      * </p>
      * <p>
      * If an instance is not created successfully, the instance status reason field returns details relevant to the
@@ -982,6 +1093,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeInstanceStorageConfigResult> describeInstanceStorageConfigAsync(
             DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceStorageConfigRequest, DescribeInstanceStorageConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the specified queue.
+     * </p>
+     * 
+     * @param describeQueueRequest
+     * @return A Java Future containing the result of the DescribeQueue operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQueueResult> describeQueueAsync(DescribeQueueRequest describeQueueRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the specified queue.
+     * </p>
+     * 
+     * @param describeQueueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeQueue operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQueueResult> describeQueueAsync(DescribeQueueRequest describeQueueRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeQueueRequest, DescribeQueueResult> asyncHandler);
 
     /**
      * <p>
@@ -1237,7 +1385,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.
      * </p>
      * 
      * @param disassociateLambdaFunctionRequest
@@ -1254,7 +1402,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.
      * </p>
      * 
      * @param disassociateLambdaFunctionRequest
@@ -1307,6 +1455,47 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DisassociateLexBotResult> disassociateLexBotAsync(DisassociateLexBotRequest disassociateLexBotRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateLexBotRequest, DisassociateLexBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Disassociates a set of quick connects from a queue.
+     * </p>
+     * 
+     * @param disassociateQueueQuickConnectsRequest
+     * @return A Java Future containing the result of the DisassociateQueueQuickConnects operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DisassociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateQueueQuickConnectsResult> disassociateQueueQuickConnectsAsync(
+            DisassociateQueueQuickConnectsRequest disassociateQueueQuickConnectsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Disassociates a set of quick connects from a queue.
+     * </p>
+     * 
+     * @param disassociateQueueQuickConnectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateQueueQuickConnects operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DisassociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateQueueQuickConnectsResult> disassociateQueueQuickConnectsAsync(
+            DisassociateQueueQuickConnectsRequest disassociateQueueQuickConnectsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateQueueQuickConnectsRequest, DisassociateQueueQuickConnectsResult> asyncHandler);
 
     /**
      * <p>
@@ -1812,8 +2001,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
-     * contact flow blocks.
+     * Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact
+     * flow blocks.
      * </p>
      * 
      * @param listLambdaFunctionsRequest
@@ -1829,8 +2018,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
-     * contact flow blocks.
+     * Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact
+     * flow blocks.
      * </p>
      * 
      * @param listLambdaFunctionsRequest
@@ -1957,6 +2146,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists the quick connects associated with a queue.
+     * </p>
+     * 
+     * @param listQueueQuickConnectsRequest
+     * @return A Java Future containing the result of the ListQueueQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsync.ListQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListQueueQuickConnectsResult> listQueueQuickConnectsAsync(ListQueueQuickConnectsRequest listQueueQuickConnectsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists the quick connects associated with a queue.
+     * </p>
+     * 
+     * @param listQueueQuickConnectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListQueueQuickConnects operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListQueueQuickConnectsResult> listQueueQuickConnectsAsync(ListQueueQuickConnectsRequest listQueueQuickConnectsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListQueueQuickConnectsRequest, ListQueueQuickConnectsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about the queues for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -2035,7 +2261,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * List the queues associated with a routing profile.
+     * Lists the queues associated with a routing profile.
      * </p>
      * 
      * @param listRoutingProfileQueuesRequest
@@ -2048,7 +2274,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * List the queues associated with a routing profile.
+     * Lists the queues associated with a routing profile.
      * </p>
      * 
      * @param listRoutingProfileQueuesRequest
@@ -2231,7 +2457,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * List the use cases.
+     * Lists the use cases.
      * </p>
      * 
      * @param listUseCasesRequest
@@ -2249,7 +2475,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * List the use cases.
+     * Lists the use cases.
      * </p>
      * 
      * @param listUseCasesRequest
@@ -2386,8 +2612,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * >CreateParticipantConnection</a> API in the Amazon Connect Participant Service.
      * </p>
      * <p>
-     * When a new chat contact is successfully created, clients need to subscribe to the participant’s connection for
-     * the created chat within 5 minutes. This is achieved by invoking <a
+     * When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the
+     * created chat within 5 minutes. This is achieved by invoking <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
@@ -2409,7 +2635,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </li>
      * </ul>
      * <p>
-     * For more information about how chat works, see <a
+     * For more information about chat, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
      * Administrator Guide</i>.
      * </p>
@@ -2430,8 +2656,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * >CreateParticipantConnection</a> API in the Amazon Connect Participant Service.
      * </p>
      * <p>
-     * When a new chat contact is successfully created, clients need to subscribe to the participant’s connection for
-     * the created chat within 5 minutes. This is achieved by invoking <a
+     * When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the
+     * created chat within 5 minutes. This is achieved by invoking <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
@@ -2453,7 +2679,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </li>
      * </ul>
      * <p>
-     * For more information about how chat works, see <a
+     * For more information about chat, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
      * Administrator Guide</i>.
      * </p>
@@ -2473,11 +2699,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API starts recording the contact when the agent joins the call. StartContactRecording is a one-time action.
-     * For example, if you use StopContactRecording to stop recording an ongoing call, you can't use
-     * StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and
-     * resume it, such as when collecting sensitive information (for example, a credit card number), use
-     * SuspendContactRecording and ResumeContactRecording.
+     * Starts recording the contact when the agent joins the call. StartContactRecording is a one-time action. For
+     * example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording
+     * to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when
+     * collecting sensitive information (for example, a credit card number), use SuspendContactRecording and
+     * ResumeContactRecording.
      * </p>
      * <p>
      * You can use this API to override the recording behavior configured in the <a
@@ -2498,11 +2724,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API starts recording the contact when the agent joins the call. StartContactRecording is a one-time action.
-     * For example, if you use StopContactRecording to stop recording an ongoing call, you can't use
-     * StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and
-     * resume it, such as when collecting sensitive information (for example, a credit card number), use
-     * SuspendContactRecording and ResumeContactRecording.
+     * Starts recording the contact when the agent joins the call. StartContactRecording is a one-time action. For
+     * example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording
+     * to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when
+     * collecting sensitive information (for example, a credit card number), use SuspendContactRecording and
+     * ResumeContactRecording.
      * </p>
      * <p>
      * You can use this API to override the recording behavior configured in the <a
@@ -2528,16 +2754,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API places an outbound call to a contact, and then initiates the contact flow. It performs the actions in
-     * the contact flow that's specified (in <code>ContactFlowId</code>).
+     * Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact
+     * flow that's specified (in <code>ContactFlowId</code>).
      * </p>
      * <p>
-     * Agents are not involved in initiating the outbound API (that is, dialing the contact). If the contact flow places
-     * an outbound call to a contact, and then puts the contact in queue, that's when the call is routed to the agent,
+     * Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow
+     * places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent,
      * like any other inbound case.
      * </p>
      * <p>
-     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
+     * There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
      * </p>
      * <note>
      * <p>
@@ -2559,16 +2785,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API places an outbound call to a contact, and then initiates the contact flow. It performs the actions in
-     * the contact flow that's specified (in <code>ContactFlowId</code>).
+     * Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact
+     * flow that's specified (in <code>ContactFlowId</code>).
      * </p>
      * <p>
-     * Agents are not involved in initiating the outbound API (that is, dialing the contact). If the contact flow places
-     * an outbound call to a contact, and then puts the contact in queue, that's when the call is routed to the agent,
+     * Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow
+     * places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent,
      * like any other inbound case.
      * </p>
      * <p>
-     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
+     * There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
      * </p>
      * <note>
      * <p>
@@ -2657,11 +2883,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * When a contact is being recorded, this API stops recording the call. StopContactRecording is a one-time action.
-     * If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart
-     * it. For scenarios where the recording has started and you want to suspend it for sensitive information (for
-     * example, to collect a credit card number), and then restart it, use SuspendContactRecording and
-     * ResumeContactRecording.
+     * Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use
+     * StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For
+     * scenarios where the recording has started and you want to suspend it for sensitive information (for example, to
+     * collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.
      * </p>
      * <p>
      * Only voice recordings are supported at this time.
@@ -2677,11 +2902,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * When a contact is being recorded, this API stops recording the call. StopContactRecording is a one-time action.
-     * If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart
-     * it. For scenarios where the recording has started and you want to suspend it for sensitive information (for
-     * example, to collect a credit card number), and then restart it, use SuspendContactRecording and
-     * ResumeContactRecording.
+     * Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use
+     * StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For
+     * scenarios where the recording has started and you want to suspend it for sensitive information (for example, to
+     * collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.
      * </p>
      * <p>
      * Only voice recordings are supported at this time.
@@ -2752,7 +2976,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, quick connects, and contact flows.
+     * The supported resource types are users, routing profiles, queues, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -2773,7 +2997,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, quick connects, and contact flows.
+     * The supported resource types are users, routing profiles, queues, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -2830,21 +3054,21 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Creates or updates the contact attributes associated with the specified contact.
      * </p>
      * <p>
-     * You can add or update attributes for both ongoing and completed contacts. For example, you can update the
-     * customer's name or the reason the customer called while the call is active, or add notes about steps that the
-     * agent took during the call that are displayed to the next agent that takes the call. You can also update
-     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
-     * Connect. You could also flag calls for additional analysis, such as legal review or identifying abusive callers.
+     * You can add or update attributes for both ongoing and completed contacts. For example, while the call is active,
+     * you can update the customer's name or the reason the customer called. You can add notes about steps that the
+     * agent took during the call that display to the next agent that takes the call. You can also update attributes for
+     * a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could
+     * also flag calls for additional analysis, such as legal review or to identify abusive callers.
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
      * </p>
      * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
-     * release of the API, September 12, 2018. You can update attributes only for contacts that started after the
-     * release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the
-     * API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release of
-     * the API but are still active in your instance.
+     * release of the API, which was September 12, 2018. You can update attributes only for contacts that started after
+     * the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of
+     * the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release
+     * of the API but are still active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -2860,21 +3084,21 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Creates or updates the contact attributes associated with the specified contact.
      * </p>
      * <p>
-     * You can add or update attributes for both ongoing and completed contacts. For example, you can update the
-     * customer's name or the reason the customer called while the call is active, or add notes about steps that the
-     * agent took during the call that are displayed to the next agent that takes the call. You can also update
-     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
-     * Connect. You could also flag calls for additional analysis, such as legal review or identifying abusive callers.
+     * You can add or update attributes for both ongoing and completed contacts. For example, while the call is active,
+     * you can update the customer's name or the reason the customer called. You can add notes about steps that the
+     * agent took during the call that display to the next agent that takes the call. You can also update attributes for
+     * a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could
+     * also flag calls for additional analysis, such as legal review or to identify abusive callers.
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
      * </p>
      * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
-     * release of the API, September 12, 2018. You can update attributes only for contacts that started after the
-     * release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the
-     * API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release of
-     * the API but are still active in your instance.
+     * release of the API, which was September 12, 2018. You can update attributes only for contacts that started after
+     * the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of
+     * the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release
+     * of the API but are still active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -3049,6 +3273,199 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Updates the hours of operation for the specified queue.
+     * </p>
+     * 
+     * @param updateQueueHoursOfOperationRequest
+     * @return A Java Future containing the result of the UpdateQueueHoursOfOperation operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQueueHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueHoursOfOperationResult> updateQueueHoursOfOperationAsync(
+            UpdateQueueHoursOfOperationRequest updateQueueHoursOfOperationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the hours of operation for the specified queue.
+     * </p>
+     * 
+     * @param updateQueueHoursOfOperationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQueueHoursOfOperation operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQueueHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueHoursOfOperationResult> updateQueueHoursOfOperationAsync(
+            UpdateQueueHoursOfOperationRequest updateQueueHoursOfOperationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQueueHoursOfOperationRequest, UpdateQueueHoursOfOperationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the maximum number of contacts allowed in a queue before it is considered full.
+     * </p>
+     * 
+     * @param updateQueueMaxContactsRequest
+     * @return A Java Future containing the result of the UpdateQueueMaxContacts operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQueueMaxContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueMaxContactsResult> updateQueueMaxContactsAsync(UpdateQueueMaxContactsRequest updateQueueMaxContactsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the maximum number of contacts allowed in a queue before it is considered full.
+     * </p>
+     * 
+     * @param updateQueueMaxContactsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQueueMaxContacts operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQueueMaxContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueMaxContactsResult> updateQueueMaxContactsAsync(UpdateQueueMaxContactsRequest updateQueueMaxContactsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQueueMaxContactsRequest, UpdateQueueMaxContactsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be
+     * provided.
+     * </p>
+     * 
+     * @param updateQueueNameRequest
+     * @return A Java Future containing the result of the UpdateQueueName operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQueueName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueNameResult> updateQueueNameAsync(UpdateQueueNameRequest updateQueueNameRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be
+     * provided.
+     * </p>
+     * 
+     * @param updateQueueNameRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQueueName operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQueueName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueNameResult> updateQueueNameAsync(UpdateQueueNameRequest updateQueueNameRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQueueNameRequest, UpdateQueueNameResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
+     * </p>
+     * 
+     * @param updateQueueOutboundCallerConfigRequest
+     * @return A Java Future containing the result of the UpdateQueueOutboundCallerConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.UpdateQueueOutboundCallerConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueOutboundCallerConfigResult> updateQueueOutboundCallerConfigAsync(
+            UpdateQueueOutboundCallerConfigRequest updateQueueOutboundCallerConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
+     * </p>
+     * 
+     * @param updateQueueOutboundCallerConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQueueOutboundCallerConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.UpdateQueueOutboundCallerConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueOutboundCallerConfigResult> updateQueueOutboundCallerConfigAsync(
+            UpdateQueueOutboundCallerConfigRequest updateQueueOutboundCallerConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQueueOutboundCallerConfigRequest, UpdateQueueOutboundCallerConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the status of the queue.
+     * </p>
+     * 
+     * @param updateQueueStatusRequest
+     * @return A Java Future containing the result of the UpdateQueueStatus operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateQueueStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueStatusResult> updateQueueStatusAsync(UpdateQueueStatusRequest updateQueueStatusRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the status of the queue.
+     * </p>
+     * 
+     * @param updateQueueStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQueueStatus operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateQueueStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQueueStatusResult> updateQueueStatusAsync(UpdateQueueStatusRequest updateQueueStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQueueStatusRequest, UpdateQueueStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates the configuration settings for the specified quick connect.
      * </p>
      * 
@@ -3087,7 +3504,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
-     * least Name or Description must be provided.
+     * least <code>Name</code> or <code>Description</code> must be provided.
      * </p>
      * 
      * @param updateQuickConnectNameRequest
@@ -3104,7 +3521,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
-     * least Name or Description must be provided.
+     * least <code>Name</code> or <code>Description</code> must be provided.
      * </p>
      * 
      * @param updateQuickConnectNameRequest
@@ -3363,12 +3780,12 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change the login credentials of other
-     * users by changing their email address. This poses a security risk to your organization. They can change the email
-     * address of a user to the attacker's email address, and then reset the password through email. We strongly
-     * recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>. For more information, see
-     * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-     * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with
+     * that ability can change the login credentials of other users by changing their email address. This poses a
+     * security risk to your organization. They can change the email address of a user to the attacker's email address,
+     * and then reset the password through email. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices
+     * for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * </important>
      * 
@@ -3386,12 +3803,12 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change the login credentials of other
-     * users by changing their email address. This poses a security risk to your organization. They can change the email
-     * address of a user to the attacker's email address, and then reset the password through email. We strongly
-     * recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>. For more information, see
-     * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-     * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with
+     * that ability can change the login credentials of other users by changing their email address. This poses a
+     * security risk to your organization. They can change the email address of a user to the attacker's email address,
+     * and then reset the password through email. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices
+     * for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * </important>
      * 

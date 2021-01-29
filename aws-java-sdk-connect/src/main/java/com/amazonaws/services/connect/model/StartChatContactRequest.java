@@ -46,8 +46,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     private String contactFlowId;
     /**
      * <p>
-     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can
+     * be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -195,16 +195,16 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can
+     * be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
      * </p>
      * 
-     * @return A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     *         and can be accessed in contact flows just like any other contact attributes. </p>
+     * @return A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes.
+     *         They can be accessed in contact flows just like any other contact attributes. </p>
      *         <p>
      *         There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *         only alphanumeric, dash, and underscore characters.
@@ -216,8 +216,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can
+     * be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -225,8 +225,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param attributes
-     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
-     *        can be accessed in contact flows just like any other contact attributes. </p>
+     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes.
+     *        They can be accessed in contact flows just like any other contact attributes. </p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.
@@ -238,8 +238,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can
+     * be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -247,8 +247,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param attributes
-     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
-     *        can be accessed in contact flows just like any other contact attributes. </p>
+     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes.
+     *        They can be accessed in contact flows just like any other contact attributes. </p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.

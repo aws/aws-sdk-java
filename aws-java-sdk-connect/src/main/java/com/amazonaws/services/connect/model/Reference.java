@@ -31,7 +31,7 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     * A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      * </p>
      */
     private String value;
@@ -44,11 +44,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     * A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      * </p>
      * 
      * @param value
-     *        A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     *        A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      */
 
     public void setValue(String value) {
@@ -57,10 +57,10 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     * A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      * </p>
      * 
-     * @return A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     * @return A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      */
 
     public String getValue() {
@@ -69,11 +69,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     * A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      * </p>
      * 
      * @param value
-     *        A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+     *        A formatted URL that displays to an agent in the Contact Control Panel (CCP)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the S3 storage type.
+ * Information about the Amazon Simple Storage Service (Amazon S3) storage type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/S3Config" target="_top">AWS API
@@ -42,7 +42,7 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     private String bucketPrefix;
     /**
      * <p>
-     * The S3 encryption configuration.
+     * The Amazon S3 encryption configuration.
      * </p>
      */
     private EncryptionConfig encryptionConfig;
@@ -129,11 +129,11 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 encryption configuration.
+     * The Amazon S3 encryption configuration.
      * </p>
      * 
      * @param encryptionConfig
-     *        The S3 encryption configuration.
+     *        The Amazon S3 encryption configuration.
      */
 
     public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
@@ -142,10 +142,10 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 encryption configuration.
+     * The Amazon S3 encryption configuration.
      * </p>
      * 
-     * @return The S3 encryption configuration.
+     * @return The Amazon S3 encryption configuration.
      */
 
     public EncryptionConfig getEncryptionConfig() {
@@ -154,11 +154,11 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 encryption configuration.
+     * The Amazon S3 encryption configuration.
      * </p>
      * 
      * @param encryptionConfig
-     *        The S3 encryption configuration.
+     *        The Amazon S3 encryption configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

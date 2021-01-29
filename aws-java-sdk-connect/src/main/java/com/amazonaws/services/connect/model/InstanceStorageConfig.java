@@ -43,7 +43,7 @@ public class InstanceStorageConfig implements Serializable, Cloneable, Structure
     private String storageType;
     /**
      * <p>
-     * The S3 configuration.
+     * The S3 bucket configuration.
      * </p>
      */
     private S3Config s3Config;
@@ -173,11 +173,11 @@ public class InstanceStorageConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 configuration.
+     * The S3 bucket configuration.
      * </p>
      * 
      * @param s3Config
-     *        The S3 configuration.
+     *        The S3 bucket configuration.
      */
 
     public void setS3Config(S3Config s3Config) {
@@ -186,10 +186,10 @@ public class InstanceStorageConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 configuration.
+     * The S3 bucket configuration.
      * </p>
      * 
-     * @return The S3 configuration.
+     * @return The S3 bucket configuration.
      */
 
     public S3Config getS3Config() {
@@ -198,11 +198,11 @@ public class InstanceStorageConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 configuration.
+     * The S3 bucket configuration.
      * </p>
      * 
      * @param s3Config
-     *        The S3 configuration.
+     *        The S3 bucket configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -46,7 +46,7 @@ public class StartContactRecordingRequest extends com.amazonaws.AmazonWebService
     private String initialContactId;
     /**
      * <p>
-     * Who is being recorded.
+     * The person being recorded.
      * </p>
      */
     private VoiceRecordingConfiguration voiceRecordingConfiguration;
@@ -179,11 +179,11 @@ public class StartContactRecordingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who is being recorded.
+     * The person being recorded.
      * </p>
      * 
      * @param voiceRecordingConfiguration
-     *        Who is being recorded.
+     *        The person being recorded.
      */
 
     public void setVoiceRecordingConfiguration(VoiceRecordingConfiguration voiceRecordingConfiguration) {
@@ -192,10 +192,10 @@ public class StartContactRecordingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who is being recorded.
+     * The person being recorded.
      * </p>
      * 
-     * @return Who is being recorded.
+     * @return The person being recorded.
      */
 
     public VoiceRecordingConfiguration getVoiceRecordingConfiguration() {
@@ -204,11 +204,11 @@ public class StartContactRecordingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who is being recorded.
+     * The person being recorded.
      * </p>
      * 
      * @param voiceRecordingConfiguration
-     *        Who is being recorded.
+     *        The person being recorded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

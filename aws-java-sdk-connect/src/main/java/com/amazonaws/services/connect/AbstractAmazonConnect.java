@@ -48,6 +48,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public AssociateQueueQuickConnectsResult associateQueueQuickConnects(AssociateQueueQuickConnectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateRoutingProfileQueuesResult associateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateQueueResult createQueue(CreateQueueRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,6 +143,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DescribeHoursOfOperationResult describeHoursOfOperation(DescribeHoursOfOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInstanceResult describeInstance(DescribeInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +159,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQueueResult describeQueue(DescribeQueueRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,6 +209,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DisassociateLexBotResult disassociateLexBot(DisassociateLexBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateQueueQuickConnectsResult disassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +299,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public ListPromptsResult listPrompts(ListPromptsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListQueueQuickConnectsResult listQueueQuickConnects(ListQueueQuickConnectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -399,6 +429,31 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQueueHoursOfOperationResult updateQueueHoursOfOperation(UpdateQueueHoursOfOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQueueMaxContactsResult updateQueueMaxContacts(UpdateQueueMaxContactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQueueNameResult updateQueueName(UpdateQueueNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQueueOutboundCallerConfigResult updateQueueOutboundCallerConfig(UpdateQueueOutboundCallerConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQueueStatusResult updateQueueStatus(UpdateQueueStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

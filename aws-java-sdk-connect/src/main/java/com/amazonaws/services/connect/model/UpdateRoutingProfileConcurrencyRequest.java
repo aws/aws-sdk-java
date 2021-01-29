@@ -39,7 +39,7 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
     private String routingProfileId;
     /**
      * <p>
-     * The channels agents can handle in the Contact Control Panel (CCP).
+     * The channels that agents can handle in the Contact Control Panel (CCP).
      * </p>
      */
     private java.util.List<MediaConcurrency> mediaConcurrencies;
@@ -126,10 +126,10 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The channels agents can handle in the Contact Control Panel (CCP).
+     * The channels that agents can handle in the Contact Control Panel (CCP).
      * </p>
      * 
-     * @return The channels agents can handle in the Contact Control Panel (CCP).
+     * @return The channels that agents can handle in the Contact Control Panel (CCP).
      */
 
     public java.util.List<MediaConcurrency> getMediaConcurrencies() {
@@ -138,11 +138,11 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The channels agents can handle in the Contact Control Panel (CCP).
+     * The channels that agents can handle in the Contact Control Panel (CCP).
      * </p>
      * 
      * @param mediaConcurrencies
-     *        The channels agents can handle in the Contact Control Panel (CCP).
+     *        The channels that agents can handle in the Contact Control Panel (CCP).
      */
 
     public void setMediaConcurrencies(java.util.Collection<MediaConcurrency> mediaConcurrencies) {
@@ -156,7 +156,7 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The channels agents can handle in the Contact Control Panel (CCP).
+     * The channels that agents can handle in the Contact Control Panel (CCP).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +165,7 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param mediaConcurrencies
-     *        The channels agents can handle in the Contact Control Panel (CCP).
+     *        The channels that agents can handle in the Contact Control Panel (CCP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class UpdateRoutingProfileConcurrencyRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The channels agents can handle in the Contact Control Panel (CCP).
+     * The channels that agents can handle in the Contact Control Panel (CCP).
      * </p>
      * 
      * @param mediaConcurrencies
-     *        The channels agents can handle in the Contact Control Panel (CCP).
+     *        The channels that agents can handle in the Contact Control Panel (CCP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

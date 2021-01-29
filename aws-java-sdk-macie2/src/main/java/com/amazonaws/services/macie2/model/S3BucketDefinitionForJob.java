@@ -31,9 +31,7 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
-     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
-     * other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets.
      * </p>
      */
     private String accountId;
@@ -46,15 +44,11 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
-     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
-     * other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
-     *        specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
-     *        account and meet other conditions specified for the job.
+     *        The unique identifier for the AWS account that owns the buckets.
      */
 
     public void setAccountId(String accountId) {
@@ -63,14 +57,10 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
-     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
-     * other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
-     *         specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
-     *         account and meet other conditions specified for the job.
+     * @return The unique identifier for the AWS account that owns the buckets.
      */
 
     public String getAccountId() {
@@ -79,15 +69,11 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
-     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
-     * other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
-     *        specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
-     *        account and meet other conditions specified for the job.
+     *        The unique identifier for the AWS account that owns the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

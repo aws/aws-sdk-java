@@ -57,6 +57,8 @@ public class ChannelSummaryMarshaller {
             .marshallLocationName("state").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpc").build();
 
     private static final ChannelSummaryMarshaller instance = new ChannelSummaryMarshaller();
 
@@ -88,6 +90,7 @@ public class ChannelSummaryMarshaller {
             protocolMarshaller.marshall(channelSummary.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(channelSummary.getState(), STATE_BINDING);
             protocolMarshaller.marshall(channelSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(channelSummary.getVpc(), VPC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

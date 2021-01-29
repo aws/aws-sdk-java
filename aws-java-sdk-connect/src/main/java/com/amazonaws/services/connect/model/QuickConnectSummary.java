@@ -36,13 +36,13 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the quick connect.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name.
+     * The name of the quick connect.
      * </p>
      */
     private String name;
@@ -96,11 +96,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the quick connect.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the quick connect.
      */
 
     public void setArn(String arn) {
@@ -109,10 +109,10 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the quick connect.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the quick connect.
      */
 
     public String getArn() {
@@ -121,11 +121,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the quick connect.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the quick connect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name.
+     * The name of the quick connect.
      * </p>
      * 
      * @param name
-     *        The name.
+     *        The name of the quick connect.
      */
 
     public void setName(String name) {
@@ -149,10 +149,10 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name.
+     * The name of the quick connect.
      * </p>
      * 
-     * @return The name.
+     * @return The name of the quick connect.
      */
 
     public String getName() {
@@ -161,11 +161,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name.
+     * The name of the quick connect.
      * </p>
      * 
      * @param name
-     *        The name.
+     *        The name of the quick connect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

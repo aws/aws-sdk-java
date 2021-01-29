@@ -27,22 +27,22 @@ import com.amazonaws.services.connect.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
+ * Amazon Connect is a cloud-based contact center solution that you use to set up and manage a customer contact center
+ * and provide reliable customer engagement at any scale.
  * </p>
  * <p>
- * Amazon Connect provides rich metrics and real-time reporting that allow you to optimize contact routing. You can also
- * resolve customer issues more efficiently by putting customers in touch with the right agents.
+ * Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing. You can also
+ * resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
  * </p>
  * <p>
- * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
- * that you can make per second. For more information, see <a
+ * There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number
+ * of requests that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
  * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
  * </p>
  * <p>
- * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
+ * You can connect programmatically to an AWS service by using an endpoint. For a list of Amazon Connect endpoints, see
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
  * <note>
  * <p>
@@ -77,7 +77,7 @@ public interface AmazonConnect {
      * @throws ResourceConflictException
      *         A resource already has that name.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -103,8 +103,7 @@ public interface AmazonConnect {
      * </p>
      * <p>
      * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
-     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
-     * association.
+     * resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.
      * </p>
      * 
      * @param associateInstanceStorageConfigRequest
@@ -114,7 +113,7 @@ public interface AmazonConnect {
      * @throws ResourceConflictException
      *         A resource already has that name.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -142,7 +141,7 @@ public interface AmazonConnect {
      * @throws ResourceConflictException
      *         A resource already has that name.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -172,7 +171,7 @@ public interface AmazonConnect {
      * @throws ResourceConflictException
      *         A resource already has that name.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -186,6 +185,34 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     AssociateLexBotResult associateLexBot(AssociateLexBotRequest associateLexBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Associates a set of quick connects with a queue.
+     * </p>
+     * 
+     * @param associateQueueQuickConnectsRequest
+     * @return Result of the AssociateQueueQuickConnects operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.AssociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateQueueQuickConnectsResult associateQueueQuickConnects(AssociateQueueQuickConnectsRequest associateQueueQuickConnectsRequest);
 
     /**
      * <p>
@@ -203,7 +230,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.AssociateRoutingProfileQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateRoutingProfileQueues"
      *      target="_top">AWS API Documentation</a>
@@ -225,7 +252,7 @@ public interface AmazonConnect {
      * @throws ResourceConflictException
      *         A resource already has that name.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -266,7 +293,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateContactFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow" target="_top">AWS API
      *      Documentation</a>
@@ -278,9 +305,9 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
-     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
-     * Connect.
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage,
+     * such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+     * configurations on features, such as Contact Lens for Amazon Connect.
      * </p>
      * 
      * @param createInstanceRequest
@@ -294,7 +321,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance" target="_top">AWS API
      *      Documentation</a>
@@ -316,7 +343,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -326,6 +353,36 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest createIntegrationAssociationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a new queue for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createQueueRequest
+     * @return Result of the CreateQueue operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateQueueResult createQueue(CreateQueueRequest createQueueRequest);
 
     /**
      * <p>
@@ -350,7 +407,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateQuickConnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect" target="_top">AWS API
      *      Documentation</a>
@@ -377,7 +434,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateRoutingProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRoutingProfile" target="_top">AWS
      *      API Documentation</a>
@@ -399,7 +456,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -435,7 +492,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser" target="_top">AWS API
      *      Documentation</a>
@@ -462,7 +519,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.CreateUserHierarchyGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup"
      *      target="_top">AWS API Documentation</a>
@@ -482,7 +539,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @sample AmazonConnect.DeleteInstance
@@ -505,7 +562,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -535,7 +592,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DeleteQuickConnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect" target="_top">AWS API
      *      Documentation</a>
@@ -555,7 +612,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -587,7 +644,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser" target="_top">AWS API
      *      Documentation</a>
@@ -613,7 +670,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DeleteUserHierarchyGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup"
      *      target="_top">AWS API Documentation</a>
@@ -642,7 +699,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeContactFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow" target="_top">AWS
      *      API Documentation</a>
@@ -654,8 +711,34 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Describes the hours of operation.
+     * </p>
+     * 
+     * @param describeHoursOfOperationRequest
+     * @return Result of the DescribeHoursOfOperation operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DescribeHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeHoursOfOperationResult describeHoursOfOperation(DescribeHoursOfOperationRequest describeHoursOfOperationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
-     * and returns an error status if applicable.
+     * and returns an error status, if applicable.
      * </p>
      * <p>
      * If an instance is not created successfully, the instance status reason field returns details relevant to the
@@ -669,7 +752,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance" target="_top">AWS API
      *      Documentation</a>
@@ -689,7 +772,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -715,7 +798,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -727,6 +810,32 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes the specified queue.
+     * </p>
+     * 
+     * @param describeQueueRequest
+     * @return Result of the DescribeQueue operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DescribeQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeQueueResult describeQueue(DescribeQueueRequest describeQueueRequest);
 
     /**
      * <p>
@@ -747,7 +856,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeQuickConnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect" target="_top">AWS
      *      API Documentation</a>
@@ -770,7 +879,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeRoutingProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRoutingProfile" target="_top">AWS
      *      API Documentation</a>
@@ -794,7 +903,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -817,7 +926,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeUserHierarchyGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup"
      *      target="_top">AWS API Documentation</a>
@@ -840,7 +949,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DescribeUserHierarchyStructure
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure"
      *      target="_top">AWS API Documentation</a>
@@ -860,7 +969,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -886,7 +995,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -904,7 +1013,7 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.
      * </p>
      * 
      * @param disassociateLambdaFunctionRequest
@@ -912,7 +1021,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -938,7 +1047,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -950,6 +1059,32 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     DisassociateLexBotResult disassociateLexBot(DisassociateLexBotRequest disassociateLexBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Disassociates a set of quick connects from a queue.
+     * </p>
+     * 
+     * @param disassociateQueueQuickConnectsRequest
+     * @return Result of the DisassociateQueueQuickConnects operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DisassociateQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateQueueQuickConnectsResult disassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest disassociateQueueQuickConnectsRequest);
 
     /**
      * <p>
@@ -967,7 +1102,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.DisassociateRoutingProfileQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateRoutingProfileQueues"
      *      target="_top">AWS API Documentation</a>
@@ -987,7 +1122,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1012,7 +1147,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.GetContactAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes" target="_top">AWS
      *      API Documentation</a>
@@ -1036,7 +1171,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws ResourceNotFoundException
@@ -1063,7 +1198,7 @@ public interface AmazonConnect {
      * @throws UserNotFoundException
      *         No user with the specified credentials was found in the Amazon Connect instance.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws DuplicateResourceException
      *         A resource with the specified name already exists.
      * @sample AmazonConnect.GetFederationToken
@@ -1089,7 +1224,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws ResourceNotFoundException
@@ -1113,7 +1248,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1151,7 +1286,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListContactFlows
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows" target="_top">AWS API
      *      Documentation</a>
@@ -1179,7 +1314,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListHoursOfOperations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations" target="_top">AWS
      *      API Documentation</a>
@@ -1199,7 +1334,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1225,7 +1360,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1253,7 +1388,7 @@ public interface AmazonConnect {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances" target="_top">AWS API
      *      Documentation</a>
@@ -1273,7 +1408,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -1289,8 +1424,8 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
-     * contact flow blocks.
+     * Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact
+     * flow blocks.
      * </p>
      * 
      * @param listLambdaFunctionsRequest
@@ -1298,7 +1433,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1324,7 +1459,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1358,7 +1493,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListPhoneNumbers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers" target="_top">AWS API
      *      Documentation</a>
@@ -1381,12 +1516,38 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListPrompts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPrompts" target="_top">AWS API
      *      Documentation</a>
      */
     ListPromptsResult listPrompts(ListPromptsRequest listPromptsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists the quick connects associated with a queue.
+     * </p>
+     * 
+     * @param listQueueQuickConnectsRequest
+     * @return Result of the ListQueueQuickConnects operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListQueueQuickConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListQueueQuickConnectsResult listQueueQuickConnects(ListQueueQuickConnectsRequest listQueueQuickConnectsRequest);
 
     /**
      * <p>
@@ -1409,7 +1570,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues" target="_top">AWS API
      *      Documentation</a>
@@ -1435,7 +1596,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListQuickConnects
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects" target="_top">AWS API
      *      Documentation</a>
@@ -1444,7 +1605,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * List the queues associated with a routing profile.
+     * Lists the queues associated with a routing profile.
      * </p>
      * 
      * @param listRoutingProfileQueuesRequest
@@ -1458,7 +1619,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListRoutingProfileQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues"
      *      target="_top">AWS API Documentation</a>
@@ -1487,7 +1648,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListRoutingProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles" target="_top">AWS
      *      API Documentation</a>
@@ -1507,7 +1668,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -1541,7 +1702,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListSecurityProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles" target="_top">AWS
      *      API Documentation</a>
@@ -1565,7 +1726,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ThrottlingException
@@ -1581,7 +1742,7 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * List the use cases.
+     * Lists the use cases.
      * </p>
      * 
      * @param listUseCasesRequest
@@ -1591,7 +1752,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -1623,7 +1784,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListUserHierarchyGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1646,7 +1807,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -1669,7 +1830,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.ResumeContactRecording
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording" target="_top">AWS
      *      API Documentation</a>
@@ -1684,8 +1845,8 @@ public interface AmazonConnect {
      * >CreateParticipantConnection</a> API in the Amazon Connect Participant Service.
      * </p>
      * <p>
-     * When a new chat contact is successfully created, clients need to subscribe to the participant’s connection for
-     * the created chat within 5 minutes. This is achieved by invoking <a
+     * When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the
+     * created chat within 5 minutes. This is achieved by invoking <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
@@ -1707,7 +1868,7 @@ public interface AmazonConnect {
      * </li>
      * </ul>
      * <p>
-     * For more information about how chat works, see <a
+     * For more information about chat, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
      * Administrator Guide</i>.
      * </p>
@@ -1721,7 +1882,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws LimitExceededException
      *         The allowed limit for the resource has been exceeded.
      * @sample AmazonConnect.StartChatContact
@@ -1732,11 +1893,11 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * This API starts recording the contact when the agent joins the call. StartContactRecording is a one-time action.
-     * For example, if you use StopContactRecording to stop recording an ongoing call, you can't use
-     * StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and
-     * resume it, such as when collecting sensitive information (for example, a credit card number), use
-     * SuspendContactRecording and ResumeContactRecording.
+     * Starts recording the contact when the agent joins the call. StartContactRecording is a one-time action. For
+     * example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording
+     * to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when
+     * collecting sensitive information (for example, a credit card number), use SuspendContactRecording and
+     * ResumeContactRecording.
      * </p>
      * <p>
      * You can use this API to override the recording behavior configured in the <a
@@ -1756,7 +1917,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.StartContactRecording
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording" target="_top">AWS
      *      API Documentation</a>
@@ -1765,16 +1926,16 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * This API places an outbound call to a contact, and then initiates the contact flow. It performs the actions in
-     * the contact flow that's specified (in <code>ContactFlowId</code>).
+     * Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact
+     * flow that's specified (in <code>ContactFlowId</code>).
      * </p>
      * <p>
-     * Agents are not involved in initiating the outbound API (that is, dialing the contact). If the contact flow places
-     * an outbound call to a contact, and then puts the contact in queue, that's when the call is routed to the agent,
+     * Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow
+     * places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent,
      * like any other inbound case.
      * </p>
      * <p>
-     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
+     * There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
      * </p>
      * <note>
      * <p>
@@ -1794,7 +1955,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws LimitExceededException
      *         The allowed limit for the resource has been exceeded.
      * @throws DestinationNotAllowedException
@@ -1825,7 +1986,7 @@ public interface AmazonConnect {
      * @throws ServiceQuotaExceededException
      *         The service quota has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.StartTaskContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact" target="_top">AWS API
      *      Documentation</a>
@@ -1848,7 +2009,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.StopContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact" target="_top">AWS API
      *      Documentation</a>
@@ -1857,11 +2018,10 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * When a contact is being recorded, this API stops recording the call. StopContactRecording is a one-time action.
-     * If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart
-     * it. For scenarios where the recording has started and you want to suspend it for sensitive information (for
-     * example, to collect a credit card number), and then restart it, use SuspendContactRecording and
-     * ResumeContactRecording.
+     * Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use
+     * StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For
+     * scenarios where the recording has started and you want to suspend it for sensitive information (for example, to
+     * collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.
      * </p>
      * <p>
      * Only voice recordings are supported at this time.
@@ -1874,7 +2034,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.StopContactRecording
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording" target="_top">AWS
      *      API Documentation</a>
@@ -1901,7 +2061,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.SuspendContactRecording
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording"
      *      target="_top">AWS API Documentation</a>
@@ -1913,7 +2073,7 @@ public interface AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, quick connects, and contact flows.
+     * The supported resource types are users, routing profiles, queues, quick connects, and contact flows.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -1928,7 +2088,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ThrottlingException
@@ -1951,7 +2111,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ThrottlingException
@@ -1967,21 +2127,21 @@ public interface AmazonConnect {
      * Creates or updates the contact attributes associated with the specified contact.
      * </p>
      * <p>
-     * You can add or update attributes for both ongoing and completed contacts. For example, you can update the
-     * customer's name or the reason the customer called while the call is active, or add notes about steps that the
-     * agent took during the call that are displayed to the next agent that takes the call. You can also update
-     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
-     * Connect. You could also flag calls for additional analysis, such as legal review or identifying abusive callers.
+     * You can add or update attributes for both ongoing and completed contacts. For example, while the call is active,
+     * you can update the customer's name or the reason the customer called. You can add notes about steps that the
+     * agent took during the call that display to the next agent that takes the call. You can also update attributes for
+     * a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could
+     * also flag calls for additional analysis, such as legal review or to identify abusive callers.
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
      * </p>
      * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
-     * release of the API, September 12, 2018. You can update attributes only for contacts that started after the
-     * release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the
-     * API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release of
-     * the API but are still active in your instance.
+     * release of the API, which was September 12, 2018. You can update attributes only for contacts that started after
+     * the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of
+     * the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release
+     * of the API but are still active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -1993,7 +2153,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateContactAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -2022,7 +2182,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateContactFlowContent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent"
      *      target="_top">AWS API Documentation</a>
@@ -2051,7 +2211,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateContactFlowName
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName" target="_top">AWS
      *      API Documentation</a>
@@ -2071,7 +2231,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -2097,7 +2257,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidParameterException
@@ -2109,6 +2269,139 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the hours of operation for the specified queue.
+     * </p>
+     * 
+     * @param updateQueueHoursOfOperationRequest
+     * @return Result of the UpdateQueueHoursOfOperation operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateQueueHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateQueueHoursOfOperationResult updateQueueHoursOfOperation(UpdateQueueHoursOfOperationRequest updateQueueHoursOfOperationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the maximum number of contacts allowed in a queue before it is considered full.
+     * </p>
+     * 
+     * @param updateQueueMaxContactsRequest
+     * @return Result of the UpdateQueueMaxContacts operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateQueueMaxContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateQueueMaxContactsResult updateQueueMaxContacts(UpdateQueueMaxContactsRequest updateQueueMaxContactsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be
+     * provided.
+     * </p>
+     * 
+     * @param updateQueueNameRequest
+     * @return Result of the UpdateQueueName operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateQueueName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateQueueNameResult updateQueueName(UpdateQueueNameRequest updateQueueNameRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
+     * </p>
+     * 
+     * @param updateQueueOutboundCallerConfigRequest
+     * @return Result of the UpdateQueueOutboundCallerConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateQueueOutboundCallerConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateQueueOutboundCallerConfigResult updateQueueOutboundCallerConfig(UpdateQueueOutboundCallerConfigRequest updateQueueOutboundCallerConfigRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the status of the queue.
+     * </p>
+     * 
+     * @param updateQueueStatusRequest
+     * @return Result of the UpdateQueueStatus operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateQueueStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateQueueStatusResult updateQueueStatus(UpdateQueueStatusRequest updateQueueStatusRequest);
 
     /**
      * <p>
@@ -2129,7 +2422,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateQuickConnectConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2142,7 +2435,7 @@ public interface AmazonConnect {
      * </p>
      * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
-     * least Name or Description must be provided.
+     * least <code>Name</code> or <code>Description</code> must be provided.
      * </p>
      * 
      * @param updateQuickConnectNameRequest
@@ -2156,7 +2449,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateQuickConnectName
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName" target="_top">AWS
      *      API Documentation</a>
@@ -2179,7 +2472,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateRoutingProfileConcurrency
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileConcurrency"
      *      target="_top">AWS API Documentation</a>
@@ -2202,7 +2495,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateRoutingProfileDefaultOutboundQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileDefaultOutboundQueue"
      *      target="_top">AWS API Documentation</a>
@@ -2229,7 +2522,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateRoutingProfileName
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileName"
      *      target="_top">AWS API Documentation</a>
@@ -2252,7 +2545,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateRoutingProfileQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileQueues"
      *      target="_top">AWS API Documentation</a>
@@ -2275,7 +2568,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserHierarchy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy" target="_top">AWS
      *      API Documentation</a>
@@ -2300,7 +2593,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserHierarchyGroupName
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName"
      *      target="_top">AWS API Documentation</a>
@@ -2325,7 +2618,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserHierarchyStructure
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure"
      *      target="_top">AWS API Documentation</a>
@@ -2338,12 +2631,12 @@ public interface AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change the login credentials of other
-     * users by changing their email address. This poses a security risk to your organization. They can change the email
-     * address of a user to the attacker's email address, and then reset the password through email. We strongly
-     * recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>. For more information, see
-     * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-     * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with
+     * that ability can change the login credentials of other users by changing their email address. This poses a
+     * security risk to your organization. They can change the email address of a user to the attacker's email address,
+     * and then reset the password through email. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices
+     * for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * </important>
      * 
@@ -2358,7 +2651,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserIdentityInfo
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo" target="_top">AWS
      *      API Documentation</a>
@@ -2381,7 +2674,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserPhoneConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig" target="_top">AWS
      *      API Documentation</a>
@@ -2404,7 +2697,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserRoutingProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserRoutingProfile"
      *      target="_top">AWS API Documentation</a>
@@ -2427,7 +2720,7 @@ public interface AmazonConnect {
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
-     *         Request processing failed due to an error or failure with the service.
+     *         Request processing failed because of an error or failure with the service.
      * @sample AmazonConnect.UpdateUserSecurityProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles"
      *      target="_top">AWS API Documentation</a>

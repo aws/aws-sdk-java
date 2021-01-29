@@ -41,6 +41,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
      * </p>
      * </li>
@@ -65,14 +70,23 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     private String key;
     /**
      * <p>
-     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
-     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
-     * array can specify only one value. Valid values for each supported property (key) are:
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
+     * Otherwise, this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
      * </p>
      * </li>
      * <li>
@@ -93,6 +107,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * </p>
      */
     private java.util.List<String> values;
 
@@ -104,6 +121,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
      * </p>
      * </li>
      * <li>
@@ -129,6 +151,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
      *        </p>
      *        </li>
      *        <li>
@@ -165,6 +192,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
      * </p>
      * </li>
@@ -185,6 +217,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_KEY - STARTS_WITH
      *         </p>
      *         </li>
      *         <li>
@@ -221,6 +258,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
      * </p>
      * </li>
@@ -242,6 +284,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
      *        </p>
      *        </li>
      *        <li>
@@ -280,6 +327,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
      * </p>
      * </li>
@@ -301,6 +353,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
      *        </p>
      *        </li>
      *        <li>
@@ -388,14 +445,23 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
-     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
-     * array can specify only one value. Valid values for each supported property (key) are:
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
+     * Otherwise, this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
      * </p>
      * </li>
      * <li>
@@ -416,16 +482,28 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * </p>
      * 
      * @return An array that lists the values to use in the condition. If the value for the key property is
-     *         OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
-     *         values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
-     *         are:</p>
+     *         OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
+     *         operator to join the values. Otherwise, this array can specify only one value.</p>
+     *         <p>
+     *         Valid values for each supported property (key) are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
+     *         OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or
      *         pdf
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example:
+     *         logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *         specified value.
      *         </p>
      *         </li>
      *         <li>
@@ -445,6 +523,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -453,14 +534,23 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
-     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
-     * array can specify only one value. Valid values for each supported property (key) are:
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
+     * Otherwise, this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
      * </p>
      * </li>
      * <li>
@@ -481,17 +571,28 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * </p>
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
-     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
-     *        are:</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
+     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
-     *        pdf
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
      *        </p>
      *        </li>
      *        <li>
@@ -511,6 +612,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -524,14 +628,23 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
-     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
-     * array can specify only one value. Valid values for each supported property (key) are:
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
+     * Otherwise, this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
      * </p>
      * </li>
      * <li>
@@ -553,6 +666,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
+     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
@@ -560,14 +676,22 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
-     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
-     *        are:</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
+     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
-     *        pdf
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
      *        </p>
      *        </li>
      *        <li>
@@ -587,6 +711,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,14 +729,23 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
-     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
-     * array can specify only one value. Valid values for each supported property (key) are:
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
+     * Otherwise, this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
      * </p>
      * </li>
      * <li>
@@ -630,17 +766,28 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * </p>
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
-     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
-     *        are:</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
+     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
-     *        pdf
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
      *        </p>
      *        </li>
      *        <li>
@@ -660,6 +807,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

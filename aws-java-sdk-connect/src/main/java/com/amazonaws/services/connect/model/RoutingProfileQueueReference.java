@@ -30,7 +30,7 @@ public class RoutingProfileQueueReference implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The identifier of the queue.
+     * The identifier for the queue.
      * </p>
      */
     private String queueId;
@@ -43,11 +43,11 @@ public class RoutingProfileQueueReference implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The identifier of the queue.
+     * The identifier for the queue.
      * </p>
      * 
      * @param queueId
-     *        The identifier of the queue.
+     *        The identifier for the queue.
      */
 
     public void setQueueId(String queueId) {
@@ -56,10 +56,10 @@ public class RoutingProfileQueueReference implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The identifier of the queue.
+     * The identifier for the queue.
      * </p>
      * 
-     * @return The identifier of the queue.
+     * @return The identifier for the queue.
      */
 
     public String getQueueId() {
@@ -68,11 +68,11 @@ public class RoutingProfileQueueReference implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The identifier of the queue.
+     * The identifier for the queue.
      * </p>
      * 
      * @param queueId
-     *        The identifier of the queue.
+     *        The identifier for the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

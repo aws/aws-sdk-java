@@ -51,13 +51,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private String directoryId;
     /**
      * <p>
-     * Whether your contact center handles incoming contacts.
+     * Your contact center handles incoming contacts.
      * </p>
      */
     private Boolean inboundCallsEnabled;
     /**
      * <p>
-     * Whether your contact center allows outbound calls.
+     * Your contact center allows outbound calls.
      * </p>
      */
     private Boolean outboundCallsEnabled;
@@ -243,11 +243,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center handles incoming contacts.
+     * Your contact center handles incoming contacts.
      * </p>
      * 
      * @param inboundCallsEnabled
-     *        Whether your contact center handles incoming contacts.
+     *        Your contact center handles incoming contacts.
      */
 
     public void setInboundCallsEnabled(Boolean inboundCallsEnabled) {
@@ -256,10 +256,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center handles incoming contacts.
+     * Your contact center handles incoming contacts.
      * </p>
      * 
-     * @return Whether your contact center handles incoming contacts.
+     * @return Your contact center handles incoming contacts.
      */
 
     public Boolean getInboundCallsEnabled() {
@@ -268,11 +268,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center handles incoming contacts.
+     * Your contact center handles incoming contacts.
      * </p>
      * 
      * @param inboundCallsEnabled
-     *        Whether your contact center handles incoming contacts.
+     *        Your contact center handles incoming contacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,10 +283,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center handles incoming contacts.
+     * Your contact center handles incoming contacts.
      * </p>
      * 
-     * @return Whether your contact center handles incoming contacts.
+     * @return Your contact center handles incoming contacts.
      */
 
     public Boolean isInboundCallsEnabled() {
@@ -295,11 +295,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center allows outbound calls.
+     * Your contact center allows outbound calls.
      * </p>
      * 
      * @param outboundCallsEnabled
-     *        Whether your contact center allows outbound calls.
+     *        Your contact center allows outbound calls.
      */
 
     public void setOutboundCallsEnabled(Boolean outboundCallsEnabled) {
@@ -308,10 +308,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center allows outbound calls.
+     * Your contact center allows outbound calls.
      * </p>
      * 
-     * @return Whether your contact center allows outbound calls.
+     * @return Your contact center allows outbound calls.
      */
 
     public Boolean getOutboundCallsEnabled() {
@@ -320,11 +320,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center allows outbound calls.
+     * Your contact center allows outbound calls.
      * </p>
      * 
      * @param outboundCallsEnabled
-     *        Whether your contact center allows outbound calls.
+     *        Your contact center allows outbound calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,10 +335,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether your contact center allows outbound calls.
+     * Your contact center allows outbound calls.
      * </p>
      * 
-     * @return Whether your contact center allows outbound calls.
+     * @return Your contact center allows outbound calls.
      */
 
     public Boolean isOutboundCallsEnabled() {
