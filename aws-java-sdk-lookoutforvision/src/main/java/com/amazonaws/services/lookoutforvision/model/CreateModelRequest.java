@@ -36,7 +36,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A description for the version of the model.
      * </p>
      */
-    private ModelDescription description;
+    private String description;
     /**
      * <p>
      * ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You
@@ -61,6 +61,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the model.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -111,7 +117,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A description for the version of the model.
      */
 
-    public void setDescription(ModelDescription description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -123,7 +129,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return A description for the version of the model.
      */
 
-    public ModelDescription getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -137,7 +143,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateModelRequest withDescription(ModelDescription description) {
+    public CreateModelRequest withDescription(String description) {
         setDescription(description);
         return this;
     }
@@ -302,6 +308,76 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the model.
+     * </p>
+     * 
+     * @return A set of tags (key-value pairs) that you want to attach to the model.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the model.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags (key-value pairs) that you want to attach to the model.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags (key-value pairs) that you want to attach to the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the model.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags (key-value pairs) that you want to attach to the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,7 +398,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +435,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -370,6 +452,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

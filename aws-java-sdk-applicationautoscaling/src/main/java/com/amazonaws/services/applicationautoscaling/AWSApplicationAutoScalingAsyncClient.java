@@ -91,7 +91,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * Amazon Managed Streaming for Apache Kafka cluster storage
+ * Amazon Managed Streaming for Apache Kafka broker storage
  * </p>
  * </li>
  * </ul>

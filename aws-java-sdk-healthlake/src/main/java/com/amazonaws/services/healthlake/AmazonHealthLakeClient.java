@@ -181,6 +181,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new CreateFHIRDatastoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFHIRDatastoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -247,6 +248,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new DeleteFHIRDatastoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFHIRDatastoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -310,6 +312,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new DescribeFHIRDatastoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFHIRDatastoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -373,6 +376,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new DescribeFHIRExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFHIRExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -436,6 +440,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new DescribeFHIRImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFHIRImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -497,6 +502,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new ListFHIRDatastoresRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFHIRDatastoresRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -561,6 +567,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new StartFHIRExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFHIRExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");
@@ -625,6 +632,7 @@ public class AmazonHealthLakeClient extends AmazonWebServiceClient implements Am
                 request = new StartFHIRImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFHIRImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "HealthLake");

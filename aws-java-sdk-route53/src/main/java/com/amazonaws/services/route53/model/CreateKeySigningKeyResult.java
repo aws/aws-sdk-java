@@ -26,13 +26,13 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
     private ChangeInfo changeInfo;
     /**
      * <p>
-     * The key signing key (KSK) that the request creates.
+     * The key-signing key (KSK) that the request creates.
      * </p>
      */
     private KeySigningKey keySigningKey;
     /**
      * <p>
-     * The unique URL representing the new key signing key (KSK).
+     * The unique URL representing the new key-signing key (KSK).
      * </p>
      */
     private String location;
@@ -65,11 +65,11 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key signing key (KSK) that the request creates.
+     * The key-signing key (KSK) that the request creates.
      * </p>
      * 
      * @param keySigningKey
-     *        The key signing key (KSK) that the request creates.
+     *        The key-signing key (KSK) that the request creates.
      */
 
     public void setKeySigningKey(KeySigningKey keySigningKey) {
@@ -78,10 +78,10 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key signing key (KSK) that the request creates.
+     * The key-signing key (KSK) that the request creates.
      * </p>
      * 
-     * @return The key signing key (KSK) that the request creates.
+     * @return The key-signing key (KSK) that the request creates.
      */
 
     public KeySigningKey getKeySigningKey() {
@@ -90,11 +90,11 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key signing key (KSK) that the request creates.
+     * The key-signing key (KSK) that the request creates.
      * </p>
      * 
      * @param keySigningKey
-     *        The key signing key (KSK) that the request creates.
+     *        The key-signing key (KSK) that the request creates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique URL representing the new key signing key (KSK).
+     * The unique URL representing the new key-signing key (KSK).
      * </p>
      * 
      * @param location
-     *        The unique URL representing the new key signing key (KSK).
+     *        The unique URL representing the new key-signing key (KSK).
      */
 
     public void setLocation(String location) {
@@ -118,10 +118,10 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique URL representing the new key signing key (KSK).
+     * The unique URL representing the new key-signing key (KSK).
      * </p>
      * 
-     * @return The unique URL representing the new key signing key (KSK).
+     * @return The unique URL representing the new key-signing key (KSK).
      */
 
     public String getLocation() {
@@ -130,11 +130,11 @@ public class CreateKeySigningKeyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique URL representing the new key signing key (KSK).
+     * The unique URL representing the new key-signing key (KSK).
      * </p>
      * 
      * @param location
-     *        The unique URL representing the new key signing key (KSK).
+     *        The unique URL representing the new key-signing key (KSK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -179,6 +179,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new CreateSuiteDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSuiteDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -238,6 +239,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new DeleteSuiteDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSuiteDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -299,6 +301,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new GetSuiteDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSuiteDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -359,6 +362,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new GetSuiteRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSuiteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -419,6 +423,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new GetSuiteRunReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSuiteRunReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -477,6 +482,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new ListSuiteDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSuiteDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -536,6 +542,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new ListSuiteRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSuiteRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -596,6 +603,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -652,6 +660,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new ListTestCasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -712,6 +721,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new StartSuiteRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSuiteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -772,6 +782,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -832,6 +843,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
@@ -890,6 +902,7 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
                 request = new UpdateSuiteDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSuiteDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've already created a key signing key (KSK) with this name or with the same customer managed key (CMK) ARN.
+ * You've already created a key-signing key (KSK) with this name or with the same customer managed customer master key
+ * (CMK) ARN.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

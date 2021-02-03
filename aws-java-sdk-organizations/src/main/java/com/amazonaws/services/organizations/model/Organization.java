@@ -45,9 +45,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String arn;
@@ -66,9 +66,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String masterAccountArn;
@@ -169,17 +169,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -191,16 +191,16 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getArn() {
@@ -212,17 +212,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,9 +354,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param masterAccountArn
@@ -364,8 +364,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setMasterAccountArn(String masterAccountArn) {
@@ -377,17 +377,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *         organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getMasterAccountArn() {
@@ -399,9 +399,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param masterAccountArn
@@ -409,8 +409,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,8 +88,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -783,8 +783,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -928,8 +928,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -1350,8 +1350,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -1433,8 +1433,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -1525,8 +1525,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -1607,8 +1607,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *         <p>
      *         Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *         <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *         <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *         <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *         </p>
      *         <p>
      *         Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -1699,8 +1699,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -1782,8 +1782,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -1876,8 +1876,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -1959,8 +1959,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
@@ -2051,8 +2051,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
-     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
@@ -2134,8 +2134,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
+     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |

@@ -183,6 +183,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new BuildBotLocaleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(buildBotLocaleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -243,6 +244,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -307,6 +309,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateBotAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -369,6 +372,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateBotLocaleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotLocaleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -434,6 +438,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateBotVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -538,6 +543,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateIntentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIntentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -600,6 +606,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateSlotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSlotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -664,6 +671,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new CreateSlotTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSlotTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -734,6 +742,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -794,6 +803,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteBotAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBotAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -857,6 +867,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteBotLocaleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBotLocaleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -917,6 +928,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteBotVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBotVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -980,6 +992,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteIntentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIntentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1040,6 +1053,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteSlotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSlotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1104,6 +1118,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DeleteSlotTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSlotTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1163,6 +1178,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1222,6 +1238,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeBotAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBotAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1281,6 +1298,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeBotLocaleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBotLocaleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1340,6 +1358,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeBotVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBotVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1399,6 +1418,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeIntentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIntentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1458,6 +1478,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeSlotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSlotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1517,6 +1538,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new DescribeSlotTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSlotTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1575,6 +1597,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBotAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1633,6 +1656,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBotLocalesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotLocalesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1699,6 +1723,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBotVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1757,6 +1782,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1820,6 +1846,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBuiltInIntentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuiltInIntentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1878,6 +1905,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListBuiltInSlotTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuiltInSlotTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1936,6 +1964,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListIntentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIntentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -1994,6 +2023,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListSlotTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSlotTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2052,6 +2082,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListSlotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSlotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2111,6 +2142,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2170,6 +2202,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2228,6 +2261,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2288,6 +2322,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2348,6 +2383,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateBotAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBotAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2408,6 +2444,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateBotLocaleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBotLocaleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2468,6 +2505,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateIntentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIntentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2528,6 +2566,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateSlotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSlotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
@@ -2588,6 +2627,7 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                 request = new UpdateSlotTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSlotTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");

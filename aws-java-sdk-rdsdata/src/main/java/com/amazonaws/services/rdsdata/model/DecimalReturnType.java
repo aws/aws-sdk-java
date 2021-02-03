@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DecimalReturnType {
 
-    DOUBLE_OR_LONG("DOUBLE_OR_LONG"),
-    STRING("STRING");
+    STRING("STRING"),
+    DOUBLE_OR_LONG("DOUBLE_OR_LONG");
 
     private String value;
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The key signing key (KSK) name that you specified isn't a valid name.
+ * The key-signing key (KSK) name that you specified isn't a valid name.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

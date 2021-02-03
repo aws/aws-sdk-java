@@ -262,6 +262,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new CreateAccessPointRequestMarshaller().marshall(super.beforeMarshalling(createAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -412,6 +413,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new CreateBucketRequestMarshaller().marshall(super.beforeMarshalling(createBucketRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -437,13 +439,13 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * S3 Batch Operations performs large-scale Batch Operations on Amazon S3 objects. Batch Operations can run a single
-     * operation or action on lists of Amazon S3 objects that you specify. For more information, see <a
+     * You can use S3 Batch Operations to perform large-scale batch operations on Amazon S3 objects. Batch Operations
+     * can run a single operation on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation creates an S3 Batch Operations job.
+     * This operation creates a S3 Batch Operations job.
      * </p>
      * <p/>
      * <p>
@@ -469,6 +471,11 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a>
      * </p>
      * </li>
      * </ul>
@@ -504,6 +511,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new CreateJobRequestMarshaller().marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -624,6 +632,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteAccessPointRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -742,6 +751,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -872,6 +882,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteBucketRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1014,6 +1025,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                         .marshall(super.beforeMarshalling(deleteBucketLifecycleConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1158,6 +1170,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1286,6 +1299,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1380,6 +1394,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(deleteJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1465,6 +1480,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeletePublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(deletePublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1502,8 +1518,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1541,6 +1557,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteStorageLensConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteStorageLensConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1579,8 +1596,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1620,6 +1637,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                         .beforeMarshalling(deleteStorageLensConfigurationTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1720,6 +1738,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DescribeJobRequestMarshaller().marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1842,6 +1861,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetAccessPointRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -1950,6 +1970,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2020,6 +2041,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetAccessPointPolicyStatusRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2151,6 +2173,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetBucketRequestMarshaller().marshall(super.beforeMarshalling(getBucketRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2317,6 +2340,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetBucketLifecycleConfigurationRequestMarshaller().marshall(super.beforeMarshalling(getBucketLifecycleConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2469,6 +2493,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(getBucketPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2616,6 +2641,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(getBucketTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2710,6 +2736,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(getJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2798,6 +2825,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetPublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(getPublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2835,8 +2863,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2874,6 +2902,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetStorageLensConfigurationRequestMarshaller().marshall(super.beforeMarshalling(getStorageLensConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -2912,8 +2941,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2953,6 +2982,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                         .marshall(super.beforeMarshalling(getStorageLensConfigurationTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3079,6 +3109,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new ListAccessPointsRequestMarshaller().marshall(super.beforeMarshalling(listAccessPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3179,6 +3210,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new ListJobsRequestMarshaller().marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3253,6 +3285,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new ListRegionalBucketsRequestMarshaller().marshall(super.beforeMarshalling(listRegionalBucketsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3290,8 +3323,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -3329,6 +3362,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new ListStorageLensConfigurationsRequestMarshaller().marshall(super.beforeMarshalling(listStorageLensConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3448,6 +3482,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(putAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3579,6 +3614,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutBucketLifecycleConfigurationRequestMarshaller().marshall(super.beforeMarshalling(putBucketLifecycleConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3726,6 +3762,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(putBucketPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -3935,6 +3972,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(putBucketTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4096,6 +4134,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(putJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4181,6 +4220,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutPublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(putPublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4257,6 +4297,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutStorageLensConfigurationRequestMarshaller().marshall(super.beforeMarshalling(putStorageLensConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4295,8 +4336,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
-     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3
-     * Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
+     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4336,6 +4377,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                         .marshall(super.beforeMarshalling(putStorageLensConfigurationTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4435,6 +4477,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new UpdateJobPriorityRequestMarshaller().marshall(super.beforeMarshalling(updateJobPriorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
@@ -4535,6 +4578,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new UpdateJobStatusRequestMarshaller().marshall(super.beforeMarshalling(updateJobStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");

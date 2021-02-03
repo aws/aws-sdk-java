@@ -198,6 +198,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ApplyArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(applyArchiveRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -265,6 +266,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new CreateAnalyzerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnalyzerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -335,6 +337,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new CreateArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createArchiveRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -402,6 +405,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new DeleteAnalyzerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnalyzerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -467,6 +471,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new DeleteArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -532,6 +537,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new GetAnalyzedResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnalyzedResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -597,6 +603,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new GetAnalyzerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnalyzerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -667,6 +674,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new GetArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getArchiveRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -732,6 +740,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new GetFindingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -797,6 +806,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ListAnalyzedResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalyzedResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -861,6 +871,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ListAnalyzersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalyzersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -924,6 +935,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ListArchiveRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArchiveRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -994,6 +1006,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ListFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1059,6 +1072,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1124,6 +1138,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new StartResourceScanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startResourceScanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1189,6 +1204,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1254,6 +1270,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1319,6 +1336,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new UpdateArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateArchiveRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
@@ -1384,6 +1402,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                 request = new UpdateFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");

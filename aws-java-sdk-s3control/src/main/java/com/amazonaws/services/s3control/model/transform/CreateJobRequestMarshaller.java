@@ -379,6 +379,15 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                         }
 
                         {
+                            S3DeleteObjectTaggingOperation s3DeleteObjectTagging = operation.getS3DeleteObjectTagging();
+                            if (s3DeleteObjectTagging != null) {
+                                xmlWriter.startElement("S3DeleteObjectTagging");
+
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        {
                             S3InitiateRestoreObjectOperation s3InitiateRestoreObject = operation.getS3InitiateRestoreObject();
                             if (s3InitiateRestoreObject != null) {
                                 xmlWriter.startElement("S3InitiateRestoreObject");

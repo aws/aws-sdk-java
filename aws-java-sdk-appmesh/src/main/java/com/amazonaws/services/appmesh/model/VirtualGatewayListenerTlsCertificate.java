@@ -40,6 +40,12 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
      * </p>
      */
     private VirtualGatewayListenerTlsFileCertificate file;
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Secret Discovery Service certificate.
+     * </p>
+     */
+    private VirtualGatewayListenerTlsSdsCertificate sds;
 
     /**
      * <p>
@@ -122,6 +128,49 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Secret Discovery Service certificate.
+     * </p>
+     * 
+     * @param sds
+     *        A reference to an object that represents a virtual gateway's listener's Secret Discovery Service
+     *        certificate.
+     */
+
+    public void setSds(VirtualGatewayListenerTlsSdsCertificate sds) {
+        this.sds = sds;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Secret Discovery Service certificate.
+     * </p>
+     * 
+     * @return A reference to an object that represents a virtual gateway's listener's Secret Discovery Service
+     *         certificate.
+     */
+
+    public VirtualGatewayListenerTlsSdsCertificate getSds() {
+        return this.sds;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Secret Discovery Service certificate.
+     * </p>
+     * 
+     * @param sds
+     *        A reference to an object that represents a virtual gateway's listener's Secret Discovery Service
+     *        certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayListenerTlsCertificate withSds(VirtualGatewayListenerTlsSdsCertificate sds) {
+        setSds(sds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +185,9 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
         if (getAcm() != null)
             sb.append("Acm: ").append(getAcm()).append(",");
         if (getFile() != null)
-            sb.append("File: ").append(getFile());
+            sb.append("File: ").append(getFile()).append(",");
+        if (getSds() != null)
+            sb.append("Sds: ").append(getSds());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +210,10 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
             return false;
         if (other.getFile() != null && other.getFile().equals(this.getFile()) == false)
             return false;
+        if (other.getSds() == null ^ this.getSds() == null)
+            return false;
+        if (other.getSds() != null && other.getSds().equals(this.getSds()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +224,7 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
 
         hashCode = prime * hashCode + ((getAcm() == null) ? 0 : getAcm().hashCode());
         hashCode = prime * hashCode + ((getFile() == null) ? 0 : getFile().hashCode());
+        hashCode = prime * hashCode + ((getSds() == null) ? 0 : getSds().hashCode());
         return hashCode;
     }
 

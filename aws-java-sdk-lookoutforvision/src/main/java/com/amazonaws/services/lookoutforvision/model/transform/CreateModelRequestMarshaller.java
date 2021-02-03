@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lookoutforvision.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,7 +32,7 @@ public class CreateModelRequestMarshaller {
 
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("projectName").build();
-    private static final MarshallingInfo<StructuredPojo> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Client-Token")
@@ -40,6 +41,8 @@ public class CreateModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputConfig").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateModelRequestMarshaller instance = new CreateModelRequestMarshaller();
 
@@ -62,6 +65,7 @@ public class CreateModelRequestMarshaller {
             protocolMarshaller.marshall(createModelRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createModelRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createModelRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createModelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

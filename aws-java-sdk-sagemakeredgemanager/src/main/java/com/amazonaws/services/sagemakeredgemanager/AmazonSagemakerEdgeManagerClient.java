@@ -165,6 +165,7 @@ public class AmazonSagemakerEdgeManagerClient extends AmazonWebServiceClient imp
                 request = new GetDeviceRegistrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRegistrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Sagemaker Edge");
@@ -223,6 +224,7 @@ public class AmazonSagemakerEdgeManagerClient extends AmazonWebServiceClient imp
                 request = new SendHeartbeatRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Sagemaker Edge");

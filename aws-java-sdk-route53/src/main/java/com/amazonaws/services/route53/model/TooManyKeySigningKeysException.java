@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've reached the limit for the number of key signing keys (KSKs). Remove at least one KSK, and then try again.
+ * You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM) certificate.
+ * An object that represents a Transport Layer Security (TLS) validation context trust for an AWS Certicate Manager
+ * (ACM) certificate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TlsValidationContextAcmTrust"

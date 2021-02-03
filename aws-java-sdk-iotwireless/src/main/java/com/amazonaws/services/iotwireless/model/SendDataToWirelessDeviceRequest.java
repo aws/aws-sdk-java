@@ -33,8 +33,8 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
     private String id;
     /**
      * <p>
-     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode),
-     * <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode)
+     * or <code>1</code> for AM (acknowledge mode).
      * </p>
      */
     private Integer transmitMode;
@@ -93,13 +93,13 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode),
-     * <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode)
+     * or <code>1</code> for AM (acknowledge mode).
      * </p>
      * 
      * @param transmitMode
      *        The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge
-     *        mode), <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     *        mode) or <code>1</code> for AM (acknowledge mode).
      */
 
     public void setTransmitMode(Integer transmitMode) {
@@ -108,13 +108,12 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode),
-     * <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode)
+     * or <code>1</code> for AM (acknowledge mode).
      * </p>
      * 
      * @return The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM
-     *         (unacknowledge mode), <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent
-     *         mode.
+     *         (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).
      */
 
     public Integer getTransmitMode() {
@@ -123,13 +122,13 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode),
-     * <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     * The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode)
+     * or <code>1</code> for AM (acknowledge mode).
      * </p>
      * 
      * @param transmitMode
      *        The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge
-     *        mode), <code>1</code> for AM (acknowledge mode), or <code>2</code> for (TM) transparent mode.
+     *        mode) or <code>1</code> for AM (acknowledge mode).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

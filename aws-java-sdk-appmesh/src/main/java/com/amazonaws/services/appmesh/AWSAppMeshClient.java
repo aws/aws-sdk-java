@@ -232,6 +232,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -315,6 +316,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -397,6 +399,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -481,6 +484,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -590,6 +594,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -674,6 +679,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -758,6 +764,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -827,6 +834,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -900,6 +908,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -969,6 +978,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1039,6 +1049,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1112,6 +1123,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1184,6 +1196,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1253,6 +1266,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1320,6 +1334,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1387,6 +1402,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1454,6 +1470,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1521,6 +1538,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1589,6 +1607,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1656,6 +1675,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1724,6 +1744,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1792,6 +1813,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListGatewayRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewayRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1859,6 +1881,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListMeshesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMeshesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1926,6 +1949,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -1993,6 +2017,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2060,6 +2085,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2127,6 +2153,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualNodesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2194,6 +2221,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualRoutersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualRoutersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2261,6 +2289,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2334,6 +2363,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2401,6 +2431,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2475,6 +2506,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2545,6 +2577,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2619,6 +2652,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2693,6 +2727,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2767,6 +2802,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2841,6 +2877,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
@@ -2915,6 +2952,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");

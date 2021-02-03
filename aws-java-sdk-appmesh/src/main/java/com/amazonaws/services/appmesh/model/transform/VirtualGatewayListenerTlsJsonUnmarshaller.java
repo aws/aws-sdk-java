@@ -56,6 +56,10 @@ public class VirtualGatewayListenerTlsJsonUnmarshaller implements Unmarshaller<V
                     context.nextToken();
                     virtualGatewayListenerTls.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("validation", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayListenerTls.setValidation(VirtualGatewayListenerTlsValidationContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

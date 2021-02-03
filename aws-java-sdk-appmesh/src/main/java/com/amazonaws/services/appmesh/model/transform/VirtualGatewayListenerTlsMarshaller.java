@@ -31,6 +31,8 @@ public class VirtualGatewayListenerTlsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
     private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("mode").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("validation").build();
 
     private static final VirtualGatewayListenerTlsMarshaller instance = new VirtualGatewayListenerTlsMarshaller();
 
@@ -50,6 +52,7 @@ public class VirtualGatewayListenerTlsMarshaller {
         try {
             protocolMarshaller.marshall(virtualGatewayListenerTls.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(virtualGatewayListenerTls.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(virtualGatewayListenerTls.getValidation(), VALIDATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

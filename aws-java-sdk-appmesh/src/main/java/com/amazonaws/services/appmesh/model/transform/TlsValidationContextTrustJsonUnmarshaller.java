@@ -56,6 +56,10 @@ public class TlsValidationContextTrustJsonUnmarshaller implements Unmarshaller<T
                     context.nextToken();
                     tlsValidationContextTrust.setFile(TlsValidationContextFileTrustJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sds", targetDepth)) {
+                    context.nextToken();
+                    tlsValidationContextTrust.setSds(TlsValidationContextSdsTrustJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

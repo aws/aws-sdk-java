@@ -50,7 +50,10 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first
      * call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify
-     * <code>test</code> for the value of <code>DatasetType</code>. of dataset with
+     * <code>test</code> for the value of <code>DatasetType</code>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.
      * </p>
      * 
      * @param createDatasetRequest
@@ -72,7 +75,10 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first
      * call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify
-     * <code>test</code> for the value of <code>DatasetType</code>. of dataset with
+     * <code>test</code> for the value of <code>DatasetType</code>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.
      * </p>
      * 
      * @param createDatasetRequest
@@ -106,6 +112,10 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * After training completes, the evaluation metrics are stored at the location specified in
      * <code>OutputConfig</code>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want
+     * to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.
+     * </p>
      * 
      * @param createModelRequest
      * @return A Java Future containing the result of the CreateModel operation returned by the service.
@@ -133,6 +143,10 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * After training completes, the evaluation metrics are stored at the location specified in
      * <code>OutputConfig</code>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want
+     * to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.
+     * </p>
      * 
      * @param createModelRequest
      * @param asyncHandler
@@ -152,6 +166,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling
      * <a>CreateDataset</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.
+     * </p>
      * 
      * @param createProjectRequest
      * @return A Java Future containing the result of the CreateProject operation returned by the service.
@@ -165,6 +182,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling
      * <a>CreateDataset</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.
      * </p>
      * 
      * @param createProjectRequest
@@ -207,6 +227,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * It might take a while to delete the dataset. To check the current status, check the <code>Status</code> field in
      * the response from a call to <a>DescribeDataset</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.
+     * </p>
      * 
      * @param deleteDatasetRequest
      * @return A Java Future containing the result of the DeleteDataset operation returned by the service.
@@ -243,6 +266,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * It might take a while to delete the dataset. To check the current status, check the <code>Status</code> field in
      * the response from a call to <a>DescribeDataset</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.
+     * </p>
      * 
      * @param deleteDatasetRequest
      * @param asyncHandler
@@ -262,6 +288,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the
      * <a>StopModel</a> operation.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.
+     * </p>
      * 
      * @param deleteModelRequest
      * @return A Java Future containing the result of the DeleteModel operation returned by the service.
@@ -275,6 +304,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the
      * <a>StopModel</a> operation.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.
      * </p>
      * 
      * @param deleteModelRequest
@@ -299,8 +331,11 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * model use the <a>DeleteModel</a> operation.
      * </p>
      * <p>
-     * The training and test datasets are deleted automatically for you. The images referenced by the training and test
-     * datasets aren't deleted.
+     * You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>.
+     * The images referenced by the training and test datasets aren't deleted.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -320,8 +355,11 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * model use the <a>DeleteModel</a> operation.
      * </p>
      * <p>
-     * The training and test datasets are deleted automatically for you. The images referenced by the training and test
-     * datasets aren't deleted.
+     * You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>.
+     * The images referenced by the training and test datasets aren't deleted.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -341,6 +379,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Describe an Amazon Lookout for Vision dataset.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.
+     * </p>
      * 
      * @param describeDatasetRequest
      * @return A Java Future containing the result of the DescribeDataset operation returned by the service.
@@ -353,6 +394,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
     /**
      * <p>
      * Describe an Amazon Lookout for Vision dataset.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -372,6 +416,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Describes a version of an Amazon Lookout for Vision model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.
+     * </p>
      * 
      * @param describeModelRequest
      * @return A Java Future containing the result of the DescribeModel operation returned by the service.
@@ -384,6 +431,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
     /**
      * <p>
      * Describes a version of an Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.
      * </p>
      * 
      * @param describeModelRequest
@@ -403,6 +453,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Describes an Amazon Lookout for Vision project.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.
+     * </p>
      * 
      * @param describeProjectRequest
      * @return A Java Future containing the result of the DescribeProject operation returned by the service.
@@ -415,6 +468,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
     /**
      * <p>
      * Describes an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.
      * </p>
      * 
      * @param describeProjectRequest
@@ -446,6 +502,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * your model.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.
+     * </p>
      * 
      * @param detectAnomaliesRequest
      * @return A Java Future containing the result of the DetectAnomalies operation returned by the service.
@@ -471,6 +530,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * your model.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.
+     * </p>
      * 
      * @param detectAnomaliesRequest
      * @param asyncHandler
@@ -490,6 +552,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information
      * for a single image, including the image location and the assigned label.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.
+     * </p>
      * 
      * @param listDatasetEntriesRequest
      * @return A Java Future containing the result of the ListDatasetEntries operation returned by the service.
@@ -503,6 +568,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information
      * for a single image, including the image location and the assigned label.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.
      * </p>
      * 
      * @param listDatasetEntriesRequest
@@ -522,6 +590,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Lists the versions of a model in an Amazon Lookout for Vision project.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.
+     * </p>
      * 
      * @param listModelsRequest
      * @return A Java Future containing the result of the ListModels operation returned by the service.
@@ -534,6 +605,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
     /**
      * <p>
      * Lists the versions of a model in an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.
      * </p>
      * 
      * @param listModelsRequest
@@ -553,6 +627,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Lists the Amazon Lookout for Vision projects in your AWS account.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.
+     * </p>
      * 
      * @param listProjectsRequest
      * @return A Java Future containing the result of the ListProjects operation returned by the service.
@@ -565,6 +642,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
     /**
      * <p>
      * Lists the Amazon Lookout for Vision projects in your AWS account.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.
      * </p>
      * 
      * @param listProjectsRequest
@@ -582,6 +662,43 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
 
     /**
      * <p>
+     * Returns a list of tags attached to the specified Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags attached to the specified Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to
      * complete. To check the current state of the model, use <a>DescribeModel</a>.
      * </p>
@@ -593,6 +710,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.
+     * </p>
      * 
      * @param startModelRequest
      * @return A Java Future containing the result of the StartModel operation returned by the service.
@@ -615,6 +735,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.
+     * </p>
      * 
      * @param startModelRequest
      * @param asyncHandler
@@ -634,6 +757,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * Stops a running model. The operation might take a while to complete. To check the current status, call
      * <a>DescribeModel</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.
+     * </p>
      * 
      * @param stopModelRequest
      * @return A Java Future containing the result of the StopModel operation returned by the service.
@@ -647,6 +773,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Stops a running model. The operation might take a while to complete. To check the current status, call
      * <a>DescribeModel</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.
      * </p>
      * 
      * @param stopModelRequest
@@ -664,12 +793,93 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
 
     /**
      * <p>
+     * Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLookoutforVisionAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds one or more JSON Line entries to a dataset. A JSON Line includes information about an image used for
      * training or testing an Amazon Lookout for Vision model. The following is an example JSON Line.
      * </p>
      * <p>
      * Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and
      * check the <code>Status</code> field in the response.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.
      * </p>
      * 
      * @param updateDatasetEntriesRequest
@@ -688,6 +898,9 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <p>
      * Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and
      * check the <code>Status</code> field in the response.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.
      * </p>
      * 
      * @param updateDatasetEntriesRequest

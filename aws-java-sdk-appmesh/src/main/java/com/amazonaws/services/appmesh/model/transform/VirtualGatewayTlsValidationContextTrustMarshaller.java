@@ -31,6 +31,8 @@ public class VirtualGatewayTlsValidationContextTrustMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acm").build();
     private static final MarshallingInfo<StructuredPojo> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("file").build();
+    private static final MarshallingInfo<StructuredPojo> SDS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sds").build();
 
     private static final VirtualGatewayTlsValidationContextTrustMarshaller instance = new VirtualGatewayTlsValidationContextTrustMarshaller();
 
@@ -50,6 +52,7 @@ public class VirtualGatewayTlsValidationContextTrustMarshaller {
         try {
             protocolMarshaller.marshall(virtualGatewayTlsValidationContextTrust.getAcm(), ACM_BINDING);
             protocolMarshaller.marshall(virtualGatewayTlsValidationContextTrust.getFile(), FILE_BINDING);
+            protocolMarshaller.marshall(virtualGatewayTlsValidationContextTrust.getSds(), SDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

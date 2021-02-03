@@ -345,7 +345,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
      * status to <code>ACTIVE</code>.
      * </p>
      * 
@@ -355,9 +355,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
@@ -388,6 +388,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ActivateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(activateKeySigningKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -511,6 +512,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new AssociateVPCWithHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(associateVPCWithHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -683,6 +685,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ChangeResourceRecordSetsRequestMarshaller().marshall(super.beforeMarshalling(changeResourceRecordSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -757,6 +760,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ChangeTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(changeTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -895,6 +899,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(createHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1068,6 +1073,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(createHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1093,7 +1099,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
      * </p>
      * 
      * @param createKeySigningKeyRequest
@@ -1107,17 +1113,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws InvalidKeySigningKeyNameException
-     *         The key signing key (KSK) name that you specified isn't a valid name.
+     *         The key-signing key (KSK) name that you specified isn't a valid name.
      * @throws KeySigningKeyAlreadyExistsException
-     *         You've already created a key signing key (KSK) with this name or with the same customer managed key (CMK)
-     *         ARN.
+     *         You've already created a key-signing key (KSK) with this name or with the same customer managed customer
+     *         master key (CMK) ARN.
      * @throws TooManyKeySigningKeysException
-     *         You've reached the limit for the number of key signing keys (KSKs). Remove at least one KSK, and then try
+     *         You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try
      *         again.
      * @throws ConcurrentModificationException
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
@@ -1147,6 +1153,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(createKeySigningKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1396,6 +1403,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(createQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1554,6 +1562,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(createReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1634,6 +1643,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1719,6 +1729,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1800,6 +1811,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1884,6 +1896,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateVPCAssociationAuthorizationRequestMarshaller().marshall(super.beforeMarshalling(createVPCAssociationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -1909,7 +1922,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
      * KSK status to <code>INACTIVE</code>.
      * </p>
      * 
@@ -1919,17 +1932,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws KeySigningKeyInUseException
-     *         The key signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
+     *         The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
      *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
      * @throws KeySigningKeyInParentDSRecordException
-     *         The key signing key (KSK) is specified in a parent DS record.
+     *         The key-signing key (KSK) is specified in a parent DS record.
      * @sample AmazonRoute53.DeactivateKeySigningKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
      *      target="_top">AWS API Documentation</a>
@@ -1955,6 +1968,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeactivateKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(deactivateKeySigningKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2033,6 +2047,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(deleteHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2157,6 +2172,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(deleteHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2182,7 +2198,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
      * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
      * </p>
      * 
@@ -2192,9 +2208,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
@@ -2225,6 +2241,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteKeySigningKeyRequestMarshaller().marshall(super.beforeMarshalling(deleteKeySigningKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2293,6 +2310,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2368,6 +2386,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(deleteReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2458,6 +2477,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2529,6 +2549,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2609,6 +2630,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteVPCAssociationAuthorizationRequestMarshaller().marshall(super.beforeMarshalling(deleteVPCAssociationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2634,7 +2656,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
      * that are active in the hosted zone.
      * </p>
      * 
@@ -2648,11 +2670,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws KeySigningKeyInParentDSRecordException
-     *         The key signing key (KSK) is specified in a parent DS record.
+     *         The key-signing key (KSK) is specified in a parent DS record.
      * @throws DNSSECNotFoundException
      *         The hosted zone doesn't have any DNSSEC resources.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @sample AmazonRoute53.DisableHostedZoneDNSSEC
@@ -2680,6 +2702,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DisableHostedZoneDNSSECRequestMarshaller().marshall(super.beforeMarshalling(disableHostedZoneDNSSECRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2783,6 +2806,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DisassociateVPCFromHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(disassociateVPCFromHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2821,7 +2845,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws KeySigningKeyWithActiveStatusNotFoundException
-     *         A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+     *         A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @throws HostedZonePartiallyDelegatedException
@@ -2830,7 +2854,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws DNSSECNotFoundException
      *         The hosted zone doesn't have any DNSSEC resources.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @sample AmazonRoute53.EnableHostedZoneDNSSEC
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
      *      API Documentation</a>
@@ -2856,6 +2880,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new EnableHostedZoneDNSSECRequestMarshaller().marshall(super.beforeMarshalling(enableHostedZoneDNSSECRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -2930,6 +2955,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetAccountLimitRequestMarshaller().marshall(super.beforeMarshalling(getAccountLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3003,6 +3029,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetChangeRequestMarshaller().marshall(super.beforeMarshalling(getChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3026,6 +3053,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
@@ -3063,6 +3094,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetCheckerIpRangesRequestMarshaller().marshall(super.beforeMarshalling(getCheckerIpRangesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3093,8 +3125,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
-     * signing keys (ZSKs) in the hosted zone.
+     * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted
+     * zone.
      * </p>
      * 
      * @param getDNSSECRequest
@@ -3128,6 +3160,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetDNSSECRequestMarshaller().marshall(super.beforeMarshalling(getDNSSECRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3154,6 +3187,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
      * resource record sets.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * Use the following syntax to determine whether a continent is supported for geolocation:
@@ -3210,6 +3247,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetGeoLocationRequestMarshaller().marshall(super.beforeMarshalling(getGeoLocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3277,6 +3315,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3333,6 +3372,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckCountRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3399,6 +3439,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckLastFailureReasonRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckLastFailureReasonRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3459,6 +3500,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckStatusRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3519,6 +3561,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3576,6 +3619,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHostedZoneCountRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3651,6 +3695,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHostedZoneLimitRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3716,6 +3761,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(getQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3779,6 +3825,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3846,6 +3893,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetReusableDelegationSetLimitRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3912,6 +3960,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -3983,6 +4032,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4039,6 +4089,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyInstanceCountRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4077,6 +4128,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * immediately after the corresponding country.
      * </p>
      * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
+     * <p>
      * For a list of supported geolocation codes, see the <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.
      * </p>
@@ -4112,6 +4167,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListGeoLocationsRequestMarshaller().marshall(super.beforeMarshalling(listGeoLocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4177,6 +4233,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHealthChecksRequestMarshaller().marshall(super.beforeMarshalling(listHealthChecksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4250,6 +4307,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHostedZonesRequestMarshaller().marshall(super.beforeMarshalling(listHostedZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4381,6 +4439,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHostedZonesByNameRequestMarshaller().marshall(super.beforeMarshalling(listHostedZonesByNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4464,6 +4523,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHostedZonesByVPCRequestMarshaller().marshall(super.beforeMarshalling(listHostedZonesByVPCRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4533,6 +4593,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListQueryLoggingConfigsRequestMarshaller().marshall(super.beforeMarshalling(listQueryLoggingConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4675,6 +4736,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListResourceRecordSetsRequestMarshaller().marshall(super.beforeMarshalling(listResourceRecordSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4733,6 +4795,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListReusableDelegationSetsRequestMarshaller().marshall(super.beforeMarshalling(listReusableDelegationSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4813,6 +4876,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4888,6 +4952,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourcesRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -4954,6 +5019,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5031,6 +5097,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPolicyInstancesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5111,6 +5178,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(listTrafficPolicyInstancesByHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5186,6 +5254,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                         .marshall(super.beforeMarshalling(listTrafficPolicyInstancesByPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5249,6 +5318,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPolicyVersionsRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5317,6 +5387,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListVPCAssociationAuthorizationsRequestMarshaller().marshall(super.beforeMarshalling(listVPCAssociationAuthorizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5381,6 +5452,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new TestDNSAnswerRequestMarshaller().marshall(super.beforeMarshalling(testDNSAnswerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5448,6 +5520,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(updateHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5508,6 +5581,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateHostedZoneCommentRequestMarshaller().marshall(super.beforeMarshalling(updateHostedZoneCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5571,6 +5645,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateTrafficPolicyCommentRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
@@ -5670,6 +5745,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");

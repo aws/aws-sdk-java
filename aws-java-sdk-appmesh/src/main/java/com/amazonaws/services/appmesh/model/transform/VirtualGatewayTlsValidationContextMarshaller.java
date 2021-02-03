@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualGatewayTlsValidationContextMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> SUBJECTALTERNATIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subjectAlternativeNames").build();
     private static final MarshallingInfo<StructuredPojo> TRUST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trust").build();
 
@@ -46,6 +48,7 @@ public class VirtualGatewayTlsValidationContextMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualGatewayTlsValidationContext.getSubjectAlternativeNames(), SUBJECTALTERNATIVENAMES_BINDING);
             protocolMarshaller.marshall(virtualGatewayTlsValidationContext.getTrust(), TRUST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

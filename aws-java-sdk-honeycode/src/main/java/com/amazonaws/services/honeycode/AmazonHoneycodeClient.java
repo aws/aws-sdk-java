@@ -213,6 +213,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new BatchCreateTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchCreateTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -283,6 +284,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new BatchDeleteTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -357,6 +359,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new BatchUpdateTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -437,6 +440,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new BatchUpsertTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpsertTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -505,6 +509,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeTableDataImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -576,6 +581,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new GetScreenDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getScreenDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -651,6 +657,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new InvokeScreenAutomationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeScreenAutomationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -721,6 +728,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new ListTableColumnsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTableColumnsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -790,6 +798,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new ListTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -859,6 +868,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new ListTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -928,6 +938,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new QueryTableRowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryTableRowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
@@ -998,6 +1009,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(startTableDataImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");

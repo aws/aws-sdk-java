@@ -190,6 +190,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(associateTrackerConsumerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -270,6 +271,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchDeleteGeofenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteGeofenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -345,6 +347,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchEvaluateGeofencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchEvaluateGeofencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -425,6 +428,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchGetDevicePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetDevicePositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -500,6 +504,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchPutGeofenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchPutGeofenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -582,6 +587,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(batchUpdateDevicePositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -658,6 +664,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createGeofenceCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -741,6 +748,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMapRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -827,6 +835,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new CreatePlaceIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlaceIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -902,6 +911,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -983,6 +993,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteGeofenceCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1064,6 +1075,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMapRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1143,6 +1155,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DeletePlaceIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePlaceIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1223,6 +1236,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1298,6 +1312,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGeofenceCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1373,6 +1388,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMapRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1447,6 +1463,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribePlaceIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlaceIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1521,6 +1538,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1602,6 +1620,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(disassociateTrackerConsumerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1682,6 +1701,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDevicePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDevicePositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1762,6 +1782,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(getDevicePositionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1837,6 +1858,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetGeofenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGeofenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1911,6 +1933,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetMapGlyphsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMapGlyphsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -1986,6 +2009,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetMapSpritesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMapSpritesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2065,6 +2089,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetMapStyleDescriptorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMapStyleDescriptorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2146,6 +2171,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new GetMapTileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMapTileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2219,6 +2245,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(listGeofenceCollectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2294,6 +2321,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new ListGeofencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGeofencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2366,6 +2394,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new ListMapsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMapsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2438,6 +2467,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new ListPlaceIndexesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPlaceIndexesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2512,6 +2542,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTrackerConsumersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTrackerConsumersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2584,6 +2615,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTrackersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTrackersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2661,6 +2693,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                 request = new PutGeofenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putGeofenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2748,6 +2781,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(searchPlaceIndexForPositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
@@ -2845,6 +2879,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(searchPlaceIndexForTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");

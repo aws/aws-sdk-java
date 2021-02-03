@@ -253,9 +253,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
     private String policyType;
@@ -2043,9 +2043,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -2063,9 +2063,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies</a> and <a href=
+     *        >Target tracking scaling policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -2090,9 +2090,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The policy type. This parameter is required if you are creating a scaling policy.</p>
@@ -2109,9 +2109,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *         >Target Tracking Scaling Policies</a> and <a href=
+     *         >Target tracking scaling policies</a> and <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *         >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     *         >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -2136,9 +2136,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -2156,9 +2156,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies</a> and <a href=
+     *        >Target tracking scaling policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -2185,9 +2185,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -2205,9 +2205,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies</a> and <a href=
+     *        >Target tracking scaling policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -2232,9 +2232,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies</a> and <a href=
+     * >Target tracking scaling policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -2252,9 +2252,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies</a> and <a href=
+     *        >Target tracking scaling policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

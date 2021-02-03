@@ -82,12 +82,12 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String countryCode;
     /**
      * <p>
-     * For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state
+     * The code for the subdivision, such as a particular state within the United States. For a list of US state
      * abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession
-     * Abbreviations</a> on the United States Postal Service website.
-     * </p>
-     * <p>
-     * If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>.
+     * Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use
+     * the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.
      * </p>
      */
     private String subdivisionCode;
@@ -405,21 +405,21 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state
+     * The code for the subdivision, such as a particular state within the United States. For a list of US state
      * abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession
-     * Abbreviations</a> on the United States Postal Service website.
-     * </p>
-     * <p>
-     * If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>.
+     * Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use
+     * the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.
      * </p>
      * 
      * @param subdivisionCode
-     *        For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of
-     *        state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State
-     *        and Possession Abbreviations</a> on the United States Postal Service website. </p>
-     *        <p>
-     *        If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for
-     *        <code>CountryCode</code>.
+     *        The code for the subdivision, such as a particular state within the United States. For a list of US state
+     *        abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     *        Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported
+     *        subdivision codes, use the <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html"
+     *        >ListGeoLocations</a> API.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -428,20 +428,20 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state
+     * The code for the subdivision, such as a particular state within the United States. For a list of US state
      * abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession
-     * Abbreviations</a> on the United States Postal Service website.
-     * </p>
-     * <p>
-     * If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>.
+     * Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use
+     * the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.
      * </p>
      * 
-     * @return For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list
-     *         of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter
-     *         State and Possession Abbreviations</a> on the United States Postal Service website. </p>
-     *         <p>
-     *         If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for
-     *         <code>CountryCode</code>.
+     * @return The code for the subdivision, such as a particular state within the United States. For a list of US state
+     *         abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     *         Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported
+     *         subdivision codes, use the <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html"
+     *         >ListGeoLocations</a> API.
      */
 
     public String getSubdivisionCode() {
@@ -450,21 +450,21 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state
+     * The code for the subdivision, such as a particular state within the United States. For a list of US state
      * abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession
-     * Abbreviations</a> on the United States Postal Service website.
-     * </p>
-     * <p>
-     * If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>.
+     * Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use
+     * the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.
      * </p>
      * 
      * @param subdivisionCode
-     *        For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of
-     *        state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State
-     *        and Possession Abbreviations</a> on the United States Postal Service website. </p>
-     *        <p>
-     *        If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for
-     *        <code>CountryCode</code>.
+     *        The code for the subdivision, such as a particular state within the United States. For a list of US state
+     *        abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     *        Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported
+     *        subdivision codes, use the <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html"
+     *        >ListGeoLocations</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

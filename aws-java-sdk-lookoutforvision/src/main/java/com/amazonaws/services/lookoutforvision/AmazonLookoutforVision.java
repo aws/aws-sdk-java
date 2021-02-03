@@ -59,7 +59,10 @@ public interface AmazonLookoutforVision {
      * <p>
      * To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first
      * call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify
-     * <code>test</code> for the value of <code>DatasetType</code>. of dataset with
+     * <code>test</code> for the value of <code>DatasetType</code>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.
      * </p>
      * 
      * @param createDatasetRequest
@@ -104,6 +107,10 @@ public interface AmazonLookoutforVision {
      * After training completes, the evaluation metrics are stored at the location specified in
      * <code>OutputConfig</code>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want
+     * to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.
+     * </p>
      * 
      * @param createModelRequest
      * @return Result of the CreateModel operation returned by the service.
@@ -133,6 +140,9 @@ public interface AmazonLookoutforVision {
      * <p>
      * Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling
      * <a>CreateDataset</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.
      * </p>
      * 
      * @param createProjectRequest
@@ -186,6 +196,9 @@ public interface AmazonLookoutforVision {
      * It might take a while to delete the dataset. To check the current status, check the <code>Status</code> field in
      * the response from a call to <a>DescribeDataset</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.
+     * </p>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
@@ -212,6 +225,9 @@ public interface AmazonLookoutforVision {
      * <p>
      * Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the
      * <a>StopModel</a> operation.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.
      * </p>
      * 
      * @param deleteModelRequest
@@ -244,8 +260,11 @@ public interface AmazonLookoutforVision {
      * model use the <a>DeleteModel</a> operation.
      * </p>
      * <p>
-     * The training and test datasets are deleted automatically for you. The images referenced by the training and test
-     * datasets aren't deleted.
+     * You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>.
+     * The images referenced by the training and test datasets aren't deleted.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -273,6 +292,9 @@ public interface AmazonLookoutforVision {
      * <p>
      * Describe an Amazon Lookout for Vision dataset.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.
+     * </p>
      * 
      * @param describeDatasetRequest
      * @return Result of the DescribeDataset operation returned by the service.
@@ -299,6 +321,9 @@ public interface AmazonLookoutforVision {
      * <p>
      * Describes a version of an Amazon Lookout for Vision model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.
+     * </p>
      * 
      * @param describeModelRequest
      * @return Result of the DescribeModel operation returned by the service.
@@ -324,6 +349,9 @@ public interface AmazonLookoutforVision {
     /**
      * <p>
      * Describes an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.
      * </p>
      * 
      * @param describeProjectRequest
@@ -363,6 +391,9 @@ public interface AmazonLookoutforVision {
      * your model.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.
+     * </p>
      * 
      * @param detectAnomaliesRequest
      * @return Result of the DetectAnomalies operation returned by the service.
@@ -390,6 +421,9 @@ public interface AmazonLookoutforVision {
      * Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information
      * for a single image, including the image location and the assigned label.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.
+     * </p>
      * 
      * @param listDatasetEntriesRequest
      * @return Result of the ListDatasetEntries operation returned by the service.
@@ -415,6 +449,9 @@ public interface AmazonLookoutforVision {
     /**
      * <p>
      * Lists the versions of a model in an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.
      * </p>
      * 
      * @param listModelsRequest
@@ -442,6 +479,9 @@ public interface AmazonLookoutforVision {
      * <p>
      * Lists the Amazon Lookout for Vision projects in your AWS account.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.
+     * </p>
      * 
      * @param listProjectsRequest
      * @return Result of the ListProjects operation returned by the service.
@@ -466,6 +506,35 @@ public interface AmazonLookoutforVision {
 
     /**
      * <p>
+     * Returns a list of tags attached to the specified Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @sample AmazonLookoutforVision.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to
      * complete. To check the current state of the model, use <a>DescribeModel</a>.
      * </p>
@@ -477,6 +546,9 @@ public interface AmazonLookoutforVision {
      * You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.
+     * </p>
      * 
      * @param startModelRequest
      * @return Result of the StartModel operation returned by the service.
@@ -507,6 +579,9 @@ public interface AmazonLookoutforVision {
      * Stops a running model. The operation might take a while to complete. To check the current status, call
      * <a>DescribeModel</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.
+     * </p>
      * 
      * @param stopModelRequest
      * @return Result of the StopModel operation returned by the service.
@@ -531,12 +606,78 @@ public interface AmazonLookoutforVision {
 
     /**
      * <p>
+     * Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @throws ServiceQuotaExceededException
+     *         A service quota was exceeded the allowed limit. For more information, see Limits in Amazon Lookout for
+     *         Vision in the Amazon Lookout for Vision Developer Guide.
+     * @sample AmazonLookoutforVision.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @sample AmazonLookoutforVision.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Adds one or more JSON Line entries to a dataset. A JSON Line includes information about an image used for
      * training or testing an Amazon Lookout for Vision model. The following is an example JSON Line.
      * </p>
      * <p>
      * Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and
      * check the <code>Status</code> field in the response.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.
      * </p>
      * 
      * @param updateDatasetEntriesRequest

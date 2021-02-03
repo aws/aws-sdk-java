@@ -230,6 +230,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new CreateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
@@ -301,6 +302,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DeleteScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
@@ -365,6 +367,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeScalingPlanResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
@@ -429,6 +432,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DescribeScalingPlansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
@@ -494,6 +498,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(getScalingPlanResourceForecastDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
@@ -561,6 +566,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new UpdateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");

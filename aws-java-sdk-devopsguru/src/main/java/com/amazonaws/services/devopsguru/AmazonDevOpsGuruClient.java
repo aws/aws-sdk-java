@@ -225,6 +225,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new AddNotificationChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -292,6 +293,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAccountHealthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -360,6 +362,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeAccountOverviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -428,6 +431,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAnomalyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAnomalyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -495,6 +499,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new DescribeInsightRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInsightRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -565,6 +570,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeResourceCollectionHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -634,6 +640,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeServiceIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -704,6 +711,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new GetResourceCollectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -773,6 +781,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listAnomaliesForInsightRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -842,6 +851,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new ListEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -908,6 +918,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new ListInsightsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -976,6 +987,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listNotificationChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1045,6 +1057,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new ListRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecommendationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1114,6 +1127,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new PutFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1185,6 +1199,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(removeNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1258,6 +1273,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                 request = new SearchInsightsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1328,6 +1344,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateResourceCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
@@ -1399,6 +1416,7 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateServiceIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");

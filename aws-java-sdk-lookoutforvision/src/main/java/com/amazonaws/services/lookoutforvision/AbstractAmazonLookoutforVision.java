@@ -93,12 +93,27 @@ public class AbstractAmazonLookoutforVision implements AmazonLookoutforVision {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartModelResult startModel(StartModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StopModelResult stopModel(StopModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -206,6 +206,7 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request = new DescribeDimensionKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDimensionKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
@@ -274,6 +275,7 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request = new GetResourceMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");

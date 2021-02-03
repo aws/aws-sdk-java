@@ -225,6 +225,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new AssociateAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -312,6 +313,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchAssociateProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -391,6 +393,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchDisassociateProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -523,6 +526,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchPutAssetPropertyValueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -611,6 +615,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -704,6 +709,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -799,6 +805,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -885,6 +892,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -974,6 +982,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1069,6 +1078,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreatePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1155,6 +1165,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1233,6 +1244,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1322,6 +1334,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1407,6 +1420,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1484,6 +1498,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1562,6 +1577,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1642,6 +1658,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeletePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1719,6 +1736,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1797,6 +1815,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1874,6 +1893,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -1951,6 +1971,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2040,6 +2061,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetPropertyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetPropertyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2118,6 +2140,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2199,6 +2222,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(describeDefaultEncryptionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2268,6 +2292,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2352,6 +2377,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(describeGatewayCapabilityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2430,6 +2456,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2508,6 +2535,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2585,6 +2613,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2665,6 +2694,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DisassociateAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2765,6 +2795,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(getAssetPropertyAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2865,6 +2896,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new GetAssetPropertyValueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAssetPropertyValueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -2966,6 +2998,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(getAssetPropertyValueHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3043,6 +3076,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAccessPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3118,6 +3152,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssetModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3196,6 +3231,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssetRelationshipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetRelationshipsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3294,6 +3330,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3386,6 +3423,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssociatedAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3461,6 +3499,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3536,6 +3575,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3611,6 +3651,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListPortalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3686,6 +3727,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListProjectAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3761,6 +3803,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3852,6 +3895,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -3934,6 +3978,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(putDefaultEncryptionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4006,6 +4051,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new PutLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4102,6 +4148,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4184,6 +4231,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4253,6 +4301,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4337,6 +4386,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4445,6 +4495,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4534,6 +4585,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetPropertyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetPropertyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4611,6 +4663,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4691,6 +4744,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4786,6 +4840,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(updateGatewayCapabilityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4867,6 +4922,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdatePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
@@ -4944,6 +5000,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");

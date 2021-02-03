@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+ * The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

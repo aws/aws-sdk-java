@@ -33,7 +33,8 @@ public class ActivateKeySigningKeyRequest extends com.amazonaws.AmazonWebService
     private String hostedZoneId;
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      */
     private String name;
@@ -80,11 +81,13 @@ public class ActivateKeySigningKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK).
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public void setName(String name) {
@@ -93,10 +96,12 @@ public class ActivateKeySigningKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
-     * @return An alphanumeric string used to identify a key signing key (KSK).
+     * @return A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *         underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public String getName() {
@@ -105,11 +110,13 @@ public class ActivateKeySigningKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK).
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

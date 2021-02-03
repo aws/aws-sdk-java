@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+ * A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

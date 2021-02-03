@@ -41,7 +41,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -412,7 +412,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -507,7 +507,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param resourceId
      *        The identifier of the resource associated with the scaling policy. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -608,7 +608,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -702,7 +702,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
-     *         type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *         type and unique identifier.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -805,7 +805,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -900,7 +900,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param resourceId
      *        The identifier of the resource associated with the scaling policy. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>

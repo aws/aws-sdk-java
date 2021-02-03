@@ -171,6 +171,7 @@ public class AmazonPersonalizeRuntimeClient extends AmazonWebServiceClient imple
                 request = new GetPersonalizedRankingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPersonalizedRankingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize Runtime");
@@ -248,6 +249,7 @@ public class AmazonPersonalizeRuntimeClient extends AmazonWebServiceClient imple
                 request = new GetRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecommendationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize Runtime");

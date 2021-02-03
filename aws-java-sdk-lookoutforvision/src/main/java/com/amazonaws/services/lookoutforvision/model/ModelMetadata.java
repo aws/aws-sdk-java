@@ -66,7 +66,7 @@ public class ModelMetadata implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * Performance metrics for the model. Created during training.
+     * Performance metrics for the model. Not available until training has successfully completed.
      * </p>
      */
     private ModelPerformance performance;
@@ -332,11 +332,11 @@ public class ModelMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Performance metrics for the model. Created during training.
+     * Performance metrics for the model. Not available until training has successfully completed.
      * </p>
      * 
      * @param performance
-     *        Performance metrics for the model. Created during training.
+     *        Performance metrics for the model. Not available until training has successfully completed.
      */
 
     public void setPerformance(ModelPerformance performance) {
@@ -345,10 +345,10 @@ public class ModelMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Performance metrics for the model. Created during training.
+     * Performance metrics for the model. Not available until training has successfully completed.
      * </p>
      * 
-     * @return Performance metrics for the model. Created during training.
+     * @return Performance metrics for the model. Not available until training has successfully completed.
      */
 
     public ModelPerformance getPerformance() {
@@ -357,11 +357,11 @@ public class ModelMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Performance metrics for the model. Created during training.
+     * Performance metrics for the model. Not available until training has successfully completed.
      * </p>
      * 
      * @param performance
-     *        Performance metrics for the model. Created during training.
+     *        Performance metrics for the model. Not available until training has successfully completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

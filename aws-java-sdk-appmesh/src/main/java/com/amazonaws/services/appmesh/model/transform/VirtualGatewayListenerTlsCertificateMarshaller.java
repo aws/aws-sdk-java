@@ -31,6 +31,8 @@ public class VirtualGatewayListenerTlsCertificateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acm").build();
     private static final MarshallingInfo<StructuredPojo> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("file").build();
+    private static final MarshallingInfo<StructuredPojo> SDS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sds").build();
 
     private static final VirtualGatewayListenerTlsCertificateMarshaller instance = new VirtualGatewayListenerTlsCertificateMarshaller();
 
@@ -50,6 +52,7 @@ public class VirtualGatewayListenerTlsCertificateMarshaller {
         try {
             protocolMarshaller.marshall(virtualGatewayListenerTlsCertificate.getAcm(), ACM_BINDING);
             protocolMarshaller.marshall(virtualGatewayListenerTlsCertificate.getFile(), FILE_BINDING);
+            protocolMarshaller.marshall(virtualGatewayListenerTlsCertificate.getSds(), SDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

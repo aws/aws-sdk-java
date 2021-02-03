@@ -30,6 +30,12 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String iotCertificateId;
+    /**
+     * <p>
+     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * </p>
+     */
+    private String loRaWANNetworkServerCertificateId;
 
     /**
      * <p>
@@ -72,6 +78,47 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * </p>
+     * 
+     * @param loRaWANNetworkServerCertificateId
+     *        The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     */
+
+    public void setLoRaWANNetworkServerCertificateId(String loRaWANNetworkServerCertificateId) {
+        this.loRaWANNetworkServerCertificateId = loRaWANNetworkServerCertificateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * </p>
+     * 
+     * @return The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer
+     *         endpoint.
+     */
+
+    public String getLoRaWANNetworkServerCertificateId() {
+        return this.loRaWANNetworkServerCertificateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * </p>
+     * 
+     * @param loRaWANNetworkServerCertificateId
+     *        The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWirelessGatewayCertificateResult withLoRaWANNetworkServerCertificateId(String loRaWANNetworkServerCertificateId) {
+        setLoRaWANNetworkServerCertificateId(loRaWANNetworkServerCertificateId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -84,7 +131,9 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIotCertificateId() != null)
-            sb.append("IotCertificateId: ").append(getIotCertificateId());
+            sb.append("IotCertificateId: ").append(getIotCertificateId()).append(",");
+        if (getLoRaWANNetworkServerCertificateId() != null)
+            sb.append("LoRaWANNetworkServerCertificateId: ").append(getLoRaWANNetworkServerCertificateId());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +152,11 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getIotCertificateId() != null && other.getIotCertificateId().equals(this.getIotCertificateId()) == false)
             return false;
+        if (other.getLoRaWANNetworkServerCertificateId() == null ^ this.getLoRaWANNetworkServerCertificateId() == null)
+            return false;
+        if (other.getLoRaWANNetworkServerCertificateId() != null
+                && other.getLoRaWANNetworkServerCertificateId().equals(this.getLoRaWANNetworkServerCertificateId()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +166,7 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIotCertificateId() == null) ? 0 : getIotCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getLoRaWANNetworkServerCertificateId() == null) ? 0 : getLoRaWANNetworkServerCertificateId().hashCode());
         return hashCode;
     }
 

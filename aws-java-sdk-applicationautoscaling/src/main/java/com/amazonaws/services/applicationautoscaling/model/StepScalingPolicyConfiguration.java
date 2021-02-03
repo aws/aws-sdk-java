@@ -152,7 +152,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon MSK cluster storage
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -541,7 +541,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon MSK cluster storage
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -637,7 +637,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon MSK cluster storage
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      */
@@ -738,7 +738,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon MSK cluster storage
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -833,7 +833,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon MSK cluster storage
+     *         Amazon MSK broker storage
      *         </p>
      *         </li>
      */
@@ -934,7 +934,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon MSK cluster storage
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -1030,7 +1030,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon MSK cluster storage
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

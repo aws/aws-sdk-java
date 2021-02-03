@@ -33,7 +33,7 @@ public class DeleteKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
     private String hostedZoneId;
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK).
      * </p>
      */
     private String name;
@@ -80,11 +80,11 @@ public class DeleteKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK).
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK).
+     *        A string used to identify a key-signing key (KSK).
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class DeleteKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK).
      * </p>
      * 
-     * @return An alphanumeric string used to identify a key signing key (KSK).
+     * @return A string used to identify a key-signing key (KSK).
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class DeleteKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK).
+     * A string used to identify a key-signing key (KSK).
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK).
+     *        A string used to identify a key-signing key (KSK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

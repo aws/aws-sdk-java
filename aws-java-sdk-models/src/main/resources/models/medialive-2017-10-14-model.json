@@ -6941,6 +6941,12 @@
         "Destination"
       ]
     },
+    "FrameCaptureHlsSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Frame Capture Hls Settings"
+    },
     "FrameCaptureIntervalUnit": {
       "type": "string",
       "documentation": "Frame Capture Interval Unit",
@@ -6974,10 +6980,7 @@
           "documentation": "Unit for the frame capture interval."
         }
       },
-      "documentation": "Frame Capture Settings",
-      "required": [
-        "CaptureInterval"
-      ]
+      "documentation": "Frame Capture Settings"
     },
     "GatewayTimeoutException": {
       "type": "structure",
@@ -8407,6 +8410,10 @@
         "Fmp4HlsSettings": {
           "shape": "Fmp4HlsSettings",
           "locationName": "fmp4HlsSettings"
+        },
+        "FrameCaptureHlsSettings": {
+          "shape": "FrameCaptureHlsSettings",
+          "locationName": "frameCaptureHlsSettings"
         },
         "StandardHlsSettings": {
           "shape": "StandardHlsSettings",

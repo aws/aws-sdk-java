@@ -35,6 +35,8 @@ public class ScheduledActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceNamespace").build();
     private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schedule").build();
+    private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timezone").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<String> SCALABLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class ScheduledActionMarshaller {
             protocolMarshaller.marshall(scheduledAction.getScheduledActionARN(), SCHEDULEDACTIONARN_BINDING);
             protocolMarshaller.marshall(scheduledAction.getServiceNamespace(), SERVICENAMESPACE_BINDING);
             protocolMarshaller.marshall(scheduledAction.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(scheduledAction.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(scheduledAction.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(scheduledAction.getScalableDimension(), SCALABLEDIMENSION_BINDING);
             protocolMarshaller.marshall(scheduledAction.getStartTime(), STARTTIME_BINDING);

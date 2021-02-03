@@ -31,6 +31,11 @@ public class StorageLensDataExport implements Serializable, Cloneable {
      * <p>
      * A container for the bucket where the S3 Storage Lens metrics export will be located.
      * </p>
+     * <note>
+     * <p>
+     * This bucket must be located in the same Region as the storage lens configuration.
+     * </p>
+     * </note>
      */
     private S3BucketDestination s3BucketDestination;
 
@@ -38,9 +43,17 @@ public class StorageLensDataExport implements Serializable, Cloneable {
      * <p>
      * A container for the bucket where the S3 Storage Lens metrics export will be located.
      * </p>
+     * <note>
+     * <p>
+     * This bucket must be located in the same Region as the storage lens configuration.
+     * </p>
+     * </note>
      * 
      * @param s3BucketDestination
-     *        A container for the bucket where the S3 Storage Lens metrics export will be located.
+     *        A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+     *        <p>
+     *        This bucket must be located in the same Region as the storage lens configuration.
+     *        </p>
      */
 
     public void setS3BucketDestination(S3BucketDestination s3BucketDestination) {
@@ -51,8 +64,16 @@ public class StorageLensDataExport implements Serializable, Cloneable {
      * <p>
      * A container for the bucket where the S3 Storage Lens metrics export will be located.
      * </p>
+     * <note>
+     * <p>
+     * This bucket must be located in the same Region as the storage lens configuration.
+     * </p>
+     * </note>
      * 
-     * @return A container for the bucket where the S3 Storage Lens metrics export will be located.
+     * @return A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+     *         <p>
+     *         This bucket must be located in the same Region as the storage lens configuration.
+     *         </p>
      */
 
     public S3BucketDestination getS3BucketDestination() {
@@ -63,9 +84,17 @@ public class StorageLensDataExport implements Serializable, Cloneable {
      * <p>
      * A container for the bucket where the S3 Storage Lens metrics export will be located.
      * </p>
+     * <note>
+     * <p>
+     * This bucket must be located in the same Region as the storage lens configuration.
+     * </p>
+     * </note>
      * 
      * @param s3BucketDestination
-     *        A container for the bucket where the S3 Storage Lens metrics export will be located.
+     *        A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+     *        <p>
+     *        This bucket must be located in the same Region as the storage lens configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

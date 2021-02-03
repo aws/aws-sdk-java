@@ -55,6 +55,12 @@ public class JobOperation implements Serializable, Cloneable {
     private S3SetObjectTaggingOperation s3PutObjectTagging;
     /**
      * <p>
+     * Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     * </p>
+     */
+    private S3DeleteObjectTaggingOperation s3DeleteObjectTagging;
+    /**
+     * <p>
      * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      */
@@ -226,6 +232,46 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     * </p>
+     * 
+     * @param s3DeleteObjectTagging
+     *        Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     */
+
+    public void setS3DeleteObjectTagging(S3DeleteObjectTaggingOperation s3DeleteObjectTagging) {
+        this.s3DeleteObjectTagging = s3DeleteObjectTagging;
+    }
+
+    /**
+     * <p>
+     * Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     * </p>
+     * 
+     * @return Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     */
+
+    public S3DeleteObjectTaggingOperation getS3DeleteObjectTagging() {
+        return this.s3DeleteObjectTagging;
+    }
+
+    /**
+     * <p>
+     * Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     * </p>
+     * 
+     * @param s3DeleteObjectTagging
+     *        Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobOperation withS3DeleteObjectTagging(S3DeleteObjectTaggingOperation s3DeleteObjectTagging) {
+        setS3DeleteObjectTagging(s3DeleteObjectTagging);
+        return this;
+    }
+
+    /**
+     * <p>
      * Directs the specified job to initiate restore requests for every archived object in the manifest.
      * </p>
      * 
@@ -336,6 +382,8 @@ public class JobOperation implements Serializable, Cloneable {
             sb.append("S3PutObjectAcl: ").append(getS3PutObjectAcl()).append(",");
         if (getS3PutObjectTagging() != null)
             sb.append("S3PutObjectTagging: ").append(getS3PutObjectTagging()).append(",");
+        if (getS3DeleteObjectTagging() != null)
+            sb.append("S3DeleteObjectTagging: ").append(getS3DeleteObjectTagging()).append(",");
         if (getS3InitiateRestoreObject() != null)
             sb.append("S3InitiateRestoreObject: ").append(getS3InitiateRestoreObject()).append(",");
         if (getS3PutObjectLegalHold() != null)
@@ -372,6 +420,10 @@ public class JobOperation implements Serializable, Cloneable {
             return false;
         if (other.getS3PutObjectTagging() != null && other.getS3PutObjectTagging().equals(this.getS3PutObjectTagging()) == false)
             return false;
+        if (other.getS3DeleteObjectTagging() == null ^ this.getS3DeleteObjectTagging() == null)
+            return false;
+        if (other.getS3DeleteObjectTagging() != null && other.getS3DeleteObjectTagging().equals(this.getS3DeleteObjectTagging()) == false)
+            return false;
         if (other.getS3InitiateRestoreObject() == null ^ this.getS3InitiateRestoreObject() == null)
             return false;
         if (other.getS3InitiateRestoreObject() != null && other.getS3InitiateRestoreObject().equals(this.getS3InitiateRestoreObject()) == false)
@@ -396,6 +448,7 @@ public class JobOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getS3PutObjectCopy() == null) ? 0 : getS3PutObjectCopy().hashCode());
         hashCode = prime * hashCode + ((getS3PutObjectAcl() == null) ? 0 : getS3PutObjectAcl().hashCode());
         hashCode = prime * hashCode + ((getS3PutObjectTagging() == null) ? 0 : getS3PutObjectTagging().hashCode());
+        hashCode = prime * hashCode + ((getS3DeleteObjectTagging() == null) ? 0 : getS3DeleteObjectTagging().hashCode());
         hashCode = prime * hashCode + ((getS3InitiateRestoreObject() == null) ? 0 : getS3InitiateRestoreObject().hashCode());
         hashCode = prime * hashCode + ((getS3PutObjectLegalHold() == null) ? 0 : getS3PutObjectLegalHold().hashCode());
         hashCode = prime * hashCode + ((getS3PutObjectRetention() == null) ? 0 : getS3PutObjectRetention().hashCode());

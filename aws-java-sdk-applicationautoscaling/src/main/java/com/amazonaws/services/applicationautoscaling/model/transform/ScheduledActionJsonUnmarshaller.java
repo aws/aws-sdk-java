@@ -64,6 +64,10 @@ public class ScheduledActionJsonUnmarshaller implements Unmarshaller<ScheduledAc
                     context.nextToken();
                     scheduledAction.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Timezone", targetDepth)) {
+                    context.nextToken();
+                    scheduledAction.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
                     scheduledAction.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

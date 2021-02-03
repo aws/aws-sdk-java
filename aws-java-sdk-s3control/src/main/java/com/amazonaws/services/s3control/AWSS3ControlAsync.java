@@ -384,13 +384,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * S3 Batch Operations performs large-scale Batch Operations on Amazon S3 objects. Batch Operations can run a single
-     * operation or action on lists of Amazon S3 objects that you specify. For more information, see <a
+     * You can use S3 Batch Operations to perform large-scale batch operations on Amazon S3 objects. Batch Operations
+     * can run a single operation on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation creates an S3 Batch Operations job.
+     * This operation creates a S3 Batch Operations job.
      * </p>
      * <p/>
      * <p>
@@ -416,6 +416,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a>
      * </p>
      * </li>
      * </ul>
@@ -430,13 +435,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * S3 Batch Operations performs large-scale Batch Operations on Amazon S3 objects. Batch Operations can run a single
-     * operation or action on lists of Amazon S3 objects that you specify. For more information, see <a
+     * You can use S3 Batch Operations to perform large-scale batch operations on Amazon S3 objects. Batch Operations
+     * can run a single operation on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation creates an S3 Batch Operations job.
+     * This operation creates a S3 Batch Operations job.
      * </p>
      * <p/>
      * <p>
@@ -462,6 +467,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a>
      * </p>
      * </li>
      * </ul>
@@ -1288,8 +1298,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1313,8 +1323,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1343,8 +1353,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1368,8 +1378,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2424,8 +2434,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2448,8 +2458,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2477,8 +2487,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2502,8 +2512,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2771,8 +2781,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2796,8 +2806,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -3765,8 +3775,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
-     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3
-     * Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
+     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -3790,8 +3800,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
-     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3
-     * Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
+     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>

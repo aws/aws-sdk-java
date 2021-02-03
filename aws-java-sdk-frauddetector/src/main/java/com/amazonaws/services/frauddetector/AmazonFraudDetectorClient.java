@@ -186,6 +186,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new BatchCreateVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchCreateVariableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -250,6 +251,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new BatchGetVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetVariableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -316,6 +318,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new CreateDetectorVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDetectorVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -379,6 +382,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new CreateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -443,6 +447,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new CreateModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -507,6 +512,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new CreateRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -571,6 +577,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new CreateVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVariableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -663,6 +670,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -756,6 +764,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteDetectorVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDetectorVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -849,6 +858,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteEntityTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEntityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -917,6 +927,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1009,6 +1020,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteEventTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1100,6 +1112,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteExternalModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteExternalModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1191,6 +1204,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteLabelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLabelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1284,6 +1298,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1377,6 +1392,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1471,6 +1487,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteOutcomeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutcomeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1563,6 +1580,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1661,6 +1679,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DeleteVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVariableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1727,6 +1746,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DescribeDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1792,6 +1812,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new DescribeModelVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1859,6 +1880,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetDetectorVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDetectorVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1929,6 +1951,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetDetectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDetectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -1997,6 +2020,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetEntityTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEntityTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2087,6 +2111,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetEventPredictionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2155,6 +2180,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetEventTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2225,6 +2251,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetExternalModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExternalModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2288,6 +2315,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetKMSEncryptionKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKMSEncryptionKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2356,6 +2384,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLabelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2420,6 +2449,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2492,6 +2522,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2561,6 +2592,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetOutcomesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOutcomesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2634,6 +2666,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2704,6 +2737,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new GetVariablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVariablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2768,6 +2802,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2832,6 +2867,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2896,6 +2932,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutEntityTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEntityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -2962,6 +2999,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutEventTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3027,6 +3065,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutExternalModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putExternalModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3092,6 +3131,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutKMSEncryptionKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKMSEncryptionKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3155,6 +3195,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutLabelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLabelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3219,6 +3260,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new PutOutcomeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putOutcomeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3281,6 +3323,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3343,6 +3386,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3411,6 +3455,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateDetectorVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDetectorVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3478,6 +3523,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateDetectorVersionMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3548,6 +3594,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateDetectorVersionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3613,6 +3660,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3680,6 +3728,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3760,6 +3809,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateModelVersionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3827,6 +3877,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateRuleMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3894,6 +3945,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateRuleVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
@@ -3960,6 +4012,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                 request = new UpdateVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVariableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");

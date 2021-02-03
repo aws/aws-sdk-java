@@ -36,12 +36,7 @@ import com.amazonaws.services.rdsdata.model.*;
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
- * <note>
- * <p>
- * If you have questions or comments related to the Data API, send email to <a
- * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
  * </p>
- * </note></p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSRDSDataAsync extends AWSRDSData {

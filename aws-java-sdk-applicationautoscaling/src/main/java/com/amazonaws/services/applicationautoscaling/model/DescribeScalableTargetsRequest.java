@@ -35,7 +35,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scalable target. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -336,7 +336,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scalable target. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -430,7 +430,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
-     *         type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *         type and unique identifier.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -533,7 +533,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scalable target. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -628,7 +628,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param resourceIds
      *        The identifier of the resource associated with the scalable target. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -734,7 +734,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scalable target. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -834,7 +834,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param resourceIds
      *        The identifier of the resource associated with the scalable target. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -942,7 +942,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the resource associated with the scalable target. This string consists of the resource type and
-     * unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -1037,7 +1037,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param resourceIds
      *        The identifier of the resource associated with the scalable target. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>

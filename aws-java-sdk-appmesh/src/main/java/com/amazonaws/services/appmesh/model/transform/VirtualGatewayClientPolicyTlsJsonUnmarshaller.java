@@ -48,6 +48,10 @@ public class VirtualGatewayClientPolicyTlsJsonUnmarshaller implements Unmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("certificate", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayClientPolicyTls.setCertificate(VirtualGatewayClientTlsCertificateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("enforce", targetDepth)) {
                     context.nextToken();
                     virtualGatewayClientPolicyTls.setEnforce(context.getUnmarshaller(Boolean.class).unmarshall(context));

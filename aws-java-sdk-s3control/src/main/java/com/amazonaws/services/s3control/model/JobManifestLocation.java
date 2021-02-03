@@ -30,6 +30,14 @@ public class JobManifestLocation implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for a manifest object.
      * </p>
+     * <important>
+     * <p>
+     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
+     * related object key constraints</a>.
+     * </p>
+     * </important>
      */
     private String objectArn;
     /**
@@ -49,9 +57,23 @@ public class JobManifestLocation implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for a manifest object.
      * </p>
+     * <important>
+     * <p>
+     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
+     * related object key constraints</a>.
+     * </p>
+     * </important>
      * 
      * @param objectArn
-     *        The Amazon Resource Name (ARN) for a manifest object.
+     *        The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+     *        <p>
+     *        Replacement must be made for object keys containing special characters (such as carriage returns) when
+     *        using XML requests. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
+     *        > XML related object key constraints</a>.
+     *        </p>
      */
 
     public void setObjectArn(String objectArn) {
@@ -62,8 +84,22 @@ public class JobManifestLocation implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for a manifest object.
      * </p>
+     * <important>
+     * <p>
+     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
+     * related object key constraints</a>.
+     * </p>
+     * </important>
      * 
-     * @return The Amazon Resource Name (ARN) for a manifest object.
+     * @return The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+     *         <p>
+     *         Replacement must be made for object keys containing special characters (such as carriage returns) when
+     *         using XML requests. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
+     *         > XML related object key constraints</a>.
+     *         </p>
      */
 
     public String getObjectArn() {
@@ -74,9 +110,23 @@ public class JobManifestLocation implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for a manifest object.
      * </p>
+     * <important>
+     * <p>
+     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
+     * related object key constraints</a>.
+     * </p>
+     * </important>
      * 
      * @param objectArn
-     *        The Amazon Resource Name (ARN) for a manifest object.
+     *        The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+     *        <p>
+     *        Replacement must be made for object keys containing special characters (such as carriage returns) when
+     *        using XML requests. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
+     *        > XML related object key constraints</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

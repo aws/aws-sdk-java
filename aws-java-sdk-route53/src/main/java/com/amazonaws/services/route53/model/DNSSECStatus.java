@@ -28,15 +28,47 @@ public class DNSSECStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     * <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for
-     * information about steps that you can take to correct the problem.
+     * A string that represents the current hosted zone signing status.
      * </p>
      * <p>
-     * A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue to work
-     * with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem by enabling or
-     * disabling DNSSEC signing for the hosted zone.
+     * Status can have one of the following values:
      * </p>
+     * <dl>
+     * <dt>SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>NOT_SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is not enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is in the process of being removed for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>ACTION_NEEDED</dt>
+     * <dd>
+     * <p>
+     * There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the
+     * customer managed customer master key (CMK) might have been deleted, or the permissions for the customer managed
+     * CMK might have been changed.
+     * </p>
+     * </dd>
+     * <dt>INTERNAL_FAILURE</dt>
+     * <dd>
+     * <p>
+     * There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     * key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted
+     * zone.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String serveSignature;
     /**
@@ -49,24 +81,88 @@ public class DNSSECStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     * <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for
-     * information about steps that you can take to correct the problem.
+     * A string that represents the current hosted zone signing status.
      * </p>
      * <p>
-     * A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue to work
-     * with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem by enabling or
-     * disabling DNSSEC signing for the hosted zone.
+     * Status can have one of the following values:
      * </p>
+     * <dl>
+     * <dt>SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>NOT_SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is not enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is in the process of being removed for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>ACTION_NEEDED</dt>
+     * <dd>
+     * <p>
+     * There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the
+     * customer managed customer master key (CMK) might have been deleted, or the permissions for the customer managed
+     * CMK might have been changed.
+     * </p>
+     * </dd>
+     * <dt>INTERNAL_FAILURE</dt>
+     * <dd>
+     * <p>
+     * There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     * key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted
+     * zone.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param serveSignature
-     *        Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     *        <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see
-     *        <code>StatusMessage</code> for information about steps that you can take to correct the problem.</p>
+     *        A string that represents the current hosted zone signing status.</p>
      *        <p>
-     *        A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue
-     *        to work with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem
-     *        by enabling or disabling DNSSEC signing for the hosted zone.
+     *        Status can have one of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>SIGNING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is enabled for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>NOT_SIGNING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is not enabled for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is in the process of being removed for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>ACTION_NEEDED</dt>
+     *        <dd>
+     *        <p>
+     *        There is a problem with signing in the hosted zone that requires you to take action to resolve. For
+     *        example, the customer managed customer master key (CMK) might have been deleted, or the permissions for
+     *        the customer managed CMK might have been changed.
+     *        </p>
+     *        </dd>
+     *        <dt>INTERNAL_FAILURE</dt>
+     *        <dd>
+     *        <p>
+     *        There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     *        key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the
+     *        hosted zone.
+     *        </p>
+     *        </dd>
      */
 
     public void setServeSignature(String serveSignature) {
@@ -75,23 +171,87 @@ public class DNSSECStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     * <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for
-     * information about steps that you can take to correct the problem.
+     * A string that represents the current hosted zone signing status.
      * </p>
      * <p>
-     * A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue to work
-     * with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem by enabling or
-     * disabling DNSSEC signing for the hosted zone.
+     * Status can have one of the following values:
      * </p>
+     * <dl>
+     * <dt>SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>NOT_SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is not enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is in the process of being removed for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>ACTION_NEEDED</dt>
+     * <dd>
+     * <p>
+     * There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the
+     * customer managed customer master key (CMK) might have been deleted, or the permissions for the customer managed
+     * CMK might have been changed.
+     * </p>
+     * </dd>
+     * <dt>INTERNAL_FAILURE</dt>
+     * <dd>
+     * <p>
+     * There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     * key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted
+     * zone.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     *         <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see
-     *         <code>StatusMessage</code> for information about steps that you can take to correct the problem.</p>
+     * @return A string that represents the current hosted zone signing status.</p>
      *         <p>
-     *         A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue
-     *         to work with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem
-     *         by enabling or disabling DNSSEC signing for the hosted zone.
+     *         Status can have one of the following values:
+     *         </p>
+     *         <dl>
+     *         <dt>SIGNING</dt>
+     *         <dd>
+     *         <p>
+     *         DNSSEC signing is enabled for the hosted zone.
+     *         </p>
+     *         </dd>
+     *         <dt>NOT_SIGNING</dt>
+     *         <dd>
+     *         <p>
+     *         DNSSEC signing is not enabled for the hosted zone.
+     *         </p>
+     *         </dd>
+     *         <dt>DELETING</dt>
+     *         <dd>
+     *         <p>
+     *         DNSSEC signing is in the process of being removed for the hosted zone.
+     *         </p>
+     *         </dd>
+     *         <dt>ACTION_NEEDED</dt>
+     *         <dd>
+     *         <p>
+     *         There is a problem with signing in the hosted zone that requires you to take action to resolve. For
+     *         example, the customer managed customer master key (CMK) might have been deleted, or the permissions for
+     *         the customer managed CMK might have been changed.
+     *         </p>
+     *         </dd>
+     *         <dt>INTERNAL_FAILURE</dt>
+     *         <dd>
+     *         <p>
+     *         There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     *         key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the
+     *         hosted zone.
+     *         </p>
+     *         </dd>
      */
 
     public String getServeSignature() {
@@ -100,24 +260,88 @@ public class DNSSECStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     * <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for
-     * information about steps that you can take to correct the problem.
+     * A string that represents the current hosted zone signing status.
      * </p>
      * <p>
-     * A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue to work
-     * with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem by enabling or
-     * disabling DNSSEC signing for the hosted zone.
+     * Status can have one of the following values:
      * </p>
+     * <dl>
+     * <dt>SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>NOT_SIGNING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is not enabled for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * DNSSEC signing is in the process of being removed for the hosted zone.
+     * </p>
+     * </dd>
+     * <dt>ACTION_NEEDED</dt>
+     * <dd>
+     * <p>
+     * There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the
+     * customer managed customer master key (CMK) might have been deleted, or the permissions for the customer managed
+     * CMK might have been changed.
+     * </p>
+     * </dd>
+     * <dt>INTERNAL_FAILURE</dt>
+     * <dd>
+     * <p>
+     * There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     * key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted
+     * zone.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param serveSignature
-     *        Indicates your hosted zone signging status: <code>SIGNING</code>, <code>NOT_SIGNING</code>, or
-     *        <code>INTERNAL_FAILURE</code>. If the status is <code>INTERNAL_FAILURE</code>, see
-     *        <code>StatusMessage</code> for information about steps that you can take to correct the problem.</p>
+     *        A string that represents the current hosted zone signing status.</p>
      *        <p>
-     *        A status <code>INTERNAL_FAILURE</code> means there was an error during a request. Before you can continue
-     *        to work with DNSSEC signing, including working with key signing keys (KSKs), you must correct the problem
-     *        by enabling or disabling DNSSEC signing for the hosted zone.
+     *        Status can have one of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>SIGNING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is enabled for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>NOT_SIGNING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is not enabled for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        DNSSEC signing is in the process of being removed for the hosted zone.
+     *        </p>
+     *        </dd>
+     *        <dt>ACTION_NEEDED</dt>
+     *        <dd>
+     *        <p>
+     *        There is a problem with signing in the hosted zone that requires you to take action to resolve. For
+     *        example, the customer managed customer master key (CMK) might have been deleted, or the permissions for
+     *        the customer managed CMK might have been changed.
+     *        </p>
+     *        </dd>
+     *        <dt>INTERNAL_FAILURE</dt>
+     *        <dd>
+     *        <p>
+     *        There was an error during a request. Before you can continue to work with DNSSEC signing, including with
+     *        key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the
+     *        hosted zone.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

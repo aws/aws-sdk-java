@@ -201,6 +201,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new CancelChangeSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");
@@ -265,6 +266,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new DescribeChangeSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");
@@ -331,6 +333,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new DescribeEntityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEntityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");
@@ -398,6 +401,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new ListChangeSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChangeSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");
@@ -462,6 +466,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new ListEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");
@@ -540,6 +545,7 @@ public class AWSMarketplaceCatalogClient extends AmazonWebServiceClient implemen
                 request = new StartChangeSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Catalog");

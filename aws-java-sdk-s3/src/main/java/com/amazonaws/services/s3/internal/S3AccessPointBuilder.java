@@ -25,7 +25,7 @@ import java.net.URI;
  */
 @SdkInternalApi
 public class S3AccessPointBuilder {
-
+    private URI endpointOverride;
     private Boolean dualstackEnabled;
     private Boolean fipsEnabled;
     private String accessPointName;
@@ -42,6 +42,15 @@ public class S3AccessPointBuilder {
      */
     public static S3AccessPointBuilder create() {
         return new S3AccessPointBuilder();
+    }
+
+    public void setEndpointOverride(URI endpointOverride) {
+        this.endpointOverride = endpointOverride;
+    }
+
+    public S3AccessPointBuilder withEndpointOverride(URI endpointOverride) {
+        setEndpointOverride(endpointOverride);
+        return this;
     }
 
     /**
@@ -135,11 +144,33 @@ public class S3AccessPointBuilder {
         validateHostnameCompliant(accountId, "accountId", "access point ARN");
         validateHostnameCompliant(accessPointName, "accessPointName", "access point ARN");
 
-        String dualStackSegment = Boolean.TRUE.equals(dualstackEnabled) ? ".dualstack" : "";
+        String uriString;
+        if (endpointOverride == null) {
+            String fipsSegment = Boolean.TRUE.equals(fipsEnabled) ? "fips-" : "";
+            String dualStackSegment = Boolean.TRUE.equals(dualstackEnabled) ? ".dualstack" : "";
 
-        String fipsSegment = Boolean.TRUE.equals(fipsEnabled) ? "fips-" : "";
-        String uriString = String.format("%s://%s-%s.s3-accesspoint%s.%s%s.%s", protocol, accessPointName, accountId,
-                                         dualStackSegment, fipsSegment, region, domain);
+            uriString = String.format("%s://%s-%s.s3-accesspoint%s.%s%s.%s", protocol, accessPointName,
+                                      accountId, dualStackSegment, fipsSegment, region, domain);
+        } else {
+            if (Boolean.TRUE.equals(fipsEnabled)) {
+                throw new IllegalArgumentException("FIPS regions are not supported with an endpoint override specified");
+            }
+
+            if (Boolean.TRUE.equals(dualstackEnabled)) {
+                throw new IllegalArgumentException("Dual stack is not supported with an endpoint override specified");
+            }
+
+            StringBuilder uriSuffix = new StringBuilder(endpointOverride.getHost());
+            if (endpointOverride.getPort() > 0) {
+                uriSuffix.append(":").append(endpointOverride.getPort());
+            }
+            if (endpointOverride.getPath() != null) {
+                uriSuffix.append(endpointOverride.getPath());
+            }
+
+            uriString = String.format("%s://%s-%s.%s", protocol, accessPointName, accountId, uriSuffix);
+        }
+
         return URI.create(uriString);
     }
 }

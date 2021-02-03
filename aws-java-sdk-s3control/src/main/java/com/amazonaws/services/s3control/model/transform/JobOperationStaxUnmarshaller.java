@@ -63,6 +63,11 @@ public class JobOperationStaxUnmarshaller implements Unmarshaller<JobOperation, 
                     continue;
                 }
 
+                if (context.testExpression("S3DeleteObjectTagging", targetDepth)) {
+                    jobOperation.setS3DeleteObjectTagging(S3DeleteObjectTaggingOperationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("S3InitiateRestoreObject", targetDepth)) {
                     jobOperation.setS3InitiateRestoreObject(S3InitiateRestoreObjectOperationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

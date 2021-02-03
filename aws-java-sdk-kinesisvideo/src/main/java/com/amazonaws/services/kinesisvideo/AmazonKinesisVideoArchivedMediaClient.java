@@ -265,6 +265,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request = new GetClipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
@@ -546,6 +547,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                         .beforeMarshalling(getDASHStreamingSessionURLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
@@ -857,6 +859,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                         .beforeMarshalling(getHLSStreamingSessionURLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
@@ -984,6 +987,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                         .beforeMarshalling(getMediaForFragmentListRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
@@ -1100,6 +1104,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request = new ListFragmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFragmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");

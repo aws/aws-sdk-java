@@ -16,6 +16,7 @@ package com.amazonaws.handlers;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.client.builder.AdvancedConfig;
+import java.net.URI;
 
 /**
  * A type safe key used for setting and retrieving context in a {@link
@@ -95,6 +96,11 @@ public class HandlerContextKey<T> {
      * A boolean value indicating if an endpoint is overridden or not
      */
     public static final HandlerContextKey<Boolean> ENDPOINT_OVERRIDDEN = new HandlerContextKey<Boolean>("EndpointOverridden");
+
+    /**
+     * The endpoint configured on the client.
+     */
+    public static final HandlerContextKey<URI> CLIENT_ENDPOINT = new HandlerContextKey<URI>("ClientEndpoint");
 
     private final String name;
 

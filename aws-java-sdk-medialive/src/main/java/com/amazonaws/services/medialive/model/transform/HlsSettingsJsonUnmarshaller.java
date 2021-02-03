@@ -56,6 +56,10 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
                     context.nextToken();
                     hlsSettings.setFmp4HlsSettings(Fmp4HlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("frameCaptureHlsSettings", targetDepth)) {
+                    context.nextToken();
+                    hlsSettings.setFrameCaptureHlsSettings(FrameCaptureHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("standardHlsSettings", targetDepth)) {
                     context.nextToken();
                     hlsSettings.setStandardHlsSettings(StandardHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));

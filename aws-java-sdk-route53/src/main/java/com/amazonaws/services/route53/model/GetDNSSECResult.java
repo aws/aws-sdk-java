@@ -31,7 +31,7 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private DNSSECStatus status;
     /**
      * <p>
-     * The key signing keys (KSKs) in your account.
+     * The key-signing keys (KSKs) in your account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<KeySigningKey> keySigningKeys;
@@ -78,10 +78,10 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The key signing keys (KSKs) in your account.
+     * The key-signing keys (KSKs) in your account.
      * </p>
      * 
-     * @return The key signing keys (KSKs) in your account.
+     * @return The key-signing keys (KSKs) in your account.
      */
 
     public java.util.List<KeySigningKey> getKeySigningKeys() {
@@ -93,11 +93,11 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The key signing keys (KSKs) in your account.
+     * The key-signing keys (KSKs) in your account.
      * </p>
      * 
      * @param keySigningKeys
-     *        The key signing keys (KSKs) in your account.
+     *        The key-signing keys (KSKs) in your account.
      */
 
     public void setKeySigningKeys(java.util.Collection<KeySigningKey> keySigningKeys) {
@@ -111,7 +111,7 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The key signing keys (KSKs) in your account.
+     * The key-signing keys (KSKs) in your account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +120,7 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param keySigningKeys
-     *        The key signing keys (KSKs) in your account.
+     *        The key-signing keys (KSKs) in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class GetDNSSECResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The key signing keys (KSKs) in your account.
+     * The key-signing keys (KSKs) in your account.
      * </p>
      * 
      * @param keySigningKeys
-     *        The key signing keys (KSKs) in your account.
+     *        The key-signing keys (KSKs) in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

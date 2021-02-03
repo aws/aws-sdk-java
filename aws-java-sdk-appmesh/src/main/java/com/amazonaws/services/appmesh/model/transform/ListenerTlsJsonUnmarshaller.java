@@ -56,6 +56,10 @@ public class ListenerTlsJsonUnmarshaller implements Unmarshaller<ListenerTls, Js
                     context.nextToken();
                     listenerTls.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("validation", targetDepth)) {
+                    context.nextToken();
+                    listenerTls.setValidation(ListenerTlsValidationContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

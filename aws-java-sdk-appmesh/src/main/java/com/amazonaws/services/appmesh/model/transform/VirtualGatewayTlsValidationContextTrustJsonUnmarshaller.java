@@ -58,6 +58,11 @@ public class VirtualGatewayTlsValidationContextTrustJsonUnmarshaller implements 
                     virtualGatewayTlsValidationContextTrust.setFile(VirtualGatewayTlsValidationContextFileTrustJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("sds", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayTlsValidationContextTrust
+                            .setSds(VirtualGatewayTlsValidationContextSdsTrustJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

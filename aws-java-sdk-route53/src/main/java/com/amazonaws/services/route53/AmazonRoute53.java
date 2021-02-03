@@ -95,7 +95,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
      * status to <code>ACTIVE</code>.
      * </p>
      * 
@@ -105,9 +105,9 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
@@ -591,7 +591,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Creates a new key signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
      * </p>
      * 
      * @param createKeySigningKeyRequest
@@ -605,17 +605,17 @@ public interface AmazonRoute53 {
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws InvalidKeySigningKeyNameException
-     *         The key signing key (KSK) name that you specified isn't a valid name.
+     *         The key-signing key (KSK) name that you specified isn't a valid name.
      * @throws KeySigningKeyAlreadyExistsException
-     *         You've already created a key signing key (KSK) with this name or with the same customer managed key (CMK)
-     *         ARN.
+     *         You've already created a key-signing key (KSK) with this name or with the same customer managed customer
+     *         master key (CMK) ARN.
      * @throws TooManyKeySigningKeysException
-     *         You've reached the limit for the number of key signing keys (KSKs). Remove at least one KSK, and then try
+     *         You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try
      *         again.
      * @throws ConcurrentModificationException
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
@@ -1112,7 +1112,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
      * KSK status to <code>INACTIVE</code>.
      * </p>
      * 
@@ -1122,17 +1122,17 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws KeySigningKeyInUseException
-     *         The key signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
+     *         The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
      *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
      * @throws KeySigningKeyInParentDSRecordException
-     *         The key signing key (KSK) is specified in a parent DS record.
+     *         The key-signing key (KSK) is specified in a parent DS record.
      * @sample AmazonRoute53.DeactivateKeySigningKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
      *      target="_top">AWS API Documentation</a>
@@ -1259,7 +1259,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
      * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
      * </p>
      * 
@@ -1269,9 +1269,9 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws NoSuchKeySigningKeyException
-     *         The specified key signing key (KSK) doesn't exist.
+     *         The specified key-signing key (KSK) doesn't exist.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidSigningStatusException
      *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
@@ -1458,7 +1458,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key signing keys (KSKs)
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
      * that are active in the hosted zone.
      * </p>
      * 
@@ -1472,11 +1472,11 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws KeySigningKeyInParentDSRecordException
-     *         The key signing key (KSK) is specified in a parent DS record.
+     *         The key-signing key (KSK) is specified in a parent DS record.
      * @throws DNSSECNotFoundException
      *         The hosted zone doesn't have any DNSSEC resources.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @sample AmazonRoute53.DisableHostedZoneDNSSEC
@@ -1561,7 +1561,7 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws KeySigningKeyWithActiveStatusNotFoundException
-     *         A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+     *         A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
      * @throws HostedZonePartiallyDelegatedException
@@ -1570,7 +1570,7 @@ public interface AmazonRoute53 {
      * @throws DNSSECNotFoundException
      *         The hosted zone doesn't have any DNSSEC resources.
      * @throws InvalidKeySigningKeyStatusException
-     *         The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @sample AmazonRoute53.EnableHostedZoneDNSSEC
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
      *      API Documentation</a>
@@ -1641,6 +1641,10 @@ public interface AmazonRoute53 {
     GetChangeResult getChange(GetChangeRequest getChangeRequest);
 
     /**
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
@@ -1668,8 +1672,8 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Returns information about DNSSEC for a specific hosted zone, including the key signing keys (KSKs) and zone
-     * signing keys (ZSKs) in the hosted zone.
+     * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted
+     * zone.
      * </p>
      * 
      * @param getDNSSECRequest
@@ -1688,6 +1692,10 @@ public interface AmazonRoute53 {
      * <p>
      * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
      * resource record sets.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * Use the following syntax to determine whether a continent is supported for geolocation:
@@ -2029,6 +2037,10 @@ public interface AmazonRoute53 {
      * Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a
      * country (for example, states or provinces), the subdivisions for that country are listed in alphabetical order
      * immediately after the corresponding country.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * For a list of supported geolocation codes, see the <a

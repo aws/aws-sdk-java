@@ -93,8 +93,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -106,10 +106,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
-     * value that corresponds with the region that you created your load balancer in. Note that there are separate
-     * columns for Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a>
+     * topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that
+     * you created your load balancer in. Note that there are separate columns for Application and Classic Load
+     * Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -571,8 +571,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
+     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -584,10 +584,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
-     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
-     *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and
+     *        quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with
+     *        the region that you created your load balancer in. Note that there are separate columns for Application
+     *        and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
      *        <li>
@@ -945,8 +945,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -958,10 +958,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
-     * value that corresponds with the region that you created your load balancer in. Note that there are separate
-     * columns for Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a>
+     * topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that
+     * you created your load balancer in. Note that there are separate columns for Application and Classic Load
+     * Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1087,8 +1087,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
+     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1100,10 +1100,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
-     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
-     *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and
+     *        quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with
+     *        the region that you created your load balancer in. Note that there are separate columns for Application
+     *        and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
      *        <li>
@@ -1235,8 +1235,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -1248,10 +1248,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
-     * value that corresponds with the region that you created your load balancer in. Note that there are separate
-     * columns for Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a>
+     * topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that
+     * you created your load balancer in. Note that there are separate columns for Application and Classic Load
+     * Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1377,8 +1377,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         Specify the hosted zone ID for the region that you created the environment in. The environment must have
      *         a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *         Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk
+     *         endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>ELB load balancer</dt>
@@ -1390,10 +1390,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     *         "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
-     *         Use the value that corresponds with the region that you created your load balancer in. Note that there
-     *         are separate columns for Application and Classic Load Balancers and for Network Load Balancers.
+     *         <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and
+     *         quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with
+     *         the region that you created your load balancer in. Note that there are separate columns for Application
+     *         and Classic Load Balancers and for Network Load Balancers.
      *         </p>
      *         </li>
      *         <li>
@@ -1525,8 +1525,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -1538,10 +1538,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
-     * value that corresponds with the region that you created your load balancer in. Note that there are separate
-     * columns for Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a>
+     * topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that
+     * you created your load balancer in. Note that there are separate columns for Application and Classic Load
+     * Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1667,8 +1667,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
+     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1680,10 +1680,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
-     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
-     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
-     *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and
+     *        quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with
+     *        the region that you created your load balancer in. Note that there are separate columns for Application
+     *        and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
      *        <li>

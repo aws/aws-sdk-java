@@ -36,7 +36,7 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
     private String amazonId;
     /**
      * <p>
-     * Fingerprint for Sidewalk application server private key.
+     * The fingerprint of the Sidewalk application server private key.
      * </p>
      */
     private String fingerprint;
@@ -83,11 +83,11 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
 
     /**
      * <p>
-     * Fingerprint for Sidewalk application server private key.
+     * The fingerprint of the Sidewalk application server private key.
      * </p>
      * 
      * @param fingerprint
-     *        Fingerprint for Sidewalk application server private key.
+     *        The fingerprint of the Sidewalk application server private key.
      */
 
     public void setFingerprint(String fingerprint) {
@@ -96,10 +96,10 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
 
     /**
      * <p>
-     * Fingerprint for Sidewalk application server private key.
+     * The fingerprint of the Sidewalk application server private key.
      * </p>
      * 
-     * @return Fingerprint for Sidewalk application server private key.
+     * @return The fingerprint of the Sidewalk application server private key.
      */
 
     public String getFingerprint() {
@@ -108,11 +108,11 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
 
     /**
      * <p>
-     * Fingerprint for Sidewalk application server private key.
+     * The fingerprint of the Sidewalk application server private key.
      * </p>
      * 
      * @param fingerprint
-     *        Fingerprint for Sidewalk application server private key.
+     *        The fingerprint of the Sidewalk application server private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

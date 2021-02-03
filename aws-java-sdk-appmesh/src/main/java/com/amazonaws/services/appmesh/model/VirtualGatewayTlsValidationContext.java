@@ -30,18 +30,74 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust.
+     * A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security
+     * (TLS) validation context.
+     * </p>
+     */
+    private SubjectAlternativeNames subjectAlternativeNames;
+    /**
+     * <p>
+     * A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     * certificate.
      * </p>
      */
     private VirtualGatewayTlsValidationContextTrust trust;
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust.
+     * A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security
+     * (TLS) validation context.
+     * </p>
+     * 
+     * @param subjectAlternativeNames
+     *        A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer
+     *        Security (TLS) validation context.
+     */
+
+    public void setSubjectAlternativeNames(SubjectAlternativeNames subjectAlternativeNames) {
+        this.subjectAlternativeNames = subjectAlternativeNames;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security
+     * (TLS) validation context.
+     * </p>
+     * 
+     * @return A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer
+     *         Security (TLS) validation context.
+     */
+
+    public SubjectAlternativeNames getSubjectAlternativeNames() {
+        return this.subjectAlternativeNames;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security
+     * (TLS) validation context.
+     * </p>
+     * 
+     * @param subjectAlternativeNames
+     *        A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer
+     *        Security (TLS) validation context.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayTlsValidationContext withSubjectAlternativeNames(SubjectAlternativeNames subjectAlternativeNames) {
+        setSubjectAlternativeNames(subjectAlternativeNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     * certificate.
      * </p>
      * 
      * @param trust
-     *        A reference to an object that represents a TLS validation context trust.
+     *        A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     *        certificate.
      */
 
     public void setTrust(VirtualGatewayTlsValidationContextTrust trust) {
@@ -50,10 +106,12 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust.
+     * A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     * certificate.
      * </p>
      * 
-     * @return A reference to an object that represents a TLS validation context trust.
+     * @return A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     *         certificate.
      */
 
     public VirtualGatewayTlsValidationContextTrust getTrust() {
@@ -62,11 +120,13 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust.
+     * A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     * certificate.
      * </p>
      * 
      * @param trust
-     *        A reference to an object that represents a TLS validation context trust.
+     *        A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+     *        certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,6 +147,8 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getSubjectAlternativeNames() != null)
+            sb.append("SubjectAlternativeNames: ").append(getSubjectAlternativeNames()).append(",");
         if (getTrust() != null)
             sb.append("Trust: ").append(getTrust());
         sb.append("}");
@@ -103,6 +165,10 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
         if (obj instanceof VirtualGatewayTlsValidationContext == false)
             return false;
         VirtualGatewayTlsValidationContext other = (VirtualGatewayTlsValidationContext) obj;
+        if (other.getSubjectAlternativeNames() == null ^ this.getSubjectAlternativeNames() == null)
+            return false;
+        if (other.getSubjectAlternativeNames() != null && other.getSubjectAlternativeNames().equals(this.getSubjectAlternativeNames()) == false)
+            return false;
         if (other.getTrust() == null ^ this.getTrust() == null)
             return false;
         if (other.getTrust() != null && other.getTrust().equals(this.getTrust()) == false)
@@ -115,6 +181,7 @@ public class VirtualGatewayTlsValidationContext implements Serializable, Cloneab
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getSubjectAlternativeNames() == null) ? 0 : getSubjectAlternativeNames().hashCode());
         hashCode = prime * hashCode + ((getTrust() == null) ? 0 : getTrust().hashCode());
         return hashCode;
     }

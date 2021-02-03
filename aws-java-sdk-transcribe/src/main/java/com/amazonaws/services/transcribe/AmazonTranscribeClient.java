@@ -183,6 +183,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new CreateLanguageModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLanguageModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -250,6 +251,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createMedicalVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -317,6 +319,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new CreateVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -383,6 +386,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new CreateVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVocabularyFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -447,6 +451,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new DeleteLanguageModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLanguageModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -511,6 +516,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteMedicalTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -578,6 +584,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteMedicalVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -643,6 +650,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTranscriptionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -709,6 +717,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new DeleteVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -774,6 +783,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new DeleteVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVocabularyFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -844,6 +854,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new DescribeLanguageModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLanguageModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -913,6 +924,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(getMedicalTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -979,6 +991,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new GetMedicalVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMedicalVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1047,6 +1060,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new GetTranscriptionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1112,6 +1126,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new GetVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1177,6 +1192,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new GetVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVocabularyFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1241,6 +1257,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new ListLanguageModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLanguageModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1305,6 +1322,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listMedicalTranscriptionJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1371,6 +1389,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listMedicalVocabulariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1435,6 +1454,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new ListTranscriptionJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTranscriptionJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1500,6 +1520,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new ListVocabulariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVocabulariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1563,6 +1584,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new ListVocabularyFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVocabularyFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1630,6 +1652,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(startMedicalTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1696,6 +1719,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new StartTranscriptionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTranscriptionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1767,6 +1791,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateMedicalVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1836,6 +1861,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new UpdateVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVocabularyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
@@ -1901,6 +1927,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request = new UpdateVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVocabularyFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A key signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to
+ * A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to
  * generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to
  * authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.
  * </p>
@@ -30,15 +30,16 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management Service
-     * (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -98,7 +99,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed key (CMK) in KMS, see <a
+     * For more information about working with the customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
@@ -106,7 +107,7 @@ public class KeySigningKey implements Serializable, Cloneable {
     private String kmsArn;
     /**
      * <p>
-     * An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     * An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      * </p>
      */
     private Integer flag;
@@ -174,7 +175,7 @@ public class KeySigningKey implements Serializable, Cloneable {
     private String dNSKEYRecord;
     /**
      * <p>
-     * A string that represents the current key signing key (KSK) status.
+     * A string that represents the current key-signing key (KSK) status.
      * </p>
      * <p>
      * Status can have one of the following values:
@@ -192,10 +193,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      * The KSK is not being used for signing.
      * </p>
      * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The KSK is in the process of being deleted.
+     * </p>
+     * </dd>
      * <dt>ACTION_NEEDED</dt>
      * <dd>
      * <p>
-     * There is an error in the KSK that requires you to take action to resolve.
+     * There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed
+     * customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK might have
+     * been changed.
      * </p>
      * </dd>
      * <dt>INTERNAL_FAILURE</dt>
@@ -210,7 +219,7 @@ public class KeySigningKey implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
+     * The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
      * <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps
      * that you can take to correct the issue.
      * </p>
@@ -218,26 +227,26 @@ public class KeySigningKey implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * The date when the key signing key (KSK) was created.
+     * The date when the key-signing key (KSK) was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The last time that the key signing key (KSK) was changed.
+     * The last time that the key-signing key (KSK) was changed.
      * </p>
      */
     private java.util.Date lastModifiedDate;
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each
-     *        key signing key in the same hosted zone.
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public void setName(String name) {
@@ -246,12 +255,12 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
-     * @return An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for
-     *         each key signing key in the same hosted zone.
+     * @return A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *         underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public String getName() {
@@ -260,13 +269,13 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each
-     *        key signing key in the same hosted zone.
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,8 +286,9 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management Service
-     * (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -338,15 +348,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed key (CMK) in KMS, see <a
+     * For more information about working with the customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
      * @param kmsArn
-     *        The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management
-     *        Service (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *        zone.</p>
+     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     *        Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     *        single hosted zone.</p>
      *        <p>
      *        You must configure the CMK as follows:
      *        </p>
@@ -405,7 +415,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with the customer managed key (CMK) in KMS, see <a
+     *        For more information about working with the customer managed CMK in AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *        concepts</a>.
      */
@@ -416,8 +426,9 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management Service
-     * (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -477,14 +488,14 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed key (CMK) in KMS, see <a
+     * For more information about working with the customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management
-     *         Service (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *         zone.</p>
+     * @return The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     *         Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     *         single hosted zone.</p>
      *         <p>
      *         You must configure the CMK as follows:
      *         </p>
@@ -543,7 +554,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      *         </dd>
      *         </dl>
      *         <p>
-     *         For more information about working with the customer managed key (CMK) in KMS, see <a
+     *         For more information about working with the customer managed CMK in AWS KMS, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *         concepts</a>.
      */
@@ -554,8 +565,9 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management Service
-     * (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -615,15 +627,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed key (CMK) in KMS, see <a
+     * For more information about working with the customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
      * @param kmsArn
-     *        The Amazon resource name (ARN) used to identify the customer managed key (CMK) in AWS Key Management
-     *        Service (KMS). The <code>KmsArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *        zone.</p>
+     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
+     *        Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     *        single hosted zone.</p>
      *        <p>
      *        You must configure the CMK as follows:
      *        </p>
@@ -682,7 +694,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with the customer managed key (CMK) in KMS, see <a
+     *        For more information about working with the customer managed CMK in AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *        concepts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -695,11 +707,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     * An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      * </p>
      * 
      * @param flag
-     *        An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     *        An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      */
 
     public void setFlag(Integer flag) {
@@ -708,10 +720,10 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     * An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      * </p>
      * 
-     * @return An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     * @return An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      */
 
     public Integer getFlag() {
@@ -720,11 +732,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     * An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      * </p>
      * 
      * @param flag
-     *        An integer that specifies how the key is used. For key signing key (KSK), this value is always 257.
+     *        An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1144,7 +1156,7 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that represents the current key signing key (KSK) status.
+     * A string that represents the current key-signing key (KSK) status.
      * </p>
      * <p>
      * Status can have one of the following values:
@@ -1162,10 +1174,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      * The KSK is not being used for signing.
      * </p>
      * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The KSK is in the process of being deleted.
+     * </p>
+     * </dd>
      * <dt>ACTION_NEEDED</dt>
      * <dd>
      * <p>
-     * There is an error in the KSK that requires you to take action to resolve.
+     * There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed
+     * customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK might have
+     * been changed.
      * </p>
      * </dd>
      * <dt>INTERNAL_FAILURE</dt>
@@ -1178,7 +1198,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dl>
      * 
      * @param status
-     *        A string that represents the current key signing key (KSK) status.</p>
+     *        A string that represents the current key-signing key (KSK) status.</p>
      *        <p>
      *        Status can have one of the following values:
      *        </p>
@@ -1195,10 +1215,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        The KSK is not being used for signing.
      *        </p>
      *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        The KSK is in the process of being deleted.
+     *        </p>
+     *        </dd>
      *        <dt>ACTION_NEEDED</dt>
      *        <dd>
      *        <p>
-     *        There is an error in the KSK that requires you to take action to resolve.
+     *        There is a problem with the KSK that requires you to take action to resolve. For example, the customer
+     *        managed customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK
+     *        might have been changed.
      *        </p>
      *        </dd>
      *        <dt>INTERNAL_FAILURE</dt>
@@ -1217,7 +1245,7 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that represents the current key signing key (KSK) status.
+     * A string that represents the current key-signing key (KSK) status.
      * </p>
      * <p>
      * Status can have one of the following values:
@@ -1235,10 +1263,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      * The KSK is not being used for signing.
      * </p>
      * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The KSK is in the process of being deleted.
+     * </p>
+     * </dd>
      * <dt>ACTION_NEEDED</dt>
      * <dd>
      * <p>
-     * There is an error in the KSK that requires you to take action to resolve.
+     * There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed
+     * customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK might have
+     * been changed.
      * </p>
      * </dd>
      * <dt>INTERNAL_FAILURE</dt>
@@ -1250,7 +1286,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dd>
      * </dl>
      * 
-     * @return A string that represents the current key signing key (KSK) status.</p>
+     * @return A string that represents the current key-signing key (KSK) status.</p>
      *         <p>
      *         Status can have one of the following values:
      *         </p>
@@ -1267,10 +1303,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      *         The KSK is not being used for signing.
      *         </p>
      *         </dd>
+     *         <dt>DELETING</dt>
+     *         <dd>
+     *         <p>
+     *         The KSK is in the process of being deleted.
+     *         </p>
+     *         </dd>
      *         <dt>ACTION_NEEDED</dt>
      *         <dd>
      *         <p>
-     *         There is an error in the KSK that requires you to take action to resolve.
+     *         There is a problem with the KSK that requires you to take action to resolve. For example, the customer
+     *         managed customer master key (CMK) might have been deleted, or the permissions for the customer managed
+     *         CMK might have been changed.
      *         </p>
      *         </dd>
      *         <dt>INTERNAL_FAILURE</dt>
@@ -1289,7 +1333,7 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that represents the current key signing key (KSK) status.
+     * A string that represents the current key-signing key (KSK) status.
      * </p>
      * <p>
      * Status can have one of the following values:
@@ -1307,10 +1351,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      * The KSK is not being used for signing.
      * </p>
      * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The KSK is in the process of being deleted.
+     * </p>
+     * </dd>
      * <dt>ACTION_NEEDED</dt>
      * <dd>
      * <p>
-     * There is an error in the KSK that requires you to take action to resolve.
+     * There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed
+     * customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK might have
+     * been changed.
      * </p>
      * </dd>
      * <dt>INTERNAL_FAILURE</dt>
@@ -1323,7 +1375,7 @@ public class KeySigningKey implements Serializable, Cloneable {
      * </dl>
      * 
      * @param status
-     *        A string that represents the current key signing key (KSK) status.</p>
+     *        A string that represents the current key-signing key (KSK) status.</p>
      *        <p>
      *        Status can have one of the following values:
      *        </p>
@@ -1340,10 +1392,18 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        The KSK is not being used for signing.
      *        </p>
      *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        The KSK is in the process of being deleted.
+     *        </p>
+     *        </dd>
      *        <dt>ACTION_NEEDED</dt>
      *        <dd>
      *        <p>
-     *        There is an error in the KSK that requires you to take action to resolve.
+     *        There is a problem with the KSK that requires you to take action to resolve. For example, the customer
+     *        managed customer master key (CMK) might have been deleted, or the permissions for the customer managed CMK
+     *        might have been changed.
      *        </p>
      *        </dd>
      *        <dt>INTERNAL_FAILURE</dt>
@@ -1364,13 +1424,13 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
+     * The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
      * <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps
      * that you can take to correct the issue.
      * </p>
      * 
      * @param statusMessage
-     *        The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code>
+     *        The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code>
      *        or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be
      *        and steps that you can take to correct the issue.
      */
@@ -1381,12 +1441,12 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
+     * The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
      * <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps
      * that you can take to correct the issue.
      * </p>
      * 
-     * @return The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code>
+     * @return The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code>
      *         or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be
      *         and steps that you can take to correct the issue.
      */
@@ -1397,13 +1457,13 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
+     * The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
      * <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps
      * that you can take to correct the issue.
      * </p>
      * 
      * @param statusMessage
-     *        The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code>
+     *        The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code>
      *        or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be
      *        and steps that you can take to correct the issue.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1416,11 +1476,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the key signing key (KSK) was created.
+     * The date when the key-signing key (KSK) was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the key signing key (KSK) was created.
+     *        The date when the key-signing key (KSK) was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -1429,10 +1489,10 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the key signing key (KSK) was created.
+     * The date when the key-signing key (KSK) was created.
      * </p>
      * 
-     * @return The date when the key signing key (KSK) was created.
+     * @return The date when the key-signing key (KSK) was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -1441,11 +1501,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the key signing key (KSK) was created.
+     * The date when the key-signing key (KSK) was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the key signing key (KSK) was created.
+     *        The date when the key-signing key (KSK) was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1456,11 +1516,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last time that the key signing key (KSK) was changed.
+     * The last time that the key-signing key (KSK) was changed.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last time that the key signing key (KSK) was changed.
+     *        The last time that the key-signing key (KSK) was changed.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -1469,10 +1529,10 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last time that the key signing key (KSK) was changed.
+     * The last time that the key-signing key (KSK) was changed.
      * </p>
      * 
-     * @return The last time that the key signing key (KSK) was changed.
+     * @return The last time that the key-signing key (KSK) was changed.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -1481,11 +1541,11 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last time that the key signing key (KSK) was changed.
+     * The last time that the key-signing key (KSK) was changed.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last time that the key signing key (KSK) was changed.
+     *        The last time that the key-signing key (KSK) was changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

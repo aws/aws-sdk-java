@@ -270,7 +270,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
      * creates if it does not yet exist. For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     * >Application Auto Scaling IAM Roles</a>.
+     * >Application Auto Scaling IAM roles</a>.
      * </p>
      */
     private String roleARN;
@@ -306,7 +306,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     * >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
     private SuspendedState suspendedState;
@@ -2209,7 +2209,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
      * creates if it does not yet exist. For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     * >Application Auto Scaling IAM Roles</a>.
+     * >Application Auto Scaling IAM roles</a>.
      * </p>
      * 
      * @param roleARN
@@ -2220,7 +2220,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
      *        it creates if it does not yet exist. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     *        >Application Auto Scaling IAM Roles</a>.
+     *        >Application Auto Scaling IAM roles</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -2237,7 +2237,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
      * creates if it does not yet exist. For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     * >Application Auto Scaling IAM Roles</a>.
+     * >Application Auto Scaling IAM roles</a>.
      * </p>
      * 
      * @return This parameter is required for services that do not support service-linked roles (such as Amazon EMR),
@@ -2247,7 +2247,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
      *         it creates if it does not yet exist. For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     *         >Application Auto Scaling IAM Roles</a>.
+     *         >Application Auto Scaling IAM roles</a>.
      */
 
     public String getRoleARN() {
@@ -2264,7 +2264,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
      * creates if it does not yet exist. For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     * >Application Auto Scaling IAM Roles</a>.
+     * >Application Auto Scaling IAM roles</a>.
      * </p>
      * 
      * @param roleARN
@@ -2275,7 +2275,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
      *        it creates if it does not yet exist. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
-     *        >Application Auto Scaling IAM Roles</a>.
+     *        >Application Auto Scaling IAM roles</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2316,7 +2316,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     * >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param suspendedState
@@ -2349,7 +2349,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     *        >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public void setSuspendedState(SuspendedState suspendedState) {
@@ -2388,7 +2388,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     * >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return An embedded object that contains attributes and attribute values that are used to suspend and resume
@@ -2420,7 +2420,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     *         >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *         >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public SuspendedState getSuspendedState() {
@@ -2459,7 +2459,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     * >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param suspendedState
@@ -2492,7 +2492,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
-     *        >Suspending and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        >Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

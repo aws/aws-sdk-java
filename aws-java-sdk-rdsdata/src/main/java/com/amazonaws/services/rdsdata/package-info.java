@@ -23,12 +23,7 @@
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
- * <note>
- * <p>
- * If you have questions or comments related to the Data API, send email to <a
- * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
  * </p>
- * </note></p>
  */
 package com.amazonaws.services.rdsdata;
 

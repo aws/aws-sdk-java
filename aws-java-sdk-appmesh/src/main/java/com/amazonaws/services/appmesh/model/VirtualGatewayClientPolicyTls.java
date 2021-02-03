@@ -30,6 +30,12 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.
+     * </p>
+     */
+    private VirtualGatewayClientTlsCertificate certificate;
+    /**
+     * <p>
      * Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.
      * </p>
      */
@@ -42,10 +48,53 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
     private java.util.List<Integer> ports;
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context.
      * </p>
      */
     private VirtualGatewayTlsValidationContext validation;
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
+     *        certificate.
+     */
+
+    public void setCertificate(VirtualGatewayClientTlsCertificate certificate) {
+        this.certificate = certificate;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.
+     * </p>
+     * 
+     * @return A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
+     *         certificate.
+     */
+
+    public VirtualGatewayClientTlsCertificate getCertificate() {
+        return this.certificate;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
+     *        certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayClientPolicyTls withCertificate(VirtualGatewayClientTlsCertificate certificate) {
+        setCertificate(certificate);
+        return this;
+    }
 
     /**
      * <p>
@@ -171,11 +220,11 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context.
      * </p>
      * 
      * @param validation
-     *        A reference to an object that represents a TLS validation context.
+     *        A reference to an object that represents a Transport Layer Security (TLS) validation context.
      */
 
     public void setValidation(VirtualGatewayTlsValidationContext validation) {
@@ -184,10 +233,10 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context.
      * </p>
      * 
-     * @return A reference to an object that represents a TLS validation context.
+     * @return A reference to an object that represents a Transport Layer Security (TLS) validation context.
      */
 
     public VirtualGatewayTlsValidationContext getValidation() {
@@ -196,11 +245,11 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context.
      * </p>
      * 
      * @param validation
-     *        A reference to an object that represents a TLS validation context.
+     *        A reference to an object that represents a Transport Layer Security (TLS) validation context.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,6 +270,8 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCertificate() != null)
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getEnforce() != null)
             sb.append("Enforce: ").append(getEnforce()).append(",");
         if (getPorts() != null)
@@ -241,6 +292,10 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
         if (obj instanceof VirtualGatewayClientPolicyTls == false)
             return false;
         VirtualGatewayClientPolicyTls other = (VirtualGatewayClientPolicyTls) obj;
+        if (other.getCertificate() == null ^ this.getCertificate() == null)
+            return false;
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
         if (other.getEnforce() == null ^ this.getEnforce() == null)
             return false;
         if (other.getEnforce() != null && other.getEnforce().equals(this.getEnforce()) == false)
@@ -261,6 +316,7 @@ public class VirtualGatewayClientPolicyTls implements Serializable, Cloneable, S
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getEnforce() == null) ? 0 : getEnforce().hashCode());
         hashCode = prime * hashCode + ((getPorts() == null) ? 0 : getPorts().hashCode());
         hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());

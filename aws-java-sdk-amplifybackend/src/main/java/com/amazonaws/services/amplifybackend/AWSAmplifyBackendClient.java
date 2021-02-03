@@ -178,6 +178,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CloneBackendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cloneBackendRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -242,6 +243,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CreateBackendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackendRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -305,6 +307,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CreateBackendAPIRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackendAPIRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -368,6 +371,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CreateBackendAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackendAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -431,6 +435,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CreateBackendConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackendConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -493,6 +498,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new CreateTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -555,6 +561,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new DeleteBackendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackendRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -618,6 +625,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new DeleteBackendAPIRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackendAPIRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -681,6 +689,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new DeleteBackendAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackendAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -743,6 +752,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new DeleteTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -807,6 +817,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(generateBackendAPIModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -871,6 +882,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetBackendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -934,6 +946,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetBackendAPIRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendAPIRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -997,6 +1010,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetBackendAPIModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendAPIModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1060,6 +1074,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetBackendAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1122,6 +1137,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetBackendJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1184,6 +1200,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new GetTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1247,6 +1264,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new ListBackendJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackendJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1310,6 +1328,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new RemoveAllBackendsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeAllBackendsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1372,6 +1391,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new RemoveBackendConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeBackendConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1435,6 +1455,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new UpdateBackendAPIRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBackendAPIRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1498,6 +1519,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new UpdateBackendAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBackendAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1561,6 +1583,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new UpdateBackendConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBackendConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
@@ -1624,6 +1647,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
                 request = new UpdateBackendJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBackendJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");

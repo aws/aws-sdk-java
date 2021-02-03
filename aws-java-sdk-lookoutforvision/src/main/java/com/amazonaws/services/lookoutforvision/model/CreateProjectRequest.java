@@ -27,7 +27,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * S nsme for the project.
+     * The name for the project.
      * </p>
      */
     private String projectName;
@@ -45,11 +45,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * S nsme for the project.
+     * The name for the project.
      * </p>
      * 
      * @param projectName
-     *        S nsme for the project.
+     *        The name for the project.
      */
 
     public void setProjectName(String projectName) {
@@ -58,10 +58,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * S nsme for the project.
+     * The name for the project.
      * </p>
      * 
-     * @return S nsme for the project.
+     * @return The name for the project.
      */
 
     public String getProjectName() {
@@ -70,11 +70,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * S nsme for the project.
+     * The name for the project.
      * </p>
      * 
      * @param projectName
-     *        S nsme for the project.
+     *        The name for the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

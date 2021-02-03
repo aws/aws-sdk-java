@@ -57,6 +57,13 @@ public class VirtualGatewayListenerTls implements Serializable, Cloneable, Struc
      * </ul>
      */
     private String mode;
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
+     * context.
+     * </p>
+     */
+    private VirtualGatewayListenerTlsValidationContext validation;
 
     /**
      * <p>
@@ -290,6 +297,52 @@ public class VirtualGatewayListenerTls implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
+     * context.
+     * </p>
+     * 
+     * @param validation
+     *        A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS)
+     *        validation context.
+     */
+
+    public void setValidation(VirtualGatewayListenerTlsValidationContext validation) {
+        this.validation = validation;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
+     * context.
+     * </p>
+     * 
+     * @return A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS)
+     *         validation context.
+     */
+
+    public VirtualGatewayListenerTlsValidationContext getValidation() {
+        return this.validation;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
+     * context.
+     * </p>
+     * 
+     * @param validation
+     *        A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS)
+     *        validation context.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayListenerTls withValidation(VirtualGatewayListenerTlsValidationContext validation) {
+        setValidation(validation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,7 +357,9 @@ public class VirtualGatewayListenerTls implements Serializable, Cloneable, Struc
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getMode() != null)
-            sb.append("Mode: ").append(getMode());
+            sb.append("Mode: ").append(getMode()).append(",");
+        if (getValidation() != null)
+            sb.append("Validation: ").append(getValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +382,10 @@ public class VirtualGatewayListenerTls implements Serializable, Cloneable, Struc
             return false;
         if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
             return false;
+        if (other.getValidation() == null ^ this.getValidation() == null)
+            return false;
+        if (other.getValidation() != null && other.getValidation().equals(this.getValidation()) == false)
+            return false;
         return true;
     }
 
@@ -337,6 +396,7 @@ public class VirtualGatewayListenerTls implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
+        hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());
         return hashCode;
     }
 

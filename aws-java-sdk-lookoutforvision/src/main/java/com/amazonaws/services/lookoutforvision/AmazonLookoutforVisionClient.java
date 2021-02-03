@@ -164,7 +164,10 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first
      * call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify
-     * <code>test</code> for the value of <code>DatasetType</code>. of dataset with
+     * <code>test</code> for the value of <code>DatasetType</code>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.
      * </p>
      * 
      * @param createDatasetRequest
@@ -210,6 +213,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new CreateDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -249,6 +253,10 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * After training completes, the evaluation metrics are stored at the location specified in
      * <code>OutputConfig</code>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want
+     * to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.
      * </p>
      * 
      * @param createModelRequest
@@ -294,6 +302,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new CreateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -320,6 +329,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling
      * <a>CreateDataset</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.
      * </p>
      * 
      * @param createProjectRequest
@@ -365,6 +377,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -414,6 +427,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * It might take a while to delete the dataset. To check the current status, check the <code>Status</code> field in
      * the response from a call to <a>DescribeDataset</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.
+     * </p>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
@@ -455,6 +471,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -481,6 +498,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the
      * <a>StopModel</a> operation.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.
      * </p>
      * 
      * @param deleteModelRequest
@@ -523,6 +543,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DeleteModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -554,8 +575,11 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * model use the <a>DeleteModel</a> operation.
      * </p>
      * <p>
-     * The training and test datasets are deleted automatically for you. The images referenced by the training and test
-     * datasets aren't deleted.
+     * You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>.
+     * The images referenced by the training and test datasets aren't deleted.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -598,6 +622,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -623,6 +648,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Describe an Amazon Lookout for Vision dataset.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -665,6 +693,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -690,6 +719,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Describes a version of an Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.
      * </p>
      * 
      * @param describeModelRequest
@@ -732,6 +764,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DescribeModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -757,6 +790,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Describes an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.
      * </p>
      * 
      * @param describeProjectRequest
@@ -799,6 +835,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DescribeProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -837,6 +874,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * your model.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.
+     * </p>
      * 
      * @param detectAnomaliesRequest
      * @return Result of the DetectAnomalies operation returned by the service.
@@ -878,6 +918,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new DetectAnomaliesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectAnomaliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -907,6 +948,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information
      * for a single image, including the image location and the assigned label.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.
      * </p>
      * 
      * @param listDatasetEntriesRequest
@@ -949,6 +993,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new ListDatasetEntriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetEntriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -974,6 +1019,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Lists the versions of a model in an Amazon Lookout for Vision project.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.
      * </p>
      * 
      * @param listModelsRequest
@@ -1016,6 +1064,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new ListModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -1041,6 +1090,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Lists the Amazon Lookout for Vision projects in your AWS account.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.
      * </p>
      * 
      * @param listProjectsRequest
@@ -1083,6 +1135,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -1107,6 +1160,77 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Returns a list of tags attached to the specified Amazon Lookout for Vision model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @sample AmazonLookoutforVision.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to
      * complete. To check the current state of the model, use <a>DescribeModel</a>.
      * </p>
@@ -1118,6 +1242,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.
      * </p>
      * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.
+     * </p>
      * 
      * @param startModelRequest
      * @return Result of the StartModel operation returned by the service.
@@ -1162,6 +1289,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new StartModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -1188,6 +1316,9 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * <p>
      * Stops a running model. The operation might take a while to complete. To check the current status, call
      * <a>DescribeModel</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.
      * </p>
      * 
      * @param stopModelRequest
@@ -1230,6 +1361,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new StopModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
@@ -1254,12 +1386,162 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @throws ServiceQuotaExceededException
+     *         A service quota was exceeded the allowed limit. For more information, see Limits in Amazon Lookout for
+     *         Vision in the Amazon Lookout for Vision Developer Guide.
+     * @sample AmazonLookoutforVision.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a
+     * model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerException
+     *         Amazon Lookout for Vision experienced a service issue. Try your call again.
+     * @throws ValidationException
+     *         An input validation error occured. For example, invalid characters in a project name, or if a pagination
+     *         token is invalid.
+     * @throws ConflictException
+     *         The update or deletion of a resource caused an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ThrottlingException
+     *         Amazon Lookout for Vision is temporarily unable to process the request. Try your call again.
+     * @sample AmazonLookoutforVision.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more JSON Line entries to a dataset. A JSON Line includes information about an image used for
      * training or testing an Amazon Lookout for Vision model. The following is an example JSON Line.
      * </p>
      * <p>
      * Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and
      * check the <code>Status</code> field in the response.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.
      * </p>
      * 
      * @param updateDatasetEntriesRequest
@@ -1302,6 +1584,7 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
                 request = new UpdateDatasetEntriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDatasetEntriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutVision");

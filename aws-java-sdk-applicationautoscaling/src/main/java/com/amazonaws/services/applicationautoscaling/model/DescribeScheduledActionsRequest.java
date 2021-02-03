@@ -41,7 +41,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The identifier of the resource associated with the scheduled action. This string consists of the resource type
-     * and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * and unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -396,7 +396,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The identifier of the resource associated with the scheduled action. This string consists of the resource type
-     * and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * and unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -491,7 +491,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param resourceId
      *        The identifier of the resource associated with the scheduled action. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -592,7 +592,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The identifier of the resource associated with the scheduled action. This string consists of the resource type
-     * and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * and unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -686,7 +686,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @return The identifier of the resource associated with the scheduled action. This string consists of the resource
-     *         type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *         type and unique identifier.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -789,7 +789,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The identifier of the resource associated with the scheduled action. This string consists of the resource type
-     * and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.
+     * and unique identifier.
      * </p>
      * <ul>
      * <li>
@@ -884,7 +884,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param resourceId
      *        The identifier of the resource associated with the scheduled action. This string consists of the resource
-     *        type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+     *        type and unique identifier.</p>
      *        <ul>
      *        <li>
      *        <p>

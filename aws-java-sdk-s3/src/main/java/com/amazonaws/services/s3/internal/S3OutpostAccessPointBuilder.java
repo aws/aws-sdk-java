@@ -24,7 +24,7 @@ import java.net.URI;
  */
 @SdkInternalApi
 public final class S3OutpostAccessPointBuilder {
-
+    private URI endpointOverride;
     private String accessPointName;
     private String outpostId;
     private String region;
@@ -40,6 +40,11 @@ public final class S3OutpostAccessPointBuilder {
      */
     public static S3OutpostAccessPointBuilder create() {
         return new S3OutpostAccessPointBuilder();
+    }
+
+    public S3OutpostAccessPointBuilder withEndpointOverride(URI endpointOverride) {
+        this.endpointOverride = endpointOverride;
+        return this;
     }
 
     public S3OutpostAccessPointBuilder withAccessPointName(String accessPointName) {
@@ -80,7 +85,21 @@ public final class S3OutpostAccessPointBuilder {
         validateHostnameCompliant(accountId, "accountId", "outpost ARN");
         validateHostnameCompliant(accessPointName, "accessPointName", "outpost ARN");
 
-        String uriString = String.format("%s://%s-%s.%s.s3-outposts.%s.%s", protocol, accessPointName, accountId, outpostId, region, domain);
+        String uriString;
+        if (endpointOverride == null) {
+            uriString = String.format("%s://%s-%s.%s.s3-outposts.%s.%s",
+                                      protocol, accessPointName, accountId, outpostId, region, domain);
+        } else {
+            StringBuilder uriSuffix = new StringBuilder(endpointOverride.getHost());
+            if (endpointOverride.getPort() > 0) {
+                uriSuffix.append(":").append(endpointOverride.getPort());
+            }
+            if (endpointOverride.getPath() != null) {
+                uriSuffix.append(endpointOverride.getPath());
+            }
+
+            uriString = String.format("%s://%s-%s.%s.%s", protocol, accessPointName, accountId, outpostId, uriSuffix);
+        }
         return URI.create(uriString);
     }
 }

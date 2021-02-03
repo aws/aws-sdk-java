@@ -68,23 +68,35 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     * </p>
-     * <p>
-     * For more information and examples, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
     private String schedule;
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     */
+    private String timezone;
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
@@ -285,13 +297,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
     private String scalableDimension;
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      */
     private java.util.Date endTime;
@@ -471,20 +483,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     * </p>
-     * <p>
-     * For more information and examples, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param schedule
@@ -507,20 +524,26 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        At expressions are useful for one-time schedules. Specify the time in UTC.
+     *        At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *        run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *        run at a regular interval.
+     *        </p>
+     *        <p>
+     *        At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *        </p>
+     *        <p>
+     *        The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     *        [Day_of_Week] [Year].
      *        </p>
      *        <p>
      *        For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     *        separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     *        </p>
-     *        <p>
-     *        For more information and examples, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *        >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *        Guide</i>.
      */
 
     public void setSchedule(String schedule) {
@@ -549,20 +572,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     * </p>
-     * <p>
-     * For more information and examples, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The schedule for this action. The following formats are supported:</p>
@@ -584,20 +612,26 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         </ul>
      *         <p>
-     *         At expressions are useful for one-time schedules. Specify the time in UTC.
+     *         At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *         run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *         run at a regular interval.
+     *         </p>
+     *         <p>
+     *         At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *         </p>
+     *         <p>
+     *         The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month]
+     *         [Month] [Day_of_Week] [Year].
      *         </p>
      *         <p>
      *         For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *         <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *         </p>
      *         <p>
-     *         For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six
-     *         fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     *         </p>
-     *         <p>
-     *         For more information and examples, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *         >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *         For more information and examples, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *         >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *         Guide</i>.
      */
 
     public String getSchedule() {
@@ -626,20 +660,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     * separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     * </p>
-     * <p>
-     * For more information and examples, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param schedule
@@ -662,25 +701,77 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        At expressions are useful for one-time schedules. Specify the time in UTC.
+     *        At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *        run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *        run at a regular interval.
+     *        </p>
+     *        <p>
+     *        At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *        </p>
+     *        <p>
+     *        The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     *        [Day_of_Week] [Year].
      *        </p>
      *        <p>
      *        For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For cron expressions, <i>fields</i> is a cron expression. The supported cron format consists of six fields
-     *        separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].
-     *        </p>
-     *        <p>
-     *        For more information and examples, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *        >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledAction withSchedule(String schedule) {
         setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *        uses an at or cron expression.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @return The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *         uses an at or cron expression.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *        uses an at or cron expression.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledAction withTimezone(String timezone) {
+        setTimezone(timezone);
         return this;
     }
 
@@ -2104,11 +2195,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin.
+     *        The date and time that the action is scheduled to begin, in UTC.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -2117,10 +2208,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to begin.
+     * @return The date and time that the action is scheduled to begin, in UTC.
      */
 
     public java.util.Date getStartTime() {
@@ -2129,11 +2220,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin.
+     *        The date and time that the action is scheduled to begin, in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2144,11 +2235,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end.
+     *        The date and time that the action is scheduled to end, in UTC.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -2157,10 +2248,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to end.
+     * @return The date and time that the action is scheduled to end, in UTC.
      */
 
     public java.util.Date getEndTime() {
@@ -2169,11 +2260,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end.
+     *        The date and time that the action is scheduled to end, in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2297,6 +2388,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
             sb.append("ServiceNamespace: ").append(getServiceNamespace()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getTimezone() != null)
+            sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getScalableDimension() != null)
@@ -2339,6 +2432,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -2375,6 +2472,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getScheduledActionARN() == null) ? 0 : getScheduledActionARN().hashCode());
         hashCode = prime * hashCode + ((getServiceNamespace() == null) ? 0 : getServiceNamespace().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());

@@ -9,3 +9,4 @@ artifacts:
   files:
     - aws-java-sdk-osgi/target/aws-java-sdk.zip
     - pom.xml
+    - release-resources/buildspecs/*.yml

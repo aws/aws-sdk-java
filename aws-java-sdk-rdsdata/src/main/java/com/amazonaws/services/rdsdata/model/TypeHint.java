@@ -20,10 +20,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TypeHint {
 
+    JSON("JSON"),
+    UUID("UUID"),
+    TIMESTAMP("TIMESTAMP"),
     DATE("DATE"),
-    DECIMAL("DECIMAL"),
     TIME("TIME"),
-    TIMESTAMP("TIMESTAMP");
+    DECIMAL("DECIMAL");
 
     private String value;
 

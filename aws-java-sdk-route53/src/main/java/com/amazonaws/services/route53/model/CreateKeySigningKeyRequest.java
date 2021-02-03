@@ -39,13 +39,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
     private String hostedZoneId;
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     * <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted zone. To
-     * see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
-     * down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
+     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>.
      * </p>
      * <p>
-     * You must configure the CMK as follows:
+     * You must configure the customer managed CMK as follows:
      * </p>
      * <dl>
      * <dt>Status</dt>
@@ -102,7 +102,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with CMK in KMS, see <a
+     * For more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
@@ -110,14 +110,14 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
     private String keyManagementServiceArn;
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A string specifying the initial status of the key signing key (KSK). You can set the value to <code>ACTIVE</code>
+     * A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code>
      * or <code>INACTIVE</code>.
      * </p>
      */
@@ -205,13 +205,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     * <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted zone. To
-     * see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
-     * down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
+     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>.
      * </p>
      * <p>
-     * You must configure the CMK as follows:
+     * You must configure the customer managed CMK as follows:
      * </p>
      * <dl>
      * <dt>Status</dt>
@@ -268,18 +268,18 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with CMK in KMS, see <a
+     * For more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
      * @param keyManagementServiceArn
-     *        The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     *        <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *        zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     *        DNSSEC, scroll down to <b>Example</b>. </p>
+     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
+     *        Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
+     *        in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct
+     *        permissions for DNSSEC, scroll down to <b>Example</b>. </p>
      *        <p>
-     *        You must configure the CMK as follows:
+     *        You must configure the customer managed CMK as follows:
      *        </p>
      *        <dl>
      *        <dt>Status</dt>
@@ -336,7 +336,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with CMK in KMS, see <a
+     *        For more information about working with a customer managed CMK in AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *        concepts</a>.
      */
@@ -347,13 +347,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     * <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted zone. To
-     * see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
-     * down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
+     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>.
      * </p>
      * <p>
-     * You must configure the CMK as follows:
+     * You must configure the customer managed CMK as follows:
      * </p>
      * <dl>
      * <dt>Status</dt>
@@ -410,17 +410,17 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with CMK in KMS, see <a
+     * For more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     *         <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *         zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     *         DNSSEC, scroll down to <b>Example</b>. </p>
+     * @return The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
+     *         Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
+     *         in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the
+     *         correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
      *         <p>
-     *         You must configure the CMK as follows:
+     *         You must configure the customer managed CMK as follows:
      *         </p>
      *         <dl>
      *         <dt>Status</dt>
@@ -477,7 +477,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </dd>
      *         </dl>
      *         <p>
-     *         For more information about working with CMK in KMS, see <a
+     *         For more information about working with a customer managed CMK in AWS KMS, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *         concepts</a>.
      */
@@ -488,13 +488,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     * <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted zone. To
-     * see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
-     * down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
+     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>.
      * </p>
      * <p>
-     * You must configure the CMK as follows:
+     * You must configure the customer managed CMK as follows:
      * </p>
      * <dl>
      * <dt>Status</dt>
@@ -551,18 +551,18 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with CMK in KMS, see <a
+     * For more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      * concepts</a>.
      * </p>
      * 
      * @param keyManagementServiceArn
-     *        The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The
-     *        <code>KeyManagementServiceArn</code> must be unique for each key signing key (KSK) in a single hosted
-     *        zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     *        DNSSEC, scroll down to <b>Example</b>. </p>
+     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
+     *        Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
+     *        in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct
+     *        permissions for DNSSEC, scroll down to <b>Example</b>. </p>
      *        <p>
-     *        You must configure the CMK as follows:
+     *        You must configure the customer managed CMK as follows:
      *        </p>
      *        <dl>
      *        <dt>Status</dt>
@@ -619,7 +619,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with CMK in KMS, see <a
+     *        For more information about working with a customer managed CMK in AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
      *        concepts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -632,13 +632,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each
-     *        key signing key in the same hosted zone.
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public void setName(String name) {
@@ -647,12 +647,12 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
-     * @return An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for
-     *         each key signing key in the same hosted zone.
+     * @return A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *         underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      */
 
     public String getName() {
@@ -661,13 +661,13 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each key
-     * signing key in the same hosted zone.
+     * A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     * underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * </p>
      * 
      * @param name
-     *        An alphanumeric string used to identify a key signing key (KSK). <code>Name</code> must be unique for each
-     *        key signing key in the same hosted zone.
+     *        A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and
+     *        underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -678,12 +678,12 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string specifying the initial status of the key signing key (KSK). You can set the value to <code>ACTIVE</code>
+     * A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code>
      * or <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        A string specifying the initial status of the key signing key (KSK). You can set the value to
+     *        A string specifying the initial status of the key-signing key (KSK). You can set the value to
      *        <code>ACTIVE</code> or <code>INACTIVE</code>.
      */
 
@@ -693,11 +693,11 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string specifying the initial status of the key signing key (KSK). You can set the value to <code>ACTIVE</code>
+     * A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code>
      * or <code>INACTIVE</code>.
      * </p>
      * 
-     * @return A string specifying the initial status of the key signing key (KSK). You can set the value to
+     * @return A string specifying the initial status of the key-signing key (KSK). You can set the value to
      *         <code>ACTIVE</code> or <code>INACTIVE</code>.
      */
 
@@ -707,12 +707,12 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string specifying the initial status of the key signing key (KSK). You can set the value to <code>ACTIVE</code>
+     * A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code>
      * or <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        A string specifying the initial status of the key signing key (KSK). You can set the value to
+     *        A string specifying the initial status of the key-signing key (KSK). You can set the value to
      *        <code>ACTIVE</code> or <code>INACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

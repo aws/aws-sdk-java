@@ -4062,7 +4062,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         if (!isSignerOverridden()) {
-
             if ((signer instanceof AWSS3V4Signer) && bucketRegionShouldBeCached(request)) {
 
                 String region = bucketRegionCache.get(bucketName);
@@ -4073,21 +4072,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      if (!clientOptions.isAccelerateModeEnabled()) {
                          resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
                      }
-                     return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
+                     return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
                     String signerRegion = getSignerRegion();
                     if (signerRegion == null) {
                         return createSigV2Signer(request, bucketName, key);
                     }
-                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, signerRegion);
+                    return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, signerRegion);
                 } else if (isAdditionalHeadRequestToFindRegion) {
-                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, "us-east-1");
+                    return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, "us-east-1");
                 }
             }
 
             String regionOverride = getSignerRegionOverride();
             if (regionOverride != null) {
-                return updateSigV4SignerWithRegion(new AWSS3V4Signer(), regionOverride);
+                return updateSigV4SignerWithServiceAndRegion(new AWSS3V4Signer(), request, regionOverride);
             }
         }
 
@@ -4111,9 +4110,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return new S3Signer(request.getHttpMethod().toString(), resourcePath);
     }
 
-    private AWSS3V4Signer updateSigV4SignerWithRegion(final AWSS3V4Signer v4Signer, String region) {
-        v4Signer.setServiceName(getServiceNameIntern());
-        v4Signer.setRegionName(region);
+    private AWSS3V4Signer updateSigV4SignerWithServiceAndRegion(final AWSS3V4Signer v4Signer, Request<?> request, String region) {
+        String signingNameOverride = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+        if (signingNameOverride != null) {
+            v4Signer.setServiceName(signingNameOverride);
+        } else {
+            v4Signer.setServiceName(getServiceNameIntern());
+        }
+
+        String signingRegionOverride = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
+        if (signingRegionOverride != null) {
+            v4Signer.setRegionName(signingRegionOverride);
+        } else {
+            v4Signer.setRegionName(region);
+        }
         return v4Signer;
     }
 
@@ -4697,6 +4707,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     @Override
     public URL getUrl(String bucketName, String key) {
+        if (isArn(bucketName)) {
+            throw new IllegalArgumentException("ARNs are not supported for getUrl in this SDK version. Please use S3Utilities "
+                                               + "in the AWS SDK for Java 2.x.");
+        }
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return ServiceUtils.convertRequestToUrl(request, false, false);
@@ -4874,6 +4888,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private URI getEndpointForAccessPoint(S3AccessPointResource s3Resource,
                                           String domain,
                                           String trimmedRegion) {
+        URI endpointOverride = isEndpointOverridden() ? getEndpoint() : null;
 
         S3Resource parentS3Resource = s3Resource.getParentS3Resource();
         String protocol = clientConfiguration.getProtocol().toString();
@@ -4881,6 +4896,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (parentS3Resource instanceof S3OutpostResource) {
             S3OutpostResource outpostResource = (S3OutpostResource) parentS3Resource;
             return S3OutpostAccessPointBuilder.create()
+                                              .withEndpointOverride(endpointOverride)
                                               .withAccountId(s3Resource.getAccountId())
                                               .withOutpostId(outpostResource.getOutpostId())
                                               .withRegion(s3Resource.getRegion())
@@ -4892,6 +4908,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
         boolean fipsRegionProvided = isFipsRegionProvided(clientRegion.getName(), s3Resource.getRegion(), useArnRegion());
         return S3AccessPointBuilder.create()
+                                   .withEndpointOverride(endpointOverride)
                                    .withAccessPointName(s3Resource.getAccessPointName())
                                    .withAccountId(s3Resource.getAccountId())
                                    .withRegion(trimmedRegion)
@@ -4907,12 +4924,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (!(S3ResourceType.fromValue(type) == S3ResourceType.ACCESS_POINT)) {
             throw new IllegalArgumentException("An unsupported ARN was passed as a bucket parameter to an S3 operation");
-        }
-
-        if (isEndpointOverridden()) {
-            throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3"
-                                               + " operation if the S3 client has been configured with an endpoint "
-                                               + "override.", type));
         }
 
         if (clientOptions.isAccelerateModeEnabled()) {

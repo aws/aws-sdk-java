@@ -404,6 +404,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new AssociateKmsKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateKmsKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -469,6 +470,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new CancelExportTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -555,6 +557,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new CreateExportTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -662,6 +665,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new CreateLogGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -749,6 +753,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new CreateLogStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -812,6 +817,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -875,6 +881,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteLogGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -938,6 +945,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteLogStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1000,6 +1008,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteMetricFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1067,6 +1076,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteQueryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteQueryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1129,6 +1139,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1194,6 +1205,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DeleteRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1258,6 +1270,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                         .beforeMarshalling(deleteSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1317,6 +1330,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDestinationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1381,6 +1395,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeExportTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1440,6 +1455,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeLogGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLogGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1509,6 +1525,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeLogStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLogStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1570,6 +1587,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeMetricFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMetricFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1633,6 +1651,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DescribeQueriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeQueriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1696,6 +1715,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                         .beforeMarshalling(describeQueryDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1756,6 +1776,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                         .beforeMarshalling(describeResourcePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1819,6 +1840,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                         .beforeMarshalling(describeSubscriptionFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1891,6 +1913,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new DisassociateKmsKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateKmsKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -1962,6 +1985,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new FilterLogEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(filterLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2027,6 +2051,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new GetLogEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2100,6 +2125,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new GetLogGroupFieldsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLogGroupFieldsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2167,6 +2193,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new GetLogRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLogRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2242,6 +2269,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new GetQueryResultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getQueryResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2300,6 +2328,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new ListTagsLogGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2378,6 +2407,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2440,6 +2470,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutDestinationPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDestinationPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2564,6 +2595,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutLogEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2634,6 +2666,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutMetricFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2707,6 +2740,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutQueryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putQueryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2768,6 +2802,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2831,6 +2866,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -2934,6 +2970,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new PutSubscriptionFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -3016,6 +3053,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new StartQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startQueryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -3077,6 +3115,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new StopQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopQueryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -3147,6 +3186,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new TagLogGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -3206,6 +3246,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new TestMetricFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
@@ -3268,6 +3309,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request = new UntagLogGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");

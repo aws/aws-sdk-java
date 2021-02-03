@@ -48,6 +48,10 @@ public class TlsValidationContextJsonUnmarshaller implements Unmarshaller<TlsVal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("subjectAlternativeNames", targetDepth)) {
+                    context.nextToken();
+                    tlsValidationContext.setSubjectAlternativeNames(SubjectAlternativeNamesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("trust", targetDepth)) {
                     context.nextToken();
                     tlsValidationContext.setTrust(TlsValidationContextTrustJsonUnmarshaller.getInstance().unmarshall(context));

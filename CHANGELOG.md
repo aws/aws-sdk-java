@@ -1,3 +1,48 @@
+# __1.11.947__ __2021-02-02__
+## __AWS App Mesh__
+  - ### Features
+    - App Mesh now supports mutual TLS with two-way peer authentication. You can specify client certificates, server-side TLS validation, and matching of Subject Alternative Names.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports Image Media Playlists on HLS outputs, version 0.4 (trick-mode).
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Add enum value MqttTopic for Destination ExpressionType, add LoRaWANNetworkServerCertificateId for GetWirelessGatewayCertificate API
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations.
+
+## __AWS RDS DataService__
+  - ### Features
+    - With the Data API, you can now use UUID and JSON data types as input to your database. Also with the Data API, you can now have a LONG type value returned from your database as a STRING value.
+
+## __AWS S3 Control__
+  - ### Features
+    - Amazon S3 Batch Operations now supports Delete Object Tagging
+
+## __Amazon Location Service__
+  - ### Features
+    - Doc only update for Amazon Location Maps that fixes a customer related issue regarding MapConfiguration
+
+## __Amazon Lookout for Vision__
+  - ### Features
+    - This release includes the General Availability (GA) SDK for Amazon Lookout for Vision. New for GA is tagging support for Amazon Lookout for Vision models.
+
+## __Amazon Route 53__
+  - ### Features
+    - Documentation updates for Route 53
+
+## __Amazon S3__
+  - ### Features
+    - Amazon S3 now supports AWS PrivateLink, providing direct access to S3 via a private endpoint within your virtual private network.
+
+## __Application Auto Scaling__
+  - ### Features
+    - With this release, scheduled actions of Application Auto Scaling can be created in the local time zone and automatically adjusted according to daylight saving changes.
+
 # __1.11.946__ __2021-01-29__
 ## __AWS Elemental MediaLive__
   - ### Features

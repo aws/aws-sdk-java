@@ -30,6 +30,12 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * A reference to an object that represents a client's TLS certificate.
+     * </p>
+     */
+    private ClientTlsCertificate certificate;
+    /**
+     * <p>
      * Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.
      * </p>
      */
@@ -46,6 +52,46 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private TlsValidationContext validation;
+
+    /**
+     * <p>
+     * A reference to an object that represents a client's TLS certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        A reference to an object that represents a client's TLS certificate.
+     */
+
+    public void setCertificate(ClientTlsCertificate certificate) {
+        this.certificate = certificate;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a client's TLS certificate.
+     * </p>
+     * 
+     * @return A reference to an object that represents a client's TLS certificate.
+     */
+
+    public ClientTlsCertificate getCertificate() {
+        return this.certificate;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a client's TLS certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        A reference to an object that represents a client's TLS certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientPolicyTls withCertificate(ClientTlsCertificate certificate) {
+        setCertificate(certificate);
+        return this;
+    }
 
     /**
      * <p>
@@ -221,6 +267,8 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCertificate() != null)
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getEnforce() != null)
             sb.append("Enforce: ").append(getEnforce()).append(",");
         if (getPorts() != null)
@@ -241,6 +289,10 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ClientPolicyTls == false)
             return false;
         ClientPolicyTls other = (ClientPolicyTls) obj;
+        if (other.getCertificate() == null ^ this.getCertificate() == null)
+            return false;
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
         if (other.getEnforce() == null ^ this.getEnforce() == null)
             return false;
         if (other.getEnforce() != null && other.getEnforce().equals(this.getEnforce()) == false)
@@ -261,6 +313,7 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getEnforce() == null) ? 0 : getEnforce().hashCode());
         hashCode = prime * hashCode + ((getPorts() == null) ? 0 : getPorts().hashCode());
         hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());

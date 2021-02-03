@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The key signing key (KSK) that you specified can't be deactivated because it's the only KSK for a currently-enabled
+ * The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a currently-enabled
  * DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
  * </p>
  */

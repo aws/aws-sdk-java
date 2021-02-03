@@ -52,6 +52,10 @@ public class GetWirelessGatewayCertificateResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     getWirelessGatewayCertificateResult.setIotCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LoRaWANNetworkServerCertificateId", targetDepth)) {
+                    context.nextToken();
+                    getWirelessGatewayCertificateResult.setLoRaWANNetworkServerCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

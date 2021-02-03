@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The key signing key (KSK) is specified in a parent DS record.
+ * The key-signing key (KSK) is specified in a parent DS record.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

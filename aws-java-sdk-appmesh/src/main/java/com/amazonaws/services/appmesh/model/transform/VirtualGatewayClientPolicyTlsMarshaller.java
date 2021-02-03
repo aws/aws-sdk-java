@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualGatewayClientPolicyTlsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
     private static final MarshallingInfo<Boolean> ENFORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("enforce").build();
     private static final MarshallingInfo<List> PORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class VirtualGatewayClientPolicyTlsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualGatewayClientPolicyTls.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(virtualGatewayClientPolicyTls.getEnforce(), ENFORCE_BINDING);
             protocolMarshaller.marshall(virtualGatewayClientPolicyTls.getPorts(), PORTS_BINDING);
             protocolMarshaller.marshall(virtualGatewayClientPolicyTls.getValidation(), VALIDATION_BINDING);

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ExpressionType {
 
-    RuleName("RuleName");
+    RuleName("RuleName"),
+    MqttTopic("MqttTopic");
 
     private String value;
 

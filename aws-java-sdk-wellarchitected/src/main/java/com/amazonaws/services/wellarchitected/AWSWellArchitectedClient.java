@@ -196,6 +196,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new AssociateLensesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateLensesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -265,6 +266,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new CreateMilestoneRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMilestoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -341,6 +343,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new CreateWorkloadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkloadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -419,6 +422,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new CreateWorkloadShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkloadShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -486,6 +490,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new DeleteWorkloadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkloadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -553,6 +558,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new DeleteWorkloadShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkloadShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -625,6 +631,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new DisassociateLensesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateLensesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -690,6 +697,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new GetAnswerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnswerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -755,6 +763,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new GetLensReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLensReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -820,6 +829,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new GetLensReviewReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLensReviewReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -885,6 +895,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(getLensVersionDifferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -951,6 +962,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new GetMilestoneRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMilestoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1016,6 +1028,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new GetWorkloadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorkloadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1081,6 +1094,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListAnswersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnswersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1147,6 +1161,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(listLensReviewImprovementsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1213,6 +1228,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListLensReviewsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLensReviewsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1276,6 +1292,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListLensesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLensesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1341,6 +1358,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListMilestonesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMilestonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1403,6 +1421,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1466,6 +1485,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListShareInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listShareInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1531,6 +1551,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListWorkloadSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkloadSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1594,6 +1615,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new ListWorkloadsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkloadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1661,6 +1683,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpdateAnswerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnswerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1728,6 +1751,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpdateLensReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLensReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1795,6 +1819,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpdateShareInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateShareInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1863,6 +1888,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpdateWorkloadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkloadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1930,6 +1956,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpdateWorkloadShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkloadShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");
@@ -1996,6 +2023,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
                 request = new UpgradeLensReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(upgradeLensReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WellArchitected");

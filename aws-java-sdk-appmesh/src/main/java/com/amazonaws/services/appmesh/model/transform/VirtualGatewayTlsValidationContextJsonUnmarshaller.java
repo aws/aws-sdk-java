@@ -48,6 +48,10 @@ public class VirtualGatewayTlsValidationContextJsonUnmarshaller implements Unmar
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("subjectAlternativeNames", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayTlsValidationContext.setSubjectAlternativeNames(SubjectAlternativeNamesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("trust", targetDepth)) {
                     context.nextToken();
                     virtualGatewayTlsValidationContext.setTrust(VirtualGatewayTlsValidationContextTrustJsonUnmarshaller.getInstance().unmarshall(context));

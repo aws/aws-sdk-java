@@ -216,6 +216,7 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
                 request = new DeleteRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker FeatureStore Runtime");
@@ -283,6 +284,7 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
                 request = new GetRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker FeatureStore Runtime");
@@ -350,6 +352,7 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
                 request = new PutRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker FeatureStore Runtime");

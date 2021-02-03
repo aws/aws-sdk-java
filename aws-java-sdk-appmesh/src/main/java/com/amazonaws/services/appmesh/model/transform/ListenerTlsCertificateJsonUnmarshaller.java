@@ -56,6 +56,10 @@ public class ListenerTlsCertificateJsonUnmarshaller implements Unmarshaller<List
                     context.nextToken();
                     listenerTlsCertificate.setFile(ListenerTlsFileCertificateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sds", targetDepth)) {
+                    context.nextToken();
+                    listenerTlsCertificate.setSds(ListenerTlsSdsCertificateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
