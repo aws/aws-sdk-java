@@ -105,6 +105,9 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
      * value for this parameter.
      * </p>
+     * <p>
+     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * </p>
      */
     private Integer maxResults;
     /**
@@ -723,11 +726,16 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
      * value for this parameter.
      * </p>
+     * <p>
+     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * </p>
      * 
      * @param maxResults
      *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
      *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *        results as the default value for this parameter.
+     *        results as the default value for this parameter.</p>
+     *        <p>
+     *        For <code>GetTags</code>, MaxResults has an upper limit of 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -740,10 +748,15 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
      * value for this parameter.
      * </p>
+     * <p>
+     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * </p>
      * 
      * @return This field is only used when SortBy is provided in the request. The maximum number of objects that to be
      *         returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *         results as the default value for this parameter.
+     *         results as the default value for this parameter.</p>
+     *         <p>
+     *         For <code>GetTags</code>, MaxResults has an upper limit of 1000.
      */
 
     public Integer getMaxResults() {
@@ -756,11 +769,16 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
      * value for this parameter.
      * </p>
+     * <p>
+     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * </p>
      * 
      * @param maxResults
      *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
      *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *        results as the default value for this parameter.
+     *        results as the default value for this parameter.</p>
+     *        <p>
+     *        For <code>GetTags</code>, MaxResults has an upper limit of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

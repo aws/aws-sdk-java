@@ -378,6 +378,23 @@ public interface AWSGlueDataBrew {
 
     /**
      * <p>
+     * Represents one run of a DataBrew job.
+     * </p>
+     * 
+     * @param describeJobRunRequest
+     * @return Result of the DescribeJobRun operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ValidationException
+     *         The input parameters for this request failed validation.
+     * @sample AWSGlueDataBrew.DescribeJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeJobRunResult describeJobRun(DescribeJobRunRequest describeJobRunRequest);
+
+    /**
+     * <p>
      * Returns the definition of a specific DataBrew project.
      * </p>
      * 

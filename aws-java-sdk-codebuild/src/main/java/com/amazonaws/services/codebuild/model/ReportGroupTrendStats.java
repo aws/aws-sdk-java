@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For
+ * more information, see .
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportGroupTrendStats" target="_top">AWS
  *      API Documentation</a>
@@ -25,14 +29,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReportGroupTrendStats implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Contains the average of all values analyzed.
+     * </p>
+     */
     private String average;
-
+    /**
+     * <p>
+     * Contains the maximum value analyzed.
+     * </p>
+     */
     private String max;
-
+    /**
+     * <p>
+     * Contains the minimum value analyzed.
+     * </p>
+     */
     private String min;
 
     /**
+     * <p>
+     * Contains the average of all values analyzed.
+     * </p>
+     * 
      * @param average
+     *        Contains the average of all values analyzed.
      */
 
     public void setAverage(String average) {
@@ -40,7 +62,11 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the average of all values analyzed.
+     * </p>
+     * 
+     * @return Contains the average of all values analyzed.
      */
 
     public String getAverage() {
@@ -48,7 +74,12 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Contains the average of all values analyzed.
+     * </p>
+     * 
      * @param average
+     *        Contains the average of all values analyzed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +89,12 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Contains the maximum value analyzed.
+     * </p>
+     * 
      * @param max
+     *        Contains the maximum value analyzed.
      */
 
     public void setMax(String max) {
@@ -66,7 +102,11 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the maximum value analyzed.
+     * </p>
+     * 
+     * @return Contains the maximum value analyzed.
      */
 
     public String getMax() {
@@ -74,7 +114,12 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Contains the maximum value analyzed.
+     * </p>
+     * 
      * @param max
+     *        Contains the maximum value analyzed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +129,12 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Contains the minimum value analyzed.
+     * </p>
+     * 
      * @param min
+     *        Contains the minimum value analyzed.
      */
 
     public void setMin(String min) {
@@ -92,7 +142,11 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the minimum value analyzed.
+     * </p>
+     * 
+     * @return Contains the minimum value analyzed.
      */
 
     public String getMin() {
@@ -100,7 +154,12 @@ public class ReportGroupTrendStats implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Contains the minimum value analyzed.
+     * </p>
+     * 
      * @param min
+     *        Contains the minimum value analyzed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1525,7 +1525,7 @@
         },
         "TumblingWindowInSeconds":{
           "shape":"TumblingWindowInSeconds",
-          "documentation":"<p>(Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.</p>"
+          "documentation":"<p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>"
         },
         "Topics":{
           "shape":"Topics",
@@ -1631,7 +1631,7 @@
         },
         "ImageConfig":{
           "shape":"ImageConfig",
-          "documentation":"<p>Configuration values that override the container image Dockerfile.</p>"
+          "documentation":"<p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html\">Container image configuration values</a> that override the values in the container image Dockerfile.</p>"
         },
         "CodeSigningConfigArn":{
           "shape":"CodeSigningConfigArn",
@@ -2070,7 +2070,7 @@
         },
         "TumblingWindowInSeconds":{
           "shape":"TumblingWindowInSeconds",
-          "documentation":"<p>(Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.</p>"
+          "documentation":"<p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>"
         },
         "FunctionResponseTypes":{
           "shape":"FunctionResponseTypeList",
@@ -2769,7 +2769,7 @@
           "documentation":"<p>Specifies the working directory.</p>"
         }
       },
-      "documentation":"<p>Configuration values that override the container image Dockerfile settings. See <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html\">Container settings</a>. </p>"
+      "documentation":"<p>Configuration values that override the container image Dockerfile settings. See <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms\">Container settings</a>. </p>"
     },
     "ImageConfigError":{
       "type":"structure",
@@ -4249,6 +4249,7 @@
         "nodejs8.10",
         "nodejs10.x",
         "nodejs12.x",
+        "nodejs14.x",
         "java8",
         "java8.al2",
         "java11",
@@ -4325,7 +4326,7 @@
       "members":{
         "Type":{
           "shape":"SourceAccessType",
-          "documentation":"<p>The type of authentication protocol or the VPC components for your event source. For example: <code>\"Type\":\"SASL_SCRAM_512_AUTH\"</code>.</p> <ul> <li> <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.</p> </li> <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>"
+          "documentation":"<p>The type of authentication protocol or the VPC components for your event source. For example: <code>\"Type\":\"SASL_SCRAM_512_AUTH\"</code>.</p> <ul> <li> <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your Self-Managed Apache Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your Self-Managed Apache Kafka brokers.</p> </li> </ul>"
         },
         "URI":{
           "shape":"URI",
@@ -4338,7 +4339,7 @@
       "type":"list",
       "member":{"shape":"SourceAccessConfiguration"},
       "max":22,
-      "min":1
+      "min":0
     },
     "SourceAccessType":{
       "type":"string",
@@ -4680,7 +4681,7 @@
         },
         "TumblingWindowInSeconds":{
           "shape":"TumblingWindowInSeconds",
-          "documentation":"<p>(Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.</p>"
+          "documentation":"<p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>"
         },
         "FunctionResponseTypes":{
           "shape":"FunctionResponseTypeList",
@@ -4800,7 +4801,7 @@
         },
         "ImageConfig":{
           "shape":"ImageConfig",
-          "documentation":"<p>Configuration values that override the container image Dockerfile.</p>"
+          "documentation":"<p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html\">Container image configuration values</a> that override the values in the container image Dockerfile.</p>"
         }
       }
     },

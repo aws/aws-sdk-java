@@ -30,7 +30,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -110,7 +110,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -128,7 +128,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * @return The IDs of the AWS accounts for which to export instance recommendations.</p>
      *         <p>
      *         If your account is the management account of an organization, use this parameter to specify the member
-     *         accounts for which you want to export recommendations.
+     *         account for which you want to export recommendations.
      *         </p>
      *         <p>
      *         This parameter cannot be specified together with the include member accounts parameter. The parameters
@@ -151,7 +151,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -170,7 +170,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -198,7 +198,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -222,7 +222,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -252,7 +252,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -271,7 +271,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are

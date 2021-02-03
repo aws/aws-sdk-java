@@ -540,6 +540,39 @@ public class AWSGlueDataBrewAsyncClient extends AWSGlueDataBrewClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(DescribeJobRunRequest request) {
+
+        return describeJobRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(final DescribeJobRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeJobRunRequest, DescribeJobRunResult> asyncHandler) {
+        final DescribeJobRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeJobRunResult>() {
+            @Override
+            public DescribeJobRunResult call() throws Exception {
+                DescribeJobRunResult result = null;
+
+                try {
+                    result = executeDescribeJobRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request) {
 
         return describeProjectAsync(request, null);

@@ -31,6 +31,8 @@ public class DescribeProductsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> PRODUCTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ProductArn").build();
 
     private static final DescribeProductsRequestMarshaller instance = new DescribeProductsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DescribeProductsRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeProductsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeProductsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeProductsRequest.getProductArn(), PRODUCTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

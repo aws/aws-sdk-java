@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains the unmodified data for the report. For more information, see .
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportWithRawData" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReportWithRawData implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ARN of the report.
+     * </p>
+     */
     private String reportArn;
-
+    /**
+     * <p>
+     * The value of the requested data field from the report.
+     * </p>
+     */
     private String data;
 
     /**
+     * <p>
+     * The ARN of the report.
+     * </p>
+     * 
      * @param reportArn
+     *        The ARN of the report.
      */
 
     public void setReportArn(String reportArn) {
@@ -38,7 +55,11 @@ public class ReportWithRawData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the report.
+     * </p>
+     * 
+     * @return The ARN of the report.
      */
 
     public String getReportArn() {
@@ -46,7 +67,12 @@ public class ReportWithRawData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The ARN of the report.
+     * </p>
+     * 
      * @param reportArn
+     *        The ARN of the report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class ReportWithRawData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The value of the requested data field from the report.
+     * </p>
+     * 
      * @param data
+     *        The value of the requested data field from the report.
      */
 
     public void setData(String data) {
@@ -64,7 +95,11 @@ public class ReportWithRawData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The value of the requested data field from the report.
+     * </p>
+     * 
+     * @return The value of the requested data field from the report.
      */
 
     public String getData() {
@@ -72,7 +107,12 @@ public class ReportWithRawData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The value of the requested data field from the report.
+     * </p>
+     * 
      * @param data
+     *        The value of the requested data field from the report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

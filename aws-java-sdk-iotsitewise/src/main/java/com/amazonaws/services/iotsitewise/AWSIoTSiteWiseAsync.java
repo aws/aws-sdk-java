@@ -479,6 +479,29 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
             com.amazonaws.handlers.AsyncHandler<CreatePortalRequest, CreatePortalResult> asyncHandler);
 
     /**
+     * @param createPresignedPortalUrlRequest
+     * @return A Java Future containing the result of the CreatePresignedPortalUrl operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.CreatePresignedPortalUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest);
+
+    /**
+     * @param createPresignedPortalUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePresignedPortalUrl operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.CreatePresignedPortalUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePresignedPortalUrlRequest, CreatePresignedPortalUrlResult> asyncHandler);
+
+    /**
      * <p>
      * Creates a project in the specified portal.
      * </p>

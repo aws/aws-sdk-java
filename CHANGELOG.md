@@ -1,3 +1,44 @@
+# __1.11.948__ __2021-02-03__
+## __AWS Audit Manager__
+  - ### Features
+    - This release adds AccessDeniedException to GetServicesInScope API.
+
+## __AWS CodeBuild__
+  - ### Features
+    - Documentation updates for codebuild
+
+## __AWS Compute Optimizer__
+  - ### Features
+    - Documentation updates for Compute Optimizer
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Clarify valid values for the filter parameter for certain APIs.
+
+## __AWS Glue DataBrew__
+  - ### Features
+    - This release adds the DescribeJobRun API to allow customers retrieve details of a given job run
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Update AccessPolicy API input to support IAM role for IAM mode. Iam role is added as part of accessPolicyIdentity.
+
+## __AWS Lambda__
+  - ### Features
+    - Support for creating Lambda Functions using 'nodejs14.x'
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added a ProductArn parameter to DescribeProducts. ProductArn is used to identify the integration to return details for.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - EC2 Public IP now supports API for setting PTR records on Elastic IP address.
+
+## __Amazon WorkMail__
+  - ### Features
+    - Increased maximum length of ipRanges values for Access Control Rules from 10 to 1024.
+
 # __1.11.947__ __2021-02-02__
 ## __AWS App Mesh__
   - ### Features

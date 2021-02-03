@@ -1470,8 +1470,14 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Returns information about the available products that you can subscribe to and integrate with Security Hub in
-     * order to consolidate findings.
+     * Returns information about product integrations in Security Hub.
+     * </p>
+     * <p>
+     * You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include
+     * that integration.
+     * </p>
+     * <p>
+     * If you do not provide an integration ARN, then the results include all of the available product integrations.
      * </p>
      * 
      * @param describeProductsRequest

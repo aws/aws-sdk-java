@@ -42,6 +42,12 @@ public class DescribeProductsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The ARN of the integration to return.
+     * </p>
+     */
+    private String productArn;
 
     /**
      * <p>
@@ -151,6 +157,46 @@ public class DescribeProductsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ARN of the integration to return.
+     * </p>
+     * 
+     * @param productArn
+     *        The ARN of the integration to return.
+     */
+
+    public void setProductArn(String productArn) {
+        this.productArn = productArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the integration to return.
+     * </p>
+     * 
+     * @return The ARN of the integration to return.
+     */
+
+    public String getProductArn() {
+        return this.productArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the integration to return.
+     * </p>
+     * 
+     * @param productArn
+     *        The ARN of the integration to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductsRequest withProductArn(String productArn) {
+        setProductArn(productArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,7 +211,9 @@ public class DescribeProductsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getProductArn() != null)
+            sb.append("ProductArn: ").append(getProductArn());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +236,10 @@ public class DescribeProductsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getProductArn() == null ^ this.getProductArn() == null)
+            return false;
+        if (other.getProductArn() != null && other.getProductArn().equals(this.getProductArn()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +250,7 @@ public class DescribeProductsRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getProductArn() == null) ? 0 : getProductArn().hashCode());
         return hashCode;
     }
 

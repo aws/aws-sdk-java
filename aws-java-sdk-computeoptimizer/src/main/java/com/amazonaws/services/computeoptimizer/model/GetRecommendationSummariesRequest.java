@@ -27,10 +27,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return recommendation summaries.
+     * The ID of the AWS account for which to return recommendation summaries.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return recommendation summaries.
      * </p>
      * <p>
@@ -56,20 +56,20 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return recommendation summaries.
+     * The ID of the AWS account for which to return recommendation summaries.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return recommendation summaries.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
-     * @return The IDs of the AWS accounts for which to return recommendation summaries.</p>
+     * @return The ID of the AWS account for which to return recommendation summaries.</p>
      *         <p>
      *         If your account is the management account of an organization, use this parameter to specify the member
-     *         accounts for which you want to return recommendation summaries.
+     *         account for which you want to return recommendation summaries.
      *         </p>
      *         <p>
      *         Only one account ID can be specified per request.
@@ -81,10 +81,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return recommendation summaries.
+     * The ID of the AWS account for which to return recommendation summaries.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return recommendation summaries.
      * </p>
      * <p>
@@ -92,10 +92,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return recommendation summaries.</p>
+     *        The ID of the AWS account for which to return recommendation summaries.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return recommendation summaries.
+     *        account for which you want to return recommendation summaries.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -112,10 +112,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return recommendation summaries.
+     * The ID of the AWS account for which to return recommendation summaries.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return recommendation summaries.
      * </p>
      * <p>
@@ -128,10 +128,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return recommendation summaries.</p>
+     *        The ID of the AWS account for which to return recommendation summaries.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return recommendation summaries.
+     *        account for which you want to return recommendation summaries.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -150,10 +150,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return recommendation summaries.
+     * The ID of the AWS account for which to return recommendation summaries.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return recommendation summaries.
      * </p>
      * <p>
@@ -161,10 +161,10 @@ public class GetRecommendationSummariesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return recommendation summaries.</p>
+     *        The ID of the AWS account for which to return recommendation summaries.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return recommendation summaries.
+     *        account for which you want to return recommendation summaries.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.

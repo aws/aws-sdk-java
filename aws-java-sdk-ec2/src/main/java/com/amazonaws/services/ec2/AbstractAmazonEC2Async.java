@@ -2395,6 +2395,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAddressesAttributeResult> describeAddressesAttributeAsync(DescribeAddressesAttributeRequest request) {
+
+        return describeAddressesAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddressesAttributeResult> describeAddressesAttributeAsync(DescribeAddressesAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddressesAttributeRequest, DescribeAddressesAttributeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAggregateIdFormatResult> describeAggregateIdFormatAsync(DescribeAggregateIdFormatRequest request) {
 
         return describeAggregateIdFormatAsync(request, null);
@@ -5860,6 +5873,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyAddressAttributeResult> modifyAddressAttributeAsync(ModifyAddressAttributeRequest request) {
+
+        return modifyAddressAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAddressAttributeResult> modifyAddressAttributeAsync(ModifyAddressAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyAddressAttributeRequest, ModifyAddressAttributeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request) {
 
         return modifyAvailabilityZoneGroupAsync(request, null);
@@ -6803,6 +6829,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<RequestSpotInstancesResult> requestSpotInstancesAsync(RequestSpotInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestSpotInstancesRequest, RequestSpotInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAddressAttributeResult> resetAddressAttributeAsync(ResetAddressAttributeRequest request) {
+
+        return resetAddressAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAddressAttributeResult> resetAddressAttributeAsync(ResetAddressAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetAddressAttributeRequest, ResetAddressAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

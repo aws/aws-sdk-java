@@ -33,7 +33,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
     private String projectName;
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -47,6 +50,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      */
     private String sortOrder;
     /**
@@ -101,7 +107,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -115,9 +124,15 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      * 
      * @param sortOrder
-     *        The order to list build IDs. Valid values include:</p>
+     *        The order to list results in. The results are sorted by build number, not the build identifier.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -129,6 +144,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>DESCENDING</code>: List the build IDs in descending order by build ID.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the project has more than 100 builds, setting the sort order will result in an error.
      * @see SortOrderType
      */
 
@@ -138,7 +156,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -152,8 +173,14 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      * 
-     * @return The order to list build IDs. Valid values include:</p>
+     * @return The order to list results in. The results are sorted by build number, not the build identifier.</p>
+     *         <p>
+     *         Valid values include:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -165,6 +192,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>DESCENDING</code>: List the build IDs in descending order by build ID.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If the project has more than 100 builds, setting the sort order will result in an error.
      * @see SortOrderType
      */
 
@@ -174,7 +204,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -188,9 +221,15 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      * 
      * @param sortOrder
-     *        The order to list build IDs. Valid values include:</p>
+     *        The order to list results in. The results are sorted by build number, not the build identifier.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -202,6 +241,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>DESCENDING</code>: List the build IDs in descending order by build ID.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the project has more than 100 builds, setting the sort order will result in an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrderType
      */
@@ -213,7 +255,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -227,9 +272,15 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      * 
      * @param sortOrder
-     *        The order to list build IDs. Valid values include:</p>
+     *        The order to list results in. The results are sorted by build number, not the build identifier.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -241,6 +292,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>DESCENDING</code>: List the build IDs in descending order by build ID.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the project has more than 100 builds, setting the sort order will result in an error.
      * @see SortOrderType
      */
 
@@ -250,7 +304,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The order to list build IDs. Valid values include:
+     * The order to list results in. The results are sorted by build number, not the build identifier.
+     * </p>
+     * <p>
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -264,9 +321,15 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the project has more than 100 builds, setting the sort order will result in an error.
+     * </p>
      * 
      * @param sortOrder
-     *        The order to list build IDs. Valid values include:</p>
+     *        The order to list results in. The results are sorted by build number, not the build identifier.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -278,6 +341,9 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>DESCENDING</code>: List the build IDs in descending order by build ID.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the project has more than 100 builds, setting the sort order will result in an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrderType
      */

@@ -25,14 +25,103 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ARN of the report group that contains the reports to analyze.
+     * </p>
+     */
     private String reportGroupArn;
-
+    /**
+     * <p>
+     * The number of reports to analyze. This operation always retrieves the most recent reports.
+     * </p>
+     * <p>
+     * If this parameter is omitted, the most recent 100 reports are analyzed.
+     * </p>
+     */
     private Integer numOfReports;
-
+    /**
+     * <p>
+     * The test report value to accumulate. This must be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Test reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>DURATION</dt>
+     * <dd>
+     * <p>
+     * Accumulate the test run times for the specified reports.
+     * </p>
+     * </dd>
+     * <dt>PASS_RATE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the percentage of tests that passed for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>TOTAL</dt>
+     * <dd>
+     * <p>
+     * Accumulate the total number of tests for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * <dl>
+     * <dt>Code coverage reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>BRANCH_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branch coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches missed values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the line coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines not covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     */
     private String trendField;
 
     /**
+     * <p>
+     * The ARN of the report group that contains the reports to analyze.
+     * </p>
+     * 
      * @param reportGroupArn
+     *        The ARN of the report group that contains the reports to analyze.
      */
 
     public void setReportGroupArn(String reportGroupArn) {
@@ -40,7 +129,11 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the report group that contains the reports to analyze.
+     * </p>
+     * 
+     * @return The ARN of the report group that contains the reports to analyze.
      */
 
     public String getReportGroupArn() {
@@ -48,7 +141,12 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ARN of the report group that contains the reports to analyze.
+     * </p>
+     * 
      * @param reportGroupArn
+     *        The ARN of the report group that contains the reports to analyze.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +156,17 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The number of reports to analyze. This operation always retrieves the most recent reports.
+     * </p>
+     * <p>
+     * If this parameter is omitted, the most recent 100 reports are analyzed.
+     * </p>
+     * 
      * @param numOfReports
+     *        The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+     *        <p>
+     *        If this parameter is omitted, the most recent 100 reports are analyzed.
      */
 
     public void setNumOfReports(Integer numOfReports) {
@@ -66,7 +174,16 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The number of reports to analyze. This operation always retrieves the most recent reports.
+     * </p>
+     * <p>
+     * If this parameter is omitted, the most recent 100 reports are analyzed.
+     * </p>
+     * 
+     * @return The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+     *         <p>
+     *         If this parameter is omitted, the most recent 100 reports are analyzed.
      */
 
     public Integer getNumOfReports() {
@@ -74,7 +191,17 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The number of reports to analyze. This operation always retrieves the most recent reports.
+     * </p>
+     * <p>
+     * If this parameter is omitted, the most recent 100 reports are analyzed.
+     * </p>
+     * 
      * @param numOfReports
+     *        The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+     *        <p>
+     *        If this parameter is omitted, the most recent 100 reports are analyzed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +211,147 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The test report value to accumulate. This must be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Test reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>DURATION</dt>
+     * <dd>
+     * <p>
+     * Accumulate the test run times for the specified reports.
+     * </p>
+     * </dd>
+     * <dt>PASS_RATE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the percentage of tests that passed for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>TOTAL</dt>
+     * <dd>
+     * <p>
+     * Accumulate the total number of tests for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * <dl>
+     * <dt>Code coverage reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>BRANCH_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branch coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches missed values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the line coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines not covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * 
      * @param trendField
+     *        The test report value to accumulate. This must be one of the following values:</p>
+     *        <dl>
+     *        <dt>Test reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>DURATION</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the test run times for the specified reports.
+     *        </p>
+     *        </dd>
+     *        <dt>PASS_RATE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the percentage of tests that passed for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TOTAL</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the total number of tests for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
+     *        </dl>
+     *        <dl>
+     *        <dt>Code coverage reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>BRANCH_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branch coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches missed values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the line coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines not covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
      * @see ReportGroupTrendFieldType
      */
 
@@ -93,7 +360,146 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The test report value to accumulate. This must be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Test reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>DURATION</dt>
+     * <dd>
+     * <p>
+     * Accumulate the test run times for the specified reports.
+     * </p>
+     * </dd>
+     * <dt>PASS_RATE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the percentage of tests that passed for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>TOTAL</dt>
+     * <dd>
+     * <p>
+     * Accumulate the total number of tests for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * <dl>
+     * <dt>Code coverage reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>BRANCH_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branch coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches missed values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the line coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines not covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * 
+     * @return The test report value to accumulate. This must be one of the following values:</p>
+     *         <dl>
+     *         <dt>Test reports:</dt>
+     *         <dd>
+     *         <dl>
+     *         <dt>DURATION</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the test run times for the specified reports.
+     *         </p>
+     *         </dd>
+     *         <dt>PASS_RATE</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the percentage of tests that passed for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>TOTAL</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the total number of tests for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         </dd>
+     *         </dl>
+     *         <dl>
+     *         <dt>Code coverage reports:</dt>
+     *         <dd>
+     *         <dl>
+     *         <dt>BRANCH_COVERAGE</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the branch coverage percentages for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>BRANCHES_COVERED</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the branches covered values for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>BRANCHES_MISSED</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the branches missed values for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>LINE_COVERAGE</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the line coverage percentages for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>LINES_COVERED</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the lines covered values for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         <dt>LINES_MISSED</dt>
+     *         <dd>
+     *         <p>
+     *         Accumulate the lines not covered values for the specified test reports.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         </dd>
      * @see ReportGroupTrendFieldType
      */
 
@@ -102,7 +508,147 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The test report value to accumulate. This must be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Test reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>DURATION</dt>
+     * <dd>
+     * <p>
+     * Accumulate the test run times for the specified reports.
+     * </p>
+     * </dd>
+     * <dt>PASS_RATE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the percentage of tests that passed for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>TOTAL</dt>
+     * <dd>
+     * <p>
+     * Accumulate the total number of tests for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * <dl>
+     * <dt>Code coverage reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>BRANCH_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branch coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches missed values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the line coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines not covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * 
      * @param trendField
+     *        The test report value to accumulate. This must be one of the following values:</p>
+     *        <dl>
+     *        <dt>Test reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>DURATION</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the test run times for the specified reports.
+     *        </p>
+     *        </dd>
+     *        <dt>PASS_RATE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the percentage of tests that passed for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TOTAL</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the total number of tests for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
+     *        </dl>
+     *        <dl>
+     *        <dt>Code coverage reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>BRANCH_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branch coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches missed values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the line coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines not covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportGroupTrendFieldType
      */
@@ -113,7 +659,147 @@ public class GetReportGroupTrendRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The test report value to accumulate. This must be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Test reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>DURATION</dt>
+     * <dd>
+     * <p>
+     * Accumulate the test run times for the specified reports.
+     * </p>
+     * </dd>
+     * <dt>PASS_RATE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the percentage of tests that passed for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>TOTAL</dt>
+     * <dd>
+     * <p>
+     * Accumulate the total number of tests for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * <dl>
+     * <dt>Code coverage reports:</dt>
+     * <dd>
+     * <dl>
+     * <dt>BRANCH_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branch coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>BRANCHES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the branches missed values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * Accumulate the line coverage percentages for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_COVERED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * <dt>LINES_MISSED</dt>
+     * <dd>
+     * <p>
+     * Accumulate the lines not covered values for the specified test reports.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
+     * 
      * @param trendField
+     *        The test report value to accumulate. This must be one of the following values:</p>
+     *        <dl>
+     *        <dt>Test reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>DURATION</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the test run times for the specified reports.
+     *        </p>
+     *        </dd>
+     *        <dt>PASS_RATE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the percentage of tests that passed for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TOTAL</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the total number of tests for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
+     *        </dl>
+     *        <dl>
+     *        <dt>Code coverage reports:</dt>
+     *        <dd>
+     *        <dl>
+     *        <dt>BRANCH_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branch coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>BRANCHES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the branches missed values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the line coverage percentages for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_COVERED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        <dt>LINES_MISSED</dt>
+     *        <dd>
+     *        <p>
+     *        Accumulate the lines not covered values for the specified test reports.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportGroupTrendFieldType
      */

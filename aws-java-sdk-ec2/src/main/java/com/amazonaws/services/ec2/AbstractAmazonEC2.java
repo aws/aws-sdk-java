@@ -899,6 +899,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeAddressesAttributeResult describeAddressesAttribute(DescribeAddressesAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAggregateIdFormatResult describeAggregateIdFormat(DescribeAggregateIdFormatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2015,6 +2020,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyAddressAttributeResult modifyAddressAttribute(ModifyAddressAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyAvailabilityZoneGroupResult modifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2366,6 +2376,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetAddressAttributeResult resetAddressAttribute(ResetAddressAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

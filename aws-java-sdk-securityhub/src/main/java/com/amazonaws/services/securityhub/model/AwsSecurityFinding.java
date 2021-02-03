@@ -295,7 +295,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private PatchSummary patchSummary;
     /**
      * <p>
-     * Provides details about an action that was detected for the finding.
+     * Provides details about an action that affects or that was taken on a resource.
      * </p>
      */
     private Action action;
@@ -2292,11 +2292,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Provides details about an action that was detected for the finding.
+     * Provides details about an action that affects or that was taken on a resource.
      * </p>
      * 
      * @param action
-     *        Provides details about an action that was detected for the finding.
+     *        Provides details about an action that affects or that was taken on a resource.
      */
 
     public void setAction(Action action) {
@@ -2305,10 +2305,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Provides details about an action that was detected for the finding.
+     * Provides details about an action that affects or that was taken on a resource.
      * </p>
      * 
-     * @return Provides details about an action that was detected for the finding.
+     * @return Provides details about an action that affects or that was taken on a resource.
      */
 
     public Action getAction() {
@@ -2317,11 +2317,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Provides details about an action that was detected for the finding.
+     * Provides details about an action that affects or that was taken on a resource.
      * </p>
      * 
      * @param action
-     *        Provides details about an action that was detected for the finding.
+     *        Provides details about an action that affects or that was taken on a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,10 +27,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -69,20 +69,20 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
-     * @return The IDs of the AWS accounts for which to return Auto Scaling group recommendations.</p>
+     * @return The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
      *         <p>
      *         If your account is the management account of an organization, use this parameter to specify the member
-     *         accounts for which you want to return Auto Scaling group recommendations.
+     *         account for which you want to return Auto Scaling group recommendations.
      *         </p>
      *         <p>
      *         Only one account ID can be specified per request.
@@ -94,10 +94,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -105,10 +105,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return Auto Scaling group recommendations.
+     *        account for which you want to return Auto Scaling group recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -125,10 +125,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -141,10 +141,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return Auto Scaling group recommendations.
+     *        account for which you want to return Auto Scaling group recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -163,10 +163,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -174,10 +174,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return Auto Scaling group recommendations.
+     *        account for which you want to return Auto Scaling group recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.

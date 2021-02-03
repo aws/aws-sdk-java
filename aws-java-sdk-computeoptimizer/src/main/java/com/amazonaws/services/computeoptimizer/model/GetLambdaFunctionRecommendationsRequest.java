@@ -41,10 +41,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
     private java.util.List<String> functionArns;
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return function recommendations.
+     * The ID of the AWS account for which to return function recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return function recommendations.
      * </p>
      * <p>
@@ -210,20 +210,20 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return function recommendations.
+     * The ID of the AWS account for which to return function recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return function recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
-     * @return The IDs of the AWS accounts for which to return function recommendations.</p>
+     * @return The ID of the AWS account for which to return function recommendations.</p>
      *         <p>
      *         If your account is the management account of an organization, use this parameter to specify the member
-     *         accounts for which you want to return function recommendations.
+     *         account for which you want to return function recommendations.
      *         </p>
      *         <p>
      *         Only one account ID can be specified per request.
@@ -235,10 +235,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return function recommendations.
+     * The ID of the AWS account for which to return function recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return function recommendations.
      * </p>
      * <p>
@@ -246,10 +246,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return function recommendations.</p>
+     *        The ID of the AWS account for which to return function recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return function recommendations.
+     *        account for which you want to return function recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -266,10 +266,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return function recommendations.
+     * The ID of the AWS account for which to return function recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return function recommendations.
      * </p>
      * <p>
@@ -282,10 +282,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return function recommendations.</p>
+     *        The ID of the AWS account for which to return function recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return function recommendations.
+     *        account for which you want to return function recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
@@ -304,10 +304,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the AWS accounts for which to return function recommendations.
+     * The ID of the AWS account for which to return function recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to return function recommendations.
      * </p>
      * <p>
@@ -315,10 +315,10 @@ public class GetLambdaFunctionRecommendationsRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param accountIds
-     *        The IDs of the AWS accounts for which to return function recommendations.</p>
+     *        The ID of the AWS account for which to return function recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to return function recommendations.
+     *        account for which you want to return function recommendations.
      *        </p>
      *        <p>
      *        Only one account ID can be specified per request.

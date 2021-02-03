@@ -171,8 +171,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
-     * thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     * <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1385,8 +1391,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
-     * thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     * <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1397,7 +1409,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
      *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *        invalidInputException is thrown. </p> <note>
+     *        <code>invalidInputException</code> is thrown. </p>
+     *        <p>
+     *        To be able to report the build status to the source provider, the user associated with the source provider
+     *        must have write access to the repo. If the user does not have write access, the build status cannot be
+     *        updated. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The status of a build triggered by a webhook is always reported to your source provider.
      *        </p>
@@ -1410,8 +1430,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
-     * thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     * <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1421,7 +1447,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
      *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *         invalidInputException is thrown. </p> <note>
+     *         <code>invalidInputException</code> is thrown. </p>
+     *         <p>
+     *         To be able to report the build status to the source provider, the user associated with the source
+     *         provider must have write access to the repo. If the user does not have write access, the build status
+     *         cannot be updated. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         </p>
+     *         <note>
      *         <p>
      *         The status of a build triggered by a webhook is always reported to your source provider.
      *         </p>
@@ -1434,8 +1468,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
-     * thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     * <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1446,7 +1486,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
      *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *        invalidInputException is thrown. </p> <note>
+     *        <code>invalidInputException</code> is thrown. </p>
+     *        <p>
+     *        To be able to report the build status to the source provider, the user associated with the source provider
+     *        must have write access to the repo. If the user does not have write access, the build status cannot be
+     *        updated. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The status of a build triggered by a webhook is always reported to your source provider.
      *        </p>
@@ -1461,8 +1509,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
-     * thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     * <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1472,7 +1526,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
      *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *         invalidInputException is thrown. </p> <note>
+     *         <code>invalidInputException</code> is thrown. </p>
+     *         <p>
+     *         To be able to report the build status to the source provider, the user associated with the source
+     *         provider must have write access to the repo. If the user does not have write access, the build status
+     *         cannot be updated. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         </p>
+     *         <note>
      *         <p>
      *         The status of a build triggered by a webhook is always reported to your source provider.
      *         </p>

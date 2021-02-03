@@ -31,7 +31,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -115,7 +115,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -133,7 +133,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @return The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *         <p>
      *         If your account is the management account of an organization, use this parameter to specify the member
-     *         accounts for which you want to export recommendations.
+     *         account for which you want to export recommendations.
      *         </p>
      *         <p>
      *         This parameter cannot be specified together with the include member accounts parameter. The parameters
@@ -156,7 +156,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -175,7 +175,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -203,7 +203,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -227,7 +227,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -257,7 +257,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * If your account is the management account of an organization, use this parameter to specify the member account
      * for which you want to export recommendations.
      * </p>
      * <p>
@@ -276,7 +276,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
      *        If your account is the management account of an organization, use this parameter to specify the member
-     *        accounts for which you want to export recommendations.
+     *        account for which you want to export recommendations.
      *        </p>
      *        <p>
      *        This parameter cannot be specified together with the include member accounts parameter. The parameters are

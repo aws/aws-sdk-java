@@ -42,24 +42,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data
-     * from your Kafka cluster.
+     * from your Self-Managed Apache Kafka cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka
+     * brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * </ul>
@@ -87,24 +88,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data
-     * from your Kafka cluster.
+     * from your Self-Managed Apache Kafka cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka
+     * brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * </ul>
@@ -121,24 +123,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch
-     *        data from your Kafka cluster.
+     *        data from your Self-Managed Apache Kafka cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache
+     *        Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      * @see SourceAccessType
@@ -162,24 +165,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data
-     * from your Kafka cluster.
+     * from your Self-Managed Apache Kafka cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka
+     * brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * </ul>
@@ -195,24 +199,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch
-     *         data from your Kafka cluster.
+     *         data from your Self-Managed Apache Kafka cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     *         <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed
+     *         Apache Kafka brokers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of
-     *         your Kafka brokers.
+     *         <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     *         authentication of your Self-Managed Apache Kafka brokers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of
-     *         your Kafka brokers.
+     *         <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     *         authentication of your Self-Managed Apache Kafka brokers.
      *         </p>
      *         </li>
      * @see SourceAccessType
@@ -236,24 +241,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data
-     * from your Kafka cluster.
+     * from your Self-Managed Apache Kafka cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka
+     * brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * </ul>
@@ -270,24 +276,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch
-     *        data from your Kafka cluster.
+     *        data from your Self-Managed Apache Kafka cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache
+     *        Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -313,24 +320,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data
-     * from your Kafka cluster.
+     * from your Self-Managed Apache Kafka cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache Kafka
+     * brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * Kafka brokers.
+     * <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
      * </ul>
@@ -347,24 +355,25 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch
-     *        data from your Kafka cluster.
+     *        data from your Self-Managed Apache Kafka cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Kafka brokers.
+     *        <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your Self-Managed Apache
+     *        Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512 authentication of
-     *        your Kafka brokers.
+     *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
+     *        authentication of your Self-Managed Apache Kafka brokers.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

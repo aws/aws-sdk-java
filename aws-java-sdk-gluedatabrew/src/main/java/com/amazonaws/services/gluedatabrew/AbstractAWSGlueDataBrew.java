@@ -98,6 +98,11 @@ public class AbstractAWSGlueDataBrew implements AWSGlueDataBrew {
     }
 
     @Override
+    public DescribeJobRunResult describeJobRun(DescribeJobRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProjectResult describeProject(DescribeProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

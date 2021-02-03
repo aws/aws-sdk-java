@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details about one of the following actions that were detected for the finding:
+ * Provides details about one of the following actions that affects or that was taken on a resource:
  * </p>
  * <ul>
  * <li>

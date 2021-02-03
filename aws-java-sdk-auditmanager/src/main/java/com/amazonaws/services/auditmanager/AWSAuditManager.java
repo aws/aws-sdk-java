@@ -727,6 +727,8 @@ public interface AWSAuditManager {
      * 
      * @param getServicesInScopeRequest
      * @return Result of the GetServicesInScope operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException

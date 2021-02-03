@@ -1552,6 +1552,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ValidationException",
         "documentation" : "<p> The request has invalid or missing parameters. </p>",
         "httpStatusCode" : 400

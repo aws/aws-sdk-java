@@ -3320,11 +3320,50 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes the endpoint routes in the
-     * route tables that were associated with the endpoint. Deleting an interface endpoint or a Gateway Load Balancer
-     * endpoint deletes the endpoint network interfaces. Gateway Load Balancer endpoints can only be deleted if the
-     * routes that are associated with the endpoint are deleted.
+     * Deletes one or more specified VPC endpoints. You can delete any of the following types of VPC endpoints.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Gateway endpoint,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Gateway Load Balancer endpoint,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interface endpoint
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following rules apply when you delete a VPC endpoint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables that are associated with
+     * the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+     * </p>
+     * <p>
+     * You can only delete Gateway Load Balancer endpoints when the routes that are associated with the endpoint are
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you delete an interface endpoint, we delete the endpoint network interfaces.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteVpcEndpointsRequest
      *        Contains the parameters for DeleteVpcEndpoints.
@@ -3577,6 +3616,21 @@ public interface AmazonEC2 {
      * @see #describeAddresses(DescribeAddressesRequest)
      */
     DescribeAddressesResult describeAddresses();
+
+    /**
+     * <p>
+     * Describes the attributes of the specified Elastic IP addresses. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param describeAddressesAttributeRequest
+     * @return Result of the DescribeAddressesAttribute operation returned by the service.
+     * @sample AmazonEC2.DescribeAddressesAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAddressesAttributeResult describeAddressesAttribute(DescribeAddressesAttributeRequest describeAddressesAttributeRequest);
 
     /**
      * <p>
@@ -5864,10 +5918,10 @@ public interface AmazonEC2 {
      * Describes available services to which you can create a VPC endpoint.
      * </p>
      * <p>
-     * When the service provider and the consumer have different accounts multiple Availability Zones, and the consumer
-     * views the VPC endpoint service information, the response only includes the common Availability Zones. For
-     * example, when the service provider account uses <code>us-east-1a</code> and <code>us-east-1c</code> and the
-     * consumer uses <code>us-east-1a</code> and us-east-1a and us-east-1b, the response includes the VPC endpoint
+     * When the service provider and the consumer have different accounts in multiple Availability Zones, and the
+     * consumer views the VPC endpoint service information, the response only includes the common Availability Zones.
+     * For example, when the service provider account uses <code>us-east-1a</code> and <code>us-east-1c</code> and the
+     * consumer uses <code>us-east-1a</code> and <code>us-east-1b</code>, the response includes the VPC endpoint
      * services in the common Availability Zone, <code>us-east-1a</code>.
      * </p>
      * 
@@ -7035,6 +7089,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     ImportVolumeResult importVolume(ImportVolumeRequest importVolumeRequest);
+
+    /**
+     * <p>
+     * Modifies an attribute of the specified Elastic IP address. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param modifyAddressAttributeRequest
+     * @return Result of the ModifyAddressAttribute operation returned by the service.
+     * @sample AmazonEC2.ModifyAddressAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyAddressAttributeResult modifyAddressAttribute(ModifyAddressAttributeRequest modifyAddressAttributeRequest);
 
     /**
      * <p>
@@ -8643,6 +8712,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest requestSpotInstancesRequest);
+
+    /**
+     * <p>
+     * Resets the attribute of the specified IP address. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param resetAddressAttributeRequest
+     * @return Result of the ResetAddressAttribute operation returned by the service.
+     * @sample AmazonEC2.ResetAddressAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResetAddressAttributeResult resetAddressAttribute(ResetAddressAttributeRequest resetAddressAttributeRequest);
 
     /**
      * <p>

@@ -1070,6 +1070,65 @@ public class AWSGlueDataBrewClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Represents one run of a DataBrew job.
+     * </p>
+     * 
+     * @param describeJobRunRequest
+     * @return Result of the DescribeJobRun operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ValidationException
+     *         The input parameters for this request failed validation.
+     * @sample AWSGlueDataBrew.DescribeJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeJobRunResult describeJobRun(DescribeJobRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobRun(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobRunResult executeDescribeJobRun(DescribeJobRunRequest describeJobRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobRunRequest> request = null;
+        Response<DescribeJobRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataBrew");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the definition of a specific DataBrew project.
      * </p>
      * 

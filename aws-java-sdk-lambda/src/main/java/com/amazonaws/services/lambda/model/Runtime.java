@@ -26,6 +26,7 @@ public enum Runtime {
     Nodejs810("nodejs8.10"),
     Nodejs10X("nodejs10.x"),
     Nodejs12X("nodejs12.x"),
+    Nodejs14X("nodejs14.x"),
     Java8("java8"),
     Java8Al2("java8.al2"),
     Java11("java11"),

@@ -33,6 +33,8 @@ public class IdentityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("group").build();
     private static final MarshallingInfo<StructuredPojo> IAMUSER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamUser").build();
+    private static final MarshallingInfo<StructuredPojo> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamRole").build();
 
     private static final IdentityMarshaller instance = new IdentityMarshaller();
 
@@ -53,6 +55,7 @@ public class IdentityMarshaller {
             protocolMarshaller.marshall(identity.getUser(), USER_BINDING);
             protocolMarshaller.marshall(identity.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(identity.getIamUser(), IAMUSER_BINDING);
+            protocolMarshaller.marshall(identity.getIamRole(), IAMROLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

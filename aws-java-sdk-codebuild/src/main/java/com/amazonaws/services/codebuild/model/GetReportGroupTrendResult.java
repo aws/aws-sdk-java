@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Contains the accumulated trend data.
+     * </p>
+     */
     private ReportGroupTrendStats stats;
-
+    /**
+     * <p>
+     * An array that contains the raw data for each report.
+     * </p>
+     */
     private java.util.List<ReportWithRawData> rawData;
 
     /**
+     * <p>
+     * Contains the accumulated trend data.
+     * </p>
+     * 
      * @param stats
+     *        Contains the accumulated trend data.
      */
 
     public void setStats(ReportGroupTrendStats stats) {
@@ -36,7 +50,11 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the accumulated trend data.
+     * </p>
+     * 
+     * @return Contains the accumulated trend data.
      */
 
     public ReportGroupTrendStats getStats() {
@@ -44,7 +62,12 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Contains the accumulated trend data.
+     * </p>
+     * 
      * @param stats
+     *        Contains the accumulated trend data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,11 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * An array that contains the raw data for each report.
+     * </p>
+     * 
+     * @return An array that contains the raw data for each report.
      */
 
     public java.util.List<ReportWithRawData> getRawData() {
@@ -62,7 +89,12 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * An array that contains the raw data for each report.
+     * </p>
+     * 
      * @param rawData
+     *        An array that contains the raw data for each report.
      */
 
     public void setRawData(java.util.Collection<ReportWithRawData> rawData) {
@@ -76,12 +108,16 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * An array that contains the raw data for each report.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRawData(java.util.Collection)} or {@link #withRawData(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param rawData
+     *        An array that contains the raw data for each report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,7 +132,12 @@ public class GetReportGroupTrendResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * An array that contains the raw data for each report.
+     * </p>
+     * 
      * @param rawData
+     *        An array that contains the raw data for each report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -181,7 +181,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
@@ -1244,11 +1244,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      */
 
     public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
@@ -1257,10 +1257,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
-     * @return (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * @return (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *         seconds.
      */
 
     public Integer getTumblingWindowInSeconds() {
@@ -1269,11 +1270,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15 minutes.
+     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

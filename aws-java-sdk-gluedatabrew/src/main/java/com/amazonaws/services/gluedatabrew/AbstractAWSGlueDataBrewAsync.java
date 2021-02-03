@@ -210,6 +210,19 @@ public class AbstractAWSGlueDataBrewAsync extends AbstractAWSGlueDataBrew implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(DescribeJobRunRequest request) {
+
+        return describeJobRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(DescribeJobRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobRunRequest, DescribeJobRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request) {
 
         return describeProjectAsync(request, null);

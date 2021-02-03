@@ -592,6 +592,37 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
 
     /**
      * <p>
+     * Represents one run of a DataBrew job.
+     * </p>
+     * 
+     * @param describeJobRunRequest
+     * @return A Java Future containing the result of the DescribeJobRun operation returned by the service.
+     * @sample AWSGlueDataBrewAsync.DescribeJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(DescribeJobRunRequest describeJobRunRequest);
+
+    /**
+     * <p>
+     * Represents one run of a DataBrew job.
+     * </p>
+     * 
+     * @param describeJobRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJobRun operation returned by the service.
+     * @sample AWSGlueDataBrewAsyncHandler.DescribeJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobRunResult> describeJobRunAsync(DescribeJobRunRequest describeJobRunRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobRunRequest, DescribeJobRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the definition of a specific DataBrew project.
      * </p>
      * 

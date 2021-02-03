@@ -155,8 +155,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -887,8 +888,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -929,8 +931,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an
-     *         internal error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     *         <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute
+     *         Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is
+     *         part of the <code>Unavailable</code> finding classification.
      *         </p>
      *         </li>
      * @see LambdaFunctionRecommendationFindingReasonCode
@@ -980,8 +983,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -1023,8 +1027,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an
-     *        internal error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute
+     *        Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is
+     *        part of the <code>Unavailable</code> finding classification.
      *        </p>
      *        </li>
      * @see LambdaFunctionRecommendationFindingReasonCode
@@ -1079,8 +1084,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -1127,8 +1133,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an
-     *        internal error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute
+     *        Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is
+     *        part of the <code>Unavailable</code> finding classification.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1185,8 +1192,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -1228,8 +1236,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an
-     *        internal error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute
+     *        Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is
+     *        part of the <code>Unavailable</code> finding classification.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1281,8 +1290,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an internal
-     * error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     * <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer
+     * cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the
+     * <code>Unavailable</code> finding classification.
      * </p>
      * </li>
      * </ul>
@@ -1324,8 +1334,9 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation, or there was an
-     *        internal error. This finding reason code is part of the <code>Unavailable</code> finding classification.
+     *        <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute
+     *        Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is
+     *        part of the <code>Unavailable</code> finding classification.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
