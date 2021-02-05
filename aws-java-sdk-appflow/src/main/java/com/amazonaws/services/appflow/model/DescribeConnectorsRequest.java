@@ -29,6 +29,12 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      */
     private java.util.List<String> connectorTypes;
     /**
@@ -42,8 +48,18 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      * 
-     * @return The type of connector, such as Salesforce, Amplitude, and so on.
+     * @return The type of connector, such as Salesforce, Amplitude, and so on. </p> <note>
+     *         <p>
+     *         <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we
+     *         recommend that you do not use this destination.
+     *         </p>
      * @see ConnectorType
      */
 
@@ -55,9 +71,19 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      * 
      * @param connectorTypes
-     *        The type of connector, such as Salesforce, Amplitude, and so on.
+     *        The type of connector, such as Salesforce, Amplitude, and so on. </p> <note>
+     *        <p>
+     *        <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we
+     *        recommend that you do not use this destination.
+     *        </p>
      * @see ConnectorType
      */
 
@@ -74,6 +100,12 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConnectorTypes(java.util.Collection)} or {@link #withConnectorTypes(java.util.Collection)} if you want
@@ -81,7 +113,11 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param connectorTypes
-     *        The type of connector, such as Salesforce, Amplitude, and so on.
+     *        The type of connector, such as Salesforce, Amplitude, and so on. </p> <note>
+     *        <p>
+     *        <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we
+     *        recommend that you do not use this destination.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorType
      */
@@ -100,9 +136,19 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      * 
      * @param connectorTypes
-     *        The type of connector, such as Salesforce, Amplitude, and so on.
+     *        The type of connector, such as Salesforce, Amplitude, and so on. </p> <note>
+     *        <p>
+     *        <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we
+     *        recommend that you do not use this destination.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorType
      */
@@ -116,9 +162,19 @@ public class DescribeConnectorsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of connector, such as Salesforce, Amplitude, and so on.
      * </p>
+     * <note>
+     * <p>
+     * <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we recommend
+     * that you do not use this destination.
+     * </p>
+     * </note>
      * 
      * @param connectorTypes
-     *        The type of connector, such as Salesforce, Amplitude, and so on.
+     *        The type of connector, such as Salesforce, Amplitude, and so on. </p> <note>
+     *        <p>
+     *        <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles. At this time, we
+     *        recommend that you do not use this destination.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorType
      */

@@ -90,7 +90,7 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    jobRun.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    jobRun.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
                     context.nextToken();
@@ -98,7 +98,7 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 }
                 if (context.testExpression("finishedAt", targetDepth)) {
                     context.nextToken();
-                    jobRun.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    jobRun.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("stateDetails", targetDepth)) {
                     context.nextToken();

@@ -58,6 +58,18 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedAt;
+    /**
+     * <p>
+     * The timestamp that determines the first new or updated record to be transferred in the flow run.
+     * </p>
+     */
+    private java.util.Date dataPullStartTime;
+    /**
+     * <p>
+     * The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     * </p>
+     */
+    private java.util.Date dataPullEndTime;
 
     /**
      * <p>
@@ -279,6 +291,86 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The timestamp that determines the first new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @param dataPullStartTime
+     *        The timestamp that determines the first new or updated record to be transferred in the flow run.
+     */
+
+    public void setDataPullStartTime(java.util.Date dataPullStartTime) {
+        this.dataPullStartTime = dataPullStartTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp that determines the first new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @return The timestamp that determines the first new or updated record to be transferred in the flow run.
+     */
+
+    public java.util.Date getDataPullStartTime() {
+        return this.dataPullStartTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp that determines the first new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @param dataPullStartTime
+     *        The timestamp that determines the first new or updated record to be transferred in the flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionRecord withDataPullStartTime(java.util.Date dataPullStartTime) {
+        setDataPullStartTime(dataPullStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @param dataPullEndTime
+     *        The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     */
+
+    public void setDataPullEndTime(java.util.Date dataPullEndTime) {
+        this.dataPullEndTime = dataPullEndTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @return The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     */
+
+    public java.util.Date getDataPullEndTime() {
+        return this.dataPullEndTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     * </p>
+     * 
+     * @param dataPullEndTime
+     *        The timestamp that indicates the last new or updated record to be transferred in the flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionRecord withDataPullEndTime(java.util.Date dataPullEndTime) {
+        setDataPullEndTime(dataPullEndTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -299,7 +391,11 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getLastUpdatedAt() != null)
-            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt());
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getDataPullStartTime() != null)
+            sb.append("DataPullStartTime: ").append(getDataPullStartTime()).append(",");
+        if (getDataPullEndTime() != null)
+            sb.append("DataPullEndTime: ").append(getDataPullEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +430,14 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
+        if (other.getDataPullStartTime() == null ^ this.getDataPullStartTime() == null)
+            return false;
+        if (other.getDataPullStartTime() != null && other.getDataPullStartTime().equals(this.getDataPullStartTime()) == false)
+            return false;
+        if (other.getDataPullEndTime() == null ^ this.getDataPullEndTime() == null)
+            return false;
+        if (other.getDataPullEndTime() != null && other.getDataPullEndTime().equals(this.getDataPullEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -347,6 +451,8 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getExecutionResult() == null) ? 0 : getExecutionResult().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getDataPullStartTime() == null) ? 0 : getDataPullStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDataPullEndTime() == null) ? 0 : getDataPullEndTime().hashCode());
         return hashCode;
     }
 

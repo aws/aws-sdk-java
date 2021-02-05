@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateRuleMarshaller {
 
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
     private static final MarshallingInfo<Integer> INTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interval").build();
     private static final MarshallingInfo<String> INTERVALUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,7 @@ public class CreateRuleMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createRule.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(createRule.getInterval(), INTERVAL_BINDING);
             protocolMarshaller.marshall(createRule.getIntervalUnit(), INTERVALUNIT_BINDING);
             protocolMarshaller.marshall(createRule.getTimes(), TIMES_BINDING);

@@ -56,6 +56,10 @@ public class CreateSnapshotsRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        if (createSnapshotsRequest.getOutpostArn() != null) {
+            request.addParameter("OutpostArn", StringUtils.fromString(createSnapshotsRequest.getOutpostArn()));
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> createSnapshotsRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createSnapshotsRequest
                 .getTagSpecifications();
         if (!createSnapshotsRequestTagSpecificationsList.isEmpty() || !createSnapshotsRequestTagSpecificationsList.isAutoConstruct()) {

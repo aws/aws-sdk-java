@@ -113,6 +113,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public ListEngineVersionsResult listEngineVersions(ListEngineVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

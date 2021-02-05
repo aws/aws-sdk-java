@@ -43,6 +43,8 @@ public class QueryExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Statistics").build();
     private static final MarshallingInfo<String> WORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("WorkGroup").build();
+    private static final MarshallingInfo<StructuredPojo> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
 
     private static final QueryExecutionMarshaller instance = new QueryExecutionMarshaller();
 
@@ -68,6 +70,7 @@ public class QueryExecutionMarshaller {
             protocolMarshaller.marshall(queryExecution.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(queryExecution.getWorkGroup(), WORKGROUP_BINDING);
+            protocolMarshaller.marshall(queryExecution.getEngineVersion(), ENGINEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

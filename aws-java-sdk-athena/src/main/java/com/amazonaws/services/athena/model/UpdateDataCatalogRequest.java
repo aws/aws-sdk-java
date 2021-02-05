@@ -34,9 +34,16 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     * <code>HIVE</code> for an external hive metastore.
      * </p>
+     * <note>
+     * <p>
+     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
+     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </note>
      */
     private String type;
     /**
@@ -86,11 +93,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
      * </li>
      * </ul>
      */
@@ -144,13 +146,25 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     * <code>HIVE</code> for an external hive metastore.
      * </p>
+     * <note>
+     * <p>
+     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
+     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     *        <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     *        <code>HIVE</code> for an external hive metastore.</p> <note>
+     *        <p>
+     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
+     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     *        <code>INVALID_INPUT</code> error.
+     *        </p>
      * @see DataCatalogType
      */
 
@@ -160,12 +174,24 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     * <code>HIVE</code> for an external hive metastore.
      * </p>
+     * <note>
+     * <p>
+     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
+     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     *         <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * @return Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     *         <code>HIVE</code> for an external hive metastore.</p> <note>
+     *         <p>
+     *         Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
+     *         in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     *         <code>INVALID_INPUT</code> error.
+     *         </p>
      * @see DataCatalogType
      */
 
@@ -175,13 +201,25 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     * <code>HIVE</code> for an external hive metastore.
      * </p>
+     * <note>
+     * <p>
+     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
+     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     *        <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     *        <code>HIVE</code> for an external hive metastore.</p> <note>
+     *        <p>
+     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
+     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     *        <code>INVALID_INPUT</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -193,13 +231,25 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     * <code>HIVE</code> for an external hive metastore.
      * </p>
+     * <note>
+     * <p>
+     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
+     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
-     *        <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
+     *        <code>HIVE</code> for an external hive metastore.</p> <note>
+     *        <p>
+     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
+     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
+     *        <code>INVALID_INPUT</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -291,11 +341,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose
@@ -336,11 +381,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         </li>
      *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The <code>GLUE</code> type has no parameters.
-     *         </p>
      *         </li>
      */
 
@@ -390,11 +430,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param parameters
@@ -436,11 +471,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>GLUE</code> type has no parameters.
-     *        </p>
      *        </li>
      */
 
@@ -490,11 +520,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param parameters
@@ -536,11 +561,6 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>GLUE</code> type has no parameters.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

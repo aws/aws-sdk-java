@@ -68,6 +68,10 @@ public class WorkGroupConfigurationJsonUnmarshaller implements Unmarshaller<Work
                     context.nextToken();
                     workGroupConfiguration.setRequesterPaysEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineVersion", targetDepth)) {
+                    context.nextToken();
+                    workGroupConfiguration.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

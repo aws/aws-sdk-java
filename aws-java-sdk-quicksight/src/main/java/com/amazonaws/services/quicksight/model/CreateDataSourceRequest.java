@@ -46,8 +46,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The type of the data source. Currently, the supported types for this operation are:
-     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
      * . Use <code>ListDataSources</code> to return a list of all data sources.
+     * </p>
+     * <p>
+     * <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * </p>
      */
     private String type;
@@ -213,14 +216,19 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The type of the data source. Currently, the supported types for this operation are:
-     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
      * . Use <code>ListDataSources</code> to return a list of all data sources.
+     * </p>
+     * <p>
+     * <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * </p>
      * 
      * @param type
      *        The type of the data source. Currently, the supported types for this operation are:
-     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
-     *        . Use <code>ListDataSources</code> to return a list of all data sources.
+     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     *        . Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     *        <p>
+     *        <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * @see DataSourceType
      */
 
@@ -231,13 +239,18 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The type of the data source. Currently, the supported types for this operation are:
-     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
      * . Use <code>ListDataSources</code> to return a list of all data sources.
+     * </p>
+     * <p>
+     * <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * </p>
      * 
      * @return The type of the data source. Currently, the supported types for this operation are:
-     *         <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
-     *         . Use <code>ListDataSources</code> to return a list of all data sources.
+     *         <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     *         . Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     *         <p>
+     *         <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * @see DataSourceType
      */
 
@@ -248,14 +261,19 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The type of the data source. Currently, the supported types for this operation are:
-     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
      * . Use <code>ListDataSources</code> to return a list of all data sources.
+     * </p>
+     * <p>
+     * <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * </p>
      * 
      * @param type
      *        The type of the data source. Currently, the supported types for this operation are:
-     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
-     *        . Use <code>ListDataSources</code> to return a list of all data sources.
+     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     *        . Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     *        <p>
+     *        <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -268,14 +286,19 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The type of the data source. Currently, the supported types for this operation are:
-     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     * <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
      * . Use <code>ListDataSources</code> to return a list of all data sources.
+     * </p>
+     * <p>
+     * <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * </p>
      * 
      * @param type
      *        The type of the data source. Currently, the supported types for this operation are:
-     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
-     *        . Use <code>ListDataSources</code> to return a list of all data sources.
+     *        <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>
+     *        . Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     *        <p>
+     *        <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */

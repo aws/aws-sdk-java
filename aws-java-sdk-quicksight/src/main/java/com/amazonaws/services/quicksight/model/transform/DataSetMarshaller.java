@@ -51,6 +51,8 @@ public class DataSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumedSpiceCapacityInBytes").build();
     private static final MarshallingInfo<List> COLUMNGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ColumnGroups").build();
+    private static final MarshallingInfo<Map> FIELDFOLDERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FieldFolders").build();
     private static final MarshallingInfo<StructuredPojo> ROWLEVELPERMISSIONDATASET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowLevelPermissionDataSet").build();
     private static final MarshallingInfo<List> COLUMNLEVELPERMISSIONRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -83,6 +85,7 @@ public class DataSetMarshaller {
             protocolMarshaller.marshall(dataSet.getImportMode(), IMPORTMODE_BINDING);
             protocolMarshaller.marshall(dataSet.getConsumedSpiceCapacityInBytes(), CONSUMEDSPICECAPACITYINBYTES_BINDING);
             protocolMarshaller.marshall(dataSet.getColumnGroups(), COLUMNGROUPS_BINDING);
+            protocolMarshaller.marshall(dataSet.getFieldFolders(), FIELDFOLDERS_BINDING);
             protocolMarshaller.marshall(dataSet.getRowLevelPermissionDataSet(), ROWLEVELPERMISSIONDATASET_BINDING);
             protocolMarshaller.marshall(dataSet.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
         } catch (Exception e) {

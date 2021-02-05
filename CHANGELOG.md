@@ -1,3 +1,28 @@
+# __1.11.949__ __2021-02-04__
+## __Amazon Appflow__
+  - ### Features
+    - Adding schedule offset as an input for scheduled flows in CreateFlow API. Also, adding data pull start time and data pull end time for DescribeFlowExecutionRecords API response.
+
+## __Amazon Athena__
+  - ### Features
+    - Adds the Athena ListEngineVersions action and the EngineVersion data type. ListEngineVersions returns the available Athena engine versions, including Auto, as a list of EngineVersion objects.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Provide support for EBS Local Snapshots on AWS Outpost in Data Lifecycle Manager (DLM).
+
+## __Amazon EMR Containers__
+  - ### Features
+    - This release is to correct the timestamp format to ISO8601 for the date parameters in the describe and list API response objects of Job Run and Virtual Clusters.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - AWS Outposts now supports EBS local snapshots on Outposts that allows customers to store snapshots of EBS volumes and AMIs locally on S3 on Outposts.
+
+## __Amazon QuickSight__
+  - ### Features
+    - API release for field folders feature.
+
 # __1.11.948__ __2021-02-03__
 ## __AWS Audit Manager__
   - ### Features

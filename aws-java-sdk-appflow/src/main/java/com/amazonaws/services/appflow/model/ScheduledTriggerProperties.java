@@ -57,10 +57,17 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     private java.util.Date scheduleEndTime;
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * <code>America/New_York</code>.
      * </p>
      */
     private String timezone;
+    /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     */
+    private Long scheduleOffset;
 
     /**
      * <p>
@@ -257,11 +264,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * <code>America/New_York</code>.
      * </p>
      * 
      * @param timezone
-     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *        <code>America/New_York</code>.
      */
 
     public void setTimezone(String timezone) {
@@ -270,10 +279,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * <code>America/New_York</code>.
      * </p>
      * 
-     * @return Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     * @return Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *         <code>America/New_York</code>.
      */
 
     public String getTimezone() {
@@ -282,16 +293,58 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * <code>America/New_York</code>.
      * </p>
      * 
      * @param timezone
-     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *        <code>America/New_York</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledTriggerProperties withTimezone(String timezone) {
         setTimezone(timezone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     */
+
+    public void setScheduleOffset(Long scheduleOffset) {
+        this.scheduleOffset = scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
+     * @return Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     */
+
+    public Long getScheduleOffset() {
+        return this.scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledTriggerProperties withScheduleOffset(Long scheduleOffset) {
+        setScheduleOffset(scheduleOffset);
         return this;
     }
 
@@ -316,7 +369,9 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         if (getScheduleEndTime() != null)
             sb.append("ScheduleEndTime: ").append(getScheduleEndTime()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: ").append(getTimezone());
+            sb.append("Timezone: ").append(getTimezone()).append(",");
+        if (getScheduleOffset() != null)
+            sb.append("ScheduleOffset: ").append(getScheduleOffset());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +406,10 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
+        if (other.getScheduleOffset() == null ^ this.getScheduleOffset() == null)
+            return false;
+        if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +423,7 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getScheduleStartTime() == null) ? 0 : getScheduleStartTime().hashCode());
         hashCode = prime * hashCode + ((getScheduleEndTime() == null) ? 0 : getScheduleEndTime().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         return hashCode;
     }
 

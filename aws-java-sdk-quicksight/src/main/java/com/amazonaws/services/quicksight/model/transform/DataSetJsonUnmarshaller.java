@@ -98,6 +98,11 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("FieldFolders", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setFieldFolders(new MapUnmarshaller<String, FieldFolder>(context.getUnmarshaller(String.class), FieldFolderJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("RowLevelPermissionDataSet", targetDepth)) {
                     context.nextToken();
                     dataSet.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));

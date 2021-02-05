@@ -76,6 +76,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule for cross-Region snapshot copies.
      * </p>
+     * <p>
+     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
+     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * </p>
      */
     private java.util.List<CrossRegionCopyRule> crossRegionCopyRules;
     /**
@@ -469,8 +474,18 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule for cross-Region snapshot copies.
      * </p>
+     * <p>
+     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
+     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * </p>
      * 
-     * @return The rule for cross-Region snapshot copies.
+     * @return The rule for cross-Region snapshot copies.</p>
+     *         <p>
+     *         You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the
+     *         policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost.
+     *         If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or
+     *         Outposts.
      */
 
     public java.util.List<CrossRegionCopyRule> getCrossRegionCopyRules() {
@@ -481,9 +496,18 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule for cross-Region snapshot copies.
      * </p>
+     * <p>
+     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
+     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * </p>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.
+     *        The rule for cross-Region snapshot copies.</p>
+     *        <p>
+     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
+     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      */
 
     public void setCrossRegionCopyRules(java.util.Collection<CrossRegionCopyRule> crossRegionCopyRules) {
@@ -500,13 +524,22 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * The rule for cross-Region snapshot copies.
      * </p>
      * <p>
+     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
+     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCrossRegionCopyRules(java.util.Collection)} or {@link #withCrossRegionCopyRules(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.
+     *        The rule for cross-Region snapshot copies.</p>
+     *        <p>
+     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
+     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,9 +557,18 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule for cross-Region snapshot copies.
      * </p>
+     * <p>
+     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
+     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * </p>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.
+     *        The rule for cross-Region snapshot copies.</p>
+     *        <p>
+     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
+     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
+     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

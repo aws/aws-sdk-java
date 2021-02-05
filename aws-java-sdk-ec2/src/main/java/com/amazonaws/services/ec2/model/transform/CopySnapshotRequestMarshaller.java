@@ -44,6 +44,10 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
             request.addParameter("Description", StringUtils.fromString(copySnapshotRequest.getDescription()));
         }
 
+        if (copySnapshotRequest.getDestinationOutpostArn() != null) {
+            request.addParameter("DestinationOutpostArn", StringUtils.fromString(copySnapshotRequest.getDestinationOutpostArn()));
+        }
+
         if (copySnapshotRequest.getDestinationRegion() != null) {
             request.addParameter("DestinationRegion", StringUtils.fromString(copySnapshotRequest.getDestinationRegion()));
         }

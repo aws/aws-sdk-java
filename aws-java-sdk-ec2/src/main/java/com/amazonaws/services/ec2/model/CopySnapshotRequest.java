@@ -33,6 +33,20 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String description;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when
+     * copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same
+     * Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     * snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String destinationOutpostArn;
+    /**
+     * <p>
      * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
      * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
@@ -165,6 +179,92 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     public CopySnapshotRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when
+     * copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same
+     * Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     * snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param destinationOutpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter
+     *        when copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the
+     *        destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     *        or within the same Outpost.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     *        snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setDestinationOutpostArn(String destinationOutpostArn) {
+        this.destinationOutpostArn = destinationOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when
+     * copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same
+     * Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     * snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter
+     *         when copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the
+     *         destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     *         or within the same Outpost.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     *         Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+
+    public String getDestinationOutpostArn() {
+        return this.destinationOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when
+     * copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same
+     * Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     * snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param destinationOutpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter
+     *        when copying a snapshot from an AWS Region to an Outpost. The snapshot must be in the Region for the
+     *        destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     *        or within the same Outpost.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copying
+     *        snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopySnapshotRequest withDestinationOutpostArn(String destinationOutpostArn) {
+        setDestinationOutpostArn(destinationOutpostArn);
         return this;
     }
 
@@ -844,6 +944,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getDestinationOutpostArn() != null)
+            sb.append("DestinationOutpostArn: ").append(getDestinationOutpostArn()).append(",");
         if (getDestinationRegion() != null)
             sb.append("DestinationRegion: ").append(getDestinationRegion()).append(",");
         if (getEncrypted() != null)
@@ -875,6 +977,10 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDestinationOutpostArn() == null ^ this.getDestinationOutpostArn() == null)
+            return false;
+        if (other.getDestinationOutpostArn() != null && other.getDestinationOutpostArn().equals(this.getDestinationOutpostArn()) == false)
             return false;
         if (other.getDestinationRegion() == null ^ this.getDestinationRegion() == null)
             return false;
@@ -913,6 +1019,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDestinationOutpostArn() == null) ? 0 : getDestinationOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());

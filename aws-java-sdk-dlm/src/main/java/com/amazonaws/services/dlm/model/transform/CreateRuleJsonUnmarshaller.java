@@ -48,6 +48,10 @@ public class CreateRuleJsonUnmarshaller implements Unmarshaller<CreateRule, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Location", targetDepth)) {
+                    context.nextToken();
+                    createRule.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Interval", targetDepth)) {
                     context.nextToken();
                     createRule.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));

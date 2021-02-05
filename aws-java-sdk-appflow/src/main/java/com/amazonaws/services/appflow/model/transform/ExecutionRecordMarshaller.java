@@ -37,6 +37,10 @@ public class ExecutionRecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> DATAPULLSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataPullStartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> DATAPULLENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataPullEndTime").timestampFormat("unixTimestamp").build();
 
     private static final ExecutionRecordMarshaller instance = new ExecutionRecordMarshaller();
 
@@ -59,6 +63,8 @@ public class ExecutionRecordMarshaller {
             protocolMarshaller.marshall(executionRecord.getExecutionResult(), EXECUTIONRESULT_BINDING);
             protocolMarshaller.marshall(executionRecord.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(executionRecord.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(executionRecord.getDataPullStartTime(), DATAPULLSTARTTIME_BINDING);
+            protocolMarshaller.marshall(executionRecord.getDataPullEndTime(), DATAPULLENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

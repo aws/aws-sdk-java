@@ -33,7 +33,8 @@ public class DeleteWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
     private String workGroup;
     /**
      * <p>
-     * The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * The option to delete the workgroup and its contents even if the workgroup contains any named queries or query
+     * executions.
      * </p>
      */
     private Boolean recursiveDeleteOption;
@@ -80,11 +81,13 @@ public class DeleteWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * The option to delete the workgroup and its contents even if the workgroup contains any named queries or query
+     * executions.
      * </p>
      * 
      * @param recursiveDeleteOption
-     *        The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     *        The option to delete the workgroup and its contents even if the workgroup contains any named queries or
+     *        query executions.
      */
 
     public void setRecursiveDeleteOption(Boolean recursiveDeleteOption) {
@@ -93,10 +96,12 @@ public class DeleteWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * The option to delete the workgroup and its contents even if the workgroup contains any named queries or query
+     * executions.
      * </p>
      * 
-     * @return The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * @return The option to delete the workgroup and its contents even if the workgroup contains any named queries or
+     *         query executions.
      */
 
     public Boolean getRecursiveDeleteOption() {
@@ -105,11 +110,13 @@ public class DeleteWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * The option to delete the workgroup and its contents even if the workgroup contains any named queries or query
+     * executions.
      * </p>
      * 
      * @param recursiveDeleteOption
-     *        The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     *        The option to delete the workgroup and its contents even if the workgroup contains any named queries or
+     *        query executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +127,12 @@ public class DeleteWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * The option to delete the workgroup and its contents even if the workgroup contains any named queries or query
+     * executions.
      * </p>
      * 
-     * @return The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+     * @return The option to delete the workgroup and its contents even if the workgroup contains any named queries or
+     *         query executions.
      */
 
     public Boolean isRecursiveDeleteOption() {

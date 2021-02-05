@@ -51,6 +51,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
@@ -327,8 +334,21 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
-     * @return The block device mapping entries.
+     * @return The block device mapping entries.</p>
+     *         <p>
+     *         If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *         Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances
+     *         on the same Outpost only. For more information, <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *         snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -342,9 +362,22 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -361,13 +394,26 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,9 +431,22 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

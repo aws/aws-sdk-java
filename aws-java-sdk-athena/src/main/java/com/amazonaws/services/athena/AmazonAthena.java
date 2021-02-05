@@ -240,7 +240,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Returns a database object for the specfied database and data catalog.
+     * Returns a database object for the specified database and data catalog.
      * </p>
      * 
      * @param getDatabaseRequest
@@ -414,6 +414,24 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     ListDatabasesResult listDatabases(ListDatabasesRequest listDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns a list of engine versions that are available to choose from, including the Auto option.
+     * </p>
+     * 
+     * @param listEngineVersionsRequest
+     * @return Result of the ListEngineVersions operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListEngineVersionsResult listEngineVersions(ListEngineVersionsRequest listEngineVersionsRequest);
 
     /**
      * <p>

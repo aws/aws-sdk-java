@@ -44,6 +44,10 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("Description", StringUtils.fromString(createSnapshotRequest.getDescription()));
         }
 
+        if (createSnapshotRequest.getOutpostArn() != null) {
+            request.addParameter("OutpostArn", StringUtils.fromString(createSnapshotRequest.getOutpostArn()));
+        }
+
         if (createSnapshotRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(createSnapshotRequest.getVolumeId()));
         }

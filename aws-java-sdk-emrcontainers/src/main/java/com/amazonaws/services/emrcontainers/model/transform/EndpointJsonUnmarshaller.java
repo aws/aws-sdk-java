@@ -94,7 +94,7 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    endpoint.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    endpoint.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("securityGroup", targetDepth)) {
                     context.nextToken();

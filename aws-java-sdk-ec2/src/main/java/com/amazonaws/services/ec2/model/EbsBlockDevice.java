@@ -149,6 +149,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer throughput;
     /**
      * <p>
+     * The ARN of the Outpost on which the snapshot is stored.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
      * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
@@ -980,6 +986,46 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ARN of the Outpost on which the snapshot is stored.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN of the Outpost on which the snapshot is stored.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Outpost on which the snapshot is stored.
+     * </p>
+     * 
+     * @return The ARN of the Outpost on which the snapshot is stored.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Outpost on which the snapshot is stored.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN of the Outpost on which the snapshot is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsBlockDevice withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
      * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
@@ -1188,6 +1234,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getThroughput() != null)
             sb.append("Throughput: ").append(getThroughput()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted());
         sb.append("}");
@@ -1232,6 +1280,10 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             return false;
         if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
         if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
@@ -1251,6 +1303,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }

@@ -78,6 +78,11 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    ebsBlockDevice.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("encrypted", targetDepth)) {
                     ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

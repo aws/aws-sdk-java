@@ -1021,14 +1021,24 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Initiates the copy of an AMI from the specified source Region to the current Region. You specify the destination
-     * Region by using its endpoint when making the request.
+     * Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an AWS Outpost.
+     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
      * </p>
      * <p>
-     * Copies of encrypted backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots remain
-     * unencrypted, unless you set <code>Encrypted</code> during the copy operation. You cannot create an unencrypted
-     * copy of an encrypted backing snapshot.
+     * To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b> parameter, and
+     * specify the destination Region using its endpoint. Copies of encrypted backing snapshots for the AMI are
+     * encrypted. Copies of unencrypted backing snapshots remain unencrypted, unless you set <code>Encrypted</code>
+     * during the copy operation. You cannot create an unencrypted copy of an encrypted backing snapshot.
      * </p>
+     * <p>
+     * To copy an AMI from a Region to an Outpost, specify the source Region using the <b>SourceRegion</b> parameter,
+     * and specify the ARN of the destination Outpost using <b>DestinationOutpostArn</b>. Backing snapshots copied to an
+     * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
+     * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
+     * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p/>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
@@ -1046,18 +1056,26 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
-     * Images (AMIs).
+     * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy a snapshot within the
+     * same Region, from one Region to another, or from a Region to an Outpost. You can't copy a snapshot from an
+     * Outpost to a Region, from one Outpost to another, or within the same Outpost.
      * </p>
      * <p>
-     * Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots remain unencrypted, unless
-     * you enable encryption for the snapshot copy operation. By default, encrypted snapshot copies use the default AWS
-     * Key Management Service (AWS KMS) customer master key (CMK); however, you can specify a different CMK.
+     * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * To copy an encrypted snapshot that has been shared from another account, you must have permissions for the CMK
-     * used to encrypt the snapshot.
+     * When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted
+     * snapshots remain unencrypted, unless you enable encryption for the snapshot copy operation. By default, encrypted
+     * snapshot copies use the default AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
+     * specify a different CMK. To copy an encrypted snapshot that has been shared from another account, you must have
+     * permissions for the CMK used to encrypt the snapshot.
+     * </p>
+     * <p>
+     * Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a
+     * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted
+     * snapshots. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any
@@ -1877,6 +1895,11 @@ public interface AmazonEC2 {
      * of EBS volumes, and to save data before shutting down an instance.
      * </p>
      * <p>
+     * You can create snapshots of volumes in a Region and volumes on an Outpost. If you create a snapshot of a volume
+     * in a Region, the snapshot must be stored in the same Region as the volume. If you create a snapshot of a volume
+     * on an Outpost, the snapshot can be stored on the same Outpost as the volume, or in the Region for that Outpost.
+     * </p>
+     * <p>
      * When a snapshot is created, any AWS Marketplace product codes that are associated with the source volume are
      * propagated to the snapshot.
      * </p>
@@ -1923,6 +1946,12 @@ public interface AmazonEC2 {
      * Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by
      * specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the
      * instance. Boot volumes can be excluded by changing the parameters.
+     * </p>
+     * <p>
+     * You can create multi-volume snapshots of instances in a Region and instances on an Outpost. If you create
+     * snapshots from an instance in a Region, the snapshots must be stored in the same Region as the instance. If you
+     * create snapshots from an instance on an Outpost, the snapshots can be stored on the same Outpost as the instance,
+     * or in the Region for that Outpost.
      * </p>
      * 
      * @param createSnapshotsRequest

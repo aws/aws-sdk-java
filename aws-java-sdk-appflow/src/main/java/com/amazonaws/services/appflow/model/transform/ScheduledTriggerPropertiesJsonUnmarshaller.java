@@ -68,6 +68,10 @@ public class ScheduledTriggerPropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     scheduledTriggerProperties.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scheduleOffset", targetDepth)) {
+                    context.nextToken();
+                    scheduledTriggerProperties.setScheduleOffset(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

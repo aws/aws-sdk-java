@@ -650,6 +650,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListEngineVersionsResult> listEngineVersionsAsync(ListEngineVersionsRequest request) {
+
+        return listEngineVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEngineVersionsResult> listEngineVersionsAsync(final ListEngineVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEngineVersionsRequest, ListEngineVersionsResult> asyncHandler) {
+        final ListEngineVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEngineVersionsResult>() {
+            @Override
+            public ListEngineVersionsResult call() throws Exception {
+                ListEngineVersionsResult result = null;
+
+                try {
+                    result = executeListEngineVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest request) {
 
         return listNamedQueriesAsync(request, null);

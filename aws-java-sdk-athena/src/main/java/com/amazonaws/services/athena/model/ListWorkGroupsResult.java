@@ -25,7 +25,8 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of workgroups, including their names, descriptions, creation times, and states.
+     * A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for
+     * each workgroup.
      * </p>
      */
     private java.util.List<WorkGroupSummary> workGroups;
@@ -40,10 +41,12 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of workgroups, including their names, descriptions, creation times, and states.
+     * A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for
+     * each workgroup.
      * </p>
      * 
-     * @return The list of workgroups, including their names, descriptions, creation times, and states.
+     * @return A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and
+     *         states for each workgroup.
      */
 
     public java.util.List<WorkGroupSummary> getWorkGroups() {
@@ -52,11 +55,13 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of workgroups, including their names, descriptions, creation times, and states.
+     * A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for
+     * each workgroup.
      * </p>
      * 
      * @param workGroups
-     *        The list of workgroups, including their names, descriptions, creation times, and states.
+     *        A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states
+     *        for each workgroup.
      */
 
     public void setWorkGroups(java.util.Collection<WorkGroupSummary> workGroups) {
@@ -70,7 +75,8 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of workgroups, including their names, descriptions, creation times, and states.
+     * A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for
+     * each workgroup.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +85,8 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param workGroups
-     *        The list of workgroups, including their names, descriptions, creation times, and states.
+     *        A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states
+     *        for each workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +102,13 @@ public class ListWorkGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of workgroups, including their names, descriptions, creation times, and states.
+     * A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for
+     * each workgroup.
      * </p>
      * 
      * @param workGroups
-     *        The list of workgroups, including their names, descriptions, creation times, and states.
+     *        A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states
+     *        for each workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

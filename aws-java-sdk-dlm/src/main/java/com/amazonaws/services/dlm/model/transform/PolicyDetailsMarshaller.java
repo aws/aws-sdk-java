@@ -32,6 +32,8 @@ public class PolicyDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceTypes").build();
+    private static final MarshallingInfo<List> RESOURCELOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceLocations").build();
     private static final MarshallingInfo<List> TARGETTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetTags").build();
     private static final MarshallingInfo<List> SCHEDULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class PolicyDetailsMarshaller {
         try {
             protocolMarshaller.marshall(policyDetails.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(policyDetails.getResourceTypes(), RESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(policyDetails.getResourceLocations(), RESOURCELOCATIONS_BINDING);
             protocolMarshaller.marshall(policyDetails.getTargetTags(), TARGETTAGS_BINDING);
             protocolMarshaller.marshall(policyDetails.getSchedules(), SCHEDULES_BINDING);
             protocolMarshaller.marshall(policyDetails.getParameters(), PARAMETERS_BINDING);

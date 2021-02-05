@@ -70,7 +70,7 @@ public class VirtualClusterJsonUnmarshaller implements Unmarshaller<VirtualClust
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    virtualCluster.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    virtualCluster.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

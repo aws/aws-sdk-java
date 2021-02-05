@@ -80,6 +80,10 @@ public class QueryExecutionJsonUnmarshaller implements Unmarshaller<QueryExecuti
                     context.nextToken();
                     queryExecution.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineVersion", targetDepth)) {
+                    context.nextToken();
+                    queryExecution.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

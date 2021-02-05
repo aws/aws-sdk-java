@@ -43,6 +43,8 @@ public class UpdateDataSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportMode").build();
     private static final MarshallingInfo<List> COLUMNGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ColumnGroups").build();
+    private static final MarshallingInfo<Map> FIELDFOLDERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FieldFolders").build();
     private static final MarshallingInfo<StructuredPojo> ROWLEVELPERMISSIONDATASET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowLevelPermissionDataSet").build();
     private static final MarshallingInfo<List> COLUMNLEVELPERMISSIONRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -71,6 +73,7 @@ public class UpdateDataSetRequestMarshaller {
             protocolMarshaller.marshall(updateDataSetRequest.getLogicalTableMap(), LOGICALTABLEMAP_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getImportMode(), IMPORTMODE_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getColumnGroups(), COLUMNGROUPS_BINDING);
+            protocolMarshaller.marshall(updateDataSetRequest.getFieldFolders(), FIELDFOLDERS_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getRowLevelPermissionDataSet(), ROWLEVELPERMISSIONDATASET_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
         } catch (Exception e) {

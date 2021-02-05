@@ -37,6 +37,8 @@ public class ScheduledTriggerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("timezone").build();
+    private static final MarshallingInfo<Long> SCHEDULEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleOffset").build();
 
     private static final ScheduledTriggerPropertiesMarshaller instance = new ScheduledTriggerPropertiesMarshaller();
 
@@ -59,6 +61,7 @@ public class ScheduledTriggerPropertiesMarshaller {
             protocolMarshaller.marshall(scheduledTriggerProperties.getScheduleStartTime(), SCHEDULESTARTTIME_BINDING);
             protocolMarshaller.marshall(scheduledTriggerProperties.getScheduleEndTime(), SCHEDULEENDTIME_BINDING);
             protocolMarshaller.marshall(scheduledTriggerProperties.getTimezone(), TIMEZONE_BINDING);
+            protocolMarshaller.marshall(scheduledTriggerProperties.getScheduleOffset(), SCHEDULEOFFSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -68,6 +68,14 @@ public class ExecutionRecordJsonUnmarshaller implements Unmarshaller<ExecutionRe
                     context.nextToken();
                     executionRecord.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("dataPullStartTime", targetDepth)) {
+                    context.nextToken();
+                    executionRecord.setDataPullStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("dataPullEndTime", targetDepth)) {
+                    context.nextToken();
+                    executionRecord.setDataPullEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

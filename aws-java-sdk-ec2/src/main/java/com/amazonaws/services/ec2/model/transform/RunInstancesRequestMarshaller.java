@@ -94,6 +94,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                                 StringUtils.fromInteger(ebs.getThroughput()));
                     }
 
+                    if (ebs.getOutpostArn() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.OutpostArn",
+                                StringUtils.fromString(ebs.getOutpostArn()));
+                    }
+
                     if (ebs.getEncrypted() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
                                 StringUtils.fromBoolean(ebs.getEncrypted()));

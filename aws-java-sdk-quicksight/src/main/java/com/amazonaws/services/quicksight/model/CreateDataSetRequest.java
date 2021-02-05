@@ -70,6 +70,12 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<ColumnGroup> columnGroups;
     /**
      * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     */
+    private java.util.Map<String, FieldFolder> fieldFolders;
+    /**
+     * <p>
      * A list of resource permissions on the dataset.
      * </p>
      */
@@ -488,6 +494,74 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @return The folder that contains fields and nested subfolders for your dataset.
+     */
+
+    public java.util.Map<String, FieldFolder> getFieldFolders() {
+        return fieldFolders;
+    }
+
+    /**
+     * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @param fieldFolders
+     *        The folder that contains fields and nested subfolders for your dataset.
+     */
+
+    public void setFieldFolders(java.util.Map<String, FieldFolder> fieldFolders) {
+        this.fieldFolders = fieldFolders;
+    }
+
+    /**
+     * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @param fieldFolders
+     *        The folder that contains fields and nested subfolders for your dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withFieldFolders(java.util.Map<String, FieldFolder> fieldFolders) {
+        setFieldFolders(fieldFolders);
+        return this;
+    }
+
+    /**
+     * Add a single FieldFolders entry
+     *
+     * @see CreateDataSetRequest#withFieldFolders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest addFieldFoldersEntry(String key, FieldFolder value) {
+        if (null == this.fieldFolders) {
+            this.fieldFolders = new java.util.HashMap<String, FieldFolder>();
+        }
+        if (this.fieldFolders.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.fieldFolders.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into FieldFolders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest clearFieldFoldersEntries() {
+        this.fieldFolders = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of resource permissions on the dataset.
      * </p>
      * 
@@ -762,6 +836,8 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ImportMode: ").append(getImportMode()).append(",");
         if (getColumnGroups() != null)
             sb.append("ColumnGroups: ").append(getColumnGroups()).append(",");
+        if (getFieldFolders() != null)
+            sb.append("FieldFolders: ").append(getFieldFolders()).append(",");
         if (getPermissions() != null)
             sb.append("Permissions: ").append(getPermissions()).append(",");
         if (getRowLevelPermissionDataSet() != null)
@@ -812,6 +888,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getColumnGroups() != null && other.getColumnGroups().equals(this.getColumnGroups()) == false)
             return false;
+        if (other.getFieldFolders() == null ^ this.getFieldFolders() == null)
+            return false;
+        if (other.getFieldFolders() != null && other.getFieldFolders().equals(this.getFieldFolders()) == false)
+            return false;
         if (other.getPermissions() == null ^ this.getPermissions() == null)
             return false;
         if (other.getPermissions() != null && other.getPermissions().equals(this.getPermissions()) == false)
@@ -843,6 +923,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLogicalTableMap() == null) ? 0 : getLogicalTableMap().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         hashCode = prime * hashCode + ((getColumnGroups() == null) ? 0 : getColumnGroups().hashCode());
+        hashCode = prime * hashCode + ((getFieldFolders() == null) ? 0 : getFieldFolders().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
         hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());

@@ -55,6 +55,18 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> resourceTypes;
     /**
      * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     */
+    private java.util.List<String> resourceLocations;
+    /**
+     * <p>
      * The single tag that identifies targeted resources for this policy.
      * </p>
      * <p>
@@ -365,6 +377,159 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
             setResourceTypes(resourceTypesCopy);
         } else {
             getResourceTypes().addAll(resourceTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     * 
+     * @return The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     *         <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     *         <code>OUTPOST</code>. </p>
+     *         <p>
+     *         If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the
+     *         specified type with matching target tags across all of the Outposts in your account.
+     * @see ResourceLocationValues
+     */
+
+    public java.util.List<String> getResourceLocations() {
+        return resourceLocations;
+    }
+
+    /**
+     * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     * 
+     * @param resourceLocations
+     *        The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     *        <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     *        <code>OUTPOST</code>. </p>
+     *        <p>
+     *        If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified
+     *        type with matching target tags across all of the Outposts in your account.
+     * @see ResourceLocationValues
+     */
+
+    public void setResourceLocations(java.util.Collection<String> resourceLocations) {
+        if (resourceLocations == null) {
+            this.resourceLocations = null;
+            return;
+        }
+
+        this.resourceLocations = new java.util.ArrayList<String>(resourceLocations);
+    }
+
+    /**
+     * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceLocations(java.util.Collection)} or {@link #withResourceLocations(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceLocations
+     *        The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     *        <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     *        <code>OUTPOST</code>. </p>
+     *        <p>
+     *        If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified
+     *        type with matching target tags across all of the Outposts in your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceLocationValues
+     */
+
+    public PolicyDetails withResourceLocations(String... resourceLocations) {
+        if (this.resourceLocations == null) {
+            setResourceLocations(new java.util.ArrayList<String>(resourceLocations.length));
+        }
+        for (String ele : resourceLocations) {
+            this.resourceLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     * 
+     * @param resourceLocations
+     *        The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     *        <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     *        <code>OUTPOST</code>. </p>
+     *        <p>
+     *        If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified
+     *        type with matching target tags across all of the Outposts in your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceLocationValues
+     */
+
+    public PolicyDetails withResourceLocations(java.util.Collection<String> resourceLocations) {
+        setResourceLocations(resourceLocations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     * <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     * <code>OUTPOST</code>.
+     * </p>
+     * <p>
+     * If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type
+     * with matching target tags across all of the Outposts in your account.
+     * </p>
+     * 
+     * @param resourceLocations
+     *        The location of the resources to backup. If the source resources are located in an AWS Region, specify
+     *        <code>CLOUD</code>. If the source resources are located on an AWS Outpost in your account, specify
+     *        <code>OUTPOST</code>. </p>
+     *        <p>
+     *        If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified
+     *        type with matching target tags across all of the Outposts in your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceLocationValues
+     */
+
+    public PolicyDetails withResourceLocations(ResourceLocationValues... resourceLocations) {
+        java.util.ArrayList<String> resourceLocationsCopy = new java.util.ArrayList<String>(resourceLocations.length);
+        for (ResourceLocationValues value : resourceLocations) {
+            resourceLocationsCopy.add(value.toString());
+        }
+        if (getResourceLocations() == null) {
+            setResourceLocations(resourceLocationsCopy);
+        } else {
+            getResourceLocations().addAll(resourceLocationsCopy);
         }
         return this;
     }
@@ -813,6 +978,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getResourceTypes() != null)
             sb.append("ResourceTypes: ").append(getResourceTypes()).append(",");
+        if (getResourceLocations() != null)
+            sb.append("ResourceLocations: ").append(getResourceLocations()).append(",");
         if (getTargetTags() != null)
             sb.append("TargetTags: ").append(getTargetTags()).append(",");
         if (getSchedules() != null)
@@ -845,6 +1012,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
             return false;
+        if (other.getResourceLocations() == null ^ this.getResourceLocations() == null)
+            return false;
+        if (other.getResourceLocations() != null && other.getResourceLocations().equals(this.getResourceLocations()) == false)
+            return false;
         if (other.getTargetTags() == null ^ this.getTargetTags() == null)
             return false;
         if (other.getTargetTags() != null && other.getTargetTags().equals(this.getTargetTags()) == false)
@@ -875,6 +1046,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getResourceLocations() == null) ? 0 : getResourceLocations().hashCode());
         hashCode = prime * hashCode + ((getTargetTags() == null) ? 0 : getTargetTags().hashCode());
         hashCode = prime * hashCode + ((getSchedules() == null) ? 0 : getSchedules().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());

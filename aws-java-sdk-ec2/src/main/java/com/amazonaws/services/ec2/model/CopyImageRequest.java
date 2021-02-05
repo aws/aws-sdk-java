@@ -112,6 +112,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </p>
      */
     private String sourceRegion;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying
+     * an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
+     * copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs from
+     * an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String destinationOutpostArn;
 
     /**
      * <p>
@@ -673,6 +686,88 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying
+     * an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
+     * copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs from
+     * an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param destinationOutpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when
+     *        copying an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost.
+     *        You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same
+     *        Outpost.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs
+     *        from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setDestinationOutpostArn(String destinationOutpostArn) {
+        this.destinationOutpostArn = destinationOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying
+     * an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
+     * copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs from
+     * an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when
+     *         copying an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination
+     *         Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the
+     *         same Outpost.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying
+     *         AMIs from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public String getDestinationOutpostArn() {
+        return this.destinationOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying
+     * an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
+     * copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs from
+     * an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param destinationOutpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when
+     *        copying an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost.
+     *        You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same
+     *        Outpost.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copying AMIs
+     *        from an AWS Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyImageRequest withDestinationOutpostArn(String destinationOutpostArn) {
+        setDestinationOutpostArn(destinationOutpostArn);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -708,7 +803,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         if (getSourceImageId() != null)
             sb.append("SourceImageId: ").append(getSourceImageId()).append(",");
         if (getSourceRegion() != null)
-            sb.append("SourceRegion: ").append(getSourceRegion());
+            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
+        if (getDestinationOutpostArn() != null)
+            sb.append("DestinationOutpostArn: ").append(getDestinationOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -751,6 +848,10 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
             return false;
+        if (other.getDestinationOutpostArn() == null ^ this.getDestinationOutpostArn() == null)
+            return false;
+        if (other.getDestinationOutpostArn() != null && other.getDestinationOutpostArn().equals(this.getDestinationOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -766,6 +867,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSourceImageId() == null) ? 0 : getSourceImageId().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
+        hashCode = prime * hashCode + ((getDestinationOutpostArn() == null) ? 0 : getDestinationOutpostArn().hashCode());
         return hashCode;
     }
 

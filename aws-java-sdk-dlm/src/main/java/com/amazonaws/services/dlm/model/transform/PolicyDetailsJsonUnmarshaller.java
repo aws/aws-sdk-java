@@ -58,6 +58,12 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ResourceLocations", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setResourceLocations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("TargetTags", targetDepth)) {
                     context.nextToken();
                     policyDetails.setTargetTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

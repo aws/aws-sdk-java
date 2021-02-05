@@ -43,8 +43,9 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or
-     * <code>HIVE</code> for an external hive metastore.
+     * The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive
+     * metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of
+     * which you can have only one.
      * </p>
      */
     private String type;
@@ -89,11 +90,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
      * </li>
      * </ul>
      */
@@ -187,13 +183,15 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or
-     * <code>HIVE</code> for an external hive metastore.
+     * The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive
+     * metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of
+     * which you can have only one.
      * </p>
      * 
      * @param type
-     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue
-     *        Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external
+     *        hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your
+     *        account, of which you can have only one.
      * @see DataCatalogType
      */
 
@@ -203,12 +201,14 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or
-     * <code>HIVE</code> for an external hive metastore.
+     * The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive
+     * metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of
+     * which you can have only one.
      * </p>
      * 
-     * @return The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue
-     *         Catalog, or <code>HIVE</code> for an external hive metastore.
+     * @return The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
+     *         external hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists
+     *         in your account, of which you can have only one.
      * @see DataCatalogType
      */
 
@@ -218,13 +218,15 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or
-     * <code>HIVE</code> for an external hive metastore.
+     * The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive
+     * metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of
+     * which you can have only one.
      * </p>
      * 
      * @param type
-     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue
-     *        Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external
+     *        hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your
+     *        account, of which you can have only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -236,13 +238,15 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or
-     * <code>HIVE</code> for an external hive metastore.
+     * The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive
+     * metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of
+     * which you can have only one.
      * </p>
      * 
      * @param type
-     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue
-     *        Catalog, or <code>HIVE</code> for an external hive metastore.
+     *        The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external
+     *        hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your
+     *        account, of which you can have only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -294,11 +298,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values
@@ -339,11 +338,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The <code>GLUE</code> type has no parameters.
-     *         </p>
      *         </li>
      */
 
@@ -393,11 +387,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param parameters
@@ -439,11 +428,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>GLUE</code> type has no parameters.
-     *        </p>
      *        </li>
      */
 
@@ -493,11 +477,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
-     * <li>
-     * <p>
-     * The <code>GLUE</code> type has no parameters.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param parameters
@@ -539,11 +518,6 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>GLUE</code> type has no parameters.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -33,6 +33,22 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+     * specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.
+     * </p>
+     * <p>
+     * If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the source
+     * resource.
+     * </p>
+     * <p>
+     * If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.
+     * </p>
+     */
+    private String location;
+    /**
+     * <p>
      * The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      */
@@ -62,6 +78,145 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String cronExpression;
+
+    /**
+     * <p>
+     * Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+     * specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.
+     * </p>
+     * <p>
+     * If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the source
+     * resource.
+     * </p>
+     * <p>
+     * If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.
+     * </p>
+     * 
+     * @param location
+     *        Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as
+     *        the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source
+     *        resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by
+     *        default.</p>
+     *        <p>
+     *        If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the
+     *        source resource.
+     *        </p>
+     *        <p>
+     *        If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the
+     *        source resource, or in the Region of that Outpost.
+     * @see LocationValues
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+     * specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.
+     * </p>
+     * <p>
+     * If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the source
+     * resource.
+     * </p>
+     * <p>
+     * If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.
+     * </p>
+     * 
+     * @return Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as
+     *         the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source
+     *         resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by
+     *         default.</p>
+     *         <p>
+     *         If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as
+     *         the source resource.
+     *         </p>
+     *         <p>
+     *         If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the
+     *         source resource, or in the Region of that Outpost.
+     * @see LocationValues
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+     * specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.
+     * </p>
+     * <p>
+     * If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the source
+     * resource.
+     * </p>
+     * <p>
+     * If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.
+     * </p>
+     * 
+     * @param location
+     *        Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as
+     *        the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source
+     *        resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by
+     *        default.</p>
+     *        <p>
+     *        If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the
+     *        source resource.
+     *        </p>
+     *        <p>
+     *        If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the
+     *        source resource, or in the Region of that Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationValues
+     */
+
+    public CreateRule withLocation(String location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+     * specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.
+     * </p>
+     * <p>
+     * If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the source
+     * resource.
+     * </p>
+     * <p>
+     * If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.
+     * </p>
+     * 
+     * @param location
+     *        Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as
+     *        the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source
+     *        resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by
+     *        default.</p>
+     *        <p>
+     *        If the policy targets resources in an AWS Region, then you must create snapshots in the same Region as the
+     *        source resource.
+     *        </p>
+     *        <p>
+     *        If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the
+     *        source resource, or in the Region of that Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationValues
+     */
+
+    public CreateRule withLocation(LocationValues location) {
+        this.location = location.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -330,6 +485,8 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getInterval() != null)
             sb.append("Interval: ").append(getInterval()).append(",");
         if (getIntervalUnit() != null)
@@ -352,6 +509,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof CreateRule == false)
             return false;
         CreateRule other = (CreateRule) obj;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         if (other.getInterval() == null ^ this.getInterval() == null)
             return false;
         if (other.getInterval() != null && other.getInterval().equals(this.getInterval()) == false)
@@ -376,6 +537,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getInterval() == null) ? 0 : getInterval().hashCode());
         hashCode = prime * hashCode + ((getIntervalUnit() == null) ? 0 : getIntervalUnit().hashCode());
         hashCode = prime * hashCode + ((getTimes() == null) ? 0 : getTimes().hashCode());

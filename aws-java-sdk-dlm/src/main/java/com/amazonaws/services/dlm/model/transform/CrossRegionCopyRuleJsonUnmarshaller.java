@@ -52,6 +52,10 @@ public class CrossRegionCopyRuleJsonUnmarshaller implements Unmarshaller<CrossRe
                     context.nextToken();
                     crossRegionCopyRule.setTargetRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Target", targetDepth)) {
+                    context.nextToken();
+                    crossRegionCopyRule.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Encrypted", targetDepth)) {
                     context.nextToken();
                     crossRegionCopyRule.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));

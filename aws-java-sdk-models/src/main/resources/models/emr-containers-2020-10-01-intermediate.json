@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -10436,7 +10436,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the endpoint was created.</p>\n@param createdAt The date and time when the endpoint was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -11092,7 +11092,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the endpoint was created.</p>\n@param createdAt The date and time when the endpoint was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -13173,7 +13173,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the job run was created.</p>\n@param createdAt The date and time when the job run was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -13311,7 +13311,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the job run has finished.</p>\n@param finishedAt The date and time when the job run has finished.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "finishedAt",
           "variableType" : "java.util.Date",
@@ -13883,7 +13883,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the job run was created.</p>\n@param createdAt The date and time when the job run was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -14163,7 +14163,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the job run has finished.</p>\n@param finishedAt The date and time when the job run has finished.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "finishedAt",
             "variableType" : "java.util.Date",
@@ -25497,7 +25497,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the virtual cluster is created.</p>\n@param createdAt The date and time when the virtual cluster is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -25861,7 +25861,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the virtual cluster is created.</p>\n@param createdAt The date and time when the virtual cluster is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",

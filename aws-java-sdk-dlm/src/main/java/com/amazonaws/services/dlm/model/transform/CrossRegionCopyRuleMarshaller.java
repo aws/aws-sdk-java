@@ -29,6 +29,8 @@ public class CrossRegionCopyRuleMarshaller {
 
     private static final MarshallingInfo<String> TARGETREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetRegion").build();
+    private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Target").build();
     private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
     private static final MarshallingInfo<String> CMKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class CrossRegionCopyRuleMarshaller {
 
         try {
             protocolMarshaller.marshall(crossRegionCopyRule.getTargetRegion(), TARGETREGION_BINDING);
+            protocolMarshaller.marshall(crossRegionCopyRule.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(crossRegionCopyRule.getEncrypted(), ENCRYPTED_BINDING);
             protocolMarshaller.marshall(crossRegionCopyRule.getCmkArn(), CMKARN_BINDING);
             protocolMarshaller.marshall(crossRegionCopyRule.getCopyTags(), COPYTAGS_BINDING);

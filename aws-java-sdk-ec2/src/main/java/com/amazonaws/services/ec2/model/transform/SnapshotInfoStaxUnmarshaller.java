@@ -99,6 +99,11 @@ public class SnapshotInfoStaxUnmarshaller implements Unmarshaller<SnapshotInfo, 
                     snapshotInfo.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    snapshotInfo.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshotInfo;
