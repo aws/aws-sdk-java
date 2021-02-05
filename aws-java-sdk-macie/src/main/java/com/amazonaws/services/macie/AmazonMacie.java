@@ -34,12 +34,6 @@ import com.amazonaws.services.macie.model.*;
  * is being accessed or moved. For more information, see the <a
  * href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Amazon Macie Classic User Guide</a>.
  * </p>
- * <p>
- * A new Amazon Macie is now available with significant design improvements and additional features, at a lower price
- * and in most AWS Regions. We encourage you to explore and use the new and improved features, and benefit from the
- * reduced cost. To learn about features and pricing for the new Amazon Macie, see <a
- * href="https://aws.amazon.com/macie/">Amazon Macie</a>.
- * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonMacie {
@@ -76,8 +70,8 @@ public interface AmazonMacie {
      * <p>
      * Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If
      * memberAccountId isn't specified, the action associates specified S3 resources with Macie Classic for the current
-     * master account. If memberAccountId is specified, the action associates specified S3 resources with Macie Classic
-     * for the specified member account.
+     * Macie Classic administrator account. If memberAccountId is specified, the action associates specified S3
+     * resources with Macie Classic for the specified member account.
      * </p>
      * 
      * @param associateS3ResourcesRequest
@@ -117,8 +111,9 @@ public interface AmazonMacie {
     /**
      * <p>
      * Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId isn't specified,
-     * the action removes specified S3 resources from Macie Classic for the current master account. If memberAccountId
-     * is specified, the action removes specified S3 resources from Macie Classic for the specified member account.
+     * the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account.
+     * If memberAccountId is specified, the action removes specified S3 resources from Macie Classic for the specified
+     * member account.
      * </p>
      * 
      * @param disassociateS3ResourcesRequest
@@ -137,7 +132,7 @@ public interface AmazonMacie {
 
     /**
      * <p>
-     * Lists all Amazon Macie Classic member accounts for the current Amazon Macie Classic master account.
+     * Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.
      * </p>
      * 
      * @param listMemberAccountsRequest
@@ -155,9 +150,9 @@ public interface AmazonMacie {
     /**
      * <p>
      * Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId isn't specified, the action
-     * lists the S3 resources associated with Amazon Macie Classic for the current master account. If memberAccountId is
-     * specified, the action lists the S3 resources associated with Amazon Macie Classic for the specified member
-     * account.
+     * lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If
+     * memberAccountId is specified, the action lists the S3 resources associated with Macie Classic for the specified
+     * member account.
      * </p>
      * 
      * @param listS3ResourcesRequest
@@ -177,9 +172,9 @@ public interface AmazonMacie {
     /**
      * <p>
      * Updates the classification types for the specified S3 resources. If memberAccountId isn't specified, the action
-     * updates the classification types of the S3 resources associated with Amazon Macie Classic for the current master
-     * account. If memberAccountId is specified, the action updates the classification types of the S3 resources
-     * associated with Amazon Macie Classic for the specified member account.
+     * updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie
+     * Classic administrator account. If memberAccountId is specified, the action updates the classification types of
+     * the S3 resources associated with Macie Classic for the specified member account.
      * </p>
      * 
      * @param updateS3ResourcesRequest

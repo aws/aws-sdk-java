@@ -107,10 +107,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String healthCheckPath;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
-     * <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
+     * protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol
+     * is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds.
+     * If the target type is <code>lambda</code>, the default is 35 seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
@@ -798,17 +798,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
-     * <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
+     * protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol
+     * is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds.
+     * If the target type is <code>lambda</code>, the default is 35 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *        checks, the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or
-     *        <code>ip</code>, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     *        seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. If the target
+     *        group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target
+     *        group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     *        default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -817,16 +817,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
-     * <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
+     * protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol
+     * is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds.
+     * If the target type is <code>lambda</code>, the default is 35 seconds.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *         checks, the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or
-     *         <code>ip</code>, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     *         seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. If the target
+     *         group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target
+     *         group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     *         default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -835,17 +835,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
-     * <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
+     * protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol
+     * is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds.
+     * If the target type is <code>lambda</code>, the default is 35 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *        checks, the supported values are 10 and 30 seconds. If the target type is <code>instance</code> or
-     *        <code>ip</code>, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     *        seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. If the target
+     *        group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target
+     *        group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     *        default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

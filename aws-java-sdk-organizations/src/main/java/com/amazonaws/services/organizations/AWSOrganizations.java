@@ -188,6 +188,12 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
      *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
      *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
@@ -235,6 +241,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -649,6 +660,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -836,6 +852,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -1297,6 +1318,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -1832,6 +1858,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -2219,6 +2250,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -2614,6 +2650,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -3001,6 +3042,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -3191,6 +3237,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -3350,6 +3401,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -3523,6 +3579,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -3690,6 +3751,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -4093,6 +4159,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -4262,6 +4333,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -4424,6 +4500,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -4830,6 +4911,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -4988,6 +5074,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -5197,6 +5288,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -5359,6 +5455,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -5755,6 +5856,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -6206,6 +6312,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -6591,6 +6702,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -7003,6 +7119,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -7218,6 +7339,12 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
      *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
      *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
@@ -7257,6 +7384,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -7645,6 +7777,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -7872,6 +8009,12 @@ public interface AWSOrganizations {
      *         <p>
      *         ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has
      *         already enabled all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
      *         </p>
      *         </li>
      *         <li>
@@ -8129,6 +8272,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -8582,6 +8730,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -8967,6 +9120,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -9140,6 +9298,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -9319,6 +9482,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -9494,6 +9662,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -9665,6 +9838,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -10040,6 +10218,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -10424,6 +10607,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -10596,6 +10784,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -10780,6 +10973,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -10948,6 +11146,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -11136,6 +11339,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -11304,6 +11512,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -11479,6 +11692,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -11663,6 +11881,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -11858,6 +12081,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -12030,6 +12258,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -12191,6 +12424,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -12592,6 +12830,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -13013,6 +13256,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -13418,6 +13666,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -13819,6 +14072,11 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
@@ -13983,6 +14241,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>
@@ -14362,6 +14625,11 @@ public interface AWSOrganizations {
      *         <li>
      *         <p>
      *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
      *         </p>
      *         </li>
      *         <li>

@@ -105,8 +105,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -134,6 +146,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a
      * credit card.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
      * </p>
      * </li>
      * </ul>
@@ -531,8 +555,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -562,6 +598,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * credit card.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -586,8 +634,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
+     *        FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     *        validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
      *        this Region already includes an account with that email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business
+     *        license validation because it doesn't have valid identity data.
      *        </p>
      *        </li>
      *        <li>
@@ -616,6 +676,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as
      *        a credit card.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of
+     *        completing business license validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with
+     *        business license validation.
      *        </p>
      *        </li>
      * @see CreateAccountFailureReason
@@ -649,8 +721,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -680,6 +764,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * credit card.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return If the request failed, a description of the reason for the failure.</p>
@@ -703,8 +799,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
+     *         FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business
+     *         license validation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
      *         this Region already includes an account with that email address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business
+     *         license validation because it doesn't have valid identity data.
      *         </p>
      *         </li>
      *         <li>
@@ -733,6 +841,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <p>
      *         MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such
      *         as a credit card.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of
+     *         completing business license validation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with
+     *         business license validation.
      *         </p>
      *         </li>
      * @see CreateAccountFailureReason
@@ -766,8 +886,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -797,6 +929,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * credit card.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -821,8 +965,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
+     *        FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     *        validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
      *        this Region already includes an account with that email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business
+     *        license validation because it doesn't have valid identity data.
      *        </p>
      *        </li>
      *        <li>
@@ -851,6 +1007,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as
      *        a credit card.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of
+     *        completing business license validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with
+     *        business license validation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -886,8 +1054,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -917,6 +1097,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * credit card.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -941,8 +1133,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
+     *        FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     *        validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
      *        this Region already includes an account with that email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business
+     *        license validation because it doesn't have valid identity data.
      *        </p>
      *        </li>
      *        <li>
@@ -971,6 +1175,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as
      *        a credit card.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of
+     *        completing business license validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with
+     *        business license validation.
      *        </p>
      *        </li>
      * @see CreateAccountFailureReason
@@ -1004,8 +1220,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     * validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
      * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license
+     * validation because it doesn't have valid identity data.
      * </p>
      * </li>
      * <li>
@@ -1035,6 +1263,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * credit card.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing
+     * business license validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business
+     * license validation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -1059,8 +1299,20 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
+     *        FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license
+     *        validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
      *        this Region already includes an account with that email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business
+     *        license validation because it doesn't have valid identity data.
      *        </p>
      *        </li>
      *        <li>
@@ -1089,6 +1341,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as
      *        a credit card.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of
+     *        completing business license validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with
+     *        business license validation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

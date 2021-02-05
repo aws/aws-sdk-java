@@ -28,7 +28,7 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
-     * Amazon Macie Classic.
+     * Macie Classic.
      * </p>
      */
     private String memberAccountId;
@@ -43,12 +43,12 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
-     * Amazon Macie Classic.
+     * Macie Classic.
      * </p>
      * 
      * @param memberAccountId
      *        The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
-     *        by Amazon Macie Classic.
+     *        by Macie Classic.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -58,11 +58,11 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
-     * Amazon Macie Classic.
+     * Macie Classic.
      * </p>
      * 
      * @return The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
-     *         by Amazon Macie Classic.
+     *         by Macie Classic.
      */
 
     public String getMemberAccountId() {
@@ -72,12 +72,12 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
-     * Amazon Macie Classic.
+     * Macie Classic.
      * </p>
      * 
      * @param memberAccountId
      *        The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
-     *        by Amazon Macie Classic.
+     *        by Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

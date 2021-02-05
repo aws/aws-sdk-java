@@ -25,8 +25,8 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also
-     * included in this list.
+     * A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     * administrator account is also included in this list.
      * </p>
      */
     private java.util.List<MemberAccount> memberAccounts;
@@ -41,12 +41,12 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also
-     * included in this list.
+     * A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     * administrator account is also included in this list.
      * </p>
      * 
-     * @return A list of the Amazon Macie Classic member accounts returned by the action. The current master account is
-     *         also included in this list.
+     * @return A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     *         administrator account is also included in this list.
      */
 
     public java.util.List<MemberAccount> getMemberAccounts() {
@@ -55,13 +55,13 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also
-     * included in this list.
+     * A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     * administrator account is also included in this list.
      * </p>
      * 
      * @param memberAccounts
-     *        A list of the Amazon Macie Classic member accounts returned by the action. The current master account is
-     *        also included in this list.
+     *        A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     *        administrator account is also included in this list.
      */
 
     public void setMemberAccounts(java.util.Collection<MemberAccount> memberAccounts) {
@@ -75,8 +75,8 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also
-     * included in this list.
+     * A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     * administrator account is also included in this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,8 +85,8 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param memberAccounts
-     *        A list of the Amazon Macie Classic member accounts returned by the action. The current master account is
-     *        also included in this list.
+     *        A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     *        administrator account is also included in this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +102,13 @@ public class ListMemberAccountsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also
-     * included in this list.
+     * A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     * administrator account is also included in this list.
      * </p>
      * 
      * @param memberAccounts
-     *        A list of the Amazon Macie Classic member accounts returned by the action. The current master account is
-     *        also included in this list.
+     *        A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic
+     *        administrator account is also included in this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

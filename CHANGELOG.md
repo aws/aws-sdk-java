@@ -1,3 +1,16 @@
+# __1.11.950__ __2021-02-05__
+## __AWS Organizations__
+  - ### Features
+    - Added support for a few additional exception codes for some AWS Organizations APIs.
+
+## __Amazon Macie__
+  - ### Features
+    - Documentation updates for Amazon Macie Classic. We replaced the term "master account" with the term "administrator account." An administrator account is used to centrally manage multiple accounts.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds a target group attribute for client IP preservation for Network Load Balancers.
+
 # __1.11.949__ __2021-02-04__
 ## __Amazon Appflow__
   - ### Features

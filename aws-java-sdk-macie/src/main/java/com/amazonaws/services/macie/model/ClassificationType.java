@@ -37,7 +37,7 @@ public class ClassificationType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins
-     * performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.
+     * performing continuous classification after a bucket is successfully associated with Macie Classic.
      * </p>
      */
     private String continuous;
@@ -104,13 +104,12 @@ public class ClassificationType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins
-     * performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.
+     * performing continuous classification after a bucket is successfully associated with Macie Classic.
      * </p>
      * 
      * @param continuous
      *        A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic
-     *        begins performing continuous classification after a bucket is successfully associated with Amazon Macie
-     *        Classic.
+     *        begins performing continuous classification after a bucket is successfully associated with Macie Classic.
      * @see S3ContinuousClassificationType
      */
 
@@ -121,12 +120,11 @@ public class ClassificationType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins
-     * performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.
+     * performing continuous classification after a bucket is successfully associated with Macie Classic.
      * </p>
      * 
      * @return A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic
-     *         begins performing continuous classification after a bucket is successfully associated with Amazon Macie
-     *         Classic.
+     *         begins performing continuous classification after a bucket is successfully associated with Macie Classic.
      * @see S3ContinuousClassificationType
      */
 
@@ -137,13 +135,12 @@ public class ClassificationType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins
-     * performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.
+     * performing continuous classification after a bucket is successfully associated with Macie Classic.
      * </p>
      * 
      * @param continuous
      *        A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic
-     *        begins performing continuous classification after a bucket is successfully associated with Amazon Macie
-     *        Classic.
+     *        begins performing continuous classification after a bucket is successfully associated with Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ContinuousClassificationType
      */
@@ -156,13 +153,12 @@ public class ClassificationType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins
-     * performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.
+     * performing continuous classification after a bucket is successfully associated with Macie Classic.
      * </p>
      * 
      * @param continuous
      *        A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic
-     *        begins performing continuous classification after a bucket is successfully associated with Amazon Macie
-     *        Classic.
+     *        begins performing continuous classification after a bucket is successfully associated with Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ContinuousClassificationType
      */

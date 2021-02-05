@@ -190,7 +190,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Creates a listener for the specified Application Load Balancer, Network Load Balancer. or Gateway Load Balancer.
+     * Creates a listener for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
      * </p>
      * <p>
      * For more information, see the following:

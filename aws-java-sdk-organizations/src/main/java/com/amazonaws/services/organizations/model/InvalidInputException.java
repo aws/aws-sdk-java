@@ -42,6 +42,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * INVALID_ENUM: You specified an invalid value.
  * </p>
  * </li>
