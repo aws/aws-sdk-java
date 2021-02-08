@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides aggregated data for a usage metric. The value for the metric reports usage data for an account during the
- * past 30 days.
+ * Provides aggregated data for an Amazon Macie usage metric. The value for the metric reports estimated usage data for
+ * an account for the preceding 30 days or the current calendar month to date, depending on the time period (timeRange)
+ * specified in the request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageTotal" target="_top">AWS API
@@ -44,7 +45,7 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      */
     private String type;
@@ -151,12 +152,12 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @see UsageType
      */
 
@@ -167,11 +168,11 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @return The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *         SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *         SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @see UsageType
      */
 
@@ -182,12 +183,12 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */
@@ -200,12 +201,12 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The name of a usage metric for an account. Possible values are:
+ * The name of an Amazon Macie usage metric for an account. Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

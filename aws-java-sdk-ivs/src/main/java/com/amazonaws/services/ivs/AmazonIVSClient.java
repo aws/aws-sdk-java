@@ -1155,6 +1155,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @return Result of the ListChannels operation returned by the service.
      * @throws ValidationException
      * @throws AccessDeniedException
+     * @throws ConflictException
      * @sample AmazonIVS.ListChannels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels" target="_top">AWS API
      *      Documentation</a>

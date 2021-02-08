@@ -434,6 +434,12 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
      * AllowCustomRoutingTraffic</a> operation.
      * </p>
+     * <important>
+     * <p>
+     * Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
+     * US West (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param createCustomRoutingAcceleratorRequest
      * @return A Java Future containing the result of the CreateCustomRoutingAccelerator operation returned by the
@@ -456,6 +462,12 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
      * AllowCustomRoutingTraffic</a> operation.
      * </p>
+     * <important>
+     * <p>
+     * Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
+     * US West (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param createCustomRoutingAcceleratorRequest
      * @param asyncHandler

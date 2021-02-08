@@ -95,8 +95,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ObjectCountByEncryptionType objectCountByEncryptionType;
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      */
     private BucketPublicAccess publicAccess;
@@ -113,6 +113,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ReplicationDetails replicationDetails;
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     */
+    private BucketServerSideEncryption serverSideEncryption;
     /**
      * <p>
      * Specifies whether the bucket is shared with another AWS account. Possible values are:
@@ -615,13 +622,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
      * @param publicAccess
-     *        Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *        bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *        apply to the bucket, and provides information about those settings.
      */
 
     public void setPublicAccess(BucketPublicAccess publicAccess) {
@@ -630,12 +637,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
-     * @return Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *         bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     * @return Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *         apply to the bucket, and provides information about those settings.
      */
 
     public BucketPublicAccess getPublicAccess() {
@@ -644,13 +651,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
      * @param publicAccess
-     *        Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *        bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *        apply to the bucket, and provides information about those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -742,6 +749,52 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     public BucketMetadata withReplicationDetails(ReplicationDetails replicationDetails) {
         setReplicationDetails(replicationDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @param serverSideEncryption
+     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *        encryption that's used.
+     */
+
+    public void setServerSideEncryption(BucketServerSideEncryption serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @return Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *         encryption that's used.
+     */
+
+    public BucketServerSideEncryption getServerSideEncryption() {
+        return this.serverSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @param serverSideEncryption
+     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *        encryption that's used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withServerSideEncryption(BucketServerSideEncryption serverSideEncryption) {
+        setServerSideEncryption(serverSideEncryption);
         return this;
     }
 
@@ -1324,6 +1377,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("Region: ").append(getRegion()).append(",");
         if (getReplicationDetails() != null)
             sb.append("ReplicationDetails: ").append(getReplicationDetails()).append(",");
+        if (getServerSideEncryption() != null)
+            sb.append("ServerSideEncryption: ").append(getServerSideEncryption()).append(",");
         if (getSharedAccess() != null)
             sb.append("SharedAccess: ").append(getSharedAccess()).append(",");
         if (getSizeInBytes() != null)
@@ -1404,6 +1459,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReplicationDetails() != null && other.getReplicationDetails().equals(this.getReplicationDetails()) == false)
             return false;
+        if (other.getServerSideEncryption() == null ^ this.getServerSideEncryption() == null)
+            return false;
+        if (other.getServerSideEncryption() != null && other.getServerSideEncryption().equals(this.getServerSideEncryption()) == false)
+            return false;
         if (other.getSharedAccess() == null ^ this.getSharedAccess() == null)
             return false;
         if (other.getSharedAccess() != null && other.getSharedAccess().equals(this.getSharedAccess()) == false)
@@ -1454,6 +1513,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPublicAccess() == null) ? 0 : getPublicAccess().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getReplicationDetails() == null) ? 0 : getReplicationDetails().hashCode());
+        hashCode = prime * hashCode + ((getServerSideEncryption() == null) ? 0 : getServerSideEncryption().hashCode());
         hashCode = prime * hashCode + ((getSharedAccess() == null) ? 0 : getSharedAccess().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytesCompressed() == null) ? 0 : getSizeInBytesCompressed().hashCode());

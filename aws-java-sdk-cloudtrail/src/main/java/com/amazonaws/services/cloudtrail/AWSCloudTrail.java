@@ -371,6 +371,10 @@ public interface AWSCloudTrail {
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws ConflictException
+     *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
+     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
      *      Documentation</a>
@@ -1106,6 +1110,11 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the policy on the S3 bucket is not sufficient.
      * @throws InsufficientEncryptionPolicyException
      *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     * @throws S3BucketDoesNotExistException
+     *         This exception is thrown when the specified S3 bucket does not exist.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
+     *         updated.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException

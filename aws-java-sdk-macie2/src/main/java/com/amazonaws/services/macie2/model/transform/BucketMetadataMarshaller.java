@@ -54,6 +54,8 @@ public class BucketMetadataMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<StructuredPojo> REPLICATIONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationDetails").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverSideEncryption").build();
     private static final MarshallingInfo<String> SHAREDACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sharedAccess").build();
     private static final MarshallingInfo<Long> SIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -98,6 +100,7 @@ public class BucketMetadataMarshaller {
             protocolMarshaller.marshall(bucketMetadata.getPublicAccess(), PUBLICACCESS_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getReplicationDetails(), REPLICATIONDETAILS_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getServerSideEncryption(), SERVERSIDEENCRYPTION_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSharedAccess(), SHAREDACCESS_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSizeInBytes(), SIZEINBYTES_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSizeInBytesCompressed(), SIZEINBYTESCOMPRESSED_BINDING);

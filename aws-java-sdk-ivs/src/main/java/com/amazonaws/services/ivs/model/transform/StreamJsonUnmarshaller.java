@@ -58,7 +58,7 @@ public class StreamJsonUnmarshaller implements Unmarshaller<Stream, JsonUnmarsha
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    stream.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    stream.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();

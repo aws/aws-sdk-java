@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies criteria for sorting the results of a query for account quotas and usage data.
+ * Specifies criteria for sorting the results of a query for Amazon Macie account quotas and usage data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsSortBy" target="_top">AWS API

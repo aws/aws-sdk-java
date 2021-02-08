@@ -58,6 +58,10 @@ public class GetUsageStatisticsResultJsonUnmarshaller implements Unmarshaller<Ge
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("timeRange", targetDepth)) {
+                    context.nextToken();
+                    getUsageStatisticsResult.setTimeRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

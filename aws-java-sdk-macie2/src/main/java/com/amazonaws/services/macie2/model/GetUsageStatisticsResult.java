@@ -37,6 +37,13 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<UsageRecord> records;
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     */
+    private String timeRange;
 
     /**
      * <p>
@@ -163,6 +170,73 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public void setTimeRange(String timeRange) {
+        this.timeRange = timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @return The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *         current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public String getTimeRange() {
+        return this.timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageStatisticsResult withTimeRange(String timeRange) {
+        setTimeRange(timeRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageStatisticsResult withTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -177,7 +251,9 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getRecords() != null)
-            sb.append("Records: ").append(getRecords());
+            sb.append("Records: ").append(getRecords()).append(",");
+        if (getTimeRange() != null)
+            sb.append("TimeRange: ").append(getTimeRange());
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +276,10 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getRecords() != null && other.getRecords().equals(this.getRecords()) == false)
             return false;
+        if (other.getTimeRange() == null ^ this.getTimeRange() == null)
+            return false;
+        if (other.getTimeRange() != null && other.getTimeRange().equals(this.getTimeRange()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +290,7 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getRecords() == null) ? 0 : getRecords().hashCode());
+        hashCode = prime * hashCode + ((getTimeRange() == null) ? 0 : getTimeRange().hashCode());
         return hashCode;
     }
 

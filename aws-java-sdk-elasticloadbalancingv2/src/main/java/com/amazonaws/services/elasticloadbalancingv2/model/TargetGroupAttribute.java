@@ -55,8 +55,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -77,6 +77,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -165,8 +172,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -187,6 +194,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -266,7 +280,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
-     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     *        and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
+     *        Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -288,6 +303,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
      *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      *        seconds (disabled).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the application-based
+     *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *        (86400 seconds).
      *        </p>
      *        </li>
      *        <li>
@@ -373,8 +396,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -395,6 +418,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -473,8 +503,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-     *         <code>lb_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
-     *         Balancers.
+     *         <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
+     *         <code>source_ip</code> for Network Load Balancers.
      *         </p>
      *         </li>
      *         </ul>
@@ -496,6 +526,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         target receives an increasing share of the traffic to the target group. After this time period ends, the
      *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      *         seconds (disabled).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *         from a client should be routed to the same target. After this time period expires, the application-based
+     *         cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *         (86400 seconds).
      *         </p>
      *         </li>
      *         <li>
@@ -581,8 +619,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -603,6 +641,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -682,7 +727,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
-     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     *        and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
+     *        Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -704,6 +750,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
      *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      *        seconds (disabled).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the application-based
+     *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *        (86400 seconds).
      *        </p>
      *        </li>
      *        <li>

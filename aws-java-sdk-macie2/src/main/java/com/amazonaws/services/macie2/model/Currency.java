@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The type of currency that data for a usage metric is reported in. Possible values are:
+ * The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

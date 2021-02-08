@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotsitewise.model.transform;
+package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.iotsitewise.model.*;
+import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,17 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * CreatePresignedPortalUrlResult JSON Unmarshaller
+ * ConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshaller<CreatePresignedPortalUrlResult, JsonUnmarshallerContext> {
+public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private ConflictExceptionUnmarshaller() {
+        super(com.amazonaws.services.cloudtrail.model.ConflictException.class, "ConflictException");
+    }
 
-    public CreatePresignedPortalUrlResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        CreatePresignedPortalUrlResult createPresignedPortalUrlResult = new CreatePresignedPortalUrlResult();
+    @Override
+    public com.amazonaws.services.cloudtrail.model.ConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.cloudtrail.model.ConflictException conflictException = new com.amazonaws.services.cloudtrail.model.ConflictException(null);
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +44,7 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return createPresignedPortalUrlResult;
+            return null;
         }
 
         while (true) {
@@ -48,10 +52,6 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("presignedPortalUrl", targetDepth)) {
-                    context.nextToken();
-                    createPresignedPortalUrlResult.setPresignedPortalUrl(context.getUnmarshaller(String.class).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
@@ -60,15 +60,14 @@ public class CreatePresignedPortalUrlResultJsonUnmarshaller implements Unmarshal
             }
             token = context.nextToken();
         }
-
-        return createPresignedPortalUrlResult;
+        return conflictException;
     }
 
-    private static CreatePresignedPortalUrlResultJsonUnmarshaller instance;
+    private static ConflictExceptionUnmarshaller instance;
 
-    public static CreatePresignedPortalUrlResultJsonUnmarshaller getInstance() {
+    public static ConflictExceptionUnmarshaller getInstance() {
         if (instance == null)
-            instance = new CreatePresignedPortalUrlResultJsonUnmarshaller();
+            instance = new ConflictExceptionUnmarshaller();
         return instance;
     }
 }

@@ -34,6 +34,8 @@ public class CreateCustomRoutingAcceleratorRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IpAddressType").build();
+    private static final MarshallingInfo<List> IPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpAddresses").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class CreateCustomRoutingAcceleratorRequestMarshaller {
         try {
             protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
+            protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getIpAddresses(), IPADDRESSES_BINDING);
             protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(createCustomRoutingAcceleratorRequest.getTags(), TAGS_BINDING);

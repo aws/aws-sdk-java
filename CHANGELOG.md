@@ -1,3 +1,36 @@
+# __1.11.951__ __2021-02-08__
+## __AWS CloudTrail__
+  - ### Features
+    - ConflictException is now thrown when certain operations are called on resources before CloudTrail has time to load the resources. Two new exceptions have been added to the PutInsightSelectors API.
+
+## __AWS Data Exchange__
+  - ### Features
+    - This release introduces the new ExportRevision job type, which allows for the export of an entire revision.
+
+## __AWS Global Accelerator__
+  - ### Features
+    - Global Accelerator now supports bringing your own IP addresses for custom routing accelerators
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Recall CreatePresignedPortalUrl API
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Interactive Video Service__
+  - ### Features
+    - Fixed an issue where StreamStartTime could not be unmarshalled from response. Changed DeleteChannel and DeleteStreamKey response codes to 204.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API adds support for specifying a time range in queries for usage data.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds a target group attribute for application-based stickiness for Application Load Balancers.
+
 # __1.11.950__ __2021-02-05__
 ## __AWS Organizations__
   - ### Features

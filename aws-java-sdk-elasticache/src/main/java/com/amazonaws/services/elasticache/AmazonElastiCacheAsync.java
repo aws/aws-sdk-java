@@ -1259,7 +1259,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * </p>
      * <note>
      * <p>
-     * You cannot delete a cache subnet group if it is associated with any clusters.
+     * You cannot delete a default cache subnet group or one that is associated with any clusters.
      * </p>
      * </note>
      * 
@@ -1278,7 +1278,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * </p>
      * <note>
      * <p>
-     * You cannot delete a cache subnet group if it is associated with any clusters.
+     * You cannot delete a default cache subnet group or one that is associated with any clusters.
      * </p>
      * </note>
      * 
@@ -2847,7 +2847,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>
      * Modifies a replication group's shards (node groups) by allowing you to add shards, remove shards, or rebalance
-     * the keyspaces among exisiting shards.
+     * the keyspaces among existing shards.
      * </p>
      * 
      * @param modifyReplicationGroupShardConfigurationRequest
@@ -2865,7 +2865,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>
      * Modifies a replication group's shards (node groups) by allowing you to add shards, remove shards, or rebalance
-     * the keyspaces among exisiting shards.
+     * the keyspaces among existing shards.
      * </p>
      * 
      * @param modifyReplicationGroupShardConfigurationRequest

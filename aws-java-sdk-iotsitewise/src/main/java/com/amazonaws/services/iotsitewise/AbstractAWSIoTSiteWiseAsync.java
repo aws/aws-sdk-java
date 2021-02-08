@@ -158,19 +158,6 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
-    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest request) {
-
-        return createPresignedPortalUrlAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreatePresignedPortalUrlRequest, CreatePresignedPortalUrlResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);

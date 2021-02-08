@@ -100,6 +100,10 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                     context.nextToken();
                     bucketMetadata.setReplicationDetails(ReplicationDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("serverSideEncryption", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setServerSideEncryption(BucketServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("sharedAccess", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setSharedAccess(context.getUnmarshaller(String.class).unmarshall(context));

@@ -56,6 +56,10 @@ public class ResponseDetailsJsonUnmarshaller implements Unmarshaller<ResponseDet
                     context.nextToken();
                     responseDetails.setExportAssetsToS3(ExportAssetsToS3ResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExportRevisionsToS3", targetDepth)) {
+                    context.nextToken();
+                    responseDetails.setExportRevisionsToS3(ExportRevisionsToS3ResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ImportAssetFromSignedUrl", targetDepth)) {
                     context.nextToken();
                     responseDetails.setImportAssetFromSignedUrl(ImportAssetFromSignedUrlResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));

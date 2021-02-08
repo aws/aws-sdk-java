@@ -66,7 +66,7 @@ public class StreamSummaryJsonUnmarshaller implements Unmarshaller<StreamSummary
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    streamSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    streamSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -36,6 +36,8 @@ public class GetUsageStatisticsRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<StructuredPojo> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sortBy").build();
+    private static final MarshallingInfo<String> TIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("timeRange").build();
 
     private static final GetUsageStatisticsRequestMarshaller instance = new GetUsageStatisticsRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class GetUsageStatisticsRequestMarshaller {
             protocolMarshaller.marshall(getUsageStatisticsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getUsageStatisticsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getUsageStatisticsRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getUsageStatisticsRequest.getTimeRange(), TIMERANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

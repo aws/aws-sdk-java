@@ -31,6 +31,8 @@ public class RequestDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportAssetToSignedUrl").build();
     private static final MarshallingInfo<StructuredPojo> EXPORTASSETSTOS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportAssetsToS3").build();
+    private static final MarshallingInfo<StructuredPojo> EXPORTREVISIONSTOS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportRevisionsToS3").build();
     private static final MarshallingInfo<StructuredPojo> IMPORTASSETFROMSIGNEDURL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportAssetFromSignedUrl").build();
     private static final MarshallingInfo<StructuredPojo> IMPORTASSETSFROMS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class RequestDetailsMarshaller {
         try {
             protocolMarshaller.marshall(requestDetails.getExportAssetToSignedUrl(), EXPORTASSETTOSIGNEDURL_BINDING);
             protocolMarshaller.marshall(requestDetails.getExportAssetsToS3(), EXPORTASSETSTOS3_BINDING);
+            protocolMarshaller.marshall(requestDetails.getExportRevisionsToS3(), EXPORTREVISIONSTOS3_BINDING);
             protocolMarshaller.marshall(requestDetails.getImportAssetFromSignedUrl(), IMPORTASSETFROMSIGNEDURL_BINDING);
             protocolMarshaller.marshall(requestDetails.getImportAssetsFromS3(), IMPORTASSETSFROMS3_BINDING);
         } catch (Exception e) {

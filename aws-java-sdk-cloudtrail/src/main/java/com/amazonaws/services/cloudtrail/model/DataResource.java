@@ -101,6 +101,10 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
      * <code>AWS::Lambda::Function</code> resources.
      * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data events
+     * on this resource type, use advanced event selectors.
+     * </p>
      */
     private String type;
     /**
@@ -163,10 +167,17 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
      * <code>AWS::Lambda::Function</code> resources.
      * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data events
+     * on this resource type, use advanced event selectors.
+     * </p>
      * 
      * @param type
      *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code> resources.
+     *        <code>AWS::Lambda::Function</code> resources.</p>
+     *        <p>
+     *        The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data
+     *        events on this resource type, use advanced event selectors.
      */
 
     public void setType(String type) {
@@ -178,9 +189,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
      * <code>AWS::Lambda::Function</code> resources.
      * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data events
+     * on this resource type, use advanced event selectors.
+     * </p>
      * 
      * @return The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *         <code>AWS::Lambda::Function</code> resources.
+     *         <code>AWS::Lambda::Function</code> resources.</p>
+     *         <p>
+     *         The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data
+     *         events on this resource type, use advanced event selectors.
      */
 
     public String getType() {
@@ -192,10 +210,17 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
      * <code>AWS::Lambda::Function</code> resources.
      * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data events
+     * on this resource type, use advanced event selectors.
+     * </p>
      * 
      * @param type
      *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code> resources.
+     *        <code>AWS::Lambda::Function</code> resources.</p>
+     *        <p>
+     *        The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event selectors. To log data
+     *        events on this resource type, use advanced event selectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

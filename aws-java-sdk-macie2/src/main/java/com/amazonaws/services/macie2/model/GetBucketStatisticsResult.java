@@ -38,8 +38,8 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountByEffectivePermission bucketCountByEffectivePermission;
     /**
      * <p>
-     * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that don't encrypt objects by default.
+     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
+     * number of buckets that don't encrypt new objects by default.
      * </p>
      */
     private BucketCountByEncryptionType bucketCountByEncryptionType;
@@ -192,13 +192,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that don't encrypt objects by default.
+     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
+     * number of buckets that don't encrypt new objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
-     *        The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *        number of buckets that don't encrypt objects by default.
+     *        The total number of buckets, grouped by default server-side encryption type. This object also reports the
+     *        total number of buckets that don't encrypt new objects by default.
      */
 
     public void setBucketCountByEncryptionType(BucketCountByEncryptionType bucketCountByEncryptionType) {
@@ -207,12 +207,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that don't encrypt objects by default.
+     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
+     * number of buckets that don't encrypt new objects by default.
      * </p>
      * 
-     * @return The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *         number of buckets that don't encrypt objects by default.
+     * @return The total number of buckets, grouped by default server-side encryption type. This object also reports the
+     *         total number of buckets that don't encrypt new objects by default.
      */
 
     public BucketCountByEncryptionType getBucketCountByEncryptionType() {
@@ -221,13 +221,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that don't encrypt objects by default.
+     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
+     * number of buckets that don't encrypt new objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
-     *        The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *        number of buckets that don't encrypt objects by default.
+     *        The total number of buckets, grouped by default server-side encryption type. This object also reports the
+     *        total number of buckets that don't encrypt new objects by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

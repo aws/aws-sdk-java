@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -661,6 +661,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : null,
         "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : null,
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -18836,7 +18840,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ISO-8601 formatted timestamp of the stream’s start.</p>\n@param startTime ISO-8601 formatted timestamp of the stream’s start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "startTime",
           "variableType" : "java.util.Date",
@@ -19324,7 +19328,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ISO-8601 formatted timestamp of the stream’s start.</p>\n@param startTime ISO-8601 formatted timestamp of the stream’s start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "startTime",
             "variableType" : "java.util.Date",
@@ -21355,7 +21359,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ISO-8601 formatted timestamp of the stream’s start.</p>\n@param startTime ISO-8601 formatted timestamp of the stream’s start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "startTime",
           "variableType" : "java.util.Date",
@@ -21566,7 +21570,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ISO-8601 formatted timestamp of the stream’s start.</p>\n@param startTime ISO-8601 formatted timestamp of the stream’s start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "startTime",
             "variableType" : "java.util.Date",

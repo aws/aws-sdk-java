@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetUsageTotalsRequestMarshaller {
 
+    private static final MarshallingInfo<String> TIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("timeRange").build();
+
     private static final GetUsageTotalsRequestMarshaller instance = new GetUsageTotalsRequestMarshaller();
 
     public static GetUsageTotalsRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class GetUsageTotalsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getUsageTotalsRequest.getTimeRange(), TIMERANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

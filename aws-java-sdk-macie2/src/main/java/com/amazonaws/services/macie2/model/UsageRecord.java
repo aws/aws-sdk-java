@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides quota and aggregated usage data for an account.
+ * Provides quota and aggregated usage data for an Amazon Macie account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord" target="_top">AWS API

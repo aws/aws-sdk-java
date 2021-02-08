@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a condition for filtering the results of a query for account quotas and usage data.
+ * Specifies a condition for filtering the results of a query for the quotas and usage data that applies to one or more
+ * Amazon Macie accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter" target="_top">AWS API

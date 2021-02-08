@@ -48,6 +48,10 @@ public class GetUsageTotalsResultJsonUnmarshaller implements Unmarshaller<GetUsa
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("timeRange", targetDepth)) {
+                    context.nextToken();
+                    getUsageTotalsResult.setTimeRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("usageTotals", targetDepth)) {
                     context.nextToken();
                     getUsageTotalsResult.setUsageTotals(new ListUnmarshaller<UsageTotal>(UsageTotalJsonUnmarshaller.getInstance())

@@ -62,9 +62,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
-     * data events on more than one resource type, add another selector.
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another
+     * selector.
      * </p>
      * </li>
      * <li>
@@ -95,6 +96,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      * </p>
      * </li>
      * </ul>
@@ -180,9 +192,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
-     * data events on more than one resource type, add another selector.
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another
+     * selector.
      * </p>
      * </li>
      * <li>
@@ -213,6 +226,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      * </p>
      * </li>
      * </ul>
@@ -253,9 +277,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector.
-     *        To log data events on more than one resource type, add another selector.
+     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     *        <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     *        <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add
+     *        another selector.
      *        </p>
      *        </li>
      *        <li>
@@ -286,6 +311,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     *        <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -330,9 +366,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
-     * data events on more than one resource type, add another selector.
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another
+     * selector.
      * </p>
      * </li>
      * <li>
@@ -363,6 +400,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      * </p>
      * </li>
      * </ul>
@@ -402,9 +450,9 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *         <li>
      *         <p>
      *         <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use
-     *         the <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>
-     *         or <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per
-     *         selector. To log data events on more than one resource type, add another selector.
+     *         the <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     *         <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add
+     *         another selector.
      *         </p>
      *         </li>
      *         <li>
@@ -435,6 +483,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *         <li>
      *         <p>
      *         <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     *         <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -479,9 +538,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector. To log
-     * data events on more than one resource type, add another selector.
+     * <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another
+     * selector.
      * </p>
      * </li>
      * <li>
@@ -512,6 +572,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      * </p>
      * </li>
      * </ul>
@@ -552,9 +623,10 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the
-     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code>. You can have only one <code>resources.type</code> ﬁeld per selector.
-     *        To log data events on more than one resource type, add another selector.
+     *        <code>Equals</code> operator, and the value can be one of the following: <code>AWS::S3::Object</code>,
+     *        <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>. You can have only one
+     *        <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add
+     *        another selector.
      *        </p>
      *        </li>
      *        <li>
@@ -585,6 +657,17 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <code>arn:partition:lambda:region:account_ID:function:function_name</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     *        <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code>
      *        </p>
      *        </li>
      *        </ul>

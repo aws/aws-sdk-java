@@ -333,7 +333,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      * </p>
      */
     private String engine;
@@ -2669,11 +2669,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group.
+     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      */
 
     public void setEngine(String engine) {
@@ -2682,10 +2682,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      * </p>
      * 
-     * @return The name of the cache engine to be used for the clusters in this replication group.
+     * @return The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      */
 
     public String getEngine() {
@@ -2694,11 +2694,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group.
+     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

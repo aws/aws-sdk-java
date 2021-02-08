@@ -79,11 +79,6 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
-    public CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public CreateProjectResult createProject(CreateProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
