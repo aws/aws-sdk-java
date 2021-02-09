@@ -1,3 +1,24 @@
+# __1.11.952__ __2021-02-09__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for WMA audio only ingest, SMPTE-TT text and image caption ingest, and MPEG-2 video in MXF OP1a outputs.
+
+## __Amazon GameLift__
+  - ### Features
+    - GameLift FleetIQ users can now use AMD instance families in supported Regions. In addition, FlexMatch matchmaking notification now supports SNS FIFO topics.
+
+## __Amazon QLDB Session__
+  - ### Features
+    - This release adds CapacityExceededException to the AWS QLDBSession API.
+
+## __Amazon QuickSight__
+  - ### Features
+    - QuickSight now supports Python's paginators for Exploration APIs.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Add a new optional FrameworkVersion field to Sagemaker Neo CreateCompilationJob API
+
 # __1.11.951__ __2021-02-08__
 ## __AWS CloudTrail__
   - ### Features

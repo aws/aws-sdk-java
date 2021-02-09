@@ -110,6 +110,8 @@ public interface AmazonQLDBSession {
      *         Returned when the rate of requests exceeds the allowed throughput.
      * @throws LimitExceededException
      *         Returned if a resource limit such as number of active sessions is exceeded.
+     * @throws CapacityExceededException
+     *         Returned when the request exceeds the processing capacity of the ledger.
      * @sample AmazonQLDBSession.SendCommand
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand" target="_top">AWS API
      *      Documentation</a>

@@ -31,18 +31,18 @@ public class TimingInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     * The amount of time that QLDB spent on processing the command, measured in milliseconds.
      * </p>
      */
     private Long processingTimeMilliseconds;
 
     /**
      * <p>
-     * The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     * The amount of time that QLDB spent on processing the command, measured in milliseconds.
      * </p>
      * 
      * @param processingTimeMilliseconds
-     *        The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     *        The amount of time that QLDB spent on processing the command, measured in milliseconds.
      */
 
     public void setProcessingTimeMilliseconds(Long processingTimeMilliseconds) {
@@ -51,10 +51,10 @@ public class TimingInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     * The amount of time that QLDB spent on processing the command, measured in milliseconds.
      * </p>
      * 
-     * @return The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     * @return The amount of time that QLDB spent on processing the command, measured in milliseconds.
      */
 
     public Long getProcessingTimeMilliseconds() {
@@ -63,11 +63,11 @@ public class TimingInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     * The amount of time that QLDB spent on processing the command, measured in milliseconds.
      * </p>
      * 
      * @param processingTimeMilliseconds
-     *        The amount of time that was taken for the command to finish processing, measured in milliseconds.
+     *        The amount of time that QLDB spent on processing the command, measured in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

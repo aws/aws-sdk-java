@@ -30,24 +30,24 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of read I/O requests that the command performed.
+     * The number of read I/O requests that the command made.
      * </p>
      */
     private Long readIOs;
     /**
      * <p>
-     * The number of write I/O requests that the command performed.
+     * The number of write I/O requests that the command made.
      * </p>
      */
     private Long writeIOs;
 
     /**
      * <p>
-     * The number of read I/O requests that the command performed.
+     * The number of read I/O requests that the command made.
      * </p>
      * 
      * @param readIOs
-     *        The number of read I/O requests that the command performed.
+     *        The number of read I/O requests that the command made.
      */
 
     public void setReadIOs(Long readIOs) {
@@ -56,10 +56,10 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of read I/O requests that the command performed.
+     * The number of read I/O requests that the command made.
      * </p>
      * 
-     * @return The number of read I/O requests that the command performed.
+     * @return The number of read I/O requests that the command made.
      */
 
     public Long getReadIOs() {
@@ -68,11 +68,11 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of read I/O requests that the command performed.
+     * The number of read I/O requests that the command made.
      * </p>
      * 
      * @param readIOs
-     *        The number of read I/O requests that the command performed.
+     *        The number of read I/O requests that the command made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of write I/O requests that the command performed.
+     * The number of write I/O requests that the command made.
      * </p>
      * 
      * @param writeIOs
-     *        The number of write I/O requests that the command performed.
+     *        The number of write I/O requests that the command made.
      */
 
     public void setWriteIOs(Long writeIOs) {
@@ -96,10 +96,10 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of write I/O requests that the command performed.
+     * The number of write I/O requests that the command made.
      * </p>
      * 
-     * @return The number of write I/O requests that the command performed.
+     * @return The number of write I/O requests that the command made.
      */
 
     public Long getWriteIOs() {
@@ -108,11 +108,11 @@ public class IOUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of write I/O requests that the command performed.
+     * The number of write I/O requests that the command made.
      * </p>
      * 
      * @param writeIOs
-     *        The number of write I/O requests that the command performed.
+     *        The number of write I/O requests that the command made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

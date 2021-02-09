@@ -33,6 +33,8 @@ public class InputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataInputConfig").build();
     private static final MarshallingInfo<String> FRAMEWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Framework").build();
+    private static final MarshallingInfo<String> FRAMEWORKVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkVersion").build();
 
     private static final InputConfigMarshaller instance = new InputConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class InputConfigMarshaller {
             protocolMarshaller.marshall(inputConfig.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(inputConfig.getDataInputConfig(), DATAINPUTCONFIG_BINDING);
             protocolMarshaller.marshall(inputConfig.getFramework(), FRAMEWORK_BINDING);
+            protocolMarshaller.marshall(inputConfig.getFrameworkVersion(), FRAMEWORKVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

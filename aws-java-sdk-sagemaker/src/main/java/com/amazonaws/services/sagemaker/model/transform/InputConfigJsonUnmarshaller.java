@@ -60,6 +60,10 @@ public class InputConfigJsonUnmarshaller implements Unmarshaller<InputConfig, Js
                     context.nextToken();
                     inputConfig.setFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FrameworkVersion", targetDepth)) {
+                    context.nextToken();
+                    inputConfig.setFrameworkVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

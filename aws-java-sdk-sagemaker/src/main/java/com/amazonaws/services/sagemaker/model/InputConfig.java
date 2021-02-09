@@ -354,6 +354,17 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String framework;
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     */
+    private String frameworkVersion;
 
     /**
      * <p>
@@ -2346,6 +2357,73 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @param frameworkVersion
+     *        Specifies the framework version to use.</p>
+     *        <p>
+     *        This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *        <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *        <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     */
+
+    public void setFrameworkVersion(String frameworkVersion) {
+        this.frameworkVersion = frameworkVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @return Specifies the framework version to use.</p>
+     *         <p>
+     *         This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *         <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *         <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     */
+
+    public String getFrameworkVersion() {
+        return this.frameworkVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @param frameworkVersion
+     *        Specifies the framework version to use.</p>
+     *        <p>
+     *        This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *        <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *        <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputConfig withFrameworkVersion(String frameworkVersion) {
+        setFrameworkVersion(frameworkVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2362,7 +2440,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
         if (getDataInputConfig() != null)
             sb.append("DataInputConfig: ").append(getDataInputConfig()).append(",");
         if (getFramework() != null)
-            sb.append("Framework: ").append(getFramework());
+            sb.append("Framework: ").append(getFramework()).append(",");
+        if (getFrameworkVersion() != null)
+            sb.append("FrameworkVersion: ").append(getFrameworkVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -2389,6 +2469,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFramework() != null && other.getFramework().equals(this.getFramework()) == false)
             return false;
+        if (other.getFrameworkVersion() == null ^ this.getFrameworkVersion() == null)
+            return false;
+        if (other.getFrameworkVersion() != null && other.getFrameworkVersion().equals(this.getFrameworkVersion()) == false)
+            return false;
         return true;
     }
 
@@ -2400,6 +2484,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getDataInputConfig() == null) ? 0 : getDataInputConfig().hashCode());
         hashCode = prime * hashCode + ((getFramework() == null) ? 0 : getFramework().hashCode());
+        hashCode = prime * hashCode + ((getFrameworkVersion() == null) ? 0 : getFrameworkVersion().hashCode());
         return hashCode;
     }
 
