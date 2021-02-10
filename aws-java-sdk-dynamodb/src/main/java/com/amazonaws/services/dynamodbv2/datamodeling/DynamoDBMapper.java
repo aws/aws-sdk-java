@@ -1688,7 +1688,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         scanRequest.setTableName(getTableName(clazz, config));
         scanRequest.setIndexName(scanExpression.getIndexName());
-        scanRequest.setScanFilter(scanExpression.getScanFilter());
+        if (scanExpression.getScanFilter() != null) {
+            scanRequest.setScanFilter(scanExpression.getScanFilter());
+        }
         scanRequest.setLimit(scanExpression.getLimit());
         scanRequest.setExclusiveStartKey(scanExpression.getExclusiveStartKey());
         scanRequest.setTotalSegments(scanExpression.getTotalSegments());
