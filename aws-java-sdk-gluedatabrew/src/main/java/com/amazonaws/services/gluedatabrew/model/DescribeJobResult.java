@@ -54,7 +54,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -159,6 +159,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private Integer timeout;
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed.
+     * </p>
+     */
+    private JobSample jobSample;
 
     /**
      * <p>
@@ -327,7 +334,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -342,7 +349,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -364,7 +371,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -378,7 +385,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *         <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -400,7 +407,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -415,7 +422,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -439,7 +446,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -454,7 +461,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -1220,6 +1227,52 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed.
+     */
+
+    public void setJobSample(JobSample jobSample) {
+        this.jobSample = jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed.
+     * </p>
+     * 
+     * @return Sample configuration for profile jobs only. Determines the number of rows on which the profile job will
+     *         be executed.
+     */
+
+    public JobSample getJobSample() {
+        return this.jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withJobSample(JobSample jobSample) {
+        setJobSample(jobSample);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1268,7 +1321,9 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getJobSample() != null)
+            sb.append("JobSample: ").append(getJobSample());
         sb.append("}");
         return sb.toString();
     }
@@ -1359,6 +1414,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getJobSample() == null ^ this.getJobSample() == null)
+            return false;
+        if (other.getJobSample() != null && other.getJobSample().equals(this.getJobSample()) == false)
+            return false;
         return true;
     }
 
@@ -1386,6 +1445,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getJobSample() == null) ? 0 : getJobSample().hashCode());
         return hashCode;
     }
 

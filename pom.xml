@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.952</version>
+  <version>1.11.953</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -333,7 +333,7 @@
       <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.53.Final</netty.version>
+      <netty.version>4.1.59.Final</netty.version>
   </properties>
   <dependencyManagement>
     <dependencies>

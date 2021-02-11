@@ -44,7 +44,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -202,7 +202,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -217,7 +217,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -239,7 +239,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -253,7 +253,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *         <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -275,7 +275,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -290,7 +290,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -314,7 +314,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -329,7 +329,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>

@@ -127,6 +127,10 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
                     context.nextToken();
                     describeJobResult.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("JobSample", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setJobSample(JobSampleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

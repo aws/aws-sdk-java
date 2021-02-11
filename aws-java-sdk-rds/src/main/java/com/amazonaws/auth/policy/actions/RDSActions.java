@@ -197,6 +197,8 @@ public enum RDSActions implements Action {
     DownloadDBLogFilePortion("rds:DownloadDBLogFilePortion"),
     /** Action for the FailoverDBCluster operation. */
     FailoverDBCluster("rds:FailoverDBCluster"),
+    /** Action for the FailoverGlobalCluster operation. */
+    FailoverGlobalCluster("rds:FailoverGlobalCluster"),
     /** Action for the ImportInstallationMedia operation. */
     ImportInstallationMedia("rds:ImportInstallationMedia"),
     /** Action for the ListTagsForResource operation. */

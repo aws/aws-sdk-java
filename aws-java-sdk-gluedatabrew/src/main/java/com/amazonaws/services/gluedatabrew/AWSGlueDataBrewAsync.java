@@ -54,7 +54,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
      * </li>
      * <li>
      * <p>
-     * The verision list is empty.
+     * The version list is empty.
      * </p>
      * </li>
      * <li>
@@ -64,7 +64,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
      * </li>
      * <li>
      * <p>
-     * The verison list contains duplicate entries.
+     * The version list contains duplicate entries.
      * </p>
      * </li>
      * </ul>
@@ -127,7 +127,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
      * </li>
      * <li>
      * <p>
-     * The verision list is empty.
+     * The version list is empty.
      * </p>
      * </li>
      * <li>
@@ -137,7 +137,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
      * </li>
      * <li>
      * <p>
-     * The verison list contains duplicate entries.
+     * The version list contains duplicate entries.
      * </p>
      * </li>
      * </ul>

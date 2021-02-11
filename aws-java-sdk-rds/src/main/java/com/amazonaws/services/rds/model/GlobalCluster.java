@@ -88,6 +88,14 @@ public class GlobalCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GlobalClusterMember> globalClusterMembers;
+    /**
+     * <p>
+     * A data object containing all properties for the current state of an in-process or pending failover process for
+     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     */
+    private FailoverState failoverState;
 
     /**
      * <p>
@@ -563,6 +571,58 @@ public class GlobalCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A data object containing all properties for the current state of an in-process or pending failover process for
+     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * 
+     * @param failoverState
+     *        A data object containing all properties for the current state of an in-process or pending failover process
+     *        for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
+     *        operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     */
+
+    public void setFailoverState(FailoverState failoverState) {
+        this.failoverState = failoverState;
+    }
+
+    /**
+     * <p>
+     * A data object containing all properties for the current state of an in-process or pending failover process for
+     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * 
+     * @return A data object containing all properties for the current state of an in-process or pending failover
+     *         process for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
+     *         operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     */
+
+    public FailoverState getFailoverState() {
+        return this.failoverState;
+    }
+
+    /**
+     * <p>
+     * A data object containing all properties for the current state of an in-process or pending failover process for
+     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * 
+     * @param failoverState
+     *        A data object containing all properties for the current state of an in-process or pending failover process
+     *        for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
+     *        operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlobalCluster withFailoverState(FailoverState failoverState) {
+        setFailoverState(failoverState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -593,7 +653,9 @@ public class GlobalCluster implements Serializable, Cloneable {
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getGlobalClusterMembers() != null)
-            sb.append("GlobalClusterMembers: ").append(getGlobalClusterMembers());
+            sb.append("GlobalClusterMembers: ").append(getGlobalClusterMembers()).append(",");
+        if (getFailoverState() != null)
+            sb.append("FailoverState: ").append(getFailoverState());
         sb.append("}");
         return sb.toString();
     }
@@ -648,6 +710,10 @@ public class GlobalCluster implements Serializable, Cloneable {
             return false;
         if (other.getGlobalClusterMembers() != null && other.getGlobalClusterMembers().equals(this.getGlobalClusterMembers()) == false)
             return false;
+        if (other.getFailoverState() == null ^ this.getFailoverState() == null)
+            return false;
+        if (other.getFailoverState() != null && other.getFailoverState().equals(this.getFailoverState()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +732,7 @@ public class GlobalCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getGlobalClusterMembers() == null) ? 0 : getGlobalClusterMembers().hashCode());
+        hashCode = prime * hashCode + ((getFailoverState() == null) ? 0 : getFailoverState().hashCode());
         return hashCode;
     }
 

@@ -175,6 +175,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     */
+    private JobSample jobSample;
 
     /**
      * <p>
@@ -1305,6 +1313,58 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     */
+
+    public void setJobSample(JobSample jobSample) {
+        this.jobSample = jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @return Sample configuration for profile jobs only. Determines the number of rows on which the profile job will
+     *         be executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *         CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     */
+
+    public JobSample getJobSample() {
+        return this.jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withJobSample(JobSample jobSample) {
+        setJobSample(jobSample);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1355,7 +1415,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getJobSample() != null)
+            sb.append("JobSample: ").append(getJobSample());
         sb.append("}");
         return sb.toString();
     }
@@ -1450,6 +1512,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getJobSample() == null ^ this.getJobSample() == null)
+            return false;
+        if (other.getJobSample() != null && other.getJobSample().equals(this.getJobSample()) == false)
+            return false;
         return true;
     }
 
@@ -1478,6 +1544,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getJobSample() == null) ? 0 : getJobSample().hashCode());
         return hashCode;
     }
 

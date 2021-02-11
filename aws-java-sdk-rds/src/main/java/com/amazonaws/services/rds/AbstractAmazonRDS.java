@@ -569,6 +569,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportInstallationMediaResult importInstallationMedia(ImportInstallationMediaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

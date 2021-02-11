@@ -49,7 +49,7 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
     private String errorMessage;
     /**
      * <p>
-     * The amount of time, in seconds, during which a job run consumed resources.
+     * The amount of time, in seconds, during which the job run consumed resources.
      * </p>
      */
     private Integer executionTime;
@@ -93,7 +93,7 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
     private RecipeReference recipeReference;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who started the job run.
      * </p>
      */
     private String startedBy;
@@ -103,6 +103,14 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date startedOn;
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     */
+    private JobSample jobSample;
 
     /**
      * <p>
@@ -266,11 +274,11 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The amount of time, in seconds, during which a job run consumed resources.
+     * The amount of time, in seconds, during which the job run consumed resources.
      * </p>
      * 
      * @param executionTime
-     *        The amount of time, in seconds, during which a job run consumed resources.
+     *        The amount of time, in seconds, during which the job run consumed resources.
      */
 
     public void setExecutionTime(Integer executionTime) {
@@ -279,10 +287,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The amount of time, in seconds, during which a job run consumed resources.
+     * The amount of time, in seconds, during which the job run consumed resources.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which a job run consumed resources.
+     * @return The amount of time, in seconds, during which the job run consumed resources.
      */
 
     public Integer getExecutionTime() {
@@ -291,11 +299,11 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The amount of time, in seconds, during which a job run consumed resources.
+     * The amount of time, in seconds, during which the job run consumed resources.
      * </p>
      * 
      * @param executionTime
-     *        The amount of time, in seconds, during which a job run consumed resources.
+     *        The amount of time, in seconds, during which the job run consumed resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,11 +648,11 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who started the job run.
      * </p>
      * 
      * @param startedBy
-     *        The Amazon Resource Name (ARN) of the user who initiated the job run.
+     *        The Amazon Resource Name (ARN) of the user who started the job run.
      */
 
     public void setStartedBy(String startedBy) {
@@ -653,10 +661,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who started the job run.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the user who initiated the job run.
+     * @return The Amazon Resource Name (ARN) of the user who started the job run.
      */
 
     public String getStartedBy() {
@@ -665,11 +673,11 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who initiated the job run.
+     * The Amazon Resource Name (ARN) of the user who started the job run.
      * </p>
      * 
      * @param startedBy
-     *        The Amazon Resource Name (ARN) of the user who initiated the job run.
+     *        The Amazon Resource Name (ARN) of the user who started the job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,6 +727,58 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     */
+
+    public void setJobSample(JobSample jobSample) {
+        this.jobSample = jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @return Sample configuration for profile jobs only. Determines the number of rows on which the profile job will
+     *         be executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *         CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     */
+
+    public JobSample getJobSample() {
+        return this.jobSample;
+    }
+
+    /**
+     * <p>
+     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
+     * for the mode parameter and 20000 for the size parameter.
+     * </p>
+     * 
+     * @param jobSample
+     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
+     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobRunResult withJobSample(JobSample jobSample) {
+        setJobSample(jobSample);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -757,7 +817,9 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getStartedBy() != null)
             sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getStartedOn() != null)
-            sb.append("StartedOn: ").append(getStartedOn());
+            sb.append("StartedOn: ").append(getStartedOn()).append(",");
+        if (getJobSample() != null)
+            sb.append("JobSample: ").append(getJobSample());
         sb.append("}");
         return sb.toString();
     }
@@ -828,6 +890,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getStartedOn() != null && other.getStartedOn().equals(this.getStartedOn()) == false)
             return false;
+        if (other.getJobSample() == null ^ this.getJobSample() == null)
+            return false;
+        if (other.getJobSample() != null && other.getJobSample().equals(this.getJobSample()) == false)
+            return false;
         return true;
     }
 
@@ -850,6 +916,7 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
+        hashCode = prime * hashCode + ((getJobSample() == null) ? 0 : getJobSample().hashCode());
         return hashCode;
     }
 

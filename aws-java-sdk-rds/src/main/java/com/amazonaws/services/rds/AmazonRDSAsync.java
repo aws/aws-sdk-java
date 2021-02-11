@@ -4338,6 +4338,73 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * <p>
+     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
+     * cluster assumes full read/write capabilities for the Aurora global database.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover"
+     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <note>
+     * <p>
+     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
+     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure your Aurora global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @return A Java Future containing the result of the FailoverGlobalCluster operation returned by the service.
+     * @sample AmazonRDSAsync.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> failoverGlobalClusterAsync(FailoverGlobalClusterRequest failoverGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * <p>
+     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
+     * cluster assumes full read/write capabilities for the Aurora global database.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover"
+     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <note>
+     * <p>
+     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
+     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure your Aurora global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the FailoverGlobalCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> failoverGlobalClusterAsync(FailoverGlobalClusterRequest failoverGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<FailoverGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * Imports the installation media for a DB engine that requires an on-premises customer provided license, such as
      * SQL Server.
      * </p>

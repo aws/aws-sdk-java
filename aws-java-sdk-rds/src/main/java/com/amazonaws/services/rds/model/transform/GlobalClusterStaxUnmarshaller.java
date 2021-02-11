@@ -100,6 +100,10 @@ public class GlobalClusterStaxUnmarshaller implements Unmarshaller<GlobalCluster
                     continue;
                 }
 
+                if (context.testExpression("FailoverState", targetDepth)) {
+                    globalCluster.setFailoverState(FailoverStateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return globalCluster;

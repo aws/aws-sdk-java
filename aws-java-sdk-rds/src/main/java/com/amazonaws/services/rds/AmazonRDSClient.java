@@ -6454,6 +6454,87 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * <p>
+     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
+     * cluster assumes full read/write capabilities for the Aurora global database.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover"
+     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <note>
+     * <p>
+     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
+     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure your Aurora global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @return Result of the FailoverGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @sample AmazonRDS.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeFailoverGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeFailoverGlobalCluster(FailoverGlobalClusterRequest failoverGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(failoverGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FailoverGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FailoverGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(failoverGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Imports the installation media for a DB engine that requires an on-premises customer provided license, such as
      * SQL Server.
      * </p>

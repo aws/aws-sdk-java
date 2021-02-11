@@ -45,6 +45,8 @@ public class UpdateProfileJobRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<StructuredPojo> JOBSAMPLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobSample").build();
 
     private static final UpdateProfileJobRequestMarshaller instance = new UpdateProfileJobRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class UpdateProfileJobRequestMarshaller {
             protocolMarshaller.marshall(updateProfileJobRequest.getOutputLocation(), OUTPUTLOCATION_BINDING);
             protocolMarshaller.marshall(updateProfileJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateProfileJobRequest.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(updateProfileJobRequest.getJobSample(), JOBSAMPLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
