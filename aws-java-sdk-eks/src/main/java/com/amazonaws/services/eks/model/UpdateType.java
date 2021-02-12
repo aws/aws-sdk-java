@@ -24,6 +24,8 @@ public enum UpdateType {
     EndpointAccessUpdate("EndpointAccessUpdate"),
     LoggingUpdate("LoggingUpdate"),
     ConfigUpdate("ConfigUpdate"),
+    AssociateIdentityProviderConfig("AssociateIdentityProviderConfig"),
+    DisassociateIdentityProviderConfig("DisassociateIdentityProviderConfig"),
     AddonUpdate("AddonUpdate");
 
     private String value;

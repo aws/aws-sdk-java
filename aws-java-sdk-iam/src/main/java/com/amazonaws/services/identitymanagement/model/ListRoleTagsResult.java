@@ -25,8 +25,8 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of tags currently that is attached to the role. Each tag consists of a key name and an associated value.
-     * If no tags are attached to the specified role, the response contains an empty list.
+     * The list of tags that are currently attached to the role. Each tag consists of a key name and an associated
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -49,12 +49,12 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of tags currently that is attached to the role. Each tag consists of a key name and an associated value.
-     * If no tags are attached to the specified role, the response contains an empty list.
+     * The list of tags that are currently attached to the role. Each tag consists of a key name and an associated
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
-     * @return The list of tags currently that is attached to the role. Each tag consists of a key name and an
-     *         associated value. If no tags are attached to the specified role, the response contains an empty list.
+     * @return The list of tags that are currently attached to the role. Each tag consists of a key name and an
+     *         associated value. If no tags are attached to the specified resource, the response contains an empty list.
      */
 
     public java.util.List<Tag> getTags() {
@@ -66,13 +66,13 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of tags currently that is attached to the role. Each tag consists of a key name and an associated value.
-     * If no tags are attached to the specified role, the response contains an empty list.
+     * The list of tags that are currently attached to the role. Each tag consists of a key name and an associated
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
      * @param tags
-     *        The list of tags currently that is attached to the role. Each tag consists of a key name and an associated
-     *        value. If no tags are attached to the specified role, the response contains an empty list.
+     *        The list of tags that are currently attached to the role. Each tag consists of a key name and an
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -86,8 +86,8 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of tags currently that is attached to the role. Each tag consists of a key name and an associated value.
-     * If no tags are attached to the specified role, the response contains an empty list.
+     * The list of tags that are currently attached to the role. Each tag consists of a key name and an associated
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,8 +96,8 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param tags
-     *        The list of tags currently that is attached to the role. Each tag consists of a key name and an associated
-     *        value. If no tags are attached to the specified role, the response contains an empty list.
+     *        The list of tags that are currently attached to the role. Each tag consists of a key name and an
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +113,13 @@ public class ListRoleTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of tags currently that is attached to the role. Each tag consists of a key name and an associated value.
-     * If no tags are attached to the specified role, the response contains an empty list.
+     * The list of tags that are currently attached to the role. Each tag consists of a key name and an associated
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
      * @param tags
-     *        The list of tags currently that is attached to the role. Each tag consists of a key name and an associated
-     *        value. If no tags are attached to the specified role, the response contains an empty list.
+     *        The list of tags that are currently attached to the role. Each tag consists of a key name and an
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

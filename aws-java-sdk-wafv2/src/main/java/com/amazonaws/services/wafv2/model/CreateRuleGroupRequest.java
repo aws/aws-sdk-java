@@ -73,8 +73,7 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     private Long capacity;
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      */
     private String description;
@@ -441,13 +440,11 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the rule group that helps with identification. You cannot change the description of a
-     *        rule group after you create it.
+     *        A description of the rule group that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -456,12 +453,10 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
-     * @return A description of the rule group that helps with identification. You cannot change the description of a
-     *         rule group after you create it.
+     * @return A description of the rule group that helps with identification.
      */
 
     public String getDescription() {
@@ -470,13 +465,11 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the rule group that helps with identification. You cannot change the description of a
-     *        rule group after you create it.
+     *        A description of the rule group that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

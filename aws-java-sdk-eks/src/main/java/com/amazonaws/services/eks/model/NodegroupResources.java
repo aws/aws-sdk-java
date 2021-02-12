@@ -38,7 +38,7 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The remote access security group associated with the node group. This security group controls SSH access to the
-     * worker nodes.
+     * nodes.
      * </p>
      */
     private String remoteAccessSecurityGroup;
@@ -116,12 +116,12 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The remote access security group associated with the node group. This security group controls SSH access to the
-     * worker nodes.
+     * nodes.
      * </p>
      * 
      * @param remoteAccessSecurityGroup
      *        The remote access security group associated with the node group. This security group controls SSH access
-     *        to the worker nodes.
+     *        to the nodes.
      */
 
     public void setRemoteAccessSecurityGroup(String remoteAccessSecurityGroup) {
@@ -131,11 +131,11 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The remote access security group associated with the node group. This security group controls SSH access to the
-     * worker nodes.
+     * nodes.
      * </p>
      * 
      * @return The remote access security group associated with the node group. This security group controls SSH access
-     *         to the worker nodes.
+     *         to the nodes.
      */
 
     public String getRemoteAccessSecurityGroup() {
@@ -145,12 +145,12 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The remote access security group associated with the node group. This security group controls SSH access to the
-     * worker nodes.
+     * nodes.
      * </p>
      * 
      * @param remoteAccessSecurityGroup
      *        The remote access security group associated with the node group. This security group controls SSH access
-     *        to the worker nodes.
+     *        to the nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

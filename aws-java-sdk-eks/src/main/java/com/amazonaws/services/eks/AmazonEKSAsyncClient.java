@@ -83,6 +83,41 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            AssociateIdentityProviderConfigRequest request) {
+
+        return associateIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            final AssociateIdentityProviderConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateIdentityProviderConfigRequest, AssociateIdentityProviderConfigResult> asyncHandler) {
+        final AssociateIdentityProviderConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateIdentityProviderConfigResult>() {
+            @Override
+            public AssociateIdentityProviderConfigResult call() throws Exception {
+                AssociateIdentityProviderConfigResult result = null;
+
+                try {
+                    result = executeAssociateIdentityProviderConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest request) {
 
         return createAddonAsync(request, null);
@@ -479,6 +514,40 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(DescribeIdentityProviderConfigRequest request) {
+
+        return describeIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(
+            final DescribeIdentityProviderConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderConfigRequest, DescribeIdentityProviderConfigResult> asyncHandler) {
+        final DescribeIdentityProviderConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeIdentityProviderConfigResult>() {
+            @Override
+            public DescribeIdentityProviderConfigResult call() throws Exception {
+                DescribeIdentityProviderConfigResult result = null;
+
+                try {
+                    result = executeDescribeIdentityProviderConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest request) {
 
         return describeNodegroupAsync(request, null);
@@ -529,6 +598,41 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            DisassociateIdentityProviderConfigRequest request) {
+
+        return disassociateIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            final DisassociateIdentityProviderConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateIdentityProviderConfigRequest, DisassociateIdentityProviderConfigResult> asyncHandler) {
+        final DisassociateIdentityProviderConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateIdentityProviderConfigResult>() {
+            @Override
+            public DisassociateIdentityProviderConfigResult call() throws Exception {
+                DisassociateIdentityProviderConfigResult result = null;
+
+                try {
+                    result = executeDisassociateIdentityProviderConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -628,6 +732,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListFargateProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request) {
+
+        return listIdentityProviderConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(final ListIdentityProviderConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIdentityProviderConfigsRequest, ListIdentityProviderConfigsResult> asyncHandler) {
+        final ListIdentityProviderConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIdentityProviderConfigsResult>() {
+            @Override
+            public ListIdentityProviderConfigsResult call() throws Exception {
+                ListIdentityProviderConfigsResult result = null;
+
+                try {
+                    result = executeListIdentityProviderConfigs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

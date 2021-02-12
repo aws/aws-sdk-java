@@ -31,8 +31,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
@@ -47,8 +47,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String versionId;
@@ -59,8 +59,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
@@ -68,7 +68,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -81,15 +81,15 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPolicyArn() {
@@ -102,8 +102,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
@@ -111,7 +111,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,8 +131,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versionId
@@ -145,7 +145,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about managed policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public void setVersionId(String versionId) {
@@ -163,8 +163,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The policy version to delete.</p>
@@ -176,7 +176,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         For more information about managed policy versions, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *         Managed Policies</a> in the <i>IAM User Guide</i>.
+     *         managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public String getVersionId() {
@@ -194,8 +194,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versionId
@@ -208,7 +208,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about managed policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,10 +55,16 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.Date snapshotCreateTime;
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      */
     private String engine;
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     */
+    private String engineMode;
     /**
      * <p>
      * Specifies the allocated storage size in gibibytes (GiB).
@@ -91,7 +97,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.Date clusterCreateTime;
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      */
     private String masterUsername;
@@ -353,11 +359,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
      * @param engine
-     *        Specifies the name of the database engine.
+     *        Specifies the name of the database engine for this DB cluster snapshot.
      */
 
     public void setEngine(String engine) {
@@ -366,10 +372,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
-     * @return Specifies the name of the database engine.
+     * @return Specifies the name of the database engine for this DB cluster snapshot.
      */
 
     public String getEngine() {
@@ -378,16 +384,56 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
      * @param engine
-     *        Specifies the name of the database engine.
+     *        Specifies the name of the database engine for this DB cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withEngine(String engine) {
         setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @param engineMode
+     *        Provides the engine mode of the database engine for this DB cluster snapshot.
+     */
+
+    public void setEngineMode(String engineMode) {
+        this.engineMode = engineMode;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @return Provides the engine mode of the database engine for this DB cluster snapshot.
+     */
+
+    public String getEngineMode() {
+        return this.engineMode;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @param engineMode
+     *        Provides the engine mode of the database engine for this DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withEngineMode(String engineMode) {
+        setEngineMode(engineMode);
         return this;
     }
 
@@ -593,11 +639,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Provides the master username for this DB cluster snapshot.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -606,10 +652,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
-     * @return Provides the master username for the DB cluster snapshot.
+     * @return Provides the master username for this DB cluster snapshot.
      */
 
     public String getMasterUsername() {
@@ -618,11 +664,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Provides the master username for this DB cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1130,6 +1176,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             sb.append("SnapshotCreateTime: ").append(getSnapshotCreateTime()).append(",");
         if (getEngine() != null)
             sb.append("Engine: ").append(getEngine()).append(",");
+        if (getEngineMode() != null)
+            sb.append("EngineMode: ").append(getEngineMode()).append(",");
         if (getAllocatedStorage() != null)
             sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getStatus() != null)
@@ -1195,6 +1243,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
         if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
+        if (other.getEngineMode() == null ^ this.getEngineMode() == null)
+            return false;
+        if (other.getEngineMode() != null && other.getEngineMode().equals(this.getEngineMode()) == false)
             return false;
         if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
@@ -1274,6 +1326,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCreateTime() == null) ? 0 : getSnapshotCreateTime().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
         hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());

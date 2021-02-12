@@ -51,7 +51,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Integer maxSessionDuration;
@@ -150,7 +150,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param maxSessionDuration
@@ -165,7 +165,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
      */
 
@@ -187,7 +187,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The maximum session duration (in seconds) that you want to set for the specified role. If you do not
@@ -202,7 +202,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
      *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-     *         Roles</a> in the <i>IAM User Guide</i>.
+     *         roles</a> in the <i>IAM User Guide</i>.
      */
 
     public Integer getMaxSessionDuration() {
@@ -223,7 +223,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param maxSessionDuration
@@ -238,7 +238,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

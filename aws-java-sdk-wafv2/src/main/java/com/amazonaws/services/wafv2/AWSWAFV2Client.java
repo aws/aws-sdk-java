@@ -243,13 +243,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates a Web ACL with a regional application resource, to protect the resource. A regional application can be
      * an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -347,13 +340,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to
      * check the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>.
@@ -458,13 +444,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to identify web requests that originate from specific IP addresses or
      * ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can
@@ -568,13 +547,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
      * WAF inspect a web request component for the specified patterns.
@@ -678,13 +650,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RuleGroup</a> per the specifications provided.
      * </p>
@@ -797,13 +762,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
@@ -1018,13 +976,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>IPSet</a>.
      * </p>
@@ -1123,13 +1074,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -1312,13 +1256,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RegexPatternSet</a>.
      * </p>
@@ -1418,13 +1355,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RuleGroup</a>.
      * </p>
@@ -1523,13 +1453,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
@@ -1631,13 +1554,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Provides high-level information for a managed rule group, including descriptions of the rules.
      * </p>
@@ -1730,13 +1646,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates a Web ACL from a regional application resource. A regional application can be an Application Load
      * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -1831,13 +1740,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>IPSet</a>.
      * </p>
@@ -1925,13 +1827,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -2109,13 +2004,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the keys that are currently blocked by a rate-based rule. The maximum number of managed keys that can
      * be blocked for a single rate-based rule is 10,000. If more than 10,000 addresses exceed the rate limit, those
@@ -2208,13 +2096,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RegexPatternSet</a>.
      * </p>
@@ -2302,13 +2183,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RuleGroup</a>.
      * </p>
@@ -2396,13 +2270,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -2496,13 +2363,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>WebACL</a>.
      * </p>
@@ -2590,13 +2450,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>WebACL</a> for the specified resource.
      * </p>
@@ -2686,13 +2539,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
      * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
@@ -2781,13 +2627,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.
      * </p>
@@ -2873,13 +2712,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of your <a>LoggingConfiguration</a> objects.
      * </p>
@@ -2967,13 +2799,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you manage.
      * </p>
@@ -3059,13 +2884,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the
      * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS CloudFront call
@@ -3156,13 +2974,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups that you manage.
      * </p>
@@ -3248,13 +3059,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
      * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
@@ -3353,13 +3157,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you manage.
      * </p>
@@ -3445,13 +3242,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
      * configuration provided.
@@ -3738,13 +3528,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
      * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
@@ -3848,13 +3631,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate with AWS resources. For
      * example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags
@@ -3948,13 +3724,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
@@ -4054,13 +3823,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RegexPatternSet</a>.
      * </p>
@@ -4161,13 +3923,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RuleGroup</a>.
      * </p>
@@ -4276,13 +4031,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>WebACL</a>.
      * </p>

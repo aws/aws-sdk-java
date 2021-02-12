@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -47,6 +49,17 @@ public class CreateSAMLProviderResultStaxUnmarshaller implements Unmarshaller<Cr
                     createSAMLProviderResult.setSAMLProviderArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    createSAMLProviderResult.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    createSAMLProviderResult.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createSAMLProviderResult;

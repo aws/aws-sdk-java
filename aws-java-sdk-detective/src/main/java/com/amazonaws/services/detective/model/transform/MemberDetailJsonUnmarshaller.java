@@ -74,11 +74,11 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                 }
                 if (context.testExpression("InvitedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("PercentOfGraphUtilization", targetDepth)) {
                     context.nextToken();
@@ -86,7 +86,7 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                 }
                 if (context.testExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

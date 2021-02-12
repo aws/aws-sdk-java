@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for
- * the cluster.
+ * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> (OIDC) identity provider
+ * information for the cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OIDC" target="_top">AWS API Documentation</a>
@@ -30,18 +30,18 @@ public class OIDC implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The issuer URL for the OpenID Connect identity provider.
+     * The issuer URL for the OIDC identity provider.
      * </p>
      */
     private String issuer;
 
     /**
      * <p>
-     * The issuer URL for the OpenID Connect identity provider.
+     * The issuer URL for the OIDC identity provider.
      * </p>
      * 
      * @param issuer
-     *        The issuer URL for the OpenID Connect identity provider.
+     *        The issuer URL for the OIDC identity provider.
      */
 
     public void setIssuer(String issuer) {
@@ -50,10 +50,10 @@ public class OIDC implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The issuer URL for the OpenID Connect identity provider.
+     * The issuer URL for the OIDC identity provider.
      * </p>
      * 
-     * @return The issuer URL for the OpenID Connect identity provider.
+     * @return The issuer URL for the OIDC identity provider.
      */
 
     public String getIssuer() {
@@ -62,11 +62,11 @@ public class OIDC implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The issuer URL for the OpenID Connect identity provider.
+     * The issuer URL for the OIDC identity provider.
      * </p>
      * 
      * @param issuer
-     *        The issuer URL for the OpenID Connect identity provider.
+     *        The issuer URL for the OIDC identity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -67,6 +69,17 @@ public class VirtualMFADeviceStaxUnmarshaller implements Unmarshaller<VirtualMFA
                     virtualMFADevice.setEnableDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    virtualMFADevice.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    virtualMFADevice.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return virtualMFADevice;

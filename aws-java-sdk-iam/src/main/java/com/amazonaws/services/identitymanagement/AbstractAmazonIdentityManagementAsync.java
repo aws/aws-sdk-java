@@ -1414,6 +1414,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstanceProfileTagsResult> listInstanceProfileTagsAsync(ListInstanceProfileTagsRequest request) {
+
+        return listInstanceProfileTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceProfileTagsResult> listInstanceProfileTagsAsync(ListInstanceProfileTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInstanceProfileTagsRequest, ListInstanceProfileTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest request) {
 
         return listInstanceProfilesAsync(request, null);
@@ -1463,6 +1476,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<ListMFADeviceTagsResult> listMFADeviceTagsAsync(ListMFADeviceTagsRequest request) {
+
+        return listMFADeviceTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMFADeviceTagsResult> listMFADeviceTagsAsync(ListMFADeviceTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMFADeviceTagsRequest, ListMFADeviceTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(ListMFADevicesRequest request) {
 
         return listMFADevicesAsync(request, null);
@@ -1496,6 +1522,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
             com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler) {
 
         return listMFADevicesAsync(new ListMFADevicesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpenIDConnectProviderTagsResult> listOpenIDConnectProviderTagsAsync(ListOpenIDConnectProviderTagsRequest request) {
+
+        return listOpenIDConnectProviderTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpenIDConnectProviderTagsResult> listOpenIDConnectProviderTagsAsync(ListOpenIDConnectProviderTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOpenIDConnectProviderTagsRequest, ListOpenIDConnectProviderTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1586,6 +1625,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyTagsResult> listPolicyTagsAsync(ListPolicyTagsRequest request) {
+
+        return listPolicyTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyTagsResult> listPolicyTagsAsync(ListPolicyTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPolicyTagsRequest, ListPolicyTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(ListPolicyVersionsRequest request) {
 
         return listPolicyVersionsAsync(request, null);
@@ -1660,6 +1712,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<ListSAMLProviderTagsResult> listSAMLProviderTagsAsync(ListSAMLProviderTagsRequest request) {
+
+        return listSAMLProviderTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSAMLProviderTagsResult> listSAMLProviderTagsAsync(ListSAMLProviderTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSAMLProviderTagsRequest, ListSAMLProviderTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(ListSAMLProvidersRequest request) {
 
         return listSAMLProvidersAsync(request, null);
@@ -1729,6 +1794,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
             com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler) {
 
         return listSSHPublicKeysAsync(new ListSSHPublicKeysRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerCertificateTagsResult> listServerCertificateTagsAsync(ListServerCertificateTagsRequest request) {
+
+        return listServerCertificateTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerCertificateTagsResult> listServerCertificateTagsAsync(ListServerCertificateTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListServerCertificateTagsRequest, ListServerCertificateTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -2100,6 +2178,58 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<TagInstanceProfileResult> tagInstanceProfileAsync(TagInstanceProfileRequest request) {
+
+        return tagInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagInstanceProfileResult> tagInstanceProfileAsync(TagInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagInstanceProfileRequest, TagInstanceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMFADeviceResult> tagMFADeviceAsync(TagMFADeviceRequest request) {
+
+        return tagMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMFADeviceResult> tagMFADeviceAsync(TagMFADeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagMFADeviceRequest, TagMFADeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagOpenIDConnectProviderResult> tagOpenIDConnectProviderAsync(TagOpenIDConnectProviderRequest request) {
+
+        return tagOpenIDConnectProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagOpenIDConnectProviderResult> tagOpenIDConnectProviderAsync(TagOpenIDConnectProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagOpenIDConnectProviderRequest, TagOpenIDConnectProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagPolicyResult> tagPolicyAsync(TagPolicyRequest request) {
+
+        return tagPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagPolicyResult> tagPolicyAsync(TagPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagPolicyRequest, TagPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
 
         return tagRoleAsync(request, null);
@@ -2108,6 +2238,32 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<TagRoleRequest, TagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagSAMLProviderResult> tagSAMLProviderAsync(TagSAMLProviderRequest request) {
+
+        return tagSAMLProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagSAMLProviderResult> tagSAMLProviderAsync(TagSAMLProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagSAMLProviderRequest, TagSAMLProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagServerCertificateResult> tagServerCertificateAsync(TagServerCertificateRequest request) {
+
+        return tagServerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagServerCertificateResult> tagServerCertificateAsync(TagServerCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagServerCertificateRequest, TagServerCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2126,6 +2282,58 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<UntagInstanceProfileResult> untagInstanceProfileAsync(UntagInstanceProfileRequest request) {
+
+        return untagInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagInstanceProfileResult> untagInstanceProfileAsync(UntagInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagInstanceProfileRequest, UntagInstanceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMFADeviceResult> untagMFADeviceAsync(UntagMFADeviceRequest request) {
+
+        return untagMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMFADeviceResult> untagMFADeviceAsync(UntagMFADeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagMFADeviceRequest, UntagMFADeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagOpenIDConnectProviderResult> untagOpenIDConnectProviderAsync(UntagOpenIDConnectProviderRequest request) {
+
+        return untagOpenIDConnectProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagOpenIDConnectProviderResult> untagOpenIDConnectProviderAsync(UntagOpenIDConnectProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagOpenIDConnectProviderRequest, UntagOpenIDConnectProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagPolicyResult> untagPolicyAsync(UntagPolicyRequest request) {
+
+        return untagPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagPolicyResult> untagPolicyAsync(UntagPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagPolicyRequest, UntagPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
 
         return untagRoleAsync(request, null);
@@ -2134,6 +2342,32 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagRoleRequest, UntagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagSAMLProviderResult> untagSAMLProviderAsync(UntagSAMLProviderRequest request) {
+
+        return untagSAMLProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagSAMLProviderResult> untagSAMLProviderAsync(UntagSAMLProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagSAMLProviderRequest, UntagSAMLProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagServerCertificateResult> untagServerCertificateAsync(UntagServerCertificateRequest request) {
+
+        return untagServerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagServerCertificateResult> untagServerCertificateAsync(UntagServerCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagServerCertificateRequest, UntagServerCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

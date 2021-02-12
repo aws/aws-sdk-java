@@ -52,7 +52,8 @@ import com.amazonaws.services.personalizeevents.model.transform.*;
  * <p>
  * <p>
  * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
- * model training either alone or combined with historical data. For more information see <a>recording-events</a>.
+ * model training either alone or combined with historical data. For more information see <a
+ * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
  * </p>
  */
 @ThreadSafe
@@ -81,6 +82,9 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
                                     com.amazonaws.services.personalizeevents.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.personalizeevents.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.personalizeevents.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -134,7 +138,8 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Records user interaction event data. For more information see <a>event-record-api</a>.
+     * Records user interaction event data. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      * 
      * @param putEventsRequest
@@ -191,7 +196,8 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+     * Adds one or more items to an Items dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>.
      * </p>
      * 
      * @param putItemsRequest
@@ -200,6 +206,8 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
      *         Provide a valid value for the field or parameter.
      * @throws ResourceNotFoundException
      *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
      * @sample AmazonPersonalizeEvents.PutItems
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems" target="_top">AWS
      *      API Documentation</a>
@@ -250,7 +258,8 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+     * Adds one or more users to a Users dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.
      * </p>
      * 
      * @param putUsersRequest
@@ -259,6 +268,8 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
      *         Provide a valid value for the field or parameter.
      * @throws ResourceNotFoundException
      *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
      * @sample AmazonPersonalizeEvents.PutUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers" target="_top">AWS
      *      API Documentation</a>

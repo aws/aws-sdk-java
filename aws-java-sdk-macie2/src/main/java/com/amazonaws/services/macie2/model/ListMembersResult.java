@@ -25,7 +25,7 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      */
@@ -40,11 +40,11 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
-     * @return An array of objects, one for each account that's associated with the master account and meets the
+     * @return An array of objects, one for each account that's associated with the administrator account and meets the
      *         criteria specified by the onlyAssociated request parameter.
      */
 
@@ -54,13 +54,13 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      */
 
     public void setMembers(java.util.Collection<Member> members) {
@@ -74,7 +74,7 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * <p>
@@ -84,8 +84,8 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

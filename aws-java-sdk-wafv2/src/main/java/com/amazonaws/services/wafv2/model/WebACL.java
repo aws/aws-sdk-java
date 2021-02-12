@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined
  * (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default
@@ -66,8 +59,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     private DefaultAction defaultAction;
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      */
     private String description;
@@ -300,13 +292,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *        ACL after you create it.
+     *        A description of the Web ACL that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -315,12 +305,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
-     * @return A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *         ACL after you create it.
+     * @return A description of the Web ACL that helps with identification.
      */
 
     public String getDescription() {
@@ -329,13 +317,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *        ACL after you create it.
+     *        A description of the Web ACL that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

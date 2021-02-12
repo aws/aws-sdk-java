@@ -70,12 +70,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the request.
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_MATCH - Treat the web request as not matching the rule statement.
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
      * </ul>
@@ -171,12 +172,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the request.
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_MATCH - Treat the web request as not matching the rule statement.
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
      * </ul>
@@ -195,13 +197,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
-     *        request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
+     *        to the request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_MATCH - Treat the web request as not matching the rule statement.
+     *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
      * @see FallbackBehavior
@@ -227,12 +229,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the request.
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_MATCH - Treat the web request as not matching the rule statement.
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
      * </ul>
@@ -250,13 +253,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
-     *         request.
+     *         <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule
+     *         action to the request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NO_MATCH - Treat the web request as not matching the rule statement.
+     *         <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *         </p>
      *         </li>
      * @see FallbackBehavior
@@ -282,12 +285,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the request.
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_MATCH - Treat the web request as not matching the rule statement.
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
      * </ul>
@@ -306,13 +310,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
-     *        request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
+     *        to the request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_MATCH - Treat the web request as not matching the rule statement.
+     *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -340,12 +344,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the request.
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_MATCH - Treat the web request as not matching the rule statement.
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
      * </ul>
@@ -364,13 +369,13 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        MATCH - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
-     *        request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
+     *        to the request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_MATCH - Treat the web request as not matching the rule statement.
+     *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -80,6 +80,16 @@ public class InstanceProfileStaxUnmarshaller implements Unmarshaller<InstancePro
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    instanceProfile.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    instanceProfile.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceProfile;

@@ -32,8 +32,8 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PolicyVersion> versions;
@@ -61,15 +61,15 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return A list of policy versions.</p>
      *         <p>
      *         For more information about managed policy versions, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *         Managed Policies</a> in the <i>IAM User Guide</i>.
+     *         managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public java.util.List<PolicyVersion> getVersions() {
@@ -85,8 +85,8 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versions
@@ -94,7 +94,7 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      *        <p>
      *        For more information about managed policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public void setVersions(java.util.Collection<PolicyVersion> versions) {
@@ -112,8 +112,8 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +126,7 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      *        <p>
      *        For more information about managed policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,8 +146,8 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versions
@@ -155,7 +155,7 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
      *        <p>
      *        For more information about managed policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

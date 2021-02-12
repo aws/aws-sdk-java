@@ -40,13 +40,13 @@ public class MemberDetailMarshaller {
     private static final MarshallingInfo<String> DISABLEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledReason").build();
     private static final MarshallingInfo<java.util.Date> INVITEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Double> PERCENTOFGRAPHUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilization").build();
     private static final MarshallingInfo<java.util.Date> PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("iso8601").build();
 
     private static final MemberDetailMarshaller instance = new MemberDetailMarshaller();
 

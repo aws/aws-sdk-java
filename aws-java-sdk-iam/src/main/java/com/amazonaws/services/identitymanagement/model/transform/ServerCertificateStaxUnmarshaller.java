@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -57,6 +59,17 @@ public class ServerCertificateStaxUnmarshaller implements Unmarshaller<ServerCer
                     serverCertificate.setCertificateChain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    serverCertificate.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    serverCertificate.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return serverCertificate;

@@ -31,6 +31,8 @@ public class ListActionTypesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionOwnerFilter").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> REGIONFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionFilter").build();
 
     private static final ListActionTypesRequestMarshaller instance = new ListActionTypesRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ListActionTypesRequestMarshaller {
         try {
             protocolMarshaller.marshall(listActionTypesRequest.getActionOwnerFilter(), ACTIONOWNERFILTER_BINDING);
             protocolMarshaller.marshall(listActionTypesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listActionTypesRequest.getRegionFilter(), REGIONFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

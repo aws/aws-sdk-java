@@ -55,8 +55,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     private String scope;
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      */
     private String description;
@@ -306,13 +305,11 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -321,12 +318,10 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
-     * @return A description of the set that helps with identification. You cannot change the description of a set after
-     *         you create it.
+     * @return A description of the set that helps with identification.
      */
 
     public String getDescription() {
@@ -335,13 +330,11 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

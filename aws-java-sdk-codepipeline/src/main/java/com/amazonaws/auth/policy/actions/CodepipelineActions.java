@@ -45,6 +45,8 @@ public enum CodepipelineActions implements Action {
     DisableStageTransition("codepipeline:DisableStageTransition"),
     /** Action for the EnableStageTransition operation. */
     EnableStageTransition("codepipeline:EnableStageTransition"),
+    /** Action for the GetActionType operation. */
+    GetActionType("codepipeline:GetActionType"),
     /** Action for the GetJobDetails operation. */
     GetJobDetails("codepipeline:GetJobDetails"),
     /** Action for the GetPipeline operation. */
@@ -97,6 +99,8 @@ public enum CodepipelineActions implements Action {
     TagResource("codepipeline:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("codepipeline:UntagResource"),
+    /** Action for the UpdateActionType operation. */
+    UpdateActionType("codepipeline:UpdateActionType"),
     /** Action for the UpdatePipeline operation. */
     UpdatePipeline("codepipeline:UpdatePipeline"),
 

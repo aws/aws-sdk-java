@@ -32,6 +32,7 @@ public enum UpdateParamType {
     MinSize("MinSize"),
     ReleaseVersion("ReleaseVersion"),
     PublicAccessCidrs("PublicAccessCidrs"),
+    IdentityProviderConfig("IdentityProviderConfig"),
     AddonVersion("AddonVersion"),
     ServiceAccountRoleArn("ServiceAccountRoleArn"),
     ResolveConflicts("ResolveConflicts");

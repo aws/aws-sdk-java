@@ -65,7 +65,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
+     * WAF sets it to three hours ago.
      * </p>
      */
     private TimeWindow timeWindow;
@@ -360,14 +361,16 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
+     * WAF sets it to three hours ago.
      * </p>
      * 
      * @param timeWindow
      *        The start date and time and the end date and time of the range for which you want
      *        <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *        Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
-     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
+     *        specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
      */
 
     public void setTimeWindow(TimeWindow timeWindow) {
@@ -379,13 +382,15 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
+     * WAF sets it to three hours ago.
      * </p>
      * 
      * @return The start date and time and the end date and time of the range for which you want
      *         <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *         Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
-     *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
+     *         specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
      */
 
     public TimeWindow getTimeWindow() {
@@ -397,14 +402,16 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
+     * WAF sets it to three hours ago.
      * </p>
      * 
      * @param timeWindow
      *        The start date and time and the end date and time of the range for which you want
      *        <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *        Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
-     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
+     *        specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

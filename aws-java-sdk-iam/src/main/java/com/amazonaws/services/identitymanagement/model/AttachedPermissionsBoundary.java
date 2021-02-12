@@ -25,8 +25,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about permissions boundaries, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
- * IAM Identities </a> in the <i>IAM User Guide</i>.
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for
+ * IAM identities </a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachedPermissionsBoundary" target="_top">AWS

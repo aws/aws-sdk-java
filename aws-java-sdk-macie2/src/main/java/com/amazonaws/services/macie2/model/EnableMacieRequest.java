@@ -38,8 +38,8 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String findingPublishingFrequency;
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set
+     * this value to ENABLED.
      * </p>
      */
     private String status;
@@ -145,12 +145,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set
+     * this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @see MacieStatus
      */
@@ -161,12 +161,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set
+     * this value to ENABLED.
      * </p>
      * 
-     * @return Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for
-     *         the account, set this value to ENABLED.
+     * @return Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the
+     *         account, set this value to ENABLED.
      * @see MacieStatus
      */
 
@@ -176,12 +176,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set
+     * this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
@@ -194,12 +194,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set
+     * this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus

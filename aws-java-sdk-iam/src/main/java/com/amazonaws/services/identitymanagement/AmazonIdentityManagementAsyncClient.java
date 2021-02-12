@@ -3373,6 +3373,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstanceProfileTagsResult> listInstanceProfileTagsAsync(ListInstanceProfileTagsRequest request) {
+
+        return listInstanceProfileTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceProfileTagsResult> listInstanceProfileTagsAsync(final ListInstanceProfileTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInstanceProfileTagsRequest, ListInstanceProfileTagsResult> asyncHandler) {
+        final ListInstanceProfileTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInstanceProfileTagsResult>() {
+            @Override
+            public ListInstanceProfileTagsResult call() throws Exception {
+                ListInstanceProfileTagsResult result = null;
+
+                try {
+                    result = executeListInstanceProfileTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest request) {
 
         return listInstanceProfilesAsync(request, null);
@@ -3462,6 +3495,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListMFADeviceTagsResult> listMFADeviceTagsAsync(ListMFADeviceTagsRequest request) {
+
+        return listMFADeviceTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMFADeviceTagsResult> listMFADeviceTagsAsync(final ListMFADeviceTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMFADeviceTagsRequest, ListMFADeviceTagsResult> asyncHandler) {
+        final ListMFADeviceTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMFADeviceTagsResult>() {
+            @Override
+            public ListMFADeviceTagsResult call() throws Exception {
+                ListMFADeviceTagsResult result = null;
+
+                try {
+                    result = executeListMFADeviceTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(ListMFADevicesRequest request) {
 
         return listMFADevicesAsync(request, null);
@@ -3515,6 +3581,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler) {
 
         return listMFADevicesAsync(new ListMFADevicesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpenIDConnectProviderTagsResult> listOpenIDConnectProviderTagsAsync(ListOpenIDConnectProviderTagsRequest request) {
+
+        return listOpenIDConnectProviderTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpenIDConnectProviderTagsResult> listOpenIDConnectProviderTagsAsync(
+            final ListOpenIDConnectProviderTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOpenIDConnectProviderTagsRequest, ListOpenIDConnectProviderTagsResult> asyncHandler) {
+        final ListOpenIDConnectProviderTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOpenIDConnectProviderTagsResult>() {
+            @Override
+            public ListOpenIDConnectProviderTagsResult call() throws Exception {
+                ListOpenIDConnectProviderTagsResult result = null;
+
+                try {
+                    result = executeListOpenIDConnectProviderTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -3649,6 +3749,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeListPoliciesGrantingServiceAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyTagsResult> listPolicyTagsAsync(ListPolicyTagsRequest request) {
+
+        return listPolicyTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyTagsResult> listPolicyTagsAsync(final ListPolicyTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPolicyTagsRequest, ListPolicyTagsResult> asyncHandler) {
+        final ListPolicyTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPolicyTagsResult>() {
+            @Override
+            public ListPolicyTagsResult call() throws Exception {
+                ListPolicyTagsResult result = null;
+
+                try {
+                    result = executeListPolicyTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3819,6 +3952,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListSAMLProviderTagsResult> listSAMLProviderTagsAsync(ListSAMLProviderTagsRequest request) {
+
+        return listSAMLProviderTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSAMLProviderTagsResult> listSAMLProviderTagsAsync(final ListSAMLProviderTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSAMLProviderTagsRequest, ListSAMLProviderTagsResult> asyncHandler) {
+        final ListSAMLProviderTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSAMLProviderTagsResult>() {
+            @Override
+            public ListSAMLProviderTagsResult call() throws Exception {
+                ListSAMLProviderTagsResult result = null;
+
+                try {
+                    result = executeListSAMLProviderTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(ListSAMLProvidersRequest request) {
 
         return listSAMLProvidersAsync(request, null);
@@ -3928,6 +4094,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler) {
 
         return listSSHPublicKeysAsync(new ListSSHPublicKeysRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerCertificateTagsResult> listServerCertificateTagsAsync(ListServerCertificateTagsRequest request) {
+
+        return listServerCertificateTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerCertificateTagsResult> listServerCertificateTagsAsync(final ListServerCertificateTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServerCertificateTagsRequest, ListServerCertificateTagsResult> asyncHandler) {
+        final ListServerCertificateTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServerCertificateTagsResult>() {
+            @Override
+            public ListServerCertificateTagsResult call() throws Exception {
+                ListServerCertificateTagsResult result = null;
+
+                try {
+                    result = executeListServerCertificateTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -4722,6 +4921,138 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<TagInstanceProfileResult> tagInstanceProfileAsync(TagInstanceProfileRequest request) {
+
+        return tagInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagInstanceProfileResult> tagInstanceProfileAsync(final TagInstanceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagInstanceProfileRequest, TagInstanceProfileResult> asyncHandler) {
+        final TagInstanceProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagInstanceProfileResult>() {
+            @Override
+            public TagInstanceProfileResult call() throws Exception {
+                TagInstanceProfileResult result = null;
+
+                try {
+                    result = executeTagInstanceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMFADeviceResult> tagMFADeviceAsync(TagMFADeviceRequest request) {
+
+        return tagMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMFADeviceResult> tagMFADeviceAsync(final TagMFADeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagMFADeviceRequest, TagMFADeviceResult> asyncHandler) {
+        final TagMFADeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagMFADeviceResult>() {
+            @Override
+            public TagMFADeviceResult call() throws Exception {
+                TagMFADeviceResult result = null;
+
+                try {
+                    result = executeTagMFADevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagOpenIDConnectProviderResult> tagOpenIDConnectProviderAsync(TagOpenIDConnectProviderRequest request) {
+
+        return tagOpenIDConnectProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagOpenIDConnectProviderResult> tagOpenIDConnectProviderAsync(final TagOpenIDConnectProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagOpenIDConnectProviderRequest, TagOpenIDConnectProviderResult> asyncHandler) {
+        final TagOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagOpenIDConnectProviderResult>() {
+            @Override
+            public TagOpenIDConnectProviderResult call() throws Exception {
+                TagOpenIDConnectProviderResult result = null;
+
+                try {
+                    result = executeTagOpenIDConnectProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagPolicyResult> tagPolicyAsync(TagPolicyRequest request) {
+
+        return tagPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagPolicyResult> tagPolicyAsync(final TagPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagPolicyRequest, TagPolicyResult> asyncHandler) {
+        final TagPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagPolicyResult>() {
+            @Override
+            public TagPolicyResult call() throws Exception {
+                TagPolicyResult result = null;
+
+                try {
+                    result = executeTagPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
 
         return tagRoleAsync(request, null);
@@ -4739,6 +5070,72 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeTagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagSAMLProviderResult> tagSAMLProviderAsync(TagSAMLProviderRequest request) {
+
+        return tagSAMLProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagSAMLProviderResult> tagSAMLProviderAsync(final TagSAMLProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagSAMLProviderRequest, TagSAMLProviderResult> asyncHandler) {
+        final TagSAMLProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagSAMLProviderResult>() {
+            @Override
+            public TagSAMLProviderResult call() throws Exception {
+                TagSAMLProviderResult result = null;
+
+                try {
+                    result = executeTagSAMLProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagServerCertificateResult> tagServerCertificateAsync(TagServerCertificateRequest request) {
+
+        return tagServerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagServerCertificateResult> tagServerCertificateAsync(final TagServerCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagServerCertificateRequest, TagServerCertificateResult> asyncHandler) {
+        final TagServerCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagServerCertificateResult>() {
+            @Override
+            public TagServerCertificateResult call() throws Exception {
+                TagServerCertificateResult result = null;
+
+                try {
+                    result = executeTagServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4788,6 +5185,138 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<UntagInstanceProfileResult> untagInstanceProfileAsync(UntagInstanceProfileRequest request) {
+
+        return untagInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagInstanceProfileResult> untagInstanceProfileAsync(final UntagInstanceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagInstanceProfileRequest, UntagInstanceProfileResult> asyncHandler) {
+        final UntagInstanceProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagInstanceProfileResult>() {
+            @Override
+            public UntagInstanceProfileResult call() throws Exception {
+                UntagInstanceProfileResult result = null;
+
+                try {
+                    result = executeUntagInstanceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMFADeviceResult> untagMFADeviceAsync(UntagMFADeviceRequest request) {
+
+        return untagMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMFADeviceResult> untagMFADeviceAsync(final UntagMFADeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagMFADeviceRequest, UntagMFADeviceResult> asyncHandler) {
+        final UntagMFADeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagMFADeviceResult>() {
+            @Override
+            public UntagMFADeviceResult call() throws Exception {
+                UntagMFADeviceResult result = null;
+
+                try {
+                    result = executeUntagMFADevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagOpenIDConnectProviderResult> untagOpenIDConnectProviderAsync(UntagOpenIDConnectProviderRequest request) {
+
+        return untagOpenIDConnectProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagOpenIDConnectProviderResult> untagOpenIDConnectProviderAsync(final UntagOpenIDConnectProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagOpenIDConnectProviderRequest, UntagOpenIDConnectProviderResult> asyncHandler) {
+        final UntagOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagOpenIDConnectProviderResult>() {
+            @Override
+            public UntagOpenIDConnectProviderResult call() throws Exception {
+                UntagOpenIDConnectProviderResult result = null;
+
+                try {
+                    result = executeUntagOpenIDConnectProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagPolicyResult> untagPolicyAsync(UntagPolicyRequest request) {
+
+        return untagPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagPolicyResult> untagPolicyAsync(final UntagPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagPolicyRequest, UntagPolicyResult> asyncHandler) {
+        final UntagPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagPolicyResult>() {
+            @Override
+            public UntagPolicyResult call() throws Exception {
+                UntagPolicyResult result = null;
+
+                try {
+                    result = executeUntagPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
 
         return untagRoleAsync(request, null);
@@ -4805,6 +5334,72 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeUntagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagSAMLProviderResult> untagSAMLProviderAsync(UntagSAMLProviderRequest request) {
+
+        return untagSAMLProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagSAMLProviderResult> untagSAMLProviderAsync(final UntagSAMLProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagSAMLProviderRequest, UntagSAMLProviderResult> asyncHandler) {
+        final UntagSAMLProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagSAMLProviderResult>() {
+            @Override
+            public UntagSAMLProviderResult call() throws Exception {
+                UntagSAMLProviderResult result = null;
+
+                try {
+                    result = executeUntagSAMLProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagServerCertificateResult> untagServerCertificateAsync(UntagServerCertificateRequest request) {
+
+        return untagServerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagServerCertificateResult> untagServerCertificateAsync(final UntagServerCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagServerCertificateRequest, UntagServerCertificateResult> asyncHandler) {
+        final UntagServerCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagServerCertificateResult>() {
+            @Override
+            public UntagServerCertificateResult call() throws Exception {
+                UntagServerCertificateResult result = null;
+
+                try {
+                    result = executeUntagServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

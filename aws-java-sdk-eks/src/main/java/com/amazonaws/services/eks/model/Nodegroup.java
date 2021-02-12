@@ -121,9 +121,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String amiType;
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      */
     private String nodeRole;
@@ -904,15 +904,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies.
+     *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *        and associated policies.
      */
 
     public void setNodeRole(String nodeRole) {
@@ -921,14 +921,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
-     * @return The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon
-     *         makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an
-     *         IAM instance profile and associated policies.
+     * @return The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *         to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *         and associated policies.
      */
 
     public String getNodeRole() {
@@ -937,15 +937,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies.
+     *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *        and associated policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

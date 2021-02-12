@@ -29,6 +29,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public AssociateIdentityProviderConfigResult associateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAddonResult createAddon(CreateAddonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,12 +94,22 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DescribeIdentityProviderConfigResult describeIdentityProviderConfig(DescribeIdentityProviderConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeNodegroupResult describeNodegroup(DescribeNodegroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeUpdateResult describeUpdate(DescribeUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateIdentityProviderConfigResult disassociateIdentityProviderConfig(DisassociateIdentityProviderConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +125,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public ListFargateProfilesResult listFargateProfiles(ListFargateProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIdentityProviderConfigsResult listIdentityProviderConfigs(ListIdentityProviderConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

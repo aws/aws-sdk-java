@@ -53,10 +53,29 @@ public class UpgradeTarget implements Serializable, Cloneable {
     private Boolean autoUpgrade;
     /**
      * <p>
-     * A value that indicates whether a database engine is upgraded to a major version.
+     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     * database engine.
      * </p>
      */
     private Boolean isMajorVersionUpgrade;
+    /**
+     * <p>
+     * A list of the supported DB engine modes for the target engine version.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * </p>
+     */
+    private Boolean supportsParallelQuery;
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * </p>
+     */
+    private Boolean supportsGlobalDatabases;
 
     /**
      * <p>
@@ -240,11 +259,13 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine is upgraded to a major version.
+     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     * database engine.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether a database engine is upgraded to a major version.
+     *        A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     *        database engine.
      */
 
     public void setIsMajorVersionUpgrade(Boolean isMajorVersionUpgrade) {
@@ -253,10 +274,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine is upgraded to a major version.
+     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     * database engine.
      * </p>
      * 
-     * @return A value that indicates whether a database engine is upgraded to a major version.
+     * @return A value that indicates whether upgrading to the target version requires upgrading the major version of
+     *         the database engine.
      */
 
     public Boolean getIsMajorVersionUpgrade() {
@@ -265,11 +288,13 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine is upgraded to a major version.
+     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     * database engine.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether a database engine is upgraded to a major version.
+     *        A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     *        database engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,14 +305,193 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine is upgraded to a major version.
+     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
+     * database engine.
      * </p>
      * 
-     * @return A value that indicates whether a database engine is upgraded to a major version.
+     * @return A value that indicates whether upgrading to the target version requires upgrading the major version of
+     *         the database engine.
      */
 
     public Boolean isMajorVersionUpgrade() {
         return this.isMajorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes for the target engine version.
+     * </p>
+     * 
+     * @return A list of the supported DB engine modes for the target engine version.
+     */
+
+    public java.util.List<String> getSupportedEngineModes() {
+        if (supportedEngineModes == null) {
+            supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedEngineModes;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes for the target engine version.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes for the target engine version.
+     */
+
+    public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        if (supportedEngineModes == null) {
+            this.supportedEngineModes = null;
+            return;
+        }
+
+        this.supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes);
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes for the target engine version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes for the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportedEngineModes(String... supportedEngineModes) {
+        if (this.supportedEngineModes == null) {
+            setSupportedEngineModes(new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes.length));
+        }
+        for (String ele : supportedEngineModes) {
+            this.supportedEngineModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes for the target engine version.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes for the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        setSupportedEngineModes(supportedEngineModes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * </p>
+     * 
+     * @param supportsParallelQuery
+     *        A value that indicates whether you can use Aurora parallel query with the target engine version.
+     */
+
+    public void setSupportsParallelQuery(Boolean supportsParallelQuery) {
+        this.supportsParallelQuery = supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora parallel query with the target engine version.
+     */
+
+    public Boolean getSupportsParallelQuery() {
+        return this.supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * </p>
+     * 
+     * @param supportsParallelQuery
+     *        A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsParallelQuery(Boolean supportsParallelQuery) {
+        setSupportsParallelQuery(supportsParallelQuery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora parallel query with the target engine version.
+     */
+
+    public Boolean isSupportsParallelQuery() {
+        return this.supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with the target engine version.
+     */
+
+    public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        this.supportsGlobalDatabases = supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with the target engine version.
+     */
+
+    public Boolean getSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        setSupportsGlobalDatabases(supportsGlobalDatabases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with the target engine version.
+     */
+
+    public Boolean isSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
     }
 
     /**
@@ -311,7 +515,13 @@ public class UpgradeTarget implements Serializable, Cloneable {
         if (getAutoUpgrade() != null)
             sb.append("AutoUpgrade: ").append(getAutoUpgrade()).append(",");
         if (getIsMajorVersionUpgrade() != null)
-            sb.append("IsMajorVersionUpgrade: ").append(getIsMajorVersionUpgrade());
+            sb.append("IsMajorVersionUpgrade: ").append(getIsMajorVersionUpgrade()).append(",");
+        if (getSupportedEngineModes() != null)
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes()).append(",");
+        if (getSupportsParallelQuery() != null)
+            sb.append("SupportsParallelQuery: ").append(getSupportsParallelQuery()).append(",");
+        if (getSupportsGlobalDatabases() != null)
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +556,18 @@ public class UpgradeTarget implements Serializable, Cloneable {
             return false;
         if (other.getIsMajorVersionUpgrade() != null && other.getIsMajorVersionUpgrade().equals(this.getIsMajorVersionUpgrade()) == false)
             return false;
+        if (other.getSupportedEngineModes() == null ^ this.getSupportedEngineModes() == null)
+            return false;
+        if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
+            return false;
+        if (other.getSupportsParallelQuery() == null ^ this.getSupportsParallelQuery() == null)
+            return false;
+        if (other.getSupportsParallelQuery() != null && other.getSupportsParallelQuery().equals(this.getSupportsParallelQuery()) == false)
+            return false;
+        if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
+            return false;
+        if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +581,9 @@ public class UpgradeTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAutoUpgrade() == null) ? 0 : getAutoUpgrade().hashCode());
         hashCode = prime * hashCode + ((getIsMajorVersionUpgrade() == null) ? 0 : getIsMajorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
+        hashCode = prime * hashCode + ((getSupportsParallelQuery() == null) ? 0 : getSupportsParallelQuery().hashCode());
+        hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }
 

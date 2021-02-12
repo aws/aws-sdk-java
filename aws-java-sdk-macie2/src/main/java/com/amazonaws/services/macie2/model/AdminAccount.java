@@ -36,7 +36,7 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * </p>
      */
     private String status;
@@ -83,11 +83,11 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * </p>
      * 
      * @param status
-     *        The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     *        The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * @see AdminStatus
      */
 
@@ -97,10 +97,10 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * </p>
      * 
-     * @return The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * @return The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * @see AdminStatus
      */
 
@@ -110,11 +110,11 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * </p>
      * 
      * @param status
-     *        The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     *        The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdminStatus
      */
@@ -126,11 +126,11 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     * The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * </p>
      * 
      * @param status
-     *        The current status of the account as a delegated administrator of Amazon Macie for the organization.
+     *        The current status of the account as the delegated administrator of Amazon Macie for the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdminStatus
      */

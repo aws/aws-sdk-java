@@ -49,7 +49,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      */
     private String status;
@@ -72,7 +72,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String accessKeyId, String status) {
         setAccessKeyId(accessKeyId);
@@ -90,7 +90,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String accessKeyId, StatusType status) {
         setAccessKeyId(accessKeyId);
@@ -115,7 +115,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String userName, String accessKeyId, String status) {
         setUserName(userName);
@@ -141,7 +141,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String userName, String accessKeyId, StatusType status) {
         setUserName(userName);
@@ -280,12 +280,12 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -296,11 +296,11 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @return The status you want to assign to the secret access key. <code>Active</code> means that the key can be
-     *         used for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *         used for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -311,12 +311,12 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -329,12 +329,12 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -345,12 +345,12 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
-     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     * programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
-     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
+     *        for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

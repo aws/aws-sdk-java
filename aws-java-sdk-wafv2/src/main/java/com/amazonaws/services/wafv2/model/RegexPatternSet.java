@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * Contains one or more regular expressions.
  * </p>
@@ -60,8 +53,7 @@ public class RegexPatternSet implements Serializable, Cloneable, StructuredPojo 
     private String aRN;
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      */
     private String description;
@@ -200,13 +192,11 @@ public class RegexPatternSet implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -215,12 +205,10 @@ public class RegexPatternSet implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
-     * @return A description of the set that helps with identification. You cannot change the description of a set after
-     *         you create it.
+     * @return A description of the set that helps with identification.
      */
 
     public String getDescription() {
@@ -229,13 +217,11 @@ public class RegexPatternSet implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

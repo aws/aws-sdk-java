@@ -27,7 +27,7 @@ public class CreateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The details for the account to associate with the master account.
+     * The details for the account to associate with the administrator account.
      * </p>
      */
     private AccountDetail account;
@@ -44,11 +44,11 @@ public class CreateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The details for the account to associate with the master account.
+     * The details for the account to associate with the administrator account.
      * </p>
      * 
      * @param account
-     *        The details for the account to associate with the master account.
+     *        The details for the account to associate with the administrator account.
      */
 
     public void setAccount(AccountDetail account) {
@@ -57,10 +57,10 @@ public class CreateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The details for the account to associate with the master account.
+     * The details for the account to associate with the administrator account.
      * </p>
      * 
-     * @return The details for the account to associate with the master account.
+     * @return The details for the account to associate with the administrator account.
      */
 
     public AccountDetail getAccount() {
@@ -69,11 +69,11 @@ public class CreateMemberRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The details for the account to associate with the master account.
+     * The details for the account to associate with the administrator account.
      * </p>
      * 
      * @param account
-     *        The details for the account to associate with the master account.
+     *        The details for the account to associate with the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

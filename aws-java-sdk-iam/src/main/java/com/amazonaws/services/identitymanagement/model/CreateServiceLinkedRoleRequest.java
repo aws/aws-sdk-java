@@ -34,7 +34,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
+     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
      * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
      * that service.
      * </p>
@@ -70,7 +70,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
+     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
      * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
      * that service.
      * </p>
@@ -82,7 +82,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      *        Service principals are unique and case-sensitive. To find the exact service principal for your
      *        service-linked role, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     *        Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     *        services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
      *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
      *        documentation for that service.
      */
@@ -100,7 +100,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
+     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
      * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
      * that service.
      * </p>
@@ -111,7 +111,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      *         Service principals are unique and case-sensitive. To find the exact service principal for your
      *         service-linked role, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
-     *         >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     *         >AWS services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
      *         </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
      *         documentation for that service.
      */
@@ -129,7 +129,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
+     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
      * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
      * that service.
      * </p>
@@ -141,7 +141,7 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      *        Service principals are unique and case-sensitive. To find the exact service principal for your
      *        service-linked role, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     *        Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     *        services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
      *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
      *        documentation for that service.
      * @return Returns a reference to this object so that method calls can be chained together.

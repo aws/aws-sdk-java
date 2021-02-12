@@ -27,7 +27,7 @@ public class PutUsersRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     * The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      * </p>
      */
     private String datasetArn;
@@ -40,11 +40,11 @@ public class PutUsersRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     * The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      * </p>
      * 
      * @param datasetArn
-     *        The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     *        The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      */
 
     public void setDatasetArn(String datasetArn) {
@@ -53,10 +53,10 @@ public class PutUsersRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     * The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     * @return The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      */
 
     public String getDatasetArn() {
@@ -65,11 +65,11 @@ public class PutUsersRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     * The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      * </p>
      * 
      * @param datasetArn
-     *        The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users to.
+     *        The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

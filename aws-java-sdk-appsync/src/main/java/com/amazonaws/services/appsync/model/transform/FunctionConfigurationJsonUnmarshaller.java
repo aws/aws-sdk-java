@@ -80,6 +80,10 @@ public class FunctionConfigurationJsonUnmarshaller implements Unmarshaller<Funct
                     context.nextToken();
                     functionConfiguration.setFunctionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("syncConfig", targetDepth)) {
+                    context.nextToken();
+                    functionConfiguration.setSyncConfig(SyncConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

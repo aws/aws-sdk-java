@@ -621,7 +621,10 @@
         }
       }
     },
-    "Timestamp":{"type":"timestamp"},
+    "Timestamp":{
+      "type":"timestamp",
+      "timestampFormat":"iso8601"
+    },
     "UnprocessedAccount":{
       "type":"structure",
       "members":{

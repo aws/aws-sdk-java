@@ -106,13 +106,6 @@ import com.amazonaws.services.wafv2.model.*;
 public interface AWSWAFV2Async extends AWSWAFV2 {
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates a Web ACL with a regional application resource, to protect the resource. A regional application can be
      * an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -134,13 +127,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<AssociateWebACLResult> associateWebACLAsync(AssociateWebACLRequest associateWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates a Web ACL with a regional application resource, to protect the resource. A regional application can be
      * an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -167,13 +153,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<AssociateWebACLRequest, AssociateWebACLResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to
      * check the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>.
@@ -195,13 +174,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<CheckCapacityResult> checkCapacityAsync(CheckCapacityRequest checkCapacityRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to
      * check the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>.
@@ -228,13 +200,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<CheckCapacityRequest, CheckCapacityResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to identify web requests that originate from specific IP addresses or
      * ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can
@@ -250,13 +215,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest createIPSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to identify web requests that originate from specific IP addresses or
      * ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can
@@ -277,13 +235,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
      * WAF inspect a web request component for the specified patterns.
@@ -298,13 +249,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(CreateRegexPatternSetRequest createRegexPatternSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
      * WAF inspect a web request component for the specified patterns.
@@ -324,13 +268,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<CreateRegexPatternSetRequest, CreateRegexPatternSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RuleGroup</a> per the specifications provided.
      * </p>
@@ -350,13 +287,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest createRuleGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RuleGroup</a> per the specifications provided.
      * </p>
@@ -381,13 +311,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<CreateRuleGroupRequest, CreateRuleGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
@@ -409,13 +332,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(CreateWebACLRequest createWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
@@ -483,13 +399,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteFirewallManagerRuleGroupsRequest, DeleteFirewallManagerRuleGroupsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>IPSet</a>.
      * </p>
@@ -503,13 +412,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>IPSet</a>.
      * </p>
@@ -528,13 +430,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -549,13 +444,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -612,13 +500,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RegexPatternSet</a>.
      * </p>
@@ -632,13 +513,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(DeleteRegexPatternSetRequest deleteRegexPatternSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RegexPatternSet</a>.
      * </p>
@@ -657,13 +531,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteRegexPatternSetRequest, DeleteRegexPatternSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RuleGroup</a>.
      * </p>
@@ -677,13 +544,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest deleteRuleGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RuleGroup</a>.
      * </p>
@@ -702,13 +562,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
@@ -725,13 +578,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(DeleteWebACLRequest deleteWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
@@ -753,13 +599,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Provides high-level information for a managed rule group, including descriptions of the rules.
      * </p>
@@ -773,13 +612,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DescribeManagedRuleGroupResult> describeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest describeManagedRuleGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Provides high-level information for a managed rule group, including descriptions of the rules.
      * </p>
@@ -798,13 +630,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DescribeManagedRuleGroupRequest, DescribeManagedRuleGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates a Web ACL from a regional application resource. A regional application can be an Application Load
      * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -825,13 +650,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DisassociateWebACLResult> disassociateWebACLAsync(DisassociateWebACLRequest disassociateWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates a Web ACL from a regional application resource. A regional application can be an Application Load
      * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
@@ -857,13 +675,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<DisassociateWebACLRequest, DisassociateWebACLResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>IPSet</a>.
      * </p>
@@ -877,13 +688,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>IPSet</a>.
      * </p>
@@ -902,13 +706,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -922,13 +719,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -984,13 +774,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the keys that are currently blocked by a rate-based rule. The maximum number of managed keys that can
      * be blocked for a single rate-based rule is 10,000. If more than 10,000 addresses exceed the rate limit, those
@@ -1008,13 +791,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             GetRateBasedStatementManagedKeysRequest getRateBasedStatementManagedKeysRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the keys that are currently blocked by a rate-based rule. The maximum number of managed keys that can
      * be blocked for a single rate-based rule is 10,000. If more than 10,000 addresses exceed the rate limit, those
@@ -1037,13 +813,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetRateBasedStatementManagedKeysRequest, GetRateBasedStatementManagedKeysResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RegexPatternSet</a>.
      * </p>
@@ -1057,13 +826,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(GetRegexPatternSetRequest getRegexPatternSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RegexPatternSet</a>.
      * </p>
@@ -1082,13 +844,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetRegexPatternSetRequest, GetRegexPatternSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RuleGroup</a>.
      * </p>
@@ -1102,13 +857,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest getRuleGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RuleGroup</a>.
      * </p>
@@ -1127,13 +875,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetRuleGroupRequest, GetRuleGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -1155,13 +896,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest getSampledRequestsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -1188,13 +922,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetSampledRequestsRequest, GetSampledRequestsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>WebACL</a>.
      * </p>
@@ -1208,13 +935,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(GetWebACLRequest getWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>WebACL</a>.
      * </p>
@@ -1233,13 +953,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>WebACL</a> for the specified resource.
      * </p>
@@ -1253,13 +966,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<GetWebACLForResourceResult> getWebACLForResourceAsync(GetWebACLForResourceRequest getWebACLForResourceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>WebACL</a> for the specified resource.
      * </p>
@@ -1278,13 +984,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<GetWebACLForResourceRequest, GetWebACLForResourceResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
      * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
@@ -1301,13 +1000,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             ListAvailableManagedRuleGroupsRequest listAvailableManagedRuleGroupsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
      * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
@@ -1329,13 +1021,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListAvailableManagedRuleGroupsRequest, ListAvailableManagedRuleGroupsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.
      * </p>
@@ -1349,13 +1034,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.
      * </p>
@@ -1374,13 +1052,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of your <a>LoggingConfiguration</a> objects.
      * </p>
@@ -1395,13 +1066,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of your <a>LoggingConfiguration</a> objects.
      * </p>
@@ -1421,13 +1085,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you manage.
      * </p>
@@ -1441,13 +1098,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(ListRegexPatternSetsRequest listRegexPatternSetsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you manage.
      * </p>
@@ -1466,13 +1116,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListRegexPatternSetsRequest, ListRegexPatternSetsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the
      * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS CloudFront call
@@ -1488,13 +1131,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListResourcesForWebACLResult> listResourcesForWebACLAsync(ListResourcesForWebACLRequest listResourcesForWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the
      * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS CloudFront call
@@ -1515,13 +1151,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListResourcesForWebACLRequest, ListResourcesForWebACLResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups that you manage.
      * </p>
@@ -1535,13 +1164,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest listRuleGroupsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups that you manage.
      * </p>
@@ -1560,13 +1182,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
      * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
@@ -1587,13 +1202,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
      * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
@@ -1619,13 +1227,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you manage.
      * </p>
@@ -1639,13 +1240,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(ListWebACLsRequest listWebACLsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you manage.
      * </p>
@@ -1664,13 +1258,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
      * configuration provided.
@@ -1718,13 +1305,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
      * configuration provided.
@@ -1854,13 +1434,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
      * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
@@ -1881,13 +1454,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
      * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
@@ -1913,13 +1479,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate with AWS resources. For
      * example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags
@@ -1935,13 +1494,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate with AWS resources. For
      * example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags
@@ -1962,13 +1514,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
@@ -1982,13 +1527,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
@@ -2007,13 +1545,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RegexPatternSet</a>.
      * </p>
@@ -2027,13 +1558,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(UpdateRegexPatternSetRequest updateRegexPatternSetRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RegexPatternSet</a>.
      * </p>
@@ -2052,13 +1576,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<UpdateRegexPatternSetRequest, UpdateRegexPatternSetResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RuleGroup</a>.
      * </p>
@@ -2078,13 +1595,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest updateRuleGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RuleGroup</a>.
      * </p>
@@ -2109,13 +1619,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<UpdateRuleGroupRequest, UpdateRuleGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>WebACL</a>.
      * </p>
@@ -2137,13 +1640,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(UpdateWebACLRequest updateWebACLRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>WebACL</a>.
      * </p>

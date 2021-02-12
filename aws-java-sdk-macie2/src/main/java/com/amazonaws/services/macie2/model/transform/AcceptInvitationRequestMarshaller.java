@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AcceptInvitationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINISTRATORACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("administratorAccountId").build();
     private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
     private static final MarshallingInfo<String> MASTERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class AcceptInvitationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(acceptInvitationRequest.getAdministratorAccountId(), ADMINISTRATORACCOUNTID_BINDING);
             protocolMarshaller.marshall(acceptInvitationRequest.getInvitationId(), INVITATIONID_BINDING);
             protocolMarshaller.marshall(acceptInvitationRequest.getMasterAccount(), MASTERACCOUNT_BINDING);
         } catch (Exception e) {

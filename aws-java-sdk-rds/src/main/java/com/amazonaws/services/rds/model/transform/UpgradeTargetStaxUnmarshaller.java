@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -65,6 +67,26 @@ public class UpgradeTargetStaxUnmarshaller implements Unmarshaller<UpgradeTarget
 
                 if (context.testExpression("IsMajorVersionUpgrade", targetDepth)) {
                     upgradeTarget.setIsMajorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes", targetDepth)) {
+                    upgradeTarget.withSupportedEngineModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes/member", targetDepth)) {
+                    upgradeTarget.withSupportedEngineModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsParallelQuery", targetDepth)) {
+                    upgradeTarget.setSupportsParallelQuery(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsGlobalDatabases", targetDepth)) {
+                    upgradeTarget.setSupportsGlobalDatabases(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

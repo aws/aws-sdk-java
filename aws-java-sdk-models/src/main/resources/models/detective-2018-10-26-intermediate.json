@@ -5689,7 +5689,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the behavior graph was created. The value is in milliseconds since the epoch.</p>\n@param createdTime The date and time that the behavior graph was created. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdTime",
           "variableType" : "java.util.Date",
@@ -5830,7 +5830,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the behavior graph was created. The value is in milliseconds since the epoch.</p>\n@param createdTime The date and time that the behavior graph was created. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdTime",
             "variableType" : "java.util.Date",
@@ -8991,7 +8991,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.</p>\n@param invitedTime The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "invitedTime",
           "variableType" : "java.util.Date",
@@ -9060,7 +9060,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the member account was last updated. The value is in milliseconds since the epoch.</p>\n@param updatedTime The date and time that the member account was last updated. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedTime",
           "variableType" : "java.util.Date",
@@ -9198,7 +9198,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the graph utilization percentage was last updated.</p>\n@param percentOfGraphUtilizationUpdatedTime The date and time when the graph utilization percentage was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "percentOfGraphUtilizationUpdatedTime",
           "variableType" : "java.util.Date",
@@ -9549,7 +9549,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.</p>\n@param invitedTime The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "invitedTime",
             "variableType" : "java.util.Date",
@@ -9759,7 +9759,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the graph utilization percentage was last updated.</p>\n@param percentOfGraphUtilizationUpdatedTime The date and time when the graph utilization percentage was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "percentOfGraphUtilizationUpdatedTime",
             "variableType" : "java.util.Date",
@@ -9899,7 +9899,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the member account was last updated. The value is in milliseconds since the epoch.</p>\n@param updatedTime The date and time that the member account was last updated. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedTime",
             "variableType" : "java.util.Date",

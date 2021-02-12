@@ -160,6 +160,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest request) {
+
+        return getActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetActionTypeRequest, GetActionTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobDetailsResult> getJobDetailsAsync(GetJobDetailsRequest request) {
 
         return getJobDetailsAsync(request, null);
@@ -493,6 +506,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest request) {
+
+        return updateActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateActionTypeRequest, UpdateActionTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

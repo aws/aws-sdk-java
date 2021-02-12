@@ -74,6 +74,17 @@ public class GetOpenIDConnectProviderResultStaxUnmarshaller implements Unmarshal
                     getOpenIDConnectProviderResult.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    getOpenIDConnectProviderResult.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    getOpenIDConnectProviderResult.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getOpenIDConnectProviderResult;

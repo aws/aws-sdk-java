@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an account that's associated with an Amazon Macie master account.
+ * Provides information about an account that's associated with an Amazon Macie administrator account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Member" target="_top">AWS API
@@ -34,6 +34,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String accountId;
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     */
+    private String administratorAccountId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the account.
@@ -55,13 +61,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      */
     private String masterAccountId;
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      */
     private String relationshipStatus;
@@ -75,7 +82,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -117,6 +124,46 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     public Member withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @param administratorAccountId
+     *        The AWS account ID for the administrator account.
+     */
+
+    public void setAdministratorAccountId(String administratorAccountId) {
+        this.administratorAccountId = administratorAccountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @return The AWS account ID for the administrator account.
+     */
+
+    public String getAdministratorAccountId() {
+        return this.administratorAccountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @param administratorAccountId
+     *        The AWS account ID for the administrator account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Member withAdministratorAccountId(String administratorAccountId) {
+        setAdministratorAccountId(administratorAccountId);
         return this;
     }
 
@@ -248,11 +295,13 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        The AWS account ID for the master account.
+     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *        administratorAccountId property and is retained only for backward compatibility.
      */
 
     public void setMasterAccountId(String masterAccountId) {
@@ -261,10 +310,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
-     * @return The AWS account ID for the master account.
+     * @return (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *         administratorAccountId property and is retained only for backward compatibility.
      */
 
     public String getMasterAccountId() {
@@ -273,11 +324,13 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        The AWS account ID for the master account.
+     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *        administratorAccountId property and is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +341,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @see RelationshipStatus
      */
 
@@ -302,10 +355,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
-     * @return The current status of the relationship between the account and the master account.
+     * @return The current status of the relationship between the account and the administrator account.
      * @see RelationshipStatus
      */
 
@@ -315,11 +368,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipStatus
      */
@@ -331,11 +384,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipStatus
      */
@@ -422,12 +475,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        relationship between the account and the master account.
+     *        relationship between the account and the administrator account.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -437,11 +490,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *         relationship between the account and the master account.
+     *         relationship between the account and the administrator account.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -451,12 +504,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        relationship between the account and the master account.
+     *        relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,6 +532,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAdministratorAccountId() != null)
+            sb.append("AdministratorAccountId: ").append(getAdministratorAccountId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getEmail() != null)
@@ -510,6 +565,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getAdministratorAccountId() == null ^ this.getAdministratorAccountId() == null)
+            return false;
+        if (other.getAdministratorAccountId() != null && other.getAdministratorAccountId().equals(this.getAdministratorAccountId()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -548,6 +607,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAdministratorAccountId() == null) ? 0 : getAdministratorAccountId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         hashCode = prime * hashCode + ((getInvitedAt() == null) ? 0 : getInvitedAt().hashCode());

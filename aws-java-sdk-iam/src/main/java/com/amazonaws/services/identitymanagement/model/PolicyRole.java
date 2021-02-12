@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about managed policies, refer to <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
- * Policies</a> in the <i>IAM User Guide</i>.
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline
+ * policies</a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyRole" target="_top">AWS API
@@ -43,7 +43,7 @@ public class PolicyRole implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      */
@@ -92,13 +92,13 @@ public class PolicyRole implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in
      *        the <i>IAM User Guide</i>.
      */
 
@@ -109,12 +109,12 @@ public class PolicyRole implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the role. For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in
      *         the <i>IAM User Guide</i>.
      */
 
@@ -125,13 +125,13 @@ public class PolicyRole implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in
      *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

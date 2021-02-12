@@ -630,6 +630,39 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
+     * Returns information about an action type created for an external provider, where the action is to be used by
+     * customers of the external provider. The action can have been created with any supported integration model.
+     * </p>
+     * 
+     * @param getActionTypeRequest
+     * @return A Java Future containing the result of the GetActionType operation returned by the service.
+     * @sample AWSCodePipelineAsync.GetActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest getActionTypeRequest);
+
+    /**
+     * <p>
+     * Returns information about an action type created for an external provider, where the action is to be used by
+     * customers of the external provider. The action can have been created with any supported integration model.
+     * </p>
+     * 
+     * @param getActionTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetActionType operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest getActionTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetActionTypeRequest, GetActionTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a job. Used for custom actions only.
      * </p>
      * <important>
@@ -1587,6 +1620,41 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an action type that has been created with any supported integration model, where the action type is to be
+     * used by customers of the action type provider. Use a JSON file with the action definition and
+     * <code>UpdateActionType</code> to provide the full structure.
+     * </p>
+     * 
+     * @param updateActionTypeRequest
+     * @return A Java Future containing the result of the UpdateActionType operation returned by the service.
+     * @sample AWSCodePipelineAsync.UpdateActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest updateActionTypeRequest);
+
+    /**
+     * <p>
+     * Updates an action type that has been created with any supported integration model, where the action type is to be
+     * used by customers of the action type provider. Use a JSON file with the action definition and
+     * <code>UpdateActionType</code> to provide the full structure.
+     * </p>
+     * 
+     * @param updateActionTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateActionType operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.UpdateActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest updateActionTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateActionTypeRequest, UpdateActionTypeResult> asyncHandler);
 
     /**
      * <p>

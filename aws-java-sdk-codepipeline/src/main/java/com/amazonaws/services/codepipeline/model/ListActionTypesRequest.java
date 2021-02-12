@@ -41,6 +41,12 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The Region to filter on for the list of action types.
+     * </p>
+     */
+    private String regionFilter;
 
     /**
      * <p>
@@ -162,6 +168,46 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The Region to filter on for the list of action types.
+     * </p>
+     * 
+     * @param regionFilter
+     *        The Region to filter on for the list of action types.
+     */
+
+    public void setRegionFilter(String regionFilter) {
+        this.regionFilter = regionFilter;
+    }
+
+    /**
+     * <p>
+     * The Region to filter on for the list of action types.
+     * </p>
+     * 
+     * @return The Region to filter on for the list of action types.
+     */
+
+    public String getRegionFilter() {
+        return this.regionFilter;
+    }
+
+    /**
+     * <p>
+     * The Region to filter on for the list of action types.
+     * </p>
+     * 
+     * @param regionFilter
+     *        The Region to filter on for the list of action types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListActionTypesRequest withRegionFilter(String regionFilter) {
+        setRegionFilter(regionFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,7 +222,9 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
         if (getActionOwnerFilter() != null)
             sb.append("ActionOwnerFilter: ").append(getActionOwnerFilter()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRegionFilter() != null)
+            sb.append("RegionFilter: ").append(getRegionFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +247,10 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getRegionFilter() == null ^ this.getRegionFilter() == null)
+            return false;
+        if (other.getRegionFilter() != null && other.getRegionFilter().equals(this.getRegionFilter()) == false)
+            return false;
         return true;
     }
 
@@ -209,6 +261,7 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getActionOwnerFilter() == null) ? 0 : getActionOwnerFilter().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRegionFilter() == null) ? 0 : getRegionFilter().hashCode());
         return hashCode;
     }
 

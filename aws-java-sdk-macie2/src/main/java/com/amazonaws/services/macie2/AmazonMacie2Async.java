@@ -231,7 +231,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Associates an account with an Amazon Macie master account.
+     * Associates an account with an Amazon Macie administrator account.
      * </p>
      * 
      * @param createMemberRequest
@@ -244,7 +244,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Associates an account with an Amazon Macie master account.
+     * Associates an account with an Amazon Macie administrator account.
      * </p>
      * 
      * @param createMemberRequest
@@ -419,7 +419,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes the association between an Amazon Macie master account and an account.
+     * Deletes the association between an Amazon Macie administrator account and an account.
      * </p>
      * 
      * @param deleteMemberRequest
@@ -432,7 +432,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes the association between an Amazon Macie master account and an account.
+     * Deletes the association between an Amazon Macie administrator account and an account.
      * </p>
      * 
      * @param deleteMemberRequest
@@ -617,7 +617,42 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates a member account from its Amazon Macie master account.
+     * Disassociates a member account from its Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Disassociates a member account from its Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFromAdministratorAccountRequest, DisassociateFromAdministratorAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -632,7 +667,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates a member account from its Amazon Macie master account.
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -652,7 +687,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates an Amazon Macie master account from a member account.
+     * Disassociates an Amazon Macie administrator account from a member account.
      * </p>
      * 
      * @param disassociateMemberRequest
@@ -665,7 +700,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates an Amazon Macie master account from a member account.
+     * Disassociates an Amazon Macie administrator account from a member account.
      * </p>
      * 
      * @param disassociateMemberRequest
@@ -746,6 +781,37 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
             EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the Amazon Macie administrator account for an account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AmazonMacie2Async.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the Amazon Macie administrator account for an account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAdministratorAccountRequest, GetAdministratorAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -1001,7 +1067,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie master account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1014,7 +1080,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie master account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1032,7 +1098,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about a member account that's associated with an Amazon Macie master account.
+     * Retrieves information about an account that's associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param getMemberRequest
@@ -1045,7 +1111,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about a member account that's associated with an Amazon Macie master account.
+     * Retrieves information about an account that's associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param getMemberRequest
@@ -1282,7 +1348,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the accounts that are associated with an Amazon Macie master account.
+     * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1295,7 +1361,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the accounts that are associated with an Amazon Macie master account.
+     * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1606,7 +1672,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an Amazon Macie master account to suspend or re-enable a member account.
+     * Enables an Amazon Macie administrator to suspend or re-enable a member account.
      * </p>
      * 
      * @param updateMemberSessionRequest
@@ -1619,7 +1685,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an Amazon Macie master account to suspend or re-enable a member account.
+     * Enables an Amazon Macie administrator to suspend or re-enable a member account.
      * </p>
      * 
      * @param updateMemberSessionRequest

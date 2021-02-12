@@ -81,6 +81,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
      * client should be routed to the same target. After this time period expires, the application-based cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
@@ -124,7 +131,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
-     * target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
      * </p>
      * </li>
      * <li>
@@ -198,6 +206,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
      * client should be routed to the same target. After this time period expires, the application-based cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
@@ -241,7 +256,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
-     * target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
      * </p>
      * </li>
      * <li>
@@ -307,6 +323,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
+     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
      *        from a client should be routed to the same target. After this time period expires, the application-based
      *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
@@ -352,7 +375,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
      *        is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address
-     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation
+     *        cannot be disabled for UDP and TCP_UDP target groups.
      *        </p>
      *        </li>
      *        <li>
@@ -422,6 +446,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
      * client should be routed to the same target. After this time period expires, the application-based cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
@@ -465,7 +496,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
-     * target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
      * </p>
      * </li>
      * <li>
@@ -530,6 +562,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie.
+     *         Names that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>,
+     *         and <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
      *         from a client should be routed to the same target. After this time period expires, the application-based
      *         cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
@@ -575,7 +614,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
      *         is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP
-     *         address and the target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     *         address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     *         preservation cannot be disabled for UDP and TCP_UDP target groups.
      *         </p>
      *         </li>
      *         <li>
@@ -645,6 +685,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
      * client should be routed to the same target. After this time period expires, the application-based cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
@@ -688,7 +735,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
-     * target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
      * </p>
      * </li>
      * <li>
@@ -754,6 +802,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
+     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
      *        from a client should be routed to the same target. After this time period expires, the application-based
      *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
@@ -799,7 +854,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
      *        is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address
-     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled.
+     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation
+     *        cannot be disabled for UDP and TCP_UDP target groups.
      *        </p>
      *        </li>
      *        <li>

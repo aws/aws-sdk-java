@@ -88,6 +88,11 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
     }
 
     @Override
+    public GetActionTypeResult getActionType(GetActionTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetJobDetailsResult getJobDetails(GetJobDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +219,11 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateActionTypeResult updateActionType(UpdateActionTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

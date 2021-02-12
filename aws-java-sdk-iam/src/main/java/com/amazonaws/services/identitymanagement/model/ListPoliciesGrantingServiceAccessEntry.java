@@ -34,13 +34,13 @@ public class ListPoliciesGrantingServiceAccessEntry implements Serializable, Clo
      * The namespace of the service that was accessed.
      * </p>
      * <p>
-     * To learn the service namespace of a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name of the
-     * service to view details for that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * To learn the service namespace of a service, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
+     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
+     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String serviceNamespace;
@@ -56,25 +56,26 @@ public class ListPoliciesGrantingServiceAccessEntry implements Serializable, Clo
      * The namespace of the service that was accessed.
      * </p>
      * <p>
-     * To learn the service namespace of a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name of the
-     * service to view details for that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * To learn the service namespace of a service, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
+     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
+     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the service that was accessed.</p>
      *        <p>
-     *        To learn the service namespace of a service, go to <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     *        >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name
-     *        of the service to view details for that service. In the first paragraph, find the service prefix. For
-     *        example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        To learn the service namespace of a service, see <a href=
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *        >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
+     *        Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
+     *        find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
+     *        service namespaces, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setServiceNamespace(String serviceNamespace) {
@@ -86,25 +87,25 @@ public class ListPoliciesGrantingServiceAccessEntry implements Serializable, Clo
      * The namespace of the service that was accessed.
      * </p>
      * <p>
-     * To learn the service namespace of a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name of the
-     * service to view details for that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * To learn the service namespace of a service, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
+     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
+     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The namespace of the service that was accessed.</p>
      *         <p>
-     *         To learn the service namespace of a service, go to <a href=
-     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     *         >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the
-     *         name of the service to view details for that service. In the first paragraph, find the service prefix.
-     *         For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
-     *         href=
+     *         To learn the service namespace of a service, see <a href=
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *         >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
+     *         Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
+     *         find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
+     *         service namespaces, see <a href=
      *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getServiceNamespace() {
@@ -116,25 +117,26 @@ public class ListPoliciesGrantingServiceAccessEntry implements Serializable, Clo
      * The namespace of the service that was accessed.
      * </p>
      * <p>
-     * To learn the service namespace of a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name of the
-     * service to view details for that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * To learn the service namespace of a service, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
+     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
+     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the service that was accessed.</p>
      *        <p>
-     *        To learn the service namespace of a service, go to <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html"
-     *        >Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name
-     *        of the service to view details for that service. In the first paragraph, find the service prefix. For
-     *        example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        To learn the service namespace of a service, see <a href=
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *        >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
+     *        Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
+     *        find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
+     *        service namespaces, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        >AWS service namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,34 +31,34 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than
-     * zero.
+     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can support
-     * up to 100 nodes by default.
+     * The maximum number of nodes that the managed node group can scale out to. For information about the maximum
+     * number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      */
     private Integer maxSize;
     /**
      * <p>
-     * The current number of worker nodes that the managed node group should maintain.
+     * The current number of nodes that the managed node group should maintain.
      * </p>
      */
     private Integer desiredSize;
 
     /**
      * <p>
-     * The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than
-     * zero.
+     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of worker nodes that the managed node group can scale in to. This number must be
-     *        greater than zero.
+     *        The minimum number of nodes that the managed node group can scale in to. This number must be greater than
+     *        zero.
      */
 
     public void setMinSize(Integer minSize) {
@@ -67,12 +67,11 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than
-     * zero.
+     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
      * </p>
      * 
-     * @return The minimum number of worker nodes that the managed node group can scale in to. This number must be
-     *         greater than zero.
+     * @return The minimum number of nodes that the managed node group can scale in to. This number must be greater than
+     *         zero.
      */
 
     public Integer getMinSize() {
@@ -81,13 +80,12 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than
-     * zero.
+     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of worker nodes that the managed node group can scale in to. This number must be
-     *        greater than zero.
+     *        The minimum number of nodes that the managed node group can scale in to. This number must be greater than
+     *        zero.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +96,17 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can support
-     * up to 100 nodes by default.
+     * The maximum number of nodes that the managed node group can scale out to. For information about the maximum
+     * number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can
-     *        support up to 100 nodes by default.
+     *        The maximum number of nodes that the managed node group can scale out to. For information about the
+     *        maximum number that you can specify, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a>
+     *        in the <i>Amazon EKS User Guide</i>.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -113,12 +115,16 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can support
-     * up to 100 nodes by default.
+     * The maximum number of nodes that the managed node group can scale out to. For information about the maximum
+     * number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
-     * @return The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can
-     *         support up to 100 nodes by default.
+     * @return The maximum number of nodes that the managed node group can scale out to. For information about the
+     *         maximum number that you can specify, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a>
+     *         in the <i>Amazon EKS User Guide</i>.
      */
 
     public Integer getMaxSize() {
@@ -127,13 +133,17 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can support
-     * up to 100 nodes by default.
+     * The maximum number of nodes that the managed node group can scale out to. For information about the maximum
+     * number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can
-     *        support up to 100 nodes by default.
+     *        The maximum number of nodes that the managed node group can scale out to. For information about the
+     *        maximum number that you can specify, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a>
+     *        in the <i>Amazon EKS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +154,11 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The current number of worker nodes that the managed node group should maintain.
+     * The current number of nodes that the managed node group should maintain.
      * </p>
      * 
      * @param desiredSize
-     *        The current number of worker nodes that the managed node group should maintain.
+     *        The current number of nodes that the managed node group should maintain.
      */
 
     public void setDesiredSize(Integer desiredSize) {
@@ -157,10 +167,10 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The current number of worker nodes that the managed node group should maintain.
+     * The current number of nodes that the managed node group should maintain.
      * </p>
      * 
-     * @return The current number of worker nodes that the managed node group should maintain.
+     * @return The current number of nodes that the managed node group should maintain.
      */
 
     public Integer getDesiredSize() {
@@ -169,11 +179,11 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The current number of worker nodes that the managed node group should maintain.
+     * The current number of nodes that the managed node group should maintain.
      * </p>
      * 
      * @param desiredSize
-     *        The current number of worker nodes that the managed node group should maintain.
+     *        The current number of nodes that the managed node group should maintain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

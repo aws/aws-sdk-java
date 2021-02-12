@@ -109,7 +109,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Integer maxSessionDuration;
@@ -121,15 +121,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String permissionsBoundary;
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
-     * fails and the role is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      */
@@ -582,7 +582,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param maxSessionDuration
@@ -597,7 +597,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
      */
 
@@ -619,7 +619,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The maximum session duration (in seconds) that you want to set for the specified role. If you do not
@@ -634,7 +634,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
      *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-     *         Roles</a> in the <i>IAM User Guide</i>.
+     *         roles</a> in the <i>IAM User Guide</i>.
      */
 
     public Integer getMaxSessionDuration() {
@@ -655,7 +655,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param maxSessionDuration
@@ -670,7 +670,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -722,25 +722,25 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
-     * fails and the role is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
-     * @return A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     *         associated value. For more information about tagging, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     * @return A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated
+     *         value. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *         <i>IAM User Guide</i>.</p> <note>
      *         <p>
-     *         If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
-     *         request fails and the role is not created.
+     *         If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *         request fails and the resource is not created.
      *         </p>
      */
 
@@ -753,26 +753,26 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
-     * fails and the role is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
-     *        request fails and the role is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      */
 
@@ -787,15 +787,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
-     * fails and the role is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * <p>
@@ -805,13 +805,13 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
-     *        request fails and the role is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -828,26 +828,26 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
-     * fails and the role is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
-     *        request fails and the role is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

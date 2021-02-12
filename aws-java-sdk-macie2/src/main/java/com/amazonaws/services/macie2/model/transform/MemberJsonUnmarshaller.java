@@ -52,6 +52,10 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                     context.nextToken();
                     member.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("administratorAccountId", targetDepth)) {
+                    context.nextToken();
+                    member.setAdministratorAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     member.setArn(context.getUnmarshaller(String.class).unmarshall(context));

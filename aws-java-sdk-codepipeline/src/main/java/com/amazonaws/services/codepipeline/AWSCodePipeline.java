@@ -548,6 +548,24 @@ public interface AWSCodePipeline {
 
     /**
      * <p>
+     * Returns information about an action type created for an external provider, where the action is to be used by
+     * customers of the external provider. The action can have been created with any supported integration model.
+     * </p>
+     * 
+     * @param getActionTypeRequest
+     * @return Result of the GetActionType operation returned by the service.
+     * @throws ActionTypeNotFoundException
+     *         The specified action type cannot be found.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.GetActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetActionTypeResult getActionType(GetActionTypeRequest getActionTypeRequest);
+
+    /**
+     * <p>
      * Returns information about a job. Used for custom actions only.
      * </p>
      * <important>
@@ -1158,6 +1176,27 @@ public interface AWSCodePipeline {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an action type that has been created with any supported integration model, where the action type is to be
+     * used by customers of the action type provider. Use a JSON file with the action definition and
+     * <code>UpdateActionType</code> to provide the full structure.
+     * </p>
+     * 
+     * @param updateActionTypeRequest
+     * @return Result of the UpdateActionType operation returned by the service.
+     * @throws RequestFailedException
+     *         The request has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ActionTypeNotFoundException
+     *         The specified action type cannot be found.
+     * @sample AWSCodePipeline.UpdateActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateActionTypeResult updateActionType(UpdateActionTypeRequest updateActionTypeRequest);
 
     /**
      * <p>

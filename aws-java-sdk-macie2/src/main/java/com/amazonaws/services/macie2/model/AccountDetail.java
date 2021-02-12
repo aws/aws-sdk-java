@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies details for an account to associate with an Amazon Macie master account.
+ * Specifies details for an account to associate with an Amazon Macie administrator account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccountDetail" target="_top">AWS API

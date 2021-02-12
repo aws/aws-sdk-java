@@ -27,7 +27,7 @@ public class PutItemsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     * The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      * </p>
      */
     private String datasetArn;
@@ -40,11 +40,11 @@ public class PutItemsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     * The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      * </p>
      * 
      * @param datasetArn
-     *        The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     *        The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      */
 
     public void setDatasetArn(String datasetArn) {
@@ -53,10 +53,10 @@ public class PutItemsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     * The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     * @return The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      */
 
     public String getDatasetArn() {
@@ -65,11 +65,11 @@ public class PutItemsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     * The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      * </p>
      * 
      * @param datasetArn
-     *        The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items to.
+     *        The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

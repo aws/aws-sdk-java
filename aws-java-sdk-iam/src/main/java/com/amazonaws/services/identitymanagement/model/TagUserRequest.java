@@ -26,7 +26,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the user that you want to add tags to.
+     * The name of the IAM user to which you want to add tags.
      * </p>
      * <p>
      * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -37,14 +37,15 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String userName;
     /**
      * <p>
-     * The list of tags that you want to attach to the user. Each tag consists of a key name and an associated value.
+     * The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated
+     * value.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The name of the user that you want to add tags to.
+     * The name of the IAM user to which you want to add tags.
      * </p>
      * <p>
      * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -53,7 +54,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param userName
-     *        The name of the user that you want to add tags to.</p>
+     *        The name of the IAM user to which you want to add tags.</p>
      *        <p>
      *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
@@ -66,7 +67,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the user that you want to add tags to.
+     * The name of the IAM user to which you want to add tags.
      * </p>
      * <p>
      * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -74,7 +75,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * of the following characters: =,.@-
      * </p>
      * 
-     * @return The name of the user that you want to add tags to.</p>
+     * @return The name of the IAM user to which you want to add tags.</p>
      *         <p>
      *         This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *         of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
@@ -87,7 +88,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the user that you want to add tags to.
+     * The name of the IAM user to which you want to add tags.
      * </p>
      * <p>
      * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -96,7 +97,7 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param userName
-     *        The name of the user that you want to add tags to.</p>
+     *        The name of the IAM user to which you want to add tags.</p>
      *        <p>
      *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
@@ -111,11 +112,12 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The list of tags that you want to attach to the user. Each tag consists of a key name and an associated value.
+     * The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated
+     * value.
      * </p>
      * 
-     * @return The list of tags that you want to attach to the user. Each tag consists of a key name and an associated
-     *         value.
+     * @return The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an
+     *         associated value.
      */
 
     public java.util.List<Tag> getTags() {
@@ -127,12 +129,13 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The list of tags that you want to attach to the user. Each tag consists of a key name and an associated value.
+     * The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated
+     * value.
      * </p>
      * 
      * @param tags
-     *        The list of tags that you want to attach to the user. Each tag consists of a key name and an associated
-     *        value.
+     *        The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an
+     *        associated value.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -146,7 +149,8 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The list of tags that you want to attach to the user. Each tag consists of a key name and an associated value.
+     * The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated
+     * value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -155,8 +159,8 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param tags
-     *        The list of tags that you want to attach to the user. Each tag consists of a key name and an associated
-     *        value.
+     *        The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an
+     *        associated value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,12 +176,13 @@ public class TagUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The list of tags that you want to attach to the user. Each tag consists of a key name and an associated value.
+     * The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated
+     * value.
      * </p>
      * 
      * @param tags
-     *        The list of tags that you want to attach to the user. Each tag consists of a key name and an associated
-     *        value.
+     *        The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an
+     *        associated value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

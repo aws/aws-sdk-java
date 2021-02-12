@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The current status of the relationship between an account and an associated Amazon Macie master account (<i>inviter
- * account</i>). Possible values are:
+ * The current status of the relationship between an account and an associated Amazon Macie administrator account
+ * (<i>inviter account</i>). Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -75,6 +75,11 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                     continue;
                 }
 
+                if (context.testExpression("EngineMode", targetDepth)) {
+                    dBClusterSnapshot.setEngineMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
                     dBClusterSnapshot.setAllocatedStorage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

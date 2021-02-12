@@ -197,18 +197,26 @@ public enum IdentityManagementActions implements Action {
     ListGroups("iam:ListGroups"),
     /** Action for the ListGroupsForUser operation. */
     ListGroupsForUser("iam:ListGroupsForUser"),
+    /** Action for the ListInstanceProfileTags operation. */
+    ListInstanceProfileTags("iam:ListInstanceProfileTags"),
     /** Action for the ListInstanceProfiles operation. */
     ListInstanceProfiles("iam:ListInstanceProfiles"),
     /** Action for the ListInstanceProfilesForRole operation. */
     ListInstanceProfilesForRole("iam:ListInstanceProfilesForRole"),
+    /** Action for the ListMFADeviceTags operation. */
+    ListMFADeviceTags("iam:ListMFADeviceTags"),
     /** Action for the ListMFADevices operation. */
     ListMFADevices("iam:ListMFADevices"),
+    /** Action for the ListOpenIDConnectProviderTags operation. */
+    ListOpenIDConnectProviderTags("iam:ListOpenIDConnectProviderTags"),
     /** Action for the ListOpenIDConnectProviders operation. */
     ListOpenIDConnectProviders("iam:ListOpenIDConnectProviders"),
     /** Action for the ListPolicies operation. */
     ListPolicies("iam:ListPolicies"),
     /** Action for the ListPoliciesGrantingServiceAccess operation. */
     ListPoliciesGrantingServiceAccess("iam:ListPoliciesGrantingServiceAccess"),
+    /** Action for the ListPolicyTags operation. */
+    ListPolicyTags("iam:ListPolicyTags"),
     /** Action for the ListPolicyVersions operation. */
     ListPolicyVersions("iam:ListPolicyVersions"),
     /** Action for the ListRolePolicies operation. */
@@ -217,10 +225,14 @@ public enum IdentityManagementActions implements Action {
     ListRoleTags("iam:ListRoleTags"),
     /** Action for the ListRoles operation. */
     ListRoles("iam:ListRoles"),
+    /** Action for the ListSAMLProviderTags operation. */
+    ListSAMLProviderTags("iam:ListSAMLProviderTags"),
     /** Action for the ListSAMLProviders operation. */
     ListSAMLProviders("iam:ListSAMLProviders"),
     /** Action for the ListSSHPublicKeys operation. */
     ListSSHPublicKeys("iam:ListSSHPublicKeys"),
+    /** Action for the ListServerCertificateTags operation. */
+    ListServerCertificateTags("iam:ListServerCertificateTags"),
     /** Action for the ListServerCertificates operation. */
     ListServerCertificates("iam:ListServerCertificates"),
     /** Action for the ListServiceSpecificCredentials operation. */
@@ -263,12 +275,36 @@ public enum IdentityManagementActions implements Action {
     SimulateCustomPolicy("iam:SimulateCustomPolicy"),
     /** Action for the SimulatePrincipalPolicy operation. */
     SimulatePrincipalPolicy("iam:SimulatePrincipalPolicy"),
+    /** Action for the TagInstanceProfile operation. */
+    TagInstanceProfile("iam:TagInstanceProfile"),
+    /** Action for the TagMFADevice operation. */
+    TagMFADevice("iam:TagMFADevice"),
+    /** Action for the TagOpenIDConnectProvider operation. */
+    TagOpenIDConnectProvider("iam:TagOpenIDConnectProvider"),
+    /** Action for the TagPolicy operation. */
+    TagPolicy("iam:TagPolicy"),
     /** Action for the TagRole operation. */
     TagRole("iam:TagRole"),
+    /** Action for the TagSAMLProvider operation. */
+    TagSAMLProvider("iam:TagSAMLProvider"),
+    /** Action for the TagServerCertificate operation. */
+    TagServerCertificate("iam:TagServerCertificate"),
     /** Action for the TagUser operation. */
     TagUser("iam:TagUser"),
+    /** Action for the UntagInstanceProfile operation. */
+    UntagInstanceProfile("iam:UntagInstanceProfile"),
+    /** Action for the UntagMFADevice operation. */
+    UntagMFADevice("iam:UntagMFADevice"),
+    /** Action for the UntagOpenIDConnectProvider operation. */
+    UntagOpenIDConnectProvider("iam:UntagOpenIDConnectProvider"),
+    /** Action for the UntagPolicy operation. */
+    UntagPolicy("iam:UntagPolicy"),
     /** Action for the UntagRole operation. */
     UntagRole("iam:UntagRole"),
+    /** Action for the UntagSAMLProvider operation. */
+    UntagSAMLProvider("iam:UntagSAMLProvider"),
+    /** Action for the UntagServerCertificate operation. */
+    UntagServerCertificate("iam:UntagServerCertificate"),
     /** Action for the UntagUser operation. */
     UntagUser("iam:UntagUser"),
     /** Action for the UpdateAccessKey operation. */

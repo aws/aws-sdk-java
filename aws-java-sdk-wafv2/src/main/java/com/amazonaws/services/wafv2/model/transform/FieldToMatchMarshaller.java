@@ -41,6 +41,8 @@ public class FieldToMatchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Body").build();
     private static final MarshallingInfo<StructuredPojo> METHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Method").build();
+    private static final MarshallingInfo<StructuredPojo> JSONBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JsonBody").build();
 
     private static final FieldToMatchMarshaller instance = new FieldToMatchMarshaller();
 
@@ -65,6 +67,7 @@ public class FieldToMatchMarshaller {
             protocolMarshaller.marshall(fieldToMatch.getQueryString(), QUERYSTRING_BINDING);
             protocolMarshaller.marshall(fieldToMatch.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(fieldToMatch.getMethod(), METHOD_BINDING);
+            protocolMarshaller.marshall(fieldToMatch.getJsonBody(), JSONBODY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

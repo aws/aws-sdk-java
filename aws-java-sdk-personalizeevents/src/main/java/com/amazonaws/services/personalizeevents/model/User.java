@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents user metadata added to a Users dataset using the <code>PutUsers</code> API.
+ * Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a
+ * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/User" target="_top">AWS API
@@ -37,13 +38,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
+     * <code>{"numberOfVideosWatched": "45"}</code>.
      * </p>
      * <p>
-     * <code>{"numberOfVideosWatched": "45"}</code>
-     * </p>
-     * <p>
-     * The keys use camel case names that match the fields in the Users schema. In the above example, the
-     * <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example,
+     * the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * For categorical string data, to include multiple categories for a single user, separate each category with a pipe
+     * separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.
      * </p>
      */
     private String properties;
@@ -91,13 +92,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
+     * <code>{"numberOfVideosWatched": "45"}</code>.
      * </p>
      * <p>
-     * <code>{"numberOfVideosWatched": "45"}</code>
-     * </p>
-     * <p>
-     * The keys use camel case names that match the fields in the Users schema. In the above example, the
-     * <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example,
+     * the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * For categorical string data, to include multiple categories for a single user, separate each category with a pipe
+     * separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -110,14 +111,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param properties
      *        A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
-     *        </p>
+     *        <code>{"numberOfVideosWatched": "45"}</code>.</p>
      *        <p>
-     *        <code>{"numberOfVideosWatched": "45"}</code>
-     *        </p>
-     *        <p>
-     *        The keys use camel case names that match the fields in the Users schema. In the above example, the
-     *        <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users
-     *        schema.
+     *        The keys use camel case names that match the fields in the schema for the Users dataset. In the previous
+     *        example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in
+     *        the Users schema. For categorical string data, to include multiple categories for a single user, separate
+     *        each category with a pipe separator (<code>|</code>). For example,
+     *        <code>\"Member|Frequent shopper\"</code>.
      */
 
     public void setProperties(String properties) {
@@ -127,13 +127,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
+     * <code>{"numberOfVideosWatched": "45"}</code>.
      * </p>
      * <p>
-     * <code>{"numberOfVideosWatched": "45"}</code>
-     * </p>
-     * <p>
-     * The keys use camel case names that match the fields in the Users schema. In the above example, the
-     * <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example,
+     * the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * For categorical string data, to include multiple categories for a single user, separate each category with a pipe
+     * separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.
      * </p>
      * <p>
      * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -141,14 +141,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A string map of user-specific metadata. Each element in the map consists of a key-value pair. For
-     *         example, </p>
+     *         example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
      *         <p>
-     *         <code>{"numberOfVideosWatched": "45"}</code>
-     *         </p>
-     *         <p>
-     *         The keys use camel case names that match the fields in the Users schema. In the above example, the
-     *         <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users
-     *         schema.
+     *         The keys use camel case names that match the fields in the schema for the Users dataset. In the previous
+     *         example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in
+     *         the Users schema. For categorical string data, to include multiple categories for a single user, separate
+     *         each category with a pipe separator (<code>|</code>). For example,
+     *         <code>\"Member|Frequent shopper\"</code>.
      */
 
     public String getProperties() {
@@ -158,13 +157,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
+     * <code>{"numberOfVideosWatched": "45"}</code>.
      * </p>
      * <p>
-     * <code>{"numberOfVideosWatched": "45"}</code>
-     * </p>
-     * <p>
-     * The keys use camel case names that match the fields in the Users schema. In the above example, the
-     * <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example,
+     * the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema.
+     * For categorical string data, to include multiple categories for a single user, separate each category with a pipe
+     * separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -177,14 +176,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param properties
      *        A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example,
-     *        </p>
+     *        <code>{"numberOfVideosWatched": "45"}</code>.</p>
      *        <p>
-     *        <code>{"numberOfVideosWatched": "45"}</code>
-     *        </p>
-     *        <p>
-     *        The keys use camel case names that match the fields in the Users schema. In the above example, the
-     *        <code>numberOfVideosWatched</code> would match the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users
-     *        schema.
+     *        The keys use camel case names that match the fields in the schema for the Users dataset. In the previous
+     *        example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in
+     *        the Users schema. For categorical string data, to include multiple categories for a single user, separate
+     *        each category with a pipe separator (<code>|</code>). For example,
+     *        <code>\"Member|Frequent shopper\"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

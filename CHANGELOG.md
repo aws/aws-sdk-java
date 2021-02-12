@@ -1,3 +1,44 @@
+# __1.11.954__ __2021-02-12__
+## __AWS AppSync__
+  - ### Features
+    - Approve release for appsync local on pipeline resolver
+
+## __AWS CodePipeline__
+  - ### Features
+    - The release provides new GetActionType and UpdateActionType APIs for viewing and editing action types in CodePipeline.
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - AWS Identity and Access Management now supports tagging for the following resources: customer managed policies, identity providers, instance profiles, server certificates, and virtual MFA devices.
+
+## __AWS WAFV2__
+  - ### Features
+    - Added the option to inspect the web request body as parsed and filtered JSON (new FieldToMatch type JsonBody), in addition to the existing option to inspect the web request body as plain text.
+
+## __Amazon Detective__
+  - ### Features
+    - The API definition now indicates that the format for timestamps is an ISO 8601 date-time string
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Amazon EKS now supports OpenId Connect (OIDC) compatible identity providers as a user authentication option
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API replaces the term master account with the term administrator account, including deprecating APIs that use the previous term and adding APIs that use the new term.
+
+## __Amazon Personalize Events__
+  - ### Features
+    - Increased maximum char size of PutUsers and PutItems properties.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - EngineMode in the response of DescribeDBClusterSnapshots. SupportedEngineModes, SupportsParallelQuery and SupportsGlobalDatabases in ValidUpgradeTarget of DBEngineVersions in DescribeDBEngineVersions.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds a target group attribute for application-based stickiness for Application Load Balancers and an update to the client IP preservation attribute for Network Load Balancers.
+
 # __1.11.953__ __2021-02-11__
 ## __AWS Glue DataBrew__
   - ### Features
