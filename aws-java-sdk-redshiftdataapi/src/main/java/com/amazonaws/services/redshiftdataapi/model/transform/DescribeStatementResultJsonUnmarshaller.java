@@ -72,6 +72,10 @@ public class DescribeStatementResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeStatementResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HasResultSet", targetDepth)) {
+                    context.nextToken();
+                    describeStatementResult.setHasResultSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     describeStatementResult.setId(context.getUnmarshaller(String.class).unmarshall(context));

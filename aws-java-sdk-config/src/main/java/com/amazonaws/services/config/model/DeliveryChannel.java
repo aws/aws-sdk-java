@@ -58,6 +58,13 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
     private String s3KeyPrefix;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt
+     * objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     * </p>
+     */
+    private String s3KmsKeyArn;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about
      * configuration changes.
      * </p>
@@ -255,6 +262,52 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt
+     * objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     * </p>
+     * 
+     * @param s3KmsKeyArn
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to
+     *        encrypt objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     */
+
+    public void setS3KmsKeyArn(String s3KmsKeyArn) {
+        this.s3KmsKeyArn = s3KmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt
+     * objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to
+     *         encrypt objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     */
+
+    public String getS3KmsKeyArn() {
+        return this.s3KmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt
+     * objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     * </p>
+     * 
+     * @param s3KmsKeyArn
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to
+     *        encrypt objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeliveryChannel withS3KmsKeyArn(String s3KmsKeyArn) {
+        setS3KmsKeyArn(s3KmsKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about
      * configuration changes.
      * </p>
@@ -390,6 +443,8 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
             sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
         if (getS3KeyPrefix() != null)
             sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
+        if (getS3KmsKeyArn() != null)
+            sb.append("S3KmsKeyArn: ").append(getS3KmsKeyArn()).append(",");
         if (getSnsTopicARN() != null)
             sb.append("SnsTopicARN: ").append(getSnsTopicARN()).append(",");
         if (getConfigSnapshotDeliveryProperties() != null)
@@ -420,6 +475,10 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getS3KeyPrefix() != null && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false)
             return false;
+        if (other.getS3KmsKeyArn() == null ^ this.getS3KmsKeyArn() == null)
+            return false;
+        if (other.getS3KmsKeyArn() != null && other.getS3KmsKeyArn().equals(this.getS3KmsKeyArn()) == false)
+            return false;
         if (other.getSnsTopicARN() == null ^ this.getSnsTopicARN() == null)
             return false;
         if (other.getSnsTopicARN() != null && other.getSnsTopicARN().equals(this.getSnsTopicARN()) == false)
@@ -440,6 +499,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode());
         hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getS3KmsKeyArn() == null) ? 0 : getS3KmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getSnsTopicARN() == null) ? 0 : getSnsTopicARN().hashCode());
         hashCode = prime * hashCode + ((getConfigSnapshotDeliveryProperties() == null) ? 0 : getConfigSnapshotDeliveryProperties().hashCode());
         return hashCode;

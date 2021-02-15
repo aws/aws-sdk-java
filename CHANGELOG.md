@@ -1,3 +1,36 @@
+# __1.11.955__ __2021-02-15__
+## __AWS Config__
+  - ### Features
+    - Added option to provide KMS key to AWS Config DeliveryChannel
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS MediaLive now supports Automatic-Input-Failover for CDI Inputs.
+
+## __AWS MediaTailor__
+  - ### Features
+    - MediaTailor now supports specifying aliases for dynamic variables. This allows use cases such as binding multiple origin domains to a single MediaTailor playback configuration.
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - The ListFragments and GetMediaForFragmentList APIs now support StreamName or StreamARN as input parameters.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Lightsail
+
+## __Amazon Pinpoint__
+  - ### Features
+    - Lets customers use origination number when specifying SMS message configuration for Campaigns and Journeys.
+
+## __Amazon WorkMail Message Flow__
+  - ### Features
+    - This release allows customers to update email messages as they flow in and out of Amazon WorkMail
+
+## __Redshift Data API Service__
+  - ### Features
+    - This release enables fine grant access control in ListStatements, GetStatementResult, CancelStatement and DescribeStatement.
+
 # __1.11.954__ __2021-02-12__
 ## __AWS AppSync__
   - ### Features

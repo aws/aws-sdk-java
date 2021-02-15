@@ -44,6 +44,14 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     private String messageType;
     /**
      * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     */
+    private String originationNumber;
+    /**
+     * <p>
      * The sender ID to display on recipients' devices when they receive the SMS message.
      * </p>
      */
@@ -184,6 +192,58 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public void setOriginationNumber(String originationNumber) {
+        this.originationNumber = originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @return The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *         assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *         using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public String getOriginationNumber() {
+        return this.originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSmsMessage withOriginationNumber(String originationNumber) {
+        setOriginationNumber(originationNumber);
+        return this;
+    }
+
+    /**
+     * <p>
      * The sender ID to display on recipients' devices when they receive the SMS message.
      * </p>
      * 
@@ -238,6 +298,8 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
             sb.append("Body: ").append(getBody()).append(",");
         if (getMessageType() != null)
             sb.append("MessageType: ").append(getMessageType()).append(",");
+        if (getOriginationNumber() != null)
+            sb.append("OriginationNumber: ").append(getOriginationNumber()).append(",");
         if (getSenderId() != null)
             sb.append("SenderId: ").append(getSenderId());
         sb.append("}");
@@ -262,6 +324,10 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
             return false;
+        if (other.getOriginationNumber() == null ^ this.getOriginationNumber() == null)
+            return false;
+        if (other.getOriginationNumber() != null && other.getOriginationNumber().equals(this.getOriginationNumber()) == false)
+            return false;
         if (other.getSenderId() == null ^ this.getSenderId() == null)
             return false;
         if (other.getSenderId() != null && other.getSenderId().equals(this.getSenderId()) == false)
@@ -276,6 +342,7 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
+        hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());
         return hashCode;
     }

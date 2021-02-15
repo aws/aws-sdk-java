@@ -101,8 +101,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -386,8 +385,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -403,7 +401,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         configuration changes (for example, <code>AWS::EC2::Instance</code> or
      *         <code>AWS::CloudTrail::Trail</code>).</p>
      *         <p>
-     *         Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
+     *         To record all configuration changes, you must set the <code>allSupported</code> option to
      *         <code>false</code>.
      *         </p>
      *         <p>
@@ -431,8 +429,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -449,7 +446,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
      *        ).</p>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
+     *        To record all configuration changes, you must set the <code>allSupported</code> option to
      *        <code>false</code>.
      *        </p>
      *        <p>
@@ -479,8 +476,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -502,7 +498,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
      *        ).</p>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
+     *        To record all configuration changes, you must set the <code>allSupported</code> option to
      *        <code>false</code>.
      *        </p>
      *        <p>
@@ -534,8 +530,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -552,7 +547,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
      *        ).</p>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
+     *        To record all configuration changes, you must set the <code>allSupported</code> option to
      *        <code>false</code>.
      *        </p>
      *        <p>
@@ -579,8 +574,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
@@ -597,7 +591,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
      *        ).</p>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
+     *        To record all configuration changes, you must set the <code>allSupported</code> option to
      *        <code>false</code>.
      *        </p>
      *        <p>

@@ -192,8 +192,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
      * website. If your domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
-     * do.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to
+     * learn what you can do.
      * </p>
      * <p>
      * If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1368,8 +1368,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
      * website. If your domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
-     * do.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to
+     * learn what you can do.
      * </p>
      * <p>
      * If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1431,8 +1431,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
      *        correct the problem, search for your domain name on the <a
      *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
-     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     *        Websites</a> to learn what you can do.
+     *        suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+     *        Hacked Websites</a> to learn what you can do.
      *        </p>
      *        <p>
      *        If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1502,8 +1502,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
      * website. If your domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
-     * do.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to
+     * learn what you can do.
      * </p>
      * <p>
      * If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1564,8 +1564,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      *         reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
      *         correct the problem, search for your domain name on the <a
      *         href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
-     *         suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     *         Websites</a> to learn what you can do.
+     *         suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+     *         Hacked Websites</a> to learn what you can do.
      *         </p>
      *         <p>
      *         If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1635,8 +1635,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
      * website. If your domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
-     * do.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to
+     * learn what you can do.
      * </p>
      * <p>
      * If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1698,8 +1698,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
      *        correct the problem, search for your domain name on the <a
      *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
-     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     *        Websites</a> to learn what you can do.
+     *        suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+     *        Hacked Websites</a> to learn what you can do.
      *        </p>
      *        <p>
      *        If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1771,8 +1771,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
      * website. If your domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
-     * do.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to
+     * learn what you can do.
      * </p>
      * <p>
      * If you believe that the result is a false positive, notify the organization that is reporting the domain.
@@ -1834,8 +1834,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
      *        correct the problem, search for your domain name on the <a
      *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
-     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     *        Websites</a> to learn what you can do.
+     *        suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+     *        Hacked Websites</a> to learn what you can do.
      *        </p>
      *        <p>
      *        If you believe that the result is a false positive, notify the organization that is reporting the domain.

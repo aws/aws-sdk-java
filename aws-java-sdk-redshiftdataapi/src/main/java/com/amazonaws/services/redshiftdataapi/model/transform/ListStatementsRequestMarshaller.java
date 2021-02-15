@@ -31,6 +31,8 @@ public class ListStatementsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Boolean> ROLELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoleLevel").build();
     private static final MarshallingInfo<String> STATEMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementName").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class ListStatementsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listStatementsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listStatementsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listStatementsRequest.getRoleLevel(), ROLELEVEL_BINDING);
             protocolMarshaller.marshall(listStatementsRequest.getStatementName(), STATEMENTNAME_BINDING);
             protocolMarshaller.marshall(listStatementsRequest.getStatus(), STATUS_BINDING);
         } catch (Exception e) {

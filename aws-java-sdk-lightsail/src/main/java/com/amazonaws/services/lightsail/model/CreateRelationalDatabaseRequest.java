@@ -27,7 +27,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name to use for your new database.
+     * The name to use for your new Lightsail database resource.
      * </p>
      * <p>
      * Constraints:
@@ -244,7 +244,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name to use for your new database.
+     * The name to use for your new Lightsail database resource.
      * </p>
      * <p>
      * Constraints:
@@ -263,7 +263,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param relationalDatabaseName
-     *        The name to use for your new database.</p>
+     *        The name to use for your new Lightsail database resource.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -286,7 +286,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name to use for your new database.
+     * The name to use for your new Lightsail database resource.
      * </p>
      * <p>
      * Constraints:
@@ -304,7 +304,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The name to use for your new database.</p>
+     * @return The name to use for your new Lightsail database resource.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -327,7 +327,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name to use for your new database.
+     * The name to use for your new Lightsail database resource.
      * </p>
      * <p>
      * Constraints:
@@ -346,7 +346,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param relationalDatabaseName
-     *        The name to use for your new database.</p>
+     *        The name to use for your new Lightsail database resource.</p>
      *        <p>
      *        Constraints:
      *        </p>

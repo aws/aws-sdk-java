@@ -52,6 +52,10 @@ public class JourneySMSMessageJsonUnmarshaller implements Unmarshaller<JourneySM
                     context.nextToken();
                     journeySMSMessage.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OriginationNumber", targetDepth)) {
+                    context.nextToken();
+                    journeySMSMessage.setOriginationNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SenderId", targetDepth)) {
                     context.nextToken();
                     journeySMSMessage.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));

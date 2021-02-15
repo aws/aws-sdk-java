@@ -30,6 +30,8 @@ public class GetMediaForFragmentListRequestMarshaller {
 
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
     private static final MarshallingInfo<List> FRAGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Fragments").build();
 
@@ -50,6 +52,7 @@ public class GetMediaForFragmentListRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getMediaForFragmentListRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(getMediaForFragmentListRequest.getStreamARN(), STREAMARN_BINDING);
             protocolMarshaller.marshall(getMediaForFragmentListRequest.getFragments(), FRAGMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

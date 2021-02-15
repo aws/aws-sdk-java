@@ -33,7 +33,7 @@ public class GetClipResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the
      * first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a
-     * href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
      */
     private java.io.InputStream payload;
@@ -82,13 +82,14 @@ public class GetClipResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the
      * first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a
-     * href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
      * 
      * @param payload
      *        Traditional MP4 file that contains the media clip from the specified video stream. The output will contain
      *        the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see
-     *        <a href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     *        <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *        Limits</a>.
      */
 
     public void setPayload(java.io.InputStream payload) {
@@ -99,12 +100,13 @@ public class GetClipResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the
      * first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a
-     * href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
      * 
      * @return Traditional MP4 file that contains the media clip from the specified video stream. The output will
      *         contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more
-     *         information, see <a href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     *         information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+     *         Video Streams Limits</a>.
      */
 
     public java.io.InputStream getPayload() {
@@ -115,13 +117,14 @@ public class GetClipResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the
      * first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a
-     * href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
      * 
      * @param payload
      *        Traditional MP4 file that contains the media clip from the specified video stream. The output will contain
      *        the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see
-     *        <a href="Kinesis Video Streams Limits">Kinesis Video Streams Limits</a>.
+     *        <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *        Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

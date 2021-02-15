@@ -347,6 +347,30 @@ public interface AWSMediaLive {
     CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest createMultiplexProgramRequest);
 
     /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return Result of the CreatePartnerInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Limit exceeded
+     * @sample AWSMediaLive.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest createPartnerInputRequest);
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest

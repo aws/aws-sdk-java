@@ -435,6 +435,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest request) {
+
+        return createPartnerInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(final CreatePartnerInputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler) {
+        final CreatePartnerInputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePartnerInputResult>() {
+            @Override
+            public CreatePartnerInputResult call() throws Exception {
+                CreatePartnerInputResult result = null;
+
+                try {
+                    result = executeCreatePartnerInput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);

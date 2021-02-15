@@ -30,6 +30,12 @@ public class PutStoredQueryRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
      * <code>Expression</code>.
      * </p>
+     * <note>
+     * <p>
+     * When you are creating a query, you must provide a query name and an expression. When you are updating a query,
+     * you must provide a query name but updating the description is optional.
+     * </p>
+     * </note>
      */
     private StoredQuery storedQuery;
     /**
@@ -44,10 +50,20 @@ public class PutStoredQueryRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
      * <code>Expression</code>.
      * </p>
+     * <note>
+     * <p>
+     * When you are creating a query, you must provide a query name and an expression. When you are updating a query,
+     * you must provide a query name but updating the description is optional.
+     * </p>
+     * </note>
      * 
      * @param storedQuery
      *        A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
-     *        <code>Expression</code>.
+     *        <code>Expression</code>.</p> <note>
+     *        <p>
+     *        When you are creating a query, you must provide a query name and an expression. When you are updating a
+     *        query, you must provide a query name but updating the description is optional.
+     *        </p>
      */
 
     public void setStoredQuery(StoredQuery storedQuery) {
@@ -59,9 +75,19 @@ public class PutStoredQueryRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
      * <code>Expression</code>.
      * </p>
+     * <note>
+     * <p>
+     * When you are creating a query, you must provide a query name and an expression. When you are updating a query,
+     * you must provide a query name but updating the description is optional.
+     * </p>
+     * </note>
      * 
      * @return A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
-     *         <code>Expression</code>.
+     *         <code>Expression</code>.</p> <note>
+     *         <p>
+     *         When you are creating a query, you must provide a query name and an expression. When you are updating a
+     *         query, you must provide a query name but updating the description is optional.
+     *         </p>
      */
 
     public StoredQuery getStoredQuery() {
@@ -73,10 +99,20 @@ public class PutStoredQueryRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
      * <code>Expression</code>.
      * </p>
+     * <note>
+     * <p>
+     * When you are creating a query, you must provide a query name and an expression. When you are updating a query,
+     * you must provide a query name but updating the description is optional.
+     * </p>
+     * </note>
      * 
      * @param storedQuery
      *        A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and
-     *        <code>Expression</code>.
+     *        <code>Expression</code>.</p> <note>
+     *        <p>
+     *        When you are creating a query, you must provide a query name and an expression. When you are updating a
+     *        query, you must provide a query name but updating the description is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

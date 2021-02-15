@@ -33,6 +33,8 @@ public class DeliveryChannelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3BucketName").build();
     private static final MarshallingInfo<String> S3KEYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3KeyPrefix").build();
+    private static final MarshallingInfo<String> S3KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3KmsKeyArn").build();
     private static final MarshallingInfo<String> SNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snsTopicARN").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGSNAPSHOTDELIVERYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class DeliveryChannelMarshaller {
             protocolMarshaller.marshall(deliveryChannel.getName(), NAME_BINDING);
             protocolMarshaller.marshall(deliveryChannel.getS3BucketName(), S3BUCKETNAME_BINDING);
             protocolMarshaller.marshall(deliveryChannel.getS3KeyPrefix(), S3KEYPREFIX_BINDING);
+            protocolMarshaller.marshall(deliveryChannel.getS3KmsKeyArn(), S3KMSKEYARN_BINDING);
             protocolMarshaller.marshall(deliveryChannel.getSnsTopicARN(), SNSTOPICARN_BINDING);
             protocolMarshaller.marshall(deliveryChannel.getConfigSnapshotDeliveryProperties(), CONFIGSNAPSHOTDELIVERYPROPERTIES_BINDING);
         } catch (Exception e) {

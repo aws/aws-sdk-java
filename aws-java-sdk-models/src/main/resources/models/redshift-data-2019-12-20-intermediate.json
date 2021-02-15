@@ -56,7 +56,7 @@
     "defaultEndpoint" : "redshift-data.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "redshift-data.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL statements, which are committed if the statement succeeds. </p>",
+    "documentation" : "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>",
     "endpointPrefix" : "redshift-data",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -231,6 +231,10 @@
       }, {
         "exceptionName" : "ExecuteStatementException",
         "documentation" : "<p>The SQL statement encountered an environmental error while running.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ActiveStatementsExceededException",
+        "documentation" : "<p>The number of active statements exceeds the limit.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -464,6 +468,47 @@
     }
   },
   "shapes" : {
+    "ActiveStatementsExceededException" : {
+      "c2jName" : "ActiveStatementsExceededException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The number of active statements exceeds the limit.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "ActiveStatementsExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.redshiftdataapi.exception.ActiveStatementsExceededException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.redshiftdataapi.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ActiveStatementsExceededException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ActiveStatementsExceededException",
+        "variableName" : "activeStatementsExceededException",
+        "variableType" : "ActiveStatementsExceededException",
+        "documentation" : null,
+        "simpleType" : "ActiveStatementsExceededException",
+        "variableSetterType" : "ActiveStatementsExceededException"
+      },
+      "wrapper" : false
+    },
     "CancelStatementRequest" : {
       "c2jName" : "CancelStatementRequest",
       "customization" : {
@@ -3311,6 +3356,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "HasResultSet",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withHasResultSet",
+        "getterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@return A value that indicates whether the statement has a result set. The result set can be empty.*/",
+        "getterMethodName" : "getHasResultSet",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "HasResultSet",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "HasResultSet",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "HasResultSet",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.*/",
+        "setterMethodName" : "setHasResultSet",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "hasResultSet",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "hasResultSet",
+          "variableType" : "Boolean",
+          "documentation" : "<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Id",
         "c2jShape" : "UUID",
         "deprecated" : false,
@@ -4350,6 +4464,76 @@
             "documentation" : "<p>The error message from the cluster if the SQL statement encountered an error while running. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "HasResultSet" : {
+          "c2jName" : "HasResultSet",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withHasResultSet",
+          "getterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@return A value that indicates whether the statement has a result set. The result set can be empty.*/",
+          "getterMethodName" : "getHasResultSet",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "HasResultSet",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "HasResultSet",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "HasResultSet",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.*/",
+          "setterMethodName" : "setHasResultSet",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "hasResultSet",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>\n@param hasResultSet A value that indicates whether the statement has a result set. The result set can be empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "hasResultSet",
+            "variableType" : "Boolean",
+            "documentation" : "<p>A value that indicates whether the statement has a result set. The result set can be empty. </p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -14284,6 +14468,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "RoleLevel",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRoleLevel",
+        "getterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@return A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.*/",
+        "getterMethodName" : "getRoleLevel",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "RoleLevel",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "RoleLevel",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "RoleLevel",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.*/",
+        "setterMethodName" : "setRoleLevel",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "roleLevel",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "roleLevel",
+          "variableType" : "Boolean",
+          "documentation" : "<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "StatementName",
         "c2jShape" : "StatementNameString",
         "deprecated" : false,
@@ -14560,6 +14813,76 @@
             "documentation" : "<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RoleLevel" : {
+          "c2jName" : "RoleLevel",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRoleLevel",
+          "getterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@return A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.*/",
+          "getterMethodName" : "getRoleLevel",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "RoleLevel",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "RoleLevel",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "RoleLevel",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.*/",
+          "setterMethodName" : "setRoleLevel",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "roleLevel",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>\n@param roleLevel A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "roleLevel",
+            "variableType" : "Boolean",
+            "documentation" : "<p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -18077,17 +18400,8 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "ABORTED",
-        "value" : "ABORTED"
-      }, {
-        "name" : "ALL",
-        "value" : "ALL"
-      }, {
-        "name" : "FAILED",
-        "value" : "FAILED"
-      }, {
-        "name" : "FINISHED",
-        "value" : "FINISHED"
+        "name" : "SUBMITTED",
+        "value" : "SUBMITTED"
       }, {
         "name" : "PICKED",
         "value" : "PICKED"
@@ -18095,8 +18409,17 @@
         "name" : "STARTED",
         "value" : "STARTED"
       }, {
-        "name" : "SUBMITTED",
-        "value" : "SUBMITTED"
+        "name" : "FINISHED",
+        "value" : "FINISHED"
+      }, {
+        "name" : "ABORTED",
+        "value" : "ABORTED"
+      }, {
+        "name" : "FAILED",
+        "value" : "FAILED"
+      }, {
+        "name" : "ALL",
+        "value" : "ALL"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.redshiftdataapi.enum.StatusString",

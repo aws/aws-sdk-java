@@ -30,6 +30,11 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
  * statements, which are committed if the statement succeeds.
  * </p>
+ * <p>
+ * For more information about the Amazon Redshift Data API, see <a
+ * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
+ * <i>Amazon Redshift Cluster Management Guide</i>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSRedshiftDataAPI {
@@ -140,6 +145,8 @@ public interface AWSRedshiftDataAPI {
      *         The Amazon Redshift Data API operation failed due to invalid input.
      * @throws ExecuteStatementException
      *         The SQL statement encountered an environmental error while running.
+     * @throws ActiveStatementsExceededException
+     *         The number of active statements exceeds the limit.
      * @sample AWSRedshiftDataAPI.ExecuteStatement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement" target="_top">AWS
      *      API Documentation</a>

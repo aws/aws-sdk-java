@@ -354,6 +354,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<CreateMultiplexProgramRequest, CreateMultiplexProgramResult> asyncHandler);
 
     /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return A Java Future containing the result of the CreatePartnerInput operation returned by the service.
+     * @sample AWSMediaLiveAsync.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest createPartnerInputRequest);
+
+    /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePartnerInput operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest createPartnerInputRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler);
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest

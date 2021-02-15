@@ -40,4 +40,17 @@ public class AbstractAmazonWorkMailMessageFlowAsync extends AbstractAmazonWorkMa
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(PutRawMessageContentRequest request) {
+
+        return putRawMessageContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(PutRawMessageContentRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRawMessageContentRequest, PutRawMessageContentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

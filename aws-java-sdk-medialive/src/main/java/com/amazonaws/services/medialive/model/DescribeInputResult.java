@@ -42,6 +42,8 @@ public class DescribeInputResult extends com.amazonaws.AmazonWebServiceResult<co
     private String inputClass;
     /** Settings for the input devices. */
     private java.util.List<InputDeviceSettings> inputDevices;
+    /** A list of IDs for all Inputs which are partners of this one. */
+    private java.util.List<String> inputPartnerIds;
     /**
      * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
      * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
@@ -406,6 +408,68 @@ public class DescribeInputResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeInputResult withInputDevices(java.util.Collection<InputDeviceSettings> inputDevices) {
         setInputDevices(inputDevices);
+        return this;
+    }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     * 
+     * @return A list of IDs for all Inputs which are partners of this one.
+     */
+
+    public java.util.List<String> getInputPartnerIds() {
+        return inputPartnerIds;
+    }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     * 
+     * @param inputPartnerIds
+     *        A list of IDs for all Inputs which are partners of this one.
+     */
+
+    public void setInputPartnerIds(java.util.Collection<String> inputPartnerIds) {
+        if (inputPartnerIds == null) {
+            this.inputPartnerIds = null;
+            return;
+        }
+
+        this.inputPartnerIds = new java.util.ArrayList<String>(inputPartnerIds);
+    }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputPartnerIds(java.util.Collection)} or {@link #withInputPartnerIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param inputPartnerIds
+     *        A list of IDs for all Inputs which are partners of this one.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInputResult withInputPartnerIds(String... inputPartnerIds) {
+        if (this.inputPartnerIds == null) {
+            setInputPartnerIds(new java.util.ArrayList<String>(inputPartnerIds.length));
+        }
+        for (String ele : inputPartnerIds) {
+            this.inputPartnerIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     * 
+     * @param inputPartnerIds
+     *        A list of IDs for all Inputs which are partners of this one.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInputResult withInputPartnerIds(java.util.Collection<String> inputPartnerIds) {
+        setInputPartnerIds(inputPartnerIds);
         return this;
     }
 
@@ -888,6 +952,8 @@ public class DescribeInputResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("InputClass: ").append(getInputClass()).append(",");
         if (getInputDevices() != null)
             sb.append("InputDevices: ").append(getInputDevices()).append(",");
+        if (getInputPartnerIds() != null)
+            sb.append("InputPartnerIds: ").append(getInputPartnerIds()).append(",");
         if (getInputSourceType() != null)
             sb.append("InputSourceType: ").append(getInputSourceType()).append(",");
         if (getMediaConnectFlows() != null)
@@ -944,6 +1010,10 @@ public class DescribeInputResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getInputDevices() != null && other.getInputDevices().equals(this.getInputDevices()) == false)
             return false;
+        if (other.getInputPartnerIds() == null ^ this.getInputPartnerIds() == null)
+            return false;
+        if (other.getInputPartnerIds() != null && other.getInputPartnerIds().equals(this.getInputPartnerIds()) == false)
+            return false;
         if (other.getInputSourceType() == null ^ this.getInputSourceType() == null)
             return false;
         if (other.getInputSourceType() != null && other.getInputSourceType().equals(this.getInputSourceType()) == false)
@@ -994,6 +1064,7 @@ public class DescribeInputResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getInputClass() == null) ? 0 : getInputClass().hashCode());
         hashCode = prime * hashCode + ((getInputDevices() == null) ? 0 : getInputDevices().hashCode());
+        hashCode = prime * hashCode + ((getInputPartnerIds() == null) ? 0 : getInputPartnerIds().hashCode());
         hashCode = prime * hashCode + ((getInputSourceType() == null) ? 0 : getInputSourceType().hashCode());
         hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

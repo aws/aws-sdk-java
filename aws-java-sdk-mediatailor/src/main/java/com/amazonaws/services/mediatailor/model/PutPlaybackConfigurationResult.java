@@ -55,6 +55,12 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
+     * Predefined aliases for dynamic variables.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> configurationAliases;
+    /**
+     * <p>
      * The configuration for DASH content.
      * </p>
      */
@@ -330,6 +336,74 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public PutPlaybackConfigurationResult withCdnConfiguration(CdnConfiguration cdnConfiguration) {
         setCdnConfiguration(cdnConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Predefined aliases for dynamic variables.
+     * </p>
+     * 
+     * @return Predefined aliases for dynamic variables.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getConfigurationAliases() {
+        return configurationAliases;
+    }
+
+    /**
+     * <p>
+     * Predefined aliases for dynamic variables.
+     * </p>
+     * 
+     * @param configurationAliases
+     *        Predefined aliases for dynamic variables.
+     */
+
+    public void setConfigurationAliases(java.util.Map<String, java.util.Map<String, String>> configurationAliases) {
+        this.configurationAliases = configurationAliases;
+    }
+
+    /**
+     * <p>
+     * Predefined aliases for dynamic variables.
+     * </p>
+     * 
+     * @param configurationAliases
+     *        Predefined aliases for dynamic variables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult withConfigurationAliases(java.util.Map<String, java.util.Map<String, String>> configurationAliases) {
+        setConfigurationAliases(configurationAliases);
+        return this;
+    }
+
+    /**
+     * Add a single ConfigurationAliases entry
+     *
+     * @see PutPlaybackConfigurationResult#withConfigurationAliases
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult addConfigurationAliasesEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.configurationAliases) {
+            this.configurationAliases = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.configurationAliases.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.configurationAliases.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ConfigurationAliases.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult clearConfigurationAliasesEntries() {
+        this.configurationAliases = null;
         return this;
     }
 
@@ -943,6 +1017,8 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("Bumper: ").append(getBumper()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
+        if (getConfigurationAliases() != null)
+            sb.append("ConfigurationAliases: ").append(getConfigurationAliases()).append(",");
         if (getDashConfiguration() != null)
             sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
@@ -998,6 +1074,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         if (other.getCdnConfiguration() == null ^ this.getCdnConfiguration() == null)
             return false;
         if (other.getCdnConfiguration() != null && other.getCdnConfiguration().equals(this.getCdnConfiguration()) == false)
+            return false;
+        if (other.getConfigurationAliases() == null ^ this.getConfigurationAliases() == null)
+            return false;
+        if (other.getConfigurationAliases() != null && other.getConfigurationAliases().equals(this.getConfigurationAliases()) == false)
             return false;
         if (other.getDashConfiguration() == null ^ this.getDashConfiguration() == null)
             return false;
@@ -1065,6 +1145,7 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getAvailSuppression() == null) ? 0 : getAvailSuppression().hashCode());
         hashCode = prime * hashCode + ((getBumper() == null) ? 0 : getBumper().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationAliases() == null) ? 0 : getConfigurationAliases().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());

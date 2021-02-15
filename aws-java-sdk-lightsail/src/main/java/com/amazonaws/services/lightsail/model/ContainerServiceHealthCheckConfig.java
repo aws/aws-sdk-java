@@ -31,34 +31,34 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health checks successes required before moving the container to the
-     * <code>Healthy</code> state.
+     * <code>Healthy</code> state. The default value is <code>2</code>.
      * </p>
      */
     private Integer healthyThreshold;
     /**
      * <p>
      * The number of consecutive health check failures required before moving the container to the
-     * <code>Unhealthy</code> state.
+     * <code>Unhealthy</code> state. The default value is <code>2</code>.
      * </p>
      */
     private Integer unhealthyThreshold;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check. You may specify between 2
-     * and 60 seconds.
+     * The amount of time, in seconds, during which no response means a failed health check. You can specify between 2
+     * and 60 seconds. The default value is <code>2</code>.
      * </p>
      */
     private Integer timeoutSeconds;
     /**
      * <p>
-     * The approximate interval, in seconds, between health checks of an individual container. You may specify between 5
-     * and 300 seconds.
+     * The approximate interval, in seconds, between health checks of an individual container. You can specify between 5
+     * and 300 seconds. The default value is <code>5</code>.
      * </p>
      */
     private Integer intervalSeconds;
     /**
      * <p>
-     * The path on the container on which to perform the health check.
+     * The path on the container on which to perform the health check. The default value is <code>/</code>.
      * </p>
      */
     private String path;
@@ -73,12 +73,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health checks successes required before moving the container to the
-     * <code>Healthy</code> state.
+     * <code>Healthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @param healthyThreshold
      *        The number of consecutive health checks successes required before moving the container to the
-     *        <code>Healthy</code> state.
+     *        <code>Healthy</code> state. The default value is <code>2</code>.
      */
 
     public void setHealthyThreshold(Integer healthyThreshold) {
@@ -88,11 +88,11 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health checks successes required before moving the container to the
-     * <code>Healthy</code> state.
+     * <code>Healthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @return The number of consecutive health checks successes required before moving the container to the
-     *         <code>Healthy</code> state.
+     *         <code>Healthy</code> state. The default value is <code>2</code>.
      */
 
     public Integer getHealthyThreshold() {
@@ -102,12 +102,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health checks successes required before moving the container to the
-     * <code>Healthy</code> state.
+     * <code>Healthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @param healthyThreshold
      *        The number of consecutive health checks successes required before moving the container to the
-     *        <code>Healthy</code> state.
+     *        <code>Healthy</code> state. The default value is <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,12 +119,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health check failures required before moving the container to the
-     * <code>Unhealthy</code> state.
+     * <code>Unhealthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @param unhealthyThreshold
      *        The number of consecutive health check failures required before moving the container to the
-     *        <code>Unhealthy</code> state.
+     *        <code>Unhealthy</code> state. The default value is <code>2</code>.
      */
 
     public void setUnhealthyThreshold(Integer unhealthyThreshold) {
@@ -134,11 +134,11 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health check failures required before moving the container to the
-     * <code>Unhealthy</code> state.
+     * <code>Unhealthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @return The number of consecutive health check failures required before moving the container to the
-     *         <code>Unhealthy</code> state.
+     *         <code>Unhealthy</code> state. The default value is <code>2</code>.
      */
 
     public Integer getUnhealthyThreshold() {
@@ -148,12 +148,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The number of consecutive health check failures required before moving the container to the
-     * <code>Unhealthy</code> state.
+     * <code>Unhealthy</code> state. The default value is <code>2</code>.
      * </p>
      * 
      * @param unhealthyThreshold
      *        The number of consecutive health check failures required before moving the container to the
-     *        <code>Unhealthy</code> state.
+     *        <code>Unhealthy</code> state. The default value is <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,13 +164,13 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check. You may specify between 2
-     * and 60 seconds.
+     * The amount of time, in seconds, during which no response means a failed health check. You can specify between 2
+     * and 60 seconds. The default value is <code>2</code>.
      * </p>
      * 
      * @param timeoutSeconds
-     *        The amount of time, in seconds, during which no response means a failed health check. You may specify
-     *        between 2 and 60 seconds.
+     *        The amount of time, in seconds, during which no response means a failed health check. You can specify
+     *        between 2 and 60 seconds. The default value is <code>2</code>.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -179,12 +179,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check. You may specify between 2
-     * and 60 seconds.
+     * The amount of time, in seconds, during which no response means a failed health check. You can specify between 2
+     * and 60 seconds. The default value is <code>2</code>.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response means a failed health check. You may specify
-     *         between 2 and 60 seconds.
+     * @return The amount of time, in seconds, during which no response means a failed health check. You can specify
+     *         between 2 and 60 seconds. The default value is <code>2</code>.
      */
 
     public Integer getTimeoutSeconds() {
@@ -193,13 +193,13 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check. You may specify between 2
-     * and 60 seconds.
+     * The amount of time, in seconds, during which no response means a failed health check. You can specify between 2
+     * and 60 seconds. The default value is <code>2</code>.
      * </p>
      * 
      * @param timeoutSeconds
-     *        The amount of time, in seconds, during which no response means a failed health check. You may specify
-     *        between 2 and 60 seconds.
+     *        The amount of time, in seconds, during which no response means a failed health check. You can specify
+     *        between 2 and 60 seconds. The default value is <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,13 +210,13 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The approximate interval, in seconds, between health checks of an individual container. You may specify between 5
-     * and 300 seconds.
+     * The approximate interval, in seconds, between health checks of an individual container. You can specify between 5
+     * and 300 seconds. The default value is <code>5</code>.
      * </p>
      * 
      * @param intervalSeconds
-     *        The approximate interval, in seconds, between health checks of an individual container. You may specify
-     *        between 5 and 300 seconds.
+     *        The approximate interval, in seconds, between health checks of an individual container. You can specify
+     *        between 5 and 300 seconds. The default value is <code>5</code>.
      */
 
     public void setIntervalSeconds(Integer intervalSeconds) {
@@ -225,12 +225,12 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The approximate interval, in seconds, between health checks of an individual container. You may specify between 5
-     * and 300 seconds.
+     * The approximate interval, in seconds, between health checks of an individual container. You can specify between 5
+     * and 300 seconds. The default value is <code>5</code>.
      * </p>
      * 
-     * @return The approximate interval, in seconds, between health checks of an individual container. You may specify
-     *         between 5 and 300 seconds.
+     * @return The approximate interval, in seconds, between health checks of an individual container. You can specify
+     *         between 5 and 300 seconds. The default value is <code>5</code>.
      */
 
     public Integer getIntervalSeconds() {
@@ -239,13 +239,13 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The approximate interval, in seconds, between health checks of an individual container. You may specify between 5
-     * and 300 seconds.
+     * The approximate interval, in seconds, between health checks of an individual container. You can specify between 5
+     * and 300 seconds. The default value is <code>5</code>.
      * </p>
      * 
      * @param intervalSeconds
-     *        The approximate interval, in seconds, between health checks of an individual container. You may specify
-     *        between 5 and 300 seconds.
+     *        The approximate interval, in seconds, between health checks of an individual container. You can specify
+     *        between 5 and 300 seconds. The default value is <code>5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +256,11 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The path on the container on which to perform the health check.
+     * The path on the container on which to perform the health check. The default value is <code>/</code>.
      * </p>
      * 
      * @param path
-     *        The path on the container on which to perform the health check.
+     *        The path on the container on which to perform the health check. The default value is <code>/</code>.
      */
 
     public void setPath(String path) {
@@ -269,10 +269,10 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The path on the container on which to perform the health check.
+     * The path on the container on which to perform the health check. The default value is <code>/</code>.
      * </p>
      * 
-     * @return The path on the container on which to perform the health check.
+     * @return The path on the container on which to perform the health check. The default value is <code>/</code>.
      */
 
     public String getPath() {
@@ -281,11 +281,11 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The path on the container on which to perform the health check.
+     * The path on the container on which to perform the health check. The default value is <code>/</code>.
      * </p>
      * 
      * @param path
-     *        The path on the container on which to perform the health check.
+     *        The path on the container on which to perform the health check. The default value is <code>/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

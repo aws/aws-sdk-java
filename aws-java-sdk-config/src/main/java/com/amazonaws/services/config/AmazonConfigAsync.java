@@ -770,7 +770,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deletes the stored query for an AWS account in an AWS Region.
+     * Deletes the stored query for a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param deleteStoredQueryRequest
@@ -783,7 +783,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deletes the stored query for an AWS account in an AWS Region.
+     * Deletes the stored query for a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param deleteStoredQueryRequest
@@ -3052,7 +3052,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
      * </p>
      * 
      * @param listStoredQueriesRequest
@@ -3065,7 +3065,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
      * </p>
      * 
      * @param listStoredQueriesRequest
@@ -3265,14 +3265,26 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -3290,14 +3302,26 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -3526,6 +3550,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
 
     /**
+     * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
      * @param putExternalEvaluationRequest
      * @return A Java Future containing the result of the PutExternalEvaluation operation returned by the service.
      * @sample AmazonConfigAsync.PutExternalEvaluation
@@ -3535,6 +3564,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest putExternalEvaluationRequest);
 
     /**
+     * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
      * @param putExternalEvaluationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -3812,7 +3846,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -3832,7 +3866,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -3966,8 +4000,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
-     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param putStoredQueryRequest
@@ -3980,8 +4014,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
-     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param putStoredQueryRequest

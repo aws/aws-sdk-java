@@ -109,6 +109,39 @@ public class AmazonWorkMailMessageFlowAsyncClient extends AmazonWorkMailMessageF
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(PutRawMessageContentRequest request) {
+
+        return putRawMessageContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(final PutRawMessageContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRawMessageContentRequest, PutRawMessageContentResult> asyncHandler) {
+        final PutRawMessageContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRawMessageContentResult>() {
+            @Override
+            public PutRawMessageContentResult call() throws Exception {
+                PutRawMessageContentResult result = null;
+
+                try {
+                    result = executePutRawMessageContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

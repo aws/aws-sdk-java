@@ -20,13 +20,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StatusString {
 
-    ABORTED("ABORTED"),
-    ALL("ALL"),
-    FAILED("FAILED"),
-    FINISHED("FINISHED"),
+    SUBMITTED("SUBMITTED"),
     PICKED("PICKED"),
     STARTED("STARTED"),
-    SUBMITTED("SUBMITTED");
+    FINISHED("FINISHED"),
+    ABORTED("ABORTED"),
+    FAILED("FAILED"),
+    ALL("ALL");
 
     private String value;
 

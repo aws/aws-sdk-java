@@ -41,6 +41,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClass").build();
     private static final MarshallingInfo<List> INPUTDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputDevices").build();
+    private static final MarshallingInfo<List> INPUTPARTNERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputPartnerIds").build();
     private static final MarshallingInfo<String> INPUTSOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSourceType").build();
     private static final MarshallingInfo<List> MEDIACONNECTFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -82,6 +84,7 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getId(), ID_BINDING);
             protocolMarshaller.marshall(input.getInputClass(), INPUTCLASS_BINDING);
             protocolMarshaller.marshall(input.getInputDevices(), INPUTDEVICES_BINDING);
+            protocolMarshaller.marshall(input.getInputPartnerIds(), INPUTPARTNERIDS_BINDING);
             protocolMarshaller.marshall(input.getInputSourceType(), INPUTSOURCETYPE_BINDING);
             protocolMarshaller.marshall(input.getMediaConnectFlows(), MEDIACONNECTFLOWS_BINDING);
             protocolMarshaller.marshall(input.getName(), NAME_BINDING);

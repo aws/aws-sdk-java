@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExternalEvaluation" target="_top">AWS API
  *      Documentation</a>
@@ -25,18 +28,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExternalEvaluation implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
+     * </p>
+     */
     private String complianceResourceType;
-
+    /**
+     * <p>
+     * The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+     * </p>
+     */
     private String complianceResourceId;
-
+    /**
+     * <p>
+     * The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     * <code>NOT_APPLICABLE</code>.
+     * </p>
+     */
     private String complianceType;
-
+    /**
+     * <p>
+     * Supplementary information about the reason of compliance. For example, this task was completed on a specific
+     * date.
+     * </p>
+     */
     private String annotation;
-
+    /**
+     * <p>
+     * The time when the compliance was recorded.
+     * </p>
+     */
     private java.util.Date orderingTimestamp;
 
     /**
+     * <p>
+     * The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
+     * </p>
+     * 
      * @param complianceResourceType
+     *        The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
      */
 
     public void setComplianceResourceType(String complianceResourceType) {
@@ -44,7 +75,11 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
+     * </p>
+     * 
+     * @return The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
      */
 
     public String getComplianceResourceType() {
@@ -52,7 +87,12 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
+     * </p>
+     * 
      * @param complianceResourceType
+     *        The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +102,12 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+     * </p>
+     * 
      * @param complianceResourceId
+     *        The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
      */
 
     public void setComplianceResourceId(String complianceResourceId) {
@@ -70,7 +115,11 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+     * </p>
+     * 
+     * @return The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
      */
 
     public String getComplianceResourceId() {
@@ -78,7 +127,12 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+     * </p>
+     * 
      * @param complianceResourceId
+     *        The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +142,14 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     * <code>NOT_APPLICABLE</code>.
+     * </p>
+     * 
      * @param complianceType
+     *        The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     *        <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -97,7 +158,13 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     * <code>NOT_APPLICABLE</code>.
+     * </p>
+     * 
+     * @return The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     *         <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -106,7 +173,14 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     * <code>NOT_APPLICABLE</code>.
+     * </p>
+     * 
      * @param complianceType
+     *        The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     *        <code>NOT_APPLICABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -117,7 +191,14 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     * <code>NOT_APPLICABLE</code>.
+     * </p>
+     * 
      * @param complianceType
+     *        The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and
+     *        <code>NOT_APPLICABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -128,7 +209,14 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Supplementary information about the reason of compliance. For example, this task was completed on a specific
+     * date.
+     * </p>
+     * 
      * @param annotation
+     *        Supplementary information about the reason of compliance. For example, this task was completed on a
+     *        specific date.
      */
 
     public void setAnnotation(String annotation) {
@@ -136,7 +224,13 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * Supplementary information about the reason of compliance. For example, this task was completed on a specific
+     * date.
+     * </p>
+     * 
+     * @return Supplementary information about the reason of compliance. For example, this task was completed on a
+     *         specific date.
      */
 
     public String getAnnotation() {
@@ -144,7 +238,14 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Supplementary information about the reason of compliance. For example, this task was completed on a specific
+     * date.
+     * </p>
+     * 
      * @param annotation
+     *        Supplementary information about the reason of compliance. For example, this task was completed on a
+     *        specific date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +255,12 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The time when the compliance was recorded.
+     * </p>
+     * 
      * @param orderingTimestamp
+     *        The time when the compliance was recorded.
      */
 
     public void setOrderingTimestamp(java.util.Date orderingTimestamp) {
@@ -162,7 +268,11 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The time when the compliance was recorded.
+     * </p>
+     * 
+     * @return The time when the compliance was recorded.
      */
 
     public java.util.Date getOrderingTimestamp() {
@@ -170,7 +280,12 @@ public class ExternalEvaluation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The time when the compliance was recorded.
+     * </p>
+     * 
      * @param orderingTimestamp
+     *        The time when the compliance was recorded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

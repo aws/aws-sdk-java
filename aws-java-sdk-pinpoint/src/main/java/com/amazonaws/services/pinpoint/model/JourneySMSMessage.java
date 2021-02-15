@@ -38,6 +38,14 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
     private String messageType;
     /**
      * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     */
+    private String originationNumber;
+    /**
+     * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
@@ -123,6 +131,58 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public void setOriginationNumber(String originationNumber) {
+        this.originationNumber = originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @return The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *         assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *         using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public String getOriginationNumber() {
+        return this.originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneySMSMessage withOriginationNumber(String originationNumber) {
+        setOriginationNumber(originationNumber);
+        return this;
+    }
+
+    /**
+     * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
@@ -193,6 +253,8 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getMessageType() != null)
             sb.append("MessageType: ").append(getMessageType()).append(",");
+        if (getOriginationNumber() != null)
+            sb.append("OriginationNumber: ").append(getOriginationNumber()).append(",");
         if (getSenderId() != null)
             sb.append("SenderId: ").append(getSenderId());
         sb.append("}");
@@ -213,6 +275,10 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
             return false;
+        if (other.getOriginationNumber() == null ^ this.getOriginationNumber() == null)
+            return false;
+        if (other.getOriginationNumber() != null && other.getOriginationNumber().equals(this.getOriginationNumber()) == false)
+            return false;
         if (other.getSenderId() == null ^ this.getSenderId() == null)
             return false;
         if (other.getSenderId() != null && other.getSenderId().equals(this.getSenderId()) == false)
@@ -226,6 +292,7 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
+        hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());
         return hashCode;
     }

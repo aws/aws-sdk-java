@@ -56,6 +56,10 @@ public class CampaignSmsMessageJsonUnmarshaller implements Unmarshaller<Campaign
                     context.nextToken();
                     campaignSmsMessage.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OriginationNumber", targetDepth)) {
+                    context.nextToken();
+                    campaignSmsMessage.setOriginationNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SenderId", targetDepth)) {
                     context.nextToken();
                     campaignSmsMessage.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));

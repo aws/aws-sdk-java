@@ -31,6 +31,8 @@ public class CampaignSmsMessageMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> MESSAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageType").build();
+    private static final MarshallingInfo<String> ORIGINATIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginationNumber").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
 
@@ -52,6 +54,7 @@ public class CampaignSmsMessageMarshaller {
         try {
             protocolMarshaller.marshall(campaignSmsMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(campaignSmsMessage.getMessageType(), MESSAGETYPE_BINDING);
+            protocolMarshaller.marshall(campaignSmsMessage.getOriginationNumber(), ORIGINATIONNUMBER_BINDING);
             protocolMarshaller.marshall(campaignSmsMessage.getSenderId(), SENDERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

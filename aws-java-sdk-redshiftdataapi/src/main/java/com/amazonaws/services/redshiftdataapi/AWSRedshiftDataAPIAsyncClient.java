@@ -29,6 +29,11 @@ import java.util.concurrent.ExecutorService;
  * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
  * statements, which are committed if the statement succeeds.
  * </p>
+ * <p>
+ * For more information about the Amazon Redshift Data API, see <a
+ * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
+ * <i>Amazon Redshift Cluster Management Guide</i>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

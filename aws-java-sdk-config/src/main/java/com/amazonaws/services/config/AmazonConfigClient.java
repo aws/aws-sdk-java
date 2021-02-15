@@ -215,6 +215,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchConformancePackException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoSuchConformancePackExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KmsKeyArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidS3KmsKeyArnExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoSuchBucketExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -481,7 +484,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param batchGetAggregateResourceConfigRequest
      * @return Result of the BatchGetAggregateResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoSuchConfigurationAggregatorException
      *         You have specified a configuration aggregator that does not exist.
      * @sample AmazonConfig.BatchGetAggregateResourceConfig
@@ -560,7 +570,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param batchGetResourceConfigRequest
      * @return Result of the BatchGetResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
@@ -1254,10 +1271,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DeleteOrganizationConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
      *      target="_top">AWS API Documentation</a>
@@ -1376,10 +1424,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DeleteOrganizationConformancePack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack"
      *      target="_top">AWS API Documentation</a>
@@ -1667,7 +1746,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param deleteResourceConfigRequest
      * @return Result of the DeleteResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoRunningConfigurationRecorderException
      *         There is no configuration recorder running.
      * @sample AmazonConfig.DeleteResourceConfig
@@ -1781,13 +1867,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Deletes the stored query for an AWS account in an AWS Region.
+     * Deletes the stored query for a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param deleteStoredQueryRequest
      * @return Result of the DeleteStoredQuery operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @sample AmazonConfig.DeleteStoredQuery
@@ -1936,7 +2029,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param describeAggregateComplianceByConfigRulesRequest
      * @return Result of the DescribeAggregateComplianceByConfigRules operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3059,10 +3159,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRuleStatuses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
      *      target="_top">AWS API Documentation</a>
@@ -3136,10 +3267,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
      *      target="_top">AWS API Documentation</a>
@@ -3220,11 +3382,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConformancePackStatuses
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses"
@@ -3305,11 +3497,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConformancePacks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks"
      *      target="_top">AWS API Documentation</a>
@@ -3713,7 +3935,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateComplianceDetailsByConfigRuleRequest
      * @return Result of the GetAggregateComplianceDetailsByConfigRule operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3786,7 +4015,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateConfigRuleComplianceSummaryRequest
      * @return Result of the GetAggregateConfigRuleComplianceSummary operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3859,7 +4095,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateDiscoveredResourceCountsRequest
      * @return Result of the GetAggregateDiscoveredResourceCounts operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3926,7 +4169,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateResourceConfigRequest
      * @return Result of the GetAggregateResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoSuchConfigurationAggregatorException
      *         You have specified a configuration aggregator that does not exist.
      * @throws OversizedConfigurationItemException
@@ -4450,7 +4700,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getDiscoveredResourceCountsRequest
      * @return Result of the GetDiscoveredResourceCounts operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4521,10 +4778,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.GetOrganizationConfigRuleDetailedStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
      *      target="_top">AWS API Documentation</a>
@@ -4594,11 +4882,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.GetOrganizationConformancePackDetailedStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus"
@@ -4677,7 +4995,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *        The input for the <a>GetResourceConfigHistory</a> action.
      * @return Result of the GetResourceConfigHistory operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidTimeRangeException
      *         The specified time range is not valid. The earlier time is not chronologically before the later time.
      * @throws InvalidLimitException
@@ -4748,7 +5073,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getStoredQueryRequest
      * @return Result of the GetStoredQuery operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @sample AmazonConfig.GetStoredQuery
@@ -4815,7 +5147,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param listAggregateDiscoveredResourcesRequest
      * @return Result of the ListAggregateDiscoveredResources operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4895,7 +5234,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param listDiscoveredResourcesRequest
      * @return Result of the ListDiscoveredResources operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4956,13 +5302,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * List the stored queries for an AWS account in an AWS Region. The default is 100.
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
      * </p>
      * 
      * @param listStoredQueriesRequest
      * @return Result of the ListStoredQueries operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
@@ -5024,7 +5377,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -5330,14 +5690,26 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -5354,11 +5726,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidRoleException
      *         You have provided a null or empty role ARN.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -5684,6 +6086,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified Amazon S3 bucket does not exist.
      * @throws InvalidS3KeyPrefixException
      *         The specified Amazon S3 key prefix is not valid.
+     * @throws InvalidS3KmsKeyArnException
+     *         The specified Amazon KMS Key ARN is not valid.
      * @throws InvalidSNSTopicARNException
      *         The specified Amazon SNS topic does not exist.
      * @throws InsufficientDeliveryPolicyException
@@ -5800,6 +6204,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     }
 
     /**
+     * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
      * @param putExternalEvaluationRequest
      * @return Result of the PutExternalEvaluation operation returned by the service.
      * @throws NoSuchConfigRuleException
@@ -5948,12 +6357,50 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws ValidationException
-     *         The requested action is not valid.
-     * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         The requested action is not valid.</p>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws OrganizationAccessDeniedException
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -6133,12 +6580,50 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws ValidationException
-     *         The requested action is not valid.
-     * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         The requested action is not valid.</p>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws OrganizationAccessDeniedException
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws InsufficientPermissionsException
      *         Indicates one of the following errors:
      *         </p>
@@ -6349,7 +6834,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
      * <note>
      * <p>
@@ -6474,9 +6959,17 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param putResourceConfigRequest
      * @return Result of the PutResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InsufficientPermissionsException
-     *         Indicates one of the following errors:</p>
+     *         Indicates one of the following errors:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -6639,14 +7132,21 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for an AWS
-     * account in an AWS Region. You can create upto 300 queries in an AWS account in an AWS Region.
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
      * </p>
      * 
      * @param putStoredQueryRequest
      * @return Result of the PutStoredQuery operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws TooManyTagsException
      *         You have reached the limit of the number of tags you can use. You have more than 50 tags.
      * @throws ResourceConcurrentModificationException
@@ -7242,7 +7742,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @throws TooManyTagsException
@@ -7303,7 +7810,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @sample AmazonConfig.UntagResource

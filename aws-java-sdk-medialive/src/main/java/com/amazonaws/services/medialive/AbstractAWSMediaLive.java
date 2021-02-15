@@ -84,6 +84,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

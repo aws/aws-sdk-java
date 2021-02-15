@@ -60,6 +60,10 @@ public class DeliveryChannelJsonUnmarshaller implements Unmarshaller<DeliveryCha
                     context.nextToken();
                     deliveryChannel.setS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("s3KmsKeyArn", targetDepth)) {
+                    context.nextToken();
+                    deliveryChannel.setS3KmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("snsTopicARN", targetDepth)) {
                     context.nextToken();
                     deliveryChannel.setSnsTopicARN(context.getUnmarshaller(String.class).unmarshall(context));

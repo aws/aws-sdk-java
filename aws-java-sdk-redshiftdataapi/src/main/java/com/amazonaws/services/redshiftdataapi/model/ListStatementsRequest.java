@@ -43,6 +43,14 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
+     * A value that filters which statements to return in the response. If true, all statements run by the caller's IAM
+     * role are returned. If false, only statements run by the caller's IAM role in the current IAM session are
+     * returned. The default is true.
+     * </p>
+     */
+    private Boolean roleLevel;
+    /**
+     * <p>
      * The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query. You can
      * list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to
      * list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.
@@ -196,6 +204,74 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListStatementsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that filters which statements to return in the response. If true, all statements run by the caller's IAM
+     * role are returned. If false, only statements run by the caller's IAM role in the current IAM session are
+     * returned. The default is true.
+     * </p>
+     * 
+     * @param roleLevel
+     *        A value that filters which statements to return in the response. If true, all statements run by the
+     *        caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM
+     *        session are returned. The default is true.
+     */
+
+    public void setRoleLevel(Boolean roleLevel) {
+        this.roleLevel = roleLevel;
+    }
+
+    /**
+     * <p>
+     * A value that filters which statements to return in the response. If true, all statements run by the caller's IAM
+     * role are returned. If false, only statements run by the caller's IAM role in the current IAM session are
+     * returned. The default is true.
+     * </p>
+     * 
+     * @return A value that filters which statements to return in the response. If true, all statements run by the
+     *         caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM
+     *         session are returned. The default is true.
+     */
+
+    public Boolean getRoleLevel() {
+        return this.roleLevel;
+    }
+
+    /**
+     * <p>
+     * A value that filters which statements to return in the response. If true, all statements run by the caller's IAM
+     * role are returned. If false, only statements run by the caller's IAM role in the current IAM session are
+     * returned. The default is true.
+     * </p>
+     * 
+     * @param roleLevel
+     *        A value that filters which statements to return in the response. If true, all statements run by the
+     *        caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM
+     *        session are returned. The default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStatementsRequest withRoleLevel(Boolean roleLevel) {
+        setRoleLevel(roleLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that filters which statements to return in the response. If true, all statements run by the caller's IAM
+     * role are returned. If false, only statements run by the caller's IAM role in the current IAM session are
+     * returned. The default is true.
+     * </p>
+     * 
+     * @return A value that filters which statements to return in the response. If true, all statements run by the
+     *         caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM
+     *         session are returned. The default is true.
+     */
+
+    public Boolean isRoleLevel() {
+        return this.roleLevel;
     }
 
     /**
@@ -626,6 +702,8 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRoleLevel() != null)
+            sb.append("RoleLevel: ").append(getRoleLevel()).append(",");
         if (getStatementName() != null)
             sb.append("StatementName: ").append(getStatementName()).append(",");
         if (getStatus() != null)
@@ -652,6 +730,10 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getRoleLevel() == null ^ this.getRoleLevel() == null)
+            return false;
+        if (other.getRoleLevel() != null && other.getRoleLevel().equals(this.getRoleLevel()) == false)
+            return false;
         if (other.getStatementName() == null ^ this.getStatementName() == null)
             return false;
         if (other.getStatementName() != null && other.getStatementName().equals(this.getStatementName()) == false)
@@ -670,6 +752,7 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRoleLevel() == null) ? 0 : getRoleLevel().hashCode());
         hashCode = prime * hashCode + ((getStatementName() == null) ? 0 : getStatementName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;

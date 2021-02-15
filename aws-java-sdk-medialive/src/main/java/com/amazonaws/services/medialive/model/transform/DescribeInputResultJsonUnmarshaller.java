@@ -78,6 +78,12 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("inputPartnerIds", targetDepth)) {
+                    context.nextToken();
+                    describeInputResult.setInputPartnerIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("inputSourceType", targetDepth)) {
                     context.nextToken();
                     describeInputResult.setInputSourceType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -18,6 +18,14 @@ import javax.annotation.Generated;
  * <p>
  * The requested action is not valid.
  * </p>
+ * <p>
+ * For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the
+ * validation, or if you are trying to create more than 300 queries.
+ * </p>
+ * <p>
+ * For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required
+ * fields or if the input value fails the validation.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.config.model.AmazonConfigException {

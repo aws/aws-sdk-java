@@ -64,4 +64,67 @@ public interface AmazonWorkMailMessageFlowAsync extends AmazonWorkMailMessageFlo
     java.util.concurrent.Future<GetRawMessageContentResult> getRawMessageContentAsync(GetRawMessageContentRequest getRawMessageContentRequest,
             com.amazonaws.handlers.AsyncHandler<GetRawMessageContentRequest, GetRawMessageContentResult> asyncHandler);
 
+    /**
+     * <p>
+     * Updates the raw content of an in-transit email message, in MIME format.
+     * </p>
+     * <p>
+     * This example describes how to update in-transit email message. For more information and examples for using this
+     * API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating
+     * message content with AWS Lambda</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda
+     * function configured with a synchronous <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule.
+     * If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even
+     * though <a
+     * href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html"
+     * >GetRawMessageContent</a> returns an updated message.
+     * </p>
+     * </note>
+     * 
+     * @param putRawMessageContentRequest
+     * @return A Java Future containing the result of the PutRawMessageContent operation returned by the service.
+     * @sample AmazonWorkMailMessageFlowAsync.PutRawMessageContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(PutRawMessageContentRequest putRawMessageContentRequest);
+
+    /**
+     * <p>
+     * Updates the raw content of an in-transit email message, in MIME format.
+     * </p>
+     * <p>
+     * This example describes how to update in-transit email message. For more information and examples for using this
+     * API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating
+     * message content with AWS Lambda</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda
+     * function configured with a synchronous <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule.
+     * If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even
+     * though <a
+     * href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html"
+     * >GetRawMessageContent</a> returns an updated message.
+     * </p>
+     * </note>
+     * 
+     * @param putRawMessageContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRawMessageContent operation returned by the service.
+     * @sample AmazonWorkMailMessageFlowAsyncHandler.PutRawMessageContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRawMessageContentResult> putRawMessageContentAsync(PutRawMessageContentRequest putRawMessageContentRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRawMessageContentRequest, PutRawMessageContentResult> asyncHandler);
+
 }

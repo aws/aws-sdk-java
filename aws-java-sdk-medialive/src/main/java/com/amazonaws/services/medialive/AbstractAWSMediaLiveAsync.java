@@ -171,6 +171,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest request) {
+
+        return createPartnerInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);

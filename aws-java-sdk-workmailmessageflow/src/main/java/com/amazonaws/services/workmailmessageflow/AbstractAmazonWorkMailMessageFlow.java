@@ -33,6 +33,11 @@ public class AbstractAmazonWorkMailMessageFlow implements AmazonWorkMailMessageF
     }
 
     @Override
+    public PutRawMessageContentResult putRawMessageContent(PutRawMessageContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

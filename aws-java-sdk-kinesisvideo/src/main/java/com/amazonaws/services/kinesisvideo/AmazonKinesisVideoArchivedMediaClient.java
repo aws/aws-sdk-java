@@ -161,8 +161,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * StreamARN when invoking this API operation.
      * </p>
      * <p>
-     * As a prerequsite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>, specifying
-     * GET_CLIP for<code/> the <code>APIName</code> parameter.
+     * As a prerequisite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
+     * specifying GET_CLIP for<code/> the <code>APIName</code> parameter.
      * </p>
      * <p>
      * An Amazon Kinesis video stream has the following requirements for providing data through MP4:

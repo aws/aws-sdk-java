@@ -37,7 +37,7 @@ public class StoredQueryMetadata implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      * </p>
      */
     private String queryArn;
@@ -97,12 +97,12 @@ public class StoredQueryMetadata implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      * </p>
      * 
      * @param queryArn
      *        Amazon Resource Name (ARN) of the query. For example,
-     *        arn:partition:service:region:account-id:resource-type/resource-id.
+     *        arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      */
 
     public void setQueryArn(String queryArn) {
@@ -112,11 +112,11 @@ public class StoredQueryMetadata implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      * </p>
      * 
      * @return Amazon Resource Name (ARN) of the query. For example,
-     *         arn:partition:service:region:account-id:resource-type/resource-id.
+     *         arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      */
 
     public String getQueryArn() {
@@ -126,12 +126,12 @@ public class StoredQueryMetadata implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      * </p>
      * 
      * @param queryArn
      *        Amazon Resource Name (ARN) of the query. For example,
-     *        arn:partition:service:region:account-id:resource-type/resource-id.
+     *        arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

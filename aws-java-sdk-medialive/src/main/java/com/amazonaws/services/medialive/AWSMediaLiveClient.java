@@ -929,6 +929,72 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return Result of the CreatePartnerInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Limit exceeded
+     * @sample AWSMediaLive.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePartnerInput(request);
+    }
+
+    @SdkInternalApi
+    final CreatePartnerInputResult executeCreatePartnerInput(CreatePartnerInputRequest createPartnerInputRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPartnerInputRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePartnerInputRequest> request = null;
+        Response<CreatePartnerInputResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePartnerInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPartnerInputRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartnerInput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePartnerInputResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePartnerInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest

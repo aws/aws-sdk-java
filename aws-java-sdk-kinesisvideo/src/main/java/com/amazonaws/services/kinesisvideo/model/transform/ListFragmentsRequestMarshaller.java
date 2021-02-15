@@ -29,6 +29,8 @@ public class ListFragmentsRequestMarshaller {
 
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
     private static final MarshallingInfo<Long> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class ListFragmentsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listFragmentsRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(listFragmentsRequest.getStreamARN(), STREAMARN_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getFragmentSelector(), FRAGMENTSELECTOR_BINDING);

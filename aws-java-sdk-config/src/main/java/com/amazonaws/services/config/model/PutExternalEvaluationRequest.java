@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the AWS Config rule.
+     * </p>
+     */
     private String configRuleName;
-
+    /**
+     * <p>
+     * An <code>ExternalEvaluation</code> object that provides details about compliance.
+     * </p>
+     */
     private ExternalEvaluation externalEvaluation;
 
     /**
+     * <p>
+     * The name of the AWS Config rule.
+     * </p>
+     * 
      * @param configRuleName
+     *        The name of the AWS Config rule.
      */
 
     public void setConfigRuleName(String configRuleName) {
@@ -38,7 +52,11 @@ public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the AWS Config rule.
+     * </p>
+     * 
+     * @return The name of the AWS Config rule.
      */
 
     public String getConfigRuleName() {
@@ -46,7 +64,12 @@ public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The name of the AWS Config rule.
+     * </p>
+     * 
      * @param configRuleName
+     *        The name of the AWS Config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An <code>ExternalEvaluation</code> object that provides details about compliance.
+     * </p>
+     * 
      * @param externalEvaluation
+     *        An <code>ExternalEvaluation</code> object that provides details about compliance.
      */
 
     public void setExternalEvaluation(ExternalEvaluation externalEvaluation) {
@@ -64,7 +92,11 @@ public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>ExternalEvaluation</code> object that provides details about compliance.
+     * </p>
+     * 
+     * @return An <code>ExternalEvaluation</code> object that provides details about compliance.
      */
 
     public ExternalEvaluation getExternalEvaluation() {
@@ -72,7 +104,12 @@ public class PutExternalEvaluationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An <code>ExternalEvaluation</code> object that provides details about compliance.
+     * </p>
+     * 
      * @param externalEvaluation
+     *        An <code>ExternalEvaluation</code> object that provides details about compliance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
