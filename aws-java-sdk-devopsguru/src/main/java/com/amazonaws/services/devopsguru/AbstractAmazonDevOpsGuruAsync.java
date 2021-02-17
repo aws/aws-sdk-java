@@ -80,6 +80,19 @@ public class AbstractAmazonDevOpsGuruAsync extends AbstractAmazonDevOpsGuru impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(DescribeFeedbackRequest request) {
+
+        return describeFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(DescribeFeedbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFeedbackRequest, DescribeFeedbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(DescribeInsightRequest request) {
 
         return describeInsightAsync(request, null);

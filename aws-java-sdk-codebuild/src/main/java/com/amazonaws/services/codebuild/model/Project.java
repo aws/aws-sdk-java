@@ -231,6 +231,16 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ProjectBuildBatchConfig buildBatchConfig;
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     */
+    private Integer concurrentBuildLimit;
 
     /**
      * <p>
@@ -1702,6 +1712,67 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     */
+
+    public void setConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        this.concurrentBuildLimit = concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * 
+     * @return The maximum number of concurrent builds that are allowed for this project.</p>
+     *         <p>
+     *         New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *         current build count meets this limit, new builds are throttled and are not run.
+     */
+
+    public Integer getConcurrentBuildLimit() {
+        return this.concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        setConcurrentBuildLimit(concurrentBuildLimit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1760,7 +1831,9 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (getFileSystemLocations() != null)
             sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
         if (getBuildBatchConfig() != null)
-            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig());
+            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig()).append(",");
+        if (getConcurrentBuildLimit() != null)
+            sb.append("ConcurrentBuildLimit: ").append(getConcurrentBuildLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -1871,6 +1944,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildBatchConfig() != null && other.getBuildBatchConfig().equals(this.getBuildBatchConfig()) == false)
             return false;
+        if (other.getConcurrentBuildLimit() == null ^ this.getConcurrentBuildLimit() == null)
+            return false;
+        if (other.getConcurrentBuildLimit() != null && other.getConcurrentBuildLimit().equals(this.getConcurrentBuildLimit()) == false)
+            return false;
         return true;
     }
 
@@ -1903,6 +1980,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
         hashCode = prime * hashCode + ((getBuildBatchConfig() == null) ? 0 : getBuildBatchConfig().hashCode());
+        hashCode = prime * hashCode + ((getConcurrentBuildLimit() == null) ? 0 : getConcurrentBuildLimit().hashCode());
         return hashCode;
     }
 

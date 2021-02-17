@@ -1,3 +1,12 @@
+# __1.11.956__ __2021-02-16__
+## __AWS CodeBuild__
+  - ### Features
+    - This release provides per-project limits for the number of concurrent builds
+
+## __Amazon DevOps Guru__
+  - ### Features
+    - Amazon DevOps Guru is GA ready. This API update added a describeFeedback Api allows users to view submitted insight feedback. The release date is 02/16/2021
+
 # __1.11.955__ __2021-02-15__
 ## __AWS Config__
   - ### Features
@@ -85,6 +94,14 @@
 ## __AWS Elemental MediaConvert__
   - ### Features
     - AWS Elemental MediaConvert SDK has added support for WMA audio only ingest, SMPTE-TT text and image caption ingest, and MPEG-2 video in MXF OP1a outputs.
+
+## __AWS S3__
+  - ### Features
+    - Add `us-iso-east-1`, `us-isob-east-1`, `us-iso-west-1` regions to Regions enum
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add `us-iso-east-1`, `us-isob-east-1`, `us-iso-west-1` regions to Regions enum
 
 ## __Amazon GameLift__
   - ### Features

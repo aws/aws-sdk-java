@@ -205,6 +205,19 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
 
     private ProjectBuildBatchConfig buildBatchConfig;
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     */
+    private Integer concurrentBuildLimit;
 
     /**
      * <p>
@@ -1538,6 +1551,85 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     *        </p>
+     *        <p>
+     *        To remove this limit, set this value to -1.
+     */
+
+    public void setConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        this.concurrentBuildLimit = concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @return The maximum number of concurrent builds that are allowed for this project.</p>
+     *         <p>
+     *         New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *         current build count meets this limit, new builds are throttled and are not run.
+     *         </p>
+     *         <p>
+     *         To remove this limit, set this value to -1.
+     */
+
+    public Integer getConcurrentBuildLimit() {
+        return this.concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     *        </p>
+     *        <p>
+     *        To remove this limit, set this value to -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        setConcurrentBuildLimit(concurrentBuildLimit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1588,7 +1680,9 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getFileSystemLocations() != null)
             sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
         if (getBuildBatchConfig() != null)
-            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig());
+            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig()).append(",");
+        if (getConcurrentBuildLimit() != null)
+            sb.append("ConcurrentBuildLimit: ").append(getConcurrentBuildLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -1683,6 +1777,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getBuildBatchConfig() != null && other.getBuildBatchConfig().equals(this.getBuildBatchConfig()) == false)
             return false;
+        if (other.getConcurrentBuildLimit() == null ^ this.getConcurrentBuildLimit() == null)
+            return false;
+        if (other.getConcurrentBuildLimit() != null && other.getConcurrentBuildLimit().equals(this.getConcurrentBuildLimit()) == false)
+            return false;
         return true;
     }
 
@@ -1711,6 +1809,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
         hashCode = prime * hashCode + ((getBuildBatchConfig() == null) ? 0 : getBuildBatchConfig().hashCode());
+        hashCode = prime * hashCode + ((getConcurrentBuildLimit() == null) ? 0 : getConcurrentBuildLimit().hashCode());
         return hashCode;
     }
 

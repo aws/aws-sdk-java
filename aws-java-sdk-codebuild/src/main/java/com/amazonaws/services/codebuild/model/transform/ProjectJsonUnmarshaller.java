@@ -154,6 +154,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setBuildBatchConfig(ProjectBuildBatchConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("concurrentBuildLimit", targetDepth)) {
+                    context.nextToken();
+                    project.setConcurrentBuildLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

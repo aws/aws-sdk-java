@@ -206,6 +206,37 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
 
     /**
      * <p>
+     * Returns the most recent feedback submitted in the current AWS account and Region.
+     * </p>
+     * 
+     * @param describeFeedbackRequest
+     * @return A Java Future containing the result of the DescribeFeedback operation returned by the service.
+     * @sample AmazonDevOpsGuruAsync.DescribeFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(DescribeFeedbackRequest describeFeedbackRequest);
+
+    /**
+     * <p>
+     * Returns the most recent feedback submitted in the current AWS account and Region.
+     * </p>
+     * 
+     * @param describeFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFeedback operation returned by the service.
+     * @sample AmazonDevOpsGuruAsyncHandler.DescribeFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(DescribeFeedbackRequest describeFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFeedbackRequest, DescribeFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns details about an insight that you specify using its ID.
      * </p>
      * 

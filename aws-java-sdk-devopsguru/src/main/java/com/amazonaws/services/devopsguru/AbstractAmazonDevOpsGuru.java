@@ -48,6 +48,11 @@ public class AbstractAmazonDevOpsGuru implements AmazonDevOpsGuru {
     }
 
     @Override
+    public DescribeFeedbackResult describeFeedback(DescribeFeedbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInsightResult describeInsight(DescribeInsightRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

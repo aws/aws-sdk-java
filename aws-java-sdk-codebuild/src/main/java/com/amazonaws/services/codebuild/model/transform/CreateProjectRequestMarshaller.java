@@ -68,6 +68,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemLocations").build();
     private static final MarshallingInfo<StructuredPojo> BUILDBATCHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildBatchConfig").build();
+    private static final MarshallingInfo<Integer> CONCURRENTBUILDLIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("concurrentBuildLimit").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -105,6 +107,7 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getLogsConfig(), LOGSCONFIG_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getBuildBatchConfig(), BUILDBATCHCONFIG_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getConcurrentBuildLimit(), CONCURRENTBUILDLIMIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

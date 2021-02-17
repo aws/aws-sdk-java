@@ -224,6 +224,39 @@ public class AmazonDevOpsGuruAsyncClient extends AmazonDevOpsGuruClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(DescribeFeedbackRequest request) {
+
+        return describeFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFeedbackResult> describeFeedbackAsync(final DescribeFeedbackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFeedbackRequest, DescribeFeedbackResult> asyncHandler) {
+        final DescribeFeedbackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFeedbackResult>() {
+            @Override
+            public DescribeFeedbackResult call() throws Exception {
+                DescribeFeedbackResult result = null;
+
+                try {
+                    result = executeDescribeFeedback(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(DescribeInsightRequest request) {
 
         return describeInsightAsync(request, null);

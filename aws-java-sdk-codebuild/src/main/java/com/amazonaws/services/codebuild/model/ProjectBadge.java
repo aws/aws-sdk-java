@@ -38,9 +38,6 @@ public class ProjectBadge implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The publicly-accessible URL through which you can access the build badge for your project.
      * </p>
-     * <p>
-     * The publicly accessible URL through which you can access the build badge for your project.
-     * </p>
      */
     private String badgeRequestUrl;
 
@@ -100,14 +97,9 @@ public class ProjectBadge implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The publicly-accessible URL through which you can access the build badge for your project.
      * </p>
-     * <p>
-     * The publicly accessible URL through which you can access the build badge for your project.
-     * </p>
      * 
      * @param badgeRequestUrl
-     *        The publicly-accessible URL through which you can access the build badge for your project. </p>
-     *        <p>
-     *        The publicly accessible URL through which you can access the build badge for your project.
+     *        The publicly-accessible URL through which you can access the build badge for your project.
      */
 
     public void setBadgeRequestUrl(String badgeRequestUrl) {
@@ -118,13 +110,8 @@ public class ProjectBadge implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The publicly-accessible URL through which you can access the build badge for your project.
      * </p>
-     * <p>
-     * The publicly accessible URL through which you can access the build badge for your project.
-     * </p>
      * 
-     * @return The publicly-accessible URL through which you can access the build badge for your project. </p>
-     *         <p>
-     *         The publicly accessible URL through which you can access the build badge for your project.
+     * @return The publicly-accessible URL through which you can access the build badge for your project.
      */
 
     public String getBadgeRequestUrl() {
@@ -135,14 +122,9 @@ public class ProjectBadge implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The publicly-accessible URL through which you can access the build badge for your project.
      * </p>
-     * <p>
-     * The publicly accessible URL through which you can access the build badge for your project.
-     * </p>
      * 
      * @param badgeRequestUrl
-     *        The publicly-accessible URL through which you can access the build badge for your project. </p>
-     *        <p>
-     *        The publicly accessible URL through which you can access the build badge for your project.
+     *        The publicly-accessible URL through which you can access the build badge for your project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
