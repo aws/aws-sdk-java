@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the location of a manifest file.
+ * Information about the location training output.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/S3Location" target="_top">AWS API
@@ -30,24 +30,24 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contain the manifest file.
+     * The S3 bucket that contains the training output.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * The path and name of the manifest file with the S3 bucket.
+     * The path of the folder, within the S3 bucket, that contains the training output.
      * </p>
      */
     private String prefix;
 
     /**
      * <p>
-     * The S3 bucket that contain the manifest file.
+     * The S3 bucket that contains the training output.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that contain the manifest file.
+     *        The S3 bucket that contains the training output.
      */
 
     public void setBucket(String bucket) {
@@ -56,10 +56,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contain the manifest file.
+     * The S3 bucket that contains the training output.
      * </p>
      * 
-     * @return The S3 bucket that contain the manifest file.
+     * @return The S3 bucket that contains the training output.
      */
 
     public String getBucket() {
@@ -68,11 +68,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contain the manifest file.
+     * The S3 bucket that contains the training output.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that contain the manifest file.
+     *        The S3 bucket that contains the training output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path and name of the manifest file with the S3 bucket.
+     * The path of the folder, within the S3 bucket, that contains the training output.
      * </p>
      * 
      * @param prefix
-     *        The path and name of the manifest file with the S3 bucket.
+     *        The path of the folder, within the S3 bucket, that contains the training output.
      */
 
     public void setPrefix(String prefix) {
@@ -96,10 +96,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path and name of the manifest file with the S3 bucket.
+     * The path of the folder, within the S3 bucket, that contains the training output.
      * </p>
      * 
-     * @return The path and name of the manifest file with the S3 bucket.
+     * @return The path of the folder, within the S3 bucket, that contains the training output.
      */
 
     public String getPrefix() {
@@ -108,11 +108,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path and name of the manifest file with the S3 bucket.
+     * The path of the folder, within the S3 bucket, that contains the training output.
      * </p>
      * 
      * @param prefix
-     *        The path and name of the manifest file with the S3 bucket.
+     *        The path of the folder, within the S3 bucket, that contains the training output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

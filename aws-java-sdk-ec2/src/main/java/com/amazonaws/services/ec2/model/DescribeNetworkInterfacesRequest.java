@@ -174,8 +174,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -396,8 +396,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -592,8 +592,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *         AWS Management Console, Auto Scaling, and so on).
+     *         <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *         network interface.
      *         </p>
      *         </li>
      *         <li>
@@ -796,8 +796,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -993,8 +993,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1199,8 +1199,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -1401,8 +1401,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1609,8 +1609,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -1806,8 +1806,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>

@@ -71,7 +71,7 @@ public class ExportImageTask implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * Any tags assigned to the image being exported.
+     * Any tags assigned to the export image task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -364,10 +364,10 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the image being exported.
+     * Any tags assigned to the export image task.
      * </p>
      * 
-     * @return Any tags assigned to the image being exported.
+     * @return Any tags assigned to the export image task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -379,11 +379,11 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the image being exported.
+     * Any tags assigned to the export image task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being exported.
+     *        Any tags assigned to the export image task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -397,7 +397,7 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the image being exported.
+     * Any tags assigned to the export image task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -406,7 +406,7 @@ public class ExportImageTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being exported.
+     *        Any tags assigned to the export image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +422,11 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the image being exported.
+     * Any tags assigned to the export image task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being exported.
+     *        Any tags assigned to the export image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

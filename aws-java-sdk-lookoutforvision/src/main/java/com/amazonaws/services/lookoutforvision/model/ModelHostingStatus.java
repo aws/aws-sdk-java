@@ -20,10 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ModelHostingStatus {
 
-    RUNNING("RUNNING"),
-    STARTING("STARTING"),
-    STOPPED("STOPPED"),
-    FAILED("FAILED");
+    STARTING_HOSTING("STARTING_HOSTING"),
+    HOSTED("HOSTED"),
+    HOSTING_FAILED("HOSTING_FAILED"),
+    STOPPING_HOSTING("STOPPING_HOSTING"),
+    SYSTEM_UPDATING("SYSTEM_UPDATING");
 
     private String value;
 

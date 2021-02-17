@@ -166,7 +166,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationRequest> licenseSpecifications;
     /**
      * <p>
-     * The tags to apply to the image being imported.
+     * The tags to apply to the import image task during creation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -1129,10 +1129,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being imported.
+     * The tags to apply to the import image task during creation.
      * </p>
      * 
-     * @return The tags to apply to the image being imported.
+     * @return The tags to apply to the import image task during creation.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -1144,11 +1144,11 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being imported.
+     * The tags to apply to the import image task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being imported.
+     *        The tags to apply to the import image task during creation.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -1162,7 +1162,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being imported.
+     * The tags to apply to the import image task during creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1171,7 +1171,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being imported.
+     *        The tags to apply to the import image task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1187,11 +1187,11 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being imported.
+     * The tags to apply to the import image task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being imported.
+     *        The tags to apply to the import image task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

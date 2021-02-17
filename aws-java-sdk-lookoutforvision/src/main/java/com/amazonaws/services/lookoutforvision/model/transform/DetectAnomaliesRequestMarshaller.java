@@ -34,7 +34,7 @@ public class DetectAnomaliesRequestMarshaller {
     private static final MarshallingInfo<java.io.InputStream> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
     private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("content-type").build();
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Content-Type").build();
 
     private static final DetectAnomaliesRequestMarshaller instance = new DetectAnomaliesRequestMarshaller();
 

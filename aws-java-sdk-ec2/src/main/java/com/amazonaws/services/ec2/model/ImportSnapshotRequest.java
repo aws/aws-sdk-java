@@ -116,7 +116,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     private String roleName;
     /**
      * <p>
-     * The tags to apply to the snapshot being imported.
+     * The tags to apply to the import snapshot task during creation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -705,10 +705,10 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The tags to apply to the snapshot being imported.
+     * The tags to apply to the import snapshot task during creation.
      * </p>
      * 
-     * @return The tags to apply to the snapshot being imported.
+     * @return The tags to apply to the import snapshot task during creation.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -720,11 +720,11 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The tags to apply to the snapshot being imported.
+     * The tags to apply to the import snapshot task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the snapshot being imported.
+     *        The tags to apply to the import snapshot task during creation.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -738,7 +738,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The tags to apply to the snapshot being imported.
+     * The tags to apply to the import snapshot task during creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -747,7 +747,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the snapshot being imported.
+     *        The tags to apply to the import snapshot task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,11 +763,11 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The tags to apply to the snapshot being imported.
+     * The tags to apply to the import snapshot task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the snapshot being imported.
+     *        The tags to apply to the import snapshot task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

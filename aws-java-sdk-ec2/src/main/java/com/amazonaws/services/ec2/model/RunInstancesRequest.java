@@ -245,7 +245,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      */
     private IamInstanceProfileSpecification iamInstanceProfile;
@@ -2059,11 +2059,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
@@ -2072,10 +2072,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
-     * @return The IAM instance profile.
+     * @return The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public IamInstanceProfileSpecification getIamInstanceProfile() {
@@ -2084,11 +2084,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

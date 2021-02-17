@@ -33,7 +33,7 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored.
-     * The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     * The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      */
     private String certificateS3ObjectKey;
@@ -87,12 +87,12 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored.
-     * The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     * The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
      * @param certificateS3ObjectKey
      *        The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are
-     *        stored. The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     *        stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      */
 
     public void setCertificateS3ObjectKey(String certificateS3ObjectKey) {
@@ -102,11 +102,11 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored.
-     * The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     * The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
      * @return The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are
-     *         stored. The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     *         stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      */
 
     public String getCertificateS3ObjectKey() {
@@ -116,12 +116,12 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored.
-     * The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     * The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
      * @param certificateS3ObjectKey
      *        The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are
-     *        stored. The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+     *        stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

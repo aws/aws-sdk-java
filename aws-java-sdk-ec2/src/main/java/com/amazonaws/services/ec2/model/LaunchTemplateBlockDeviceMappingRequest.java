@@ -49,7 +49,7 @@ public class LaunchTemplateBlockDeviceMappingRequest implements Serializable, Cl
     private LaunchTemplateEbsBlockDeviceRequest ebs;
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      */
     private String noDevice;
@@ -194,11 +194,11 @@ public class LaunchTemplateBlockDeviceMappingRequest implements Serializable, Cl
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
      * @param noDevice
-     *        Suppresses the specified device included in the block device mapping of the AMI.
+     *        To omit the device from the block device mapping, specify an empty string.
      */
 
     public void setNoDevice(String noDevice) {
@@ -207,10 +207,10 @@ public class LaunchTemplateBlockDeviceMappingRequest implements Serializable, Cl
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
-     * @return Suppresses the specified device included in the block device mapping of the AMI.
+     * @return To omit the device from the block device mapping, specify an empty string.
      */
 
     public String getNoDevice() {
@@ -219,11 +219,11 @@ public class LaunchTemplateBlockDeviceMappingRequest implements Serializable, Cl
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
      * @param noDevice
-     *        Suppresses the specified device included in the block device mapping of the AMI.
+     *        To omit the device from the block device mapping, specify an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

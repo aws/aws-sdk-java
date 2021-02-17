@@ -98,13 +98,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
      * attributes.
      * </p>
-     * <important>
      * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
-     * <p>
-     * Default: <code>true</code> for supported endpoints
+     * Default: <code>true</code>
      * </p>
      */
     private Boolean privateDnsEnabled;
@@ -634,13 +629,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
      * attributes.
      * </p>
-     * <important>
      * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
-     * <p>
-     * Default: <code>true</code> for supported endpoints
+     * Default: <code>true</code>
      * </p>
      * 
      * @param privateDnsEnabled
@@ -655,13 +645,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      *        <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set
      *        the VPC attributes.
      *        </p>
-     *        <important>
      *        <p>
-     *        Private DNS is not supported for Amazon S3 interface endpoints.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        Default: <code>true</code> for supported endpoints
+     *        Default: <code>true</code>
      */
 
     public void setPrivateDnsEnabled(Boolean privateDnsEnabled) {
@@ -681,13 +666,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
      * attributes.
      * </p>
-     * <important>
      * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
-     * <p>
-     * Default: <code>true</code> for supported endpoints
+     * Default: <code>true</code>
      * </p>
      * 
      * @return (Interface endpoint) Indicates whether to associate a private hosted zone with the specified VPC. The
@@ -701,13 +681,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      *         <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set
      *         the VPC attributes.
      *         </p>
-     *         <important>
      *         <p>
-     *         Private DNS is not supported for Amazon S3 interface endpoints.
-     *         </p>
-     *         </important>
-     *         <p>
-     *         Default: <code>true</code> for supported endpoints
+     *         Default: <code>true</code>
      */
 
     public Boolean getPrivateDnsEnabled() {
@@ -727,13 +702,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
      * attributes.
      * </p>
-     * <important>
      * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
-     * <p>
-     * Default: <code>true</code> for supported endpoints
+     * Default: <code>true</code>
      * </p>
      * 
      * @param privateDnsEnabled
@@ -748,13 +718,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      *        <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set
      *        the VPC attributes.
      *        </p>
-     *        <important>
      *        <p>
-     *        Private DNS is not supported for Amazon S3 interface endpoints.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        Default: <code>true</code> for supported endpoints
+     *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,13 +741,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
      * attributes.
      * </p>
-     * <important>
      * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
-     * <p>
-     * Default: <code>true</code> for supported endpoints
+     * Default: <code>true</code>
      * </p>
      * 
      * @return (Interface endpoint) Indicates whether to associate a private hosted zone with the specified VPC. The
@@ -796,13 +756,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      *         <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set
      *         the VPC attributes.
      *         </p>
-     *         <important>
      *         <p>
-     *         Private DNS is not supported for Amazon S3 interface endpoints.
-     *         </p>
-     *         </important>
-     *         <p>
-     *         Default: <code>true</code> for supported endpoints
+     *         Default: <code>true</code>
      */
 
     public Boolean isPrivateDnsEnabled() {

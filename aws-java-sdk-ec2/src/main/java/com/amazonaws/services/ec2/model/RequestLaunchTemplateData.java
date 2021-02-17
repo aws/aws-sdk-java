@@ -50,7 +50,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      */
     private LaunchTemplateIamInstanceProfileSpecificationRequest iamInstanceProfile;
@@ -404,11 +404,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public void setIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecificationRequest iamInstanceProfile) {
@@ -417,10 +417,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
-     * @return The IAM instance profile.
+     * @return The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public LaunchTemplateIamInstanceProfileSpecificationRequest getIamInstanceProfile() {
@@ -429,11 +429,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

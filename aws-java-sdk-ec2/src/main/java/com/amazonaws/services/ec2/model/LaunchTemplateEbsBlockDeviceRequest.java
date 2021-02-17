@@ -72,9 +72,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
-     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
-     * or <code>standard</code> volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
+     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
+     * volumes.
      * </p>
      */
     private Integer iops;
@@ -92,12 +92,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     private String snapshotId;
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
-     * snapshot size.
-     * </p>
-     * <p>
-     * The following are the supported volumes sizes for each volume type:
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the
+     * supported volumes sizes for each volume type:
      * </p>
      * <ul>
      * <li>
@@ -125,7 +121,7 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. The default is <code>gp2</code>. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -290,9 +286,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
-     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
-     * or <code>standard</code> volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
+     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
+     * volumes.
      * </p>
      * 
      * @param iops
@@ -326,9 +322,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      *        </p>
      *        <p>
-     *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
-     *        <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
-     *        <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     *        This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
+     *        This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>standard</code> volumes.
      */
 
     public void setIops(Integer iops) {
@@ -368,9 +364,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
-     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
-     * or <code>standard</code> volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
+     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
+     * volumes.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
@@ -404,9 +400,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *         IOPS.
      *         </p>
      *         <p>
-     *         This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
-     *         <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
-     *         <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     *         This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
+     *         This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *         <code>standard</code> volumes.
      */
 
     public Integer getIops() {
@@ -446,9 +442,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
-     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
-     * or <code>standard</code> volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
+     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
+     * volumes.
      * </p>
      * 
      * @param iops
@@ -482,9 +478,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
      *        </p>
      *        <p>
-     *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
-     *        <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
-     *        <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     *        This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
+     *        This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>standard</code> volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,12 +571,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
-     * snapshot size.
-     * </p>
-     * <p>
-     * The following are the supported volumes sizes for each volume type:
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the
+     * supported volumes sizes for each volume type:
      * </p>
      * <ul>
      * <li>
@@ -606,12 +598,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * </ul>
      * 
      * @param volumeSize
-     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     *        snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
-     *        the snapshot size.</p>
-     *        <p>
-     *        The following are the supported volumes sizes for each volume type:
-     *        </p>
+     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are
+     *        the supported volumes sizes for each volume type:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -641,12 +629,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
-     * snapshot size.
-     * </p>
-     * <p>
-     * The following are the supported volumes sizes for each volume type:
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the
+     * supported volumes sizes for each volume type:
      * </p>
      * <ul>
      * <li>
@@ -671,12 +655,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * </li>
      * </ul>
      * 
-     * @return The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     *         snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
-     *         the snapshot size.</p>
-     *         <p>
-     *         The following are the supported volumes sizes for each volume type:
-     *         </p>
+     * @return The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following
+     *         are the supported volumes sizes for each volume type:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -706,12 +686,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
-     * snapshot size.
-     * </p>
-     * <p>
-     * The following are the supported volumes sizes for each volume type:
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the
+     * supported volumes sizes for each volume type:
      * </p>
      * <ul>
      * <li>
@@ -737,12 +713,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * </ul>
      * 
      * @param volumeSize
-     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
-     *        snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
-     *        the snapshot size.</p>
-     *        <p>
-     *        The following are the supported volumes sizes for each volume type:
-     *        </p>
+     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are
+     *        the supported volumes sizes for each volume type:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -774,13 +746,13 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The volume type. The default is <code>gp2</code>. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. The default is <code>gp2</code>. For more information, see <a
+     *        The volume type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see VolumeType
@@ -792,12 +764,12 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The volume type. The default is <code>gp2</code>. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The volume type. The default is <code>gp2</code>. For more information, see <a
+     * @return The volume type. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
      *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see VolumeType
@@ -809,13 +781,13 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The volume type. The default is <code>gp2</code>. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. The default is <code>gp2</code>. For more information, see <a
+     *        The volume type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -829,13 +801,13 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The volume type. The default is <code>gp2</code>. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. The default is <code>gp2</code>. For more information, see <a
+     *        The volume type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

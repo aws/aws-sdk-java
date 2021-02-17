@@ -193,10 +193,6 @@ public interface AmazonLookoutforVision {
      * </li>
      * </ul>
      * <p>
-     * It might take a while to delete the dataset. To check the current status, check the <code>Status</code> field in
-     * the response from a call to <a>DescribeDataset</a>.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.
      * </p>
      * 
@@ -225,6 +221,10 @@ public interface AmazonLookoutforVision {
      * <p>
      * Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the
      * <a>StopModel</a> operation.
+     * </p>
+     * <p>
+     * It might take a few seconds to delete a model. To determine if a model has been deleted, call <a>ListProjects</a>
+     * and check if the version of the model (<code>ModelVersion</code>) is in the <code>Models</code> array.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.
@@ -539,6 +539,9 @@ public interface AmazonLookoutforVision {
      * complete. To check the current state of the model, use <a>DescribeModel</a>.
      * </p>
      * <p>
+     * A model is ready to use when its status is <code>HOSTED</code>.
+     * </p>
+     * <p>
      * Once the model is running, you can detect custom labels in new images by calling <a>DetectAnomalies</a>.
      * </p>
      * <note>
@@ -576,8 +579,11 @@ public interface AmazonLookoutforVision {
 
     /**
      * <p>
-     * Stops a running model. The operation might take a while to complete. To check the current status, call
-     * <a>DescribeModel</a>.
+     * Stops the hosting of a running model. The operation might take a while to complete. To check the current status,
+     * call <a>DescribeModel</a>.
+     * </p>
+     * <p>
+     * After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.

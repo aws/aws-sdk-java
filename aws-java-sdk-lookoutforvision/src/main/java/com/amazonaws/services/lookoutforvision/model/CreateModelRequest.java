@@ -56,8 +56,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private OutputConfig outputConfig;
     /**
      * <p>
-     * The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting the
-     * model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     * The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     * encrypt training and test images copied into the service for model training. Your source images are unaffected.
+     * If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
      * </p>
      */
     private String kmsKeyId;
@@ -263,13 +264,16 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting the
-     * model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     * The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     * encrypt training and test images copied into the service for model training. Your source images are unaffected.
+     * If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting
-     *        the model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     *        The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     *        encrypt training and test images copied into the service for model training. Your source images are
+     *        unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and
+     *        manages.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -278,12 +282,15 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting the
-     * model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     * The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     * encrypt training and test images copied into the service for model training. Your source images are unaffected.
+     * If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
      * </p>
      * 
-     * @return The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting
-     *         the model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     * @return The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used
+     *         to encrypt training and test images copied into the service for model training. Your source images are
+     *         unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns
+     *         and manages.
      */
 
     public String getKmsKeyId() {
@@ -292,13 +299,16 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting the
-     * model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     * The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     * encrypt training and test images copied into the service for model training. Your source images are unaffected.
+     * If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encypting
-     *        the model. If this parameter is not specified, the model is encrypted by a key that AWS owns and manages.
+     *        The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK). The key is used to
+     *        encrypt training and test images copied into the service for model training. Your source images are
+     *        unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and
+     *        manages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

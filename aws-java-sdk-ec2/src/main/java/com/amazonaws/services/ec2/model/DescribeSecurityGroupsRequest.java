@@ -56,8 +56,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     * outbound security group rule.
+     * <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an outbound
+     * security group rule.
      * </p>
      * </li>
      * <li>
@@ -74,7 +74,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     * <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -118,8 +118,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an inbound
-     * security group rule.
+     * <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound security
+     * group rule.
      * </p>
      * </li>
      * <li>
@@ -136,7 +136,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code> |
-     * <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -243,8 +243,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     * outbound security group rule.
+     * <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an outbound
+     * security group rule.
      * </p>
      * </li>
      * <li>
@@ -261,7 +261,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     * <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -305,8 +305,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an inbound
-     * security group rule.
+     * <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound security
+     * group rule.
      * </p>
      * </li>
      * <li>
@@ -323,7 +323,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code> |
-     * <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -391,8 +391,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
-     *         <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in
-     *         an outbound security group rule.
+     *         <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an
+     *         outbound security group rule.
      *         </p>
      *         </li>
      *         <li>
@@ -409,7 +409,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <li>
      *         <p>
      *         <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     *         <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *         <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *         </p>
      *         </li>
      *         <li>
@@ -453,8 +453,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     *         inbound security group rule.
+     *         <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound
+     *         security group rule.
      *         </p>
      *         </li>
      *         <li>
@@ -471,7 +471,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <li>
      *         <p>
      *         <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (
-     *         <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *         <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *         </p>
      *         </li>
      *         <li>
@@ -549,8 +549,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     * outbound security group rule.
+     * <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an outbound
+     * security group rule.
      * </p>
      * </li>
      * <li>
@@ -567,7 +567,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     * <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -611,8 +611,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an inbound
-     * security group rule.
+     * <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound security
+     * group rule.
      * </p>
      * </li>
      * <li>
@@ -629,7 +629,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code> |
-     * <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -698,7 +698,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
+     *        <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an
      *        outbound security group rule.
      *        </p>
      *        </li>
@@ -716,7 +716,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>
@@ -760,8 +760,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     *        inbound security group rule.
+     *        <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound
+     *        security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -778,7 +778,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code>
-     *        | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>
@@ -858,8 +858,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     * outbound security group rule.
+     * <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an outbound
+     * security group rule.
      * </p>
      * </li>
      * <li>
@@ -876,7 +876,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     * <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -920,8 +920,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an inbound
-     * security group rule.
+     * <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound security
+     * group rule.
      * </p>
      * </li>
      * <li>
@@ -938,7 +938,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code> |
-     * <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -1012,7 +1012,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
+     *        <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an
      *        outbound security group rule.
      *        </p>
      *        </li>
@@ -1030,7 +1030,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>
@@ -1074,8 +1074,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     *        inbound security group rule.
+     *        <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound
+     *        security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -1092,7 +1092,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code>
-     *        | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>
@@ -1174,8 +1174,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     * outbound security group rule.
+     * <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an outbound
+     * security group rule.
      * </p>
      * </li>
      * <li>
@@ -1192,7 +1192,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     * <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -1236,8 +1236,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an inbound
-     * security group rule.
+     * <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound security
+     * group rule.
      * </p>
      * </li>
      * <li>
@@ -1254,7 +1254,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code> |
-     * <code>udp</code> | <code>icmp</code> or a protocol number).
+     * <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      * </p>
      * </li>
      * <li>
@@ -1323,7 +1323,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.group-name</code> - The name of a security group that has been referenced in an
+     *        <code>egress.ip-permission.group-name</code> - The name of a security group that is referenced in an
      *        outbound security group rule.
      *        </p>
      *        </li>
@@ -1341,7 +1341,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security group rule (
-     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        <code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>
@@ -1385,8 +1385,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.group-name</code> - The name of a security group that has been referenced in an
-     *        inbound security group rule.
+     *        <code>ip-permission.group-name</code> - The name of a security group that is referenced in an inbound
+     *        security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -1403,7 +1403,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.protocol</code> - The IP protocol for an inbound security group rule (<code>tcp</code>
-     *        | <code>udp</code> | <code>icmp</code> or a protocol number).
+     *        | <code>udp</code> | <code>icmp</code>, a protocol number, or -1 for all protocols).
      *        </p>
      *        </li>
      *        <li>

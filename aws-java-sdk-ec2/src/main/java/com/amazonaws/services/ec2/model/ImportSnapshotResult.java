@@ -43,7 +43,7 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
     private SnapshotTaskDetail snapshotTaskDetail;
     /**
      * <p>
-     * Any tags assigned to the snapshot being imported.
+     * Any tags assigned to the import snapshot task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -170,10 +170,10 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Any tags assigned to the snapshot being imported.
+     * Any tags assigned to the import snapshot task.
      * </p>
      * 
-     * @return Any tags assigned to the snapshot being imported.
+     * @return Any tags assigned to the import snapshot task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -185,11 +185,11 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Any tags assigned to the snapshot being imported.
+     * Any tags assigned to the import snapshot task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the snapshot being imported.
+     *        Any tags assigned to the import snapshot task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -203,7 +203,7 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Any tags assigned to the snapshot being imported.
+     * Any tags assigned to the import snapshot task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -212,7 +212,7 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the snapshot being imported.
+     *        Any tags assigned to the import snapshot task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +228,11 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Any tags assigned to the snapshot being imported.
+     * Any tags assigned to the import snapshot task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the snapshot being imported.
+     *        Any tags assigned to the import snapshot task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

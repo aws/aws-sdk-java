@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ConformancePackComplianceType {
 
     COMPLIANT("COMPLIANT"),
-    NON_COMPLIANT("NON_COMPLIANT");
+    NON_COMPLIANT("NON_COMPLIANT"),
+    INSUFFICIENT_DATA("INSUFFICIENT_DATA");
 
     private String value;
 

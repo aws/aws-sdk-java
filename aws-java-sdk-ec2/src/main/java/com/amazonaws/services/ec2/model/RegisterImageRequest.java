@@ -52,6 +52,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
@@ -335,6 +339,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
@@ -343,6 +351,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * 
      * @return The block device mapping entries.</p>
+     *         <p>
+     *         If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *         the volume.
+     *         </p>
      *         <p>
      *         If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *         Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances
@@ -363,6 +375,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
@@ -372,6 +388,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * 
      * @param blockDeviceMappings
      *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
      *        <p>
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
@@ -394,6 +414,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
@@ -408,6 +432,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * 
      * @param blockDeviceMappings
      *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
      *        <p>
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
@@ -432,6 +460,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
@@ -441,6 +473,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * 
      * @param blockDeviceMappings
      *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
      *        <p>
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on

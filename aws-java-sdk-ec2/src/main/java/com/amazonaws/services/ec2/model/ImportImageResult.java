@@ -110,7 +110,7 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationResponse> licenseSpecifications;
     /**
      * <p>
-     * Any tags assigned to the image being imported.
+     * Any tags assigned to the import image task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -761,10 +761,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Any tags assigned to the image being imported.
+     * Any tags assigned to the import image task.
      * </p>
      * 
-     * @return Any tags assigned to the image being imported.
+     * @return Any tags assigned to the import image task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -776,11 +776,11 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Any tags assigned to the image being imported.
+     * Any tags assigned to the import image task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being imported.
+     *        Any tags assigned to the import image task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -794,7 +794,7 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Any tags assigned to the image being imported.
+     * Any tags assigned to the import image task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -803,7 +803,7 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being imported.
+     *        Any tags assigned to the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -819,11 +819,11 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Any tags assigned to the image being imported.
+     * Any tags assigned to the import image task.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the image being imported.
+     *        Any tags assigned to the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

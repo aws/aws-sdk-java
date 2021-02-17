@@ -2283,7 +2283,8 @@
       "type":"string",
       "enum":[
         "COMPLIANT",
-        "NON_COMPLIANT"
+        "NON_COMPLIANT",
+        "INSUFFICIENT_DATA"
       ]
     },
     "ConformancePackConfigRuleNames":{

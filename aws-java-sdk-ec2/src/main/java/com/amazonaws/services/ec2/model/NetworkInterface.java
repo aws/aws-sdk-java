@@ -112,8 +112,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NetworkInterfacePrivateIpAddress> privateIpAddresses;
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      */
     private String requesterId;
@@ -848,13 +847,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
+     *        The alias or AWS account ID of the principal or service that created the network interface.
      */
 
     public void setRequesterId(String requesterId) {
@@ -863,12 +860,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
-     * @return The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *         Auto Scaling).
+     * @return The alias or AWS account ID of the principal or service that created the network interface.
      */
 
     public String getRequesterId() {
@@ -877,13 +872,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
+     *        The alias or AWS account ID of the principal or service that created the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

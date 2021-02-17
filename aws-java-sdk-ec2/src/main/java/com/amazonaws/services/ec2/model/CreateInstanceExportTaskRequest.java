@@ -34,7 +34,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     private String description;
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      */
     private ExportToS3TaskSpecification exportToS3Task;
@@ -52,7 +52,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     private String targetEnvironment;
     /**
      * <p>
-     * The tags to apply to the instance export task during creation.
+     * The tags to apply to the export instance task during creation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -102,11 +102,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
      * @param exportToS3Task
-     *        The format and location for an instance export task.
+     *        The format and location for an export instance task.
      */
 
     public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
@@ -115,10 +115,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
-     * @return The format and location for an instance export task.
+     * @return The format and location for an export instance task.
      */
 
     public ExportToS3TaskSpecification getExportToS3Task() {
@@ -127,11 +127,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
      * @param exportToS3Task
-     *        The format and location for an instance export task.
+     *        The format and location for an export instance task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,10 +255,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags to apply to the instance export task during creation.
+     * The tags to apply to the export instance task during creation.
      * </p>
      * 
-     * @return The tags to apply to the instance export task during creation.
+     * @return The tags to apply to the export instance task during creation.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -270,11 +270,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags to apply to the instance export task during creation.
+     * The tags to apply to the export instance task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the instance export task during creation.
+     *        The tags to apply to the export instance task during creation.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -288,7 +288,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags to apply to the instance export task during creation.
+     * The tags to apply to the export instance task during creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,7 +297,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the instance export task during creation.
+     *        The tags to apply to the export instance task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags to apply to the instance export task during creation.
+     * The tags to apply to the export instance task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the instance export task during creation.
+     *        The tags to apply to the export instance task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

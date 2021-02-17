@@ -65,7 +65,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
     private String roleName;
     /**
      * <p>
-     * The tags to apply to the image being exported.
+     * The tags to apply to the export image task during creation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -343,10 +343,10 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being exported.
+     * The tags to apply to the export image task during creation.
      * </p>
      * 
-     * @return The tags to apply to the image being exported.
+     * @return The tags to apply to the export image task during creation.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -358,11 +358,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being exported.
+     * The tags to apply to the export image task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being exported.
+     *        The tags to apply to the export image task during creation.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -376,7 +376,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being exported.
+     * The tags to apply to the export image task during creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -385,7 +385,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being exported.
+     *        The tags to apply to the export image task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,11 +401,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags to apply to the image being exported.
+     * The tags to apply to the export image task during creation.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the image being exported.
+     *        The tags to apply to the export image task during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

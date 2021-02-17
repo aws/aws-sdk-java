@@ -88,11 +88,6 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
-     * <important>
-     * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
      */
     private Boolean privateDnsEnabled;
 
@@ -692,17 +687,9 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
-     * <important>
-     * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
      * 
      * @param privateDnsEnabled
-     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p> <important>
-     *        <p>
-     *        Private DNS is not supported for Amazon S3 interface endpoints.
-     *        </p>
+     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public void setPrivateDnsEnabled(Boolean privateDnsEnabled) {
@@ -713,16 +700,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
-     * <important>
-     * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
      * 
-     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p> <important>
-     *         <p>
-     *         Private DNS is not supported for Amazon S3 interface endpoints.
-     *         </p>
+     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public Boolean getPrivateDnsEnabled() {
@@ -733,17 +712,9 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
-     * <important>
-     * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
      * 
      * @param privateDnsEnabled
-     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p> <important>
-     *        <p>
-     *        Private DNS is not supported for Amazon S3 interface endpoints.
-     *        </p>
+     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,16 +727,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
-     * <important>
-     * <p>
-     * Private DNS is not supported for Amazon S3 interface endpoints.
-     * </p>
-     * </important>
      * 
-     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p> <important>
-     *         <p>
-     *         Private DNS is not supported for Amazon S3 interface endpoints.
-     *         </p>
+     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public Boolean isPrivateDnsEnabled() {

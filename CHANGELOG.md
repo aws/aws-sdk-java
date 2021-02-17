@@ -1,3 +1,16 @@
+# __1.11.957__ __2021-02-17__
+## __AWS Config__
+  - ### Features
+    - Added INSUFFICIENT_DATA in ConformancePackComplianceType.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release includes a new filter for describe-vpc-endpoint-services.
+
+## __Amazon Lookout for Vision__
+  - ### Features
+    - This release for Amazon Lookout for Vision includes documentation updates and a correction to the Status field returned in the response from StartModel and StopModel.
+
 # __1.11.956__ __2021-02-16__
 ## __AWS CodeBuild__
   - ### Features
