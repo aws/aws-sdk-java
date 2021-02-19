@@ -44,6 +44,10 @@ public class DescribeStackSetRequestMarshaller implements Marshaller<Request<Des
             request.addParameter("StackSetName", StringUtils.fromString(describeStackSetRequest.getStackSetName()));
         }
 
+        if (describeStackSetRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(describeStackSetRequest.getCallAs()));
+        }
+
         return request;
     }
 

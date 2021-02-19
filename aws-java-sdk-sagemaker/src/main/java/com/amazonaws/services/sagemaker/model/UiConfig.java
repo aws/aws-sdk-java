@@ -43,7 +43,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
-     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job task type to select one of the following ARNs and use it with this parameter when you create a
      * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
      * </p>
      * <p>
@@ -174,7 +174,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
-     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job task type to select one of the following ARNs and use it with this parameter when you create a
      * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
      * </p>
      * <p>
@@ -243,7 +243,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *        <p>
      *        Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
-     *        Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *        Use your labeling job task type to select one of the following ARNs and use it with this parameter when
      *        you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
      *        labeling job in.
      *        </p>
@@ -319,7 +319,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
-     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job task type to select one of the following ARNs and use it with this parameter when you create a
      * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
      * </p>
      * <p>
@@ -387,7 +387,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * @return The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *         <p>
      *         Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
-     *         Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *         Use your labeling job task type to select one of the following ARNs and use it with this parameter when
      *         you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
      *         labeling job in.
      *         </p>
@@ -463,7 +463,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
-     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job task type to select one of the following ARNs and use it with this parameter when you create a
      * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
      * </p>
      * <p>
@@ -532,7 +532,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *        <p>
      *        Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
-     *        Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *        Use your labeling job task type to select one of the following ARNs and use it with this parameter when
      *        you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
      *        labeling job in.
      *        </p>

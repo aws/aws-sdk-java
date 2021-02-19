@@ -29,6 +29,8 @@ public class S3ReportExportConfigMarshaller {
 
     private static final MarshallingInfo<String> BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bucket").build();
+    private static final MarshallingInfo<String> BUCKETOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketOwner").build();
     private static final MarshallingInfo<String> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("path").build();
     private static final MarshallingInfo<String> PACKAGING_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class S3ReportExportConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(s3ReportExportConfig.getBucket(), BUCKET_BINDING);
+            protocolMarshaller.marshall(s3ReportExportConfig.getBucketOwner(), BUCKETOWNER_BINDING);
             protocolMarshaller.marshall(s3ReportExportConfig.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(s3ReportExportConfig.getPackaging(), PACKAGING_BINDING);
             protocolMarshaller.marshall(s3ReportExportConfig.getEncryptionKey(), ENCRYPTIONKEY_BINDING);

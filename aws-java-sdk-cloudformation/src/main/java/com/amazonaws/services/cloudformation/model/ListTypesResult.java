@@ -25,7 +25,7 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TypeSummary> typeSummaries;
@@ -41,10 +41,10 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * </p>
      * 
-     * @return A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * @return A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      */
 
     public java.util.List<TypeSummary> getTypeSummaries() {
@@ -56,11 +56,11 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * </p>
      * 
      * @param typeSummaries
-     *        A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     *        A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      */
 
     public void setTypeSummaries(java.util.Collection<TypeSummary> typeSummaries) {
@@ -74,7 +74,7 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param typeSummaries
-     *        A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     *        A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class ListTypesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     * A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * </p>
      * 
      * @param typeSummaries
-     *        A list of <code>TypeSummary</code> structures that contain information about the specified types.
+     *        A list of <code>TypeSummary</code> structures that contain information about the specified extensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

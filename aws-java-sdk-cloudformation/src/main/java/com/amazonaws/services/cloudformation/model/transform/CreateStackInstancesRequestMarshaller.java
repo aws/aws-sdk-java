@@ -206,6 +206,10 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(createStackInstancesRequest.getOperationId()));
 
+        if (createStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(createStackInstancesRequest.getCallAs()));
+        }
+
         return request;
     }
 

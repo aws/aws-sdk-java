@@ -31,7 +31,7 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the inputs for the processing job.
+     * The name for the processing job input.
      * </p>
      */
     private String inputName;
@@ -44,7 +44,7 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
     private Boolean appManaged;
     /**
      * <p>
-     * Configuration for processing job inputs in Amazon S3.
+     * Configuration for downloading input data from Amazon S3 into the processing container.
      * </p>
      */
     private ProcessingS3Input s3Input;
@@ -57,11 +57,11 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the inputs for the processing job.
+     * The name for the processing job input.
      * </p>
      * 
      * @param inputName
-     *        The name of the inputs for the processing job.
+     *        The name for the processing job input.
      */
 
     public void setInputName(String inputName) {
@@ -70,10 +70,10 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the inputs for the processing job.
+     * The name for the processing job input.
      * </p>
      * 
-     * @return The name of the inputs for the processing job.
+     * @return The name for the processing job input.
      */
 
     public String getInputName() {
@@ -82,11 +82,11 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the inputs for the processing job.
+     * The name for the processing job input.
      * </p>
      * 
      * @param inputName
-     *        The name of the inputs for the processing job.
+     *        The name for the processing job input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +157,11 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration for processing job inputs in Amazon S3.
+     * Configuration for downloading input data from Amazon S3 into the processing container.
      * </p>
      * 
      * @param s3Input
-     *        Configuration for processing job inputs in Amazon S3.
+     *        Configuration for downloading input data from Amazon S3 into the processing container.
      */
 
     public void setS3Input(ProcessingS3Input s3Input) {
@@ -170,10 +170,10 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration for processing job inputs in Amazon S3.
+     * Configuration for downloading input data from Amazon S3 into the processing container.
      * </p>
      * 
-     * @return Configuration for processing job inputs in Amazon S3.
+     * @return Configuration for downloading input data from Amazon S3 into the processing container.
      */
 
     public ProcessingS3Input getS3Input() {
@@ -182,11 +182,11 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration for processing job inputs in Amazon S3.
+     * Configuration for downloading input data from Amazon S3 into the processing container.
      * </p>
      * 
      * @param s3Input
-     *        Configuration for processing job inputs in Amazon S3.
+     *        Configuration for downloading input data from Amazon S3 into the processing container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,6 +44,10 @@ public class DeleteStackSetRequestMarshaller implements Marshaller<Request<Delet
             request.addParameter("StackSetName", StringUtils.fromString(deleteStackSetRequest.getStackSetName()));
         }
 
+        if (deleteStackSetRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(deleteStackSetRequest.getCallAs()));
+        }
+
         return request;
     }
 

@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
- * accounts that are added to a target organization or organizational unit (OU).
+ * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that
+ * are added to a target organization or organizational unit (OU).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AutoDeployment" target="_top">AWS API

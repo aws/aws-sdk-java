@@ -53,6 +53,10 @@ public class ListStackSetOperationsRequestMarshaller implements Marshaller<Reque
             request.addParameter("MaxResults", StringUtils.fromInteger(listStackSetOperationsRequest.getMaxResults()));
         }
 
+        if (listStackSetOperationsRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(listStackSetOperationsRequest.getCallAs()));
+        }
+
         return request;
     }
 

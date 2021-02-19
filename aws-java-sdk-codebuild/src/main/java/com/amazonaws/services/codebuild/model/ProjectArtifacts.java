@@ -49,7 +49,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -257,8 +257,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
-     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
-     * invalidInputException is thrown.
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown.
      * </p>
      */
     private Boolean encryptionDisabled;
@@ -290,7 +289,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -314,7 +313,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon S3.
      *        </p>
      *        </li>
      * @see ArtifactsType
@@ -345,7 +344,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -368,7 +367,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     *         <code>S3</code>: The build project stores build output in Amazon S3.
      *         </p>
      *         </li>
      * @see ArtifactsType
@@ -399,7 +398,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -423,7 +422,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -456,7 +455,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -480,7 +479,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon S3.
      *        </p>
      *        </li>
      * @see ArtifactsType
@@ -511,7 +510,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -535,7 +534,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2114,14 +2113,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
-     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
-     * invalidInputException is thrown.
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown.
      * </p>
      * 
      * @param encryptionDisabled
      *        Set to true if you do not want your output artifacts encrypted. This option is valid only if your
-     *        artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
-     *        an invalidInputException is thrown.
+     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is
+     *        thrown.
      */
 
     public void setEncryptionDisabled(Boolean encryptionDisabled) {
@@ -2131,13 +2129,12 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
-     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
-     * invalidInputException is thrown.
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown.
      * </p>
      * 
      * @return Set to true if you do not want your output artifacts encrypted. This option is valid only if your
-     *         artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
-     *         an invalidInputException is thrown.
+     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is
+     *         thrown.
      */
 
     public Boolean getEncryptionDisabled() {
@@ -2147,14 +2144,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
-     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
-     * invalidInputException is thrown.
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown.
      * </p>
      * 
      * @param encryptionDisabled
      *        Set to true if you do not want your output artifacts encrypted. This option is valid only if your
-     *        artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
-     *        an invalidInputException is thrown.
+     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is
+     *        thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2166,13 +2162,12 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
-     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
-     * invalidInputException is thrown.
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown.
      * </p>
      * 
      * @return Set to true if you do not want your output artifacts encrypted. This option is valid only if your
-     *         artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
-     *         an invalidInputException is thrown.
+     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is
+     *         thrown.
      */
 
     public Boolean isEncryptionDisabled() {

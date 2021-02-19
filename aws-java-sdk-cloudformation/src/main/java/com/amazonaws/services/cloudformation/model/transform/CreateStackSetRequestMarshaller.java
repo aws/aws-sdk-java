@@ -161,6 +161,10 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             }
         }
 
+        if (createStackSetRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(createStackSetRequest.getCallAs()));
+        }
+
         request.addParameter("ClientRequestToken", IdempotentUtils.resolveString(createStackSetRequest.getClientRequestToken()));
 
         return request;

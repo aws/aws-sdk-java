@@ -36,6 +36,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
     private String bucket;
     /**
      * <p>
+     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
+     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * </p>
+     */
+    private String bucketOwner;
+    /**
+     * <p>
      * The path to the exported report's raw data results.
      * </p>
      */
@@ -109,6 +116,52 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
 
     public S3ReportExportConfig withBucket(String bucket) {
         setBucket(bucket);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
+     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * </p>
+     * 
+     * @param bucketOwner
+     *        The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to
+     *        an Amazon S3 bucket that is owned by an account other than the account running the build.
+     */
+
+    public void setBucketOwner(String bucketOwner) {
+        this.bucketOwner = bucketOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
+     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * </p>
+     * 
+     * @return The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported
+     *         to an Amazon S3 bucket that is owned by an account other than the account running the build.
+     */
+
+    public String getBucketOwner() {
+        return this.bucketOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
+     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * </p>
+     * 
+     * @param bucketOwner
+     *        The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to
+     *        an Amazon S3 bucket that is owned by an account other than the account running the build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3ReportExportConfig withBucketOwner(String bucketOwner) {
+        setBucketOwner(bucketOwner);
         return this;
     }
 
@@ -417,6 +470,8 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getBucket() != null)
             sb.append("Bucket: ").append(getBucket()).append(",");
+        if (getBucketOwner() != null)
+            sb.append("BucketOwner: ").append(getBucketOwner()).append(",");
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getPackaging() != null)
@@ -443,6 +498,10 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
             return false;
         if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
             return false;
+        if (other.getBucketOwner() == null ^ this.getBucketOwner() == null)
+            return false;
+        if (other.getBucketOwner() != null && other.getBucketOwner().equals(this.getBucketOwner()) == false)
+            return false;
         if (other.getPath() == null ^ this.getPath() == null)
             return false;
         if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
@@ -468,6 +527,7 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime * hashCode + ((getBucketOwner() == null) ? 0 : getBucketOwner().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getPackaging() == null) ? 0 : getPackaging().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());

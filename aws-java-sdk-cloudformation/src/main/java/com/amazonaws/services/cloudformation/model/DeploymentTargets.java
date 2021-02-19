@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does
- * not deploy stack instances to the organization management account, even if the organization management account is in
- * your organization or in an OU in your organization.
+ * [Service-managed permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy
+ * stack instances to the organization management account, even if the organization management account is in your
+ * organization or in an OU in your organization.
  * </p>
  * <p>
  * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create

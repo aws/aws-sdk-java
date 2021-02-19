@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the
- * destination, such as Amazon Simple Storage Service (Amazon S3).
+ * destination, such as Amazon S3.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ResolvedArtifact" target="_top">AWS API

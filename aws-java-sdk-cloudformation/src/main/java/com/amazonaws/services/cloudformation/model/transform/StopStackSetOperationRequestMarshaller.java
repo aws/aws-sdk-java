@@ -48,6 +48,10 @@ public class StopStackSetOperationRequestMarshaller implements Marshaller<Reques
             request.addParameter("OperationId", StringUtils.fromString(stopStackSetOperationRequest.getOperationId()));
         }
 
+        if (stopStackSetOperationRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(stopStackSetOperationRequest.getCallAs()));
+        }
+
         return request;
     }
 

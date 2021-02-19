@@ -1553,14 +1553,51 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The amount of time that a worker has to complete a task.
      * </p>
+     * <p>
+     * If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     * </p>
+     * <p>
+     * If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the maximum for
+     * this parameter depends on the task type you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is
+     * 8 hours (28,800 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
+     * is 7 days (604,800 seconds).
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer taskTimeLimitInSeconds;
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (10 days).
-     * For private and vendor workforces, the maximum is as listed.
+     * The length of time that a task remains available for labeling by human workers. The default and maximum values
+     * for this parameter depend on the type of workforce you use.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6
+     * hours (21,600 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
+     * maximum is also 10 days.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer taskAvailabilityLifetimeInSeconds;
     /**
@@ -10785,9 +10822,56 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The amount of time that a worker has to complete a task.
      * </p>
+     * <p>
+     * If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     * </p>
+     * <p>
+     * If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the maximum for
+     * this parameter depends on the task type you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is
+     * 8 hours (28,800 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
+     * is 7 days (604,800 seconds).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. </p>
+     *        <p>
+     *        If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     *        </p>
+     *        <p>
+     *        If you create a labeling job using a <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the
+     *        maximum for this parameter depends on the task type you use:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the
+     *        maximum is 8 hours (28,800 seconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
+     *        the maximum is 7 days (604,800 seconds).
+     *        </p>
+     *        </li>
      */
 
     public void setTaskTimeLimitInSeconds(Integer taskTimeLimitInSeconds) {
@@ -10798,8 +10882,55 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The amount of time that a worker has to complete a task.
      * </p>
+     * <p>
+     * If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     * </p>
+     * <p>
+     * If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the maximum for
+     * this parameter depends on the task type you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is
+     * 8 hours (28,800 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
+     * is 7 days (604,800 seconds).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The amount of time that a worker has to complete a task.
+     * @return The amount of time that a worker has to complete a task. </p>
+     *         <p>
+     *         If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     *         </p>
+     *         <p>
+     *         If you create a labeling job using a <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the
+     *         maximum for this parameter depends on the task type you use:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the
+     *         maximum is 8 hours (28,800 seconds).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
+     *         <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
+     *         the maximum is 7 days (604,800 seconds).
+     *         </p>
+     *         </li>
      */
 
     public Integer getTaskTimeLimitInSeconds() {
@@ -10810,9 +10941,56 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The amount of time that a worker has to complete a task.
      * </p>
+     * <p>
+     * If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     * </p>
+     * <p>
+     * If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the maximum for
+     * this parameter depends on the task type you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is
+     * 8 hours (28,800 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
+     * is 7 days (604,800 seconds).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. </p>
+     *        <p>
+     *        If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).
+     *        </p>
+     *        <p>
+     *        If you create a labeling job using a <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the
+     *        maximum for this parameter depends on the task type you use:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the
+     *        maximum is 8 hours (28,800 seconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
+     *        the maximum is 7 days (604,800 seconds).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10823,15 +11001,40 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (10 days).
-     * For private and vendor workforces, the maximum is as listed.
+     * The length of time that a task remains available for labeling by human workers. The default and maximum values
+     * for this parameter depend on the type of workforce you use.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6
+     * hours (21,600 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
+     * maximum is also 10 days.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds
-     *        (10 days). For private and vendor workforces, the maximum is as listed.
+     *        The length of time that a task remains available for labeling by human workers. The default and maximum
+     *        values for this parameter depend on the type of workforce you use.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default
+     *        is 6 hours (21,600 seconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
+     *        users, the maximum is also 10 days.
+     *        </p>
+     *        </li>
      */
 
     public void setTaskAvailabilityLifetimeInSeconds(Integer taskAvailabilityLifetimeInSeconds) {
@@ -10840,14 +11043,39 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (10 days).
-     * For private and vendor workforces, the maximum is as listed.
+     * The length of time that a task remains available for labeling by human workers. The default and maximum values
+     * for this parameter depend on the type of workforce you use.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6
+     * hours (21,600 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
+     * maximum is also 10 days.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *         Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000
-     *         seconds (10 days). For private and vendor workforces, the maximum is as listed.
+     * @return The length of time that a task remains available for labeling by human workers. The default and maximum
+     *         values for this parameter depend on the type of workforce you use.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default
+     *         is 6 hours (21,600 seconds).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
+     *         users, the maximum is also 10 days.
+     *         </p>
+     *         </li>
      */
 
     public Integer getTaskAvailabilityLifetimeInSeconds() {
@@ -10856,15 +11084,40 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (10 days).
-     * For private and vendor workforces, the maximum is as listed.
+     * The length of time that a task remains available for labeling by human workers. The default and maximum values
+     * for this parameter depend on the type of workforce you use.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6
+     * hours (21,600 seconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
+     * maximum is also 10 days.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds
-     *        (10 days). For private and vendor workforces, the maximum is as listed.
+     *        The length of time that a task remains available for labeling by human workers. The default and maximum
+     *        values for this parameter depend on the type of workforce you use.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default
+     *        is 6 hours (21,600 seconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
+     *        users, the maximum is also 10 days.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

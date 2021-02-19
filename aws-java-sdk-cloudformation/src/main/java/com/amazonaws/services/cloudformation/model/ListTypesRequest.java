@@ -27,7 +27,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -35,13 +35,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
+     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -61,20 +61,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
@@ -82,7 +82,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String provisioningType;
     /**
      * <p>
-     * The deprecation status of the types that you want to get summary information about.
+     * The deprecation status of the extension that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -90,12 +90,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
@@ -127,7 +128,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -135,13 +136,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
+     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -150,20 +151,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      *        </ul>
@@ -178,7 +179,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -186,13 +187,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
+     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -200,20 +201,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The default is <code>PRIVATE</code>.
      * </p>
      * 
-     * @return The scope at which the type is visible and usable in CloudFormation operations.</p>
+     * @return The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *         Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     *         <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *         registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *         <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *         </p>
      *         </li>
      *         </ul>
@@ -228,7 +229,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -236,13 +237,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
+     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -251,20 +252,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      *        </ul>
@@ -281,7 +282,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -289,13 +290,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
+     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -304,20 +305,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      *        </ul>
@@ -343,20 +344,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
@@ -370,20 +371,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
      * @see ProvisioningType
@@ -404,20 +405,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
@@ -430,19 +431,19 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *         stack update operations.
+     *         <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *         during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *         must instead be replaced during stack update operations.
+     *         <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *         updated and must instead be replaced during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and
+     *         <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
      *         therefore cannot actually be provisioned.
      *         </p>
      *         </li>
@@ -464,20 +465,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
@@ -491,20 +492,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -527,20 +528,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
@@ -554,20 +555,20 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include create, read, and delete handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -581,7 +582,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The deprecation status of the types that you want to get summary information about.
+     * The deprecation status of the extension that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -589,30 +590,31 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the types that you want to get summary information about.</p>
+     *        The deprecation status of the extension that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     *        <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>
@@ -625,7 +627,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The deprecation status of the types that you want to get summary information about.
+     * The deprecation status of the extension that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -633,29 +635,30 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The deprecation status of the types that you want to get summary information about.</p>
+     * @return The deprecation status of the extension that you want to get summary information about.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     *         <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *         <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *         operations.
      *         </p>
      *         </li>
@@ -668,7 +671,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The deprecation status of the types that you want to get summary information about.
+     * The deprecation status of the extension that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -676,30 +679,31 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the types that you want to get summary information about.</p>
+     *        The deprecation status of the extension that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     *        <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>
@@ -714,7 +718,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The deprecation status of the types that you want to get summary information about.
+     * The deprecation status of the extension that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -722,30 +726,31 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the types that you want to get summary information about.</p>
+     *        The deprecation status of the extension that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered for use in CloudFormation operations.
+     *        <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>

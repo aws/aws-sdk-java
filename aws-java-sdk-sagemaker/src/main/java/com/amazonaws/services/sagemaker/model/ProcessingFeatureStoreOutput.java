@@ -30,18 +30,21 @@ public class ProcessingFeatureStoreOutput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your
+     * processing script is responsible for putting records into your Feature Store.
      * </p>
      */
     private String featureGroupName;
 
     /**
      * <p>
-     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your
+     * processing script is responsible for putting records into your Feature Store.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     *        The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note
+     *        that your processing script is responsible for putting records into your Feature Store.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -50,10 +53,12 @@ public class ProcessingFeatureStoreOutput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your
+     * processing script is responsible for putting records into your Feature Store.
      * </p>
      * 
-     * @return The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     * @return The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note
+     *         that your processing script is responsible for putting records into your Feature Store.
      */
 
     public String getFeatureGroupName() {
@@ -62,11 +67,13 @@ public class ProcessingFeatureStoreOutput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     * The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your
+     * processing script is responsible for putting records into your Feature Store.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output.
+     *        The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note
+     *        that your processing script is responsible for putting records into your Feature Store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of type registration tokens.
+     * A list of extension registration tokens.
      * </p>
      * <p>
      * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
@@ -45,14 +45,14 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of type registration tokens.
+     * A list of extension registration tokens.
      * </p>
      * <p>
      * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
      * request.
      * </p>
      * 
-     * @return A list of type registration tokens.</p>
+     * @return A list of extension registration tokens.</p>
      *         <p>
      *         Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
      *         registration request.
@@ -67,7 +67,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of type registration tokens.
+     * A list of extension registration tokens.
      * </p>
      * <p>
      * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
@@ -75,7 +75,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param registrationTokenList
-     *        A list of type registration tokens.</p>
+     *        A list of extension registration tokens.</p>
      *        <p>
      *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
      *        registration request.
@@ -92,7 +92,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of type registration tokens.
+     * A list of extension registration tokens.
      * </p>
      * <p>
      * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
@@ -105,7 +105,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param registrationTokenList
-     *        A list of type registration tokens.</p>
+     *        A list of extension registration tokens.</p>
      *        <p>
      *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
      *        registration request.
@@ -124,7 +124,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of type registration tokens.
+     * A list of extension registration tokens.
      * </p>
      * <p>
      * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
@@ -132,7 +132,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param registrationTokenList
-     *        A list of type registration tokens.</p>
+     *        A list of extension registration tokens.</p>
      *        <p>
      *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
      *        registration request.

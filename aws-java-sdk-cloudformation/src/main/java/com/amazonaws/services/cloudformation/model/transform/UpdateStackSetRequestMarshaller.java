@@ -287,6 +287,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             }
         }
 
+        if (updateStackSetRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(updateStackSetRequest.getCallAs()));
+        }
+
         return request;
     }
 

@@ -52,6 +52,10 @@ public class DescribeStackInstanceRequestMarshaller implements Marshaller<Reques
             request.addParameter("StackInstanceRegion", StringUtils.fromString(describeStackInstanceRequest.getStackInstanceRegion()));
         }
 
+        if (describeStackInstanceRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(describeStackInstanceRequest.getCallAs()));
+        }
+
         return request;
     }
 

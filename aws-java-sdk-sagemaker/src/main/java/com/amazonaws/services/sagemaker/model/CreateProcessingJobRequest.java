@@ -27,7 +27,7 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * List of input configurations for the processing job.
+     * An array of inputs configuring the data to download into the processing container.
      * </p>
      */
     private java.util.List<ProcessingInput> processingInputs;
@@ -64,13 +64,15 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
     private AppSpecification appSpecification;
     /**
      * <p>
-     * Sets the environment variables in the Docker container.
+     * The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     * supported.
      * </p>
      */
     private java.util.Map<String, String> environment;
     /**
      * <p>
-     * Networking options for a processing job.
+     * Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from
+     * processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.
      * </p>
      */
     private NetworkConfig networkConfig;
@@ -93,10 +95,10 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * List of input configurations for the processing job.
+     * An array of inputs configuring the data to download into the processing container.
      * </p>
      * 
-     * @return List of input configurations for the processing job.
+     * @return An array of inputs configuring the data to download into the processing container.
      */
 
     public java.util.List<ProcessingInput> getProcessingInputs() {
@@ -105,11 +107,11 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * List of input configurations for the processing job.
+     * An array of inputs configuring the data to download into the processing container.
      * </p>
      * 
      * @param processingInputs
-     *        List of input configurations for the processing job.
+     *        An array of inputs configuring the data to download into the processing container.
      */
 
     public void setProcessingInputs(java.util.Collection<ProcessingInput> processingInputs) {
@@ -123,7 +125,7 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * List of input configurations for the processing job.
+     * An array of inputs configuring the data to download into the processing container.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +134,7 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param processingInputs
-     *        List of input configurations for the processing job.
+     *        An array of inputs configuring the data to download into the processing container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +150,11 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * List of input configurations for the processing job.
+     * An array of inputs configuring the data to download into the processing container.
      * </p>
      * 
      * @param processingInputs
-     *        List of input configurations for the processing job.
+     *        An array of inputs configuring the data to download into the processing container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,10 +371,12 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Sets the environment variables in the Docker container.
+     * The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     * supported.
      * </p>
      * 
-     * @return Sets the environment variables in the Docker container.
+     * @return The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     *         supported.
      */
 
     public java.util.Map<String, String> getEnvironment() {
@@ -381,11 +385,13 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Sets the environment variables in the Docker container.
+     * The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     * supported.
      * </p>
      * 
      * @param environment
-     *        Sets the environment variables in the Docker container.
+     *        The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     *        supported.
      */
 
     public void setEnvironment(java.util.Map<String, String> environment) {
@@ -394,11 +400,13 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Sets the environment variables in the Docker container.
+     * The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     * supported.
      * </p>
      * 
      * @param environment
-     *        Sets the environment variables in the Docker container.
+     *        The environment variables to set in the Docker container. Up to 100 key and values entries in the map are
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +445,14 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Networking options for a processing job.
+     * Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from
+     * processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.
      * </p>
      * 
      * @param networkConfig
-     *        Networking options for a processing job.
+     *        Networking options for a processing job, such as whether to allow inbound and outbound network calls to
+     *        and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing
+     *        jobs.
      */
 
     public void setNetworkConfig(NetworkConfig networkConfig) {
@@ -450,10 +461,13 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Networking options for a processing job.
+     * Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from
+     * processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.
      * </p>
      * 
-     * @return Networking options for a processing job.
+     * @return Networking options for a processing job, such as whether to allow inbound and outbound network calls to
+     *         and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing
+     *         jobs.
      */
 
     public NetworkConfig getNetworkConfig() {
@@ -462,11 +476,14 @@ public class CreateProcessingJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Networking options for a processing job.
+     * Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from
+     * processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.
      * </p>
      * 
      * @param networkConfig
-     *        Networking options for a processing job.
+     *        Networking options for a processing job, such as whether to allow inbound and outbound network calls to
+     *        and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing
+     *        jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -178,8 +178,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private Boolean privilegedMode;
     /**
      * <p>
-     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
-     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
@@ -1574,15 +1574,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
-     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains
-     *        the PEM-encoded certificate for the build project. For more information, see <a href=
+     *        The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for
+     *        the build project. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
@@ -1593,14 +1593,14 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
-     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
-     * @return The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that
-     *         contains the PEM-encoded certificate for the build project. For more information, see <a href=
+     * @return The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate
+     *         for the build project. For more information, see <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      *         >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
@@ -1611,15 +1611,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
-     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains
-     *        the PEM-encoded certificate for the build project. For more information, see <a href=
+     *        The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for
+     *        the build project. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
      *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

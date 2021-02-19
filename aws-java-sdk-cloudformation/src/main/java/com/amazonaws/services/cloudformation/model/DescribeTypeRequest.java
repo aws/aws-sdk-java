@@ -27,10 +27,7 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -39,7 +36,7 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String type;
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -48,7 +45,7 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String typeName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -57,32 +54,26 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String arn;
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      */
     private String versionId;
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of extension. </p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -94,19 +85,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The kind of type. </p>
-     *         <p>
-     *         Currently the only valid value is <code>RESOURCE</code>.
-     *         </p>
+     * @return The kind of extension. </p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -118,20 +103,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of extension. </p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -145,20 +124,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of extension. </p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -172,14 +145,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.</p>
+     *        The name of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -190,13 +163,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The name of the type.</p>
+     * @return The name of the extension.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -207,14 +180,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.</p>
+     *        The name of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -227,14 +200,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type.</p>
+     *        The Amazon Resource Name (ARN) of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -245,13 +218,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type.</p>
+     * @return The Amazon Resource Name (ARN) of the extension.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -262,14 +235,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type.</p>
+     *        The Amazon Resource Name (ARN) of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -282,20 +255,20 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.</p>
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.</p>
      *        <p>
      *        If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
-     *        type version. Otherwise, it returns information about the default type version.
+     *        extension version. Otherwise, it returns information about the default extension version.
      */
 
     public void setVersionId(String versionId) {
@@ -304,19 +277,19 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
-     * @return The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *         Name (ARN) assigned to the type version when it is registered.</p>
+     * @return The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *         Resource Name (ARN) assigned to the extension version when it is registered.</p>
      *         <p>
      *         If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that
-     *         specific type version. Otherwise, it returns information about the default type version.
+     *         specific extension version. Otherwise, it returns information about the default extension version.
      */
 
     public String getVersionId() {
@@ -325,20 +298,20 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.</p>
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.</p>
      *        <p>
      *        If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
-     *        type version. Otherwise, it returns information about the default type version.
+     *        extension version. Otherwise, it returns information about the default extension version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

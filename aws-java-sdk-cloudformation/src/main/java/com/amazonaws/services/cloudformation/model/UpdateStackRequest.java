@@ -50,7 +50,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
-     * bucket. For more information, go to <a
+     * bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -453,7 +453,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
-     * bucket. For more information, go to <a
+     * bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -464,7 +464,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template that is located in an
-     *        Amazon S3 bucket. For more information, go to <a
+     *        Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -479,7 +479,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
-     * bucket. For more information, go to <a
+     * bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -489,7 +489,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return Location of file containing the template body. The URL must point to a template that is located in an
-     *         Amazon S3 bucket. For more information, go to <a
+     *         Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -504,7 +504,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
-     * bucket. For more information, go to <a
+     * bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -515,7 +515,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template that is located in an
-     *        Amazon S3 bucket. For more information, go to <a
+     *        Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>

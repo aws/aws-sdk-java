@@ -44,7 +44,7 @@ public class StackInstance implements Serializable, Cloneable {
     private String region;
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      */
     private String account;
@@ -113,10 +113,9 @@ public class StackInstance implements Serializable, Cloneable {
     private String statusReason;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      */
     private String organizationalUnitId;
@@ -242,12 +241,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *        with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public void setAccount(String account) {
@@ -256,11 +254,10 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
-     * @return [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *         with.
+     * @return [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public String getAccount() {
@@ -269,12 +266,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *        with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -878,17 +874,16 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *        you specified for <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     *        >DeploymentTargets</a>.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -897,14 +892,13 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *         you specified for <a
+     * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *         for <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
      *         >DeploymentTargets</a>.
      */
@@ -915,17 +909,16 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *        you specified for <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     *        >DeploymentTargets</a>.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

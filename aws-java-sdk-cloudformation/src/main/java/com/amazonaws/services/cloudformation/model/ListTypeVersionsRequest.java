@@ -27,10 +27,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The kind of the type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -39,7 +36,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String type;
     /**
      * <p>
-     * The name of the type for which you want version summary information.
+     * The name of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -48,7 +45,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String typeName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -74,7 +71,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String nextToken;
     /**
      * <p>
-     * The deprecation status of the type versions that you want to get summary information about.
+     * The deprecation status of the extension versions that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -82,13 +79,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its
-     * provisioning behavior and visibility scope.
+     * <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on
+     * its provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation
+     * <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation
      * operations.
      * </p>
      * </li>
@@ -101,20 +98,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The kind of the type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of the type.</p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -126,19 +117,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The kind of the type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The kind of the type.</p>
-     *         <p>
-     *         Currently the only valid value is <code>RESOURCE</code>.
-     *         </p>
+     * @return The kind of the extension.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -150,20 +135,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The kind of the type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of the type.</p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -177,20 +156,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The kind of the type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of the type.</p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
-     *        </p>
+     *        The kind of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -204,14 +177,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the type for which you want version summary information.
+     * The name of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type for which you want version summary information.</p>
+     *        The name of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -222,13 +195,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the type for which you want version summary information.
+     * The name of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The name of the type for which you want version summary information.</p>
+     * @return The name of the extension for which you want version summary information.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -239,14 +212,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the type for which you want version summary information.
+     * The name of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type for which you want version summary information.</p>
+     *        The name of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -259,14 +232,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     *        The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -277,13 +250,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     * @return The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -294,14 +267,14 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     *        The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -427,7 +400,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The deprecation status of the type versions that you want to get summary information about.
+     * The deprecation status of the extension versions that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -435,13 +408,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its
-     * provisioning behavior and visibility scope.
+     * <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on
+     * its provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation
+     * <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation
      * operations.
      * </p>
      * </li>
@@ -451,20 +424,20 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type versions that you want to get summary information about.</p>
+     *        The deprecation status of the extension versions that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent
-     *        on its provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations,
+     *        dependent on its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in
+     *        <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in
      *        CloudFormation operations.
      *        </p>
      *        </li>
@@ -480,7 +453,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The deprecation status of the type versions that you want to get summary information about.
+     * The deprecation status of the extension versions that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -488,13 +461,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its
-     * provisioning behavior and visibility scope.
+     * <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on
+     * its provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation
+     * <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation
      * operations.
      * </p>
      * </li>
@@ -503,20 +476,20 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The default is <code>LIVE</code>.
      * </p>
      * 
-     * @return The deprecation status of the type versions that you want to get summary information about.</p>
+     * @return The deprecation status of the extension versions that you want to get summary information about.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent
-     *         on its provisioning behavior and visibility scope.
+     *         <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations,
+     *         dependent on its provisioning behavior and visibility scope.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in
+     *         <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in
      *         CloudFormation operations.
      *         </p>
      *         </li>
@@ -532,7 +505,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The deprecation status of the type versions that you want to get summary information about.
+     * The deprecation status of the extension versions that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -540,13 +513,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its
-     * provisioning behavior and visibility scope.
+     * <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on
+     * its provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation
+     * <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation
      * operations.
      * </p>
      * </li>
@@ -556,20 +529,20 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type versions that you want to get summary information about.</p>
+     *        The deprecation status of the extension versions that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent
-     *        on its provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations,
+     *        dependent on its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in
+     *        <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in
      *        CloudFormation operations.
      *        </p>
      *        </li>
@@ -587,7 +560,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The deprecation status of the type versions that you want to get summary information about.
+     * The deprecation status of the extension versions that you want to get summary information about.
      * </p>
      * <p>
      * Valid values include:
@@ -595,13 +568,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its
-     * provisioning behavior and visibility scope.
+     * <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on
+     * its provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation
+     * <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation
      * operations.
      * </p>
      * </li>
@@ -611,20 +584,20 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type versions that you want to get summary information about.</p>
+     *        The deprecation status of the extension versions that you want to get summary information about.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent
-     *        on its provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations,
+     *        dependent on its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in
+     *        <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in
      *        CloudFormation operations.
      *        </p>
      *        </li>

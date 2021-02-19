@@ -361,7 +361,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private Integer trainingTimeInSeconds;
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3050,7 +3055,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3059,7 +3069,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param billableTimeInSeconds
-     *        The billable time in seconds.</p>
+     *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *        <p>
+     *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *        your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula
      *        <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if
@@ -3073,7 +3088,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3081,7 +3101,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.
      * </p>
      * 
-     * @return The billable time in seconds.</p>
+     * @return The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *         <p>
+     *         Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *         your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *         training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *         </p>
      *         <p>
      *         You can calculate the savings from using managed spot training using the formula
      *         <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if
@@ -3095,7 +3120,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3104,7 +3134,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param billableTimeInSeconds
-     *        The billable time in seconds.</p>
+     *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *        <p>
+     *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *        your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula
      *        <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if

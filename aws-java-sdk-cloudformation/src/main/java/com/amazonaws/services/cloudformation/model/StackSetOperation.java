@@ -62,8 +62,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -146,7 +146,7 @@ public class StackSetOperation implements Serializable, Cloneable {
     private java.util.Date endTimestamp;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     * [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      * </p>
      */
     private DeploymentTargets deploymentTargets;
@@ -361,8 +361,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -404,8 +404,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a
-     *        sequence of operations, the operation is queued to be performed. For more information, see the <a href=
+     *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      *        >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      *        </p>
@@ -454,8 +454,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -496,8 +496,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a
-     *         sequence of operations, the operation is queued to be performed. For more information, see the <a href=
+     *         <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     *         operations, the operation is queued to be performed. For more information, see the <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      *         >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      *         </p>
@@ -546,8 +546,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -589,8 +589,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a
-     *        sequence of operations, the operation is queued to be performed. For more information, see the <a href=
+     *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      *        >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      *        </p>
@@ -641,8 +641,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -684,8 +684,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a
-     *        sequence of operations, the operation is queued to be performed. For more information, see the <a href=
+     *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      *        >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      *        </p>
@@ -734,8 +734,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a sequence
-     * of operations, the operation is queued to be performed. For more information, see the <a href=
+     * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      * >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      * </p>
@@ -777,8 +777,8 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments that require a
-     *        sequence of operations, the operation is queued to be performed. For more information, see the <a href=
+     *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
+     *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
      *        >stack set operation status codes</a> in the AWS CloudFormation User Guide.
      *        </p>
@@ -1164,11 +1164,11 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     * [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      * </p>
      * 
      * @param deploymentTargets
-     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     *        [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      */
 
     public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
@@ -1177,11 +1177,10 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     * [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack
-     *         operation.
+     * @return [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      */
 
     public DeploymentTargets getDeploymentTargets() {
@@ -1190,11 +1189,11 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     * [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      * </p>
      * 
      * @param deploymentTargets
-     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts affected by the stack operation.
+     *        [Service-managed permissions] The AWS Organizations accounts affected by the stack operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

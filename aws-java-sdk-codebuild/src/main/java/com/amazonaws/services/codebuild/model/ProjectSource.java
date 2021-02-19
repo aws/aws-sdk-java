@@ -66,7 +66,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -93,7 +93,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
@@ -252,7 +252,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -293,7 +293,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -341,7 +341,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -381,7 +381,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *         <code>S3</code>: The source code is in an Amazon S3 input bucket.
      *         </p>
      *         </li>
      * @see SourceType
@@ -429,7 +429,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -470,7 +470,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -520,7 +520,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -561,7 +561,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -609,7 +609,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
      * </p>
      * </li>
      * </ul>
@@ -650,7 +650,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -683,7 +683,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
@@ -744,7 +744,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        For source code in an Amazon S3 input bucket, one of the following.
      *        </p>
      *        <ul>
      *        <li>
@@ -813,7 +813,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
@@ -873,7 +873,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *         For source code in an Amazon S3 input bucket, one of the following.
      *         </p>
      *         <ul>
      *         <li>
@@ -942,7 +942,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
@@ -1003,7 +1003,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        For source code in an Amazon S3 input bucket, one of the following.
      *        </p>
      *        <ul>
      *        <li>

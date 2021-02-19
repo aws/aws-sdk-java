@@ -29,7 +29,7 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the type registration.
+     * information about the status and IDs of the extension registration.
      * </p>
      */
     private String registrationToken;
@@ -40,14 +40,14 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the type registration.
+     * information about the status and IDs of the extension registration.
      * </p>
      * 
      * @param registrationToken
      *        The identifier for this registration request.</p>
      *        <p>
      *        Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *        information about the status and IDs of the type registration.
+     *        information about the status and IDs of the extension registration.
      */
 
     public void setRegistrationToken(String registrationToken) {
@@ -60,13 +60,13 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the type registration.
+     * information about the status and IDs of the extension registration.
      * </p>
      * 
      * @return The identifier for this registration request.</p>
      *         <p>
      *         Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *         information about the status and IDs of the type registration.
+     *         information about the status and IDs of the extension registration.
      */
 
     public String getRegistrationToken() {
@@ -79,14 +79,14 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the type registration.
+     * information about the status and IDs of the extension registration.
      * </p>
      * 
      * @param registrationToken
      *        The identifier for this registration request.</p>
      *        <p>
      *        Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *        information about the status and IDs of the type registration.
+     *        information about the status and IDs of the extension registration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

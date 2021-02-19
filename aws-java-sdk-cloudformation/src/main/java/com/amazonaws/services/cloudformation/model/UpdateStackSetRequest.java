@@ -53,7 +53,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -274,8 +274,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String executionRoleName;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
-     * instances.
+     * [Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.
      * </p>
      * <p>
      * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
@@ -318,8 +317,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String permissionModel;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * <p>
      * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
@@ -347,8 +346,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String operationId;
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     * specify accounts, you must also specify the Regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -383,6 +382,33 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are signed in to the management account, specify <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated administrator in the management account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">
+     * Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String callAs;
 
     /**
      * <p>
@@ -546,7 +572,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -557,7 +583,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -572,7 +599,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -582,7 +609,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *         460,800 bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     *         460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -597,7 +625,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -608,7 +636,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that is located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -2562,8 +2591,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
-     * instances.
+     * [Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.
      * </p>
      * <p>
      * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
@@ -2579,8 +2607,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param deploymentTargets
-     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
-     *        stack instances.</p>
+     *        [Service-managed permissions] The AWS Organizations accounts in which to update associated stack
+     *        instances.</p>
      *        <p>
      *        To update all the stack instances associated with this stack set, do not specify
      *        <code>DeploymentTargets</code> or <code>Regions</code>.
@@ -2600,8 +2628,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
-     * instances.
+     * [Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.
      * </p>
      * <p>
      * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
@@ -2616,8 +2643,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * their existing stack instance status.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
-     *         stack instances.</p>
+     * @return [Service-managed permissions] The AWS Organizations accounts in which to update associated stack
+     *         instances.</p>
      *         <p>
      *         To update all the stack instances associated with this stack set, do not specify
      *         <code>DeploymentTargets</code> or <code>Regions</code>.
@@ -2637,8 +2664,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
-     * instances.
+     * [Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.
      * </p>
      * <p>
      * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
@@ -2654,8 +2680,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param deploymentTargets
-     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
-     *        stack instances.</p>
+     *        [Service-managed permissions] The AWS Organizations accounts in which to update associated stack
+     *        instances.</p>
      *        <p>
      *        To update all the stack instances associated with this stack set, do not specify
      *        <code>DeploymentTargets</code> or <code>Regions</code>.
@@ -2884,8 +2910,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * <p>
      * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
@@ -2893,8 +2919,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organization or organizational unit (OU).</p>
      *        <p>
      *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
      *        <code>Regions</code>.
@@ -2906,16 +2932,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * <p>
      * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
      * .
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *         Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     * @return [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *         accounts that are added to a target organization or organizational unit (OU).</p>
      *         <p>
      *         If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
      *         <code>Regions</code>.
@@ -2927,8 +2953,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * <p>
      * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
@@ -2936,8 +2962,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organization or organizational unit (OU).</p>
      *        <p>
      *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
      *        <code>Regions</code>.
@@ -3060,8 +3086,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     * specify accounts, you must also specify the Regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3076,8 +3102,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * stack instances with their existing stack instance status.
      * </p>
      * 
-     * @return [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If
-     *         you specify accounts, you must also specify the Regions in which to update stack set instances.</p>
+     * @return [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *         accounts, you must also specify the Regions in which to update stack set instances.</p>
      *         <p>
      *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *         <code>Accounts</code> or <code>Regions</code> properties.
@@ -3100,8 +3126,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     * specify accounts, you must also specify the Regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3117,8 +3143,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3143,8 +3169,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     * specify accounts, you must also specify the Regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3165,8 +3191,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3193,8 +3219,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     * specify accounts, you must also specify the Regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3210,8 +3236,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
-     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3405,6 +3431,237 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are signed in to the management account, specify <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated administrator in the management account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">
+     * Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are signed in to the management account, specify <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated administrator in the management account. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     * @see CallAs
+     */
+
+    public void setCallAs(String callAs) {
+        this.callAs = callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are signed in to the management account, specify <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated administrator in the management account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">
+     * Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *         organization's management account or as a delegated administrator in a member account.</p>
+     *         <p>
+     *         By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *         permissions.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you are signed in to the management account, specify <code>SELF</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     *         </p>
+     *         <p>
+     *         Your AWS account must be registered as a delegated administrator in the management account. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *         >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         </p>
+     *         </li>
+     * @see CallAs
+     */
+
+    public String getCallAs() {
+        return this.callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are signed in to the management account, specify <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated administrator in the management account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">
+     * Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are signed in to the management account, specify <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated administrator in the management account. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public UpdateStackSetRequest withCallAs(String callAs) {
+        setCallAs(callAs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are signed in to the management account, specify <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated administrator in the management account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">
+     * Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are signed in to the management account, specify <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated administrator in the management account. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public UpdateStackSetRequest withCallAs(CallAs callAs) {
+        this.callAs = callAs.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3449,7 +3706,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getAccounts() != null)
             sb.append("Accounts: ").append(getAccounts()).append(",");
         if (getRegions() != null)
-            sb.append("Regions: ").append(getRegions());
+            sb.append("Regions: ").append(getRegions()).append(",");
+        if (getCallAs() != null)
+            sb.append("CallAs: ").append(getCallAs());
         sb.append("}");
         return sb.toString();
     }
@@ -3532,6 +3791,10 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
             return false;
+        if (other.getCallAs() == null ^ this.getCallAs() == null)
+            return false;
+        if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
+            return false;
         return true;
     }
 
@@ -3557,6 +3820,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
         return hashCode;
     }
 

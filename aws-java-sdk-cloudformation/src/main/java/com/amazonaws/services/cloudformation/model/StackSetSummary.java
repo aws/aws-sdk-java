@@ -52,8 +52,8 @@ public class StackSetSummary implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organizational unit (OU).
      * </p>
      */
     private AutoDeployment autoDeployment;
@@ -317,13 +317,13 @@ public class StackSetSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organizational unit (OU).
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organizational unit (OU).
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organizational unit (OU).
      */
 
     public void setAutoDeployment(AutoDeployment autoDeployment) {
@@ -332,12 +332,12 @@ public class StackSetSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organizational unit (OU).
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *         Organizations accounts that are added to a target organizational unit (OU).
+     * @return [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *         accounts that are added to a target organizational unit (OU).
      */
 
     public AutoDeployment getAutoDeployment() {
@@ -346,13 +346,13 @@ public class StackSetSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organizational unit (OU).
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organizational unit (OU).
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organizational unit (OU).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

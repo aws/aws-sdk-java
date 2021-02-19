@@ -1,3 +1,20 @@
+# __1.11.958__ __2021-02-18__
+## __AWS CloudFormation__
+  - ### Features
+    - Adding the 'callAs' parameter to all CloudFormation StackSets APIs except getTemplateSummary to support creating and managing service-managed StackSets with AWS Organizations Delegated Administrators
+
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild now allows you to specify a separate bucket owner as part of the S3 destination in a report group.
+
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - Documentation updates for health
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release adds expires-in-seconds parameter to the CreatePresignedDomainUrl API for support of a configurable TTL.
+
 # __1.11.957__ __2021-02-17__
 ## __AWS Config__
   - ### Features

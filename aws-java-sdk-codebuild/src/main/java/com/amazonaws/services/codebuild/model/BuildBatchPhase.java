@@ -148,7 +148,7 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
     private Long durationInSeconds;
     /**
      * <p>
-     * Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * </p>
      */
     private java.util.List<PhaseContext> contexts;
@@ -1089,10 +1089,10 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * </p>
      * 
-     * @return Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * @return Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      */
 
     public java.util.List<PhaseContext> getContexts() {
@@ -1101,11 +1101,11 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * </p>
      * 
      * @param contexts
-     *        Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     *        Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      */
 
     public void setContexts(java.util.Collection<PhaseContext> contexts) {
@@ -1119,7 +1119,7 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1128,7 +1128,7 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param contexts
-     *        Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     *        Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1144,11 +1144,11 @@ public class BuildBatchPhase implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     * Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * </p>
      * 
      * @param contexts
-     *        Additional information about the batch build phase. Especially to help troubleshoot a failed btach build.
+     *        Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

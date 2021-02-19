@@ -74,7 +74,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * commit ID is used.
      * </p>
      * </dd>
-     * <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     * <dt>Amazon S3</dt>
      * <dd>
      * <p>
      * The version ID of the object that represents the build input ZIP file to use.
@@ -532,7 +532,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * commit ID is used.
      * </p>
      * </dd>
-     * <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     * <dt>Amazon S3</dt>
      * <dd>
      * <p>
      * The version ID of the object that represents the build input ZIP file to use.
@@ -576,7 +576,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      *        branch's HEAD commit ID is used.
      *        </p>
      *        </dd>
-     *        <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     *        <dt>Amazon S3</dt>
      *        <dd>
      *        <p>
      *        The version ID of the object that represents the build input ZIP file to use.
@@ -626,7 +626,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * commit ID is used.
      * </p>
      * </dd>
-     * <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     * <dt>Amazon S3</dt>
      * <dd>
      * <p>
      * The version ID of the object that represents the build input ZIP file to use.
@@ -669,7 +669,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      *         branch's HEAD commit ID is used.
      *         </p>
      *         </dd>
-     *         <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     *         <dt>Amazon S3</dt>
      *         <dd>
      *         <p>
      *         The version ID of the object that represents the build input ZIP file to use.
@@ -719,7 +719,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * commit ID is used.
      * </p>
      * </dd>
-     * <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     * <dt>Amazon S3</dt>
      * <dd>
      * <p>
      * The version ID of the object that represents the build input ZIP file to use.
@@ -763,7 +763,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      *        branch's HEAD commit ID is used.
      *        </p>
      *        </dd>
-     *        <dt>Amazon Simple Storage Service (Amazon S3)</dt>
+     *        <dt>Amazon S3</dt>
      *        <dd>
      *        <p>
      *        The version ID of the object that represents the build input ZIP file to use.

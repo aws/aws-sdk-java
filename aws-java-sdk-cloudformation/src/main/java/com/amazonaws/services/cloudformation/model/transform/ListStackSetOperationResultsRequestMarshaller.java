@@ -58,6 +58,10 @@ public class ListStackSetOperationResultsRequestMarshaller implements
             request.addParameter("MaxResults", StringUtils.fromInteger(listStackSetOperationResultsRequest.getMaxResults()));
         }
 
+        if (listStackSetOperationResultsRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(listStackSetOperationResultsRequest.getCallAs()));
+        }
+
         return request;
     }
 

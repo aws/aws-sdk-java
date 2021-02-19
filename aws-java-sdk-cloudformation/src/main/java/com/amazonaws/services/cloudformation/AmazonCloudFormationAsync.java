@@ -476,16 +476,22 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Removes a type or type version from active use in the CloudFormation registry. If a type or type version is
-     * deregistered, it cannot be used in CloudFormation operations.
+     * Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation registry, removing it
+     * from active use. Deprecated extensions or extension versions cannot be used in CloudFormation operations.
      * </p>
      * <p>
-     * To deregister a type, you must individually deregister all registered versions of that type. If a type has only a
-     * single registered version, deregistering that version results in the type itself being deregistered.
+     * To deregister an entire extension, you must individually deregister all active versions of that extension. If an
+     * extension has only a single active version, deregistering that version results in the extension itself being
+     * deregistered and marked as deprecated in the registry.
      * </p>
      * <p>
-     * You cannot deregister the default version of a type, unless it is the only registered version of that type, in
-     * which case the type itself is deregistered as well.
+     * You cannot deregister the default version of an extension if there are other active version of that extension. If
+     * you do deregister the default version of an extension, the textensionype itself is deregistered as well and
+     * marked as deprecated.
+     * </p>
+     * <p>
+     * To view the deprecation status of an extension or extension version, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
      * </p>
      * 
      * @param deregisterTypeRequest
@@ -498,16 +504,22 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Removes a type or type version from active use in the CloudFormation registry. If a type or type version is
-     * deregistered, it cannot be used in CloudFormation operations.
+     * Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation registry, removing it
+     * from active use. Deprecated extensions or extension versions cannot be used in CloudFormation operations.
      * </p>
      * <p>
-     * To deregister a type, you must individually deregister all registered versions of that type. If a type has only a
-     * single registered version, deregistering that version results in the type itself being deregistered.
+     * To deregister an entire extension, you must individually deregister all active versions of that extension. If an
+     * extension has only a single active version, deregistering that version results in the extension itself being
+     * deregistered and marked as deprecated in the registry.
      * </p>
      * <p>
-     * You cannot deregister the default version of a type, unless it is the only registered version of that type, in
-     * which case the type itself is deregistered as well.
+     * You cannot deregister the default version of an extension if there are other active version of that extension. If
+     * you do deregister the default version of an extension, the textensionype itself is deregistered as well and
+     * marked as deprecated.
+     * </p>
+     * <p>
+     * To view the deprecation status of an extension or extension version, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
      * </p>
      * 
      * @param deregisterTypeRequest
@@ -1055,11 +1067,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns detailed information about a type that has been registered.
+     * Returns detailed information about an extension that has been registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
      * @param describeTypeRequest
@@ -1072,11 +1084,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns detailed information about a type that has been registered.
+     * Returns detailed information about an extension that has been registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
      * @param describeTypeRequest
@@ -1094,7 +1106,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns information about a type's registration, including its current status and type and version identifiers.
+     * Returns information about an extension's registration, including its current status and type and version
+     * identifiers.
      * </p>
      * <p>
      * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
@@ -1102,7 +1115,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * <p>
      * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
-     * informaiton about a type.
+     * information about an extension.
      * </p>
      * 
      * @param describeTypeRegistrationRequest
@@ -1115,7 +1128,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns information about a type's registration, including its current status and type and version identifiers.
+     * Returns information about an extension's registration, including its current status and type and version
+     * identifiers.
      * </p>
      * <p>
      * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
@@ -1123,7 +1137,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * <p>
      * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
-     * informaiton about a type.
+     * information about an extension.
      * </p>
      * 
      * @param describeTypeRegistrationRequest
@@ -1304,7 +1318,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <ul>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the stack set, including detailed
+     * Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the stack set, including detailed
      * information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift
      * operations that are in progress is not included.)
      * </p>
@@ -1361,7 +1375,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <ul>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the stack set, including detailed
+     * Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the stack set, including detailed
      * information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift
      * operations that are in progress is not included.)
      * </p>
@@ -1938,6 +1952,28 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <p>
      * Returns summary information about stack sets that are associated with the user.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in to
+     * your AWS account, <code>ListStackSets</code> returns all self-managed stack sets in your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in
+     * to the organization's management account, <code>ListStackSets</code> returns all stack sets in the management
+     * account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code> while
+     * signed in to your member account, <code>ListStackSets</code> returns all stack sets with service-managed
+     * permissions in the management account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listStackSetsRequest
      * @return A Java Future containing the result of the ListStackSets operation returned by the service.
@@ -1951,6 +1987,28 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <p>
      * Returns summary information about stack sets that are associated with the user.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in to
+     * your AWS account, <code>ListStackSets</code> returns all self-managed stack sets in your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in
+     * to the organization's management account, <code>ListStackSets</code> returns all stack sets in the management
+     * account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code> while
+     * signed in to your member account, <code>ListStackSets</code> returns all stack sets with service-managed
+     * permissions in the management account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listStackSetsRequest
      * @param asyncHandler
@@ -2020,7 +2078,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns a list of registration tokens for the specified type(s).
+     * Returns a list of registration tokens for the specified extension(s).
      * </p>
      * 
      * @param listTypeRegistrationsRequest
@@ -2033,7 +2091,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns a list of registration tokens for the specified type(s).
+     * Returns a list of registration tokens for the specified extension(s).
      * </p>
      * 
      * @param listTypeRegistrationsRequest
@@ -2051,7 +2109,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns summary information about the versions of a type.
+     * Returns summary information about the versions of an extension.
      * </p>
      * 
      * @param listTypeVersionsRequest
@@ -2064,7 +2122,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns summary information about the versions of a type.
+     * Returns summary information about the versions of an extension.
      * </p>
      * 
      * @param listTypeVersionsRequest
@@ -2082,7 +2140,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns summary information about types that have been registered with CloudFormation.
+     * Returns summary information about extension that have been registered with CloudFormation.
      * </p>
      * 
      * @param listTypesRequest
@@ -2095,7 +2153,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns summary information about types that have been registered with CloudFormation.
+     * Returns summary information about extension that have been registered with CloudFormation.
      * </p>
      * 
      * @param listTypesRequest
@@ -2154,35 +2212,35 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Registers a type with the CloudFormation service. Registering a type makes it available for use in CloudFormation
-     * templates in your AWS account, and includes:
+     * Registers an extension with the CloudFormation service. Registering an extension makes it available for use in
+     * CloudFormation templates in your AWS account, and includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Validating the resource schema
+     * Validating the extension schema
      * </p>
      * </li>
      * <li>
      * <p>
-     * Determining which handlers have been specified for the resource
+     * Determining which handlers, if any, have been specified for the extension
      * </p>
      * </li>
      * <li>
      * <p>
-     * Making the resource type available for use in your account
+     * Making the extension available for use in your account
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information on how to develop types and ready them for registeration, see <a
+     * For more information on how to develop extensions and ready them for registeration, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
      * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
-     * You can have a maximum of 50 resource type versions registered at a time. This maximum is per account and per
-     * region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
-     * deregister specific resource type versions if necessary.
+     * You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and
+     * per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
+     * deregister specific extension versions if necessary.
      * </p>
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
@@ -2199,35 +2257,35 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Registers a type with the CloudFormation service. Registering a type makes it available for use in CloudFormation
-     * templates in your AWS account, and includes:
+     * Registers an extension with the CloudFormation service. Registering an extension makes it available for use in
+     * CloudFormation templates in your AWS account, and includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Validating the resource schema
+     * Validating the extension schema
      * </p>
      * </li>
      * <li>
      * <p>
-     * Determining which handlers have been specified for the resource
+     * Determining which handlers, if any, have been specified for the extension
      * </p>
      * </li>
      * <li>
      * <p>
-     * Making the resource type available for use in your account
+     * Making the extension available for use in your account
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information on how to develop types and ready them for registeration, see <a
+     * For more information on how to develop extensions and ready them for registeration, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
      * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
-     * You can have a maximum of 50 resource type versions registered at a time. This maximum is per account and per
-     * region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
-     * deregister specific resource type versions if necessary.
+     * You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and
+     * per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
+     * deregister specific extension versions if necessary.
      * </p>
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
@@ -2282,7 +2340,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Specify the default version of a type. The default version of a type will be used in CloudFormation operations.
+     * Specify the default version of an extension. The default version of an extension will be used in CloudFormation
+     * operations.
      * </p>
      * 
      * @param setTypeDefaultVersionRequest
@@ -2295,7 +2354,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Specify the default version of a type. The default version of a type will be used in CloudFormation operations.
+     * Specify the default version of an extension. The default version of an extension will be used in CloudFormation
+     * operations.
      * </p>
      * 
      * @param setTypeDefaultVersionRequest

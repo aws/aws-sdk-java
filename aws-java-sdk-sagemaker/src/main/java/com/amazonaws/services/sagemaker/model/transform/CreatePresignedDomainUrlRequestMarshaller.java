@@ -33,6 +33,8 @@ public class CreatePresignedDomainUrlRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserProfileName").build();
     private static final MarshallingInfo<Integer> SESSIONEXPIRATIONDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionExpirationDurationInSeconds").build();
+    private static final MarshallingInfo<Integer> EXPIRESINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiresInSeconds").build();
 
     private static final CreatePresignedDomainUrlRequestMarshaller instance = new CreatePresignedDomainUrlRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class CreatePresignedDomainUrlRequestMarshaller {
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getUserProfileName(), USERPROFILENAME_BINDING);
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getSessionExpirationDurationInSeconds(), SESSIONEXPIRATIONDURATIONINSECONDS_BINDING);
+            protocolMarshaller.marshall(createPresignedDomainUrlRequest.getExpiresInSeconds(), EXPIRESINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

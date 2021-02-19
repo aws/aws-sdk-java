@@ -173,6 +173,10 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(deleteStackInstancesRequest.getOperationId()));
 
+        if (deleteStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(deleteStackInstancesRequest.getCallAs()));
+        }
+
         return request;
     }
 

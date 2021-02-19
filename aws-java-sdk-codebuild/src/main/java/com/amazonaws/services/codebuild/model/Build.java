@@ -133,7 +133,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -191,8 +191,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1076,7 +1075,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1096,7 +1095,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        For Amazon S3, this does not apply.
      *        </p>
      *        </li>
      */
@@ -1122,7 +1121,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1141,7 +1140,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *         For Amazon S3, this does not apply.
      *         </p>
      *         </li>
      */
@@ -1167,7 +1166,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1187,7 +1186,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        For Amazon S3, this does not apply.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1453,8 +1452,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1484,8 +1482,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *         input ZIP file to use.
+     *         For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *         </p>
      *         </li>
      */
@@ -1521,8 +1518,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1553,8 +1549,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      */
@@ -1595,8 +1590,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1632,8 +1626,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1676,8 +1669,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1708,8 +1700,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -91,7 +91,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
      * <p>
@@ -120,7 +120,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
      * <p>
@@ -156,10 +156,22 @@ public interface AWSHealthAsync extends AWSHealth {
      * starting with the most recent.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return
      * more results.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation supports resource-level permissions. You can use this operation to allow or deny access to
+     * specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeAffectedEntitiesRequest
@@ -182,10 +194,22 @@ public interface AWSHealthAsync extends AWSHealth {
      * starting with the most recent.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return
      * more results.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation supports resource-level permissions. You can use this operation to allow or deny access to
+     * specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeAffectedEntitiesRequest
@@ -215,13 +239,25 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return
      * more results.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access
+     * to specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeAffectedEntitiesForOrganizationRequest
@@ -248,13 +284,25 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return
      * more results.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access
+     * to specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeAffectedEntitiesForOrganizationRequest
@@ -352,8 +400,8 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Returns detailed information about one or more specified events. Information includes standard event data
-     * (Region, service, and so on, as returned by <a
+     * Returns detailed information about one or more specified events. Information includes standard event data (AWS
+     * Region, service, and so on, as returned by <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a
      * detailed event description, and possible additional metadata that depends upon the nature of the event. Affected
      * entities are not included. To retrieve those, use the <a
@@ -363,6 +411,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * If a specified event cannot be retrieved, an error message is returned for that event.
      * </p>
+     * <note>
+     * <p>
+     * This operation supports resource-level permissions. You can use this operation to allow or deny access to
+     * specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeEventDetailsRequest
      * @return A Java Future containing the result of the DescribeEventDetails operation returned by the service.
@@ -374,8 +430,8 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Returns detailed information about one or more specified events. Information includes standard event data
-     * (Region, service, and so on, as returned by <a
+     * Returns detailed information about one or more specified events. Information includes standard event data (AWS
+     * Region, service, and so on, as returned by <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a
      * detailed event description, and possible additional metadata that depends upon the nature of the event. Affected
      * entities are not included. To retrieve those, use the <a
@@ -385,6 +441,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * If a specified event cannot be retrieved, an error message is returned for that event.
      * </p>
+     * <note>
+     * <p>
+     * This operation supports resource-level permissions. You can use this operation to allow or deny access to
+     * specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeEventDetailsRequest
      * @param asyncHandler
@@ -402,7 +466,7 @@ public interface AWSHealthAsync extends AWSHealth {
     /**
      * <p>
      * Returns detailed information about one or more specified events for one or more accounts in your organization.
-     * Information includes standard event data (Region, service, and so on, as returned by <a
+     * Information includes standard event data (AWS Region, service, and so on, as returned by <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html"
      * >DescribeEventsForOrganization</a>), a detailed event description, and possible additional metadata that depends
      * upon the nature of the event. Affected entities are not included; to retrieve those, use the <a
@@ -413,7 +477,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <p>
      * When you call the <code>DescribeEventDetailsForOrganization</code> operation, you specify the
@@ -440,6 +504,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access
+     * to specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeEventDetailsForOrganizationRequest
      * @return A Java Future containing the result of the DescribeEventDetailsForOrganization operation returned by the
@@ -454,7 +526,7 @@ public interface AWSHealthAsync extends AWSHealth {
     /**
      * <p>
      * Returns detailed information about one or more specified events for one or more accounts in your organization.
-     * Information includes standard event data (Region, service, and so on, as returned by <a
+     * Information includes standard event data (AWS Region, service, and so on, as returned by <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html"
      * >DescribeEventsForOrganization</a>), a detailed event description, and possible additional metadata that depends
      * upon the nature of the event. Affected entities are not included; to retrieve those, use the <a
@@ -465,7 +537,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <p>
      * When you call the <code>DescribeEventDetailsForOrganization</code> operation, you specify the
@@ -492,6 +564,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access
+     * to specific AWS Health events. For more information, see <a href=
+     * "https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions"
+     * >Resource- and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeEventDetailsForOrganizationRequest
      * @param asyncHandler
@@ -510,8 +590,13 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Returns the event types that meet the specified filter criteria. If no filter criteria are specified, all event
-     * types are returned, in no particular order.
+     * Returns the event types that meet the specified filter criteria. You can use this API operation to find
+     * information about the AWS Health event, such as the category, AWS service, and event code. The metadata for each
+     * event appears in the <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object.
+     * </p>
+     * <p>
+     * If you don't specify a filter criteria, the API operation returns all event types, in no particular order.
      * </p>
      * <note>
      * <p>
@@ -530,8 +615,13 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Returns the event types that meet the specified filter criteria. If no filter criteria are specified, all event
-     * types are returned, in no particular order.
+     * Returns the event types that meet the specified filter criteria. You can use this API operation to find
+     * information about the AWS Health event, such as the category, AWS service, and event code. The metadata for each
+     * event appears in the <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object.
+     * </p>
+     * <p>
+     * If you don't specify a filter criteria, the API operation returns all event types, in no particular order.
      * </p>
      * <note>
      * <p>
@@ -686,7 +776,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master AWS account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
      * <p>
@@ -747,7 +837,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
      * call the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
-     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's master AWS account.
+     * >EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.
      * </p>
      * <note>
      * <p>
@@ -775,7 +865,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * This operation provides status information on enabling or disabling AWS Health to work with your organization. To
      * call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
-     * recommended) in the organization's master account.
+     * recommended) in the organization's management account.
      * </p>
      * 
      * @param describeHealthServiceStatusForOrganizationRequest
@@ -793,7 +883,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * This operation provides status information on enabling or disabling AWS Health to work with your organization. To
      * call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
-     * recommended) in the organization's master account.
+     * recommended) in the organization's management account.
      * </p>
      * 
      * @param describeHealthServiceStatusForOrganizationRequest
@@ -816,14 +906,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * Disables AWS Health from working with AWS Organizations. To call this operation, you must sign in as an AWS
      * Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not recommended) in
-     * the organization's master AWS account. For more information, see <a
+     * the organization's management account. For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in
      * the <i>AWS Health User Guide</i>.
      * </p>
      * <p>
-     * This operation doesn't remove the service-linked role (SLR) from the AWS master account in your organization. You
-     * must use the IAM console, API, or AWS Command Line Interface (AWS CLI) to remove the SLR. For more information,
-     * see <a href=
+     * This operation doesn't remove the service-linked role from the management account in your organization. You must
+     * use the IAM console, API, or AWS Command Line Interface (AWS CLI) to remove the service-linked role. For more
+     * information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role"
      * >Deleting a Service-Linked Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -851,14 +941,14 @@ public interface AWSHealthAsync extends AWSHealth {
      * <p>
      * Disables AWS Health from working with AWS Organizations. To call this operation, you must sign in as an AWS
      * Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not recommended) in
-     * the organization's master AWS account. For more information, see <a
+     * the organization's management account. For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in
      * the <i>AWS Health User Guide</i>.
      * </p>
      * <p>
-     * This operation doesn't remove the service-linked role (SLR) from the AWS master account in your organization. You
-     * must use the IAM console, API, or AWS Command Line Interface (AWS CLI) to remove the SLR. For more information,
-     * see <a href=
+     * This operation doesn't remove the service-linked role from the management account in your organization. You must
+     * use the IAM console, API, or AWS Command Line Interface (AWS CLI) to remove the service-linked role. For more
+     * information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role"
      * >Deleting a Service-Linked Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -889,12 +979,37 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Calling this operation enables AWS Health to work with AWS Organizations. This applies a service-linked role
-     * (SLR) to the master account in the organization. To call this operation, you must sign in as an IAM user, assume
-     * an IAM role, or sign in as the root user (not recommended) in the organization's master account.
+     * Enables AWS Health to work with AWS Organizations. You can use the organizational view feature to aggregate
+     * events from all AWS accounts in your organization in a centralized location.
      * </p>
      * <p>
-     * For more information, see <a
+     * This operation also creates a service-linked role for the management account in the organization.
+     * </p>
+     * <note>
+     * <p>
+     * To call this operation, you must meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+     * Support</a> to use the AWS Health API. If you call the AWS Health API from an AWS account that doesn't have a
+     * Business or Enterprise support plan, you receive a <code>SubscriptionRequiredException</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must have permission to call this operation from the organization's management account. For example IAM
+     * policies, see <a
+     * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">AWS Health
+     * identity-based policy examples</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * If you don't have the required support plan, you can instead use the AWS Health console to enable the
+     * organizational view feature. For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in
      * the <i>AWS Health User Guide</i>.
      * </p>
@@ -911,12 +1026,37 @@ public interface AWSHealthAsync extends AWSHealth {
 
     /**
      * <p>
-     * Calling this operation enables AWS Health to work with AWS Organizations. This applies a service-linked role
-     * (SLR) to the master account in the organization. To call this operation, you must sign in as an IAM user, assume
-     * an IAM role, or sign in as the root user (not recommended) in the organization's master account.
+     * Enables AWS Health to work with AWS Organizations. You can use the organizational view feature to aggregate
+     * events from all AWS accounts in your organization in a centralized location.
      * </p>
      * <p>
-     * For more information, see <a
+     * This operation also creates a service-linked role for the management account in the organization.
+     * </p>
+     * <note>
+     * <p>
+     * To call this operation, you must meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+     * Support</a> to use the AWS Health API. If you call the AWS Health API from an AWS account that doesn't have a
+     * Business or Enterprise support plan, you receive a <code>SubscriptionRequiredException</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must have permission to call this operation from the organization's management account. For example IAM
+     * policies, see <a
+     * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">AWS Health
+     * identity-based policy examples</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * If you don't have the required support plan, you can instead use the AWS Health console to enable the
+     * organizational view feature. For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in
      * the <i>AWS Health User Guide</i>.
      * </p>

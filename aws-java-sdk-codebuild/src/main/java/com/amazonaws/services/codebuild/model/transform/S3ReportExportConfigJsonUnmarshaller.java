@@ -52,6 +52,10 @@ public class S3ReportExportConfigJsonUnmarshaller implements Unmarshaller<S3Repo
                     context.nextToken();
                     s3ReportExportConfig.setBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("bucketOwner", targetDepth)) {
+                    context.nextToken();
+                    s3ReportExportConfig.setBucketOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("path", targetDepth)) {
                     context.nextToken();
                     s3ReportExportConfig.setPath(context.getUnmarshaller(String.class).unmarshall(context));

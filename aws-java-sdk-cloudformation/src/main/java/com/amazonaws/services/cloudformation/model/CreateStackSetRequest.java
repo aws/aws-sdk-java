@@ -59,7 +59,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -258,6 +258,40 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private AutoDeployment autoDeployment;
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     */
+    private String callAs;
     /**
      * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
@@ -466,7 +500,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -476,7 +510,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -490,7 +525,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -499,7 +534,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *         460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *         460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *         see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -513,7 +549,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -523,7 +559,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -2344,6 +2381,289 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @see CallAs
+     */
+
+    public void setCallAs(String callAs) {
+        this.callAs = callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @return [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *         organization's management account or as a delegated administrator in a member account.</p>
+     *         <p>
+     *         By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *         permissions.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To create a stack set with service-managed permissions while signed in to the management account, specify
+     *         <code>SELF</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *         account, specify <code>DELEGATED_ADMIN</code>.
+     *         </p>
+     *         <p>
+     *         Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *         >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Stack sets with service-managed permissions are created in the management account, including stack sets
+     *         that are created by delegated administrators.
+     * @see CallAs
+     */
+
+    public String getCallAs() {
+        return this.callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public CreateStackSetRequest withCallAs(String callAs) {
+        setCallAs(callAs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public CreateStackSetRequest withCallAs(CallAs callAs) {
+        this.callAs = callAs.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
      * requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same
      * name. You might retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation successfully
@@ -2449,6 +2769,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
         if (getAutoDeployment() != null)
             sb.append("AutoDeployment: ").append(getAutoDeployment()).append(",");
+        if (getCallAs() != null)
+            sb.append("CallAs: ").append(getCallAs()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -2509,6 +2831,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAutoDeployment() != null && other.getAutoDeployment().equals(this.getAutoDeployment()) == false)
             return false;
+        if (other.getCallAs() == null ^ this.getCallAs() == null)
+            return false;
+        if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -2532,6 +2858,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
+        hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

@@ -52,6 +52,10 @@ public class ListStackSetsRequestMarshaller implements Marshaller<Request<ListSt
             request.addParameter("Status", StringUtils.fromString(listStackSetsRequest.getStatus()));
         }
 
+        if (listStackSetsRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(listStackSetsRequest.getCallAs()));
+        }
+
         return request;
     }
 

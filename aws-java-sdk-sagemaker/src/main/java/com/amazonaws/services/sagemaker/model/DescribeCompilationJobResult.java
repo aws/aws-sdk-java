@@ -31,7 +31,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private String compilationJobName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      */
     private String compilationJobArn;
@@ -101,7 +101,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private ModelDigests modelDigests;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      */
     private String roleArn;
@@ -161,12 +161,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
      * @param compilationJobArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *        compilation job.
+     *        The Amazon Resource Name (ARN) of the model compilation job.
      */
 
     public void setCompilationJobArn(String compilationJobArn) {
@@ -175,11 +174,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *         compilation job.
+     * @return The Amazon Resource Name (ARN) of the model compilation job.
      */
 
     public String getCompilationJobArn() {
@@ -188,12 +186,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
      * @param compilationJobArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *        compilation job.
+     *        The Amazon Resource Name (ARN) of the model compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,11 +637,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the model compilation job.
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *        compilation job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -653,10 +651,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the model compilation job.
+     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *         compilation job.
      */
 
     public String getRoleArn() {
@@ -665,11 +664,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the model compilation job.
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *        compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

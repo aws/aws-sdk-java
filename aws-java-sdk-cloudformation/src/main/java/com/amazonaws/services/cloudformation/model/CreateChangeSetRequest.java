@@ -50,8 +50,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -426,8 +426,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -435,8 +435,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
-     *        460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *        this template with the stack that you specified.</p>
+     *        460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates
+     *        the change set by comparing this template with the stack that you specified.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -448,16 +448,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      * </p>
      * 
      * @return The location of the file that contains the revised template. The URL must point to a template (max size:
-     *         460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *         this template with the stack that you specified.</p>
+     *         460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation
+     *         generates the change set by comparing this template with the stack that you specified.</p>
      *         <p>
      *         Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -469,8 +469,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -478,8 +478,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
-     *        460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *        this template with the stack that you specified.</p>
+     *        460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates
+     *        the change set by comparing this template with the stack that you specified.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

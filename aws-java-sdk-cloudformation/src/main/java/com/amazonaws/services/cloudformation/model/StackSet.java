@@ -119,8 +119,8 @@ public class StackSet implements Serializable, Cloneable {
     private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      */
     private AutoDeployment autoDeployment;
@@ -150,10 +150,9 @@ public class StackSet implements Serializable, Cloneable {
     private String permissionModel;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
@@ -914,13 +913,13 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organization or organizational unit (OU).
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organization or organizational unit (OU).
      */
 
     public void setAutoDeployment(AutoDeployment autoDeployment) {
@@ -929,12 +928,12 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *         Organizations accounts that are added to a target organization or organizational unit (OU).
+     * @return [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *         accounts that are added to a target organization or organizational unit (OU).
      */
 
     public AutoDeployment getAutoDeployment() {
@@ -943,13 +942,13 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to a target organization or organizational unit (OU).
+     * [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts
+     * that are added to a target organization or organizational unit (OU).
      * </p>
      * 
      * @param autoDeployment
-     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
-     *        Organizations accounts that are added to a target organization or organizational unit (OU).
+     *        [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     *        accounts that are added to a target organization or organizational unit (OU).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1208,14 +1207,13 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *         you specified for <a
+     * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *         for <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
      *         >DeploymentTargets</a>.
      */
@@ -1229,17 +1227,16 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *        you specified for <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     *        >DeploymentTargets</a>.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
@@ -1253,10 +1250,9 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1265,10 +1261,10 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *        you specified for <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     *        >DeploymentTargets</a>.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1284,17 +1280,16 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
-     * specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     * >DeploymentTargets</a>.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
-     *        you specified for <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
-     *        >DeploymentTargets</a>.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

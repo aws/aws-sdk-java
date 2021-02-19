@@ -90,6 +90,10 @@ public class DetectStackSetDriftRequestMarshaller implements Marshaller<Request<
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(detectStackSetDriftRequest.getOperationId()));
 
+        if (detectStackSetDriftRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(detectStackSetDriftRequest.getCallAs()));
+        }
+
         return request;
     }
 

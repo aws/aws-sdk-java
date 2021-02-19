@@ -32,6 +32,28 @@ public class LabelingJobS3DataSource implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon S3 location of the manifest file that describes the input data objects.
      * </p>
+     * <p>
+     * The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     * <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this value
+     * when the object is a binary object, such as an image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source</code>: The source of the object is the value. Use this value when the object is a text value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you are a new user of Ground Truth, it is recommended you review <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest
+     * File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
+     * </p>
      */
     private String manifestS3Uri;
 
@@ -39,9 +61,53 @@ public class LabelingJobS3DataSource implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon S3 location of the manifest file that describes the input data objects.
      * </p>
+     * <p>
+     * The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     * <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this value
+     * when the object is a binary object, such as an image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source</code>: The source of the object is the value. Use this value when the object is a text value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you are a new user of Ground Truth, it is recommended you review <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest
+     * File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
+     * </p>
      * 
      * @param manifestS3Uri
-     *        The Amazon S3 location of the manifest file that describes the input data objects.
+     *        The Amazon S3 location of the manifest file that describes the input data objects. </p>
+     *        <p>
+     *        The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     *        <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this
+     *        value when the object is a binary object, such as an image.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source</code>: The source of the object is the value. Use this value when the object is a text
+     *        value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you are a new user of Ground Truth, it is recommended you review <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input
+     *        Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
      */
 
     public void setManifestS3Uri(String manifestS3Uri) {
@@ -52,8 +118,52 @@ public class LabelingJobS3DataSource implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon S3 location of the manifest file that describes the input data objects.
      * </p>
+     * <p>
+     * The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     * <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this value
+     * when the object is a binary object, such as an image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source</code>: The source of the object is the value. Use this value when the object is a text value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you are a new user of Ground Truth, it is recommended you review <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest
+     * File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
+     * </p>
      * 
-     * @return The Amazon S3 location of the manifest file that describes the input data objects.
+     * @return The Amazon S3 location of the manifest file that describes the input data objects. </p>
+     *         <p>
+     *         The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     *         <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use
+     *         this value when the object is a binary object, such as an image.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>source</code>: The source of the object is the value. Use this value when the object is a text
+     *         value.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you are a new user of Ground Truth, it is recommended you review <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input
+     *         Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
      */
 
     public String getManifestS3Uri() {
@@ -64,9 +174,53 @@ public class LabelingJobS3DataSource implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon S3 location of the manifest file that describes the input data objects.
      * </p>
+     * <p>
+     * The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     * <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this value
+     * when the object is a binary object, such as an image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source</code>: The source of the object is the value. Use this value when the object is a text value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you are a new user of Ground Truth, it is recommended you review <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest
+     * File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
+     * </p>
      * 
      * @param manifestS3Uri
-     *        The Amazon S3 location of the manifest file that describes the input data objects.
+     *        The Amazon S3 location of the manifest file that describes the input data objects. </p>
+     *        <p>
+     *        The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys:
+     *        <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this
+     *        value when the object is a binary object, such as an image.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source</code>: The source of the object is the value. Use this value when the object is a text
+     *        value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you are a new user of Ground Truth, it is recommended you review <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input
+     *        Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

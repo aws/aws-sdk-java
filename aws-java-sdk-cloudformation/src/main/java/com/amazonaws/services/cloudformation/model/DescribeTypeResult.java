@@ -25,52 +25,50 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The name of the registered type.
+     * The name of the registered extension.
      * </p>
      */
     private String typeName;
     /**
      * <p>
-     * The ID of the default version of the type. The default version is used when the type version is not specified.
+     * The ID of the default version of the extension. The default version is used when the extension version is not
+     * specified.
      * </p>
      * <p>
-     * To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      * </p>
      */
     private String defaultVersionId;
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
      * </p>
      */
     private Boolean isDefaultVersion;
     /**
      * <p>
-     * The description of the registered type.
+     * The description of the registered extension.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The schema that defines the type.
+     * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on type schemas, see <a
+     * For more information on extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -78,8 +76,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String schema;
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
+     * registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -87,20 +85,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * <ul>
      * <li>
@@ -125,7 +123,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String provisioningType;
     /**
      * <p>
-     * The deprecation status of the type.
+     * The deprecation status of the extension version.
      * </p>
      * <p>
      * Valid values include:
@@ -133,13 +131,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
+     * <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
@@ -147,23 +146,23 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String deprecatedStatus;
     /**
      * <p>
-     * Contains logging configuration information for a type.
+     * Contains logging configuration information for an extension.
      * </p>
      */
     private LoggingConfig loggingConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource type
+     * calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
      * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.
      * </p>
      */
     private String executionRoleArn;
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -171,13 +170,13 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
      * Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
@@ -185,36 +184,36 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String visibility;
     /**
      * <p>
-     * The URL of the source code for the type.
+     * The URL of the source code for the extension.
      * </p>
      */
     private String sourceUrl;
     /**
      * <p>
-     * The URL of a page providing detailed documentation for this type.
+     * The URL of a page providing detailed documentation for this extension.
      * </p>
      */
     private String documentationUrl;
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      */
     private java.util.Date lastUpdated;
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      */
     private java.util.Date timeCreated;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type.
+     *        The Amazon Resource Name (ARN) of the extension.
      */
 
     public void setArn(String arn) {
@@ -223,10 +222,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type.
+     * @return The Amazon Resource Name (ARN) of the extension.
      */
 
     public String getArn() {
@@ -235,11 +234,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type.
+     *        The Amazon Resource Name (ARN) of the extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,16 +249,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @see RegistryType
      */
 
@@ -269,15 +263,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
-     * @return The kind of type. </p>
-     *         <p>
-     *         Currently the only valid value is <code>RESOURCE</code>.
+     * @return The kind of extension.
      * @see RegistryType
      */
 
@@ -287,16 +276,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -308,16 +292,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type. </p>
-     *        <p>
-     *        Currently the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -329,11 +308,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the registered type.
+     * The name of the registered extension.
      * </p>
      * 
      * @param typeName
-     *        The name of the registered type.
+     *        The name of the registered extension.
      */
 
     public void setTypeName(String typeName) {
@@ -342,10 +321,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the registered type.
+     * The name of the registered extension.
      * </p>
      * 
-     * @return The name of the registered type.
+     * @return The name of the registered extension.
      */
 
     public String getTypeName() {
@@ -354,11 +333,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the registered type.
+     * The name of the registered extension.
      * </p>
      * 
      * @param typeName
-     *        The name of the registered type.
+     *        The name of the registered extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,17 +348,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ID of the default version of the type. The default version is used when the type version is not specified.
+     * The ID of the default version of the extension. The default version is used when the extension version is not
+     * specified.
      * </p>
      * <p>
-     * To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      * </p>
      * 
      * @param defaultVersionId
-     *        The ID of the default version of the type. The default version is used when the type version is not
-     *        specified.</p>
+     *        The ID of the default version of the extension. The default version is used when the extension version is
+     *        not specified.</p>
      *        <p>
-     *        To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      */
 
     public void setDefaultVersionId(String defaultVersionId) {
@@ -388,16 +368,17 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ID of the default version of the type. The default version is used when the type version is not specified.
+     * The ID of the default version of the extension. The default version is used when the extension version is not
+     * specified.
      * </p>
      * <p>
-     * To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      * </p>
      * 
-     * @return The ID of the default version of the type. The default version is used when the type version is not
-     *         specified.</p>
+     * @return The ID of the default version of the extension. The default version is used when the extension version is
+     *         not specified.</p>
      *         <p>
-     *         To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *         To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      */
 
     public String getDefaultVersionId() {
@@ -406,17 +387,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ID of the default version of the type. The default version is used when the type version is not specified.
+     * The ID of the default version of the extension. The default version is used when the extension version is not
+     * specified.
      * </p>
      * <p>
-     * To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      * </p>
      * 
      * @param defaultVersionId
-     *        The ID of the default version of the type. The default version is used when the type version is not
-     *        specified.</p>
+     *        The ID of the default version of the extension. The default version is used when the extension version is
+     *        not specified.</p>
      *        <p>
-     *        To set the default version of a type, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,11 +409,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
      * </p>
      * 
      * @param isDefaultVersion
-     *        Whether the specified type version is set as the default version.
+     *        Whether the specified extension version is set as the default version.
      */
 
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
@@ -440,10 +422,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
      * </p>
      * 
-     * @return Whether the specified type version is set as the default version.
+     * @return Whether the specified extension version is set as the default version.
      */
 
     public Boolean getIsDefaultVersion() {
@@ -452,11 +434,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
      * </p>
      * 
      * @param isDefaultVersion
-     *        Whether the specified type version is set as the default version.
+     *        Whether the specified extension version is set as the default version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,10 +449,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
      * </p>
      * 
-     * @return Whether the specified type version is set as the default version.
+     * @return Whether the specified extension version is set as the default version.
      */
 
     public Boolean isDefaultVersion() {
@@ -479,11 +461,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The description of the registered type.
+     * The description of the registered extension.
      * </p>
      * 
      * @param description
-     *        The description of the registered type.
+     *        The description of the registered extension.
      */
 
     public void setDescription(String description) {
@@ -492,10 +474,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The description of the registered type.
+     * The description of the registered extension.
      * </p>
      * 
-     * @return The description of the registered type.
+     * @return The description of the registered extension.
      */
 
     public String getDescription() {
@@ -504,11 +486,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The description of the registered type.
+     * The description of the registered extension.
      * </p>
      * 
      * @param description
-     *        The description of the registered type.
+     *        The description of the registered extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,18 +501,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schema that defines the type.
+     * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on type schemas, see <a
+     * For more information on extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
      * @param schema
-     *        The schema that defines the type.</p>
+     *        The schema that defines the extension.</p>
      *        <p>
-     *        For more information on type schemas, see <a
+     *        For more information on extension schemas, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *        Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      */
@@ -541,17 +523,17 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schema that defines the type.
+     * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on type schemas, see <a
+     * For more information on extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
-     * @return The schema that defines the type.</p>
+     * @return The schema that defines the extension.</p>
      *         <p>
-     *         For more information on type schemas, see <a
+     *         For more information on extension schemas, see <a
      *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *         Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      */
@@ -562,18 +544,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schema that defines the type.
+     * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on type schemas, see <a
+     * For more information on extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
      * @param schema
-     *        The schema that defines the type.</p>
+     *        The schema that defines the extension.</p>
      *        <p>
-     *        For more information on type schemas, see <a
+     *        For more information on extension schemas, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *        Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -586,8 +568,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
+     * registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -595,20 +577,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * <ul>
      * <li>
@@ -631,7 +613,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </ul>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
+     *        The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
      *        registration, based on the types of handlers in the schema handler package submitted.</p>
      *        <p>
      *        Valid values include:
@@ -639,20 +621,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        <ul>
      *        <li>
@@ -681,8 +663,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
+     * registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -690,20 +672,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * <ul>
      * <li>
@@ -725,7 +707,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * </ul>
      * 
-     * @return The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
+     * @return The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
      *         registration, based on the types of handlers in the schema handler package submitted.</p>
      *         <p>
      *         Valid values include:
@@ -733,20 +715,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *         stack update operations.
+     *         <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *         during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *         must instead be replaced during stack update operations.
+     *         <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *         updated and must instead be replaced during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore
-     *         cannot actually be provisioned.
+     *         <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and
+     *         therefore cannot actually be provisioned.
      *         </p>
      *         <ul>
      *         <li>
@@ -775,8 +757,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
+     * registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -784,20 +766,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * <ul>
      * <li>
@@ -820,7 +802,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </ul>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
+     *        The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
      *        registration, based on the types of handlers in the schema handler package submitted.</p>
      *        <p>
      *        Valid values include:
@@ -828,20 +810,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        <ul>
      *        <li>
@@ -872,8 +854,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
+     * registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -881,20 +863,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during stack
-     * update operations.
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and must
-     * instead be replaced during stack update operations.
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore cannot
-     * actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and therefore
+     * cannot actually be provisioned.
      * </p>
      * <ul>
      * <li>
@@ -917,7 +899,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </ul>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
+     *        The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during
      *        registration, based on the types of handlers in the schema handler package submitted.</p>
      *        <p>
      *        Valid values include:
@@ -925,20 +907,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The type includes an update handler to process updates to the type during
-     *        stack update operations.
+     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The type does not include an update handler, so the type cannot be updated and
-     *        must instead be replaced during stack update operations.
+     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The type does not include all of the following handlers, and therefore
-     *        cannot actually be provisioned.
+     *        <code>NON_PROVISIONABLE</code>: The extension does not include all of the following handlers, and
+     *        therefore cannot actually be provisioned.
      *        </p>
      *        <ul>
      *        <li>
@@ -969,7 +951,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The deprecation status of the type.
+     * The deprecation status of the extension version.
      * </p>
      * <p>
      * Valid values include:
@@ -977,32 +959,33 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
+     * <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type.</p>
+     *        The deprecation status of the extension version.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
-     *        provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on
+     *        its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>
@@ -1015,7 +998,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The deprecation status of the type.
+     * The deprecation status of the extension version.
      * </p>
      * <p>
      * Valid values include:
@@ -1023,31 +1006,32 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
+     * <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The deprecation status of the type.</p>
+     * @return The deprecation status of the extension version.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
-     *         provisioning behavior and visibility scope.
+     *         <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on
+     *         its provisioning behavior and visibility scope.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *         <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *         operations.
      *         </p>
      *         </li>
@@ -1060,7 +1044,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The deprecation status of the type.
+     * The deprecation status of the extension version.
      * </p>
      * <p>
      * Valid values include:
@@ -1068,32 +1052,33 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
+     * <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type.</p>
+     *        The deprecation status of the extension version.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
-     *        provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on
+     *        its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>
@@ -1108,7 +1093,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The deprecation status of the type.
+     * The deprecation status of the extension version.
      * </p>
      * <p>
      * Valid values include:
@@ -1116,32 +1101,33 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
+     * <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation operations.
+     * <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
+     * operations.
      * </p>
      * </li>
      * </ul>
      * 
      * @param deprecatedStatus
-     *        The deprecation status of the type.</p>
+     *        The deprecation status of the extension version.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LIVE</code>: The type is registered and can be used in CloudFormation operations, dependent on its
-     *        provisioning behavior and visibility scope.
+     *        <code>LIVE</code>: The extension is registered and can be used in CloudFormation operations, dependent on
+     *        its provisioning behavior and visibility scope.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPRECATED</code>: The type has been deregistered and can no longer be used in CloudFormation
+     *        <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation
      *        operations.
      *        </p>
      *        </li>
@@ -1156,11 +1142,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains logging configuration information for a type.
+     * Contains logging configuration information for an extension.
      * </p>
      * 
      * @param loggingConfig
-     *        Contains logging configuration information for a type.
+     *        Contains logging configuration information for an extension.
      */
 
     public void setLoggingConfig(LoggingConfig loggingConfig) {
@@ -1169,10 +1155,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains logging configuration information for a type.
+     * Contains logging configuration information for an extension.
      * </p>
      * 
-     * @return Contains logging configuration information for a type.
+     * @return Contains logging configuration information for an extension.
      */
 
     public LoggingConfig getLoggingConfig() {
@@ -1181,11 +1167,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains logging configuration information for a type.
+     * Contains logging configuration information for an extension.
      * </p>
      * 
      * @param loggingConfig
-     *        Contains logging configuration information for a type.
+     *        Contains logging configuration information for an extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1196,20 +1182,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource type
+     * calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
      * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type
-     *        calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource
+     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. CloudFormation then assumes that execution role to provide your extension with the appropriate
+     *        credentials.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -1218,19 +1204,19 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource type
+     * calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
      * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type
-     *         calls AWS APIs in any of its handlers, you must create an <i> <a
+     * @return The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource
+     *         type calls AWS APIs in any of its handlers, you must create an <i> <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *         includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *         account. CloudFormation then assumes that execution role to provide your resource type with the
-     *         appropriate credentials.
+     *         account. CloudFormation then assumes that execution role to provide your extension with the appropriate
+     *         credentials.
      */
 
     public String getExecutionRoleArn() {
@@ -1239,20 +1225,20 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource type
+     * calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
      * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role used to register the type. If your resource type
-     *        calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource
+     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. CloudFormation then assumes that execution role to provide your extension with the appropriate
+     *        credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1263,7 +1249,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -1271,32 +1257,32 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
      * Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      * @see Visibility
@@ -1308,7 +1294,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -1316,31 +1302,31 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
      * Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The scope at which the type is visible and usable in CloudFormation operations.</p>
+     * @return The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *         Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
+     *         <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *         registered. Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *         <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *         </p>
      *         </li>
      * @see Visibility
@@ -1352,7 +1338,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -1360,32 +1346,32 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
      * Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1399,7 +1385,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The scope at which the type is visible and usable in CloudFormation operations.
+     * The scope at which the extension is visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -1407,32 +1393,32 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
+     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
      * Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param visibility
-     *        The scope at which the type is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The type is only visible and usable within the account in which it is registered.
-     *        Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
+     *        registered. Currently, AWS CloudFormation marks any types you register as <code>PRIVATE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1446,11 +1432,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of the source code for the type.
+     * The URL of the source code for the extension.
      * </p>
      * 
      * @param sourceUrl
-     *        The URL of the source code for the type.
+     *        The URL of the source code for the extension.
      */
 
     public void setSourceUrl(String sourceUrl) {
@@ -1459,10 +1445,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of the source code for the type.
+     * The URL of the source code for the extension.
      * </p>
      * 
-     * @return The URL of the source code for the type.
+     * @return The URL of the source code for the extension.
      */
 
     public String getSourceUrl() {
@@ -1471,11 +1457,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of the source code for the type.
+     * The URL of the source code for the extension.
      * </p>
      * 
      * @param sourceUrl
-     *        The URL of the source code for the type.
+     *        The URL of the source code for the extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1486,11 +1472,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of a page providing detailed documentation for this type.
+     * The URL of a page providing detailed documentation for this extension.
      * </p>
      * 
      * @param documentationUrl
-     *        The URL of a page providing detailed documentation for this type.
+     *        The URL of a page providing detailed documentation for this extension.
      */
 
     public void setDocumentationUrl(String documentationUrl) {
@@ -1499,10 +1485,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of a page providing detailed documentation for this type.
+     * The URL of a page providing detailed documentation for this extension.
      * </p>
      * 
-     * @return The URL of a page providing detailed documentation for this type.
+     * @return The URL of a page providing detailed documentation for this extension.
      */
 
     public String getDocumentationUrl() {
@@ -1511,11 +1497,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL of a page providing detailed documentation for this type.
+     * The URL of a page providing detailed documentation for this extension.
      * </p>
      * 
      * @param documentationUrl
-     *        The URL of a page providing detailed documentation for this type.
+     *        The URL of a page providing detailed documentation for this extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1526,11 +1512,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
      * @param lastUpdated
-     *        When the specified type version was registered.
+     *        When the specified extension version was registered.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -1539,10 +1525,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
-     * @return When the specified type version was registered.
+     * @return When the specified extension version was registered.
      */
 
     public java.util.Date getLastUpdated() {
@@ -1551,11 +1537,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
      * @param lastUpdated
-     *        When the specified type version was registered.
+     *        When the specified extension version was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1566,11 +1552,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
      * @param timeCreated
-     *        When the specified type version was registered.
+     *        When the specified extension version was registered.
      */
 
     public void setTimeCreated(java.util.Date timeCreated) {
@@ -1579,10 +1565,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
-     * @return When the specified type version was registered.
+     * @return When the specified extension version was registered.
      */
 
     public java.util.Date getTimeCreated() {
@@ -1591,11 +1577,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When the specified type version was registered.
+     * When the specified extension version was registered.
      * </p>
      * 
      * @param timeCreated
-     *        When the specified type version was registered.
+     *        When the specified extension version was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

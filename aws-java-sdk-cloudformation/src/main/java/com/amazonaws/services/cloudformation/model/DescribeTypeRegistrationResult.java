@@ -25,19 +25,19 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of the type registration request.
+     * The current status of the extension registration request.
      * </p>
      */
     private String progressStatus;
     /**
      * <p>
-     * The description of the type registration request.
+     * The description of the extension registration request.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type being registered.
+     * The Amazon Resource Name (ARN) of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -47,7 +47,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
     private String typeArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this specific version of the type being registered.
+     * The Amazon Resource Name (ARN) of this specific version of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -58,11 +58,11 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of the type registration request.
+     * The current status of the extension registration request.
      * </p>
      * 
      * @param progressStatus
-     *        The current status of the type registration request.
+     *        The current status of the extension registration request.
      * @see RegistrationStatus
      */
 
@@ -72,10 +72,10 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of the type registration request.
+     * The current status of the extension registration request.
      * </p>
      * 
-     * @return The current status of the type registration request.
+     * @return The current status of the extension registration request.
      * @see RegistrationStatus
      */
 
@@ -85,11 +85,11 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of the type registration request.
+     * The current status of the extension registration request.
      * </p>
      * 
      * @param progressStatus
-     *        The current status of the type registration request.
+     *        The current status of the extension registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
@@ -101,11 +101,11 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of the type registration request.
+     * The current status of the extension registration request.
      * </p>
      * 
      * @param progressStatus
-     *        The current status of the type registration request.
+     *        The current status of the extension registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
@@ -117,11 +117,11 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the type registration request.
+     * The description of the extension registration request.
      * </p>
      * 
      * @param description
-     *        The description of the type registration request.
+     *        The description of the extension registration request.
      */
 
     public void setDescription(String description) {
@@ -130,10 +130,10 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the type registration request.
+     * The description of the extension registration request.
      * </p>
      * 
-     * @return The description of the type registration request.
+     * @return The description of the extension registration request.
      */
 
     public String getDescription() {
@@ -142,11 +142,11 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the type registration request.
+     * The description of the extension registration request.
      * </p>
      * 
      * @param description
-     *        The description of the type registration request.
+     *        The description of the extension registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +157,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type being registered.
+     * The Amazon Resource Name (ARN) of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -165,7 +165,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) of the type being registered.</p>
+     *        The Amazon Resource Name (ARN) of the extension being registered.</p>
      *        <p>
      *        For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *        will be <code>null</code>.
@@ -177,14 +177,14 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type being registered.
+     * The Amazon Resource Name (ARN) of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
      * <code>null</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type being registered.</p>
+     * @return The Amazon Resource Name (ARN) of the extension being registered.</p>
      *         <p>
      *         For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *         will be <code>null</code>.
@@ -196,7 +196,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type being registered.
+     * The Amazon Resource Name (ARN) of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -204,7 +204,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) of the type being registered.</p>
+     *        The Amazon Resource Name (ARN) of the extension being registered.</p>
      *        <p>
      *        For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *        will be <code>null</code>.
@@ -218,7 +218,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this specific version of the type being registered.
+     * The Amazon Resource Name (ARN) of this specific version of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -226,7 +226,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param typeVersionArn
-     *        The Amazon Resource Name (ARN) of this specific version of the type being registered.</p>
+     *        The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
      *        <p>
      *        For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *        will be <code>null</code>.
@@ -238,14 +238,14 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this specific version of the type being registered.
+     * The Amazon Resource Name (ARN) of this specific version of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
      * <code>null</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of this specific version of the type being registered.</p>
+     * @return The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
      *         <p>
      *         For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *         will be <code>null</code>.
@@ -257,7 +257,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this specific version of the type being registered.
+     * The Amazon Resource Name (ARN) of this specific version of the extension being registered.
      * </p>
      * <p>
      * For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
@@ -265,7 +265,7 @@ public class DescribeTypeRegistrationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param typeVersionArn
-     *        The Amazon Resource Name (ARN) of this specific version of the type being registered.</p>
+     *        The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
      *        <p>
      *        For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this
      *        will be <code>null</code>.

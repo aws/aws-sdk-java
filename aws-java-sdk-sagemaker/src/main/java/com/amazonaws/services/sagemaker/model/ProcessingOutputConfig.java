@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The output configuration for the processing job.
+ * Configuration for uploading output from the processing container.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingOutputConfig" target="_top">AWS
@@ -30,7 +30,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * List of output configurations for the processing job.
+     * An array of outputs configuring the data to upload from the processing container.
      * </p>
      */
     private java.util.List<ProcessingOutput> outputs;
@@ -45,10 +45,10 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * List of output configurations for the processing job.
+     * An array of outputs configuring the data to upload from the processing container.
      * </p>
      * 
-     * @return List of output configurations for the processing job.
+     * @return An array of outputs configuring the data to upload from the processing container.
      */
 
     public java.util.List<ProcessingOutput> getOutputs() {
@@ -57,11 +57,11 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * List of output configurations for the processing job.
+     * An array of outputs configuring the data to upload from the processing container.
      * </p>
      * 
      * @param outputs
-     *        List of output configurations for the processing job.
+     *        An array of outputs configuring the data to upload from the processing container.
      */
 
     public void setOutputs(java.util.Collection<ProcessingOutput> outputs) {
@@ -75,7 +75,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * List of output configurations for the processing job.
+     * An array of outputs configuring the data to upload from the processing container.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param outputs
-     *        List of output configurations for the processing job.
+     *        An array of outputs configuring the data to upload from the processing container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * List of output configurations for the processing job.
+     * An array of outputs configuring the data to upload from the processing container.
      * </p>
      * 
      * @param outputs
-     *        List of output configurations for the processing job.
+     *        An array of outputs configuring the data to upload from the processing container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

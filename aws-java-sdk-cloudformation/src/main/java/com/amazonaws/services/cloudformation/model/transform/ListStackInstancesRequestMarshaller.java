@@ -85,6 +85,10 @@ public class ListStackInstancesRequestMarshaller implements Marshaller<Request<L
             request.addParameter("StackInstanceRegion", StringUtils.fromString(listStackInstancesRequest.getStackInstanceRegion()));
         }
 
+        if (listStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(listStackInstancesRequest.getCallAs()));
+        }
+
         return request;
     }
 

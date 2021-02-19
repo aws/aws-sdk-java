@@ -49,6 +49,10 @@ public class DescribeStackSetOperationRequestMarshaller implements Marshaller<Re
             request.addParameter("OperationId", StringUtils.fromString(describeStackSetOperationRequest.getOperationId()));
         }
 
+        if (describeStackSetOperationRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(describeStackSetOperationRequest.getCallAs()));
+        }
+
         return request;
     }
 
