@@ -851,6 +851,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     */
+    private String awsBackupRecoveryPointArn;
 
     /**
      * Default constructor for ModifyDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -6491,6 +6497,46 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public void setAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        this.awsBackupRecoveryPointArn = awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public String getAwsBackupRecoveryPointArn() {
+        return this.awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBInstanceRequest withAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        setAwsBackupRecoveryPointArn(awsBackupRecoveryPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6589,7 +6635,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getReplicaMode() != null)
             sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
         if (getEnableCustomerOwnedIp() != null)
-            sb.append("EnableCustomerOwnedIp: ").append(getEnableCustomerOwnedIp());
+            sb.append("EnableCustomerOwnedIp: ").append(getEnableCustomerOwnedIp()).append(",");
+        if (getAwsBackupRecoveryPointArn() != null)
+            sb.append("AwsBackupRecoveryPointArn: ").append(getAwsBackupRecoveryPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -6783,6 +6831,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEnableCustomerOwnedIp() != null && other.getEnableCustomerOwnedIp().equals(this.getEnableCustomerOwnedIp()) == false)
             return false;
+        if (other.getAwsBackupRecoveryPointArn() == null ^ this.getAwsBackupRecoveryPointArn() == null)
+            return false;
+        if (other.getAwsBackupRecoveryPointArn() != null && other.getAwsBackupRecoveryPointArn().equals(this.getAwsBackupRecoveryPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -6835,6 +6887,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCertificateRotationRestart() == null) ? 0 : getCertificateRotationRestart().hashCode());
         hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         hashCode = prime * hashCode + ((getEnableCustomerOwnedIp() == null) ? 0 : getEnableCustomerOwnedIp().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupRecoveryPointArn() == null) ? 0 : getAwsBackupRecoveryPointArn().hashCode());
         return hashCode;
     }
 

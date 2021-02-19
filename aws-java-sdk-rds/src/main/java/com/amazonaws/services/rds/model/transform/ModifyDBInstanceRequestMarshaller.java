@@ -288,6 +288,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(modifyDBInstanceRequest.getEnableCustomerOwnedIp()));
         }
 
+        if (modifyDBInstanceRequest.getAwsBackupRecoveryPointArn() != null) {
+            request.addParameter("AwsBackupRecoveryPointArn", StringUtils.fromString(modifyDBInstanceRequest.getAwsBackupRecoveryPointArn()));
+        }
+
         return request;
     }
 

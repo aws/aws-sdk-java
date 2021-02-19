@@ -454,7 +454,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * Possible value is <code>postgresql</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
@@ -3268,7 +3268,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * Possible value is <code>postgresql</code>.
      * </p>
      * 
      * @return The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
@@ -3286,7 +3286,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <b>Aurora PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     *         Possible value is <code>postgresql</code>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -3313,7 +3313,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * Possible value is <code>postgresql</code>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
@@ -3332,7 +3332,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     *        Possible value is <code>postgresql</code>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -3361,7 +3361,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * Possible value is <code>postgresql</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3385,7 +3385,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     *        Possible value is <code>postgresql</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3416,7 +3416,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * Possible value is <code>postgresql</code>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
@@ -3435,7 +3435,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     *        Possible value is <code>postgresql</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

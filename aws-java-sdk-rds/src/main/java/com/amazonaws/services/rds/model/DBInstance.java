@@ -526,6 +526,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private Boolean customerOwnedIpEnabled;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     */
+    private String awsBackupRecoveryPointArn;
 
     /**
      * <p>
@@ -4451,6 +4457,46 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public void setAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        this.awsBackupRecoveryPointArn = awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public String getAwsBackupRecoveryPointArn() {
+        return this.awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        setAwsBackupRecoveryPointArn(awsBackupRecoveryPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4587,7 +4633,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getDBInstanceAutomatedBackupsReplications() != null)
             sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications()).append(",");
         if (getCustomerOwnedIpEnabled() != null)
-            sb.append("CustomerOwnedIpEnabled: ").append(getCustomerOwnedIpEnabled());
+            sb.append("CustomerOwnedIpEnabled: ").append(getCustomerOwnedIpEnabled()).append(",");
+        if (getAwsBackupRecoveryPointArn() != null)
+            sb.append("AwsBackupRecoveryPointArn: ").append(getAwsBackupRecoveryPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -4861,6 +4909,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getCustomerOwnedIpEnabled() != null && other.getCustomerOwnedIpEnabled().equals(this.getCustomerOwnedIpEnabled()) == false)
             return false;
+        if (other.getAwsBackupRecoveryPointArn() == null ^ this.getAwsBackupRecoveryPointArn() == null)
+            return false;
+        if (other.getAwsBackupRecoveryPointArn() != null && other.getAwsBackupRecoveryPointArn().equals(this.getAwsBackupRecoveryPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -4932,6 +4984,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIpEnabled() == null) ? 0 : getCustomerOwnedIpEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupRecoveryPointArn() == null) ? 0 : getAwsBackupRecoveryPointArn().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,8 @@
+# __1.11.959__ __2021-02-19__
+## __Amazon Relational Database Service__
+  - ### Features
+    - Added awsBackupRecoveryPointArn in ModifyDBInstanceRequest and in the response of ModifyDBInstance.
+
 # __1.11.958__ __2021-02-18__
 ## __AWS CloudFormation__
   - ### Features
