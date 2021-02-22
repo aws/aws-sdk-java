@@ -44,6 +44,12 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<ContainerDefinition> containers;
     /**
      * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     */
+    private InferenceExecutionConfig inferenceExecutionConfig;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that you specified for the model.
      * </p>
      */
@@ -228,6 +234,46 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeModelResult withContainers(java.util.Collection<ContainerDefinition> containers) {
         setContainers(containers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @param inferenceExecutionConfig
+     *        Specifies details of how containers in a multi-container endpoint are called.
+     */
+
+    public void setInferenceExecutionConfig(InferenceExecutionConfig inferenceExecutionConfig) {
+        this.inferenceExecutionConfig = inferenceExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @return Specifies details of how containers in a multi-container endpoint are called.
+     */
+
+    public InferenceExecutionConfig getInferenceExecutionConfig() {
+        return this.inferenceExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @param inferenceExecutionConfig
+     *        Specifies details of how containers in a multi-container endpoint are called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withInferenceExecutionConfig(InferenceExecutionConfig inferenceExecutionConfig) {
+        setInferenceExecutionConfig(inferenceExecutionConfig);
         return this;
     }
 
@@ -473,6 +519,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("PrimaryContainer: ").append(getPrimaryContainer()).append(",");
         if (getContainers() != null)
             sb.append("Containers: ").append(getContainers()).append(",");
+        if (getInferenceExecutionConfig() != null)
+            sb.append("InferenceExecutionConfig: ").append(getInferenceExecutionConfig()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getVpcConfig() != null)
@@ -509,6 +557,10 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getContainers() != null && other.getContainers().equals(this.getContainers()) == false)
             return false;
+        if (other.getInferenceExecutionConfig() == null ^ this.getInferenceExecutionConfig() == null)
+            return false;
+        if (other.getInferenceExecutionConfig() != null && other.getInferenceExecutionConfig().equals(this.getInferenceExecutionConfig()) == false)
+            return false;
         if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
@@ -540,6 +592,7 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getPrimaryContainer() == null) ? 0 : getPrimaryContainer().hashCode());
         hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
+        hashCode = prime * hashCode + ((getInferenceExecutionConfig() == null) ? 0 : getInferenceExecutionConfig().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

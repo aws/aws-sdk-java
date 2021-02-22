@@ -72,6 +72,10 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
                     context.nextToken();
                     productionVariant.setAcceleratorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CoreDumpConfig", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setCoreDumpConfig(ProductionVariantCoreDumpConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

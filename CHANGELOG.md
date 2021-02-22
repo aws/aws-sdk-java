@@ -1,3 +1,12 @@
+# __1.11.960__ __2021-02-22__
+## __Amazon SageMaker Runtime__
+  - ### Features
+    - SageMaker Runtime now supports a new TargetContainerHostname header to invoke a model in a specific container if the endpoint hosts multiple containers and is configured to use direct invocation.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker now supports core dump for SageMaker Endpoints and direct invocation of a single container in a SageMaker Endpoint that hosts multiple containers.
+
 # __1.11.959__ __2021-02-19__
 ## __Amazon Relational Database Service__
   - ### Features

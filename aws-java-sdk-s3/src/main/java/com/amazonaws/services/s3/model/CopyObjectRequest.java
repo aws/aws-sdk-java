@@ -215,7 +215,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
 
     private String objectLockLegalHoldStatus;
 
-    private boolean bucketKeyEnabled;
+    private Boolean bucketKeyEnabled;
 
     /**
      * Constructs a new {@link CopyObjectRequest} object.

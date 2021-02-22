@@ -34,6 +34,8 @@ public class CreateModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryContainer").build();
     private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Containers").build();
+    private static final MarshallingInfo<StructuredPojo> INFERENCEEXECUTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceExecutionConfig").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class CreateModelRequestMarshaller {
             protocolMarshaller.marshall(createModelRequest.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(createModelRequest.getPrimaryContainer(), PRIMARYCONTAINER_BINDING);
             protocolMarshaller.marshall(createModelRequest.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(createModelRequest.getInferenceExecutionConfig(), INFERENCEEXECUTIONCONFIG_BINDING);
             protocolMarshaller.marshall(createModelRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(createModelRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createModelRequest.getVpcConfig(), VPCCONFIG_BINDING);

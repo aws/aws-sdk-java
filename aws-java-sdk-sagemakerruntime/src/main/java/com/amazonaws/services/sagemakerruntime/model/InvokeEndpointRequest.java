@@ -95,6 +95,13 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String targetVariant;
     /**
      * <p>
+     * If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies
+     * the host name of the container to invoke.
+     * </p>
+     */
+    private String targetContainerHostname;
+    /**
+     * <p>
      * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
      * information about data capture, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
@@ -562,6 +569,52 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies
+     * the host name of the container to invoke.
+     * </p>
+     * 
+     * @param targetContainerHostname
+     *        If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter
+     *        specifies the host name of the container to invoke.
+     */
+
+    public void setTargetContainerHostname(String targetContainerHostname) {
+        this.targetContainerHostname = targetContainerHostname;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies
+     * the host name of the container to invoke.
+     * </p>
+     * 
+     * @return If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter
+     *         specifies the host name of the container to invoke.
+     */
+
+    public String getTargetContainerHostname() {
+        return this.targetContainerHostname;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies
+     * the host name of the container to invoke.
+     * </p>
+     * 
+     * @param targetContainerHostname
+     *        If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter
+     *        specifies the host name of the container to invoke.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withTargetContainerHostname(String targetContainerHostname) {
+        setTargetContainerHostname(targetContainerHostname);
+        return this;
+    }
+
+    /**
+     * <p>
      * If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For
      * information about data capture, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.
@@ -638,6 +691,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("TargetModel: ").append(getTargetModel()).append(",");
         if (getTargetVariant() != null)
             sb.append("TargetVariant: ").append(getTargetVariant()).append(",");
+        if (getTargetContainerHostname() != null)
+            sb.append("TargetContainerHostname: ").append(getTargetContainerHostname()).append(",");
         if (getInferenceId() != null)
             sb.append("InferenceId: ").append(getInferenceId());
         sb.append("}");
@@ -682,6 +737,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTargetVariant() != null && other.getTargetVariant().equals(this.getTargetVariant()) == false)
             return false;
+        if (other.getTargetContainerHostname() == null ^ this.getTargetContainerHostname() == null)
+            return false;
+        if (other.getTargetContainerHostname() != null && other.getTargetContainerHostname().equals(this.getTargetContainerHostname()) == false)
+            return false;
         if (other.getInferenceId() == null ^ this.getInferenceId() == null)
             return false;
         if (other.getInferenceId() != null && other.getInferenceId().equals(this.getInferenceId()) == false)
@@ -701,6 +760,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
         hashCode = prime * hashCode + ((getTargetModel() == null) ? 0 : getTargetModel().hashCode());
         hashCode = prime * hashCode + ((getTargetVariant() == null) ? 0 : getTargetVariant().hashCode());
+        hashCode = prime * hashCode + ((getTargetContainerHostname() == null) ? 0 : getTargetContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         return hashCode;
     }

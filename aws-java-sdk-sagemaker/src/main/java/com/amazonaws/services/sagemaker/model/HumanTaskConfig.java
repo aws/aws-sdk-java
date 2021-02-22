@@ -1573,7 +1573,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
-     * is 7 days (604,800 seconds).
+     * is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -1594,7 +1594,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
-     * maximum is also 10 days.
+     * maximum is also 10 days. If you want to change this limit, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -10842,7 +10842,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
-     * is 7 days (604,800 seconds).
+     * is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -10869,7 +10869,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
      *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
-     *        the maximum is 7 days (604,800 seconds).
+     *        the maximum is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      *        </p>
      *        </li>
      */
@@ -10902,7 +10902,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
-     * is 7 days (604,800 seconds).
+     * is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -10928,7 +10928,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
      *         <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
-     *         the maximum is 7 days (604,800 seconds).
+     *         the maximum is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      *         </p>
      *         </li>
      */
@@ -10961,7 +10961,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum
-     * is 7 days (604,800 seconds).
+     * is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -10988,7 +10988,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and
      *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
-     *        the maximum is 7 days (604,800 seconds).
+     *        the maximum is 7 days (604,800 seconds). If you want to change these limits, contact AWS Support.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -11014,7 +11014,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
-     * maximum is also 10 days.
+     * maximum is also 10 days. If you want to change this limit, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -11032,7 +11032,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
-     *        users, the maximum is also 10 days.
+     *        users, the maximum is also 10 days. If you want to change this limit, contact AWS Support.
      *        </p>
      *        </li>
      */
@@ -11056,7 +11056,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
-     * maximum is also 10 days.
+     * maximum is also 10 days. If you want to change this limit, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -11073,7 +11073,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
-     *         users, the maximum is also 10 days.
+     *         users, the maximum is also 10 days. If you want to change this limit, contact AWS Support.
      *         </p>
      *         </li>
      */
@@ -11097,7 +11097,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most users, the
-     * maximum is also 10 days.
+     * maximum is also 10 days. If you want to change this limit, contact AWS Support.
      * </p>
      * </li>
      * </ul>
@@ -11115,7 +11115,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If you choose a private or vendor workforce, the default value is 10 days (864,000 seconds). For most
-     *        users, the maximum is also 10 days.
+     *        users, the maximum is also 10 days. If you want to change this limit, contact AWS Support.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

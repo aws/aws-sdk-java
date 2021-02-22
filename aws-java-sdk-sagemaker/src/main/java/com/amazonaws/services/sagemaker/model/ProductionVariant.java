@@ -69,6 +69,12 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String acceleratorType;
+    /**
+     * <p>
+     * Specifies configuration for a core dump from the model container when the process crashes.
+     * </p>
+     */
+    private ProductionVariantCoreDumpConfig coreDumpConfig;
 
     /**
      * <p>
@@ -384,6 +390,46 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Specifies configuration for a core dump from the model container when the process crashes.
+     * </p>
+     * 
+     * @param coreDumpConfig
+     *        Specifies configuration for a core dump from the model container when the process crashes.
+     */
+
+    public void setCoreDumpConfig(ProductionVariantCoreDumpConfig coreDumpConfig) {
+        this.coreDumpConfig = coreDumpConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies configuration for a core dump from the model container when the process crashes.
+     * </p>
+     * 
+     * @return Specifies configuration for a core dump from the model container when the process crashes.
+     */
+
+    public ProductionVariantCoreDumpConfig getCoreDumpConfig() {
+        return this.coreDumpConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies configuration for a core dump from the model container when the process crashes.
+     * </p>
+     * 
+     * @param coreDumpConfig
+     *        Specifies configuration for a core dump from the model container when the process crashes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withCoreDumpConfig(ProductionVariantCoreDumpConfig coreDumpConfig) {
+        setCoreDumpConfig(coreDumpConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -406,7 +452,9 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getInitialVariantWeight() != null)
             sb.append("InitialVariantWeight: ").append(getInitialVariantWeight()).append(",");
         if (getAcceleratorType() != null)
-            sb.append("AcceleratorType: ").append(getAcceleratorType());
+            sb.append("AcceleratorType: ").append(getAcceleratorType()).append(",");
+        if (getCoreDumpConfig() != null)
+            sb.append("CoreDumpConfig: ").append(getCoreDumpConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +493,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAcceleratorType() != null && other.getAcceleratorType().equals(this.getAcceleratorType()) == false)
             return false;
+        if (other.getCoreDumpConfig() == null ^ this.getCoreDumpConfig() == null)
+            return false;
+        if (other.getCoreDumpConfig() != null && other.getCoreDumpConfig().equals(this.getCoreDumpConfig()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +511,7 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInitialVariantWeight() == null) ? 0 : getInitialVariantWeight().hashCode());
         hashCode = prime * hashCode + ((getAcceleratorType() == null) ? 0 : getAcceleratorType().hashCode());
+        hashCode = prime * hashCode + ((getCoreDumpConfig() == null) ? 0 : getCoreDumpConfig().hashCode());
         return hashCode;
     }
 

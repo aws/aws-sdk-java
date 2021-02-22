@@ -62,6 +62,10 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("InferenceExecutionConfig", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setInferenceExecutionConfig(InferenceExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
                     context.nextToken();
                     describeModelResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

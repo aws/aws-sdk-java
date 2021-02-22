@@ -74,13 +74,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code>
      * permission that only allows objects with server-side encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     * see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -139,13 +139,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code>
      * permission that only allows objects with server-side encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     * see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -195,14 +195,14 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
      *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *        href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
      *        <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *        <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -256,13 +256,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code>
      * permission that only allows objects with server-side encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     * see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -311,14 +311,14 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
      *         condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *         href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *         </p>
      *         <p>
      *         The KMS key policy must grant permission to the IAM role that you specify in your
      *         <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *         <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *         KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -372,13 +372,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code>
      * permission that only allows objects with server-side encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     * see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -428,14 +428,14 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
      *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *        href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
      *        <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *        <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
