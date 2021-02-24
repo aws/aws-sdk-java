@@ -59,6 +59,10 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScalingActivitiesRequest.getAutoScalingGroupName()));
         }
 
+        if (describeScalingActivitiesRequest.getIncludeDeletedGroups() != null) {
+            request.addParameter("IncludeDeletedGroups", StringUtils.fromBoolean(describeScalingActivitiesRequest.getIncludeDeletedGroups()));
+        }
+
         if (describeScalingActivitiesRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeScalingActivitiesRequest.getMaxRecords()));
         }

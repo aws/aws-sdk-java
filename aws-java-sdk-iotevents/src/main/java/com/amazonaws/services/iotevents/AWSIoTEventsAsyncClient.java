@@ -241,6 +241,40 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(DescribeDetectorModelAnalysisRequest request) {
+
+        return describeDetectorModelAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(
+            final DescribeDetectorModelAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDetectorModelAnalysisRequest, DescribeDetectorModelAnalysisResult> asyncHandler) {
+        final DescribeDetectorModelAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDetectorModelAnalysisResult>() {
+            @Override
+            public DescribeDetectorModelAnalysisResult call() throws Exception {
+                DescribeDetectorModelAnalysisResult result = null;
+
+                try {
+                    result = executeDescribeDetectorModelAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInputResult> describeInputAsync(DescribeInputRequest request) {
 
         return describeInputAsync(request, null);
@@ -291,6 +325,41 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
 
                 try {
                     result = executeDescribeLoggingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            GetDetectorModelAnalysisResultsRequest request) {
+
+        return getDetectorModelAnalysisResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            final GetDetectorModelAnalysisResultsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDetectorModelAnalysisResultsRequest, GetDetectorModelAnalysisResultsResult> asyncHandler) {
+        final GetDetectorModelAnalysisResultsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDetectorModelAnalysisResultsResult>() {
+            @Override
+            public GetDetectorModelAnalysisResultsResult call() throws Exception {
+                GetDetectorModelAnalysisResultsResult result = null;
+
+                try {
+                    result = executeGetDetectorModelAnalysisResults(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -456,6 +525,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
 
                 try {
                     result = executePutLoggingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(StartDetectorModelAnalysisRequest request) {
+
+        return startDetectorModelAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(final StartDetectorModelAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDetectorModelAnalysisRequest, StartDetectorModelAnalysisResult> asyncHandler) {
+        final StartDetectorModelAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDetectorModelAnalysisResult>() {
+            @Override
+            public StartDetectorModelAnalysisResult call() throws Exception {
+                StartDetectorModelAnalysisResult result = null;
+
+                try {
+                    result = executeStartDetectorModelAnalysis(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

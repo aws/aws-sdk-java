@@ -491,6 +491,73 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
+     * Retrieves execution information about a detector model analysis
+     * </p>
+     * 
+     * @param describeDetectorModelAnalysisRequest
+     * @return Result of the DescribeDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DescribeDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDetectorModelAnalysisResult describeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDetectorModelAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDetectorModelAnalysisResult executeDescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest describeDetectorModelAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDetectorModelAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDetectorModelAnalysisRequest> request = null;
+        Response<DescribeDetectorModelAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDetectorModelAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDetectorModelAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDetectorModelAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDetectorModelAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDetectorModelAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes an input.
      * </p>
      * 
@@ -612,6 +679,74 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
             HttpResponseHandler<AmazonWebServiceResponse<DescribeLoggingOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeLoggingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves one or more analysis results of the detector model.
+     * </p>
+     * 
+     * @param getDetectorModelAnalysisResultsRequest
+     * @return Result of the GetDetectorModelAnalysisResults operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.GetDetectorModelAnalysisResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDetectorModelAnalysisResultsResult getDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDetectorModelAnalysisResults(request);
+    }
+
+    @SdkInternalApi
+    final GetDetectorModelAnalysisResultsResult executeGetDetectorModelAnalysisResults(
+            GetDetectorModelAnalysisResultsRequest getDetectorModelAnalysisResultsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDetectorModelAnalysisResultsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDetectorModelAnalysisResultsRequest> request = null;
+        Response<GetDetectorModelAnalysisResultsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDetectorModelAnalysisResultsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDetectorModelAnalysisResultsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDetectorModelAnalysisResults");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDetectorModelAnalysisResultsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDetectorModelAnalysisResultsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -943,6 +1078,75 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
             HttpResponseHandler<AmazonWebServiceResponse<PutLoggingOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLoggingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Performs an analysis of your detector model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector
+     * model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param startDetectorModelAnalysisRequest
+     * @return Result of the StartDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.StartDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDetectorModelAnalysisResult startDetectorModelAnalysis(StartDetectorModelAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDetectorModelAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final StartDetectorModelAnalysisResult executeStartDetectorModelAnalysis(StartDetectorModelAnalysisRequest startDetectorModelAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDetectorModelAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDetectorModelAnalysisRequest> request = null;
+        Response<StartDetectorModelAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDetectorModelAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDetectorModelAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDetectorModelAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDetectorModelAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDetectorModelAnalysisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -29,6 +29,8 @@ public class ListTablesRequestMarshaller {
 
     private static final MarshallingInfo<String> CLUSTERIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterIdentifier").build();
+    private static final MarshallingInfo<String> CONNECTEDDATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectedDatabase").build();
     private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Database").build();
     private static final MarshallingInfo<String> DBUSER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class ListTablesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listTablesRequest.getClusterIdentifier(), CLUSTERIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(listTablesRequest.getConnectedDatabase(), CONNECTEDDATABASE_BINDING);
             protocolMarshaller.marshall(listTablesRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(listTablesRequest.getDbUser(), DBUSER_BINDING);
             protocolMarshaller.marshall(listTablesRequest.getMaxResults(), MAXRESULTS_BINDING);

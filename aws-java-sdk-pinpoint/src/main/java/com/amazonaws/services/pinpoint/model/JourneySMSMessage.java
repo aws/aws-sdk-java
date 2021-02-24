@@ -53,6 +53,18 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String senderId;
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String entityId;
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String templateId;
 
     /**
      * <p>
@@ -240,6 +252,89 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     */
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *         country.
+     */
+
+    public String getEntityId() {
+        return this.entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneySMSMessage withEntityId(String entityId) {
+        setEntityId(entityId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public String getTemplateId() {
+        return this.templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneySMSMessage withTemplateId(String templateId) {
+        setTemplateId(templateId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -256,7 +351,11 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
         if (getOriginationNumber() != null)
             sb.append("OriginationNumber: ").append(getOriginationNumber()).append(",");
         if (getSenderId() != null)
-            sb.append("SenderId: ").append(getSenderId());
+            sb.append("SenderId: ").append(getSenderId()).append(",");
+        if (getEntityId() != null)
+            sb.append("EntityId: ").append(getEntityId()).append(",");
+        if (getTemplateId() != null)
+            sb.append("TemplateId: ").append(getTemplateId());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +382,14 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSenderId() != null && other.getSenderId().equals(this.getSenderId()) == false)
             return false;
+        if (other.getEntityId() == null ^ this.getEntityId() == null)
+            return false;
+        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
+            return false;
+        if (other.getTemplateId() == null ^ this.getTemplateId() == null)
+            return false;
+        if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +401,8 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
         hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());
+        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
+        hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;
     }
 

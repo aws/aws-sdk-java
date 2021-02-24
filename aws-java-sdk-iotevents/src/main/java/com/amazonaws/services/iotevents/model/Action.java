@@ -95,10 +95,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
-     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
-     * information, see <a
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     * of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
      * </p>
@@ -107,9 +107,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
-     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     * column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
@@ -551,10 +551,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
-     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
-     * information, see <a
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     * of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
      * </p>
@@ -562,7 +562,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * @param dynamoDB
      *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *        pairs that have the information about the detector model instance and the event that triggered the action.
-     *        You can also customize the <a
+     *        You can customize the <a
      *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
      *        of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
      *        information, see <a
@@ -577,17 +577,17 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
-     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
-     * information, see <a
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     * of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
      * </p>
      * 
      * @return Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *         pairs that have the information about the detector model instance and the event that triggered the
-     *         action. You can also customize the <a
+     *         action. You can customize the <a
      *         href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
      *         of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
      *         information, see <a
@@ -602,10 +602,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
-     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
-     * information, see <a
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     * of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
      * </p>
@@ -613,7 +613,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * @param dynamoDB
      *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *        pairs that have the information about the detector model instance and the event that triggered the action.
-     *        You can also customize the <a
+     *        You can customize the <a
      *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
      *        of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
      *        information, see <a
@@ -630,9 +630,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
-     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     * column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
@@ -641,7 +641,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * @param dynamoDBv2
      *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *        pairs that have the information about the detector model instance and the event that triggered the action.
-     *        You can also customize the <a
+     *        You can customize the <a
      *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
      *        column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      *        information, see <a
@@ -656,9 +656,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
-     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     * column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
@@ -666,7 +666,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *         pairs that have the information about the detector model instance and the event that triggered the
-     *         action. You can also customize the <a
+     *         action. You can customize the <a
      *         href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
      *         column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      *         information, see <a
@@ -681,9 +681,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
-     * have the information about the detector model instance and the event that triggered the action. You can also
-     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
-     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * have the information about the detector model instance and the event that triggered the action. You can customize
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     * column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
      * <i>AWS IoT Events Developer Guide</i>.
@@ -692,7 +692,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * @param dynamoDBv2
      *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
      *        pairs that have the information about the detector model instance and the event that triggered the action.
-     *        You can also customize the <a
+     *        You can customize the <a
      *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
      *        column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
      *        information, see <a

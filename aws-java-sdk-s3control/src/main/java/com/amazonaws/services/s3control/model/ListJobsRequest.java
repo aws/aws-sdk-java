@@ -25,7 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
+     */
     private String accountId;
     /**
      * <p>
@@ -51,9 +55,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer maxResults;
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public void setAccountId(String accountId) {
@@ -61,9 +68,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
-     * @return
+     * @return The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public String getAccountId() {
@@ -71,9 +80,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID associated with the S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

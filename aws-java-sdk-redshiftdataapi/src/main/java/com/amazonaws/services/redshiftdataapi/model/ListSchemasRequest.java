@@ -34,7 +34,14 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clusterIdentifier;
     /**
      * <p>
-     * The name of the database. This parameter is required when authenticating using temporary credentials.
+     * A database name. The connected database is specified when you connect with your authentication credentials.
+     * </p>
+     */
+    private String connectedDatabase;
+    /**
+     * <p>
+     * The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified,
+     * this is also the database to connect to with your authentication credentials.
      * </p>
      */
     private String database;
@@ -124,11 +131,56 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database. This parameter is required when authenticating using temporary credentials.
+     * A database name. The connected database is specified when you connect with your authentication credentials.
+     * </p>
+     * 
+     * @param connectedDatabase
+     *        A database name. The connected database is specified when you connect with your authentication
+     *        credentials.
+     */
+
+    public void setConnectedDatabase(String connectedDatabase) {
+        this.connectedDatabase = connectedDatabase;
+    }
+
+    /**
+     * <p>
+     * A database name. The connected database is specified when you connect with your authentication credentials.
+     * </p>
+     * 
+     * @return A database name. The connected database is specified when you connect with your authentication
+     *         credentials.
+     */
+
+    public String getConnectedDatabase() {
+        return this.connectedDatabase;
+    }
+
+    /**
+     * <p>
+     * A database name. The connected database is specified when you connect with your authentication credentials.
+     * </p>
+     * 
+     * @param connectedDatabase
+     *        A database name. The connected database is specified when you connect with your authentication
+     *        credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSchemasRequest withConnectedDatabase(String connectedDatabase) {
+        setConnectedDatabase(connectedDatabase);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified,
+     * this is also the database to connect to with your authentication credentials.
      * </p>
      * 
      * @param database
-     *        The name of the database. This parameter is required when authenticating using temporary credentials.
+     *        The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not
+     *        specified, this is also the database to connect to with your authentication credentials.
      */
 
     public void setDatabase(String database) {
@@ -137,10 +189,12 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database. This parameter is required when authenticating using temporary credentials.
+     * The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified,
+     * this is also the database to connect to with your authentication credentials.
      * </p>
      * 
-     * @return The name of the database. This parameter is required when authenticating using temporary credentials.
+     * @return The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not
+     *         specified, this is also the database to connect to with your authentication credentials.
      */
 
     public String getDatabase() {
@@ -149,11 +203,13 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database. This parameter is required when authenticating using temporary credentials.
+     * The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified,
+     * this is also the database to connect to with your authentication credentials.
      * </p>
      * 
      * @param database
-     *        The name of the database. This parameter is required when authenticating using temporary credentials.
+     *        The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not
+     *        specified, this is also the database to connect to with your authentication credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,6 +474,8 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
+        if (getConnectedDatabase() != null)
+            sb.append("ConnectedDatabase: ").append(getConnectedDatabase()).append(",");
         if (getDatabase() != null)
             sb.append("Database: ").append(getDatabase()).append(",");
         if (getDbUser() != null)
@@ -447,6 +505,10 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
         if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
+            return false;
+        if (other.getConnectedDatabase() == null ^ this.getConnectedDatabase() == null)
+            return false;
+        if (other.getConnectedDatabase() != null && other.getConnectedDatabase().equals(this.getConnectedDatabase()) == false)
             return false;
         if (other.getDatabase() == null ^ this.getDatabase() == null)
             return false;
@@ -481,6 +543,7 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getConnectedDatabase() == null) ? 0 : getConnectedDatabase().hashCode());
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getDbUser() == null) ? 0 : getDbUser().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

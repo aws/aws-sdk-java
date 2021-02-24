@@ -169,6 +169,29 @@ public interface AWSIoTEvents {
 
     /**
      * <p>
+     * Retrieves execution information about a detector model analysis
+     * </p>
+     * 
+     * @param describeDetectorModelAnalysisRequest
+     * @return Result of the DescribeDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DescribeDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDetectorModelAnalysisResult describeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest describeDetectorModelAnalysisRequest);
+
+    /**
+     * <p>
      * Describes an input.
      * </p>
      * 
@@ -214,6 +237,29 @@ public interface AWSIoTEvents {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeLoggingOptionsResult describeLoggingOptions(DescribeLoggingOptionsRequest describeLoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Retrieves one or more analysis results of the detector model.
+     * </p>
+     * 
+     * @param getDetectorModelAnalysisResultsRequest
+     * @return Result of the GetDetectorModelAnalysisResults operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.GetDetectorModelAnalysisResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDetectorModelAnalysisResultsResult getDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest getDetectorModelAnalysisResultsRequest);
 
     /**
      * <p>
@@ -333,6 +379,31 @@ public interface AWSIoTEvents {
      *      API Documentation</a>
      */
     PutLoggingOptionsResult putLoggingOptions(PutLoggingOptionsRequest putLoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Performs an analysis of your detector model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector
+     * model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param startDetectorModelAnalysisRequest
+     * @return Result of the StartDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.StartDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDetectorModelAnalysisResult startDetectorModelAnalysis(StartDetectorModelAnalysisRequest startDetectorModelAnalysisRequest);
 
     /**
      * <p>

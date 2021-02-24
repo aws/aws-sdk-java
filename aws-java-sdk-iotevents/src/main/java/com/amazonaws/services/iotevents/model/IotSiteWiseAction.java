@@ -22,35 +22,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Sends information about the detector model instance and the event that triggered the action to a specified asset
  * property in AWS IoT SiteWise.
  * </p>
- * <important>
  * <p>
- * You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to
- * identify the target asset property in AWS IoT SiteWise.
+ * You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals,
+ * operators, functions, references, and substitutions templates.
  * </p>
- * </important>
- * <p>
- * For parameters that are string data type, you can specify the following options:
+ * <p class="title">
+ * <b>Examples</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Use a string. For example, the <code>propertyAlias</code> value can be
- * <code>'/company/windfarm/3/turbine/7/temperature'</code>.
+ * For literal values, the expressions must contain single quotes. For example, the value for the
+ * <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * Use an expression. For example, the <code>propertyAlias</code> value can be
- * <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>
- * .
+ * For references, you must specify either variables or input values. For example, the value for the
+ * <code>assetId</code> parameter can be <code>$input.TurbineInput.assetId1</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution
+ * template can also contain a combination of literals, operators, functions, references, and substitution templates.
+ * </p>
+ * <p>
+ * In the following example, the value for the <code>propertyAlias</code> parameter uses a substitution template.
+ * </p>
+ * <p>
+ * <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/ ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to
+ * identify the target asset property in AWS IoT SiteWise.
  * </p>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the
  * <i>AWS IoT Events Developer Guide</i>.
  * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotSiteWiseAction" target="_top">AWS API
  *      Documentation</a>
@@ -61,25 +74,25 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of
-     * failure. The default is a new unique identifier. You can also specify an expression.
+     * failure. The default is a new unique identifier.
      * </p>
      */
     private String entryId;
     /**
      * <p>
-     * The ID of the asset that has the specified property. You can specify an expression.
+     * The ID of the asset that has the specified property.
      * </p>
      */
     private String assetId;
     /**
      * <p>
-     * The ID of the asset property. You can specify an expression.
+     * The ID of the asset property.
      * </p>
      */
     private String propertyId;
     /**
      * <p>
-     * The alias of the asset property. You can also specify an expression.
+     * The alias of the asset property.
      * </p>
      */
     private String propertyAlias;
@@ -93,12 +106,12 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of
-     * failure. The default is a new unique identifier. You can also specify an expression.
+     * failure. The default is a new unique identifier.
      * </p>
      * 
      * @param entryId
      *        A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in
-     *        case of failure. The default is a new unique identifier. You can also specify an expression.
+     *        case of failure. The default is a new unique identifier.
      */
 
     public void setEntryId(String entryId) {
@@ -108,11 +121,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of
-     * failure. The default is a new unique identifier. You can also specify an expression.
+     * failure. The default is a new unique identifier.
      * </p>
      * 
      * @return A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in
-     *         case of failure. The default is a new unique identifier. You can also specify an expression.
+     *         case of failure. The default is a new unique identifier.
      */
 
     public String getEntryId() {
@@ -122,12 +135,12 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of
-     * failure. The default is a new unique identifier. You can also specify an expression.
+     * failure. The default is a new unique identifier.
      * </p>
      * 
      * @param entryId
      *        A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in
-     *        case of failure. The default is a new unique identifier. You can also specify an expression.
+     *        case of failure. The default is a new unique identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +151,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset that has the specified property. You can specify an expression.
+     * The ID of the asset that has the specified property.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset that has the specified property. You can specify an expression.
+     *        The ID of the asset that has the specified property.
      */
 
     public void setAssetId(String assetId) {
@@ -151,10 +164,10 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset that has the specified property. You can specify an expression.
+     * The ID of the asset that has the specified property.
      * </p>
      * 
-     * @return The ID of the asset that has the specified property. You can specify an expression.
+     * @return The ID of the asset that has the specified property.
      */
 
     public String getAssetId() {
@@ -163,11 +176,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset that has the specified property. You can specify an expression.
+     * The ID of the asset that has the specified property.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset that has the specified property. You can specify an expression.
+     *        The ID of the asset that has the specified property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +191,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset property. You can specify an expression.
+     * The ID of the asset property.
      * </p>
      * 
      * @param propertyId
-     *        The ID of the asset property. You can specify an expression.
+     *        The ID of the asset property.
      */
 
     public void setPropertyId(String propertyId) {
@@ -191,10 +204,10 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset property. You can specify an expression.
+     * The ID of the asset property.
      * </p>
      * 
-     * @return The ID of the asset property. You can specify an expression.
+     * @return The ID of the asset property.
      */
 
     public String getPropertyId() {
@@ -203,11 +216,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset property. You can specify an expression.
+     * The ID of the asset property.
      * </p>
      * 
      * @param propertyId
-     *        The ID of the asset property. You can specify an expression.
+     *        The ID of the asset property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +231,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The alias of the asset property. You can also specify an expression.
+     * The alias of the asset property.
      * </p>
      * 
      * @param propertyAlias
-     *        The alias of the asset property. You can also specify an expression.
+     *        The alias of the asset property.
      */
 
     public void setPropertyAlias(String propertyAlias) {
@@ -231,10 +244,10 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The alias of the asset property. You can also specify an expression.
+     * The alias of the asset property.
      * </p>
      * 
-     * @return The alias of the asset property. You can also specify an expression.
+     * @return The alias of the asset property.
      */
 
     public String getPropertyAlias() {
@@ -243,11 +256,11 @@ public class IotSiteWiseAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The alias of the asset property. You can also specify an expression.
+     * The alias of the asset property.
      * </p>
      * 
      * @param propertyAlias
-     *        The alias of the asset property. You can also specify an expression.
+     *        The alias of the asset property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

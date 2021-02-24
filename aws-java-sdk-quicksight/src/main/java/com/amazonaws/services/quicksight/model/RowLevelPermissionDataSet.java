@@ -19,7 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The row-level security configuration for the dataset.
+ * Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps
+ * fields to users or groups. For more information, see <a href=
+ * "https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html"
+ * >Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.
+ * </p>
+ * <p>
+ * The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported
+ * for new RLS datasets.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet"
@@ -30,30 +37,31 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The namespace associated with the row-level permissions dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      */
     private String permissionPolicy;
 
     /**
      * <p>
-     * The namespace associated with the row-level permissions dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the row-level permissions dataset.
+     *        The namespace associated with the dataset that contains permissions for RLS.
      */
 
     public void setNamespace(String namespace) {
@@ -62,10 +70,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The namespace associated with the row-level permissions dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
      * </p>
      * 
-     * @return The namespace associated with the row-level permissions dataset.
+     * @return The namespace associated with the dataset that contains permissions for RLS.
      */
 
     public String getNamespace() {
@@ -74,11 +82,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The namespace associated with the row-level permissions dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the row-level permissions dataset.
+     *        The namespace associated with the dataset that contains permissions for RLS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +97,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      */
 
     public void setArn(String arn) {
@@ -102,10 +110,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the permission dataset.
+     * @return The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      */
 
     public String getArn() {
@@ -114,11 +122,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +137,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @see RowLevelPermissionPolicy
      */
 
@@ -143,10 +153,12 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
-     * @return Permission policy.
+     * @return The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *         included for backward compatibility only.
      * @see RowLevelPermissionPolicy
      */
 
@@ -156,11 +168,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RowLevelPermissionPolicy
      */
@@ -172,11 +186,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RowLevelPermissionPolicy
      */

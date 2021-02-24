@@ -31,7 +31,7 @@ public class ListDetectorModelVersionsResult extends com.amazonaws.AmazonWebServ
     private java.util.List<DetectorModelVersionSummary> detectorModelVersionSummaries;
     /**
      * <p>
-     * A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     * The token that you can use to return the next set of results, or <code>null</code> if there are no more results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,12 @@ public class ListDetectorModelVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     * The token that you can use to return the next set of results, or <code>null</code> if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     *        The token that you can use to return the next set of results, or <code>null</code> if there are no more
+     *        results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +122,11 @@ public class ListDetectorModelVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     * The token that you can use to return the next set of results, or <code>null</code> if there are no more results.
      * </p>
      * 
-     * @return A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     * @return The token that you can use to return the next set of results, or <code>null</code> if there are no more
+     *         results.
      */
 
     public String getNextToken() {
@@ -133,11 +135,12 @@ public class ListDetectorModelVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     * The token that you can use to return the next set of results, or <code>null</code> if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        A token to retrieve the next set of results, or <code>null</code> if there are no additional results.
+     *        The token that you can use to return the next set of results, or <code>null</code> if there are no more
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

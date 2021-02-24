@@ -1,3 +1,36 @@
+# __1.11.961__ __2021-02-23__
+## __AWS Glue__
+  - ### Features
+    - Updating the page size for Glue catalog getter APIs.
+
+## __AWS IoT Events__
+  - ### Features
+    - This release adds an Analyze feature to AWS IoT Events that lets customers analyze their detector models for runtime issues.
+
+## __AWS S3 Control__
+  - ### Features
+    - Documentation updates for s3-control
+
+## __Amazon Connect Service__
+  - ### Features
+    - Documentation updates for AWS Connect (MediaConcurrency Limit).
+
+## __Amazon Pinpoint__
+  - ### Features
+    - Enables AWS Pinpoint customers to use Entity Id and Template Id when sending SMS message. These parameters can be obtained from the regulatory body of the country where you are trying to send the SMS.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Documentation updates for QuickSight Row Level Security
+
+## __Auto Scaling__
+  - ### Features
+    - Adds a new optional IncludeDeletedGroups parameter to the DescribeScalingActivities API.
+
+## __Redshift Data API Service__
+  - ### Features
+    - This release adds an additional parameter 'ConnectedDatabase' into ListSchemasRequest, ListTablesRequest and DescribeTableRequest to support the metadata sharing across databases.
+
 # __1.11.960__ __2021-02-22__
 ## __Amazon SageMaker Runtime__
   - ### Features

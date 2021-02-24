@@ -92,6 +92,16 @@ public class ActivityStaxUnmarshaller implements Unmarshaller<Activity, StaxUnma
                     activity.setDetails(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AutoScalingGroupState", targetDepth)) {
+                    activity.setAutoScalingGroupState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AutoScalingGroupARN", targetDepth)) {
+                    activity.setAutoScalingGroupARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return activity;

@@ -93,6 +93,19 @@ public class AbstractAWSIoTEventsAsync extends AbstractAWSIoTEvents implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(DescribeDetectorModelAnalysisRequest request) {
+
+        return describeDetectorModelAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(DescribeDetectorModelAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDetectorModelAnalysisRequest, DescribeDetectorModelAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInputResult> describeInputAsync(DescribeInputRequest request) {
 
         return describeInputAsync(request, null);
@@ -114,6 +127,21 @@ public class AbstractAWSIoTEventsAsync extends AbstractAWSIoTEvents implements A
     @Override
     public java.util.concurrent.Future<DescribeLoggingOptionsResult> describeLoggingOptionsAsync(DescribeLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLoggingOptionsRequest, DescribeLoggingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            GetDetectorModelAnalysisResultsRequest request) {
+
+        return getDetectorModelAnalysisResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            GetDetectorModelAnalysisResultsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDetectorModelAnalysisResultsRequest, GetDetectorModelAnalysisResultsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +207,19 @@ public class AbstractAWSIoTEventsAsync extends AbstractAWSIoTEvents implements A
     @Override
     public java.util.concurrent.Future<PutLoggingOptionsResult> putLoggingOptionsAsync(PutLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLoggingOptionsRequest, PutLoggingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(StartDetectorModelAnalysisRequest request) {
+
+        return startDetectorModelAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(StartDetectorModelAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDetectorModelAnalysisRequest, StartDetectorModelAnalysisResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -24,26 +24,43 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <i>AWS IoT SiteWise API Reference</i>.
  * </p>
  * <p>
- * For parameters that are string data type, you can specify the following options:
+ * You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals,
+ * operators, functions, references, and substitution templates.
+ * </p>
+ * <p class="title">
+ * <b>Examples</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.
+ * For literal values, the expressions must contain single quotes. For example, the value for the
+ * <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * Use an expression. For example, the <code>timeInSeconds</code> value can be
- * <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.
+ * For references, you must specify either variables or input values. For example, the value for the
+ * <code>offsetInNanos</code> parameter can be <code>$variable.time</code>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution
+ * template can also contain a combination of literals, operators, functions, references, and substitution templates.
+ * </p>
+ * <p>
+ * In the following example, the value for the <code>timeInSeconds</code> parameter uses a substitution template.
+ * </p>
+ * <p>
+ * <code>'${$input.TemperatureInput.sensorData.timestamp / 1000}'</code>
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the
  * <i>AWS IoT Events Developer Guide</i>.
  * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyTimestamp" target="_top">AWS
  *      API Documentation</a>
@@ -53,28 +70,24 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You can also
-     * specify an expression.
+     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      * </p>
      */
     private String timeInSeconds;
     /**
      * <p>
-     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999. You can
-     * also specify an expression.
+     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
      * </p>
      */
     private String offsetInNanos;
 
     /**
      * <p>
-     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You can also
-     * specify an expression.
+     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      * </p>
      * 
      * @param timeInSeconds
-     *        The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You
-     *        can also specify an expression.
+     *        The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      */
 
     public void setTimeInSeconds(String timeInSeconds) {
@@ -83,12 +96,10 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You can also
-     * specify an expression.
+     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      * </p>
      * 
-     * @return The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You
-     *         can also specify an expression.
+     * @return The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      */
 
     public String getTimeInSeconds() {
@@ -97,13 +108,11 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You can also
-     * specify an expression.
+     * The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      * </p>
      * 
      * @param timeInSeconds
-     *        The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199. You
-     *        can also specify an expression.
+     *        The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +123,11 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999. You can
-     * also specify an expression.
+     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
      * </p>
      * 
      * @param offsetInNanos
      *        The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
-     *        You can also specify an expression.
      */
 
     public void setOffsetInNanos(String offsetInNanos) {
@@ -129,12 +136,10 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999. You can
-     * also specify an expression.
+     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
      * </p>
      * 
      * @return The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
-     *         You can also specify an expression.
      */
 
     public String getOffsetInNanos() {
@@ -143,13 +148,11 @@ public class AssetPropertyTimestamp implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999. You can
-     * also specify an expression.
+     * The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
      * </p>
      * 
      * @param offsetInNanos
      *        The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.
-     *        You can also specify an expression.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

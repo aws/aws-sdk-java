@@ -30,7 +30,7 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      */
     private String dataSourceArn;
@@ -49,11 +49,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The amazon Resource Name (ARN) for the data source.
+     *        The Amazon Resource Name (ARN) for the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -62,10 +62,10 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
-     * @return The amazon Resource Name (ARN) for the data source.
+     * @return The Amazon Resource Name (ARN) for the data source.
      */
 
     public String getDataSourceArn() {
@@ -74,11 +74,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The amazon Resource Name (ARN) for the data source.
+     *        The Amazon Resource Name (ARN) for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

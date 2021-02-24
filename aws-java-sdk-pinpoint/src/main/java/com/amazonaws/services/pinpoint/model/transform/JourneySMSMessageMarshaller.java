@@ -33,6 +33,10 @@ public class JourneySMSMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginationNumber").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
+    private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EntityId").build();
+    private static final MarshallingInfo<String> TEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateId").build();
 
     private static final JourneySMSMessageMarshaller instance = new JourneySMSMessageMarshaller();
 
@@ -53,6 +57,8 @@ public class JourneySMSMessageMarshaller {
             protocolMarshaller.marshall(journeySMSMessage.getMessageType(), MESSAGETYPE_BINDING);
             protocolMarshaller.marshall(journeySMSMessage.getOriginationNumber(), ORIGINATIONNUMBER_BINDING);
             protocolMarshaller.marshall(journeySMSMessage.getSenderId(), SENDERID_BINDING);
+            protocolMarshaller.marshall(journeySMSMessage.getEntityId(), ENTITYID_BINDING);
+            protocolMarshaller.marshall(journeySMSMessage.getTemplateId(), TEMPLATEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

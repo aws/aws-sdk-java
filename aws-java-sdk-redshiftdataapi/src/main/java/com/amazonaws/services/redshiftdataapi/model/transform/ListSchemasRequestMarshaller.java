@@ -29,6 +29,8 @@ public class ListSchemasRequestMarshaller {
 
     private static final MarshallingInfo<String> CLUSTERIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterIdentifier").build();
+    private static final MarshallingInfo<String> CONNECTEDDATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectedDatabase").build();
     private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Database").build();
     private static final MarshallingInfo<String> DBUSER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class ListSchemasRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listSchemasRequest.getClusterIdentifier(), CLUSTERIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(listSchemasRequest.getConnectedDatabase(), CONNECTEDDATABASE_BINDING);
             protocolMarshaller.marshall(listSchemasRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(listSchemasRequest.getDbUser(), DBUSER_BINDING);
             protocolMarshaller.marshall(listSchemasRequest.getMaxResults(), MAXRESULTS_BINDING);

@@ -24,26 +24,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * >AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.
  * </p>
  * <p>
- * For parameters that are string data type, you can specify the following options:
+ * You must use expressions for all parameters in <code>AssetPropertyValue</code>. The expressions accept literals,
+ * operators, functions, references, and substitution templates.
+ * </p>
+ * <p class="title">
+ * <b>Examples</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.
+ * For literal values, the expressions must contain single quotes. For example, the value for the <code>quality</code>
+ * parameter can be <code>'GOOD'</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * Use an expression. For example, the <code>quality</code> value can be
- * <code>$input.TemperatureInput.sensorData.quality</code> .
+ * For references, you must specify either variables or input values. For example, the value for the
+ * <code>quality</code> parameter can be <code>$input.TemperatureInput.sensorData.quality</code>.
  * </p>
+ * </li>
+ * </ul>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the
  * <i>AWS IoT Events Developer Guide</i>.
  * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyValue" target="_top">AWS API
  *      Documentation</a>
@@ -65,8 +70,8 @@ public class AssetPropertyValue implements Serializable, Cloneable, StructuredPo
     private AssetPropertyTimestamp timestamp;
     /**
      * <p>
-     * The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     * <code>UNCERTAIN</code>. You can also specify an expression.
+     * The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     * <code>'UNCERTAIN'</code>.
      * </p>
      */
     private String quality;
@@ -153,13 +158,13 @@ public class AssetPropertyValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     * <code>UNCERTAIN</code>. You can also specify an expression.
+     * The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     * <code>'UNCERTAIN'</code>.
      * </p>
      * 
      * @param quality
-     *        The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     *        <code>UNCERTAIN</code>. You can also specify an expression.
+     *        The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     *        <code>'UNCERTAIN'</code>.
      */
 
     public void setQuality(String quality) {
@@ -168,12 +173,12 @@ public class AssetPropertyValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     * <code>UNCERTAIN</code>. You can also specify an expression.
+     * The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     * <code>'UNCERTAIN'</code>.
      * </p>
      * 
-     * @return The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     *         <code>UNCERTAIN</code>. You can also specify an expression.
+     * @return The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     *         <code>'UNCERTAIN'</code>.
      */
 
     public String getQuality() {
@@ -182,13 +187,13 @@ public class AssetPropertyValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     * <code>UNCERTAIN</code>. You can also specify an expression.
+     * The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     * <code>'UNCERTAIN'</code>.
      * </p>
      * 
      * @param quality
-     *        The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>, or
-     *        <code>UNCERTAIN</code>. You can also specify an expression.
+     *        The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or
+     *        <code>'UNCERTAIN'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

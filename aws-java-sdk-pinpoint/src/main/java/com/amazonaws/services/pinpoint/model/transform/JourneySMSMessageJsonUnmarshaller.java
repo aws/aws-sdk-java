@@ -60,6 +60,14 @@ public class JourneySMSMessageJsonUnmarshaller implements Unmarshaller<JourneySM
                     context.nextToken();
                     journeySMSMessage.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EntityId", targetDepth)) {
+                    context.nextToken();
+                    journeySMSMessage.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TemplateId", targetDepth)) {
+                    context.nextToken();
+                    journeySMSMessage.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

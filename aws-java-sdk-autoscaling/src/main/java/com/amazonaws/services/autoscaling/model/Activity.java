@@ -87,6 +87,18 @@ public class Activity implements Serializable, Cloneable {
      * </p>
      */
     private String details;
+    /**
+     * <p>
+     * The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     * </p>
+     */
+    private String autoScalingGroupState;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     */
+    private String autoScalingGroupARN;
 
     /**
      * <p>
@@ -522,6 +534,86 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     * </p>
+     * 
+     * @param autoScalingGroupState
+     *        The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     */
+
+    public void setAutoScalingGroupState(String autoScalingGroupState) {
+        this.autoScalingGroupState = autoScalingGroupState;
+    }
+
+    /**
+     * <p>
+     * The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     * </p>
+     * 
+     * @return The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     */
+
+    public String getAutoScalingGroupState() {
+        return this.autoScalingGroupState;
+    }
+
+    /**
+     * <p>
+     * The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     * </p>
+     * 
+     * @param autoScalingGroupState
+     *        The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withAutoScalingGroupState(String autoScalingGroupState) {
+        setAutoScalingGroupState(autoScalingGroupState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     * 
+     * @param autoScalingGroupARN
+     *        The Amazon Resource Name (ARN) of the Auto Scaling group.
+     */
+
+    public void setAutoScalingGroupARN(String autoScalingGroupARN) {
+        this.autoScalingGroupARN = autoScalingGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Auto Scaling group.
+     */
+
+    public String getAutoScalingGroupARN() {
+        return this.autoScalingGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     * 
+     * @param autoScalingGroupARN
+     *        The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withAutoScalingGroupARN(String autoScalingGroupARN) {
+        setAutoScalingGroupARN(autoScalingGroupARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -552,7 +644,11 @@ public class Activity implements Serializable, Cloneable {
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getAutoScalingGroupState() != null)
+            sb.append("AutoScalingGroupState: ").append(getAutoScalingGroupState()).append(",");
+        if (getAutoScalingGroupARN() != null)
+            sb.append("AutoScalingGroupARN: ").append(getAutoScalingGroupARN());
         sb.append("}");
         return sb.toString();
     }
@@ -607,6 +703,14 @@ public class Activity implements Serializable, Cloneable {
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
+        if (other.getAutoScalingGroupState() == null ^ this.getAutoScalingGroupState() == null)
+            return false;
+        if (other.getAutoScalingGroupState() != null && other.getAutoScalingGroupState().equals(this.getAutoScalingGroupState()) == false)
+            return false;
+        if (other.getAutoScalingGroupARN() == null ^ this.getAutoScalingGroupARN() == null)
+            return false;
+        if (other.getAutoScalingGroupARN() != null && other.getAutoScalingGroupARN().equals(this.getAutoScalingGroupARN()) == false)
+            return false;
         return true;
     }
 
@@ -625,6 +729,8 @@ public class Activity implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupState() == null) ? 0 : getAutoScalingGroupState().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupARN() == null) ? 0 : getAutoScalingGroupARN().hashCode());
         return hashCode;
     }
 

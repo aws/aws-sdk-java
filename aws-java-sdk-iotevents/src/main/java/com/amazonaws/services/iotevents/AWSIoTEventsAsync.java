@@ -193,6 +193,41 @@ public interface AWSIoTEventsAsync extends AWSIoTEvents {
 
     /**
      * <p>
+     * Retrieves execution information about a detector model analysis
+     * </p>
+     * 
+     * @param describeDetectorModelAnalysisRequest
+     * @return A Java Future containing the result of the DescribeDetectorModelAnalysis operation returned by the
+     *         service.
+     * @sample AWSIoTEventsAsync.DescribeDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(
+            DescribeDetectorModelAnalysisRequest describeDetectorModelAnalysisRequest);
+
+    /**
+     * <p>
+     * Retrieves execution information about a detector model analysis
+     * </p>
+     * 
+     * @param describeDetectorModelAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDetectorModelAnalysis operation returned by the
+     *         service.
+     * @sample AWSIoTEventsAsyncHandler.DescribeDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDetectorModelAnalysisResult> describeDetectorModelAnalysisAsync(
+            DescribeDetectorModelAnalysisRequest describeDetectorModelAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDetectorModelAnalysisRequest, DescribeDetectorModelAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes an input.
      * </p>
      * 
@@ -252,6 +287,41 @@ public interface AWSIoTEventsAsync extends AWSIoTEvents {
      */
     java.util.concurrent.Future<DescribeLoggingOptionsResult> describeLoggingOptionsAsync(DescribeLoggingOptionsRequest describeLoggingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLoggingOptionsRequest, DescribeLoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves one or more analysis results of the detector model.
+     * </p>
+     * 
+     * @param getDetectorModelAnalysisResultsRequest
+     * @return A Java Future containing the result of the GetDetectorModelAnalysisResults operation returned by the
+     *         service.
+     * @sample AWSIoTEventsAsync.GetDetectorModelAnalysisResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            GetDetectorModelAnalysisResultsRequest getDetectorModelAnalysisResultsRequest);
+
+    /**
+     * <p>
+     * Retrieves one or more analysis results of the detector model.
+     * </p>
+     * 
+     * @param getDetectorModelAnalysisResultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDetectorModelAnalysisResults operation returned by the
+     *         service.
+     * @sample AWSIoTEventsAsyncHandler.GetDetectorModelAnalysisResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDetectorModelAnalysisResultsResult> getDetectorModelAnalysisResultsAsync(
+            GetDetectorModelAnalysisResultsRequest getDetectorModelAnalysisResultsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDetectorModelAnalysisResultsRequest, GetDetectorModelAnalysisResultsResult> asyncHandler);
 
     /**
      * <p>
@@ -421,6 +491,43 @@ public interface AWSIoTEventsAsync extends AWSIoTEvents {
      */
     java.util.concurrent.Future<PutLoggingOptionsResult> putLoggingOptionsAsync(PutLoggingOptionsRequest putLoggingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<PutLoggingOptionsRequest, PutLoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Performs an analysis of your detector model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector
+     * model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param startDetectorModelAnalysisRequest
+     * @return A Java Future containing the result of the StartDetectorModelAnalysis operation returned by the service.
+     * @sample AWSIoTEventsAsync.StartDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(
+            StartDetectorModelAnalysisRequest startDetectorModelAnalysisRequest);
+
+    /**
+     * <p>
+     * Performs an analysis of your detector model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector
+     * model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param startDetectorModelAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDetectorModelAnalysis operation returned by the service.
+     * @sample AWSIoTEventsAsyncHandler.StartDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDetectorModelAnalysisResult> startDetectorModelAnalysisAsync(
+            StartDetectorModelAnalysisRequest startDetectorModelAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDetectorModelAnalysisRequest, StartDetectorModelAnalysisResult> asyncHandler);
 
     /**
      * <p>

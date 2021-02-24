@@ -53,12 +53,22 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
     }
 
     @Override
+    public DescribeDetectorModelAnalysisResult describeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInputResult describeInput(DescribeInputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeLoggingOptionsResult describeLoggingOptions(DescribeLoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDetectorModelAnalysisResultsResult getDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +94,11 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
 
     @Override
     public PutLoggingOptionsResult putLoggingOptions(PutLoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDetectorModelAnalysisResult startDetectorModelAnalysis(StartDetectorModelAnalysisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

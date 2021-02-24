@@ -25,7 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateJobPriorityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
+     */
     private String accountId;
     /**
      * <p>
@@ -41,9 +45,12 @@ public class UpdateJobPriorityRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer priority;
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public void setAccountId(String accountId) {
@@ -51,9 +58,11 @@ public class UpdateJobPriorityRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
-     * @return
+     * @return The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public String getAccountId() {
@@ -61,9 +70,12 @@ public class UpdateJobPriorityRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID associated with the S3 Batch Operations job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID associated with the S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

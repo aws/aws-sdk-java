@@ -2536,6 +2536,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * Describes one or more scaling activities for the specified Auto Scaling group.
      * </p>
+     * <p>
+     * To view the scaling activities from the Amazon EC2 Auto Scaling console, choose the <b>Activity</b> tab of the
+     * Auto Scaling group. When scaling events occur, you see scaling activity messages in the <b>Activity history</b>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling
+     * activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param describeScalingActivitiesRequest
      * @return Result of the DescribeScalingActivities operation returned by the service.

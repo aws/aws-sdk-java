@@ -41,6 +41,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
     private String autoScalingGroupName;
     /**
      * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     */
+    private Boolean includeDeletedGroups;
+    /**
+     * <p>
      * The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value
      * is <code>100</code>.
      * </p>
@@ -184,6 +190,58 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @param includeDeletedGroups
+     *        Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public void setIncludeDeletedGroups(Boolean includeDeletedGroups) {
+        this.includeDeletedGroups = includeDeletedGroups;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @return Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public Boolean getIncludeDeletedGroups() {
+        return this.includeDeletedGroups;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @param includeDeletedGroups
+     *        Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScalingActivitiesRequest withIncludeDeletedGroups(Boolean includeDeletedGroups) {
+        setIncludeDeletedGroups(includeDeletedGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @return Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public Boolean isIncludeDeletedGroups() {
+        return this.includeDeletedGroups;
+    }
+
+    /**
+     * <p>
      * The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value
      * is <code>100</code>.
      * </p>
@@ -284,6 +342,8 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
             sb.append("ActivityIds: ").append(getActivityIds()).append(",");
         if (getAutoScalingGroupName() != null)
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
+        if (getIncludeDeletedGroups() != null)
+            sb.append("IncludeDeletedGroups: ").append(getIncludeDeletedGroups()).append(",");
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
@@ -310,6 +370,10 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
+        if (other.getIncludeDeletedGroups() == null ^ this.getIncludeDeletedGroups() == null)
+            return false;
+        if (other.getIncludeDeletedGroups() != null && other.getIncludeDeletedGroups().equals(this.getIncludeDeletedGroups()) == false)
+            return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
@@ -328,6 +392,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getActivityIds() == null) ? 0 : getActivityIds().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDeletedGroups() == null) ? 0 : getIncludeDeletedGroups().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

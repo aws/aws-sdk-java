@@ -79,6 +79,14 @@ public class SMSMessageJsonUnmarshaller implements Unmarshaller<SMSMessage, Json
 
                     ).unmarshall(context));
                 }
+                if (context.testExpression("EntityId", targetDepth)) {
+                    context.nextToken();
+                    sMSMessage.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TemplateId", targetDepth)) {
+                    context.nextToken();
+                    sMSMessage.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

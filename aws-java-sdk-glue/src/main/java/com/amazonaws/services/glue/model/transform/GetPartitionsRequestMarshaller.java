@@ -41,6 +41,8 @@ public class GetPartitionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Segment").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<Boolean> EXCLUDECOLUMNSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeColumnSchema").build();
 
     private static final GetPartitionsRequestMarshaller instance = new GetPartitionsRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class GetPartitionsRequestMarshaller {
             protocolMarshaller.marshall(getPartitionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getPartitionsRequest.getSegment(), SEGMENT_BINDING);
             protocolMarshaller.marshall(getPartitionsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getPartitionsRequest.getExcludeColumnSchema(), EXCLUDECOLUMNSCHEMA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

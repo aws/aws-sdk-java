@@ -64,6 +64,14 @@ public class CampaignSmsMessageJsonUnmarshaller implements Unmarshaller<Campaign
                     context.nextToken();
                     campaignSmsMessage.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EntityId", targetDepth)) {
+                    context.nextToken();
+                    campaignSmsMessage.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TemplateId", targetDepth)) {
+                    context.nextToken();
+                    campaignSmsMessage.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
