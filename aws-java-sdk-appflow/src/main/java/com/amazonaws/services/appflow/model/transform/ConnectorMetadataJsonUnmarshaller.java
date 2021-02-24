@@ -120,6 +120,14 @@ public class ConnectorMetadataJsonUnmarshaller implements Unmarshaller<Connector
                     context.nextToken();
                     connectorMetadata.setUpsolver(UpsolverMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomerProfiles", targetDepth)) {
+                    context.nextToken();
+                    connectorMetadata.setCustomerProfiles(CustomerProfilesMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Honeycode", targetDepth)) {
+                    context.nextToken();
+                    connectorMetadata.setHoneycode(HoneycodeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

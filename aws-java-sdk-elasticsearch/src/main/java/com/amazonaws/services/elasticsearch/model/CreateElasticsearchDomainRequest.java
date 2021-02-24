@@ -118,6 +118,12 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private AdvancedSecurityOptionsInput advancedSecurityOptions;
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     */
+    private AutoTuneOptionsInput autoTuneOptions;
 
     /**
      * <p>
@@ -823,6 +829,46 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     */
+
+    public void setAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
+        this.autoTuneOptions = autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @return Specifies Auto-Tune options.
+     */
+
+    public AutoTuneOptionsInput getAutoTuneOptions() {
+        return this.autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
+        setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -861,7 +907,9 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         if (getDomainEndpointOptions() != null)
             sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions()).append(",");
         if (getAdvancedSecurityOptions() != null)
-            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
+        if (getAutoTuneOptions() != null)
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -932,6 +980,10 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
             return false;
+        if (other.getAutoTuneOptions() == null ^ this.getAutoTuneOptions() == null)
+            return false;
+        if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
+            return false;
         return true;
     }
 
@@ -954,6 +1006,7 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
+        hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         return hashCode;
     }
 

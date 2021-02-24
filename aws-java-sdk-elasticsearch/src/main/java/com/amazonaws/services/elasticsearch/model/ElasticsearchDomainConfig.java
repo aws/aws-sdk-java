@@ -109,6 +109,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
      * </p>
      */
     private AdvancedSecurityOptionsStatus advancedSecurityOptions;
+    /**
+     * <p>
+     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * </p>
+     */
+    private AutoTuneOptionsStatus autoTuneOptions;
 
     /**
      * <p>
@@ -667,6 +673,46 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies <code>AutoTuneOptions</code> for the domain.
+     */
+
+    public void setAutoTuneOptions(AutoTuneOptionsStatus autoTuneOptions) {
+        this.autoTuneOptions = autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * </p>
+     * 
+     * @return Specifies <code>AutoTuneOptions</code> for the domain.
+     */
+
+    public AutoTuneOptionsStatus getAutoTuneOptions() {
+        return this.autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies <code>AutoTuneOptions</code> for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withAutoTuneOptions(AutoTuneOptionsStatus autoTuneOptions) {
+        setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -703,7 +749,9 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         if (getDomainEndpointOptions() != null)
             sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions()).append(",");
         if (getAdvancedSecurityOptions() != null)
-            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
+        if (getAutoTuneOptions() != null)
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -770,6 +818,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
             return false;
+        if (other.getAutoTuneOptions() == null ^ this.getAutoTuneOptions() == null)
+            return false;
+        if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
+            return false;
         return true;
     }
 
@@ -791,6 +843,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
+        hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         return hashCode;
     }
 

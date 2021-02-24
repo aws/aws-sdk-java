@@ -52,6 +52,8 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
      * </p>
      */
     private GoogleAnalyticsConnectorProfileCredentials googleAnalytics;
+
+    private HoneycodeConnectorProfileCredentials honeycode;
     /**
      * <p>
      * The connector-specific credentials required when using Infor Nexus.
@@ -276,6 +278,32 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
 
     public ConnectorProfileCredentials withGoogleAnalytics(GoogleAnalyticsConnectorProfileCredentials googleAnalytics) {
         setGoogleAnalytics(googleAnalytics);
+        return this;
+    }
+
+    /**
+     * @param honeycode
+     */
+
+    public void setHoneycode(HoneycodeConnectorProfileCredentials honeycode) {
+        this.honeycode = honeycode;
+    }
+
+    /**
+     * @return
+     */
+
+    public HoneycodeConnectorProfileCredentials getHoneycode() {
+        return this.honeycode;
+    }
+
+    /**
+     * @param honeycode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorProfileCredentials withHoneycode(HoneycodeConnectorProfileCredentials honeycode) {
+        setHoneycode(honeycode);
         return this;
     }
 
@@ -739,6 +767,8 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
             sb.append("Dynatrace: ").append(getDynatrace()).append(",");
         if (getGoogleAnalytics() != null)
             sb.append("GoogleAnalytics: ").append(getGoogleAnalytics()).append(",");
+        if (getHoneycode() != null)
+            sb.append("Honeycode: ").append(getHoneycode()).append(",");
         if (getInforNexus() != null)
             sb.append("InforNexus: ").append(getInforNexus()).append(",");
         if (getMarketo() != null)
@@ -790,6 +820,10 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
         if (other.getGoogleAnalytics() == null ^ this.getGoogleAnalytics() == null)
             return false;
         if (other.getGoogleAnalytics() != null && other.getGoogleAnalytics().equals(this.getGoogleAnalytics()) == false)
+            return false;
+        if (other.getHoneycode() == null ^ this.getHoneycode() == null)
+            return false;
+        if (other.getHoneycode() != null && other.getHoneycode().equals(this.getHoneycode()) == false)
             return false;
         if (other.getInforNexus() == null ^ this.getInforNexus() == null)
             return false;
@@ -847,6 +881,7 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getDatadog() == null) ? 0 : getDatadog().hashCode());
         hashCode = prime * hashCode + ((getDynatrace() == null) ? 0 : getDynatrace().hashCode());
         hashCode = prime * hashCode + ((getGoogleAnalytics() == null) ? 0 : getGoogleAnalytics().hashCode());
+        hashCode = prime * hashCode + ((getHoneycode() == null) ? 0 : getHoneycode().hashCode());
         hashCode = prime * hashCode + ((getInforNexus() == null) ? 0 : getInforNexus().hashCode());
         hashCode = prime * hashCode + ((getMarketo() == null) ? 0 : getMarketo().hashCode());
         hashCode = prime * hashCode + ((getRedshift() == null) ? 0 : getRedshift().hashCode());

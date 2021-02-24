@@ -138,6 +138,10 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
      */
     private UpsolverMetadata upsolver;
 
+    private CustomerProfilesMetadata customerProfiles;
+
+    private HoneycodeMetadata honeycode;
+
     /**
      * <p>
      * The connector metadata specific to Amplitude.
@@ -859,6 +863,58 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param customerProfiles
+     */
+
+    public void setCustomerProfiles(CustomerProfilesMetadata customerProfiles) {
+        this.customerProfiles = customerProfiles;
+    }
+
+    /**
+     * @return
+     */
+
+    public CustomerProfilesMetadata getCustomerProfiles() {
+        return this.customerProfiles;
+    }
+
+    /**
+     * @param customerProfiles
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorMetadata withCustomerProfiles(CustomerProfilesMetadata customerProfiles) {
+        setCustomerProfiles(customerProfiles);
+        return this;
+    }
+
+    /**
+     * @param honeycode
+     */
+
+    public void setHoneycode(HoneycodeMetadata honeycode) {
+        this.honeycode = honeycode;
+    }
+
+    /**
+     * @return
+     */
+
+    public HoneycodeMetadata getHoneycode() {
+        return this.honeycode;
+    }
+
+    /**
+     * @param honeycode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorMetadata withHoneycode(HoneycodeMetadata honeycode) {
+        setHoneycode(honeycode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -905,7 +961,11 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         if (getEventBridge() != null)
             sb.append("EventBridge: ").append(getEventBridge()).append(",");
         if (getUpsolver() != null)
-            sb.append("Upsolver: ").append(getUpsolver());
+            sb.append("Upsolver: ").append(getUpsolver()).append(",");
+        if (getCustomerProfiles() != null)
+            sb.append("CustomerProfiles: ").append(getCustomerProfiles()).append(",");
+        if (getHoneycode() != null)
+            sb.append("Honeycode: ").append(getHoneycode());
         sb.append("}");
         return sb.toString();
     }
@@ -992,6 +1052,14 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getUpsolver() != null && other.getUpsolver().equals(this.getUpsolver()) == false)
             return false;
+        if (other.getCustomerProfiles() == null ^ this.getCustomerProfiles() == null)
+            return false;
+        if (other.getCustomerProfiles() != null && other.getCustomerProfiles().equals(this.getCustomerProfiles()) == false)
+            return false;
+        if (other.getHoneycode() == null ^ this.getHoneycode() == null)
+            return false;
+        if (other.getHoneycode() != null && other.getHoneycode().equals(this.getHoneycode()) == false)
+            return false;
         return true;
     }
 
@@ -1018,6 +1086,8 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getZendesk() == null) ? 0 : getZendesk().hashCode());
         hashCode = prime * hashCode + ((getEventBridge() == null) ? 0 : getEventBridge().hashCode());
         hashCode = prime * hashCode + ((getUpsolver() == null) ? 0 : getUpsolver().hashCode());
+        hashCode = prime * hashCode + ((getCustomerProfiles() == null) ? 0 : getCustomerProfiles().hashCode());
+        hashCode = prime * hashCode + ((getHoneycode() == null) ? 0 : getHoneycode().hashCode());
         return hashCode;
     }
 

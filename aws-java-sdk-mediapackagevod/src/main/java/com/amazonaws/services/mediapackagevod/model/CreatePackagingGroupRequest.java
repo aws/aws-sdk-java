@@ -27,6 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private Authorization authorization;
+
+    private EgressAccessLogs egressAccessLogs;
     /** The ID of the PackagingGroup. */
     private String id;
 
@@ -55,6 +57,32 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreatePackagingGroupRequest withAuthorization(Authorization authorization) {
         setAuthorization(authorization);
+        return this;
+    }
+
+    /**
+     * @param egressAccessLogs
+     */
+
+    public void setEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        this.egressAccessLogs = egressAccessLogs;
+    }
+
+    /**
+     * @return
+     */
+
+    public EgressAccessLogs getEgressAccessLogs() {
+        return this.egressAccessLogs;
+    }
+
+    /**
+     * @param egressAccessLogs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackagingGroupRequest withEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        setEgressAccessLogs(egressAccessLogs);
         return this;
     }
 
@@ -160,6 +188,8 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getAuthorization() != null)
             sb.append("Authorization: ").append(getAuthorization()).append(",");
+        if (getEgressAccessLogs() != null)
+            sb.append("EgressAccessLogs: ").append(getEgressAccessLogs()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getTags() != null)
@@ -182,6 +212,10 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
             return false;
+        if (other.getEgressAccessLogs() == null ^ this.getEgressAccessLogs() == null)
+            return false;
+        if (other.getEgressAccessLogs() != null && other.getEgressAccessLogs().equals(this.getEgressAccessLogs()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -199,6 +233,7 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
+        hashCode = prime * hashCode + ((getEgressAccessLogs() == null) ? 0 : getEgressAccessLogs().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

@@ -69,6 +69,8 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
      */
     private Long scheduleOffset;
 
+    private java.util.Date firstExecutionFrom;
+
     /**
      * <p>
      * The scheduling expression that determines the rate at which the schedule will run, for example
@@ -349,6 +351,32 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * @param firstExecutionFrom
+     */
+
+    public void setFirstExecutionFrom(java.util.Date firstExecutionFrom) {
+        this.firstExecutionFrom = firstExecutionFrom;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getFirstExecutionFrom() {
+        return this.firstExecutionFrom;
+    }
+
+    /**
+     * @param firstExecutionFrom
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledTriggerProperties withFirstExecutionFrom(java.util.Date firstExecutionFrom) {
+        setFirstExecutionFrom(firstExecutionFrom);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -371,7 +399,9 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getScheduleOffset() != null)
-            sb.append("ScheduleOffset: ").append(getScheduleOffset());
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
+        if (getFirstExecutionFrom() != null)
+            sb.append("FirstExecutionFrom: ").append(getFirstExecutionFrom());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +440,10 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
             return false;
+        if (other.getFirstExecutionFrom() == null ^ this.getFirstExecutionFrom() == null)
+            return false;
+        if (other.getFirstExecutionFrom() != null && other.getFirstExecutionFrom().equals(this.getFirstExecutionFrom()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +458,7 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getScheduleEndTime() == null) ? 0 : getScheduleEndTime().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
+        hashCode = prime * hashCode + ((getFirstExecutionFrom() == null) ? 0 : getFirstExecutionFrom().hashCode());
         return hashCode;
     }
 

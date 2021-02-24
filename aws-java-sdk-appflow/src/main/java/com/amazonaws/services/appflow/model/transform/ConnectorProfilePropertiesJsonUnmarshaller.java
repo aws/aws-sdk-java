@@ -64,6 +64,10 @@ public class ConnectorProfilePropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     connectorProfileProperties.setGoogleAnalytics(GoogleAnalyticsConnectorProfilePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Honeycode", targetDepth)) {
+                    context.nextToken();
+                    connectorProfileProperties.setHoneycode(HoneycodeConnectorProfilePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("InforNexus", targetDepth)) {
                     context.nextToken();
                     connectorProfileProperties.setInforNexus(InforNexusConnectorProfilePropertiesJsonUnmarshaller.getInstance().unmarshall(context));

@@ -28,6 +28,11 @@ public class AbstractAWSMediaPackageVod implements AWSMediaPackageVod {
     }
 
     @Override
+    public ConfigureLogsResult configureLogs(ConfigureLogsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAssetResult createAsset(CreateAssetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

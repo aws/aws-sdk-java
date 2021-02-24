@@ -37,7 +37,10 @@ public enum ConnectorType {
     Amplitude("Amplitude"),
     Veeva("Veeva"),
     EventBridge("EventBridge"),
-    Upsolver("Upsolver");
+    LookoutMetrics("LookoutMetrics"),
+    Upsolver("Upsolver"),
+    Honeycode("Honeycode"),
+    CustomerProfiles("CustomerProfiles");
 
     private String value;
 

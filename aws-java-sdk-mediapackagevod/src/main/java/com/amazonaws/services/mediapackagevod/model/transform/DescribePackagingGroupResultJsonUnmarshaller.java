@@ -60,6 +60,10 @@ public class DescribePackagingGroupResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describePackagingGroupResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    describePackagingGroupResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     describePackagingGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));

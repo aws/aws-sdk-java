@@ -29,6 +29,8 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
     private Authorization authorization;
     /** The fully qualified domain name for Assets in the PackagingGroup. */
     private String domainName;
+
+    private EgressAccessLogs egressAccessLogs;
     /** The ID of the PackagingGroup. */
     private String id;
 
@@ -125,6 +127,32 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
 
     public DescribePackagingGroupResult withDomainName(String domainName) {
         setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * @param egressAccessLogs
+     */
+
+    public void setEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        this.egressAccessLogs = egressAccessLogs;
+    }
+
+    /**
+     * @return
+     */
+
+    public EgressAccessLogs getEgressAccessLogs() {
+        return this.egressAccessLogs;
+    }
+
+    /**
+     * @param egressAccessLogs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackagingGroupResult withEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        setEgressAccessLogs(egressAccessLogs);
         return this;
     }
 
@@ -234,6 +262,8 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
             sb.append("Authorization: ").append(getAuthorization()).append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getEgressAccessLogs() != null)
+            sb.append("EgressAccessLogs: ").append(getEgressAccessLogs()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getTags() != null)
@@ -264,6 +294,10 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
+        if (other.getEgressAccessLogs() == null ^ this.getEgressAccessLogs() == null)
+            return false;
+        if (other.getEgressAccessLogs() != null && other.getEgressAccessLogs().equals(this.getEgressAccessLogs()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -283,6 +317,7 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getEgressAccessLogs() == null) ? 0 : getEgressAccessLogs().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

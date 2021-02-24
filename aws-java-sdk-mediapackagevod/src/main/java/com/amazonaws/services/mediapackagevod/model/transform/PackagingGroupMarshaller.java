@@ -35,6 +35,8 @@ public class PackagingGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorization").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
+    private static final MarshallingInfo<StructuredPojo> EGRESSACCESSLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("egressAccessLogs").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class PackagingGroupMarshaller {
             protocolMarshaller.marshall(packagingGroup.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(packagingGroup.getAuthorization(), AUTHORIZATION_BINDING);
             protocolMarshaller.marshall(packagingGroup.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(packagingGroup.getEgressAccessLogs(), EGRESSACCESSLOGS_BINDING);
             protocolMarshaller.marshall(packagingGroup.getId(), ID_BINDING);
             protocolMarshaller.marshall(packagingGroup.getTags(), TAGS_BINDING);
         } catch (Exception e) {

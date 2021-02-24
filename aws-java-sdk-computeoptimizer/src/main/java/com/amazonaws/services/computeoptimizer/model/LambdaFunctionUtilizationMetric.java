@@ -32,6 +32,21 @@ public class LambdaFunctionUtilizationMetric implements Serializable, Cloneable,
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Duration</code> - The amount of time that your function code spends processing an event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The amount of memory used per invocation.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -51,9 +66,38 @@ public class LambdaFunctionUtilizationMetric implements Serializable, Cloneable,
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Duration</code> - The amount of time that your function code spends processing an event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The amount of memory used per invocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Duration</code> - The amount of time that your function code spends processing an event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The amount of memory used per invocation.
+     *        </p>
+     *        </li>
      * @see LambdaFunctionMetricName
      */
 
@@ -65,8 +109,37 @@ public class LambdaFunctionUtilizationMetric implements Serializable, Cloneable,
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Duration</code> - The amount of time that your function code spends processing an event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The amount of memory used per invocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the utilization metric.
+     * @return The name of the utilization metric.</p>
+     *         <p>
+     *         The following utilization metrics are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Duration</code> - The amount of time that your function code spends processing an event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Memory</code> - The amount of memory used per invocation.
+     *         </p>
+     *         </li>
      * @see LambdaFunctionMetricName
      */
 
@@ -78,9 +151,38 @@ public class LambdaFunctionUtilizationMetric implements Serializable, Cloneable,
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Duration</code> - The amount of time that your function code spends processing an event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The amount of memory used per invocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Duration</code> - The amount of time that your function code spends processing an event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The amount of memory used per invocation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LambdaFunctionMetricName
      */
@@ -94,9 +196,38 @@ public class LambdaFunctionUtilizationMetric implements Serializable, Cloneable,
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Duration</code> - The amount of time that your function code spends processing an event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The amount of memory used per invocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Duration</code> - The amount of time that your function code spends processing an event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The amount of memory used per invocation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LambdaFunctionMetricName
      */

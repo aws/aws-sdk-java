@@ -72,6 +72,10 @@ public class ScheduledTriggerPropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     scheduledTriggerProperties.setScheduleOffset(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("firstExecutionFrom", targetDepth)) {
+                    context.nextToken();
+                    scheduledTriggerProperties.setFirstExecutionFrom(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

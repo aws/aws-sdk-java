@@ -58,12 +58,18 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private EventBridgeDestinationProperties eventBridge;
+
+    private LookoutMetricsDestinationProperties lookoutMetrics;
     /**
      * <p>
      * The properties required to query Upsolver.
      * </p>
      */
     private UpsolverDestinationProperties upsolver;
+
+    private HoneycodeDestinationProperties honeycode;
+
+    private CustomerProfilesDestinationProperties customerProfiles;
 
     /**
      * <p>
@@ -266,6 +272,32 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * @param lookoutMetrics
+     */
+
+    public void setLookoutMetrics(LookoutMetricsDestinationProperties lookoutMetrics) {
+        this.lookoutMetrics = lookoutMetrics;
+    }
+
+    /**
+     * @return
+     */
+
+    public LookoutMetricsDestinationProperties getLookoutMetrics() {
+        return this.lookoutMetrics;
+    }
+
+    /**
+     * @param lookoutMetrics
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withLookoutMetrics(LookoutMetricsDestinationProperties lookoutMetrics) {
+        setLookoutMetrics(lookoutMetrics);
+        return this;
+    }
+
+    /**
      * <p>
      * The properties required to query Upsolver.
      * </p>
@@ -306,6 +338,58 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * @param honeycode
+     */
+
+    public void setHoneycode(HoneycodeDestinationProperties honeycode) {
+        this.honeycode = honeycode;
+    }
+
+    /**
+     * @return
+     */
+
+    public HoneycodeDestinationProperties getHoneycode() {
+        return this.honeycode;
+    }
+
+    /**
+     * @param honeycode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withHoneycode(HoneycodeDestinationProperties honeycode) {
+        setHoneycode(honeycode);
+        return this;
+    }
+
+    /**
+     * @param customerProfiles
+     */
+
+    public void setCustomerProfiles(CustomerProfilesDestinationProperties customerProfiles) {
+        this.customerProfiles = customerProfiles;
+    }
+
+    /**
+     * @return
+     */
+
+    public CustomerProfilesDestinationProperties getCustomerProfiles() {
+        return this.customerProfiles;
+    }
+
+    /**
+     * @param customerProfiles
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withCustomerProfiles(CustomerProfilesDestinationProperties customerProfiles) {
+        setCustomerProfiles(customerProfiles);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,8 +411,14 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
             sb.append("Snowflake: ").append(getSnowflake()).append(",");
         if (getEventBridge() != null)
             sb.append("EventBridge: ").append(getEventBridge()).append(",");
+        if (getLookoutMetrics() != null)
+            sb.append("LookoutMetrics: ").append(getLookoutMetrics()).append(",");
         if (getUpsolver() != null)
-            sb.append("Upsolver: ").append(getUpsolver());
+            sb.append("Upsolver: ").append(getUpsolver()).append(",");
+        if (getHoneycode() != null)
+            sb.append("Honeycode: ").append(getHoneycode()).append(",");
+        if (getCustomerProfiles() != null)
+            sb.append("CustomerProfiles: ").append(getCustomerProfiles());
         sb.append("}");
         return sb.toString();
     }
@@ -363,9 +453,21 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
             return false;
         if (other.getEventBridge() != null && other.getEventBridge().equals(this.getEventBridge()) == false)
             return false;
+        if (other.getLookoutMetrics() == null ^ this.getLookoutMetrics() == null)
+            return false;
+        if (other.getLookoutMetrics() != null && other.getLookoutMetrics().equals(this.getLookoutMetrics()) == false)
+            return false;
         if (other.getUpsolver() == null ^ this.getUpsolver() == null)
             return false;
         if (other.getUpsolver() != null && other.getUpsolver().equals(this.getUpsolver()) == false)
+            return false;
+        if (other.getHoneycode() == null ^ this.getHoneycode() == null)
+            return false;
+        if (other.getHoneycode() != null && other.getHoneycode().equals(this.getHoneycode()) == false)
+            return false;
+        if (other.getCustomerProfiles() == null ^ this.getCustomerProfiles() == null)
+            return false;
+        if (other.getCustomerProfiles() != null && other.getCustomerProfiles().equals(this.getCustomerProfiles()) == false)
             return false;
         return true;
     }
@@ -380,7 +482,10 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getSnowflake() == null) ? 0 : getSnowflake().hashCode());
         hashCode = prime * hashCode + ((getEventBridge() == null) ? 0 : getEventBridge().hashCode());
+        hashCode = prime * hashCode + ((getLookoutMetrics() == null) ? 0 : getLookoutMetrics().hashCode());
         hashCode = prime * hashCode + ((getUpsolver() == null) ? 0 : getUpsolver().hashCode());
+        hashCode = prime * hashCode + ((getHoneycode() == null) ? 0 : getHoneycode().hashCode());
+        hashCode = prime * hashCode + ((getCustomerProfiles() == null) ? 0 : getCustomerProfiles().hashCode());
         return hashCode;
     }
 

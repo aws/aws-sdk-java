@@ -166,6 +166,12 @@ public interface AmazonECRPublic {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
      * @throws RepositoryAlreadyExistsException
      *         The specified repository already exists in the specified registry.
      * @throws LimitExceededException
@@ -431,6 +437,26 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
+     * List the tags for an Amazon ECR Public resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECRPublic.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates or updates the image manifest and tags associated with an image.
      * </p>
      * <p>
@@ -540,6 +566,60 @@ public interface AmazonECRPublic {
      *      API Documentation</a>
      */
     SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECRPublic.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECRPublic.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

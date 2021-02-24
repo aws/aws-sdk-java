@@ -28,6 +28,19 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request) {
+
+        return configureLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfigureLogsRequest, ConfigureLogsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAssetResult> createAssetAsync(CreateAssetRequest request) {
 
         return createAssetAsync(request, null);

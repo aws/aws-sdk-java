@@ -31,6 +31,8 @@ public class CreatePackagingGroupRequestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> AUTHORIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorization").build();
+    private static final MarshallingInfo<StructuredPojo> EGRESSACCESSLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("egressAccessLogs").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class CreatePackagingGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createPackagingGroupRequest.getAuthorization(), AUTHORIZATION_BINDING);
+            protocolMarshaller.marshall(createPackagingGroupRequest.getEgressAccessLogs(), EGRESSACCESSLOGS_BINDING);
             protocolMarshaller.marshall(createPackagingGroupRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(createPackagingGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

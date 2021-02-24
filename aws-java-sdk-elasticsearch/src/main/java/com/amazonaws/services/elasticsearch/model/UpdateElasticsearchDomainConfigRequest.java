@@ -112,6 +112,12 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
      * </p>
      */
     private EncryptionAtRestOptions encryptionAtRestOptions;
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     */
+    private AutoTuneOptions autoTuneOptions;
 
     /**
      * <p>
@@ -744,6 +750,46 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     */
+
+    public void setAutoTuneOptions(AutoTuneOptions autoTuneOptions) {
+        this.autoTuneOptions = autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @return Specifies Auto-Tune options.
+     */
+
+    public AutoTuneOptions getAutoTuneOptions() {
+        return this.autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withAutoTuneOptions(AutoTuneOptions autoTuneOptions) {
+        setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -780,7 +826,9 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         if (getNodeToNodeEncryptionOptions() != null)
             sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
-            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions());
+            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getAutoTuneOptions() != null)
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -847,6 +895,10 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getAutoTuneOptions() == null ^ this.getAutoTuneOptions() == null)
+            return false;
+        if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
+            return false;
         return true;
     }
 
@@ -868,6 +920,7 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         return hashCode;
     }
 

@@ -30,15 +30,36 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * The new enrollment status of the account.
      * </p>
      * <p>
-     * Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if <code>Pending</code>
-     * or <code>Failed</code> are specified.
+     * The following status options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
+     * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations
+     * and related metrics data will be deleted from Compute Optimizer after you opt out.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an
+     * account. They are returned in the response of a request to update the enrollment status of an account.
+     * </p>
+     * </note>
      */
     private String status;
     /**
      * <p>
-     * Indicates whether to enroll member accounts of the organization if the your account is the management account of
-     * an organization.
+     * Indicates whether to enroll member accounts of the organization if the account is the management account of an
+     * organization.
      * </p>
      */
     private Boolean includeMemberAccounts;
@@ -48,15 +69,57 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * The new enrollment status of the account.
      * </p>
      * <p>
-     * Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if <code>Pending</code>
-     * or <code>Failed</code> are specified.
+     * The following status options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
+     * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations
+     * and related metrics data will be deleted from Compute Optimizer after you opt out.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an
+     * account. They are returned in the response of a request to update the enrollment status of an account.
+     * </p>
+     * </note>
      * 
      * @param status
      *        The new enrollment status of the account.</p>
      *        <p>
-     *        Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if
-     *        <code>Pending</code> or <code>Failed</code> are specified.
+     *        The following status options are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
+     *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
+     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's
+     *        recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of
+     *        an account. They are returned in the response of a request to update the enrollment status of an account.
+     *        </p>
      * @see Status
      */
 
@@ -69,14 +132,57 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * The new enrollment status of the account.
      * </p>
      * <p>
-     * Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if <code>Pending</code>
-     * or <code>Failed</code> are specified.
+     * The following status options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
+     * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations
+     * and related metrics data will be deleted from Compute Optimizer after you opt out.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an
+     * account. They are returned in the response of a request to update the enrollment status of an account.
+     * </p>
+     * </note>
      * 
      * @return The new enrollment status of the account.</p>
      *         <p>
-     *         Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if
-     *         <code>Pending</code> or <code>Failed</code> are specified.
+     *         The following status options are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
+     *         analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
+     *         information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
+     *         by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's
+     *         recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status
+     *         of an account. They are returned in the response of a request to update the enrollment status of an
+     *         account.
+     *         </p>
      * @see Status
      */
 
@@ -89,15 +195,57 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * The new enrollment status of the account.
      * </p>
      * <p>
-     * Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if <code>Pending</code>
-     * or <code>Failed</code> are specified.
+     * The following status options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
+     * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations
+     * and related metrics data will be deleted from Compute Optimizer after you opt out.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an
+     * account. They are returned in the response of a request to update the enrollment status of an account.
+     * </p>
+     * </note>
      * 
      * @param status
      *        The new enrollment status of the account.</p>
      *        <p>
-     *        Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if
-     *        <code>Pending</code> or <code>Failed</code> are specified.
+     *        The following status options are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
+     *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
+     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's
+     *        recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of
+     *        an account. They are returned in the response of a request to update the enrollment status of an account.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -112,15 +260,57 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * The new enrollment status of the account.
      * </p>
      * <p>
-     * Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if <code>Pending</code>
-     * or <code>Failed</code> are specified.
+     * The following status options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
+     * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations
+     * and related metrics data will be deleted from Compute Optimizer after you opt out.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an
+     * account. They are returned in the response of a request to update the enrollment status of an account.
+     * </p>
+     * </note>
      * 
      * @param status
      *        The new enrollment status of the account.</p>
      *        <p>
-     *        Accepted options are <code>Active</code> or <code>Inactive</code>. You will get an error if
-     *        <code>Pending</code> or <code>Failed</code> are specified.
+     *        The following status options are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
+     *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
+     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's
+     *        recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of
+     *        an account. They are returned in the response of a request to update the enrollment status of an account.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -132,13 +322,13 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts of the organization if the your account is the management account of
-     * an organization.
+     * Indicates whether to enroll member accounts of the organization if the account is the management account of an
+     * organization.
      * </p>
      * 
      * @param includeMemberAccounts
-     *        Indicates whether to enroll member accounts of the organization if the your account is the management
-     *        account of an organization.
+     *        Indicates whether to enroll member accounts of the organization if the account is the management account
+     *        of an organization.
      */
 
     public void setIncludeMemberAccounts(Boolean includeMemberAccounts) {
@@ -147,12 +337,12 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts of the organization if the your account is the management account of
-     * an organization.
+     * Indicates whether to enroll member accounts of the organization if the account is the management account of an
+     * organization.
      * </p>
      * 
-     * @return Indicates whether to enroll member accounts of the organization if the your account is the management
-     *         account of an organization.
+     * @return Indicates whether to enroll member accounts of the organization if the account is the management account
+     *         of an organization.
      */
 
     public Boolean getIncludeMemberAccounts() {
@@ -161,13 +351,13 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts of the organization if the your account is the management account of
-     * an organization.
+     * Indicates whether to enroll member accounts of the organization if the account is the management account of an
+     * organization.
      * </p>
      * 
      * @param includeMemberAccounts
-     *        Indicates whether to enroll member accounts of the organization if the your account is the management
-     *        account of an organization.
+     *        Indicates whether to enroll member accounts of the organization if the account is the management account
+     *        of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,12 +368,12 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts of the organization if the your account is the management account of
-     * an organization.
+     * Indicates whether to enroll member accounts of the organization if the account is the management account of an
+     * organization.
      * </p>
      * 
-     * @return Indicates whether to enroll member accounts of the organization if the your account is the management
-     *         account of an organization.
+     * @return Indicates whether to enroll member accounts of the organization if the account is the management account
+     *         of an organization.
      */
 
     public Boolean isIncludeMemberAccounts() {

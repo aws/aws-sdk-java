@@ -35,6 +35,8 @@ public class ConnectorProfilePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Dynatrace").build();
     private static final MarshallingInfo<StructuredPojo> GOOGLEANALYTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GoogleAnalytics").build();
+    private static final MarshallingInfo<StructuredPojo> HONEYCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Honeycode").build();
     private static final MarshallingInfo<StructuredPojo> INFORNEXUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InforNexus").build();
     private static final MarshallingInfo<StructuredPojo> MARKETO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -78,6 +80,7 @@ public class ConnectorProfilePropertiesMarshaller {
             protocolMarshaller.marshall(connectorProfileProperties.getDatadog(), DATADOG_BINDING);
             protocolMarshaller.marshall(connectorProfileProperties.getDynatrace(), DYNATRACE_BINDING);
             protocolMarshaller.marshall(connectorProfileProperties.getGoogleAnalytics(), GOOGLEANALYTICS_BINDING);
+            protocolMarshaller.marshall(connectorProfileProperties.getHoneycode(), HONEYCODE_BINDING);
             protocolMarshaller.marshall(connectorProfileProperties.getInforNexus(), INFORNEXUS_BINDING);
             protocolMarshaller.marshall(connectorProfileProperties.getMarketo(), MARKETO_BINDING);
             protocolMarshaller.marshall(connectorProfileProperties.getRedshift(), REDSHIFT_BINDING);
