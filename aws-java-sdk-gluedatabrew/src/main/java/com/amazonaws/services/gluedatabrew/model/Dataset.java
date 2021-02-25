@@ -54,6 +54,12 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     */
+    private String format;
+    /**
+     * <p>
      * Options that define how DataBrew interprets the data in the dataset.
      * </p>
      */
@@ -252,6 +258,65 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     public Dataset withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @see InputFormat
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @return Specifies the file format of a dataset created from an S3 file or folder.
+     * @see InputFormat
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputFormat
+     */
+
+    public Dataset withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputFormat
+     */
+
+    public Dataset withFormat(InputFormat format) {
+        this.format = format.toString();
         return this;
     }
 
@@ -602,6 +667,8 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getFormatOptions() != null)
             sb.append("FormatOptions: ").append(getFormatOptions()).append(",");
         if (getInput() != null)
@@ -646,6 +713,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         if (other.getFormatOptions() == null ^ this.getFormatOptions() == null)
             return false;
         if (other.getFormatOptions() != null && other.getFormatOptions().equals(this.getFormatOptions()) == false)
@@ -686,6 +757,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getFormatOptions() == null) ? 0 : getFormatOptions().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());

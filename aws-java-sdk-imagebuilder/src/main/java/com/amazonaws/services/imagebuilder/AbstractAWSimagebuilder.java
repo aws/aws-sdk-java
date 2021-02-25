@@ -188,6 +188,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public ListImagePackagesResult listImagePackages(ListImagePackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListImagePipelineImagesResult listImagePipelineImages(ListImagePipelineImagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -52,6 +52,10 @@ public class CsvOptionsJsonUnmarshaller implements Unmarshaller<CsvOptions, Json
                     context.nextToken();
                     csvOptions.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HeaderRow", targetDepth)) {
+                    context.nextToken();
+                    csvOptions.setHeaderRow(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -2547,6 +2547,80 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * List the Packages that are associated with an Image Build Version, as determined by AWS Systems Manager Inventory
+     * at build time.
+     * </p>
+     * 
+     * @param listImagePackagesRequest
+     * @return Result of the ListImagePackages operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have made a request for an action that is not supported by the service.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImagePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListImagePackagesResult listImagePackages(ListImagePackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImagePackages(request);
+    }
+
+    @SdkInternalApi
+    final ListImagePackagesResult executeListImagePackages(ListImagePackagesRequest listImagePackagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImagePackagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImagePackagesRequest> request = null;
+        Response<ListImagePackagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImagePackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagePackagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImagePackages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImagePackagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImagePackagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of images created by the specified pipeline.
      * </p>
      * 

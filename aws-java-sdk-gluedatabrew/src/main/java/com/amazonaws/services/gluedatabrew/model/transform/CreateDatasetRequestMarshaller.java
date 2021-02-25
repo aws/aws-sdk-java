@@ -31,6 +31,8 @@ public class CreateDatasetRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
     private static final MarshallingInfo<StructuredPojo> FORMATOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatOptions").build();
     private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +57,7 @@ public class CreateDatasetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDatasetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createDatasetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getTags(), TAGS_BINDING);

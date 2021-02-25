@@ -39,6 +39,13 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String message;
     /**
      * <p>
+     * if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set
+     * to <code>false</code>, and the member accounts receive email notifications.
+     * </p>
+     */
+    private Boolean disableEmailNotification;
+    /**
+     * <p>
      * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
      * account list contains the account identifier and the AWS account root user email address.
      * </p>
@@ -123,6 +130,66 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateMembersRequest withMessage(String message) {
         setMessage(message);
         return this;
+    }
+
+    /**
+     * <p>
+     * if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set
+     * to <code>false</code>, and the member accounts receive email notifications.
+     * </p>
+     * 
+     * @param disableEmailNotification
+     *        if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this
+     *        is set to <code>false</code>, and the member accounts receive email notifications.
+     */
+
+    public void setDisableEmailNotification(Boolean disableEmailNotification) {
+        this.disableEmailNotification = disableEmailNotification;
+    }
+
+    /**
+     * <p>
+     * if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set
+     * to <code>false</code>, and the member accounts receive email notifications.
+     * </p>
+     * 
+     * @return if set to <code>true</code>, then the member accounts do not receive email notifications. By default,
+     *         this is set to <code>false</code>, and the member accounts receive email notifications.
+     */
+
+    public Boolean getDisableEmailNotification() {
+        return this.disableEmailNotification;
+    }
+
+    /**
+     * <p>
+     * if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set
+     * to <code>false</code>, and the member accounts receive email notifications.
+     * </p>
+     * 
+     * @param disableEmailNotification
+     *        if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this
+     *        is set to <code>false</code>, and the member accounts receive email notifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMembersRequest withDisableEmailNotification(Boolean disableEmailNotification) {
+        setDisableEmailNotification(disableEmailNotification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set
+     * to <code>false</code>, and the member accounts receive email notifications.
+     * </p>
+     * 
+     * @return if set to <code>true</code>, then the member accounts do not receive email notifications. By default,
+     *         this is set to <code>false</code>, and the member accounts receive email notifications.
+     */
+
+    public Boolean isDisableEmailNotification() {
+        return this.disableEmailNotification;
     }
 
     /**
@@ -219,6 +286,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("GraphArn: ").append(getGraphArn()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
+        if (getDisableEmailNotification() != null)
+            sb.append("DisableEmailNotification: ").append(getDisableEmailNotification()).append(",");
         if (getAccounts() != null)
             sb.append("Accounts: ").append(getAccounts());
         sb.append("}");
@@ -243,6 +312,10 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getDisableEmailNotification() == null ^ this.getDisableEmailNotification() == null)
+            return false;
+        if (other.getDisableEmailNotification() != null && other.getDisableEmailNotification().equals(this.getDisableEmailNotification()) == false)
+            return false;
         if (other.getAccounts() == null ^ this.getAccounts() == null)
             return false;
         if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
@@ -257,6 +330,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getGraphArn() == null) ? 0 : getGraphArn().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getDisableEmailNotification() == null) ? 0 : getDisableEmailNotification().hashCode());
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         return hashCode;
     }

@@ -32,6 +32,12 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     */
+    private String format;
 
     private FormatOptions formatOptions;
 
@@ -86,6 +92,65 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateDatasetRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @see InputFormat
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @return Specifies the file format of a dataset created from an S3 file or folder.
+     * @see InputFormat
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputFormat
+     */
+
+    public CreateDatasetRequest withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file format of a dataset created from an S3 file or folder.
+     * </p>
+     * 
+     * @param format
+     *        Specifies the file format of a dataset created from an S3 file or folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputFormat
+     */
+
+    public CreateDatasetRequest withFormat(InputFormat format) {
+        this.format = format.toString();
         return this;
     }
 
@@ -223,6 +288,8 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getFormatOptions() != null)
             sb.append("FormatOptions: ").append(getFormatOptions()).append(",");
         if (getInput() != null)
@@ -247,6 +314,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         if (other.getFormatOptions() == null ^ this.getFormatOptions() == null)
             return false;
         if (other.getFormatOptions() != null && other.getFormatOptions().equals(this.getFormatOptions()) == false)
@@ -268,6 +339,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getFormatOptions() == null) ? 0 : getFormatOptions().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

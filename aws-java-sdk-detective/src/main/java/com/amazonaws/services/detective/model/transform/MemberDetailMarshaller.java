@@ -35,6 +35,8 @@ public class MemberDetailMarshaller {
             .marshallLocationName("GraphArn").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MasterId").build();
+    private static final MarshallingInfo<String> ADMINISTRATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdministratorId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> DISABLEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class MemberDetailMarshaller {
             protocolMarshaller.marshall(memberDetail.getEmailAddress(), EMAILADDRESS_BINDING);
             protocolMarshaller.marshall(memberDetail.getGraphArn(), GRAPHARN_BINDING);
             protocolMarshaller.marshall(memberDetail.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(memberDetail.getAdministratorId(), ADMINISTRATORID_BINDING);
             protocolMarshaller.marshall(memberDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(memberDetail.getDisabledReason(), DISABLEDREASON_BINDING);
             protocolMarshaller.marshall(memberDetail.getInvitedTime(), INVITEDTIME_BINDING);

@@ -1142,6 +1142,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest request) {
+
+        return listImagePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(final ListImagePackagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImagePackagesRequest, ListImagePackagesResult> asyncHandler) {
+        final ListImagePackagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImagePackagesResult>() {
+            @Override
+            public ListImagePackagesResult call() throws Exception {
+                ListImagePackagesResult result = null;
+
+                try {
+                    result = executeListImagePackages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListImagePipelineImagesResult> listImagePipelineImagesAsync(ListImagePipelineImagesRequest request) {
 
         return listImagePipelineImagesAsync(request, null);

@@ -25,7 +25,7 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of behavior graphs that the account is a master for.
+     * A list of behavior graphs that the account is an administrator account for.
      * </p>
      */
     private java.util.List<Graph> graphList;
@@ -39,10 +39,10 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of behavior graphs that the account is a master for.
+     * A list of behavior graphs that the account is an administrator account for.
      * </p>
      * 
-     * @return A list of behavior graphs that the account is a master for.
+     * @return A list of behavior graphs that the account is an administrator account for.
      */
 
     public java.util.List<Graph> getGraphList() {
@@ -51,11 +51,11 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of behavior graphs that the account is a master for.
+     * A list of behavior graphs that the account is an administrator account for.
      * </p>
      * 
      * @param graphList
-     *        A list of behavior graphs that the account is a master for.
+     *        A list of behavior graphs that the account is an administrator account for.
      */
 
     public void setGraphList(java.util.Collection<Graph> graphList) {
@@ -69,7 +69,7 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of behavior graphs that the account is a master for.
+     * A list of behavior graphs that the account is an administrator account for.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param graphList
-     *        A list of behavior graphs that the account is a master for.
+     *        A list of behavior graphs that the account is an administrator account for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListGraphsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of behavior graphs that the account is a master for.
+     * A list of behavior graphs that the account is an administrator account for.
      * </p>
      * 
      * @param graphList
-     *        A list of behavior graphs that the account is a master for.
+     *        A list of behavior graphs that the account is an administrator account for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

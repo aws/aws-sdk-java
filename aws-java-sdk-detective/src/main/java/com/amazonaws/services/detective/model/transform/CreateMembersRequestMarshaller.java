@@ -32,6 +32,8 @@ public class CreateMembersRequestMarshaller {
             .marshallLocationName("GraphArn").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
+    private static final MarshallingInfo<Boolean> DISABLEEMAILNOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableEmailNotification").build();
     private static final MarshallingInfo<List> ACCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Accounts").build();
 
@@ -53,6 +55,7 @@ public class CreateMembersRequestMarshaller {
         try {
             protocolMarshaller.marshall(createMembersRequest.getGraphArn(), GRAPHARN_BINDING);
             protocolMarshaller.marshall(createMembersRequest.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(createMembersRequest.getDisableEmailNotification(), DISABLEEMAILNOTIFICATION_BINDING);
             protocolMarshaller.marshall(createMembersRequest.getAccounts(), ACCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

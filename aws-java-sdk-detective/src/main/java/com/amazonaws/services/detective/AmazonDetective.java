@@ -34,14 +34,14 @@ import com.amazonaws.services.detective.model.*;
  * </p>
  * <p>
  * The Detective API primarily supports the creation and management of behavior graphs. A behavior graph contains the
- * extracted data from a set of member accounts, and is created and managed by a master account.
+ * extracted data from a set of member accounts, and is created and managed by an administrator account.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage graphs that belong to the Region
  * that is associated with the currently selected endpoint.
  * </p>
  * <p>
- * A Detective master account can use the Detective API to do the following:
+ * A Detective administrator account can use the Detective API to do the following:
  * </p>
  * <ul>
  * <li>
@@ -95,6 +95,13 @@ import com.amazonaws.services.detective.model.*;
  * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging Detective API
  * Calls with CloudTrail</a>.
  * </p>
+ * <note>
+ * <p>
+ * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
+ * behavior graph.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDetective {
@@ -137,8 +144,8 @@ public interface AmazonDetective {
 
     /**
      * <p>
-     * Creates a new behavior graph for the calling account, and sets that account as the master account. This operation
-     * is called by the account that is enabling Detective.
+     * Creates a new behavior graph for the calling account, and sets that account as the administrator account. This
+     * operation is called by the account that is enabling Detective.
      * </p>
      * <p>
      * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
@@ -154,9 +161,9 @@ public interface AmazonDetective {
      * <code>CreateGraph</code> triggers a process to create the corresponding data tables for the new behavior graph.
      * </p>
      * <p>
-     * An account can only be the master account for one behavior graph within a Region. If the same account calls
-     * <code>CreateGraph</code> with the same master account, it always returns the same behavior graph ARN. It does not
-     * create a new behavior graph.
+     * An account can only be the administrator account for one behavior graph within a Region. If the same account
+     * calls <code>CreateGraph</code> with the same administrator account, it always returns the same behavior graph
+     * ARN. It does not create a new behavior graph.
      * </p>
      * 
      * @param createGraphRequest
@@ -194,10 +201,12 @@ public interface AmazonDetective {
     /**
      * <p>
      * Sends a request to invite the specified AWS accounts to be member accounts in the behavior graph. This operation
-     * can only be called by the master account for a behavior graph.
+     * can only be called by the administrator account for a behavior graph.
      * </p>
      * <p>
-     * <code>CreateMembers</code> verifies the accounts and then sends invitations to the verified accounts.
+     * <code>CreateMembers</code> verifies the accounts and then invites the verified accounts. The administrator can
+     * optionally specify to not send invitation emails to the member accounts. This would be used when the
+     * administrator manages their member accounts centrally.
      * </p>
      * <p>
      * The request provides the behavior graph ARN and the list of accounts to invite.
@@ -209,8 +218,8 @@ public interface AmazonDetective {
      * <li>
      * <p>
      * The accounts that <code>CreateMembers</code> was able to start the verification for. This list includes member
-     * accounts that are being verified, that have passed verification and are being sent an invitation, and that have
-     * failed verification.
+     * accounts that are being verified, that have passed verification and are to be invited, and that have failed
+     * verification.
      * </p>
      * </li>
      * <li>
@@ -261,7 +270,7 @@ public interface AmazonDetective {
      * member account's list of behavior graphs.
      * </p>
      * <p>
-     * <code>DeleteGraph</code> can only be called by the master account for a behavior graph.
+     * <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.
      * </p>
      * 
      * @param deleteGraphRequest
@@ -280,9 +289,10 @@ public interface AmazonDetective {
 
     /**
      * <p>
-     * Deletes one or more member accounts from the master account behavior graph. This operation can only be called by
-     * a Detective master account. That account cannot use <code>DeleteMembers</code> to delete their own account from
-     * the behavior graph. To disable a behavior graph, the master account uses the <code>DeleteGraph</code> API method.
+     * Deletes one or more member accounts from the administrator account's behavior graph. This operation can only be
+     * called by a Detective administrator account. That account cannot use <code>DeleteMembers</code> to delete their
+     * own account from the behavior graph. To disable a behavior graph, the administrator account uses the
+     * <code>DeleteGraph</code> API method.
      * </p>
      * 
      * @param deleteMembersRequest
@@ -344,12 +354,12 @@ public interface AmazonDetective {
 
     /**
      * <p>
-     * Returns the list of behavior graphs that the calling account is a master of. This operation can only be called by
-     * a master account.
+     * Returns the list of behavior graphs that the calling account is an administrator account of. This operation can
+     * only be called by an administrator account.
      * </p>
      * <p>
-     * Because an account can currently only be the master of one behavior graph within a Region, the results always
-     * contain a single graph.
+     * Because an account can currently only be the administrator of one behavior graph within a Region, the results
+     * always contain a single behavior graph.
      * </p>
      * 
      * @param listGraphsRequest

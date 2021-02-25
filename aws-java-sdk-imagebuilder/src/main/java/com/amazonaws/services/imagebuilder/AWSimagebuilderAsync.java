@@ -1068,6 +1068,39 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * List the Packages that are associated with an Image Build Version, as determined by AWS Systems Manager Inventory
+     * at build time.
+     * </p>
+     * 
+     * @param listImagePackagesRequest
+     * @return A Java Future containing the result of the ListImagePackages operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListImagePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest listImagePackagesRequest);
+
+    /**
+     * <p>
+     * List the Packages that are associated with an Image Build Version, as determined by AWS Systems Manager Inventory
+     * at build time.
+     * </p>
+     * 
+     * @param listImagePackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImagePackages operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListImagePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest listImagePackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImagePackagesRequest, ListImagePackagesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of images created by the specified pipeline.
      * </p>
      * 

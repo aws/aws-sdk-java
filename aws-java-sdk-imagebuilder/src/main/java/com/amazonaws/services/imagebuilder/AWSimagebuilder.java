@@ -1043,6 +1043,38 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * List the Packages that are associated with an Image Build Version, as determined by AWS Systems Manager Inventory
+     * at build time.
+     * </p>
+     * 
+     * @param listImagePackagesRequest
+     * @return Result of the ListImagePackages operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have made a request for an action that is not supported by the service.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImagePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListImagePackagesResult listImagePackages(ListImagePackagesRequest listImagePackagesRequest);
+
+    /**
+     * <p>
      * Returns a list of images created by the specified pipeline.
      * </p>
      * 

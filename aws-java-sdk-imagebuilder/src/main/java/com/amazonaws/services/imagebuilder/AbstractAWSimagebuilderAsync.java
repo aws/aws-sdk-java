@@ -452,6 +452,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest request) {
+
+        return listImagePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImagePackagesRequest, ListImagePackagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListImagePipelineImagesResult> listImagePipelineImagesAsync(ListImagePipelineImagesRequest request) {
 
         return listImagePipelineImagesAsync(request, null);

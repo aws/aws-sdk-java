@@ -29,6 +29,8 @@ public class ScheduleMarshaller {
 
     private static final MarshallingInfo<String> SCHEDULEEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleExpression").build();
+    private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("timezone").build();
     private static final MarshallingInfo<String> PIPELINEEXECUTIONSTARTCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineExecutionStartCondition").build();
 
@@ -49,6 +51,7 @@ public class ScheduleMarshaller {
 
         try {
             protocolMarshaller.marshall(schedule.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
+            protocolMarshaller.marshall(schedule.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(schedule.getPipelineExecutionStartCondition(), PIPELINEEXECUTIONSTARTCONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

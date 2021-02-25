@@ -60,6 +60,10 @@ public class DescribeDatasetResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeDatasetResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Format", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("FormatOptions", targetDepth)) {
                     context.nextToken();
                     describeDatasetResult.setFormatOptions(FormatOptionsJsonUnmarshaller.getInstance().unmarshall(context));

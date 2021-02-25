@@ -48,10 +48,20 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     private String graphArn;
     /**
      * <p>
-     * The AWS account identifier of the master account for the behavior graph.
+     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
+     * </p>
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      */
+    @Deprecated
     private String masterId;
+    /**
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
+     * </p>
+     */
+    private String administratorId;
     /**
      * <p>
      * The current membership status of the member account. The status can have one of the following values:
@@ -275,41 +285,96 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account identifier of the master account for the behavior graph.
+     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
+     * </p>
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
      * @param masterId
-     *        The AWS account identifier of the master account for the behavior graph.
+     *        Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
+     *        <p>
+     *        The AWS account identifier of the administrator account for the behavior graph.
      */
-
+    @Deprecated
     public void setMasterId(String masterId) {
         this.masterId = masterId;
     }
 
     /**
      * <p>
-     * The AWS account identifier of the master account for the behavior graph.
+     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
+     * </p>
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
-     * @return The AWS account identifier of the master account for the behavior graph.
+     * @return Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
+     *         <p>
+     *         The AWS account identifier of the administrator account for the behavior graph.
      */
-
+    @Deprecated
     public String getMasterId() {
         return this.masterId;
     }
 
     /**
      * <p>
-     * The AWS account identifier of the master account for the behavior graph.
+     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
+     * </p>
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
      * @param masterId
-     *        The AWS account identifier of the master account for the behavior graph.
+     *        Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
+     *        <p>
+     *        The AWS account identifier of the administrator account for the behavior graph.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public MemberDetail withMasterId(String masterId) {
+        setMasterId(masterId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
+     * </p>
+     * 
+     * @param administratorId
+     *        The AWS account identifier of the administrator account for the behavior graph.
+     */
+
+    public void setAdministratorId(String administratorId) {
+        this.administratorId = administratorId;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
+     * </p>
+     * 
+     * @return The AWS account identifier of the administrator account for the behavior graph.
+     */
+
+    public String getAdministratorId() {
+        return this.administratorId;
+    }
+
+    /**
+     * <p>
+     * The AWS account identifier of the administrator account for the behavior graph.
+     * </p>
+     * 
+     * @param administratorId
+     *        The AWS account identifier of the administrator account for the behavior graph.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MemberDetail withMasterId(String masterId) {
-        setMasterId(masterId);
+    public MemberDetail withAdministratorId(String administratorId) {
+        setAdministratorId(administratorId);
         return this;
     }
 
@@ -1097,6 +1162,8 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("GraphArn: ").append(getGraphArn()).append(",");
         if (getMasterId() != null)
             sb.append("MasterId: ").append(getMasterId()).append(",");
+        if (getAdministratorId() != null)
+            sb.append("AdministratorId: ").append(getAdministratorId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getDisabledReason() != null)
@@ -1139,6 +1206,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMasterId() != null && other.getMasterId().equals(this.getMasterId()) == false)
             return false;
+        if (other.getAdministratorId() == null ^ this.getAdministratorId() == null)
+            return false;
+        if (other.getAdministratorId() != null && other.getAdministratorId().equals(this.getAdministratorId()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -1176,6 +1247,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
         hashCode = prime * hashCode + ((getGraphArn() == null) ? 0 : getGraphArn().hashCode());
         hashCode = prime * hashCode + ((getMasterId() == null) ? 0 : getMasterId().hashCode());
+        hashCode = prime * hashCode + ((getAdministratorId() == null) ? 0 : getAdministratorId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDisabledReason() == null) ? 0 : getDisabledReason().hashCode());
         hashCode = prime * hashCode + ((getInvitedTime() == null) ? 0 : getInvitedTime().hashCode());

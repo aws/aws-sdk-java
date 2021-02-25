@@ -86,7 +86,7 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The progress of the disk snapshot operation.
+     * The progress of the snapshot.
      * </p>
      */
     private String progress;
@@ -572,11 +572,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The progress of the disk snapshot operation.
+     * The progress of the snapshot.
      * </p>
      * 
      * @param progress
-     *        The progress of the disk snapshot operation.
+     *        The progress of the snapshot.
      */
 
     public void setProgress(String progress) {
@@ -585,10 +585,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The progress of the disk snapshot operation.
+     * The progress of the snapshot.
      * </p>
      * 
-     * @return The progress of the disk snapshot operation.
+     * @return The progress of the snapshot.
      */
 
     public String getProgress() {
@@ -597,11 +597,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The progress of the disk snapshot operation.
+     * The progress of the snapshot.
      * </p>
      * 
      * @param progress
-     *        The progress of the disk snapshot operation.
+     *        The progress of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

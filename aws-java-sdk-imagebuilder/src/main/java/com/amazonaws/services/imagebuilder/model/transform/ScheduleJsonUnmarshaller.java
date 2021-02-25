@@ -52,6 +52,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("timezone", targetDepth)) {
+                    context.nextToken();
+                    schedule.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pipelineExecutionStartCondition", targetDepth)) {
                     context.nextToken();
                     schedule.setPipelineExecutionStartCondition(context.getUnmarshaller(String.class).unmarshall(context));

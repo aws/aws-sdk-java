@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +43,10 @@ public class InfrastructureConfigurationSummaryMarshaller {
             .marshallLocationName("resourceTags").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("instanceTypes").build();
+    private static final MarshallingInfo<String> INSTANCEPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceProfileName").build();
 
     private static final InfrastructureConfigurationSummaryMarshaller instance = new InfrastructureConfigurationSummaryMarshaller();
 
@@ -67,6 +71,8 @@ public class InfrastructureConfigurationSummaryMarshaller {
             protocolMarshaller.marshall(infrastructureConfigurationSummary.getDateUpdated(), DATEUPDATED_BINDING);
             protocolMarshaller.marshall(infrastructureConfigurationSummary.getResourceTags(), RESOURCETAGS_BINDING);
             protocolMarshaller.marshall(infrastructureConfigurationSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(infrastructureConfigurationSummary.getInstanceTypes(), INSTANCETYPES_BINDING);
+            protocolMarshaller.marshall(infrastructureConfigurationSummary.getInstanceProfileName(), INSTANCEPROFILENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

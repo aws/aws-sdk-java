@@ -1,3 +1,24 @@
+# __1.11.963__ __2021-02-25__
+## __AWS Glue DataBrew__
+  - ### Features
+    - This SDK release adds two new dataset features: 1) support for specifying the file format for a dataset, and 2) support for specifying whether the first row of a CSV or Excel file contains a header.
+
+## __AWS Transfer Family__
+  - ### Features
+    - Corrected the upper limit for TestIdentityProvider input lengths to 1024 characters
+
+## __Amazon Detective__
+  - ### Features
+    - Changed "master account" to "administrator account." A new AdministratorId field replaces the deprecated MasterId field. Added an option to disable email notifications for member account invitations.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Lightsail
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release introduces a new API (ListImagePackages) for listing packages installed on an image, and adds support for GP3 volume types, and for specifying a time zone in an image pipeline schedule.
+
 # __1.11.962__ __2021-02-24__
 ## __AWS Compute Optimizer__
   - ### Features

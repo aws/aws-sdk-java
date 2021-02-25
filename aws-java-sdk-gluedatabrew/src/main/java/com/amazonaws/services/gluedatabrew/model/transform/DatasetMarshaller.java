@@ -37,6 +37,8 @@ public class DatasetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
     private static final MarshallingInfo<StructuredPojo> FORMATOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatOptions").build();
     private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,6 +74,7 @@ public class DatasetMarshaller {
             protocolMarshaller.marshall(dataset.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(dataset.getCreateDate(), CREATEDATE_BINDING);
             protocolMarshaller.marshall(dataset.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(dataset.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(dataset.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(dataset.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(dataset.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);

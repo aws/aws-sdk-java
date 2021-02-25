@@ -5535,7 +5535,7 @@
         },
         "progress":{
           "shape":"string",
-          "documentation":"<p>The progress of the disk snapshot operation.</p>"
+          "documentation":"<p>The progress of the snapshot.</p>"
         },
         "fromDiskName":{
           "shape":"ResourceName",
@@ -7921,7 +7921,7 @@
         },
         "progress":{
           "shape":"string",
-          "documentation":"<p>The progress of the snapshot.</p>"
+          "documentation":"<p>The progress of the snapshot.</p> <note> <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p> </note>"
         },
         "fromAttachedDisks":{
           "shape":"DiskList",

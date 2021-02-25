@@ -32,6 +32,8 @@ public class ExcelOptionsMarshaller {
             .marshallLocationName("SheetNames").build();
     private static final MarshallingInfo<List> SHEETINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SheetIndexes").build();
+    private static final MarshallingInfo<Boolean> HEADERROW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeaderRow").build();
 
     private static final ExcelOptionsMarshaller instance = new ExcelOptionsMarshaller();
 
@@ -51,6 +53,7 @@ public class ExcelOptionsMarshaller {
         try {
             protocolMarshaller.marshall(excelOptions.getSheetNames(), SHEETNAMES_BINDING);
             protocolMarshaller.marshall(excelOptions.getSheetIndexes(), SHEETINDEXES_BINDING);
+            protocolMarshaller.marshall(excelOptions.getHeaderRow(), HEADERROW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

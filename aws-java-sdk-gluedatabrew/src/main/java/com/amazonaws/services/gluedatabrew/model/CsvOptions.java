@@ -34,6 +34,13 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String delimiter;
+    /**
+     * <p>
+     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
+     * will be auto-generated.
+     * </p>
+     */
+    private Boolean headerRow;
 
     /**
      * <p>
@@ -76,6 +83,66 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
+     * will be auto-generated.
+     * </p>
+     * 
+     * @param headerRow
+     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
+     *        names will be auto-generated.
+     */
+
+    public void setHeaderRow(Boolean headerRow) {
+        this.headerRow = headerRow;
+    }
+
+    /**
+     * <p>
+     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
+     * will be auto-generated.
+     * </p>
+     * 
+     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
+     *         column names will be auto-generated.
+     */
+
+    public Boolean getHeaderRow() {
+        return this.headerRow;
+    }
+
+    /**
+     * <p>
+     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
+     * will be auto-generated.
+     * </p>
+     * 
+     * @param headerRow
+     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
+     *        names will be auto-generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CsvOptions withHeaderRow(Boolean headerRow) {
+        setHeaderRow(headerRow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
+     * will be auto-generated.
+     * </p>
+     * 
+     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
+     *         column names will be auto-generated.
+     */
+
+    public Boolean isHeaderRow() {
+        return this.headerRow;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +155,9 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDelimiter() != null)
-            sb.append("Delimiter: ").append(getDelimiter());
+            sb.append("Delimiter: ").append(getDelimiter()).append(",");
+        if (getHeaderRow() != null)
+            sb.append("HeaderRow: ").append(getHeaderRow());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +176,10 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDelimiter() != null && other.getDelimiter().equals(this.getDelimiter()) == false)
             return false;
+        if (other.getHeaderRow() == null ^ this.getHeaderRow() == null)
+            return false;
+        if (other.getHeaderRow() != null && other.getHeaderRow().equals(this.getHeaderRow()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +189,7 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDelimiter() == null) ? 0 : getDelimiter().hashCode());
+        hashCode = prime * hashCode + ((getHeaderRow() == null) ? 0 : getHeaderRow().hashCode());
         return hashCode;
     }
 

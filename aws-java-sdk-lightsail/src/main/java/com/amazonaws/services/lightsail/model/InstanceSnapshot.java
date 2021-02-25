@@ -83,6 +83,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The progress of the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     * </p>
+     * </note>
      */
     private String progress;
     /**
@@ -580,9 +585,17 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The progress of the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     * </p>
+     * </note>
      * 
      * @param progress
-     *        The progress of the snapshot.
+     *        The progress of the snapshot.</p> <note>
+     *        <p>
+     *        This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     *        </p>
      */
 
     public void setProgress(String progress) {
@@ -593,8 +606,16 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The progress of the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     * </p>
+     * </note>
      * 
-     * @return The progress of the snapshot.
+     * @return The progress of the snapshot.</p> <note>
+     *         <p>
+     *         This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     *         </p>
      */
 
     public String getProgress() {
@@ -605,9 +626,17 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The progress of the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     * </p>
+     * </note>
      * 
      * @param progress
-     *        The progress of the snapshot.
+     *        The progress of the snapshot.</p> <note>
+     *        <p>
+     *        This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

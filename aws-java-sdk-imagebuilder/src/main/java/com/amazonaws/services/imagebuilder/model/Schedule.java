@@ -42,6 +42,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private String scheduleExpression;
     /**
      * <p>
+     * The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to
+     * UTC.
+     * </p>
+     */
+    private String timezone;
+    /**
+     * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
@@ -125,6 +133,58 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     public Schedule withScheduleExpression(String scheduleExpression) {
         setScheduleExpression(scheduleExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to
+     * UTC.
+     * </p>
+     * 
+     * @param timezone
+     *        The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in
+     *        the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified
+     *        this defaults to UTC.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to
+     * UTC.
+     * </p>
+     * 
+     * @return The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in
+     *         the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified
+     *         this defaults to UTC.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to
+     * UTC.
+     * </p>
+     * 
+     * @param timezone
+     *        The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in
+     *        the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified
+     *        this defaults to UTC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withTimezone(String timezone) {
+        setTimezone(timezone);
         return this;
     }
 
@@ -265,6 +325,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getScheduleExpression() != null)
             sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
+        if (getTimezone() != null)
+            sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getPipelineExecutionStartCondition() != null)
             sb.append("PipelineExecutionStartCondition: ").append(getPipelineExecutionStartCondition());
         sb.append("}");
@@ -285,6 +347,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         if (other.getPipelineExecutionStartCondition() == null ^ this.getPipelineExecutionStartCondition() == null)
             return false;
         if (other.getPipelineExecutionStartCondition() != null
@@ -299,6 +365,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getPipelineExecutionStartCondition() == null) ? 0 : getPipelineExecutionStartCondition().hashCode());
         return hashCode;
     }

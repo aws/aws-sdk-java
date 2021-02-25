@@ -29,6 +29,8 @@ public class CsvOptionsMarshaller {
 
     private static final MarshallingInfo<String> DELIMITER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Delimiter").build();
+    private static final MarshallingInfo<Boolean> HEADERROW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeaderRow").build();
 
     private static final CsvOptionsMarshaller instance = new CsvOptionsMarshaller();
 
@@ -47,6 +49,7 @@ public class CsvOptionsMarshaller {
 
         try {
             protocolMarshaller.marshall(csvOptions.getDelimiter(), DELIMITER_BINDING);
+            protocolMarshaller.marshall(csvOptions.getHeaderRow(), HEADERROW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
