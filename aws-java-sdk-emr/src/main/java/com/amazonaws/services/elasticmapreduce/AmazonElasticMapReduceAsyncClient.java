@@ -1822,6 +1822,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(UpdateStudioRequest request) {
+
+        return updateStudioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(final UpdateStudioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStudioRequest, UpdateStudioResult> asyncHandler) {
+        final UpdateStudioRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStudioResult>() {
+            @Override
+            public UpdateStudioResult call() throws Exception {
+                UpdateStudioResult result = null;
+
+                try {
+                    result = executeUpdateStudio(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request) {
 
         return updateStudioSessionMappingAsync(request, null);

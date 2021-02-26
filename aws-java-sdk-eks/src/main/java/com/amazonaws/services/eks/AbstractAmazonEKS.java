@@ -29,6 +29,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public AssociateEncryptionConfigResult associateEncryptionConfig(AssociateEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateIdentityProviderConfigResult associateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,3 +1,20 @@
+# __1.11.964__ __2021-02-26__
+## __AWS Single Sign-On Admin__
+  - ### Features
+    - Relax constraint on List* API pagination tokens to include underscore character
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Amazon EKS now supports adding KMS envelope encryption to existing clusters to enhance security for secrets
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Added UpdateStudio API that allows updating a few attributes of an EMR Studio.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Add RequestPayer to GetObjectTagging and PutObjectTagging.
+
 # __1.11.963__ __2021-02-25__
 ## __AWS Glue DataBrew__
   - ### Features

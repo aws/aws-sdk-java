@@ -154,7 +154,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      * </p>
      * </li>
      * <li>
@@ -1076,7 +1076,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      * </p>
      * </li>
      * <li>
@@ -1132,7 +1132,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     *         "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      *         </p>
      *         </li>
      *         <li>
@@ -1196,7 +1196,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      * </p>
      * </li>
      * <li>
@@ -1253,7 +1253,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     *        "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      *        </p>
      *        </li>
      *        <li>
@@ -1319,7 +1319,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      * </p>
      * </li>
      * <li>
@@ -1381,7 +1381,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     *        "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      *        </p>
      *        </li>
      *        <li>
@@ -1449,7 +1449,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      * </p>
      * </li>
      * <li>
@@ -1506,7 +1506,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     *        "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
      *        </p>
      *        </li>
      *        <li>

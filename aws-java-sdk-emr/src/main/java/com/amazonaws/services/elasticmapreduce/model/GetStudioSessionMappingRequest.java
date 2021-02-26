@@ -45,7 +45,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of the user or group to fetch. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -173,7 +173,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of the user or group to fetch. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -182,7 +182,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param identityName
      *        The name of the user or group to fetch. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *        >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -196,7 +196,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of the user or group to fetch. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -204,7 +204,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @return The name of the user or group to fetch. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *         >UserName</a> and <a href=
      *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *         >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -218,7 +218,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of the user or group to fetch. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -227,7 +227,7 @@ public class GetStudioSessionMappingRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param identityName
      *        The name of the user or group to fetch. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *        >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or

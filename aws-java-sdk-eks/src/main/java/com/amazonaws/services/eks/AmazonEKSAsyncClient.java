@@ -83,6 +83,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request) {
+
+        return associateEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(final AssociateEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateEncryptionConfigRequest, AssociateEncryptionConfigResult> asyncHandler) {
+        final AssociateEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateEncryptionConfigResult>() {
+            @Override
+            public AssociateEncryptionConfigResult call() throws Exception {
+                AssociateEncryptionConfigResult result = null;
+
+                try {
+                    result = executeAssociateEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
             AssociateIdentityProviderConfigRequest request) {
 

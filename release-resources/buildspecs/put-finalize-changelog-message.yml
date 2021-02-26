@@ -8,6 +8,8 @@ phases:
       - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
       - update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
       - pip install awscli --upgrade --user
+      - pip install rsa
+      - pip install typing
 
   build:
     commands:
@@ -18,4 +20,10 @@ phases:
         releaseDate=$RELEASE_DATE"
       - |
       - echo "$MESSAGE"
-      - aws sqs send-message --queue-url $QUEUE_URL --message-body "$MESSAGE" --message-group-id "FinalizeChangelogGroup"
+      - aws --region us-west-2 sqs send-message --queue-url $QUEUE_URL --message-body "$MESSAGE" --message-group-id "FinalizeChangelogGroup"
+      -
+      - SUBJECT="Build SUCCESS:PutFinalizeChangeLogMessage"
+      - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
+      - echo $RELEASE_ID
+      - SNS_MESSAGE_BODY='{"jobName":"FinalizeChangelogMsg", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
+      - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"

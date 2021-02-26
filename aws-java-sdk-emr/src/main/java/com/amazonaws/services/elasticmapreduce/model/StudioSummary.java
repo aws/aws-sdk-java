@@ -49,7 +49,7 @@ public class StudioSummary implements Serializable, Cloneable, StructuredPojo {
     private String vpcId;
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      */
     private String description;
@@ -188,11 +188,11 @@ public class StudioSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        The detailed description of the EMR Studio.
+     *        The detailed description of the Amazon EMR Studio.
      */
 
     public void setDescription(String description) {
@@ -201,10 +201,10 @@ public class StudioSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The detailed description of the EMR Studio.
+     * @return The detailed description of the Amazon EMR Studio.
      */
 
     public String getDescription() {
@@ -213,11 +213,11 @@ public class StudioSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        The detailed description of the EMR Studio.
+     *        The detailed description of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

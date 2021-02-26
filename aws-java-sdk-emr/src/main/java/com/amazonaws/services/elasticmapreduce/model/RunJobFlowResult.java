@@ -28,24 +28,24 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An unique identifier for the job flow.
+     * A unique identifier for the job flow.
      * </p>
      */
     private String jobFlowId;
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      */
     private String clusterArn;
 
     /**
      * <p>
-     * An unique identifier for the job flow.
+     * A unique identifier for the job flow.
      * </p>
      * 
      * @param jobFlowId
-     *        An unique identifier for the job flow.
+     *        A unique identifier for the job flow.
      */
 
     public void setJobFlowId(String jobFlowId) {
@@ -54,10 +54,10 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An unique identifier for the job flow.
+     * A unique identifier for the job flow.
      * </p>
      * 
-     * @return An unique identifier for the job flow.
+     * @return A unique identifier for the job flow.
      */
 
     public String getJobFlowId() {
@@ -66,11 +66,11 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An unique identifier for the job flow.
+     * A unique identifier for the job flow.
      * </p>
      * 
      * @param jobFlowId
-     *        An unique identifier for the job flow.
+     *        A unique identifier for the job flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name of the cluster.
+     *        The Amazon Resource Name (ARN) of the cluster.
      */
 
     public void setClusterArn(String clusterArn) {
@@ -94,10 +94,10 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name of the cluster.
+     * @return The Amazon Resource Name (ARN) of the cluster.
      */
 
     public String getClusterArn() {
@@ -106,11 +106,11 @@ public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name of the cluster.
+     *        The Amazon Resource Name (ARN) of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

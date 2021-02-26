@@ -27,7 +27,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      */
     private String studioId;
@@ -45,7 +45,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The name of the user or group to update. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -68,11 +68,11 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioId
-     *        The ID of the EMR Studio.
+     *        The ID of the Amazon EMR Studio.
      */
 
     public void setStudioId(String studioId) {
@@ -81,10 +81,10 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The ID of the EMR Studio.
+     * @return The ID of the Amazon EMR Studio.
      */
 
     public String getStudioId() {
@@ -93,11 +93,11 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioId
-     *        The ID of the EMR Studio.
+     *        The ID of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +179,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The name of the user or group to update. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -188,7 +188,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param identityName
      *        The name of the user or group to update. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *        >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -202,7 +202,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The name of the user or group to update. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -210,7 +210,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return The name of the user or group to update. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *         >UserName</a> and <a href=
      *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *         >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -224,7 +224,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The name of the user or group to update. For more information, see <a href=
-     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      * >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or
@@ -233,7 +233,7 @@ public class UpdateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param identityName
      *        The name of the user or group to update. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId"
+     *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
      *        >DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or

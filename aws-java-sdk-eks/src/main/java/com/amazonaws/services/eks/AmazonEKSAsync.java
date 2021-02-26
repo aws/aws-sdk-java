@@ -43,6 +43,47 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Associate encryption configuration to an existing cluster.
+     * </p>
+     * <p>
+     * You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This
+     * allows you to implement a defense-in-depth security strategy without migrating applications to new EKS clusters.
+     * </p>
+     * 
+     * @param associateEncryptionConfigRequest
+     * @return A Java Future containing the result of the AssociateEncryptionConfig operation returned by the service.
+     * @sample AmazonEKSAsync.AssociateEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(
+            AssociateEncryptionConfigRequest associateEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Associate encryption configuration to an existing cluster.
+     * </p>
+     * <p>
+     * You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This
+     * allows you to implement a defense-in-depth security strategy without migrating applications to new EKS clusters.
+     * </p>
+     * 
+     * @param associateEncryptionConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateEncryptionConfig operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.AssociateEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(
+            AssociateEncryptionConfigRequest associateEncryptionConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateEncryptionConfigRequest, AssociateEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Associate an identity provider configuration to a cluster.
      * </p>
      * <p>
@@ -156,29 +197,9 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
-     * You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or
-     * disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is
-     * enabled, and private access is disabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <p>
-     * You can use the <code>logging</code> parameter to enable or disable exporting the Kubernetes control plane logs
-     * for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
-     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <note>
-     * <p>
-     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
-     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
-     * </p>
-     * </note>
-     * <p>
-     * Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon EKS cluster, you must
-     * configure your Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more
-     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
+     * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
+     * Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more information,
+     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
      * Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
      * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
@@ -212,29 +233,9 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
-     * You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or
-     * disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is
-     * enabled, and private access is disabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <p>
-     * You can use the <code>logging</code> parameter to enable or disable exporting the Kubernetes control plane logs
-     * for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
-     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <note>
-     * <p>
-     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
-     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
-     * </p>
-     * </note>
-     * <p>
-     * Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon EKS cluster, you must
-     * configure your Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more
-     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
+     * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
+     * Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more information,
+     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
      * Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
      * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
      * </p>

@@ -33,6 +33,7 @@ public enum UpdateParamType {
     ReleaseVersion("ReleaseVersion"),
     PublicAccessCidrs("PublicAccessCidrs"),
     IdentityProviderConfig("IdentityProviderConfig"),
+    EncryptionConfig("EncryptionConfig"),
     AddonVersion("AddonVersion"),
     ServiceAccountRoleArn("ServiceAccountRoleArn"),
     ResolveConflicts("ResolveConflicts");

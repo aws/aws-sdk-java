@@ -44,7 +44,7 @@ public class PutAutoScalingPolicyResult extends com.amazonaws.AmazonWebServiceRe
     private AutoScalingPolicyDescription autoScalingPolicy;
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      */
     private String clusterArn;
@@ -177,11 +177,11 @@ public class PutAutoScalingPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name of the cluster.
+     *        The Amazon Resource Name (ARN) of the cluster.
      */
 
     public void setClusterArn(String clusterArn) {
@@ -190,10 +190,10 @@ public class PutAutoScalingPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name of the cluster.
+     * @return The Amazon Resource Name (ARN) of the cluster.
      */
 
     public String getClusterArn() {
@@ -202,11 +202,11 @@ public class PutAutoScalingPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name of the cluster.
+     * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name of the cluster.
+     *        The Amazon Resource Name (ARN) of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

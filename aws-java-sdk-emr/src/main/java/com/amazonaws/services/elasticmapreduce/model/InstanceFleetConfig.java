@@ -41,7 +41,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      */
     private String instanceFleetType;
@@ -143,11 +143,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      * 
      * @param instanceFleetType
-     *        The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     *        The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * @see InstanceFleetType
      */
 
@@ -157,10 +157,10 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      * 
-     * @return The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * @return The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * @see InstanceFleetType
      */
 
@@ -170,11 +170,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      * 
      * @param instanceFleetType
-     *        The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     *        The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceFleetType
      */
@@ -186,11 +186,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      * 
      * @param instanceFleetType
-     *        The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     *        The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * @see InstanceFleetType
      */
 
@@ -200,11 +200,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     * The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * </p>
      * 
      * @param instanceFleetType
-     *        The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+     *        The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceFleetType
      */

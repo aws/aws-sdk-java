@@ -30,37 +30,37 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      */
     private String studioId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the EMR Studio.
+     * The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      * </p>
      */
     private String studioArn;
     /**
      * <p>
-     * The name of the EMR Studio.
+     * The name of the Amazon EMR Studio.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * </p>
      */
     private String authMode;
     /**
      * <p>
-     * The ID of the VPC associated with the EMR Studio.
+     * The ID of the VPC associated with the Amazon EMR Studio.
      * </p>
      */
     private String vpcId;
@@ -123,11 +123,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioId
-     *        The ID of the EMR Studio.
+     *        The ID of the Amazon EMR Studio.
      */
 
     public void setStudioId(String studioId) {
@@ -136,10 +136,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The ID of the EMR Studio.
+     * @return The ID of the Amazon EMR Studio.
      */
 
     public String getStudioId() {
@@ -148,11 +148,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the EMR Studio.
+     * The ID of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioId
-     *        The ID of the EMR Studio.
+     *        The ID of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the EMR Studio.
+     * The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioArn
-     *        The Amazon Resource Name (ARN) of the EMR Studio.
+     *        The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      */
 
     public void setStudioArn(String studioArn) {
@@ -176,10 +176,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the EMR Studio.
+     * The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the EMR Studio.
+     * @return The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      */
 
     public String getStudioArn() {
@@ -188,11 +188,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the EMR Studio.
+     * The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      * </p>
      * 
      * @param studioArn
-     *        The Amazon Resource Name (ARN) of the EMR Studio.
+     *        The Amazon Resource Name (ARN) of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +203,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EMR Studio.
+     * The name of the Amazon EMR Studio.
      * </p>
      * 
      * @param name
-     *        The name of the EMR Studio.
+     *        The name of the Amazon EMR Studio.
      */
 
     public void setName(String name) {
@@ -216,10 +216,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EMR Studio.
+     * The name of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The name of the EMR Studio.
+     * @return The name of the Amazon EMR Studio.
      */
 
     public String getName() {
@@ -228,11 +228,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EMR Studio.
+     * The name of the Amazon EMR Studio.
      * </p>
      * 
      * @param name
-     *        The name of the EMR Studio.
+     *        The name of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        The detailed description of the EMR Studio.
+     *        The detailed description of the Amazon EMR Studio.
      */
 
     public void setDescription(String description) {
@@ -256,10 +256,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
-     * @return The detailed description of the EMR Studio.
+     * @return The detailed description of the Amazon EMR Studio.
      */
 
     public String getDescription() {
@@ -268,11 +268,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed description of the EMR Studio.
+     * The detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        The detailed description of the EMR Studio.
+     *        The detailed description of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     *        Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * @see AuthMode
      */
 
@@ -297,10 +297,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * </p>
      * 
-     * @return Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * @return Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * @see AuthMode
      */
 
@@ -310,11 +310,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     *        Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -326,11 +326,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     * Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+     *        Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or IAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -342,11 +342,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the VPC associated with the EMR Studio.
+     * The ID of the VPC associated with the Amazon EMR Studio.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC associated with the EMR Studio.
+     *        The ID of the VPC associated with the Amazon EMR Studio.
      */
 
     public void setVpcId(String vpcId) {
@@ -355,10 +355,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the VPC associated with the EMR Studio.
+     * The ID of the VPC associated with the Amazon EMR Studio.
      * </p>
      * 
-     * @return The ID of the VPC associated with the EMR Studio.
+     * @return The ID of the VPC associated with the Amazon EMR Studio.
      */
 
     public String getVpcId() {
@@ -367,11 +367,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the VPC associated with the EMR Studio.
+     * The ID of the VPC associated with the Amazon EMR Studio.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC associated with the EMR Studio.
+     *        The ID of the VPC associated with the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

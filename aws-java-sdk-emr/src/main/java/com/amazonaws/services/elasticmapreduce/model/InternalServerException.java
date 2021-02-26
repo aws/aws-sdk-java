@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception occurs when there is an internal failure in the EMR service.
+ * This exception occurs when there is an internal failure in the Amazon EMR service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

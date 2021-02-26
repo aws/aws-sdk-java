@@ -115,6 +115,8 @@ public enum ElasticMapReduceActions implements Action {
     StopNotebookExecution("elasticmapreduce:StopNotebookExecution"),
     /** Action for the TerminateJobFlows operation. */
     TerminateJobFlows("elasticmapreduce:TerminateJobFlows"),
+    /** Action for the UpdateStudio operation. */
+    UpdateStudio("elasticmapreduce:UpdateStudio"),
     /** Action for the UpdateStudioSessionMapping operation. */
     UpdateStudioSessionMapping("elasticmapreduce:UpdateStudioSessionMapping"),
 

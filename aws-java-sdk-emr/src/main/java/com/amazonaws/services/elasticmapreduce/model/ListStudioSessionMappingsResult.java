@@ -26,7 +26,7 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A list of session mapping summary objects. Each object includes session mapping details such as creation time,
-     * identity type (user or group), and Studio ID.
+     * identity type (user or group), and Amazon EMR Studio ID.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SessionMappingSummary> sessionMappings;
@@ -40,11 +40,11 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A list of session mapping summary objects. Each object includes session mapping details such as creation time,
-     * identity type (user or group), and Studio ID.
+     * identity type (user or group), and Amazon EMR Studio ID.
      * </p>
      * 
      * @return A list of session mapping summary objects. Each object includes session mapping details such as creation
-     *         time, identity type (user or group), and Studio ID.
+     *         time, identity type (user or group), and Amazon EMR Studio ID.
      */
 
     public java.util.List<SessionMappingSummary> getSessionMappings() {
@@ -57,12 +57,12 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A list of session mapping summary objects. Each object includes session mapping details such as creation time,
-     * identity type (user or group), and Studio ID.
+     * identity type (user or group), and Amazon EMR Studio ID.
      * </p>
      * 
      * @param sessionMappings
      *        A list of session mapping summary objects. Each object includes session mapping details such as creation
-     *        time, identity type (user or group), and Studio ID.
+     *        time, identity type (user or group), and Amazon EMR Studio ID.
      */
 
     public void setSessionMappings(java.util.Collection<SessionMappingSummary> sessionMappings) {
@@ -77,7 +77,7 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A list of session mapping summary objects. Each object includes session mapping details such as creation time,
-     * identity type (user or group), and Studio ID.
+     * identity type (user or group), and Amazon EMR Studio ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +87,7 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
      * 
      * @param sessionMappings
      *        A list of session mapping summary objects. Each object includes session mapping details such as creation
-     *        time, identity type (user or group), and Studio ID.
+     *        time, identity type (user or group), and Amazon EMR Studio ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +104,12 @@ public class ListStudioSessionMappingsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A list of session mapping summary objects. Each object includes session mapping details such as creation time,
-     * identity type (user or group), and Studio ID.
+     * identity type (user or group), and Amazon EMR Studio ID.
      * </p>
      * 
      * @param sessionMappings
      *        A list of session mapping summary objects. Each object includes session mapping details such as creation
-     *        time, identity type (user or group), and Studio ID.
+     *        time, identity type (user or group), and Amazon EMR Studio ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

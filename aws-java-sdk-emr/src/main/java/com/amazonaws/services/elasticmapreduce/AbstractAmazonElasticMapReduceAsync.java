@@ -690,6 +690,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(UpdateStudioRequest request) {
+
+        return updateStudioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(UpdateStudioRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStudioRequest, UpdateStudioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request) {
 
         return updateStudioSessionMappingAsync(request, null);

@@ -27,6 +27,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request) {
+
+        return associateEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateEncryptionConfigRequest, AssociateEncryptionConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
             AssociateIdentityProviderConfigRequest request) {
 

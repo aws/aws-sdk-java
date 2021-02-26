@@ -33,7 +33,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * A detailed description of the Studio.
+     * A detailed description of the Amazon EMR Studio.
      * </p>
      */
     private String description;
@@ -52,8 +52,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String vpcId;
     /**
      * <p>
-     * A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The
+     * subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+     * specified subnets.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -66,8 +67,8 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String serviceRole;
     /**
      * <p>
-     * The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached to
-     * this IAM role can be scoped down for each user or group using session policies.
+     * The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The permissions
+     * attached to this IAM role can be scoped down for each user or group using session policies.
      * </p>
      */
     private String userRole;
@@ -88,15 +89,16 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String engineSecurityGroupId;
     /**
      * <p>
-     * The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an
-     * alternative Amazon S3 location when creating a Workspace.
+     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user can
+     * select an alternative Amazon S3 location when creating a Workspace.
      * </p>
      */
     private String defaultS3Location;
     /**
      * <p>
-     * A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+     * A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a
+     * required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -143,11 +145,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A detailed description of the Studio.
+     * A detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        A detailed description of the Studio.
+     *        A detailed description of the Amazon EMR Studio.
      */
 
     public void setDescription(String description) {
@@ -156,10 +158,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A detailed description of the Studio.
+     * A detailed description of the Amazon EMR Studio.
      * </p>
      * 
-     * @return A detailed description of the Studio.
+     * @return A detailed description of the Amazon EMR Studio.
      */
 
     public String getDescription() {
@@ -168,11 +170,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A detailed description of the Studio.
+     * A detailed description of the Amazon EMR Studio.
      * </p>
      * 
      * @param description
-     *        A detailed description of the Studio.
+     *        A detailed description of the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,12 +292,14 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The
+     * subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+     * specified subnets.
      * </p>
      * 
-     * @return A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     *         <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * @return A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets.
+     *         The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace
+     *         in any of the specified subnets.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -307,13 +311,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The
+     * subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+     * specified subnets.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     *        <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     *        A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets.
+     *        The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
+     *        any of the specified subnets.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -327,8 +333,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The
+     * subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+     * specified subnets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -337,8 +344,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     *        <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     *        A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets.
+     *        The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
+     *        any of the specified subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,13 +362,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     * A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The
+     * subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+     * specified subnets.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by
-     *        <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.
+     *        A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets.
+     *        The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
+     *        any of the specified subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,13 +427,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached to
-     * this IAM role can be scoped down for each user or group using session policies.
+     * The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The permissions
+     * attached to this IAM role can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
-     *        The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached
-     *        to this IAM role can be scoped down for each user or group using session policies.
+     *        The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The
+     *        permissions attached to this IAM role can be scoped down for each user or group using session policies.
      */
 
     public void setUserRole(String userRole) {
@@ -432,12 +442,12 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached to
-     * this IAM role can be scoped down for each user or group using session policies.
+     * The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The permissions
+     * attached to this IAM role can be scoped down for each user or group using session policies.
      * </p>
      * 
-     * @return The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions
-     *         attached to this IAM role can be scoped down for each user or group using session policies.
+     * @return The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The
+     *         permissions attached to this IAM role can be scoped down for each user or group using session policies.
      */
 
     public String getUserRole() {
@@ -446,13 +456,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached to
-     * this IAM role can be scoped down for each user or group using session policies.
+     * The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The permissions
+     * attached to this IAM role can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
-     *        The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached
-     *        to this IAM role can be scoped down for each user or group using session policies.
+     *        The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The
+     *        permissions attached to this IAM role can be scoped down for each user or group using session policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -562,13 +572,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an
-     * alternative Amazon S3 location when creating a Workspace.
+     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user can
+     * select an alternative Amazon S3 location when creating a Workspace.
      * </p>
      * 
      * @param defaultS3Location
-     *        The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can
-     *        select an alternative Amazon S3 location when creating a Workspace.
+     *        The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user
+     *        can select an alternative Amazon S3 location when creating a Workspace.
      */
 
     public void setDefaultS3Location(String defaultS3Location) {
@@ -577,12 +587,12 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an
-     * alternative Amazon S3 location when creating a Workspace.
+     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user can
+     * select an alternative Amazon S3 location when creating a Workspace.
      * </p>
      * 
-     * @return The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can
-     *         select an alternative Amazon S3 location when creating a Workspace.
+     * @return The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user
+     *         can select an alternative Amazon S3 location when creating a Workspace.
      */
 
     public String getDefaultS3Location() {
@@ -591,13 +601,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an
-     * alternative Amazon S3 location when creating a Workspace.
+     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user can
+     * select an alternative Amazon S3 location when creating a Workspace.
      * </p>
      * 
      * @param defaultS3Location
-     *        The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can
-     *        select an alternative Amazon S3 location when creating a Workspace.
+     *        The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files. A Studio user
+     *        can select an alternative Amazon S3 location when creating a Workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,13 +618,14 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+     * A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a
+     * required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.
      * </p>
      * 
-     * @return A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a
-     *         required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
-     *         characters.
+     * @return A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
+     *         consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     *         maximum of 256 characters.
      */
 
     public java.util.List<Tag> getTags() {
@@ -626,14 +637,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+     * A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a
+     * required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a
-     *        required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
-     *        characters.
+     *        A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist
+     *        of a required key string with a maximum of 128 characters, and an optional value string with a maximum of
+     *        256 characters.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -647,8 +659,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+     * A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a
+     * required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -657,9 +670,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a
-     *        required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
-     *        characters.
+     *        A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist
+     *        of a required key string with a maximum of 128 characters, and an optional value string with a maximum of
+     *        256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,14 +688,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+     * A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a
+     * required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a
-     *        required key string with a maximum of 128 characters, and an optional value string with a maximum of 256
-     *        characters.
+     *        A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist
+     *        of a required key string with a maximum of 128 characters, and an optional value string with a maximum of
+     *        256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

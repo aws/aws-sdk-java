@@ -295,11 +295,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new Amazon EMR Studio.
      * </p>
@@ -313,11 +308,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<CreateStudioResult> createStudioAsync(CreateStudioRequest createStudioRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new Amazon EMR Studio.
      * </p>
@@ -336,11 +326,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<CreateStudioRequest, CreateStudioResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
      * refine Studio permissions for that user or group.
@@ -356,11 +341,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             CreateStudioSessionMappingRequest createStudioSessionMappingRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
      * refine Studio permissions for that user or group.
@@ -414,11 +394,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Removes an Amazon EMR Studio from the Studio metadata store.
      * </p>
@@ -432,11 +407,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<DeleteStudioResult> deleteStudioAsync(DeleteStudioRequest deleteStudioRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Removes an Amazon EMR Studio from the Studio metadata store.
      * </p>
@@ -455,11 +425,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<DeleteStudioRequest, DeleteStudioResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Removes a user or group from an Amazon EMR Studio.
      * </p>
@@ -474,11 +439,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Removes a user or group from an Amazon EMR Studio.
      * </p>
@@ -738,11 +698,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
      * </p>
@@ -756,11 +711,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<DescribeStudioResult> describeStudioAsync(DescribeStudioRequest describeStudioRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
      * </p>
@@ -853,11 +803,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<GetManagedScalingPolicyRequest, GetManagedScalingPolicyResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
      * </p>
@@ -871,11 +816,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<GetStudioSessionMappingResult> getStudioSessionMappingAsync(GetStudioSessionMappingRequest getStudioSessionMappingRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
      * </p>
@@ -1167,7 +1107,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     /**
      * <p>
      * Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the
-     * request of filter by <code>StepStates</code>. You can specify a maximum of ten <code>stepIDs</code>.
+     * request of filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>.
      * </p>
      * 
      * @param listStepsRequest
@@ -1182,7 +1122,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     /**
      * <p>
      * Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the
-     * request of filter by <code>StepStates</code>. You can specify a maximum of ten <code>stepIDs</code>.
+     * request of filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>.
      * </p>
      * 
      * @param listStepsRequest
@@ -1200,13 +1140,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult> asyncHandler);
 
     /**
-     * <note>
      * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>
+     * .
      * </p>
      * 
      * @param listStudioSessionMappingsRequest
@@ -1219,13 +1155,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             ListStudioSessionMappingsRequest listStudioSessionMappingsRequest);
 
     /**
-     * <note>
      * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>
+     * .
      * </p>
      * 
      * @param listStudioSessionMappingsRequest
@@ -1243,11 +1175,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<ListStudioSessionMappingsRequest, ListStudioSessionMappingsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
      * Studio Access URL, and creation time for each Studio.
@@ -1262,11 +1189,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<ListStudiosResult> listStudiosAsync(ListStudiosRequest listStudiosRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
      * Studio Access URL, and creation time for each Studio.
@@ -1950,11 +1872,37 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler);
 
     /**
-     * <note>
      * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.
      * </p>
-     * </note>
+     * 
+     * @param updateStudioRequest
+     * @return A Java Future containing the result of the UpdateStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.UpdateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(UpdateStudioRequest updateStudioRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.
+     * </p>
+     * 
+     * @param updateStudioRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.UpdateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStudioResult> updateStudioAsync(UpdateStudioRequest updateStudioRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStudioRequest, UpdateStudioResult> asyncHandler);
+
+    /**
      * <p>
      * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
      * </p>
@@ -1969,11 +1917,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest);
 
     /**
-     * <note>
-     * <p>
-     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
-     * </p>
-     * </note>
      * <p>
      * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
      * </p>

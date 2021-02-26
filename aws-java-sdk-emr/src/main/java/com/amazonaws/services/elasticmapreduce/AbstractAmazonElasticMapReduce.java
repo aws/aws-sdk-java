@@ -281,6 +281,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public UpdateStudioResult updateStudio(UpdateStudioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateStudioSessionMappingResult updateStudioSessionMapping(UpdateStudioSessionMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
