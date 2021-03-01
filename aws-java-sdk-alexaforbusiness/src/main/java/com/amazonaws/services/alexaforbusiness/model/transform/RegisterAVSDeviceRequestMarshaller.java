@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.alexaforbusiness.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class RegisterAVSDeviceRequestMarshaller {
             .marshallLocationName("AmazonId").build();
     private static final MarshallingInfo<String> ROOMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoomArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final RegisterAVSDeviceRequestMarshaller instance = new RegisterAVSDeviceRequestMarshaller();
 
@@ -62,6 +65,7 @@ public class RegisterAVSDeviceRequestMarshaller {
             protocolMarshaller.marshall(registerAVSDeviceRequest.getDeviceSerialNumber(), DEVICESERIALNUMBER_BINDING);
             protocolMarshaller.marshall(registerAVSDeviceRequest.getAmazonId(), AMAZONID_BINDING);
             protocolMarshaller.marshall(registerAVSDeviceRequest.getRoomArn(), ROOMARN_BINDING);
+            protocolMarshaller.marshall(registerAVSDeviceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

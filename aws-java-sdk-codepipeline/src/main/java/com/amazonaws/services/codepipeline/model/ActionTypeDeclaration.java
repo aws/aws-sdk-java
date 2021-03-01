@@ -42,7 +42,7 @@ public class ActionTypeDeclaration implements Serializable, Cloneable, Structure
     private ActionTypeExecutor executor;
     /**
      * <p>
-     * The action ID is composed of the action category, owner, provider, and version of the action type to be updated.
+     * The action category, owner, provider, and version of the action type to be updated.
      * </p>
      */
     private ActionTypeIdentifier id;
@@ -161,12 +161,11 @@ public class ActionTypeDeclaration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The action ID is composed of the action category, owner, provider, and version of the action type to be updated.
+     * The action category, owner, provider, and version of the action type to be updated.
      * </p>
      * 
      * @param id
-     *        The action ID is composed of the action category, owner, provider, and version of the action type to be
-     *        updated.
+     *        The action category, owner, provider, and version of the action type to be updated.
      */
 
     public void setId(ActionTypeIdentifier id) {
@@ -175,11 +174,10 @@ public class ActionTypeDeclaration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The action ID is composed of the action category, owner, provider, and version of the action type to be updated.
+     * The action category, owner, provider, and version of the action type to be updated.
      * </p>
      * 
-     * @return The action ID is composed of the action category, owner, provider, and version of the action type to be
-     *         updated.
+     * @return The action category, owner, provider, and version of the action type to be updated.
      */
 
     public ActionTypeIdentifier getId() {
@@ -188,12 +186,11 @@ public class ActionTypeDeclaration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The action ID is composed of the action category, owner, provider, and version of the action type to be updated.
+     * The action category, owner, provider, and version of the action type to be updated.
      * </p>
      * 
      * @param id
-     *        The action ID is composed of the action category, owner, provider, and version of the action type to be
-     *        updated.
+     *        The action category, owner, provider, and version of the action type to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

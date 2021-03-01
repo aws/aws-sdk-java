@@ -51,6 +51,8 @@ public class CreateNetworkProfileRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateNetworkProfileRequestMarshaller instance = new CreateNetworkProfileRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class CreateNetworkProfileRequestMarshaller {
             protocolMarshaller.marshall(createNetworkProfileRequest.getCertificateAuthorityArn(), CERTIFICATEAUTHORITYARN_BINDING);
             protocolMarshaller.marshall(createNetworkProfileRequest.getTrustAnchors(), TRUSTANCHORS_BINDING);
             protocolMarshaller.marshall(createNetworkProfileRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createNetworkProfileRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

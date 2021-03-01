@@ -1,3 +1,20 @@
+# __1.11.965__ __2021-03-01__
+## __AWS CodePipeline__
+  - ### Features
+    - Added a new field to the ListPipelines API to allow maximum search results of 1000
+
+## __Alexa For Business__
+  - ### Features
+    - Added support for optional tags in CreateAddressBook, CreateConferenceProvider, CreateContact, CreateGatewayGroup, CreateNetworkProfile and RegisterAVSDevice APIs.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Adding new error code AdmissionRequestDenied for Addons in EKS
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Add Support for Patch Manger Baseline Override parameter.
+
 # __1.11.964__ __2021-02-26__
 ## __AWS Single Sign-On Admin__
   - ### Features

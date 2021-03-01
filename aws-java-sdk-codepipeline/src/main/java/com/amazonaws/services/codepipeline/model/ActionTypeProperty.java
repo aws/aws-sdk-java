@@ -31,7 +31,7 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The property name. This represents a field name that is displayed to users.
+     * The property name that is displayed to users.
      * </p>
      */
     private String name;
@@ -49,8 +49,8 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
     private Boolean key;
     /**
      * <p>
-     * Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is <code>true</code>
-     * , the value is not shown in CloudTrail logs for the action execution.
+     * Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved
+     * in CloudTrail logs for the action execution.
      * </p>
      */
     private Boolean noEcho;
@@ -70,11 +70,11 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The property name. This represents a field name that is displayed to users.
+     * The property name that is displayed to users.
      * </p>
      * 
      * @param name
-     *        The property name. This represents a field name that is displayed to users.
+     *        The property name that is displayed to users.
      */
 
     public void setName(String name) {
@@ -83,10 +83,10 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The property name. This represents a field name that is displayed to users.
+     * The property name that is displayed to users.
      * </p>
      * 
-     * @return The property name. This represents a field name that is displayed to users.
+     * @return The property name that is displayed to users.
      */
 
     public String getName() {
@@ -95,11 +95,11 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The property name. This represents a field name that is displayed to users.
+     * The property name that is displayed to users.
      * </p>
      * 
      * @param name
-     *        The property name. This represents a field name that is displayed to users.
+     *        The property name that is displayed to users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,13 +214,13 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is <code>true</code>
-     * , the value is not shown in CloudTrail logs for the action execution.
+     * Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved
+     * in CloudTrail logs for the action execution.
      * </p>
      * 
      * @param noEcho
-     *        Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is
-     *        <code>true</code>, the value is not shown in CloudTrail logs for the action execution.
+     *        Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not
+     *        saved in CloudTrail logs for the action execution.
      */
 
     public void setNoEcho(Boolean noEcho) {
@@ -229,12 +229,12 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is <code>true</code>
-     * , the value is not shown in CloudTrail logs for the action execution.
+     * Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved
+     * in CloudTrail logs for the action execution.
      * </p>
      * 
-     * @return Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is
-     *         <code>true</code>, the value is not shown in CloudTrail logs for the action execution.
+     * @return Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is
+     *         not saved in CloudTrail logs for the action execution.
      */
 
     public Boolean getNoEcho() {
@@ -243,13 +243,13 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is <code>true</code>
-     * , the value is not shown in CloudTrail logs for the action execution.
+     * Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved
+     * in CloudTrail logs for the action execution.
      * </p>
      * 
      * @param noEcho
-     *        Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is
-     *        <code>true</code>, the value is not shown in CloudTrail logs for the action execution.
+     *        Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not
+     *        saved in CloudTrail logs for the action execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,12 +260,12 @@ public class ActionTypeProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is <code>true</code>
-     * , the value is not shown in CloudTrail logs for the action execution.
+     * Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved
+     * in CloudTrail logs for the action execution.
      * </p>
      * 
-     * @return Determines whether the field value entered by the customer is logged. If <code>noEcho</code> is
-     *         <code>true</code>, the value is not shown in CloudTrail logs for the action execution.
+     * @return Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is
+     *         not saved in CloudTrail logs for the action execution.
      */
 
     public Boolean isNoEcho() {

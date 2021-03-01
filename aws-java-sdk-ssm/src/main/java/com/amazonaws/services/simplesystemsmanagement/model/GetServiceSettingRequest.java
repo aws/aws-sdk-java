@@ -31,6 +31,8 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/automation/customer-script-log-destination</code>,
+     * <code>/ssm/automation/customer-script-log-group-name</code>,
      * <code>/ssm/parameter-store/default-parameter-tier</code>,
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
@@ -40,12 +42,16 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/automation/customer-script-log-destination</code>,
+     * <code>/ssm/automation/customer-script-log-group-name</code>,
      * <code>/ssm/parameter-store/default-parameter-tier</code>,
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
      * @param settingId
      *        The ID of the service setting to get. The setting ID can be
+     *        <code>/ssm/automation/customer-script-log-destination</code>,
+     *        <code>/ssm/automation/customer-script-log-group-name</code>,
      *        <code>/ssm/parameter-store/default-parameter-tier</code>,
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
      *        <code>/ssm/managed-instance/activation-tier</code>.
@@ -58,11 +64,15 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/automation/customer-script-log-destination</code>,
+     * <code>/ssm/automation/customer-script-log-group-name</code>,
      * <code>/ssm/parameter-store/default-parameter-tier</code>,
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
      * @return The ID of the service setting to get. The setting ID can be
+     *         <code>/ssm/automation/customer-script-log-destination</code>,
+     *         <code>/ssm/automation/customer-script-log-group-name</code>,
      *         <code>/ssm/parameter-store/default-parameter-tier</code>,
      *         <code>/ssm/parameter-store/high-throughput-enabled</code>, or
      *         <code>/ssm/managed-instance/activation-tier</code>.
@@ -75,12 +85,16 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/automation/customer-script-log-destination</code>,
+     * <code>/ssm/automation/customer-script-log-group-name</code>,
      * <code>/ssm/parameter-store/default-parameter-tier</code>,
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
      * @param settingId
      *        The ID of the service setting to get. The setting ID can be
+     *        <code>/ssm/automation/customer-script-log-destination</code>,
+     *        <code>/ssm/automation/customer-script-log-group-name</code>,
      *        <code>/ssm/parameter-store/default-parameter-tier</code>,
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
      *        <code>/ssm/managed-instance/activation-tier</code>.

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.alexaforbusiness.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -36,6 +37,8 @@ public class CreateAddressBookRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAddressBookRequestMarshaller instance = new CreateAddressBookRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateAddressBookRequestMarshaller {
             protocolMarshaller.marshall(createAddressBookRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAddressBookRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAddressBookRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createAddressBookRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

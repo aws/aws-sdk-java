@@ -631,7 +631,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Returns information about an action type created for an external provider, where the action is to be used by
-     * customers of the external provider. The action can have been created with any supported integration model.
+     * customers of the external provider. The action can be created with any supported integration model.
      * </p>
      * 
      * @param getActionTypeRequest
@@ -645,7 +645,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Returns information about an action type created for an external provider, where the action is to be used by
-     * customers of the external provider. The action can have been created with any supported integration model.
+     * customers of the external provider. The action can be created with any supported integration model.
      * </p>
      * 
      * @param getActionTypeRequest
@@ -1623,8 +1623,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Updates an action type that has been created with any supported integration model, where the action type is to be
-     * used by customers of the action type provider. Use a JSON file with the action definition and
+     * Updates an action type that was created with any supported integration model, where the action type is to be used
+     * by customers of the action type provider. Use a JSON file with the action definition and
      * <code>UpdateActionType</code> to provide the full structure.
      * </p>
      * 
@@ -1638,8 +1638,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Updates an action type that has been created with any supported integration model, where the action type is to be
-     * used by customers of the action type provider. Use a JSON file with the action definition and
+     * Updates an action type that was created with any supported integration model, where the action type is to be used
+     * by customers of the action type provider. Use a JSON file with the action definition and
      * <code>UpdateActionType</code> to provide the full structure.
      * </p>
      * 

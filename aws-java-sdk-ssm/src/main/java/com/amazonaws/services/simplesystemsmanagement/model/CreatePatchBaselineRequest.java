@@ -63,8 +63,8 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      */
     private String approvedPatchesComplianceLevel;
@@ -467,13 +467,13 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      * 
      * @param approvedPatchesComplianceLevel
-     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
-     *        missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     *        Defines the compliance level for approved patches. When an approved patch is reported as missing, this
+     *        value describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * @see PatchComplianceLevel
      */
 
@@ -483,12 +483,12 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      * 
-     * @return Defines the compliance level for approved patches. This means that if an approved patch is reported as
-     *         missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * @return Defines the compliance level for approved patches. When an approved patch is reported as missing, this
+     *         value describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * @see PatchComplianceLevel
      */
 
@@ -498,13 +498,13 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      * 
      * @param approvedPatchesComplianceLevel
-     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
-     *        missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     *        Defines the compliance level for approved patches. When an approved patch is reported as missing, this
+     *        value describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceLevel
      */
@@ -516,13 +516,13 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      * 
      * @param approvedPatchesComplianceLevel
-     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
-     *        missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     *        Defines the compliance level for approved patches. When an approved patch is reported as missing, this
+     *        value describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * @see PatchComplianceLevel
      */
 
@@ -532,13 +532,13 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
-     * this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     * Defines the compliance level for approved patches. When an approved patch is reported as missing, this value
+     * describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * </p>
      * 
      * @param approvedPatchesComplianceLevel
-     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
-     *        missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+     *        Defines the compliance level for approved patches. When an approved patch is reported as missing, this
+     *        value describes the severity of the compliance violation. The default value is UNSPECIFIED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceLevel
      */

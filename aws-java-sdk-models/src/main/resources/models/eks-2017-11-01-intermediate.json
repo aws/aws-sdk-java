@@ -5065,6 +5065,9 @@
       }, {
         "name" : "ConfigurationConflict",
         "value" : "ConfigurationConflict"
+      }, {
+        "name" : "AdmissionRequestDenied",
+        "value" : "AdmissionRequestDenied"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.AddonIssueCode",
@@ -27741,6 +27744,9 @@
       }, {
         "name" : "ConfigurationConflict",
         "value" : "ConfigurationConflict"
+      }, {
+        "name" : "AdmissionRequestDenied",
+        "value" : "AdmissionRequestDenied"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.ErrorCode",

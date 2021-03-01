@@ -45,6 +45,8 @@ public class CreateContactRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateContactRequestMarshaller instance = new CreateContactRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateContactRequestMarshaller {
             protocolMarshaller.marshall(createContactRequest.getPhoneNumbers(), PHONENUMBERS_BINDING);
             protocolMarshaller.marshall(createContactRequest.getSipAddresses(), SIPADDRESSES_BINDING);
             protocolMarshaller.marshall(createContactRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createContactRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

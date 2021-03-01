@@ -904,7 +904,7 @@
       "errors":[
         {"shape":"NotFoundException"}
       ],
-      "documentation":"<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>"
+      "documentation":"<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p> <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>"
     },
     "RevokeInvitation":{
       "name":"RevokeInvitation",
@@ -1872,6 +1872,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for the request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -1967,6 +1971,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>The request token of the client.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2011,6 +2019,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for this request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2065,6 +2077,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p> A unique, user-specified identifier for the request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2162,6 +2178,10 @@
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags. </p>"
         }
       }
     },
@@ -4448,7 +4468,11 @@
         },
         "RoomArn":{
           "shape":"Arn",
-          "documentation":"<p>The ARN of the room with which to associate your AVS device.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },

@@ -27,8 +27,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage. The following are the valid values:
      * </p>
      * <ul>
      * <li>
@@ -66,9 +65,8 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String category;
     /**
      * <p>
-     * The creator of an action type that has been created with any supported integration model. There are two valid
-     * values for the <code>owner</code> field in the action type category: <code>AWS</code> and <code>ThirdParty</code>
-     * .
+     * The creator of an action type that was created with any supported integration model. There are two valid values:
+     * <code>AWS</code> and <code>ThirdParty</code>.
      * </p>
      */
     private String owner;
@@ -87,8 +85,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage. The following are the valid values:
      * </p>
      * <ul>
      * <li>
@@ -124,8 +121,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage. The following are the valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -166,8 +162,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage. The following are the valid values:
      * </p>
      * <ul>
      * <li>
@@ -202,8 +197,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * 
-     * @return A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *         the following values:</p>
+     * @return Defines what kind of action can be taken in the stage. The following are the valid values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -244,8 +238,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage. The following are the valid values:
      * </p>
      * <ul>
      * <li>
@@ -281,8 +274,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage. The following are the valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -325,8 +317,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage. The following are the valid values:
      * </p>
      * <ul>
      * <li>
@@ -362,8 +353,7 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage. The following are the valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -406,15 +396,13 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The creator of an action type that has been created with any supported integration model. There are two valid
-     * values for the <code>owner</code> field in the action type category: <code>AWS</code> and <code>ThirdParty</code>
-     * .
+     * The creator of an action type that was created with any supported integration model. There are two valid values:
+     * <code>AWS</code> and <code>ThirdParty</code>.
      * </p>
      * 
      * @param owner
-     *        The creator of an action type that has been created with any supported integration model. There are two
-     *        valid values for the <code>owner</code> field in the action type category: <code>AWS</code> and
-     *        <code>ThirdParty</code>.
+     *        The creator of an action type that was created with any supported integration model. There are two valid
+     *        values: <code>AWS</code> and <code>ThirdParty</code>.
      */
 
     public void setOwner(String owner) {
@@ -423,14 +411,12 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The creator of an action type that has been created with any supported integration model. There are two valid
-     * values for the <code>owner</code> field in the action type category: <code>AWS</code> and <code>ThirdParty</code>
-     * .
+     * The creator of an action type that was created with any supported integration model. There are two valid values:
+     * <code>AWS</code> and <code>ThirdParty</code>.
      * </p>
      * 
-     * @return The creator of an action type that has been created with any supported integration model. There are two
-     *         valid values for the <code>owner</code> field in the action type category: <code>AWS</code> and
-     *         <code>ThirdParty</code>.
+     * @return The creator of an action type that was created with any supported integration model. There are two valid
+     *         values: <code>AWS</code> and <code>ThirdParty</code>.
      */
 
     public String getOwner() {
@@ -439,15 +425,13 @@ public class GetActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The creator of an action type that has been created with any supported integration model. There are two valid
-     * values for the <code>owner</code> field in the action type category: <code>AWS</code> and <code>ThirdParty</code>
-     * .
+     * The creator of an action type that was created with any supported integration model. There are two valid values:
+     * <code>AWS</code> and <code>ThirdParty</code>.
      * </p>
      * 
      * @param owner
-     *        The creator of an action type that has been created with any supported integration model. There are two
-     *        valid values for the <code>owner</code> field in the action type category: <code>AWS</code> and
-     *        <code>ThirdParty</code>.
+     *        The creator of an action type that was created with any supported integration model. There are two valid
+     *        values: <code>AWS</code> and <code>ThirdParty</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

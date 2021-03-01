@@ -30,8 +30,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage, one of the following:
      * </p>
      * <ul>
      * <li>
@@ -69,8 +68,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
     private String category;
     /**
      * <p>
-     * The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     * <code>AWS</code> and <code>ThirdParty</code>.
+     * The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      * </p>
      */
     private String owner;
@@ -89,8 +87,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage, one of the following:
      * </p>
      * <ul>
      * <li>
@@ -126,8 +123,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage, one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -168,8 +164,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage, one of the following:
      * </p>
      * <ul>
      * <li>
@@ -204,8 +199,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
      * </li>
      * </ul>
      * 
-     * @return A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *         the following values:</p>
+     * @return Defines what kind of action can be taken in the stage, one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -246,8 +240,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage, one of the following:
      * </p>
      * <ul>
      * <li>
@@ -283,8 +276,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage, one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -327,8 +319,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage. Valid categories are limited to one of the
-     * following values:
+     * Defines what kind of action can be taken in the stage, one of the following:
      * </p>
      * <ul>
      * <li>
@@ -364,8 +355,7 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage. Valid categories are limited to one of
-     *        the following values:</p>
+     *        Defines what kind of action can be taken in the stage, one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -408,13 +398,11 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     * <code>AWS</code> and <code>ThirdParty</code>.
+     * The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     *        <code>AWS</code> and <code>ThirdParty</code>.
+     *        The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      */
 
     public void setOwner(String owner) {
@@ -423,12 +411,10 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     * <code>AWS</code> and <code>ThirdParty</code>.
+     * The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      * </p>
      * 
-     * @return The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     *         <code>AWS</code> and <code>ThirdParty</code>.
+     * @return The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      */
 
     public String getOwner() {
@@ -437,13 +423,11 @@ public class ActionTypeIdentifier implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     * <code>AWS</code> and <code>ThirdParty</code>.
+     * The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action type being called. There are two valid values for the <code>owner</code> field:
-     *        <code>AWS</code> and <code>ThirdParty</code>.
+     *        The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

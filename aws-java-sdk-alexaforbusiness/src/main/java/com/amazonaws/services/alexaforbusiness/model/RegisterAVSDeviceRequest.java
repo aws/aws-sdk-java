@@ -59,10 +59,16 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String amazonId;
     /**
      * <p>
-     * The ARN of the room with which to associate your AVS device.
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      * </p>
      */
     private String roomArn;
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -278,11 +284,11 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the room with which to associate your AVS device.
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      * </p>
      * 
      * @param roomArn
-     *        The ARN of the room with which to associate your AVS device.
+     *        The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      */
 
     public void setRoomArn(String roomArn) {
@@ -291,10 +297,10 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the room with which to associate your AVS device.
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      * </p>
      * 
-     * @return The ARN of the room with which to associate your AVS device.
+     * @return The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      */
 
     public String getRoomArn() {
@@ -303,16 +309,86 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the room with which to associate your AVS device.
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      * </p>
      * 
      * @param roomArn
-     *        The ARN of the room with which to associate your AVS device.
+     *        The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterAVSDeviceRequest withRoomArn(String roomArn) {
         setRoomArn(roomArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @return The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -339,7 +415,9 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAmazonId() != null)
             sb.append("AmazonId: ").append(getAmazonId()).append(",");
         if (getRoomArn() != null)
-            sb.append("RoomArn: ").append(getRoomArn());
+            sb.append("RoomArn: ").append(getRoomArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -378,6 +456,10 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getRoomArn() != null && other.getRoomArn().equals(this.getRoomArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -392,6 +474,7 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDeviceSerialNumber() == null) ? 0 : getDeviceSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
         hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

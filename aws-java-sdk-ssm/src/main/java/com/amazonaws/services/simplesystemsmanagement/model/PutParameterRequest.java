@@ -53,7 +53,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -69,8 +73,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -375,7 +379,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -391,8 +399,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -431,7 +439,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *        </p>
+     *        <p>
+     *        In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *        <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *        </p>
      *        </li>
      *        <li>
@@ -446,9 +458,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional information about valid values for parameter names, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *        >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For additional information about valid values for parameter names, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -494,7 +506,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -510,8 +526,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -549,7 +565,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *         Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *         </p>
+     *         <p>
+     *         In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *         <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *         </p>
      *         </li>
      *         <li>
@@ -564,9 +584,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional information about valid values for parameter names, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *         >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         For additional information about valid values for parameter names, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *         >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -612,7 +632,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -628,8 +652,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -668,7 +692,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *        </p>
+     *        <p>
+     *        In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *        <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *        </p>
      *        </li>
      *        <li>
@@ -683,9 +711,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional information about valid values for parameter names, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *        >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For additional information about valid values for parameter names, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>

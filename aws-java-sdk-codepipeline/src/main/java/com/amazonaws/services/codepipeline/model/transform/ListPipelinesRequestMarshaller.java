@@ -29,6 +29,8 @@ public class ListPipelinesRequestMarshaller {
 
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
     private static final ListPipelinesRequestMarshaller instance = new ListPipelinesRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class ListPipelinesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listPipelinesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listPipelinesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

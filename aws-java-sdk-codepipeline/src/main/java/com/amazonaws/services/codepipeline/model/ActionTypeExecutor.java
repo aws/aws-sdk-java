@@ -39,20 +39,18 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     private ExecutorConfiguration configuration;
     /**
      * <p>
-     * The integration model used to create and update the action type, such as the Lambda integration model. Each
-     * integration type has a related action engine, or executor. The available executor types are <code>Lambda</code>
-     * and <code>JobWorker</code>.
+     * The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
      * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
-     * successfully run an action execution.
+     * successfully run an action.
      * </p>
      * <p>
-     * To grant permission to another account, specify the account ID as the Principal. For AWS services, the Principal
-     * is a domain-style identifier defined by the service, like <code>codepipeline.amazonaws.com</code>.
+     * To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     * defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      * </p>
      * <note>
      * <p>
@@ -63,8 +61,8 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     private String policyStatementsTemplate;
     /**
      * <p>
-     * The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout for a
-     * single job, and not for the entire action execution.
+     * The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single
+     * job, not the entire action execution.
      * </p>
      */
     private Integer jobTimeout;
@@ -117,15 +115,12 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The integration model used to create and update the action type, such as the Lambda integration model. Each
-     * integration type has a related action engine, or executor. The available executor types are <code>Lambda</code>
-     * and <code>JobWorker</code>.
+     * The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.
      * </p>
      * 
      * @param type
-     *        The integration model used to create and update the action type, such as the Lambda integration model.
-     *        Each integration type has a related action engine, or executor. The available executor types are
-     *        <code>Lambda</code> and <code>JobWorker</code>.
+     *        The integration model used to create and update the action type, <code>Lambda</code> or
+     *        <code>JobWorker</code>.
      * @see ExecutorType
      */
 
@@ -135,14 +130,11 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The integration model used to create and update the action type, such as the Lambda integration model. Each
-     * integration type has a related action engine, or executor. The available executor types are <code>Lambda</code>
-     * and <code>JobWorker</code>.
+     * The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.
      * </p>
      * 
-     * @return The integration model used to create and update the action type, such as the Lambda integration model.
-     *         Each integration type has a related action engine, or executor. The available executor types are
-     *         <code>Lambda</code> and <code>JobWorker</code>.
+     * @return The integration model used to create and update the action type, <code>Lambda</code> or
+     *         <code>JobWorker</code>.
      * @see ExecutorType
      */
 
@@ -152,15 +144,12 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The integration model used to create and update the action type, such as the Lambda integration model. Each
-     * integration type has a related action engine, or executor. The available executor types are <code>Lambda</code>
-     * and <code>JobWorker</code>.
+     * The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.
      * </p>
      * 
      * @param type
-     *        The integration model used to create and update the action type, such as the Lambda integration model.
-     *        Each integration type has a related action engine, or executor. The available executor types are
-     *        <code>Lambda</code> and <code>JobWorker</code>.
+     *        The integration model used to create and update the action type, <code>Lambda</code> or
+     *        <code>JobWorker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutorType
      */
@@ -172,15 +161,12 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The integration model used to create and update the action type, such as the Lambda integration model. Each
-     * integration type has a related action engine, or executor. The available executor types are <code>Lambda</code>
-     * and <code>JobWorker</code>.
+     * The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.
      * </p>
      * 
      * @param type
-     *        The integration model used to create and update the action type, such as the Lambda integration model.
-     *        Each integration type has a related action engine, or executor. The available executor types are
-     *        <code>Lambda</code> and <code>JobWorker</code>.
+     *        The integration model used to create and update the action type, <code>Lambda</code> or
+     *        <code>JobWorker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutorType
      */
@@ -193,11 +179,11 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
-     * successfully run an action execution.
+     * successfully run an action.
      * </p>
      * <p>
-     * To grant permission to another account, specify the account ID as the Principal. For AWS services, the Principal
-     * is a domain-style identifier defined by the service, like <code>codepipeline.amazonaws.com</code>.
+     * To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     * defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      * </p>
      * <note>
      * <p>
@@ -207,11 +193,10 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * 
      * @param policyStatementsTemplate
      *        The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed
-     *        to successfully run an action execution.</p>
+     *        to successfully run an action.</p>
      *        <p>
-     *        To grant permission to another account, specify the account ID as the Principal. For AWS services, the
-     *        Principal is a domain-style identifier defined by the service, like
-     *        <code>codepipeline.amazonaws.com</code>.
+     *        To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     *        defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -226,11 +211,11 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
-     * successfully run an action execution.
+     * successfully run an action.
      * </p>
      * <p>
-     * To grant permission to another account, specify the account ID as the Principal. For AWS services, the Principal
-     * is a domain-style identifier defined by the service, like <code>codepipeline.amazonaws.com</code>.
+     * To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     * defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      * </p>
      * <note>
      * <p>
@@ -239,11 +224,10 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * </note>
      * 
      * @return The policy statement that specifies the permissions in the CodePipeline customer’s account that are
-     *         needed to successfully run an action execution.</p>
+     *         needed to successfully run an action.</p>
      *         <p>
-     *         To grant permission to another account, specify the account ID as the Principal. For AWS services, the
-     *         Principal is a domain-style identifier defined by the service, like
-     *         <code>codepipeline.amazonaws.com</code>.
+     *         To grant permission to another account, specify the account ID as the Principal, a domain-style
+     *         identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      *         </p>
      *         <note>
      *         <p>
@@ -258,11 +242,11 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
-     * successfully run an action execution.
+     * successfully run an action.
      * </p>
      * <p>
-     * To grant permission to another account, specify the account ID as the Principal. For AWS services, the Principal
-     * is a domain-style identifier defined by the service, like <code>codepipeline.amazonaws.com</code>.
+     * To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     * defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      * </p>
      * <note>
      * <p>
@@ -272,11 +256,10 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * 
      * @param policyStatementsTemplate
      *        The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed
-     *        to successfully run an action execution.</p>
+     *        to successfully run an action.</p>
      *        <p>
-     *        To grant permission to another account, specify the account ID as the Principal. For AWS services, the
-     *        Principal is a domain-style identifier defined by the service, like
-     *        <code>codepipeline.amazonaws.com</code>.
+     *        To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
+     *        defined by the service, for example <code>codepipeline.amazonaws.com</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -292,13 +275,13 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout for a
-     * single job, and not for the entire action execution.
+     * The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single
+     * job, not the entire action execution.
      * </p>
      * 
      * @param jobTimeout
-     *        The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout
-     *        for a single job, and not for the entire action execution.
+     *        The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a
+     *        single job, not the entire action execution.
      */
 
     public void setJobTimeout(Integer jobTimeout) {
@@ -307,12 +290,12 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout for a
-     * single job, and not for the entire action execution.
+     * The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single
+     * job, not the entire action execution.
      * </p>
      * 
-     * @return The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout
-     *         for a single job, and not for the entire action execution.
+     * @return The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a
+     *         single job, not the entire action execution.
      */
 
     public Integer getJobTimeout() {
@@ -321,13 +304,13 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout for a
-     * single job, and not for the entire action execution.
+     * The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single
+     * job, not the entire action execution.
      * </p>
      * 
      * @param jobTimeout
-     *        The timeout in seconds for the job. An action execution can consist of multiple jobs. This is the timeout
-     *        for a single job, and not for the entire action execution.
+     *        The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a
+     *        single job, not the entire action execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

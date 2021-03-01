@@ -33,7 +33,8 @@ public enum ErrorCode {
     InsufficientFreeAddresses("InsufficientFreeAddresses"),
     ClusterUnreachable("ClusterUnreachable"),
     InsufficientNumberOfReplicas("InsufficientNumberOfReplicas"),
-    ConfigurationConflict("ConfigurationConflict");
+    ConfigurationConflict("ConfigurationConflict"),
+    AdmissionRequestDenied("AdmissionRequestDenied");
 
     private String value;
 

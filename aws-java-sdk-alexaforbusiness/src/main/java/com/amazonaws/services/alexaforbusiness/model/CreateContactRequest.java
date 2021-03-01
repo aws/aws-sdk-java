@@ -69,6 +69,12 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -423,6 +429,76 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @return The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContactRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContactRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -447,7 +523,9 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getSipAddresses() != null)
             sb.append("SipAddresses: ").append(getSipAddresses()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +568,10 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -505,6 +587,7 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPhoneNumbers() == null) ? 0 : getPhoneNumbers().hashCode());
         hashCode = prime * hashCode + ((getSipAddresses() == null) ? 0 : getSipAddresses().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

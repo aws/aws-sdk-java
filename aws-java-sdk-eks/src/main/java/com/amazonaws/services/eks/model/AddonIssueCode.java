@@ -24,7 +24,8 @@ public enum AddonIssueCode {
     InternalFailure("InternalFailure"),
     ClusterUnreachable("ClusterUnreachable"),
     InsufficientNumberOfReplicas("InsufficientNumberOfReplicas"),
-    ConfigurationConflict("ConfigurationConflict");
+    ConfigurationConflict("ConfigurationConflict"),
+    AdmissionRequestDenied("AdmissionRequestDenied");
 
     private String value;
 

@@ -43,6 +43,12 @@ public class CreateGatewayGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -165,6 +171,76 @@ public class CreateGatewayGroupRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @return The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGatewayGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGatewayGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +257,9 @@ public class CreateGatewayGroupRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +286,10 @@ public class CreateGatewayGroupRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +301,7 @@ public class CreateGatewayGroupRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

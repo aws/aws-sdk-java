@@ -663,7 +663,8 @@
         "InternalFailure",
         "ClusterUnreachable",
         "InsufficientNumberOfReplicas",
-        "ConfigurationConflict"
+        "ConfigurationConflict",
+        "AdmissionRequestDenied"
       ]
     },
     "AddonIssueList":{
@@ -1594,7 +1595,8 @@
         "InsufficientFreeAddresses",
         "ClusterUnreachable",
         "InsufficientNumberOfReplicas",
-        "ConfigurationConflict"
+        "ConfigurationConflict",
+        "AdmissionRequestDenied"
       ]
     },
     "ErrorDetail":{
