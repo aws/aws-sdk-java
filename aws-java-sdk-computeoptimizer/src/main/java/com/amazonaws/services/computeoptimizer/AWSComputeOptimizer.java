@@ -382,10 +382,31 @@ public interface AWSComputeOptimizer {
      * Returns the optimization findings for an account.
      * </p>
      * <p>
-     * For example, it returns the number of Amazon EC2 instances in an account that are under-provisioned,
-     * over-provisioned, or optimized. It also returns the number of Auto Scaling groups in an account that are not
-     * optimized, or optimized.
+     * It returns the number of:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getRecommendationSummariesRequest
      * @return Result of the GetRecommendationSummaries operation returned by the service.

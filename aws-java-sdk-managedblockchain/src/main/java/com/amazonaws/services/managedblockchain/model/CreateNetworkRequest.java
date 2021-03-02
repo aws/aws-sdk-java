@@ -81,7 +81,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -453,7 +453,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -466,7 +466,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Tags to assign to the network. Each tag consists of a key and optional value.</p>
      *         <p>
      *         When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *         an overall maximum of 50 added to each resource.
+     *         an overall maximum of 50 tags added to each resource.
      *         </p>
      *         <p>
      *         For more information about tags, see <a
@@ -486,7 +486,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -500,7 +500,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Tags to assign to the network. Each tag consists of a key and optional value.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource.
+     *        an overall maximum of 50 tags added to each resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a
@@ -520,7 +520,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -534,7 +534,7 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Tags to assign to the network. Each tag consists of a key and optional value.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource.
+     *        an overall maximum of 50 tags added to each resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a

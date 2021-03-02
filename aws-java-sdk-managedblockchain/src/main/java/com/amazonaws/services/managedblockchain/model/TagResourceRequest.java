@@ -36,7 +36,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>.
-     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 added to each
+     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each
      * resource.
      * </p>
      */
@@ -97,13 +97,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>.
-     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 added to each
+     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each
      * resource.
      * </p>
      * 
      * @return The tags to assign to the specified resource. Tag values can be empty, for example,
      *         <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an
-     *         overall maximum of 50 added to each resource.
+     *         overall maximum of 50 tags added to each resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -113,14 +113,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>.
-     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 added to each
+     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each
      * resource.
      * </p>
      * 
      * @param tags
      *        The tags to assign to the specified resource. Tag values can be empty, for example,
      *        <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an
-     *        overall maximum of 50 added to each resource.
+     *        overall maximum of 50 tags added to each resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -130,14 +130,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>.
-     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 added to each
+     * You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each
      * resource.
      * </p>
      * 
      * @param tags
      *        The tags to assign to the specified resource. Tag values can be empty, for example,
      *        <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an
-     *        overall maximum of 50 added to each resource.
+     *        overall maximum of 50 tags added to each resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

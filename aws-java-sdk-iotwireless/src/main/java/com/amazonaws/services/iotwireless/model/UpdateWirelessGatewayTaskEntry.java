@@ -40,6 +40,12 @@ public class UpdateWirelessGatewayTaskEntry implements Serializable, Cloneable, 
      * </p>
      */
     private LoRaWANUpdateGatewayTaskEntry loRaWAN;
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class UpdateWirelessGatewayTaskEntry implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayTaskEntry withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class UpdateWirelessGatewayTaskEntry implements Serializable, Cloneable, 
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class UpdateWirelessGatewayTaskEntry implements Serializable, Cloneable, 
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class UpdateWirelessGatewayTaskEntry implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

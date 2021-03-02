@@ -1071,6 +1071,105 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateLocationNfsResult> updateLocationNfsAsync(UpdateLocationNfsRequest request) {
+
+        return updateLocationNfsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationNfsResult> updateLocationNfsAsync(final UpdateLocationNfsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLocationNfsRequest, UpdateLocationNfsResult> asyncHandler) {
+        final UpdateLocationNfsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLocationNfsResult>() {
+            @Override
+            public UpdateLocationNfsResult call() throws Exception {
+                UpdateLocationNfsResult result = null;
+
+                try {
+                    result = executeUpdateLocationNfs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationObjectStorageResult> updateLocationObjectStorageAsync(UpdateLocationObjectStorageRequest request) {
+
+        return updateLocationObjectStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationObjectStorageResult> updateLocationObjectStorageAsync(final UpdateLocationObjectStorageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLocationObjectStorageRequest, UpdateLocationObjectStorageResult> asyncHandler) {
+        final UpdateLocationObjectStorageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLocationObjectStorageResult>() {
+            @Override
+            public UpdateLocationObjectStorageResult call() throws Exception {
+                UpdateLocationObjectStorageResult result = null;
+
+                try {
+                    result = executeUpdateLocationObjectStorage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationSmbResult> updateLocationSmbAsync(UpdateLocationSmbRequest request) {
+
+        return updateLocationSmbAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationSmbResult> updateLocationSmbAsync(final UpdateLocationSmbRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLocationSmbRequest, UpdateLocationSmbResult> asyncHandler) {
+        final UpdateLocationSmbRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLocationSmbResult>() {
+            @Override
+            public UpdateLocationSmbResult call() throws Exception {
+                UpdateLocationSmbResult result = null;
+
+                try {
+                    result = executeUpdateLocationSmb(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTaskResult> updateTaskAsync(UpdateTaskRequest request) {
 
         return updateTaskAsync(request, null);

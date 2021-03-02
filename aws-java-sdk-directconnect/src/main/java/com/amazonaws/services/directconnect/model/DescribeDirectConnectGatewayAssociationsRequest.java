@@ -62,7 +62,7 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
     private String nextToken;
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      */
     private String virtualGatewayId;
@@ -290,11 +290,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -303,10 +303,10 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the virtual private gateway or transit gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -315,11 +315,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

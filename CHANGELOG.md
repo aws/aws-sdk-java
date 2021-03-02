@@ -1,3 +1,28 @@
+# __1.11.966__ __2021-03-02__
+## __AWS Compute Optimizer__
+  - ### Features
+    - Documentation updates for Compute Optimizer
+
+## __AWS DataSync__
+  - ### Features
+    - Additional API Support to update NFS/SMB/ObjectStorage locations
+
+## __AWS Direct Connect__
+  - ### Features
+    - Doc only update for AWS Direct Connect that fixes several customer-reported issues
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Add ARN & Tags for PartnerAccount related APIs and WirelessGatewayTaskDefinition related APIs
+
+## __Amazon EventBridge__
+  - ### Features
+    - Adds TraceHeader to PutEventsRequestEntry to support AWS X-Ray trace-ids on events generated using the PutEvents operation.
+
+## __Amazon Managed Blockchain__
+  - ### Features
+    - Updates for Ethereum general availability release.
+
 # __1.11.965__ __2021-03-01__
 ## __AWS CodePipeline__
   - ### Features

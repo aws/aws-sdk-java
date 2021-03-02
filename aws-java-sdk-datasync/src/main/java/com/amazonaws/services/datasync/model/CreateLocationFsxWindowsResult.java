@@ -25,18 +25,18 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      */
 
     public void setLocationArn(String locationArn) {
@@ -45,10 +45,10 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     * @return The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      */
 
     public String getLocationArn() {
@@ -57,11 +57,11 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows file system location that is created.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,6 +30,12 @@ public class AssociateAwsAccountWithPartnerAccountResult extends com.amazonaws.A
      * </p>
      */
     private SidewalkAccountInfo sidewalk;
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -72,6 +78,46 @@ public class AssociateAwsAccountWithPartnerAccountResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateAwsAccountWithPartnerAccountResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -84,7 +130,9 @@ public class AssociateAwsAccountWithPartnerAccountResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSidewalk() != null)
-            sb.append("Sidewalk: ").append(getSidewalk());
+            sb.append("Sidewalk: ").append(getSidewalk()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +151,10 @@ public class AssociateAwsAccountWithPartnerAccountResult extends com.amazonaws.A
             return false;
         if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +164,7 @@ public class AssociateAwsAccountWithPartnerAccountResult extends com.amazonaws.A
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

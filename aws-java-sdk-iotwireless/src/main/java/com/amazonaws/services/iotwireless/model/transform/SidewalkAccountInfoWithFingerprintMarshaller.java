@@ -31,6 +31,8 @@ public class SidewalkAccountInfoWithFingerprintMarshaller {
             .marshallLocationName("AmazonId").build();
     private static final MarshallingInfo<String> FINGERPRINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Fingerprint").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final SidewalkAccountInfoWithFingerprintMarshaller instance = new SidewalkAccountInfoWithFingerprintMarshaller();
 
@@ -50,6 +52,7 @@ public class SidewalkAccountInfoWithFingerprintMarshaller {
         try {
             protocolMarshaller.marshall(sidewalkAccountInfoWithFingerprint.getAmazonId(), AMAZONID_BINDING);
             protocolMarshaller.marshall(sidewalkAccountInfoWithFingerprint.getFingerprint(), FINGERPRINT_BINDING);
+            protocolMarshaller.marshall(sidewalkAccountInfoWithFingerprint.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

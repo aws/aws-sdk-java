@@ -27,21 +27,22 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used to
-     * read data from the Amazon FSx for Windows source location or write data to the FSx for Windows destination.
+     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is
+     * used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for
+     * Windows File Server destination.
      * </p>
      */
     private String subdirectory;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     * The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      * </p>
      */
     private String fsxFilesystemArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File
+     * Server file system.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -55,33 +56,35 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
      */
     private String user;
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows server belongs to.
+     * The name of the Windows domain that the FSx for Windows File Server belongs to.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The password of the user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The password of the user who has the permissions to access files and folders in the FSx for Windows File Server
+     * file system.
      * </p>
      */
     private String password;
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used to
-     * read data from the Amazon FSx for Windows source location or write data to the FSx for Windows destination.
+     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is
+     * used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for
+     * Windows File Server destination.
      * </p>
      * 
      * @param subdirectory
-     *        A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used
-     *        to read data from the Amazon FSx for Windows source location or write data to the FSx for Windows
-     *        destination.
+     *        A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file
+     *        system is used to read data from the Amazon FSx for Windows File Server source location or write data to
+     *        the FSx for Windows File Server destination.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -90,13 +93,14 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used to
-     * read data from the Amazon FSx for Windows source location or write data to the FSx for Windows destination.
+     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is
+     * used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for
+     * Windows File Server destination.
      * </p>
      * 
-     * @return A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is
-     *         used to read data from the Amazon FSx for Windows source location or write data to the FSx for Windows
-     *         destination.
+     * @return A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file
+     *         system is used to read data from the Amazon FSx for Windows File Server source location or write data to
+     *         the FSx for Windows File Server destination.
      */
 
     public String getSubdirectory() {
@@ -105,14 +109,15 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used to
-     * read data from the Amazon FSx for Windows source location or write data to the FSx for Windows destination.
+     * A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is
+     * used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for
+     * Windows File Server destination.
      * </p>
      * 
      * @param subdirectory
-     *        A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows file system is used
-     *        to read data from the Amazon FSx for Windows source location or write data to the FSx for Windows
-     *        destination.
+     *        A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file
+     *        system is used to read data from the Amazon FSx for Windows File Server source location or write data to
+     *        the FSx for Windows File Server destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +128,11 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     * The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      * </p>
      * 
      * @param fsxFilesystemArn
-     *        The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     *        The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      */
 
     public void setFsxFilesystemArn(String fsxFilesystemArn) {
@@ -136,10 +141,10 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     * The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     * @return The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      */
 
     public String getFsxFilesystemArn() {
@@ -148,11 +153,11 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     * The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      * </p>
      * 
      * @param fsxFilesystemArn
-     *        The Amazon Resource Name (ARN) for the FSx for Windows file system.
+     *        The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,12 +168,12 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File
+     * Server file system.
      * </p>
      * 
      * @return The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows
-     *         file system.
+     *         File Server file system.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -177,13 +182,13 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File
+     * Server file system.
      * </p>
      * 
      * @param securityGroupArns
      *        The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows
-     *        file system.
+     *        File Server file system.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -197,8 +202,8 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File
+     * Server file system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -208,7 +213,7 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param securityGroupArns
      *        The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows
-     *        file system.
+     *        File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,13 +229,13 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File
+     * Server file system.
      * </p>
      * 
      * @param securityGroupArns
      *        The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows
-     *        file system.
+     *        File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +332,12 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
      * 
      * @param user
-     *        The user who has the permissions to access files and folders in the FSx for Windows file system.
+     *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
+     *        system.
      */
 
     public void setUser(String user) {
@@ -340,10 +346,11 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The user who has the permissions to access files and folders in the FSx for Windows file system.
+     * @return The user who has the permissions to access files and folders in the FSx for Windows File Server file
+     *         system.
      */
 
     public String getUser() {
@@ -352,11 +359,12 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
      * 
      * @param user
-     *        The user who has the permissions to access files and folders in the FSx for Windows file system.
+     *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
+     *        system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,11 +375,11 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows server belongs to.
+     * The name of the Windows domain that the FSx for Windows File Server belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the FSx for Windows server belongs to.
+     *        The name of the Windows domain that the FSx for Windows File Server belongs to.
      */
 
     public void setDomain(String domain) {
@@ -380,10 +388,10 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows server belongs to.
+     * The name of the Windows domain that the FSx for Windows File Server belongs to.
      * </p>
      * 
-     * @return The name of the Windows domain that the FSx for Windows server belongs to.
+     * @return The name of the Windows domain that the FSx for Windows File Server belongs to.
      */
 
     public String getDomain() {
@@ -392,11 +400,11 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows server belongs to.
+     * The name of the Windows domain that the FSx for Windows File Server belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the FSx for Windows server belongs to.
+     *        The name of the Windows domain that the FSx for Windows File Server belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,12 +415,13 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password of the user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The password of the user who has the permissions to access files and folders in the FSx for Windows File Server
+     * file system.
      * </p>
      * 
      * @param password
-     *        The password of the user who has the permissions to access files and folders in the FSx for Windows file
-     *        system.
+     *        The password of the user who has the permissions to access files and folders in the FSx for Windows File
+     *        Server file system.
      */
 
     public void setPassword(String password) {
@@ -421,11 +430,12 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password of the user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The password of the user who has the permissions to access files and folders in the FSx for Windows File Server
+     * file system.
      * </p>
      * 
-     * @return The password of the user who has the permissions to access files and folders in the FSx for Windows file
-     *         system.
+     * @return The password of the user who has the permissions to access files and folders in the FSx for Windows File
+     *         Server file system.
      */
 
     public String getPassword() {
@@ -434,12 +444,13 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password of the user who has the permissions to access files and folders in the FSx for Windows file system.
+     * The password of the user who has the permissions to access files and folders in the FSx for Windows File Server
+     * file system.
      * </p>
      * 
      * @param password
-     *        The password of the user who has the permissions to access files and folders in the FSx for Windows file
-     *        system.
+     *        The password of the user who has the permissions to access files and folders in the FSx for Windows File
+     *        Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

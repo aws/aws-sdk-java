@@ -40,6 +40,12 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
      * </p>
      */
     private String fingerprint;
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkAccountInfoWithFingerprint withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
         if (getAmazonId() != null)
             sb.append("AmazonId: ").append(getAmazonId()).append(",");
         if (getFingerprint() != null)
-            sb.append("Fingerprint: ").append("***Sensitive Data Redacted***");
+            sb.append("Fingerprint: ").append("***Sensitive Data Redacted***").append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
             return false;
         if (other.getFingerprint() != null && other.getFingerprint().equals(this.getFingerprint()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class SidewalkAccountInfoWithFingerprint implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
         hashCode = prime * hashCode + ((getFingerprint() == null) ? 0 : getFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

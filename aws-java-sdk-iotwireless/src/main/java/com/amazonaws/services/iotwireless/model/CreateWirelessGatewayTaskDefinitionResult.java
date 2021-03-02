@@ -30,6 +30,12 @@ public class CreateWirelessGatewayTaskDefinitionResult extends com.amazonaws.Ama
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -72,6 +78,46 @@ public class CreateWirelessGatewayTaskDefinitionResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWirelessGatewayTaskDefinitionResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -84,7 +130,9 @@ public class CreateWirelessGatewayTaskDefinitionResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +151,10 @@ public class CreateWirelessGatewayTaskDefinitionResult extends com.amazonaws.Ama
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +164,7 @@ public class CreateWirelessGatewayTaskDefinitionResult extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

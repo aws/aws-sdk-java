@@ -695,8 +695,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
      * </p>
      * <p>
-     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
-     * virtual interface.
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list
+     * for the virtual interface.
      * </p>
      * 
      * @param createBGPPeerRequest
@@ -724,8 +724,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
      * </p>
      * <p>
-     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
-     * virtual interface.
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list
+     * for the virtual interface.
      * </p>
      * 
      * @param createBGPPeerRequest
@@ -1747,13 +1747,52 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Lists the associations between your Direct Connect gateways and virtual private gateways. You must specify a
-     * Direct Connect gateway, a virtual private gateway, or both. If you specify a Direct Connect gateway, the response
-     * contains all virtual private gateways associated with the Direct Connect gateway. If you specify a virtual
-     * private gateway, the response contains all Direct Connect gateways associated with the virtual private gateway.
-     * If you specify both, the response contains the association between the Direct Connect gateway and the virtual
-     * private gateway.
+     * Lists the associations between your Direct Connect gateways and virtual private gateways and transit gateways.
+     * You must specify one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A Direct Connect gateway
+     * </p>
+     * <p>
+     * The response contains all virtual private gateways and transit gateways associated with the Direct Connect
+     * gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A transit gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a transit gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeDirectConnectGatewayAssociationsRequest
      * @return A Java Future containing the result of the DescribeDirectConnectGatewayAssociations operation returned by
@@ -1768,13 +1807,52 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Lists the associations between your Direct Connect gateways and virtual private gateways. You must specify a
-     * Direct Connect gateway, a virtual private gateway, or both. If you specify a Direct Connect gateway, the response
-     * contains all virtual private gateways associated with the Direct Connect gateway. If you specify a virtual
-     * private gateway, the response contains all Direct Connect gateways associated with the virtual private gateway.
-     * If you specify both, the response contains the association between the Direct Connect gateway and the virtual
-     * private gateway.
+     * Lists the associations between your Direct Connect gateways and virtual private gateways and transit gateways.
+     * You must specify one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A Direct Connect gateway
+     * </p>
+     * <p>
+     * The response contains all virtual private gateways and transit gateways associated with the Direct Connect
+     * gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A transit gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a transit gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeDirectConnectGatewayAssociationsRequest
      * @param asyncHandler

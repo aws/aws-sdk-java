@@ -64,7 +64,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -238,7 +238,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * 
      * @return Tags assigned to the member. Tags consist of a key and optional value. For more information about tags,
@@ -247,7 +247,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      *         >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *         <p>
      *         When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *         an overall maximum of 50 added to each resource.
+     *         an overall maximum of 50 tags added to each resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -263,7 +263,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * 
      * @param tags
@@ -273,7 +273,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource.
+     *        an overall maximum of 50 tags added to each resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -289,7 +289,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource.
+     * overall maximum of 50 tags added to each resource.
      * </p>
      * 
      * @param tags
@@ -299,7 +299,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource.
+     *        an overall maximum of 50 tags added to each resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

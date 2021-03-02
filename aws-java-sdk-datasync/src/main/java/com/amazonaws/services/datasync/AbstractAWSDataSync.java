@@ -178,6 +178,21 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public UpdateLocationNfsResult updateLocationNfs(UpdateLocationNfsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLocationObjectStorageResult updateLocationObjectStorage(UpdateLocationObjectStorageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLocationSmbResult updateLocationSmb(UpdateLocationSmbRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateTaskResult updateTask(UpdateTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

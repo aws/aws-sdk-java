@@ -31,6 +31,8 @@ public class UpdateWirelessGatewayTaskEntryMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<StructuredPojo> LORAWAN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoRaWAN").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final UpdateWirelessGatewayTaskEntryMarshaller instance = new UpdateWirelessGatewayTaskEntryMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateWirelessGatewayTaskEntryMarshaller {
         try {
             protocolMarshaller.marshall(updateWirelessGatewayTaskEntry.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateWirelessGatewayTaskEntry.getLoRaWAN(), LORAWAN_BINDING);
+            protocolMarshaller.marshall(updateWirelessGatewayTaskEntry.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

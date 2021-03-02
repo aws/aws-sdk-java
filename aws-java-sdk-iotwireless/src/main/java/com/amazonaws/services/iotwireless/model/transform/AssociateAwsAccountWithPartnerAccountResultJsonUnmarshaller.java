@@ -53,6 +53,10 @@ public class AssociateAwsAccountWithPartnerAccountResultJsonUnmarshaller impleme
                     context.nextToken();
                     associateAwsAccountWithPartnerAccountResult.setSidewalk(SidewalkAccountInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    associateAwsAccountWithPartnerAccountResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

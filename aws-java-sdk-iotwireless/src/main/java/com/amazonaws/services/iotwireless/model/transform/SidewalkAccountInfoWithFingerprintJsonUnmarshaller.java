@@ -56,6 +56,10 @@ public class SidewalkAccountInfoWithFingerprintJsonUnmarshaller implements Unmar
                     context.nextToken();
                     sidewalkAccountInfoWithFingerprint.setFingerprint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    sidewalkAccountInfoWithFingerprint.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

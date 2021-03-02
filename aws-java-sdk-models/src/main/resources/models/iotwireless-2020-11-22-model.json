@@ -990,6 +990,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags attached to the specified resource. Tags are metadata that can be used to manage a resource</p>"
         }
       }
     },
@@ -999,6 +1003,10 @@
         "Sidewalk":{
           "shape":"SidewalkAccountInfo",
           "documentation":"<p>The Sidewalk account credentials.</p>"
+        },
+        "Arn":{
+          "shape":"PartnerAccountArn",
+          "documentation":"<p>The Amazon Resource Name of the resource.</p>"
         }
       }
     },
@@ -1351,6 +1359,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags attached to the specified resource. Tags are metadata that can be used to manage a resource</p>"
         }
       }
     },
@@ -1360,6 +1372,10 @@
         "Id":{
           "shape":"WirelessGatewayTaskDefinitionId",
           "documentation":"<p>The ID of the new wireless gateway task definition.</p>"
+        },
+        "Arn":{
+          "shape":"WirelessGatewayTaskDefinitionArn",
+          "documentation":"<p>The Amazon Resource Name of the resource.</p>"
         }
       }
     },
@@ -2027,7 +2043,7 @@
         },
         "LoRaWANNetworkServerCertificateId":{
           "shape":"IotCertificateId",
-          "documentation":"<p>The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.</p>"
+          "documentation":"<p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>"
         }
       }
     },
@@ -2157,6 +2173,10 @@
         "Update":{
           "shape":"UpdateWirelessGatewayTaskCreate",
           "documentation":"<p>Information about the gateways to update.</p>"
+        },
+        "Arn":{
+          "shape":"WirelessGatewayTaskDefinitionArn",
+          "documentation":"<p>The Amazon Resource Name of the resource.</p>"
         }
       }
     },
@@ -2946,6 +2966,7 @@
       "max":32,
       "min":1
     },
+    "PartnerAccountArn":{"type":"string"},
     "PartnerAccountId":{
       "type":"string",
       "max":256
@@ -3169,6 +3190,10 @@
         "Fingerprint":{
           "shape":"Fingerprint",
           "documentation":"<p>The fingerprint of the Sidewalk application server private key.</p>"
+        },
+        "Arn":{
+          "shape":"PartnerAccountArn",
+          "documentation":"<p>The Amazon Resource Name of the resource.</p>"
         }
       },
       "documentation":"<p>Information about a Sidewalk account.</p>"
@@ -3532,6 +3557,10 @@
         "LoRaWAN":{
           "shape":"LoRaWANUpdateGatewayTaskEntry",
           "documentation":"<p>The properties that relate to the LoRaWAN wireless gateway.</p>"
+        },
+        "Arn":{
+          "shape":"WirelessGatewayTaskDefinitionArn",
+          "documentation":"<p>The Amazon Resource Name of the resource.</p>"
         }
       },
       "documentation":"<p>UpdateWirelessGatewayTaskEntry object.</p>"
@@ -3669,6 +3698,7 @@
       "type":"list",
       "member":{"shape":"WirelessGatewayStatistics"}
     },
+    "WirelessGatewayTaskDefinitionArn":{"type":"string"},
     "WirelessGatewayTaskDefinitionId":{
       "type":"string",
       "max":36,

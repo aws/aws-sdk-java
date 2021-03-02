@@ -56,6 +56,10 @@ public class UpdateWirelessGatewayTaskEntryJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     updateWirelessGatewayTaskEntry.setLoRaWAN(LoRaWANUpdateGatewayTaskEntryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    updateWirelessGatewayTaskEntry.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

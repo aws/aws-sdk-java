@@ -36,8 +36,7 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
     private NetworkFabricAttributes fabric;
     /**
      * <p>
-     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. Ethereum
-     * on Managed Blockchain is in preview release and is subject to change.
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
      * </p>
      */
     private NetworkEthereumAttributes ethereum;
@@ -84,13 +83,11 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. Ethereum
-     * on Managed Blockchain is in preview release and is subject to change.
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
      * </p>
      * 
      * @param ethereum
      *        Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
-     *        Ethereum on Managed Blockchain is in preview release and is subject to change.
      */
 
     public void setEthereum(NetworkEthereumAttributes ethereum) {
@@ -99,12 +96,10 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. Ethereum
-     * on Managed Blockchain is in preview release and is subject to change.
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
      * </p>
      * 
      * @return Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
-     *         Ethereum on Managed Blockchain is in preview release and is subject to change.
      */
 
     public NetworkEthereumAttributes getEthereum() {
@@ -113,13 +108,11 @@ public class NetworkFrameworkAttributes implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. Ethereum
-     * on Managed Blockchain is in preview release and is subject to change.
+     * Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
      * </p>
      * 
      * @param ethereum
      *        Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.
-     *        Ethereum on Managed Blockchain is in preview release and is subject to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

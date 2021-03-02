@@ -57,8 +57,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private String instanceType;
     /**
      * <p>
-     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      */
     private String availabilityZone;
@@ -295,13 +294,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
-     *        Blockchain is in preview release and is subject to change.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -310,12 +307,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
-     * @return The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
-     *         Blockchain is in preview release and is subject to change.
+     * @return The Availability Zone in which the node exists. Required for Ethereum nodes.
      */
 
     public String getAvailabilityZone() {
@@ -324,13 +319,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
-     *        Blockchain is in preview release and is subject to change.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

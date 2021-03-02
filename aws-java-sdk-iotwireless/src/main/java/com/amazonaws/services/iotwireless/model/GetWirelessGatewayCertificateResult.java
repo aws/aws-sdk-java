@@ -32,7 +32,8 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
     private String iotCertificateId;
     /**
      * <p>
-     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer
+     * endpoint.
      * </p>
      */
     private String loRaWANNetworkServerCertificateId;
@@ -79,11 +80,13 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer
+     * endpoint.
      * </p>
      * 
      * @param loRaWANNetworkServerCertificateId
-     *        The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     *        The ID of the certificate that is associated with the wireless gateway and used for the
+     *        LoRaWANNetworkServer endpoint.
      */
 
     public void setLoRaWANNetworkServerCertificateId(String loRaWANNetworkServerCertificateId) {
@@ -92,11 +95,12 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer
+     * endpoint.
      * </p>
      * 
-     * @return The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer
-     *         endpoint.
+     * @return The ID of the certificate that is associated with the wireless gateway and used for the
+     *         LoRaWANNetworkServer endpoint.
      */
 
     public String getLoRaWANNetworkServerCertificateId() {
@@ -105,11 +109,13 @@ public class GetWirelessGatewayCertificateResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     * The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer
+     * endpoint.
      * </p>
      * 
      * @param loRaWANNetworkServerCertificateId
-     *        The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer endpoint.
+     *        The ID of the certificate that is associated with the wireless gateway and used for the
+     *        LoRaWANNetworkServer endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

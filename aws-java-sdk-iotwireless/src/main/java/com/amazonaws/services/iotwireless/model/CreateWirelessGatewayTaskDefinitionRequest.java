@@ -52,6 +52,12 @@ public class CreateWirelessGatewayTaskDefinitionRequest extends com.amazonaws.Am
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -250,6 +256,76 @@ public class CreateWirelessGatewayTaskDefinitionRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * </p>
+     * 
+     * @return The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWirelessGatewayTaskDefinitionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWirelessGatewayTaskDefinitionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +344,9 @@ public class CreateWirelessGatewayTaskDefinitionRequest extends com.amazonaws.Am
         if (getUpdate() != null)
             sb.append("Update: ").append(getUpdate()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +377,10 @@ public class CreateWirelessGatewayTaskDefinitionRequest extends com.amazonaws.Am
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +393,7 @@ public class CreateWirelessGatewayTaskDefinitionRequest extends com.amazonaws.Am
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getUpdate() == null) ? 0 : getUpdate().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

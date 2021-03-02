@@ -67,7 +67,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource. If the proposal is for a network invitation, the invitation
+     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
      * inherits the tags added to the proposal.
      * </p>
      * <p>
@@ -325,7 +325,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource. If the proposal is for a network invitation, the invitation
+     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
      * inherits the tags added to the proposal.
      * </p>
      * <p>
@@ -339,7 +339,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
      *         <p>
      *         When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *         an overall maximum of 50 added to each resource. If the proposal is for a network invitation, the
+     *         an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
      *         invitation inherits the tags added to the proposal.
      *         </p>
      *         <p>
@@ -360,7 +360,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource. If the proposal is for a network invitation, the invitation
+     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
      * inherits the tags added to the proposal.
      * </p>
      * <p>
@@ -375,7 +375,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource. If the proposal is for a network invitation, the
+     *        an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
      *        invitation inherits the tags added to the proposal.
      *        </p>
      *        <p>
@@ -396,7 +396,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 added to each resource. If the proposal is for a network invitation, the invitation
+     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
      * inherits the tags added to the proposal.
      * </p>
      * <p>
@@ -411,7 +411,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
      *        <p>
      *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 added to each resource. If the proposal is for a network invitation, the
+     *        an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
      *        invitation inherits the tags added to the proposal.
      *        </p>
      *        <p>

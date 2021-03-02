@@ -32,11 +32,10 @@ import com.amazonaws.services.managedblockchain.model.*;
  * transactions and share data without the need for a trusted, central authority.
  * </p>
  * <p>
- * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Ethereum on Managed
- * Blockchain is in preview release and is subject to change. Because of fundamental differences between the frameworks,
- * some API actions or data types may only apply in the context of one framework and not the other. For example, actions
- * related to Hyperledger Fabric network members such as <code>CreateMember</code> and <code>DeleteMember</code> do not
- * apply to Ethereum.
+ * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
+ * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
+ * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
+ * and <code>DeleteMember</code> do not apply to Ethereum.
  * </p>
  * <p>
  * The description for each action indicates the framework or frameworks to which it applies. Data types and properties
@@ -127,9 +126,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
      * </p>
-     * <p>
-     * Ethereum on Managed Blockchain is in preview release and is subject to change.
-     * </p>
      * 
      * @param createNodeRequest
      * @return A Java Future containing the result of the CreateNode operation returned by the service.
@@ -145,9 +141,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
      * </p>
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
-     * </p>
-     * <p>
-     * Ethereum on Managed Blockchain is in preview release and is subject to change.
      * </p>
      * 
      * @param createNodeRequest

@@ -27,18 +27,18 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      */
 
     public void setLocationArn(String locationArn) {
@@ -47,10 +47,10 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     * @return The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      */
 
     public String getLocationArn() {
@@ -59,11 +59,11 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows location to describe.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
