@@ -66,7 +66,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -209,7 +209,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private Boolean insecureSsl;
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      */
     private String sourceIdentifier;
@@ -252,7 +253,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -293,7 +294,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -341,7 +342,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -381,7 +382,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     *         <code>S3</code>: The source code is in an Amazon S3 bucket.
      *         </p>
      *         </li>
      * @see SourceType
@@ -429,7 +430,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -470,7 +471,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -520,7 +521,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -561,7 +562,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -609,7 +610,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -650,7 +651,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon S3 input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1553,11 +1554,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for this project source.
+     *        An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *        underscores, and must be less than 128 characters in length.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -1566,10 +1569,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
-     * @return An identifier for this project source.
+     * @return An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *         underscores, and must be less than 128 characters in length.
      */
 
     public String getSourceIdentifier() {
@@ -1578,11 +1583,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for this project source.
+     *        An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *        underscores, and must be less than 128 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

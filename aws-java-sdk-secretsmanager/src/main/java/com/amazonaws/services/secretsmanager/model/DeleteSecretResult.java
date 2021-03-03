@@ -31,7 +31,7 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret that is now scheduled for deletion.
+     * The friendly name of the secret currently scheduled for deletion.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of the secret that is now scheduled for deletion.
+     * The friendly name of the secret currently scheduled for deletion.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that is now scheduled for deletion.
+     *        The friendly name of the secret currently scheduled for deletion.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of the secret that is now scheduled for deletion.
+     * The friendly name of the secret currently scheduled for deletion.
      * </p>
      * 
-     * @return The friendly name of the secret that is now scheduled for deletion.
+     * @return The friendly name of the secret currently scheduled for deletion.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of the secret that is now scheduled for deletion.
+     * The friendly name of the secret currently scheduled for deletion.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that is now scheduled for deletion.
+     *        The friendly name of the secret currently scheduled for deletion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

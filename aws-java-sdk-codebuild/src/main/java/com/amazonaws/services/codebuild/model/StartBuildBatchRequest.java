@@ -306,6 +306,14 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private ProjectBuildBatchConfig buildBatchConfigOverride;
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     */
+    private Boolean debugSessionEnabled;
 
     /**
      * <p>
@@ -2403,6 +2411,74 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public void setDebugSessionEnabled(Boolean debugSessionEnabled) {
+        this.debugSessionEnabled = debugSessionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @return Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public Boolean getDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildBatchRequest withDebugSessionEnabled(Boolean debugSessionEnabled) {
+        setDebugSessionEnabled(debugSessionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @return Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public Boolean isDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2473,7 +2549,9 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
         if (getImagePullCredentialsTypeOverride() != null)
             sb.append("ImagePullCredentialsTypeOverride: ").append(getImagePullCredentialsTypeOverride()).append(",");
         if (getBuildBatchConfigOverride() != null)
-            sb.append("BuildBatchConfigOverride: ").append(getBuildBatchConfigOverride());
+            sb.append("BuildBatchConfigOverride: ").append(getBuildBatchConfigOverride()).append(",");
+        if (getDebugSessionEnabled() != null)
+            sb.append("DebugSessionEnabled: ").append(getDebugSessionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -2613,6 +2691,10 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getBuildBatchConfigOverride() != null && other.getBuildBatchConfigOverride().equals(this.getBuildBatchConfigOverride()) == false)
             return false;
+        if (other.getDebugSessionEnabled() == null ^ this.getDebugSessionEnabled() == null)
+            return false;
+        if (other.getDebugSessionEnabled() != null && other.getDebugSessionEnabled().equals(this.getDebugSessionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -2651,6 +2733,7 @@ public class StartBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getRegistryCredentialOverride() == null) ? 0 : getRegistryCredentialOverride().hashCode());
         hashCode = prime * hashCode + ((getImagePullCredentialsTypeOverride() == null) ? 0 : getImagePullCredentialsTypeOverride().hashCode());
         hashCode = prime * hashCode + ((getBuildBatchConfigOverride() == null) ? 0 : getBuildBatchConfigOverride().hashCode());
+        hashCode = prime * hashCode + ((getDebugSessionEnabled() == null) ? 0 : getDebugSessionEnabled().hashCode());
         return hashCode;
     }
 

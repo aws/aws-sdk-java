@@ -61,12 +61,17 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
      * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of all applicable objects in the buckets.
+     * </p>
      */
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * buckets from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the buckets.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -80,11 +85,21 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      */
     private Long sizeInBytes;
     /**
      * <p>
      * The total compressed storage size, in bytes, of the buckets.
+     * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
      * </p>
      */
     private Long sizeInBytesCompressed;
@@ -97,9 +112,8 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private ObjectLevelStatistics unclassifiableObjectCount;
     /**
      * <p>
-     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
-     * format.
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      */
     private ObjectLevelStatistics unclassifiableObjectSizeInBytes;
@@ -327,11 +341,20 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
      * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of all applicable objects in the buckets.
+     * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
      *        objects use a supported storage class and have a file name extension for a supported file or storage
-     *        format.
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *        all versions of all applicable objects in the buckets.
      */
 
     public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
@@ -343,10 +366,19 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
      * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of all applicable objects in the buckets.
+     * </p>
      * 
      * @return The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
      *         objects use a supported storage class and have a file name extension for a supported file or storage
-     *         format.
+     *         format.</p>
+     *         <p>
+     *         If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *         latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *         all versions of all applicable objects in the buckets.
      */
 
     public Long getClassifiableSizeInBytes() {
@@ -358,11 +390,20 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
      * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of all applicable objects in the buckets.
+     * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
      *        objects use a supported storage class and have a file name extension for a supported file or storage
-     *        format.
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *        all versions of all applicable objects in the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,13 +414,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * buckets from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *        about the buckets from Amazon S3.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the buckets.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -388,12 +429,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * buckets from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *         about the buckets from Amazon S3.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *         bucket and object metadata from Amazon S3 for the buckets.
      */
 
     public java.util.Date getLastUpdated() {
@@ -402,13 +443,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * buckets from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *        about the buckets from Amazon S3.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,9 +502,18 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the buckets.
+     *        The total storage size, in bytes, of the buckets.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *        versions of the objects in the buckets.
      */
 
     public void setSizeInBytes(Long sizeInBytes) {
@@ -474,8 +524,17 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
-     * @return The total storage size, in bytes, of the buckets.
+     * @return The total storage size, in bytes, of the buckets.</p>
+     *         <p>
+     *         If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *         latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *         versions of the objects in the buckets.
      */
 
     public Long getSizeInBytes() {
@@ -486,9 +545,18 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the buckets.
+     *        The total storage size, in bytes, of the buckets.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *        versions of the objects in the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,9 +569,18 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total compressed storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the buckets.
+     *        The total compressed storage size, in bytes, of the buckets.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *        versions of the objects in the buckets.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -514,8 +591,17 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total compressed storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
-     * @return The total compressed storage size, in bytes, of the buckets.
+     * @return The total compressed storage size, in bytes, of the buckets.</p>
+     *         <p>
+     *         If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *         latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *         versions of the objects in the buckets.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -526,9 +612,18 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The total compressed storage size, in bytes, of the buckets.
      * </p>
+     * <p>
+     * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
+     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
+     * objects in the buckets.
+     * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the buckets.
+     *        The total compressed storage size, in bytes, of the buckets.</p>
+     *        <p>
+     *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
+     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
+     *        versions of the objects in the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,13 +680,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
-     * format.
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param unclassifiableObjectSizeInBytes
-     *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These
      *        objects don't use a supported storage class or don't have a file name extension for a supported file or
      *        storage format.
      */
@@ -602,14 +696,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
-     * format.
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
-     * @return The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets.
-     *         These objects don't use a supported storage class or don't have a file name extension for a supported
-     *         file or storage format.
+     * @return The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These
+     *         objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *         storage format.
      */
 
     public ObjectLevelStatistics getUnclassifiableObjectSizeInBytes() {
@@ -618,13 +711,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
-     * format.
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param unclassifiableObjectSizeInBytes
-     *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These
      *        objects don't use a supported storage class or don't have a file name extension for a supported file or
      *        storage format.
      * @return Returns a reference to this object so that method calls can be chained together.

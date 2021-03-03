@@ -86,6 +86,8 @@ public class BuildBatchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildBatchConfig").build();
     private static final MarshallingInfo<List> BUILDGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildGroups").build();
+    private static final MarshallingInfo<Boolean> DEBUGSESSIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("debugSessionEnabled").build();
 
     private static final BuildBatchMarshaller instance = new BuildBatchMarshaller();
 
@@ -132,6 +134,7 @@ public class BuildBatchMarshaller {
             protocolMarshaller.marshall(buildBatch.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
             protocolMarshaller.marshall(buildBatch.getBuildBatchConfig(), BUILDBATCHCONFIG_BINDING);
             protocolMarshaller.marshall(buildBatch.getBuildGroups(), BUILDGROUPS_BINDING);
+            protocolMarshaller.marshall(buildBatch.getDebugSessionEnabled(), DEBUGSESSIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a condition for filtering the results of a query for the quotas and usage data that applies to one or more
- * Amazon Macie accounts.
+ * Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie
+ * accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter" target="_top">AWS API
@@ -77,7 +77,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * total - A string that represents the current, estimated month-to-date cost for an account.
+     * total - A string that represents the current estimated cost for an account.
      * </p>
      * </li>
      * </ul>
@@ -252,7 +252,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * total - A string that represents the current, estimated month-to-date cost for an account.
+     * total - A string that represents the current estimated cost for an account.
      * </p>
      * </li>
      * </ul>
@@ -289,7 +289,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *         <ul>
      *         <li>
      *         <p>
-     *         total - A string that represents the current, estimated month-to-date cost for an account.
+     *         total - A string that represents the current estimated cost for an account.
      *         </p>
      *         </li>
      */
@@ -332,7 +332,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * total - A string that represents the current, estimated month-to-date cost for an account.
+     * total - A string that represents the current estimated cost for an account.
      * </p>
      * </li>
      * </ul>
@@ -370,7 +370,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        total - A string that represents the current, estimated month-to-date cost for an account.
+     *        total - A string that represents the current estimated cost for an account.
      *        </p>
      *        </li>
      */
@@ -418,7 +418,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * total - A string that represents the current, estimated month-to-date cost for an account.
+     * total - A string that represents the current estimated cost for an account.
      * </p>
      * </li>
      * </ul>
@@ -461,7 +461,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        total - A string that represents the current, estimated month-to-date cost for an account.
+     *        total - A string that represents the current estimated cost for an account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -511,7 +511,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * total - A string that represents the current, estimated month-to-date cost for an account.
+     * total - A string that represents the current estimated cost for an account.
      * </p>
      * </li>
      * </ul>
@@ -549,7 +549,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        total - A string that represents the current, estimated month-to-date cost for an account.
+     *        total - A string that represents the current estimated cost for an account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

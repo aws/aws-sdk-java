@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Allows you to filter your list of secrets.
+ * Allows you to add filters when you use the search function in Secrets Manager.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/Filter" target="_top">AWS API
@@ -37,6 +37,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Filters your list of secrets by a specific value.
+     * </p>
+     * <p>
+     * You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters.
      * </p>
      */
     private java.util.List<String> values;
@@ -104,8 +107,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Filters your list of secrets by a specific value.
      * </p>
+     * <p>
+     * You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters.
+     * </p>
      * 
-     * @return Filters your list of secrets by a specific value.
+     * @return Filters your list of secrets by a specific value.</p>
+     *         <p>
+     *         You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation
+     *         filters.
      */
 
     public java.util.List<String> getValues() {
@@ -116,9 +125,15 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Filters your list of secrets by a specific value.
      * </p>
+     * <p>
+     * You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters.
+     * </p>
      * 
      * @param values
-     *        Filters your list of secrets by a specific value.
+     *        Filters your list of secrets by a specific value.</p>
+     *        <p>
+     *        You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation
+     *        filters.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -135,13 +150,19 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * Filters your list of secrets by a specific value.
      * </p>
      * <p>
+     * You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
-     *        Filters your list of secrets by a specific value.
+     *        Filters your list of secrets by a specific value.</p>
+     *        <p>
+     *        You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation
+     *        filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,9 +180,15 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Filters your list of secrets by a specific value.
      * </p>
+     * <p>
+     * You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters.
+     * </p>
      * 
      * @param values
-     *        Filters your list of secrets by a specific value.
+     *        Filters your list of secrets by a specific value.</p>
+     *        <p>
+     *        You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation
+     *        filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

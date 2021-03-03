@@ -59,6 +59,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public GetAccountConfigurationResult getAccountConfiguration(GetAccountConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCertificateResult getCertificate(GetCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -75,6 +80,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
 
     @Override
     public ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccountConfigurationResult putAccountConfiguration(PutAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

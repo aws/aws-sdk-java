@@ -426,6 +426,19 @@ public class AbstractAmazonForecastAsync extends AbstractAmazonForecast implemen
     }
 
     @Override
+    public java.util.concurrent.Future<StopResourceResult> stopResourceAsync(StopResourceRequest request) {
+
+        return stopResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopResourceResult> stopResourceAsync(StopResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopResourceRequest, StopResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

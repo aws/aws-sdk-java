@@ -27,8 +27,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -52,11 +52,11 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String secretId;
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      */
     private Long recoveryWindowInDays;
@@ -75,7 +75,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      */
@@ -83,8 +88,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -106,8 +111,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.</p> <note>
+     *        Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name
+     *        of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -132,8 +137,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -154,8 +159,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or
-     *         the friendly name of the secret.</p> <note>
+     * @return Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly
+     *         name of the secret.</p> <note>
      *         <p>
      *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -180,8 +185,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -203,8 +208,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.</p> <note>
+     *        Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name
+     *        of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -231,19 +236,19 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *        call.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *        secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the
+     *        same API call.</p>
      *        <p>
-     *        This value can range from 7 to 30 days. The default value is 30.
+     *        This value can range from 7 to 30 days with a default value of 30.
      */
 
     public void setRecoveryWindowInDays(Long recoveryWindowInDays) {
@@ -252,18 +257,18 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
-     * @return (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *         can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *         call.</p>
+     * @return (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *         secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in
+     *         the same API call.</p>
      *         <p>
-     *         This value can range from 7 to 30 days. The default value is 30.
+     *         This value can range from 7 to 30 days with a default value of 30.
      */
 
     public Long getRecoveryWindowInDays() {
@@ -272,19 +277,19 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *        call.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *        secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the
+     *        same API call.</p>
      *        <p>
-     *        This value can range from 7 to 30 days. The default value is 30.
+     *        This value can range from 7 to 30 days with a default value of 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,7 +313,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -325,7 +335,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
-     *        no opportunity to recover the secret. It is permanently lost.
+     *        no opportunity to recover the secret. You lose the secret permanently.
+     *        </p>
+     *        </important> <important>
+     *        <p>
+     *        If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *        return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *        </p>
      */
 
@@ -348,7 +363,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -364,7 +384,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
-     *         have no opportunity to recover the secret. It is permanently lost.
+     *         have no opportunity to recover the secret. You lose the secret permanently.
+     *         </p>
+     *         </important> <important>
+     *         <p>
+     *         If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *         return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *         </p>
      */
 
@@ -387,7 +412,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -404,7 +434,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
-     *        no opportunity to recover the secret. It is permanently lost.
+     *        no opportunity to recover the secret. You lose the secret permanently.
+     *        </p>
+     *        </important> <important>
+     *        <p>
+     *        If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *        return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -429,7 +464,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -445,7 +485,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
-     *         have no opportunity to recover the secret. It is permanently lost.
+     *         have no opportunity to recover the secret. You lose the secret permanently.
+     *         </p>
+     *         </important> <important>
+     *         <p>
+     *         If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *         return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *         </p>
      */
 

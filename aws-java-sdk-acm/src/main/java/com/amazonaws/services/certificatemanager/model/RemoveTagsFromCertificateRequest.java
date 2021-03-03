@@ -35,8 +35,8 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      */
     private String certificateArn;
@@ -57,8 +57,8 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -70,7 +70,7 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -87,8 +87,8 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @return String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This
@@ -99,7 +99,7 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs)</a>.
      */
 
     public String getCertificateArn() {
@@ -116,8 +116,8 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -129,7 +129,7 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

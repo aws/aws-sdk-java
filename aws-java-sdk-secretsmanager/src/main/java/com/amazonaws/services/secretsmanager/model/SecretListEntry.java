@@ -84,7 +84,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private RotationRulesType rotationRules;
     /**
      * <p>
-     * The last date and time that the rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret hasn't ever rotated.
      * </p>
      */
     private java.util.Date lastRotatedDate;
@@ -142,6 +143,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date createdDate;
+    /**
+     * <p>
+     * The Region where Secrets Manager originated the secret.
+     * </p>
+     */
+    private String primaryRegion;
 
     /**
      * <p>
@@ -500,11 +507,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date and time that the rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret hasn't ever rotated.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The last date and time that the rotation process for this secret was invoked.
+     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *        value is null if the secret hasn't ever rotated.
      */
 
     public void setLastRotatedDate(java.util.Date lastRotatedDate) {
@@ -513,10 +522,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date and time that the rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret hasn't ever rotated.
      * </p>
      * 
-     * @return The last date and time that the rotation process for this secret was invoked.
+     * @return The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *         value is null if the secret hasn't ever rotated.
      */
 
     public java.util.Date getLastRotatedDate() {
@@ -525,11 +536,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date and time that the rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret hasn't ever rotated.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The last date and time that the rotation process for this secret was invoked.
+     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *        value is null if the secret hasn't ever rotated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -945,6 +958,46 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The Region where Secrets Manager originated the secret.
+     * </p>
+     * 
+     * @param primaryRegion
+     *        The Region where Secrets Manager originated the secret.
+     */
+
+    public void setPrimaryRegion(String primaryRegion) {
+        this.primaryRegion = primaryRegion;
+    }
+
+    /**
+     * <p>
+     * The Region where Secrets Manager originated the secret.
+     * </p>
+     * 
+     * @return The Region where Secrets Manager originated the secret.
+     */
+
+    public String getPrimaryRegion() {
+        return this.primaryRegion;
+    }
+
+    /**
+     * <p>
+     * The Region where Secrets Manager originated the secret.
+     * </p>
+     * 
+     * @param primaryRegion
+     *        The Region where Secrets Manager originated the secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecretListEntry withPrimaryRegion(String primaryRegion) {
+        setPrimaryRegion(primaryRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -985,7 +1038,9 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         if (getOwningService() != null)
             sb.append("OwningService: ").append(getOwningService()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: ").append(getCreatedDate());
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getPrimaryRegion() != null)
+            sb.append("PrimaryRegion: ").append(getPrimaryRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -1060,6 +1115,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
+        if (other.getPrimaryRegion() == null ^ this.getPrimaryRegion() == null)
+            return false;
+        if (other.getPrimaryRegion() != null && other.getPrimaryRegion().equals(this.getPrimaryRegion()) == false)
+            return false;
         return true;
     }
 
@@ -1083,6 +1142,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSecretVersionsToStages() == null) ? 0 : getSecretVersionsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryRegion() == null) ? 0 : getPrimaryRegion().hashCode());
         return hashCode;
     }
 

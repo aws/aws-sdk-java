@@ -60,6 +60,12 @@ public class CreateSecretResultJsonUnmarshaller implements Unmarshaller<CreateSe
                     context.nextToken();
                     createSecretResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicationStatus", targetDepth)) {
+                    context.nextToken();
+                    createSecretResult.setReplicationStatus(new ListUnmarshaller<ReplicationStatusType>(ReplicationStatusTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

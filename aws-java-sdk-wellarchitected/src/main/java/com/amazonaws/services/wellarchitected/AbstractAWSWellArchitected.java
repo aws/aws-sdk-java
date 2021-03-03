@@ -128,12 +128,27 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWorkloadSharesResult listWorkloadShares(ListWorkloadSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListWorkloadsResult listWorkloads(ListWorkloadsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

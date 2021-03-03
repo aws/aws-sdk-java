@@ -64,6 +64,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
      * supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
      */
     private Long classifiableSizeInBytes;
     /**
@@ -75,8 +80,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private JobDetails jobDetails;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * bucket from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -152,11 +157,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      */
     private Long sizeInBytes;
     /**
      * <p>
      * The total compressed storage size, in bytes, of the bucket.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
+     * bucket.
      * </p>
      */
     private Long sizeInBytesCompressed;
@@ -398,11 +413,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
      * supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
      *        objects use a supported storage class and have a file name extension for a supported file or storage
-     *        format.
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      */
 
     public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
@@ -414,10 +438,19 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
      * supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
      * 
      * @return The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
      *         objects use a supported storage class and have a file name extension for a supported file or storage
-     *         format.
+     *         format.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *         version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *         versions of each applicable object in the bucket.
      */
 
     public Long getClassifiableSizeInBytes() {
@@ -429,11 +462,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
      * supported storage class and have a file name extension for a supported file or storage format.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
      *        objects use a supported storage class and have a file name extension for a supported file or storage
-     *        format.
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,13 +532,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * bucket from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *        about the bucket from Amazon S3.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the bucket.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -505,12 +547,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * bucket from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *         about the bucket from Amazon S3.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *         bucket and object metadata from Amazon S3 for the bucket.
      */
 
     public java.util.Date getLastUpdated() {
@@ -519,13 +561,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
-     * bucket from Amazon S3.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
-     *        about the bucket from Amazon S3.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1046,9 +1088,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *        latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *        of each object in the bucket.
      */
 
     public void setSizeInBytes(Long sizeInBytes) {
@@ -1059,8 +1110,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
-     * @return The total storage size, in bytes, of the bucket.
+     * @return The total storage size, in bytes, of the bucket.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *         latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *         of each object in the bucket.
      */
 
     public Long getSizeInBytes() {
@@ -1071,9 +1131,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *        latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *        of each object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1086,9 +1155,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total compressed storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
+     * bucket.
+     * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.
+     *        The total compressed storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
+     *        object in the bucket.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -1099,8 +1177,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total compressed storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
+     * bucket.
+     * </p>
      * 
-     * @return The total compressed storage size, in bytes, of the bucket.
+     * @return The total compressed storage size, in bytes, of the bucket.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *         version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
+     *         object in the bucket.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -1111,9 +1198,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total compressed storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
+     * bucket.
+     * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.
+     *        The total compressed storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
+     *        object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

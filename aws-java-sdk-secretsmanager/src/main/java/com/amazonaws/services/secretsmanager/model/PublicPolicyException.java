@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource policy did not prevent broad access to the secret.
+ * The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to the secret.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

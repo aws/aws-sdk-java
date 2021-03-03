@@ -80,6 +80,19 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccountConfigurationResult> getAccountConfigurationAsync(GetAccountConfigurationRequest request) {
+
+        return getAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccountConfigurationResult> getAccountConfigurationAsync(GetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccountConfigurationRequest, GetAccountConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCertificateResult> getCertificateAsync(GetCertificateRequest request) {
 
         return getCertificateAsync(request, null);
@@ -127,6 +140,19 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     @Override
     public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(ListTagsForCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountConfigurationResult> putAccountConfigurationAsync(PutAccountConfigurationRequest request) {
+
+        return putAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountConfigurationResult> putAccountConfigurationAsync(PutAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountConfigurationRequest, PutAccountConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

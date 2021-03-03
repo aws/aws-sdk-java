@@ -1958,6 +1958,105 @@ public interface AmazonForecastAsync extends AmazonForecast {
 
     /**
      * <p>
+     * Stops a resource.
+     * </p>
+     * <p>
+     * The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You
+     * cannot resume a resource once it has been stopped.
+     * </p>
+     * <p>
+     * This operation can be applied to the following resources (and their corresponding child resources):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Dataset Import Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Export Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Backtest Export Job
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param stopResourceRequest
+     * @return A Java Future containing the result of the StopResource operation returned by the service.
+     * @sample AmazonForecastAsync.StopResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopResourceResult> stopResourceAsync(StopResourceRequest stopResourceRequest);
+
+    /**
+     * <p>
+     * Stops a resource.
+     * </p>
+     * <p>
+     * The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You
+     * cannot resume a resource once it has been stopped.
+     * </p>
+     * <p>
+     * This operation can be applied to the following resources (and their corresponding child resources):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Dataset Import Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Export Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Backtest Export Job
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param stopResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopResource operation returned by the service.
+     * @sample AmazonForecastAsyncHandler.StopResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopResourceResult> stopResourceAsync(StopResourceRequest stopResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<StopResourceRequest, StopResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
      * associated with that resource are also deleted.

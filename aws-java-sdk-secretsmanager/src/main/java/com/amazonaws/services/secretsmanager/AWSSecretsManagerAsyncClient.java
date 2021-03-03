@@ -539,6 +539,72 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request) {
+
+        return removeRegionsFromReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(final RemoveRegionsFromReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveRegionsFromReplicationRequest, RemoveRegionsFromReplicationResult> asyncHandler) {
+        final RemoveRegionsFromReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveRegionsFromReplicationResult>() {
+            @Override
+            public RemoveRegionsFromReplicationResult call() throws Exception {
+                RemoveRegionsFromReplicationResult result = null;
+
+                try {
+                    result = executeRemoveRegionsFromReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request) {
+
+        return replicateSecretToRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(final ReplicateSecretToRegionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReplicateSecretToRegionsRequest, ReplicateSecretToRegionsResult> asyncHandler) {
+        final ReplicateSecretToRegionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplicateSecretToRegionsResult>() {
+            @Override
+            public ReplicateSecretToRegionsResult call() throws Exception {
+                ReplicateSecretToRegionsResult result = null;
+
+                try {
+                    result = executeReplicateSecretToRegions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreSecretResult> restoreSecretAsync(RestoreSecretRequest request) {
 
         return restoreSecretAsync(request, null);
@@ -589,6 +655,39 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
 
                 try {
                     result = executeRotateSecret(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request) {
+
+        return stopReplicationToReplicaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(final StopReplicationToReplicaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopReplicationToReplicaRequest, StopReplicationToReplicaResult> asyncHandler) {
+        final StopReplicationToReplicaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopReplicationToReplicaResult>() {
+            @Override
+            public StopReplicationToReplicaResult call() throws Exception {
+                StopReplicationToReplicaResult result = null;
+
+                try {
+                    result = executeStopReplicationToReplica(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

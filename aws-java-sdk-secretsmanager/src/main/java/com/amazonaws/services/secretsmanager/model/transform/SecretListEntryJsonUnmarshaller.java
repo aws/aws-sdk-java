@@ -113,6 +113,10 @@ public class SecretListEntryJsonUnmarshaller implements Unmarshaller<SecretListE
                     context.nextToken();
                     secretListEntry.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("PrimaryRegion", targetDepth)) {
+                    context.nextToken();
+                    secretListEntry.setPrimaryRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

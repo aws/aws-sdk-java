@@ -76,7 +76,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -237,6 +237,19 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     */
+    private java.util.List<ReplicaRegionType> addReplicaRegions;
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     */
+    private Boolean forceOverwriteReplicaSecret;
 
     /**
      * <p>
@@ -370,7 +383,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -413,7 +426,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *        <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *        you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *        </p>
      *        </li>
@@ -461,7 +474,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -503,7 +516,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *         <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *         you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *         </p>
      *         </li>
@@ -551,7 +564,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -594,7 +607,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *        <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *        you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *        </p>
      *        </li>
@@ -1728,6 +1741,136 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @return (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *         the list of regions specified in the parameter.
+     */
+
+    public java.util.List<ReplicaRegionType> getAddReplicaRegions() {
+        return addReplicaRegions;
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     */
+
+    public void setAddReplicaRegions(java.util.Collection<ReplicaRegionType> addReplicaRegions) {
+        if (addReplicaRegions == null) {
+            this.addReplicaRegions = null;
+            return;
+        }
+
+        this.addReplicaRegions = new java.util.ArrayList<ReplicaRegionType>(addReplicaRegions);
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddReplicaRegions(java.util.Collection)} or {@link #withAddReplicaRegions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withAddReplicaRegions(ReplicaRegionType... addReplicaRegions) {
+        if (this.addReplicaRegions == null) {
+            setAddReplicaRegions(new java.util.ArrayList<ReplicaRegionType>(addReplicaRegions.length));
+        }
+        for (ReplicaRegionType ele : addReplicaRegions) {
+            this.addReplicaRegions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withAddReplicaRegions(java.util.Collection<ReplicaRegionType> addReplicaRegions) {
+        setAddReplicaRegions(addReplicaRegions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @param forceOverwriteReplicaSecret
+     *        (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public void setForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
+        this.forceOverwriteReplicaSecret = forceOverwriteReplicaSecret;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @return (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public Boolean getForceOverwriteReplicaSecret() {
+        return this.forceOverwriteReplicaSecret;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @param forceOverwriteReplicaSecret
+     *        (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
+        setForceOverwriteReplicaSecret(forceOverwriteReplicaSecret);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @return (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public Boolean isForceOverwriteReplicaSecret() {
+        return this.forceOverwriteReplicaSecret;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1752,7 +1895,11 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSecretString() != null)
             sb.append("SecretString: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddReplicaRegions() != null)
+            sb.append("AddReplicaRegions: ").append(getAddReplicaRegions()).append(",");
+        if (getForceOverwriteReplicaSecret() != null)
+            sb.append("ForceOverwriteReplicaSecret: ").append(getForceOverwriteReplicaSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -1795,6 +1942,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddReplicaRegions() == null ^ this.getAddReplicaRegions() == null)
+            return false;
+        if (other.getAddReplicaRegions() != null && other.getAddReplicaRegions().equals(this.getAddReplicaRegions()) == false)
+            return false;
+        if (other.getForceOverwriteReplicaSecret() == null ^ this.getForceOverwriteReplicaSecret() == null)
+            return false;
+        if (other.getForceOverwriteReplicaSecret() != null && other.getForceOverwriteReplicaSecret().equals(this.getForceOverwriteReplicaSecret()) == false)
+            return false;
         return true;
     }
 
@@ -1810,6 +1965,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSecretBinary() == null) ? 0 : getSecretBinary().hashCode());
         hashCode = prime * hashCode + ((getSecretString() == null) ? 0 : getSecretString().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddReplicaRegions() == null) ? 0 : getAddReplicaRegions().hashCode());
+        hashCode = prime * hashCode + ((getForceOverwriteReplicaSecret() == null) ? 0 : getForceOverwriteReplicaSecret().hashCode());
         return hashCode;
     }
 

@@ -24,6 +24,7 @@ public enum FilterNameStringType {
     Name("name"),
     TagKey("tag-key"),
     TagValue("tag-value"),
+    PrimaryRegion("primary-region"),
     All("all");
 
     private String value;

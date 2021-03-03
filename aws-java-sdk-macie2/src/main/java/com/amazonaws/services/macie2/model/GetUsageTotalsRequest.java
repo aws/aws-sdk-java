@@ -27,24 +27,24 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to
-     * date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter, Amazon Macie
-     * provides aggregated usage data for the preceding 30 days.
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
      * </p>
      */
     private String timeRange;
 
     /**
      * <p>
-     * The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to
-     * date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter, Amazon Macie
-     * provides aggregated usage data for the preceding 30 days.
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
      * </p>
      * 
      * @param timeRange
-     *        The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month
-     *        to date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter,
-     *        Amazon Macie provides aggregated usage data for the preceding 30 days.
+     *        The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *        this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
      */
 
     public void setTimeRange(String timeRange) {
@@ -53,14 +53,14 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to
-     * date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter, Amazon Macie
-     * provides aggregated usage data for the preceding 30 days.
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
      * </p>
      * 
-     * @return The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month
-     *         to date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter,
-     *         Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * @return The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *         calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *         this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
      */
 
     public String getTimeRange() {
@@ -69,15 +69,15 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to
-     * date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter, Amazon Macie
-     * provides aggregated usage data for the preceding 30 days.
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
      * </p>
      * 
      * @param timeRange
-     *        The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month
-     *        to date; and, PAST_30_DAYS, for the preceding 30 days. If you don’t specify a value for this parameter,
-     *        Amazon Macie provides aggregated usage data for the preceding 30 days.
+     *        The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *        this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

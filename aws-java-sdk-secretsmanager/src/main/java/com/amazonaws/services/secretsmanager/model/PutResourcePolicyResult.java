@@ -31,7 +31,7 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret that the retrieved by the resource-based policy.
+     * The friendly name of the secret retrieved by the resource-based policy.
      * </p>
      */
     private String name;
@@ -78,11 +78,11 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the retrieved by the resource-based policy.
+     * The friendly name of the secret retrieved by the resource-based policy.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that the retrieved by the resource-based policy.
+     *        The friendly name of the secret retrieved by the resource-based policy.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the retrieved by the resource-based policy.
+     * The friendly name of the secret retrieved by the resource-based policy.
      * </p>
      * 
-     * @return The friendly name of the secret that the retrieved by the resource-based policy.
+     * @return The friendly name of the secret retrieved by the resource-based policy.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the retrieved by the resource-based policy.
+     * The friendly name of the secret retrieved by the resource-based policy.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that the retrieved by the resource-based policy.
+     *        The friendly name of the secret retrieved by the resource-based policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

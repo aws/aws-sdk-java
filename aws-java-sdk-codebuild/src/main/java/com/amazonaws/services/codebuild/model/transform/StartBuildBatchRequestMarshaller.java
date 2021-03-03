@@ -88,6 +88,8 @@ public class StartBuildBatchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePullCredentialsTypeOverride").build();
     private static final MarshallingInfo<StructuredPojo> BUILDBATCHCONFIGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildBatchConfigOverride").build();
+    private static final MarshallingInfo<Boolean> DEBUGSESSIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("debugSessionEnabled").build();
 
     private static final StartBuildBatchRequestMarshaller instance = new StartBuildBatchRequestMarshaller();
 
@@ -135,6 +137,7 @@ public class StartBuildBatchRequestMarshaller {
             protocolMarshaller.marshall(startBuildBatchRequest.getRegistryCredentialOverride(), REGISTRYCREDENTIALOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildBatchRequest.getImagePullCredentialsTypeOverride(), IMAGEPULLCREDENTIALSTYPEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildBatchRequest.getBuildBatchConfigOverride(), BUILDBATCHCONFIGOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildBatchRequest.getDebugSessionEnabled(), DEBUGSESSIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

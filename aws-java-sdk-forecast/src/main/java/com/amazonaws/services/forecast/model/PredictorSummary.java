@@ -70,7 +70,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -96,10 +96,35 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
     private java.util.Date creationTime;
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date lastModificationTime;
 
@@ -245,7 +270,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -276,7 +301,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -313,7 +338,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -343,7 +368,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     *         <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -380,7 +405,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -411,7 +436,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -510,15 +535,64 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status
-     *        changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -527,14 +601,63 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *         training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete
-     *         (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * @return The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPED</code> - When the job stopped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getLastModificationTime() {
@@ -543,15 +666,64 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status
-     *        changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

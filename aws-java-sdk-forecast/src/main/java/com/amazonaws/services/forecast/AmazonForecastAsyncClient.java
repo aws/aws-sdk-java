@@ -1074,6 +1074,39 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<StopResourceResult> stopResourceAsync(StopResourceRequest request) {
+
+        return stopResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopResourceResult> stopResourceAsync(final StopResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopResourceRequest, StopResourceResult> asyncHandler) {
+        final StopResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopResourceResult>() {
+            @Override
+            public StopResourceResult call() throws Exception {
+                StopResourceResult result = null;
+
+                try {
+                    result = executeStopResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

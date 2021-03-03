@@ -32,8 +32,8 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
     private String findingPublishingFrequency;
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      */
     private String status;
@@ -99,13 +99,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @see MacieStatus
      */
 
@@ -115,12 +115,12 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
-     * @return Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *         activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * @return Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *         the account; and, PAUSED, suspend all Macie activities for the account.
      * @see MacieStatus
      */
 
@@ -130,13 +130,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */
@@ -148,13 +148,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */

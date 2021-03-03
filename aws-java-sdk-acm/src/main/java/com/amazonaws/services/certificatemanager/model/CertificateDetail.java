@@ -32,8 +32,8 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String certificateArn;
@@ -80,8 +80,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     private String issuer;
     /**
      * <p>
-     * The time at which the certificate was requested. This value exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.
+     * The time at which the certificate was requested.
      * </p>
      */
     private java.util.Date createdAt;
@@ -223,14 +222,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -240,13 +239,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getCertificateArn() {
@@ -256,14 +255,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,13 +613,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time at which the certificate was requested. This value exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.
+     * The time at which the certificate was requested.
      * </p>
      * 
      * @param createdAt
-     *        The time at which the certificate was requested. This value exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        The time at which the certificate was requested.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -629,12 +626,10 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time at which the certificate was requested. This value exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.
+     * The time at which the certificate was requested.
      * </p>
      * 
-     * @return The time at which the certificate was requested. This value exists only when the certificate type is
-     *         <code>AMAZON_ISSUED</code>.
+     * @return The time at which the certificate was requested.
      */
 
     public java.util.Date getCreatedAt() {
@@ -643,13 +638,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time at which the certificate was requested. This value exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.
+     * The time at which the certificate was requested.
      * </p>
      * 
      * @param createdAt
-     *        The time at which the certificate was requested. This value exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        The time at which the certificate was requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

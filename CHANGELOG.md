@@ -1,3 +1,36 @@
+# __1.11.967__ __2021-03-03__
+## __AWS Certificate Manager__
+  - ### Features
+    - Adds 2 new APIs to add and retrieve account configuration in AWS Certificate Manager.
+
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild now supports Session Manager debugging for batch builds.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Added support for multi-Region secrets APIs ReplicateSecretToRegions, RemoveRegionsFromReplication, and StopReplicationToReplica
+
+## __AWS Well-Architected Tool__
+  - ### Features
+    - This release supports tagging on AWS Well-Architected workloads.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Adds TraceHeader to PutEventsRequestEntry to support AWS X-Ray trace-ids on events generated using the PutEvents operation.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - AWS ElasticSearch Feature : Support for adding tags in elastic search domain during domain creation
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Added new StopResource operation that stops Amazon Forecast resource jobs that are in progress.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+
 # __1.11.966__ __2021-03-02__
 ## __AWS Compute Optimizer__
   - ### Features

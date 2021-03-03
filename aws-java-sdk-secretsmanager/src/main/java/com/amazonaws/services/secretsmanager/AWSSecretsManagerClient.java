@@ -523,7 +523,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
      * @throws MalformedPolicyDocumentException
-     *         The policy document that you provided isn't valid.
+     *         You provided a resource-based policy with syntax errors.
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @throws PreconditionNotMetException
@@ -604,7 +604,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+     * To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -637,6 +637,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     * @throws InvalidParameterException
+     *         You provided an invalid value for a parameter.
      * @sample AWSSecretsManager.DeleteResourcePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -687,7 +689,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes an entire secret and all of its versions. You can optionally include a recovery window during which you
+     * Deletes an entire secret and all of the versions. You can optionally include a recovery window during which you
      * can restore the secret. If you don't specify a recovery window value, the operation defaults to 30 days. Secrets
      * Manager attaches a <code>DeletionDate</code> stamp to the secret that specifies the end of the recovery window.
      * At the end of the recovery window, Secrets Manager deletes the secret permanently.
@@ -697,9 +699,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * and cancel the deletion of the secret.
      * </p>
      * <p>
-     * You cannot access the encrypted secret information in any secret that is scheduled for deletion. If you need to
-     * access that information, you must cancel the deletion with <a>RestoreSecret</a> and then retrieve the
-     * information.
+     * You cannot access the encrypted secret information in any secret scheduled for deletion. If you need to access
+     * that information, you must cancel the deletion with <a>RestoreSecret</a> and then retrieve the information.
      * </p>
      * <note>
      * <ul>
@@ -707,8 +708,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <p>
      * There is no explicit operation to delete a version of a secret. Instead, remove all staging labels from the
      * <code>VersionStage</code> field of a version. That marks the version as deprecated and allows Secrets Manager to
-     * delete it as needed. Versions that do not have any staging labels do not show up in <a>ListSecretVersionIds</a>
-     * unless you specify <code>IncludeDeprecated</code>.
+     * delete it as needed. Versions without any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+     * specify <code>IncludeDeprecated</code>.
      * </p>
      * </li>
      * <li>
@@ -1462,7 +1463,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -1475,7 +1476,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * @param putResourcePolicyRequest
      * @return Result of the PutResourcePolicy operation returned by the service.
      * @throws MalformedPolicyDocumentException
-     *         The policy document that you provided isn't valid.
+     *         You provided a resource-based policy with syntax errors.
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
      * @throws InvalidParameterException
@@ -1500,7 +1501,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      *         </p>
      *         </li>
      * @throws PublicPolicyException
-     *         The resource policy did not prevent broad access to the secret.
+     *         The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to
+     *         the secret.
      * @sample AWSSecretsManager.PutResourcePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1571,15 +1573,15 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * If another version of this secret already exists, then this operation does not automatically move any staging
-     * labels other than those that you explicitly specify in the <code>VersionStages</code> parameter.
+     * If you do not specify a value for VersionStages then Secrets Manager automatically moves the staging label
+     * <code>AWSCURRENT</code> to this new version.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version (because
-     * you included it in the <code>StagingLabels</code> parameter) then Secrets Manager also automatically moves the
-     * staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
+     * If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version, then
+     * Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to the version that
+     * <code>AWSCURRENT</code> was removed from.
      * </p>
      * </li>
      * <li>
@@ -1734,6 +1736,166 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<PutSecretValueResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSecretValueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove regions from replication.
+     * </p>
+     * 
+     * @param removeRegionsFromReplicationRequest
+     * @return Result of the RemoveRegionsFromReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterException
+     *         You provided an invalid value for a parameter.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSecretsManager.RemoveRegionsFromReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveRegionsFromReplicationResult removeRegionsFromReplication(RemoveRegionsFromReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveRegionsFromReplication(request);
+    }
+
+    @SdkInternalApi
+    final RemoveRegionsFromReplicationResult executeRemoveRegionsFromReplication(RemoveRegionsFromReplicationRequest removeRegionsFromReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeRegionsFromReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveRegionsFromReplicationRequest> request = null;
+        Response<RemoveRegionsFromReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveRegionsFromReplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeRegionsFromReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRegionsFromReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveRegionsFromReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveRegionsFromReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Converts an existing secret to a multi-Region secret and begins replication the secret to a list of new regions.
+     * </p>
+     * 
+     * @param replicateSecretToRegionsRequest
+     * @return Result of the ReplicateSecretToRegions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterException
+     *         You provided an invalid value for a parameter.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSecretsManager.ReplicateSecretToRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ReplicateSecretToRegionsResult replicateSecretToRegions(ReplicateSecretToRegionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeReplicateSecretToRegions(request);
+    }
+
+    @SdkInternalApi
+    final ReplicateSecretToRegionsResult executeReplicateSecretToRegions(ReplicateSecretToRegionsRequest replicateSecretToRegionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(replicateSecretToRegionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReplicateSecretToRegionsRequest> request = null;
+        Response<ReplicateSecretToRegionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReplicateSecretToRegionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(replicateSecretToRegionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplicateSecretToRegions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReplicateSecretToRegionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ReplicateSecretToRegionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1999,6 +2161,86 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<RotateSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RotateSecretResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the secret from replication and promotes the secret to a regional secret in the replica Region.
+     * </p>
+     * 
+     * @param stopReplicationToReplicaRequest
+     * @return Result of the StopReplicationToReplica operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterException
+     *         You provided an invalid value for a parameter.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSecretsManager.StopReplicationToReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopReplicationToReplicaResult stopReplicationToReplica(StopReplicationToReplicaRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopReplicationToReplica(request);
+    }
+
+    @SdkInternalApi
+    final StopReplicationToReplicaResult executeStopReplicationToReplica(StopReplicationToReplicaRequest stopReplicationToReplicaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopReplicationToReplicaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopReplicationToReplicaRequest> request = null;
+        Response<StopReplicationToReplicaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopReplicationToReplicaRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopReplicationToReplicaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopReplicationToReplica");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopReplicationToReplicaResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopReplicationToReplicaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2421,7 +2663,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
      * @throws MalformedPolicyDocumentException
-     *         The policy document that you provided isn't valid.
+     *         You provided a resource-based policy with syntax errors.
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @throws PreconditionNotMetException
@@ -2604,15 +2846,56 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Validates the JSON text of the resource-based policy document attached to the specified secret. The JSON request
-     * string input and response output displays formatted code with white space and line breaks for better readability.
-     * Submit your input as a single line JSON string. A resource-based policy is optional.
+     * Validates that the resource policy does not grant a wide range of IAM principals access to your secret. The JSON
+     * request string input and response output displays formatted code with white space and line breaks for better
+     * readability. Submit your input as a single line JSON string. A resource-based policy is optional for secrets.
      * </p>
+     * <p>
+     * The API performs three checks when validating the secret:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Sends a call to <a href=
+     * "https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/"
+     * >Zelkova</a>, an automated reasoning engine, to ensure your Resource Policy does not allow broad access to your
+     * secret.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Checks for correct syntax in a policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Verifies the policy does not lock out a caller.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Minimum Permissions</b>
+     * </p>
+     * <p>
+     * You must have the permissions required to access the following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>secretsmanager:PutResourcePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>secretsmanager:ValidateResourcePolicy</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validateResourcePolicyRequest
      * @return Result of the ValidateResourcePolicy operation returned by the service.
      * @throws MalformedPolicyDocumentException
-     *         The policy document that you provided isn't valid.
+     *         You provided a resource-based policy with syntax errors.
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
      * @throws InvalidParameterException

@@ -178,6 +178,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public StopResourceResult stopResource(StopResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -60,7 +60,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -223,7 +223,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @return The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a
@@ -233,7 +233,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         parameter for the various command line tool environments, see <a
      *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *         <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *         <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      */
 
     public java.util.List<Tag> getTags() {
@@ -250,7 +250,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @param tags
@@ -261,7 +261,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -283,7 +283,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -299,7 +299,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,7 +323,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @param tags
@@ -334,7 +334,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

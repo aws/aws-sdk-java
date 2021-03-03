@@ -34,8 +34,8 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      */
     private String certificateArn;
@@ -49,8 +49,8 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -61,7 +61,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -77,8 +77,8 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
@@ -88,7 +88,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs)</a>.
      */
 
     public String getCertificateArn() {
@@ -104,8 +104,8 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -116,7 +116,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

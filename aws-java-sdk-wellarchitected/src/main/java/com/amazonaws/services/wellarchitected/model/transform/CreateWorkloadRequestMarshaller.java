@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wellarchitected.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -59,6 +60,8 @@ public class CreateWorkloadRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateWorkloadRequestMarshaller instance = new CreateWorkloadRequestMarshaller();
 
@@ -90,6 +93,7 @@ public class CreateWorkloadRequestMarshaller {
             protocolMarshaller.marshall(createWorkloadRequest.getLenses(), LENSES_BINDING);
             protocolMarshaller.marshall(createWorkloadRequest.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(createWorkloadRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createWorkloadRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

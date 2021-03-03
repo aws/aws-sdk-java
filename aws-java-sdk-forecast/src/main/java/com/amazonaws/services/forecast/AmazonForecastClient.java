@@ -2504,6 +2504,102 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Stops a resource.
+     * </p>
+     * <p>
+     * The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You
+     * cannot resume a resource once it has been stopped.
+     * </p>
+     * <p>
+     * This operation can be applied to the following resources (and their corresponding child resources):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Dataset Import Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Export Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Backtest Export Job
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param stopResourceRequest
+     * @return Result of the StopResource operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.StopResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopResourceResult stopResource(StopResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopResource(request);
+    }
+
+    @SdkInternalApi
+    final StopResourceResult executeStopResource(StopResourceRequest stopResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopResourceRequest> request = null;
+        Response<StopResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
      * associated with that resource are also deleted.

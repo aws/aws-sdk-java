@@ -55,6 +55,12 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
     private String notes;
 
     private String clientRequestToken;
+    /**
+     * <p>
+     * The tags to be associated with the workload.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * @param workloadName
@@ -565,6 +571,74 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The tags to be associated with the workload.
+     * </p>
+     * 
+     * @return The tags to be associated with the workload.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be associated with the workload.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be associated with the workload.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be associated with the workload.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be associated with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateWorkloadRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -603,7 +677,9 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getNotes() != null)
             sb.append("Notes: ").append(getNotes()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -674,6 +750,10 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -696,6 +776,7 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getLenses() == null) ? 0 : getLenses().hashCode());
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -49,6 +49,13 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String versionId;
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.
+     * </p>
+     */
+    private java.util.List<ReplicationStatusType> replicationStatus;
 
     /**
      * <p>
@@ -216,6 +223,84 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.
+     * </p>
+     * 
+     * @return Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *         <code>InSync</code>.
+     */
+
+    public java.util.List<ReplicationStatusType> getReplicationStatus() {
+        return replicationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.
+     */
+
+    public void setReplicationStatus(java.util.Collection<ReplicationStatusType> replicationStatus) {
+        if (replicationStatus == null) {
+            this.replicationStatus = null;
+            return;
+        }
+
+        this.replicationStatus = new java.util.ArrayList<ReplicationStatusType>(replicationStatus);
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicationStatus(java.util.Collection)} or {@link #withReplicationStatus(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretResult withReplicationStatus(ReplicationStatusType... replicationStatus) {
+        if (this.replicationStatus == null) {
+            setReplicationStatus(new java.util.ArrayList<ReplicationStatusType>(replicationStatus.length));
+        }
+        for (ReplicationStatusType ele : replicationStatus) {
+            this.replicationStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretResult withReplicationStatus(java.util.Collection<ReplicationStatusType> replicationStatus) {
+        setReplicationStatus(replicationStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +317,9 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: ").append(getVersionId());
+            sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getReplicationStatus() != null)
+            sb.append("ReplicationStatus: ").append(getReplicationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +346,10 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getReplicationStatus() == null ^ this.getReplicationStatus() == null)
+            return false;
+        if (other.getReplicationStatus() != null && other.getReplicationStatus().equals(this.getReplicationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +361,7 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getReplicationStatus() == null) ? 0 : getReplicationStatus().hashCode());
         return hashCode;
     }
 

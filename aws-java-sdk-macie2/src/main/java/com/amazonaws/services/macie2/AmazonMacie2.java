@@ -582,7 +582,9 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been
+     * replaced by the <link linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+     * operation.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -947,7 +949,8 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation
+     * has been replaced by the <link linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.
      * </p>
      * 
      * @param getMasterAccountRequest

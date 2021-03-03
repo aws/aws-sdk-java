@@ -57,8 +57,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
@@ -175,8 +175,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
@@ -203,8 +203,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Key</code> - The name of the parameter to filter on. Valid values are
-     *         <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     *         <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     *         <code>Status</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -237,8 +237,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
@@ -266,8 +266,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - The name of the parameter to filter on. Valid values are
-     *        <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -305,8 +305,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
@@ -339,8 +339,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - The name of the parameter to filter on. Valid values are
-     *        <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -380,8 +380,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
@@ -409,8 +409,8 @@ public class ListPredictorBacktestExportJobsRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - The name of the parameter to filter on. Valid values are
-     *        <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>

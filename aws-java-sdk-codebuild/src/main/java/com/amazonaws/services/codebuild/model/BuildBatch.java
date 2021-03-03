@@ -256,6 +256,15 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<BuildGroup> buildGroups;
+    /**
+     * <p/>
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     */
+    private Boolean debugSessionEnabled;
 
     /**
      * <p>
@@ -2070,6 +2079,82 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p/>
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        <p>
+     *        Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public void setDebugSessionEnabled(Boolean debugSessionEnabled) {
+        this.debugSessionEnabled = debugSessionEnabled;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @return <p>
+     *         Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public Boolean getDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        <p>
+     *        Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BuildBatch withDebugSessionEnabled(Boolean debugSessionEnabled) {
+        setDebugSessionEnabled(debugSessionEnabled);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     * </p>
+     * 
+     * @return <p>
+     *         Specifies if session debugging is enabled for this batch build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
+     */
+
+    public Boolean isDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2138,7 +2223,9 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
         if (getBuildBatchConfig() != null)
             sb.append("BuildBatchConfig: ").append(getBuildBatchConfig()).append(",");
         if (getBuildGroups() != null)
-            sb.append("BuildGroups: ").append(getBuildGroups());
+            sb.append("BuildGroups: ").append(getBuildGroups()).append(",");
+        if (getDebugSessionEnabled() != null)
+            sb.append("DebugSessionEnabled: ").append(getDebugSessionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -2269,6 +2356,10 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildGroups() != null && other.getBuildGroups().equals(this.getBuildGroups()) == false)
             return false;
+        if (other.getDebugSessionEnabled() == null ^ this.getDebugSessionEnabled() == null)
+            return false;
+        if (other.getDebugSessionEnabled() != null && other.getDebugSessionEnabled().equals(this.getDebugSessionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -2306,6 +2397,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
         hashCode = prime * hashCode + ((getBuildBatchConfig() == null) ? 0 : getBuildBatchConfig().hashCode());
         hashCode = prime * hashCode + ((getBuildGroups() == null) ? 0 : getBuildGroups().hashCode());
+        hashCode = prime * hashCode + ((getDebugSessionEnabled() == null) ? 0 : getDebugSessionEnabled().hashCode());
         return hashCode;
     }
 

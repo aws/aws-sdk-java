@@ -52,10 +52,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     private String secretId;
     /**
      * <p>
-     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify this
-     * parameter then don't specify <code>VersionStage</code>. If you don't specify either a <code>VersionStage</code>
-     * or <code>VersionId</code> then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this
+     * parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation
+     * on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * <p>
      * This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value
@@ -68,10 +68,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret version that you want to retrieve by the staging label attached to the version.
      * </p>
      * <p>
-     * Staging labels are used to keep track of different versions during the rotation process. If you use this
-     * parameter then don't specify <code>VersionId</code>. If you don't specify either a <code>VersionStage</code> or
-     * <code>VersionId</code>, then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Staging labels are used to keep track of different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the
+     * operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      */
     private String versionStage;
@@ -226,10 +226,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify this
-     * parameter then don't specify <code>VersionStage</code>. If you don't specify either a <code>VersionStage</code>
-     * or <code>VersionId</code> then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this
+     * parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation
+     * on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * <p>
      * This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value
@@ -238,9 +238,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param versionId
      *        Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify
-     *        this parameter then don't specify <code>VersionStage</code>. If you don't specify either a
-     *        <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the
-     *        version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+     *        both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret
+     *        version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the
+     *        default is to perform the operation on the version with the <code>VersionStage</code> value of
+     *        <code>AWSCURRENT</code>.</p>
      *        <p>
      *        This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      *        value with 32 hexadecimal digits.
@@ -252,10 +253,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify this
-     * parameter then don't specify <code>VersionStage</code>. If you don't specify either a <code>VersionStage</code>
-     * or <code>VersionId</code> then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this
+     * parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation
+     * on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * <p>
      * This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value
@@ -263,9 +264,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify
-     *         this parameter then don't specify <code>VersionStage</code>. If you don't specify either a
-     *         <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the
-     *         version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+     *         both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret
+     *         version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the
+     *         default is to perform the operation on the version with the <code>VersionStage</code> value of
+     *         <code>AWSCURRENT</code>.</p>
      *         <p>
      *         This value is typically a <a
      *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal
@@ -278,10 +280,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify this
-     * parameter then don't specify <code>VersionStage</code>. If you don't specify either a <code>VersionStage</code>
-     * or <code>VersionId</code> then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this
+     * parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation
+     * on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * <p>
      * This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value
@@ -290,9 +292,10 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param versionId
      *        Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify
-     *        this parameter then don't specify <code>VersionStage</code>. If you don't specify either a
-     *        <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the
-     *        version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+     *        both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret
+     *        version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the
+     *        default is to perform the operation on the version with the <code>VersionStage</code> value of
+     *        <code>AWSCURRENT</code>.</p>
      *        <p>
      *        This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      *        value with 32 hexadecimal digits.
@@ -309,19 +312,19 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret version that you want to retrieve by the staging label attached to the version.
      * </p>
      * <p>
-     * Staging labels are used to keep track of different versions during the rotation process. If you use this
-     * parameter then don't specify <code>VersionId</code>. If you don't specify either a <code>VersionStage</code> or
-     * <code>VersionId</code>, then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Staging labels are used to keep track of different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the
+     * operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * 
      * @param versionStage
      *        Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
      *        <p>
-     *        Staging labels are used to keep track of different versions during the rotation process. If you use this
-     *        parameter then don't specify <code>VersionId</code>. If you don't specify either a
-     *        <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the
-     *        version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     *        Staging labels are used to keep track of different versions during the rotation process. If you specify
+     *        both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version .
+     *        If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to
+     *        perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      */
 
     public void setVersionStage(String versionStage) {
@@ -333,18 +336,19 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret version that you want to retrieve by the staging label attached to the version.
      * </p>
      * <p>
-     * Staging labels are used to keep track of different versions during the rotation process. If you use this
-     * parameter then don't specify <code>VersionId</code>. If you don't specify either a <code>VersionStage</code> or
-     * <code>VersionId</code>, then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Staging labels are used to keep track of different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the
+     * operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * 
      * @return Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
      *         <p>
-     *         Staging labels are used to keep track of different versions during the rotation process. If you use this
-     *         parameter then don't specify <code>VersionId</code>. If you don't specify either a
-     *         <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the
-     *         version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     *         Staging labels are used to keep track of different versions during the rotation process. If you specify
+     *         both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version
+     *         . If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is
+     *         to perform the operation on the version with the <code>VersionStage</code> value of
+     *         <code>AWSCURRENT</code>.
      */
 
     public String getVersionStage() {
@@ -356,19 +360,19 @@ public class GetSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret version that you want to retrieve by the staging label attached to the version.
      * </p>
      * <p>
-     * Staging labels are used to keep track of different versions during the rotation process. If you use this
-     * parameter then don't specify <code>VersionId</code>. If you don't specify either a <code>VersionStage</code> or
-     * <code>VersionId</code>, then the default is to perform the operation on the version with the
-     * <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     * Staging labels are used to keep track of different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't
+     * specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the
+     * operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * </p>
      * 
      * @param versionStage
      *        Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
      *        <p>
-     *        Staging labels are used to keep track of different versions during the rotation process. If you use this
-     *        parameter then don't specify <code>VersionId</code>. If you don't specify either a
-     *        <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the
-     *        version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+     *        Staging labels are used to keep track of different versions during the rotation process. If you specify
+     *        both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version .
+     *        If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to
+     *        perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

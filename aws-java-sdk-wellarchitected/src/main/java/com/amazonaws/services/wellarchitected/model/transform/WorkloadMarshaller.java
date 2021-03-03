@@ -73,6 +73,8 @@ public class WorkloadMarshaller {
             .marshallLocationName("Owner").build();
     private static final MarshallingInfo<String> SHAREINVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareInvitationId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final WorkloadMarshaller instance = new WorkloadMarshaller();
 
@@ -112,6 +114,7 @@ public class WorkloadMarshaller {
             protocolMarshaller.marshall(workload.getLenses(), LENSES_BINDING);
             protocolMarshaller.marshall(workload.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(workload.getShareInvitationId(), SHAREINVITATIONID_BINDING);
+            protocolMarshaller.marshall(workload.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

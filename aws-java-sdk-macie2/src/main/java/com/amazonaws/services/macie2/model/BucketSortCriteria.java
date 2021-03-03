@@ -30,29 +30,31 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName or accountId.
+     * The name of the bucket property to sort the results by. This value can be one of the following properties that
+     * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
+     * objectCount, or sizeInBytes.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * The sort order to apply to the results, based on the value for the property specified by the attributeName
-     * property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending
-     * order.
+     * The sort order to apply to the results, based on the value specified by the attributeName property. Valid values
+     * are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * </p>
      */
     private String orderBy;
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName or accountId.
+     * The name of the bucket property to sort the results by. This value can be one of the following properties that
+     * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
+     * objectCount, or sizeInBytes.
      * </p>
      * 
      * @param attributeName
-     *        The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines as bucket metadata, such as bucketName or accountId.
+     *        The name of the bucket property to sort the results by. This value can be one of the following properties
+     *        that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
+     *        classifiableSizeInBytes, objectCount, or sizeInBytes.
      */
 
     public void setAttributeName(String attributeName) {
@@ -61,12 +63,14 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName or accountId.
+     * The name of the bucket property to sort the results by. This value can be one of the following properties that
+     * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
+     * objectCount, or sizeInBytes.
      * </p>
      * 
-     * @return The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *         Macie defines as bucket metadata, such as bucketName or accountId.
+     * @return The name of the bucket property to sort the results by. This value can be one of the following properties
+     *         that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
+     *         classifiableSizeInBytes, objectCount, or sizeInBytes.
      */
 
     public String getAttributeName() {
@@ -75,13 +79,15 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName or accountId.
+     * The name of the bucket property to sort the results by. This value can be one of the following properties that
+     * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
+     * objectCount, or sizeInBytes.
      * </p>
      * 
      * @param attributeName
-     *        The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines as bucket metadata, such as bucketName or accountId.
+     *        The name of the bucket property to sort the results by. This value can be one of the following properties
+     *        that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
+     *        classifiableSizeInBytes, objectCount, or sizeInBytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,15 +98,13 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The sort order to apply to the results, based on the value for the property specified by the attributeName
-     * property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending
-     * order.
+     * The sort order to apply to the results, based on the value specified by the attributeName property. Valid values
+     * are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * </p>
      * 
      * @param orderBy
-     *        The sort order to apply to the results, based on the value for the property specified by the attributeName
-     *        property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in
-     *        descending order.
+     *        The sort order to apply to the results, based on the value specified by the attributeName property. Valid
+     *        values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * @see OrderBy
      */
 
@@ -110,14 +114,12 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The sort order to apply to the results, based on the value for the property specified by the attributeName
-     * property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending
-     * order.
+     * The sort order to apply to the results, based on the value specified by the attributeName property. Valid values
+     * are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * </p>
      * 
-     * @return The sort order to apply to the results, based on the value for the property specified by the
-     *         attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the
-     *         results in descending order.
+     * @return The sort order to apply to the results, based on the value specified by the attributeName property. Valid
+     *         values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * @see OrderBy
      */
 
@@ -127,15 +129,13 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The sort order to apply to the results, based on the value for the property specified by the attributeName
-     * property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending
-     * order.
+     * The sort order to apply to the results, based on the value specified by the attributeName property. Valid values
+     * are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * </p>
      * 
      * @param orderBy
-     *        The sort order to apply to the results, based on the value for the property specified by the attributeName
-     *        property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in
-     *        descending order.
+     *        The sort order to apply to the results, based on the value specified by the attributeName property. Valid
+     *        values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -147,15 +147,13 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The sort order to apply to the results, based on the value for the property specified by the attributeName
-     * property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending
-     * order.
+     * The sort order to apply to the results, based on the value specified by the attributeName property. Valid values
+     * are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * </p>
      * 
      * @param orderBy
-     *        The sort order to apply to the results, based on the value for the property specified by the attributeName
-     *        property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in
-     *        descending order.
+     *        The sort order to apply to the results, based on the value specified by the attributeName property. Valid
+     *        values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */

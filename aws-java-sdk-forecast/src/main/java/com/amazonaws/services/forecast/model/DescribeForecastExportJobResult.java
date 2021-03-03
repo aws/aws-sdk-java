@@ -70,6 +70,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -90,8 +95,35 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
     private java.util.Date creationTime;
     /**
      * <p>
-     * When the last successful export job finished.
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date lastModificationTime;
 
@@ -312,6 +344,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -334,6 +371,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -370,6 +412,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -391,6 +438,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *         </p>
      *         </li>
      *         <li>
@@ -427,6 +479,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -449,6 +506,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -512,11 +574,64 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * When the last successful export job finished.
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        When the last successful export job finished.
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -525,10 +640,63 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * When the last successful export job finished.
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return When the last successful export job finished.
+     * @return The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPED</code> - When the job stopped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getLastModificationTime() {
@@ -537,11 +705,64 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * When the last successful export job finished.
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        When the last successful export job finished.
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

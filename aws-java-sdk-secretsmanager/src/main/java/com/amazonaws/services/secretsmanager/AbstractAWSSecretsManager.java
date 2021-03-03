@@ -88,12 +88,27 @@ public class AbstractAWSSecretsManager implements AWSSecretsManager {
     }
 
     @Override
+    public RemoveRegionsFromReplicationResult removeRegionsFromReplication(RemoveRegionsFromReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplicateSecretToRegionsResult replicateSecretToRegions(ReplicateSecretToRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreSecretResult restoreSecret(RestoreSecretRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public RotateSecretResult rotateSecret(RotateSecretRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopReplicationToReplicaResult stopReplicationToReplica(StopReplicationToReplicaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

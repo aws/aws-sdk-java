@@ -27,7 +27,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -52,9 +52,9 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String secretId;
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
@@ -62,14 +62,15 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String resourcePolicy;
     /**
      * <p>
-     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
      * </p>
      */
     private Boolean blockPublicPolicy;
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -92,8 +93,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *        or the friendly name of the secret.</p> <note>
+     *        Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *        the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -118,7 +119,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -140,8 +141,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </note>
      * 
-     * @return Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *         or the friendly name of the secret.</p> <note>
+     * @return Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *         the friendly name of the secret.</p> <note>
      *         <p>
      *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -166,7 +167,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -189,8 +190,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *        or the friendly name of the secret.</p> <note>
+     *        Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *        the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -217,17 +218,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
-     *        information on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *        The policy in the string identifies who can access or manage this secret and its versions. For information
+     *        on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      */
@@ -238,15 +239,15 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
-     * @return A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *         policy. The policy in the string identifies who can access or manage this secret and its versions. For
+     * @return A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *         The policy in the string identifies who can access or manage this secret and its versions. For
      *         information on how to format a JSON parameter for the various command line tool environments, see <a
      *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
@@ -258,17 +259,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
-     *        information on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *        The policy in the string identifies who can access or manage this secret and its versions. For information
+     *        on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -281,12 +282,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
      * </p>
      * 
      * @param blockPublicPolicy
-     *        Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
-     *        secret.
+     *        (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     *        policies that allow broad access to the secret.
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -295,11 +297,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
      * </p>
      * 
-     * @return Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
-     *         secret.
+     * @return (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block
+     *         resource-based policies that allow broad access to the secret.
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -308,12 +311,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
      * </p>
      * 
      * @param blockPublicPolicy
-     *        Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
-     *        secret.
+     *        (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     *        policies that allow broad access to the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +328,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
      * </p>
      * 
-     * @return Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
-     *         secret.
+     * @return (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block
+     *         resource-based policies that allow broad access to the secret.
      */
 
     public Boolean isBlockPublicPolicy() {

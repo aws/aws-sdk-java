@@ -113,6 +113,16 @@ public class DescribeSecretResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeSecretResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("PrimaryRegion", targetDepth)) {
+                    context.nextToken();
+                    describeSecretResult.setPrimaryRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicationStatus", targetDepth)) {
+                    context.nextToken();
+                    describeSecretResult.setReplicationStatus(new ListUnmarshaller<ReplicationStatusType>(ReplicationStatusTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

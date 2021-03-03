@@ -69,14 +69,17 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private String rotationLambdaARN;
     /**
      * <p>
-     * A structure that contains the rotation configuration for this secret.
+     * A structure with the rotation configuration for this secret.
      * </p>
      */
     private RotationRulesType rotationRules;
     /**
      * <p>
-     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
-     * null if the secret has never rotated.
+     * The last date and time that the rotation process for this secret was invoked.
+     * </p>
+     * <p>
+     * The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret
+     * doesn't rotate, Secrets Manager returns a null value.
      * </p>
      */
     private java.util.Date lastRotatedDate;
@@ -133,10 +136,23 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private String owningService;
     /**
      * <p>
-     * The date that the secret was created.
+     * The date you created the secret.
      * </p>
      */
     private java.util.Date createdDate;
+    /**
+     * <p>
+     * Specifies the primary region for secret replication.
+     * </p>
+     */
+    private String primaryRegion;
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.<code>P</code>
+     * </p>
+     */
+    private java.util.List<ReplicationStatusType> replicationStatus;
 
     /**
      * <p>
@@ -444,11 +460,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains the rotation configuration for this secret.
+     * A structure with the rotation configuration for this secret.
      * </p>
      * 
      * @param rotationRules
-     *        A structure that contains the rotation configuration for this secret.
+     *        A structure with the rotation configuration for this secret.
      */
 
     public void setRotationRules(RotationRulesType rotationRules) {
@@ -457,10 +473,10 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains the rotation configuration for this secret.
+     * A structure with the rotation configuration for this secret.
      * </p>
      * 
-     * @return A structure that contains the rotation configuration for this secret.
+     * @return A structure with the rotation configuration for this secret.
      */
 
     public RotationRulesType getRotationRules() {
@@ -469,11 +485,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains the rotation configuration for this secret.
+     * A structure with the rotation configuration for this secret.
      * </p>
      * 
      * @param rotationRules
-     *        A structure that contains the rotation configuration for this secret.
+     *        A structure with the rotation configuration for this secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,13 +500,18 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
-     * null if the secret has never rotated.
+     * The last date and time that the rotation process for this secret was invoked.
+     * </p>
+     * <p>
+     * The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret
+     * doesn't rotate, Secrets Manager returns a null value.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
-     *        value is null if the secret has never rotated.
+     *        The last date and time that the rotation process for this secret was invoked.</p>
+     *        <p>
+     *        The most recent date and time that the Secrets Manager rotation process successfully completed. If the
+     *        secret doesn't rotate, Secrets Manager returns a null value.
      */
 
     public void setLastRotatedDate(java.util.Date lastRotatedDate) {
@@ -499,12 +520,17 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
-     * null if the secret has never rotated.
+     * The last date and time that the rotation process for this secret was invoked.
+     * </p>
+     * <p>
+     * The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret
+     * doesn't rotate, Secrets Manager returns a null value.
      * </p>
      * 
-     * @return The most recent date and time that the Secrets Manager rotation process was successfully completed. This
-     *         value is null if the secret has never rotated.
+     * @return The last date and time that the rotation process for this secret was invoked.</p>
+     *         <p>
+     *         The most recent date and time that the Secrets Manager rotation process successfully completed. If the
+     *         secret doesn't rotate, Secrets Manager returns a null value.
      */
 
     public java.util.Date getLastRotatedDate() {
@@ -513,13 +539,18 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
-     * null if the secret has never rotated.
+     * The last date and time that the rotation process for this secret was invoked.
+     * </p>
+     * <p>
+     * The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret
+     * doesn't rotate, Secrets Manager returns a null value.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
-     *        value is null if the secret has never rotated.
+     *        The last date and time that the rotation process for this secret was invoked.</p>
+     *        <p>
+     *        The most recent date and time that the Secrets Manager rotation process successfully completed. If the
+     *        secret doesn't rotate, Secrets Manager returns a null value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -911,11 +942,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date that the secret was created.
+     * The date you created the secret.
      * </p>
      * 
      * @param createdDate
-     *        The date that the secret was created.
+     *        The date you created the secret.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -924,10 +955,10 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date that the secret was created.
+     * The date you created the secret.
      * </p>
      * 
-     * @return The date that the secret was created.
+     * @return The date you created the secret.
      */
 
     public java.util.Date getCreatedDate() {
@@ -936,16 +967,134 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date that the secret was created.
+     * The date you created the secret.
      * </p>
      * 
      * @param createdDate
-     *        The date that the secret was created.
+     *        The date you created the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSecretResult withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the primary region for secret replication.
+     * </p>
+     * 
+     * @param primaryRegion
+     *        Specifies the primary region for secret replication.
+     */
+
+    public void setPrimaryRegion(String primaryRegion) {
+        this.primaryRegion = primaryRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the primary region for secret replication.
+     * </p>
+     * 
+     * @return Specifies the primary region for secret replication.
+     */
+
+    public String getPrimaryRegion() {
+        return this.primaryRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the primary region for secret replication.
+     * </p>
+     * 
+     * @param primaryRegion
+     *        Specifies the primary region for secret replication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withPrimaryRegion(String primaryRegion) {
+        setPrimaryRegion(primaryRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.<code>P</code>
+     * </p>
+     * 
+     * @return Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *         <code>InSync</code>.<code>P</code>
+     */
+
+    public java.util.List<ReplicationStatusType> getReplicationStatus() {
+        return replicationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.<code>P</code>
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.<code>P</code>
+     */
+
+    public void setReplicationStatus(java.util.Collection<ReplicationStatusType> replicationStatus) {
+        if (replicationStatus == null) {
+            this.replicationStatus = null;
+            return;
+        }
+
+        this.replicationStatus = new java.util.ArrayList<ReplicationStatusType>(replicationStatus);
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.<code>P</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicationStatus(java.util.Collection)} or {@link #withReplicationStatus(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.<code>P</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withReplicationStatus(ReplicationStatusType... replicationStatus) {
+        if (this.replicationStatus == null) {
+            setReplicationStatus(new java.util.ArrayList<ReplicationStatusType>(replicationStatus.length));
+        }
+        for (ReplicationStatusType ele : replicationStatus) {
+            this.replicationStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     * <code>InSync</code>.<code>P</code>
+     * </p>
+     * 
+     * @param replicationStatus
+     *        Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or
+     *        <code>InSync</code>.<code>P</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withReplicationStatus(java.util.Collection<ReplicationStatusType> replicationStatus) {
+        setReplicationStatus(replicationStatus);
         return this;
     }
 
@@ -990,7 +1139,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getOwningService() != null)
             sb.append("OwningService: ").append(getOwningService()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: ").append(getCreatedDate());
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getPrimaryRegion() != null)
+            sb.append("PrimaryRegion: ").append(getPrimaryRegion()).append(",");
+        if (getReplicationStatus() != null)
+            sb.append("ReplicationStatus: ").append(getReplicationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1065,6 +1218,14 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
+        if (other.getPrimaryRegion() == null ^ this.getPrimaryRegion() == null)
+            return false;
+        if (other.getPrimaryRegion() != null && other.getPrimaryRegion().equals(this.getPrimaryRegion()) == false)
+            return false;
+        if (other.getReplicationStatus() == null ^ this.getReplicationStatus() == null)
+            return false;
+        if (other.getReplicationStatus() != null && other.getReplicationStatus().equals(this.getReplicationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1088,6 +1249,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getVersionIdsToStages() == null) ? 0 : getVersionIdsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryRegion() == null) ? 0 : getPrimaryRegion().hashCode());
+        hashCode = prime * hashCode + ((getReplicationStatus() == null) ? 0 : getReplicationStatus().hashCode());
         return hashCode;
     }
 

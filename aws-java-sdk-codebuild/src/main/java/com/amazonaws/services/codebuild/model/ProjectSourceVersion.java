@@ -30,7 +30,8 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An identifier for a source in the build project.
+     * An identifier for a source in the build project. The identifier can only contain alphanumeric characters and
+     * underscores, and must be less than 128 characters in length.
      * </p>
      */
     private String sourceIdentifier;
@@ -75,11 +76,13 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An identifier for a source in the build project.
+     * An identifier for a source in the build project. The identifier can only contain alphanumeric characters and
+     * underscores, and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for a source in the build project.
+     *        An identifier for a source in the build project. The identifier can only contain alphanumeric characters
+     *        and underscores, and must be less than 128 characters in length.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -88,10 +91,12 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An identifier for a source in the build project.
+     * An identifier for a source in the build project. The identifier can only contain alphanumeric characters and
+     * underscores, and must be less than 128 characters in length.
      * </p>
      * 
-     * @return An identifier for a source in the build project.
+     * @return An identifier for a source in the build project. The identifier can only contain alphanumeric characters
+     *         and underscores, and must be less than 128 characters in length.
      */
 
     public String getSourceIdentifier() {
@@ -100,11 +105,13 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An identifier for a source in the build project.
+     * An identifier for a source in the build project. The identifier can only contain alphanumeric characters and
+     * underscores, and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for a source in the build project.
+     *        An identifier for a source in the build project. The identifier can only contain alphanumeric characters
+     *        and underscores, and must be less than 128 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

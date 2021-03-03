@@ -40,6 +40,8 @@ public class PutEventsRequestEntryMarshaller {
             .marshallLocationName("Detail").build();
     private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
+    private static final MarshallingInfo<String> TRACEHEADER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TraceHeader").build();
 
     private static final PutEventsRequestEntryMarshaller instance = new PutEventsRequestEntryMarshaller();
 
@@ -63,6 +65,7 @@ public class PutEventsRequestEntryMarshaller {
             protocolMarshaller.marshall(putEventsRequestEntry.getDetailType(), DETAILTYPE_BINDING);
             protocolMarshaller.marshall(putEventsRequestEntry.getDetail(), DETAIL_BINDING);
             protocolMarshaller.marshall(putEventsRequestEntry.getEventBusName(), EVENTBUSNAME_BINDING);
+            protocolMarshaller.marshall(putEventsRequestEntry.getTraceHeader(), TRACEHEADER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

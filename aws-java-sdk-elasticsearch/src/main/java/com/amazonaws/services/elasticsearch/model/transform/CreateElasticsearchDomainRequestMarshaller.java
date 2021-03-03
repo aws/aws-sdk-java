@@ -13,7 +13,7 @@
 package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -59,6 +59,8 @@ public class CreateElasticsearchDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedSecurityOptions").build();
     private static final MarshallingInfo<StructuredPojo> AUTOTUNEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
+    private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagList").build();
 
     private static final CreateElasticsearchDomainRequestMarshaller instance = new CreateElasticsearchDomainRequestMarshaller();
 
@@ -91,6 +93,7 @@ public class CreateElasticsearchDomainRequestMarshaller {
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getDomainEndpointOptions(), DOMAINENDPOINTOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

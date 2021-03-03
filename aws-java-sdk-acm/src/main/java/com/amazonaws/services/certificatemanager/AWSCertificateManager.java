@@ -29,12 +29,9 @@ import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWa
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) API documentation.
- * </p>
- * <p>
- * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
- * Guide</i> </a>.
+ * You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
+ * applications. For more information about using ACM, see the <a
+ * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -136,6 +133,8 @@ public interface AWSCertificateManager {
      *         A specified tag did not comply with an existing tag policy and was rejected.
      * @throws InvalidParameterException
      *         An input parameter was invalid.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded a quota.
      * @sample AWSCertificateManager.AddTagsToCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -219,6 +218,23 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
+     * Returns the account configuration options associated with an AWS account.
+     * </p>
+     * 
+     * @param getAccountConfigurationRequest
+     * @return Result of the GetAccountConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have access required to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded a quota.
+     * @sample AWSCertificateManager.GetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAccountConfigurationResult getAccountConfiguration(GetAccountConfigurationRequest getAccountConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the
      * issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64
      * encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
@@ -273,6 +289,11 @@ public interface AWSCertificateManager {
      * </li>
      * <li>
      * <p>
+     * The private key must be no larger than 5 KB (5,120 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If the certificate you are importing is not self-signed, you must enter its certificate chain.
      * </p>
      * </li>
@@ -304,14 +325,14 @@ public interface AWSCertificateManager {
      * <li>
      * <p>
      * To import a new certificate, omit the <code>CertificateArn</code> argument. Include this argument only when you
-     * want to replace a previously imported certifica
+     * want to replace a previously imported certificate.
      * </p>
      * </li>
      * <li>
      * <p>
      * When you import a certificate by using the CLI, you must specify the certificate, the certificate chain, and the
-     * private key by their file names preceded by <code>file://</code>. For example, you can specify a certificate
-     * saved in the <code>C:\temp</code> folder as <code>file://C:\temp\certificate_to_import.pem</code>. If you are
+     * private key by their file names preceded by <code>fileb://</code>. For example, you can specify a certificate
+     * saved in the <code>C:\temp</code> folder as <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are
      * making an HTTP or HTTPS Query request, include these arguments as BLOBs.
      * </p>
      * </li>
@@ -350,6 +371,8 @@ public interface AWSCertificateManager {
      *         A specified tag did not comply with an existing tag policy and was rejected.
      * @throws InvalidParameterException
      *         An input parameter was invalid.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.ImportCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -395,6 +418,34 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
+     * Adds or modifies account-level configurations in ACM.
+     * </p>
+     * <p>
+     * The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies the number of days
+     * prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event
+     * per day per certificate until the certificate expires. By default, accounts receive events starting 45 days
+     * before certificate expiration.
+     * </p>
+     * 
+     * @param putAccountConfigurationRequest
+     * @return Result of the PutAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The supplied input failed to satisfy constraints of an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded a quota.
+     * @throws AccessDeniedException
+     *         You do not have access required to perform this action.
+     * @throws ConflictException
+     *         You are trying to update a resource or configuration that is already being created or updated. Wait for
+     *         the previous operation to finish and try again.
+     * @sample AWSCertificateManager.PutAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAccountConfigurationResult putAccountConfiguration(PutAccountConfigurationRequest putAccountConfigurationRequest);
+
+    /**
+     * <p>
      * Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the
      * value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify
      * a value, the tag is removed only if it is associated with the specified value.
@@ -418,6 +469,8 @@ public interface AWSCertificateManager {
      *         A specified tag did not comply with an existing tag policy and was rejected.
      * @throws InvalidParameterException
      *         An input parameter was invalid.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded a quota.
      * @sample AWSCertificateManager.RemoveTagsFromCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate" target="_top">AWS
      *      API Documentation</a>
@@ -426,7 +479,7 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this
+     * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
      * operation. In order to renew your ACM PCA certificates with ACM, you must first <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a

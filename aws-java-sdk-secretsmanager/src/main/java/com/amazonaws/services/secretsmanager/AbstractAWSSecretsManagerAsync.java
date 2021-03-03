@@ -184,6 +184,32 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request) {
+
+        return removeRegionsFromReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveRegionsFromReplicationRequest, RemoveRegionsFromReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request) {
+
+        return replicateSecretToRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReplicateSecretToRegionsRequest, ReplicateSecretToRegionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreSecretResult> restoreSecretAsync(RestoreSecretRequest request) {
 
         return restoreSecretAsync(request, null);
@@ -205,6 +231,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     @Override
     public java.util.concurrent.Future<RotateSecretResult> rotateSecretAsync(RotateSecretRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateSecretRequest, RotateSecretResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request) {
+
+        return stopReplicationToReplicaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationToReplicaRequest, StopReplicationToReplicaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
