@@ -86,10 +86,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * The Maximum Workers of the Amazon MWAA Environment.
+     * The maximum number of workers to run in your Amazon MWAA Environment.
      * </p>
      */
     private Integer maxWorkers;
+    /**
+     * <p>
+     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * </p>
+     */
+    private Integer minWorkers;
     /**
      * <p>
      * The name of the Amazon MWAA Environment.
@@ -581,11 +587,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Maximum Workers of the Amazon MWAA Environment.
+     * The maximum number of workers to run in your Amazon MWAA Environment.
      * </p>
      * 
      * @param maxWorkers
-     *        The Maximum Workers of the Amazon MWAA Environment.
+     *        The maximum number of workers to run in your Amazon MWAA Environment.
      */
 
     public void setMaxWorkers(Integer maxWorkers) {
@@ -594,10 +600,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Maximum Workers of the Amazon MWAA Environment.
+     * The maximum number of workers to run in your Amazon MWAA Environment.
      * </p>
      * 
-     * @return The Maximum Workers of the Amazon MWAA Environment.
+     * @return The maximum number of workers to run in your Amazon MWAA Environment.
      */
 
     public Integer getMaxWorkers() {
@@ -606,16 +612,56 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Maximum Workers of the Amazon MWAA Environment.
+     * The maximum number of workers to run in your Amazon MWAA Environment.
      * </p>
      * 
      * @param maxWorkers
-     *        The Maximum Workers of the Amazon MWAA Environment.
+     *        The maximum number of workers to run in your Amazon MWAA Environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Environment withMaxWorkers(Integer maxWorkers) {
         setMaxWorkers(maxWorkers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers to run in your Amazon MWAA Environment.
+     */
+
+    public void setMinWorkers(Integer minWorkers) {
+        this.minWorkers = minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * </p>
+     * 
+     * @return The minimum number of workers to run in your Amazon MWAA Environment.
+     */
+
+    public Integer getMinWorkers() {
+        return this.minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers to run in your Amazon MWAA Environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withMinWorkers(Integer minWorkers) {
+        setMinWorkers(minWorkers);
         return this;
     }
 
@@ -1225,6 +1271,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getMaxWorkers() != null)
             sb.append("MaxWorkers: ").append(getMaxWorkers()).append(",");
+        if (getMinWorkers() != null)
+            sb.append("MinWorkers: ").append(getMinWorkers()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getNetworkConfiguration() != null)
@@ -1309,6 +1357,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaxWorkers() != null && other.getMaxWorkers().equals(this.getMaxWorkers()) == false)
             return false;
+        if (other.getMinWorkers() == null ^ this.getMinWorkers() == null)
+            return false;
+        if (other.getMinWorkers() != null && other.getMinWorkers().equals(this.getMinWorkers()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -1380,6 +1432,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdate() == null) ? 0 : getLastUpdate().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMaxWorkers() == null) ? 0 : getMaxWorkers().hashCode());
+        hashCode = prime * hashCode + ((getMinWorkers() == null) ? 0 : getMinWorkers().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPluginsS3ObjectVersion() == null) ? 0 : getPluginsS3ObjectVersion().hashCode());

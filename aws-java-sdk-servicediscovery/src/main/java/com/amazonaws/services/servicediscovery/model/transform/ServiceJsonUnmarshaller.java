@@ -76,6 +76,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setDnsConfig(DnsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    service.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("HealthCheckConfig", targetDepth)) {
                     context.nextToken();
                     service.setHealthCheckConfig(HealthCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));

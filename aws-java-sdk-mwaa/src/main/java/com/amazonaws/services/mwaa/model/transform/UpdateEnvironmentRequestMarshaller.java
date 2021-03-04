@@ -43,6 +43,8 @@ public class UpdateEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingConfiguration").build();
     private static final MarshallingInfo<Integer> MAXWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxWorkers").build();
+    private static final MarshallingInfo<Integer> MINWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinWorkers").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -85,6 +87,7 @@ public class UpdateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(updateEnvironmentRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getLoggingConfiguration(), LOGGINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getMaxWorkers(), MAXWORKERS_BINDING);
+            protocolMarshaller.marshall(updateEnvironmentRequest.getMinWorkers(), MINWORKERS_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getPluginsS3ObjectVersion(), PLUGINSS3OBJECTVERSION_BINDING);

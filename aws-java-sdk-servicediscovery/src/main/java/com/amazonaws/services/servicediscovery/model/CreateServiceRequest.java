@@ -53,6 +53,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>_exampleservice._tcp.example.com</code>
      * </p>
+     * <note>
+     * <p>
+     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
+     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case sensitive.
+     * </p>
+     * </note>
      */
     private String name;
     /**
@@ -123,6 +130,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+     * API operation. No DNS records will be registered for the service instances. The only valid value is
+     * <code>HTTP</code>.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -152,6 +167,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>_exampleservice._tcp.example.com</code>
      * </p>
+     * <note>
+     * <p>
+     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
+     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case sensitive.
+     * </p>
+     * </note>
      * 
      * @param name
      *        The name that you want to assign to the service.</p>
@@ -178,6 +200,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        <code>_exampleservice._tcp.example.com</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For a single DNS namespace, you cannot create two services with names that differ only by case (such as
+     *        EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
+     *        multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -212,6 +241,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>_exampleservice._tcp.example.com</code>
      * </p>
+     * <note>
+     * <p>
+     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
+     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case sensitive.
+     * </p>
+     * </note>
      * 
      * @return The name that you want to assign to the service.</p>
      *         <p>
@@ -237,6 +273,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <p>
      *         <code>_exampleservice._tcp.example.com</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For a single DNS namespace, you cannot create two services with names that differ only by case (such as
+     *         EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
+     *         multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *         </p>
      */
 
     public String getName() {
@@ -271,6 +314,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>_exampleservice._tcp.example.com</code>
      * </p>
+     * <note>
+     * <p>
+     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
+     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case sensitive.
+     * </p>
+     * </note>
      * 
      * @param name
      *        The name that you want to assign to the service.</p>
@@ -297,6 +347,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        <code>_exampleservice._tcp.example.com</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For a single DNS namespace, you cannot create two services with names that differ only by case (such as
+     *        EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
+     *        multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,6 +824,81 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+     * API operation. No DNS records will be registered for the service instances. The only valid value is
+     * <code>HTTP</code>.
+     * </p>
+     * 
+     * @param type
+     *        If present, specifies that the service instances are only discoverable using the
+     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
+     *        The only valid value is <code>HTTP</code>.
+     * @see ServiceTypeOption
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+     * API operation. No DNS records will be registered for the service instances. The only valid value is
+     * <code>HTTP</code>.
+     * </p>
+     * 
+     * @return If present, specifies that the service instances are only discoverable using the
+     *         <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service
+     *         instances. The only valid value is <code>HTTP</code>.
+     * @see ServiceTypeOption
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+     * API operation. No DNS records will be registered for the service instances. The only valid value is
+     * <code>HTTP</code>.
+     * </p>
+     * 
+     * @param type
+     *        If present, specifies that the service instances are only discoverable using the
+     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
+     *        The only valid value is <code>HTTP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTypeOption
+     */
+
+    public CreateServiceRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+     * API operation. No DNS records will be registered for the service instances. The only valid value is
+     * <code>HTTP</code>.
+     * </p>
+     * 
+     * @param type
+     *        If present, specifies that the service instances are only discoverable using the
+     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
+     *        The only valid value is <code>HTTP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTypeOption
+     */
+
+    public CreateServiceRequest withType(ServiceTypeOption type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -793,7 +925,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getHealthCheckCustomConfig() != null)
             sb.append("HealthCheckCustomConfig: ").append(getHealthCheckCustomConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -840,6 +974,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -856,6 +994,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckCustomConfig() == null) ? 0 : getHealthCheckCustomConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

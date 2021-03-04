@@ -36,7 +36,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as
-     * many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     * many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      * </p>
      * <p>
      * The keys cannot start with "AWS."
@@ -56,11 +56,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * The placeholder cannot be used as an object key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Object values cannot include quote marks.
      * </p>
      * </li>
      * </ul>
@@ -101,6 +96,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>}</code>
      * </p>
+     * <p>
+     * The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     * example:
+     * </p>
+     * <p>
+     * <code> "InputTransformer":</code>
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     * </p>
+     * <p>
+     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      */
     private String inputTemplate;
 
@@ -111,7 +125,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as
-     * many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     * many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      * </p>
      * <p>
      * The keys cannot start with "AWS."
@@ -121,7 +135,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *         <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
      *         <p>
      *         <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can
-     *         have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     *         have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      *         </p>
      *         <p>
      *         The keys cannot start with "AWS."
@@ -138,7 +152,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as
-     * many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     * many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      * </p>
      * <p>
      * The keys cannot start with "AWS."
@@ -149,7 +163,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
      *        <p>
      *        <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can
-     *        have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     *        have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      *        </p>
      *        <p>
      *        The keys cannot start with "AWS."
@@ -166,7 +180,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as
-     * many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     * many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      * </p>
      * <p>
      * The keys cannot start with "AWS."
@@ -177,7 +191,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
      *        <p>
      *        <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can
-     *        have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+     *        have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.
      *        </p>
      *        <p>
      *        The keys cannot start with "AWS."
@@ -232,11 +246,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * The placeholder cannot be used as an object key.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Object values cannot include quote marks.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.
@@ -275,6 +284,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>}</code>
      * </p>
+     * <p>
+     * The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     * example:
+     * </p>
+     * <p>
+     * <code> "InputTransformer":</code>
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     * </p>
+     * <p>
+     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param inputTemplate
      *        Input template where you specify placeholders that will be filled with the values of the keys from
@@ -289,11 +317,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        The placeholder cannot be used as an object key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Object values cannot include quote marks.
      *        </p>
      *        </li>
      *        </ul>
@@ -334,6 +357,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        <code>}</code>
+     *        </p>
+     *        <p>
+     *        The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     *        example:
+     *        </p>
+     *        <p>
+     *        <code> "InputTransformer":</code>
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     *        </p>
+     *        <p>
+     *        <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
      */
 
     public void setInputTemplate(String inputTemplate) {
@@ -353,11 +395,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * The placeholder cannot be used as an object key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Object values cannot include quote marks.
      * </p>
      * </li>
      * </ul>
@@ -398,6 +435,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>}</code>
      * </p>
+     * <p>
+     * The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     * example:
+     * </p>
+     * <p>
+     * <code> "InputTransformer":</code>
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     * </p>
+     * <p>
+     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @return Input template where you specify placeholders that will be filled with the values of the keys from
      *         <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
@@ -411,11 +467,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         The placeholder cannot be used as an object key.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Object values cannot include quote marks.
      *         </p>
      *         </li>
      *         </ul>
@@ -456,6 +507,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         <code>}</code>
+     *         </p>
+     *         <p>
+     *         The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     *         example:
+     *         </p>
+     *         <p>
+     *         <code> "InputTransformer":</code>
+     *         </p>
+     *         <p>
+     *         <code>{</code>
+     *         </p>
+     *         <p>
+     *         <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     *         </p>
+     *         <p>
+     *         <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     *         </p>
+     *         <p>
+     *         <code>}</code>
      */
 
     public String getInputTemplate() {
@@ -475,11 +545,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * The placeholder cannot be used as an object key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Object values cannot include quote marks.
      * </p>
      * </li>
      * </ul>
@@ -520,6 +585,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>}</code>
      * </p>
+     * <p>
+     * The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     * example:
+     * </p>
+     * <p>
+     * <code> "InputTransformer":</code>
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     * </p>
+     * <p>
+     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param inputTemplate
      *        Input template where you specify placeholders that will be filled with the values of the keys from
@@ -534,11 +618,6 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        The placeholder cannot be used as an object key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Object values cannot include quote marks.
      *        </p>
      *        </li>
      *        </ul>
@@ -576,6 +655,25 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
+     *        </p>
+     *        <p>
+     *        The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following
+     *        example:
+     *        </p>
+     *        <p>
+     *        <code> "InputTransformer":</code>
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+     *        </p>
+     *        <p>
+     *        <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code>
      *        </p>
      *        <p>
      *        <code>}</code>

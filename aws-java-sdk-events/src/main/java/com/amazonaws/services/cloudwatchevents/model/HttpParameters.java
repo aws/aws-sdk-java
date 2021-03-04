@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * These are custom parameter to be used when the target is an API Gateway REST APIs.
+ * These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In
+ * the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the
+ * Connection taking precedence.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/HttpParameters" target="_top">AWS API
@@ -30,29 +32,34 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     * wildcards ("*").
      * </p>
      */
     private java.util.List<String> pathParameterValues;
     /**
      * <p>
-     * The headers that need to be sent as part of request invoking the API Gateway REST API.
+     * The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     * ApiDestination.
      * </p>
      */
     private java.util.Map<String, String> headerParameters;
     /**
      * <p>
-     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     * EventBridge ApiDestination.
      * </p>
      */
     private java.util.Map<String, String> queryStringParameters;
 
     /**
      * <p>
-     * The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     * wildcards ("*").
      * </p>
      * 
-     * @return The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * @return The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     *         wildcards ("*").
      */
 
     public java.util.List<String> getPathParameterValues() {
@@ -61,11 +68,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     * wildcards ("*").
      * </p>
      * 
      * @param pathParameterValues
-     *        The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     *        The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     *        wildcards ("*").
      */
 
     public void setPathParameterValues(java.util.Collection<String> pathParameterValues) {
@@ -79,7 +88,8 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     * wildcards ("*").
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +98,8 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param pathParameterValues
-     *        The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     *        The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     *        wildcards ("*").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +115,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     * The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     * wildcards ("*").
      * </p>
      * 
      * @param pathParameterValues
-     *        The path parameter values to be used to populate API Gateway REST API path wildcards ("*").
+     *        The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path
+     *        wildcards ("*").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,10 +132,12 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The headers that need to be sent as part of request invoking the API Gateway REST API.
+     * The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     * ApiDestination.
      * </p>
      * 
-     * @return The headers that need to be sent as part of request invoking the API Gateway REST API.
+     * @return The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     *         ApiDestination.
      */
 
     public java.util.Map<String, String> getHeaderParameters() {
@@ -131,11 +146,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The headers that need to be sent as part of request invoking the API Gateway REST API.
+     * The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     * ApiDestination.
      * </p>
      * 
      * @param headerParameters
-     *        The headers that need to be sent as part of request invoking the API Gateway REST API.
+     *        The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     *        ApiDestination.
      */
 
     public void setHeaderParameters(java.util.Map<String, String> headerParameters) {
@@ -144,11 +161,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The headers that need to be sent as part of request invoking the API Gateway REST API.
+     * The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     * ApiDestination.
      * </p>
      * 
      * @param headerParameters
-     *        The headers that need to be sent as part of request invoking the API Gateway REST API.
+     *        The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+     *        ApiDestination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,10 +206,12 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     * EventBridge ApiDestination.
      * </p>
      * 
-     * @return The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     * @return The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     *         EventBridge ApiDestination.
      */
 
     public java.util.Map<String, String> getQueryStringParameters() {
@@ -199,11 +220,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     * EventBridge ApiDestination.
      * </p>
      * 
      * @param queryStringParameters
-     *        The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     *        The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     *        EventBridge ApiDestination.
      */
 
     public void setQueryStringParameters(java.util.Map<String, String> queryStringParameters) {
@@ -212,11 +235,13 @@ public class HttpParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     * The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     * EventBridge ApiDestination.
      * </p>
      * 
      * @param queryStringParameters
-     *        The query string keys/values that need to be sent as part of request invoking the API Gateway REST API.
+     *        The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or
+     *        EventBridge ApiDestination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

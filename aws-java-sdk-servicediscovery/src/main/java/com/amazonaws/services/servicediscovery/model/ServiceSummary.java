@@ -48,6 +48,33 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String type;
+    /**
+     * <p>
      * The description that you specify when you create the service.
      * </p>
      */
@@ -190,6 +217,229 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     public ServiceSummary withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @see ServiceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return Describes the systems that can be used to discover the service instances.</p>
+     *         <dl>
+     *         <dt>DNS_HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code>
+     *         API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>DNS</dt>
+     *         <dd>
+     *         <p>
+     *         Reserved.
+     *         </p>
+     *         </dd>
+     * @see ServiceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public ServiceSummary withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public ServiceSummary withType(ServiceType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -421,6 +671,8 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceCount() != null)
@@ -459,6 +711,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -494,6 +750,7 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());

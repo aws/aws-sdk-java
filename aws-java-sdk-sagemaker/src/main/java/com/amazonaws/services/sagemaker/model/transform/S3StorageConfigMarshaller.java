@@ -31,6 +31,8 @@ public class S3StorageConfigMarshaller {
             .marshallLocationName("S3Uri").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> RESOLVEDOUTPUTS3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolvedOutputS3Uri").build();
 
     private static final S3StorageConfigMarshaller instance = new S3StorageConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class S3StorageConfigMarshaller {
         try {
             protocolMarshaller.marshall(s3StorageConfig.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(s3StorageConfig.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(s3StorageConfig.getResolvedOutputS3Uri(), RESOLVEDOUTPUTS3URI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

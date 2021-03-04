@@ -42,6 +42,8 @@ public enum Regions {
     AP_SOUTHEAST_2("ap-southeast-2", "Asia Pacific (Sydney)"),
     AP_NORTHEAST_1("ap-northeast-1", "Asia Pacific (Tokyo)"),
     AP_NORTHEAST_2("ap-northeast-2", "Asia Pacific (Seoul)"),
+    AP_NORTHEAST_3("ap-northeast-3", "Asia Pacific (Osaka)"),
+
     SA_EAST_1("sa-east-1", "South America (Sao Paulo)"),
     CN_NORTH_1("cn-north-1", "China (Beijing)"),
     CN_NORTHWEST_1("cn-northwest-1", "China (Ningxia)"),

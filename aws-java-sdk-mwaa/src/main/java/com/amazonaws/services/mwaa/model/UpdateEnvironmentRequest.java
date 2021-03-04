@@ -63,10 +63,16 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private LoggingConfigurationInput loggingConfiguration;
     /**
      * <p>
-     * The Maximum Workers to update of your Amazon MWAA environment.
+     * The maximum number of workers to update of your Amazon MWAA environment.
      * </p>
      */
     private Integer maxWorkers;
+    /**
+     * <p>
+     * The minimum number of workers to update of your Amazon MWAA environment.
+     * </p>
+     */
+    private Integer minWorkers;
     /**
      * <p>
      * The name of your Amazon MWAA environment that you wish to update.
@@ -392,11 +398,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Maximum Workers to update of your Amazon MWAA environment.
+     * The maximum number of workers to update of your Amazon MWAA environment.
      * </p>
      * 
      * @param maxWorkers
-     *        The Maximum Workers to update of your Amazon MWAA environment.
+     *        The maximum number of workers to update of your Amazon MWAA environment.
      */
 
     public void setMaxWorkers(Integer maxWorkers) {
@@ -405,10 +411,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Maximum Workers to update of your Amazon MWAA environment.
+     * The maximum number of workers to update of your Amazon MWAA environment.
      * </p>
      * 
-     * @return The Maximum Workers to update of your Amazon MWAA environment.
+     * @return The maximum number of workers to update of your Amazon MWAA environment.
      */
 
     public Integer getMaxWorkers() {
@@ -417,16 +423,56 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Maximum Workers to update of your Amazon MWAA environment.
+     * The maximum number of workers to update of your Amazon MWAA environment.
      * </p>
      * 
      * @param maxWorkers
-     *        The Maximum Workers to update of your Amazon MWAA environment.
+     *        The maximum number of workers to update of your Amazon MWAA environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateEnvironmentRequest withMaxWorkers(Integer maxWorkers) {
         setMaxWorkers(maxWorkers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to update of your Amazon MWAA environment.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers to update of your Amazon MWAA environment.
+     */
+
+    public void setMinWorkers(Integer minWorkers) {
+        this.minWorkers = minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to update of your Amazon MWAA environment.
+     * </p>
+     * 
+     * @return The minimum number of workers to update of your Amazon MWAA environment.
+     */
+
+    public Integer getMinWorkers() {
+        return this.minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers to update of your Amazon MWAA environment.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers to update of your Amazon MWAA environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentRequest withMinWorkers(Integer minWorkers) {
+        setMinWorkers(minWorkers);
         return this;
     }
 
@@ -835,6 +881,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getMaxWorkers() != null)
             sb.append("MaxWorkers: ").append(getMaxWorkers()).append(",");
+        if (getMinWorkers() != null)
+            sb.append("MinWorkers: ").append(getMinWorkers()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getNetworkConfiguration() != null)
@@ -895,6 +943,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMaxWorkers() != null && other.getMaxWorkers().equals(this.getMaxWorkers()) == false)
             return false;
+        if (other.getMinWorkers() == null ^ this.getMinWorkers() == null)
+            return false;
+        if (other.getMinWorkers() != null && other.getMinWorkers().equals(this.getMinWorkers()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -946,6 +998,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMaxWorkers() == null) ? 0 : getMaxWorkers().hashCode());
+        hashCode = prime * hashCode + ((getMinWorkers() == null) ? 0 : getMinWorkers().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPluginsS3ObjectVersion() == null) ? 0 : getPluginsS3ObjectVersion().hashCode());

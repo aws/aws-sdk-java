@@ -351,6 +351,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest request) {
+
+        return createApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(final CreateApiDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateApiDestinationRequest, CreateApiDestinationResult> asyncHandler) {
+        final CreateApiDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateApiDestinationResult>() {
+            @Override
+            public CreateApiDestinationResult call() throws Exception {
+                CreateApiDestinationResult result = null;
+
+                try {
+                    result = executeCreateApiDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest request) {
 
         return createArchiveAsync(request, null);
@@ -368,6 +401,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeCreateArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
+
+        return createConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(final CreateConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
+        final CreateConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectionResult>() {
+            @Override
+            public CreateConnectionResult call() throws Exception {
+                CreateConnectionResult result = null;
+
+                try {
+                    result = executeCreateConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -483,6 +549,72 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest request) {
+
+        return deauthorizeConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(final DeauthorizeConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeauthorizeConnectionRequest, DeauthorizeConnectionResult> asyncHandler) {
+        final DeauthorizeConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeauthorizeConnectionResult>() {
+            @Override
+            public DeauthorizeConnectionResult call() throws Exception {
+                DeauthorizeConnectionResult result = null;
+
+                try {
+                    result = executeDeauthorizeConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest request) {
+
+        return deleteApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(final DeleteApiDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApiDestinationRequest, DeleteApiDestinationResult> asyncHandler) {
+        final DeleteApiDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApiDestinationResult>() {
+            @Override
+            public DeleteApiDestinationResult call() throws Exception {
+                DeleteApiDestinationResult result = null;
+
+                try {
+                    result = executeDeleteApiDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest request) {
 
         return deleteArchiveAsync(request, null);
@@ -500,6 +632,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeDeleteArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
+
+        return deleteConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(final DeleteConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
+        final DeleteConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConnectionResult>() {
+            @Override
+            public DeleteConnectionResult call() throws Exception {
+                DeleteConnectionResult result = null;
+
+                try {
+                    result = executeDeleteConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -615,6 +780,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest request) {
+
+        return describeApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(final DescribeApiDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeApiDestinationRequest, DescribeApiDestinationResult> asyncHandler) {
+        final DescribeApiDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeApiDestinationResult>() {
+            @Override
+            public DescribeApiDestinationResult call() throws Exception {
+                DescribeApiDestinationResult result = null;
+
+                try {
+                    result = executeDescribeApiDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest request) {
 
         return describeArchiveAsync(request, null);
@@ -632,6 +830,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeDescribeArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest request) {
+
+        return describeConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(final DescribeConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConnectionRequest, DescribeConnectionResult> asyncHandler) {
+        final DescribeConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConnectionResult>() {
+            @Override
+            public DescribeConnectionResult call() throws Exception {
+                DescribeConnectionResult result = null;
+
+                try {
+                    result = executeDescribeConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -879,6 +1110,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest request) {
+
+        return listApiDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(final ListApiDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApiDestinationsRequest, ListApiDestinationsResult> asyncHandler) {
+        final ListApiDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApiDestinationsResult>() {
+            @Override
+            public ListApiDestinationsResult call() throws Exception {
+                ListApiDestinationsResult result = null;
+
+                try {
+                    result = executeListApiDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest request) {
 
         return listArchivesAsync(request, null);
@@ -896,6 +1160,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeListArchives(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request) {
+
+        return listConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(final ListConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler) {
+        final ListConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConnectionsResult>() {
+            @Override
+            public ListConnectionsResult call() throws Exception {
+                ListConnectionsResult result = null;
+
+                try {
+                    result = executeListConnections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1573,6 +1870,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest request) {
+
+        return updateApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(final UpdateApiDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApiDestinationRequest, UpdateApiDestinationResult> asyncHandler) {
+        final UpdateApiDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApiDestinationResult>() {
+            @Override
+            public UpdateApiDestinationResult call() throws Exception {
+                UpdateApiDestinationResult result = null;
+
+                try {
+                    result = executeUpdateApiDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest request) {
 
         return updateArchiveAsync(request, null);
@@ -1590,6 +1920,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeUpdateArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(final UpdateConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
+        final UpdateConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConnectionResult>() {
+            @Override
+            public UpdateConnectionResult call() throws Exception {
+                UpdateConnectionResult result = null;
+
+                try {
+                    result = executeUpdateConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

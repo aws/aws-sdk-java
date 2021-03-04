@@ -93,6 +93,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setMaxWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MinWorkers", targetDepth)) {
+                    context.nextToken();
+                    environment.setMinWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     environment.setName(context.getUnmarshaller(String.class).unmarshall(context));

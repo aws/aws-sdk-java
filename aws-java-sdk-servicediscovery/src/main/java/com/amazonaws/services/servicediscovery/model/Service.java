@@ -75,6 +75,33 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private DnsConfig dnsConfig;
     /**
      * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String type;
+    /**
+     * <p>
      * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
      * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.
@@ -414,6 +441,229 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @see ServiceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return Describes the systems that can be used to discover the service instances.</p>
+     *         <dl>
+     *         <dt>DNS_HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code>
+     *         API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>DNS</dt>
+     *         <dd>
+     *         <p>
+     *         Reserved.
+     *         </p>
+     *         </dd>
+     * @see ServiceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public Service withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public Service withType(ServiceType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
      * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.
@@ -685,6 +935,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getDnsConfig() != null)
             sb.append("DnsConfig: ").append(getDnsConfig()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
         if (getHealthCheckCustomConfig() != null)
@@ -735,6 +987,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDnsConfig() != null && other.getDnsConfig().equals(this.getDnsConfig()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getHealthCheckConfig() == null ^ this.getHealthCheckConfig() == null)
             return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
@@ -766,6 +1022,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckCustomConfig() == null) ? 0 : getHealthCheckCustomConfig().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());

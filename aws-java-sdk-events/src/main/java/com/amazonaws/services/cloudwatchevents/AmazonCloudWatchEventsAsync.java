@@ -124,6 +124,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @return A Java Future containing the result of the CreateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest createApiDestinationRequest);
+
+    /**
+     * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest createApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApiDestinationRequest, CreateApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
      * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
      * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
@@ -158,6 +189,39 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest createArchiveRequest,
             com.amazonaws.handlers.AsyncHandler<CreateArchiveRequest, CreateArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -324,6 +388,70 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @return A Java Future containing the result of the DeauthorizeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest deauthorizeConnectionRequest);
+
+    /**
+     * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeauthorizeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest deauthorizeConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeauthorizeConnectionRequest, DeauthorizeConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @return A Java Future containing the result of the DeleteApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest deleteApiDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest deleteApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApiDestinationRequest, DeleteApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified archive.
      * </p>
      * 
@@ -352,6 +480,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest deleteArchiveRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -488,6 +647,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @return A Java Future containing the result of the DescribeApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest describeApiDestinationRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest describeApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApiDestinationRequest, DescribeApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details about an archive.
      * </p>
      * 
@@ -516,6 +706,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest describeArchiveRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeArchiveRequest, DescribeArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @return A Java Future containing the result of the DescribeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest describeConnectionRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest describeConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectionRequest, DescribeConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -796,6 +1017,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @return A Java Future containing the result of the ListApiDestinations operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest listApiDestinationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApiDestinations operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest listApiDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApiDestinationsRequest, ListApiDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
      * names. Filter parameters are exclusive.
      * </p>
@@ -826,6 +1078,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest listArchivesRequest,
             com.amazonaws.handlers.AsyncHandler<ListArchivesRequest, ListArchivesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @return A Java Future containing the result of the ListConnections operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest listConnectionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConnections operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest listConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1505,6 +1788,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Redshift Clusters to invoke Data API ExecuteStatement on
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1699,6 +1987,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <li>
      * <p>
      * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
      * </p>
      * </li>
      * </ul>
@@ -2071,6 +2364,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @return A Java Future containing the result of the UpdateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest updateApiDestinationRequest);
+
+    /**
+     * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest updateApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApiDestinationRequest, UpdateApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified archive.
      * </p>
      * 
@@ -2099,5 +2423,36 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest updateArchiveRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateArchiveRequest, UpdateArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler);
 
 }

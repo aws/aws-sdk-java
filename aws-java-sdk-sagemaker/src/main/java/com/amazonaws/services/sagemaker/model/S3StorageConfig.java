@@ -55,6 +55,12 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The S3 path where offline records are written.
+     * </p>
+     */
+    private String resolvedOutputS3Uri;
 
     /**
      * <p>
@@ -221,6 +227,46 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The S3 path where offline records are written.
+     * </p>
+     * 
+     * @param resolvedOutputS3Uri
+     *        The S3 path where offline records are written.
+     */
+
+    public void setResolvedOutputS3Uri(String resolvedOutputS3Uri) {
+        this.resolvedOutputS3Uri = resolvedOutputS3Uri;
+    }
+
+    /**
+     * <p>
+     * The S3 path where offline records are written.
+     * </p>
+     * 
+     * @return The S3 path where offline records are written.
+     */
+
+    public String getResolvedOutputS3Uri() {
+        return this.resolvedOutputS3Uri;
+    }
+
+    /**
+     * <p>
+     * The S3 path where offline records are written.
+     * </p>
+     * 
+     * @param resolvedOutputS3Uri
+     *        The S3 path where offline records are written.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3StorageConfig withResolvedOutputS3Uri(String resolvedOutputS3Uri) {
+        setResolvedOutputS3Uri(resolvedOutputS3Uri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +281,9 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
         if (getS3Uri() != null)
             sb.append("S3Uri: ").append(getS3Uri()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getResolvedOutputS3Uri() != null)
+            sb.append("ResolvedOutputS3Uri: ").append(getResolvedOutputS3Uri());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +306,10 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getResolvedOutputS3Uri() == null ^ this.getResolvedOutputS3Uri() == null)
+            return false;
+        if (other.getResolvedOutputS3Uri() != null && other.getResolvedOutputS3Uri().equals(this.getResolvedOutputS3Uri()) == false)
+            return false;
         return true;
     }
 
@@ -268,6 +320,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getResolvedOutputS3Uri() == null) ? 0 : getResolvedOutputS3Uri().hashCode());
         return hashCode;
     }
 

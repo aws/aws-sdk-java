@@ -125,6 +125,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      * first request to make the change.
      * </p>
      */
+    @Deprecated
     private Integer failureThreshold;
 
     /**
@@ -162,7 +163,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      *        before 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code>
      *        seconds after the first request to make the change.
      */
-
+    @Deprecated
     public void setFailureThreshold(Integer failureThreshold) {
         this.failureThreshold = failureThreshold;
     }
@@ -201,7 +202,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      *         before 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code>
      *         seconds after the first request to make the change.
      */
-
+    @Deprecated
     public Integer getFailureThreshold() {
         return this.failureThreshold;
     }
@@ -242,7 +243,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      *        seconds after the first request to make the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public HealthCheckCustomConfig withFailureThreshold(Integer failureThreshold) {
         setFailureThreshold(failureThreshold);
         return this;

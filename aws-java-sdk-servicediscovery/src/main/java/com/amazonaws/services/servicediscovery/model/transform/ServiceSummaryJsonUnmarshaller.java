@@ -60,6 +60,10 @@ public class ServiceSummaryJsonUnmarshaller implements Unmarshaller<ServiceSumma
                     context.nextToken();
                     serviceSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    serviceSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     serviceSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

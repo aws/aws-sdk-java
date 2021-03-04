@@ -119,11 +119,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private SqsParameters sqsParameters;
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     * parameter, query string keys/values as part of your target invoking request.
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
      * </p>
      */
     private HttpParameters httpParameters;
@@ -684,18 +686,23 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     * parameter, query string keys/values as part of your target invoking request.
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
      * @param httpParameters
-     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        ApiDestination.</p>
      *        <p>
-     *        If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     *        parameter, query string keys/values as part of your target invoking request.
+     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
+     *        configured. In case of any conflicting keys, values from the Connection take precedence.
      */
 
     public void setHttpParameters(HttpParameters httpParameters) {
@@ -704,17 +711,22 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     * parameter, query string keys/values as part of your target invoking request.
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
-     * @return Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     * @return Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *         ApiDestination.</p>
      *         <p>
-     *         If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     *         parameter, query string keys/values as part of your target invoking request.
+     *         If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *         parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *         invoking request. If you're using ApiDestinations, the corresponding Connection can also have these
+     *         values configured. In case of any conflicting keys, values from the Connection take precedence.
      */
 
     public HttpParameters getHttpParameters() {
@@ -723,18 +735,23 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     * parameter, query string keys/values as part of your target invoking request.
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
      * @param httpParameters
-     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        ApiDestination.</p>
      *        <p>
-     *        If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
-     *        parameter, query string keys/values as part of your target invoking request.
+     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
+     *        configured. In case of any conflicting keys, values from the Connection take precedence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

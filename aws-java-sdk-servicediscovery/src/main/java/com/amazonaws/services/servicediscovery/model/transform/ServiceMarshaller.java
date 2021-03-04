@@ -41,6 +41,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCount").build();
     private static final MarshallingInfo<StructuredPojo> DNSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsConfig").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckConfig").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCUSTOMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -73,6 +75,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(service.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(service.getDnsConfig(), DNSCONFIG_BINDING);
+            protocolMarshaller.marshall(service.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(service.getHealthCheckConfig(), HEALTHCHECKCONFIG_BINDING);
             protocolMarshaller.marshall(service.getHealthCheckCustomConfig(), HEALTHCHECKCUSTOMCONFIG_BINDING);
             protocolMarshaller.marshall(service.getCreateDate(), CREATEDATE_BINDING);

@@ -5549,6 +5549,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Returns information about a training job.
      * </p>
+     * <p>
+     * Some of the attributes below only appear if the training job successfully starts. If the training job fails,
+     * <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on the <code>FailureReason</code>,
+     * attributes like <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>,
+     * and <code>BillableTimeInSeconds</code> may not be present in the response.
+     * </p>
      * 
      * @param describeTrainingJobRequest
      * @return A Java Future containing the result of the DescribeTrainingJob operation returned by the service.
@@ -5561,6 +5567,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Returns information about a training job.
+     * </p>
+     * <p>
+     * Some of the attributes below only appear if the training job successfully starts. If the training job fails,
+     * <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on the <code>FailureReason</code>,
+     * attributes like <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>,
+     * and <code>BillableTimeInSeconds</code> may not be present in the response.
      * </p>
      * 
      * @param describeTrainingJobRequest

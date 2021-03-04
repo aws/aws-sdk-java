@@ -239,6 +239,12 @@ public enum Region {
     AP_Seoul("ap-northeast-2"),
 
     /**
+     * The Asia Pacific (Osaka) Region. This region uses Amazon S3 servers
+     * located in Osaka.
+     */
+    AP_Osaka("ap-northeast-3"),
+
+    /**
      * The Asia Pacific (Mumbai) Region. This region uses Amazon S3 servers
      * located in Mumbai.
      * <p>

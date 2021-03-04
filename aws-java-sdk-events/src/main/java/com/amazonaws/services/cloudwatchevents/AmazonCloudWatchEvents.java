@@ -165,6 +165,27 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @return Result of the CreateApiDestination operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateApiDestinationResult createApiDestination(CreateApiDestinationRequest createApiDestinationRequest);
+
+    /**
+     * <p>
      * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
      * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
      * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
@@ -190,6 +211,26 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     CreateArchiveResult createArchive(CreateArchiveRequest createArchiveRequest);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return Result of the CreateConnection operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
 
     /**
      * <p>
@@ -301,6 +342,45 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @return Result of the DeauthorizeConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeauthorizeConnectionResult deauthorizeConnection(DeauthorizeConnectionRequest deauthorizeConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @return Result of the DeleteApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteApiDestinationResult deleteApiDestination(DeleteApiDestinationRequest deleteApiDestinationRequest);
+
+    /**
+     * <p>
      * Deletes the specified archive.
      * </p>
      * 
@@ -317,6 +397,25 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     DeleteArchiveResult deleteArchive(DeleteArchiveRequest deleteArchiveRequest);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return Result of the DeleteConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest);
 
     /**
      * <p>
@@ -401,6 +500,23 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @return Result of the DescribeApiDestination operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeApiDestinationResult describeApiDestination(DescribeApiDestinationRequest describeApiDestinationRequest);
+
+    /**
+     * <p>
      * Retrieves details about an archive.
      * </p>
      * 
@@ -417,6 +533,23 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     DescribeArchiveResult describeArchive(DescribeArchiveRequest describeArchiveRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @return Result of the DescribeConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeConnectionResult describeConnection(DescribeConnectionRequest describeConnectionRequest);
 
     /**
      * <p>
@@ -588,6 +721,21 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @return Result of the ListApiDestinations operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListApiDestinationsResult listApiDestinations(ListApiDestinationsRequest listApiDestinationsRequest);
+
+    /**
+     * <p>
      * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
      * names. Filter parameters are exclusive.
      * </p>
@@ -603,6 +751,21 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     ListArchivesResult listArchives(ListArchivesRequest listArchivesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @return Result of the ListConnections operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListConnectionsResult listConnections(ListConnectionsRequest listConnectionsRequest);
 
     /**
      * <p>
@@ -1023,6 +1186,11 @@ public interface AmazonCloudWatchEvents {
      * Redshift Clusters to invoke Data API ExecuteStatement on
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1313,6 +1481,27 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @return Result of the UpdateApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonCloudWatchEvents.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateApiDestinationResult updateApiDestination(UpdateApiDestinationRequest updateApiDestinationRequest);
+
+    /**
+     * <p>
      * Updates the specified archive.
      * </p>
      * 
@@ -1333,6 +1522,27 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     UpdateArchiveResult updateArchive(UpdateArchiveRequest updateArchiveRequest);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonCloudWatchEvents.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateConnectionResult updateConnection(UpdateConnectionRequest updateConnectionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

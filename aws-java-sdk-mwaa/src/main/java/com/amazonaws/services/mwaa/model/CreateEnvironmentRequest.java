@@ -97,6 +97,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxWorkers;
     /**
      * <p>
+     * The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow
+     * workers and the Fargate containers that run your tasks up to the number you specify in the
+     * <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the <code>MinWorkers</code> field.
+     * </p>
+     */
+    private Integer minWorkers;
+    /**
+     * <p>
      * The name of your MWAA environment.
      * </p>
      */
@@ -618,6 +627,67 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateEnvironmentRequest withMaxWorkers(Integer maxWorkers) {
         setMaxWorkers(maxWorkers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow
+     * workers and the Fargate containers that run your tasks up to the number you specify in the
+     * <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the <code>MinWorkers</code> field.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache
+     *        Airflow workers and the Fargate containers that run your tasks up to the number you specify in the
+     *        <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA
+     *        disposes of the extra containers leaving the worker count you specify in the <code>MinWorkers</code>
+     *        field.
+     */
+
+    public void setMinWorkers(Integer minWorkers) {
+        this.minWorkers = minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow
+     * workers and the Fargate containers that run your tasks up to the number you specify in the
+     * <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the <code>MinWorkers</code> field.
+     * </p>
+     * 
+     * @return The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache
+     *         Airflow workers and the Fargate containers that run your tasks up to the number you specify in the
+     *         <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA
+     *         disposes of the extra containers leaving the worker count you specify in the <code>MinWorkers</code>
+     *         field.
+     */
+
+    public Integer getMinWorkers() {
+        return this.minWorkers;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow
+     * workers and the Fargate containers that run your tasks up to the number you specify in the
+     * <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the <code>MinWorkers</code> field.
+     * </p>
+     * 
+     * @param minWorkers
+     *        The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache
+     *        Airflow workers and the Fargate containers that run your tasks up to the number you specify in the
+     *        <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA
+     *        disposes of the extra containers leaving the worker count you specify in the <code>MinWorkers</code>
+     *        field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withMinWorkers(Integer minWorkers) {
+        setMinWorkers(minWorkers);
         return this;
     }
 
@@ -1206,6 +1276,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getMaxWorkers() != null)
             sb.append("MaxWorkers: ").append(getMaxWorkers()).append(",");
+        if (getMinWorkers() != null)
+            sb.append("MinWorkers: ").append(getMinWorkers()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getNetworkConfiguration() != null)
@@ -1272,6 +1344,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMaxWorkers() != null && other.getMaxWorkers().equals(this.getMaxWorkers()) == false)
             return false;
+        if (other.getMinWorkers() == null ^ this.getMinWorkers() == null)
+            return false;
+        if (other.getMinWorkers() != null && other.getMinWorkers().equals(this.getMinWorkers()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -1328,6 +1404,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMaxWorkers() == null) ? 0 : getMaxWorkers().hashCode());
+        hashCode = prime * hashCode + ((getMinWorkers() == null) ? 0 : getMinWorkers().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPluginsS3ObjectVersion() == null) ? 0 : getPluginsS3ObjectVersion().hashCode());
